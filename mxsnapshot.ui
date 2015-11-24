@@ -17,7 +17,7 @@
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="selectionPage">
       <layout class="QGridLayout" name="gridLayout_2">
@@ -530,12 +530,6 @@ color: rgb(0, 0, 0);</string>
      </item>
      <item row="0" column="1">
       <widget class="QPushButton" name="buttonHelp">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
        <property name="toolTip">
         <string>Display help </string>
        </property>
@@ -569,12 +563,6 @@ color: rgb(0, 0, 0);</string>
      </item>
      <item row="0" column="0">
       <widget class="QPushButton" name="buttonAbout">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
        <property name="toolTip">
         <string>About this application</string>
        </property>
@@ -623,12 +611,6 @@ color: rgb(0, 0, 0);</string>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
        <property name="toolTip">
         <string>Start scanning for shares</string>
        </property>
@@ -653,12 +635,6 @@ color: rgb(0, 0, 0);</string>
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
        </property>
        <property name="text">
         <string>&lt; Back</string>

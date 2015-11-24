@@ -96,9 +96,6 @@ public:
     void mkDir(QString filename);
     void savePackageList(QString filename);
     void setupEnv();
-    void resetAccount(QString user);
-    void resetOtherAccounts(QStringList users);
-    void createUser1000();
     void cleanUp();
     void makeMd5sum(QString folder, QString filename);
     void fixPermissions();

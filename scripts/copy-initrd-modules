@@ -36,7 +36,6 @@ Usage
 }
 
 DEFAULT_LIST="
-ahci
 aufs
 battery
 block
@@ -61,8 +60,6 @@ isofs
 jbd
 jbd2
 jfs
-libahci
-libata
 libcrc32c
 loop
 mbcache

@@ -1,3 +1,9 @@
+mx-snapshot (15.11mx15) mx; urgency=medium
+
+  * changed to use installed-to-live script 
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 23 Nov 2015 17:07:18 -0500
+
 mx-snapshot (15.10.5mx15) mx; urgency=medium
 
   * Removed x64 grub/syslinu/isolinux.cfg files.

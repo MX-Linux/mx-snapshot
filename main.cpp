@@ -32,7 +32,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    a.setWindowIcon(QIcon("/usr/share/pixmaps/mx-snapshot.png"));
+    a.setWindowIcon(QIcon("/usr/share/pixmaps/mx-snapshot.svg"));
 
     QTranslator qtTran;
     qtTran.load(QString("qt_") + QLocale::system().name());

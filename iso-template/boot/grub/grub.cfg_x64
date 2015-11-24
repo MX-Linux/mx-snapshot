@@ -14,7 +14,7 @@ terminal_output gfxterm
 set menu_color_normal=white/black
 set menu_color_highlight=black/light-gray
 
-menuentry "custom-name-pae" {
+menuentry "custom-name" {
 	set gfxpayload=keep
 	linux	/antiX/vmlinuz quiet nosysv=X
 	initrd	/antiX/initrd.gz

@@ -4,7 +4,7 @@ mx-snapshot.conf	etc
 mx-snapshot-exclude.list	usr/local/share/excludes
 iso-template.tar.gz 	usr/lib/mx-snapshot
 translations/*.qm 	usr/share/mx-snapshot/locale
-mx-snapshot.png		usr/share/pixmaps
+mx-snapshot.svg		usr/share/pixmaps
 icons/*			usr/share/mx-snapshot/icons
 license.html		usr/share/doc/mx-snapshot
 scripts/copy-initrd-modules	usr/sbin

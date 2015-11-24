@@ -25,6 +25,6 @@ Comment[sv]=Skapa ett live iso snapshot av det system du kör.
 Exec=su-to-root -X -c mx-snapshot
 Terminal=false
 Type=Application
-Icon=system
+Icon=mx-snapshot
 Categories=GNOME;GTK;System;
 NoDisplay=false

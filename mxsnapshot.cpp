@@ -304,8 +304,10 @@ void mxsnapshot::closeInitrd(QString initrd_dir, QString file)
 {
     QDir::setCurrent(initrd_dir);
     QString cmd = "(find . | cpio -o -H newc --owner root:root | gzip -9) >" + file;
-    system(cmd.toUtf8());
+    runCmd(cmd);
     makeMd5sum(work_dir + "/iso-template/antiX", "initrd.gz");
+//    QDir::setCurrent("/");
+//    system("rm -r " + initrd_dir.toUtf8());
 }
 
 // Copying the iso-template filesystem
@@ -318,7 +320,7 @@ void mxsnapshot::copyNewIso()
     QString cmd = "tar xf /usr/lib/mx-snapshot/iso-template.tar.gz";
     runCmd(cmd);
 
-    cmd = "cp /boot/vmlinuz-" + kernel_used + " " + work_dir + "/iso-template/antiX/vmlinuz";        
+    cmd = "cp /boot/vmlinuz-" + kernel_used + " " + work_dir + "/iso-template/antiX/vmlinuz";
     runCmd(cmd);
 
     if(i686) {
@@ -340,34 +342,29 @@ void mxsnapshot::copyNewIso()
 
     QString initrd_dir = work_dir + "/initrd";
     openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir);
-
     QString mod_dir = initrd_dir + "/lib/modules";
     if (initrd_dir != "") {
         copyModules(initrd_dir, kernel_used);
         closeInitrd(initrd_dir, work_dir + "/iso-template/antiX/initrd.gz");
-        if (i686) {
-            cmd = "cp " + work_dir + "/iso-template/antiX/initrd.gz" + " " + work_dir + "/iso-template/antiX/initrd1.gz";
-            system(cmd.toUtf8());
-        }
     }
 }
 
 // replace text in menu items in grub.cfg, syslinux.cfg, isolinux.cfg
 void mxsnapshot::replaceMenuStrings() {
     if (i686) {
-        QString new_string = "MX-15_686-pae (" + getCmdOut("date +'%d %B %Y'") + ")";
-        replaceStringInFile("custom-name-pae", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
-        replaceStringInFile("custom-name-pae", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
-        replaceStringInFile("custom-name-pae", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
-        new_string = "MX-15_586-non-pae (" + getCmdOut("date +'%d %B %Y'") + ")";
-        replaceStringInFile("custom-name-non-pae", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
-        replaceStringInFile("custom-name-non-pae", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
-        replaceStringInFile("custom-name-non-pae", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
+        QString new_string = "MX-15 386 (" + getCmdOut("date +'%d %B %Y'") + ")";
+        replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
+        replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+        replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
+        new_string = "MX-15 385 (non pae)";
+        replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
+        replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+        replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
     } else {
         QString new_string = "MX-15_x64 (" + getCmdOut("date +'%d %B %Y'") + ")";
-        replaceStringInFile("custom-name-pae", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
-        replaceStringInFile("custom-name-pae", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
-        replaceStringInFile("custom-name-pae", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
+        replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
+        replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+        replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
     }
 }
 
@@ -422,16 +419,6 @@ void mxsnapshot::setupEnv()
     if (!work_dir.contains("/mx-snapshot")) {
         return;
     }
-    QDir dir;
-    // create an empty fstab file
-    system("touch " + work_dir.toUtf8() + "/fstabdummy");
-    // mount empty fstab file
-    system("mount --bind " + work_dir.toUtf8() + "/fstabdummy /etc/fstab");
-
-    // copy minstall.desktop to Desktop on all accounts
-    system("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/antix/minstall.desktop 2>/dev/null");
-    system("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/mx/minstall.desktop 2>/dev/null");
-    system("chmod +x /home/*/Desktop/minstall.desktop");
 
     // install mx-installer if absent
     if (!checkInstalled("mx-installer")) {
@@ -441,161 +428,21 @@ void mxsnapshot::setupEnv()
         }
     }
 
+    QDir dir;
+    // mount root partition to work directory
+    dir.mkpath(work_dir + "/ro_root");
+
     // setup environment if creating a respin (reset root/demo, remove personal accounts)
     if (reset_accounts) {
-        // fix antiX-init start-up
-        system("update-rc.d antiX-init defaults >/dev/null 2>&1");
-
-        // copy files that need to be edited to work_dir
-        system("cp /etc/passwd " + work_dir.toUtf8());
-        system("cp /etc/shadow " + work_dir.toUtf8());
-        system("cp /etc/gshadow " + work_dir.toUtf8());
-        system("cp /etc/group " + work_dir.toUtf8());
-        system("cp /etc/lightdm/lightdm.conf " + work_dir.toUtf8());
-
-        // mount root partition to work directory
-        dir.mkpath(work_dir + "/ro_root");
-        system(("mount --bind / " + work_dir + "/ro_root").toUtf8());
-        // make it read-only
-        system(("mount -o remount,ro,bind " + work_dir + "/ro_root").toUtf8());
-
-        // mount empty fstab file
-        system("mount --bind " + work_dir.toUtf8() + "/fstabdummy " + work_dir.toUtf8() + "/ro_root/etc/fstab");
-
-        // create work_dir/skel/Desktop
-        system("mkdir -p " + work_dir.toUtf8() + "/skel/Desktop");
-        // copy /etc/skel on work_dir/skel
-        system("rsync -a /etc/skel/ " + work_dir.toUtf8() + "/skel/");
-        // copy minstall.desktop to work_dir/skel/Desktop/
-        system("cp /usr/share/applications/antix/minstall.desktop " + work_dir.toUtf8() + "/skel/Desktop/Installer.desktop 2>/dev/null");
-        system("cp /usr/share/applications/mx/minstall.desktop " + work_dir.toUtf8() + "/skel/Desktop/Installer.desktop 2>/dev/null");
-        system("chmod +x " + work_dir.toUtf8() + "/skel/Desktop/Installer.desktop");
-        // mount ro_root/etc/skel
-        system("mount --bind " + work_dir.toUtf8() + "/skel " + work_dir.toUtf8() + "/ro_root/etc/skel");
-
-        // create dummyhome
-        dir.mkpath(work_dir + "/dummyhome");
-        // mount dummyhome on ro_root/home
-        system(("mount --bind " + work_dir + "/dummyhome " + work_dir + "/ro_root/home").toUtf8());
-
-        // detect additional users
-        QStringList users = listUsers();
-
-        // reset user accounts
-        createUser1000(); // checks if user with UID=1000 exists if not creates it to be used as "demo"
-        resetAccount("demo");
-        resetAccount("root");
-        resetOtherAccounts(users);
-        fixPermissions();
-
-        // mount files over
-        system(("mount --bind " + work_dir + "/passwd " + work_dir + "/ro_root/etc/passwd").toUtf8());
-        system(("mount --bind " + work_dir + "/shadow " + work_dir + "/ro_root/etc/shadow").toUtf8());
-        system(("mount --bind " + work_dir + "/gshadow " + work_dir + "/ro_root/etc/gshadow").toUtf8());
-        system(("mount --bind " + work_dir + "/group " + work_dir + "/ro_root/etc/group").toUtf8());
-        system(("mount --bind " + work_dir + "/lightdm.conf " + work_dir + "/ro_root/etc/lightdm/lightdm.conf").toUtf8());
+        system("installed-to-live -b " + work_dir.toUtf8() + "/ro_root start empty=/home general version-file");
+    } else {
+        // copy minstall.desktop to Desktop on all accounts
+        system("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/mx/minstall.desktop 2>/dev/null");
+        system("chmod +x /home/*/Desktop/minstall.desktop");
+        system("installed-to-live -b " + work_dir.toUtf8() + "/ro_root start bind=/home live-files version-file");
     }
 }
 
-// fix some permissions
-void mxsnapshot::fixPermissions()
-{
-    system("chgrp shadow " + work_dir.toUtf8() + "/shadow");
-    system("chgrp shadow " + work_dir.toUtf8() + "/gshadow");
-}
-
-// generates pair root/root and demo/demo passwords and replaces them in ../etc/shadow
-void mxsnapshot::resetAccount(QString user)
-{
-    QString cmd;
-    QString sfile = work_dir + "/shadow";
-    QString pfile = work_dir + "/passwd";
-    QString gfile = work_dir + "/gshadow";
-    QString grfile = work_dir + "/group";
-    QString lfile = work_dir + "/lightdm.conf";
-
-    // replaces user with UID=1000 with "demo"
-    if (user == "demo") {
-        QString user1000 = getCmdOut("grep 1000 " + pfile + "| cut -f1 -d':'");
-        if (user1000 != "") {
-            replaceStringInFile(user1000, "demo", sfile);
-            replaceStringInFile(user1000, "demo", pfile);
-            replaceStringInFile(user1000, "demo", gfile);
-            replaceStringInFile(user1000, "demo", grfile);
-            replaceStringInFile(user1000, "demo", lfile);
-            system("sed -i -r '/autologin-user=demo/ s/^#+//' " + lfile.toUtf8());
-        }
-    }
-    // replace password in shadow file
-    QString pass = getCmdOut("mkpasswd -m sha-512 " + user);
-    cmd = QString("awk -F\":\" 'BEGIN{OFS=\":\"}{if ($1 == \"%1\") $2=\"%2\"; print}' " + sfile + ">" + sfile + ".tmp").arg(user).arg(pass);
-    system(cmd.toUtf8());
-    system("mv " + sfile.toUtf8() + ".tmp " + sfile.toUtf8());
-}
-
-// list users that are available in /home and have a login shell
-QStringList mxsnapshot::listUsers()
-{
-    QStringList userList;
-    QStringList result;
-    QString pfile = work_dir + "/passwd";
-    // list all folders in /home with the exception of user uid 1000, demo, and snapshot
-    QString user1000 = getCmdOut("grep 1000 " + pfile + "| cut -f1 -d':'");
-    QString users = getCmdOut("ls /home | grep -v lost+found | grep -v " + user1000 + " | grep -v demo | grep -v snapshot | grep [a-zA-Z0-9]");
-    userList = users.split("\n");
-    for (int i = 0; i < userList.size(); ++i) {
-        if (userList.at(i) != "") {
-            // check if the found user has a regular log in shell
-            QString out = getCmdOut("grep " + userList.at(i) + "  " + pfile + "| cut -f7 -d:");
-            if (out.endsWith("sh")) {
-                result << userList.at(i);
-            }
-        }
-    }
-    return result;
-}
-
-// resets accounts
-void mxsnapshot::resetOtherAccounts(QStringList users)
-{
-    QString cmd;
-    QString sfile = work_dir + "/shadow";
-    QString pfile = work_dir + "/passwd";
-    QString gfile = work_dir + "/gshadow";
-    QString grfile = work_dir + "/group";
-
-    // remove users from the files
-    for (int i = 0; i < users.size(); ++i) {
-        cmd = QString("sed -i '/^%1:/d' " + sfile).arg(users.at(i));
-        system(cmd.toUtf8());
-        cmd = QString("sed -i '/^%1:/d' " + pfile).arg(users.at(i));
-        system(cmd.toUtf8());
-        cmd = QString("sed -i '/^%1:/d' " + gfile).arg(users.at(i));
-        system(cmd.toUtf8());
-        cmd = QString("sed -i '/^%1:/d' " + grfile).arg(users.at(i));
-        system(cmd.toUtf8());
-        cmd = QString("sed -i -r -e \"s/:%1(,|$)/:/\" -e \"s/,%1(,|$)/\\1/\" " + grfile).arg(users.at(i));
-        system(cmd.toUtf8());
-    }
-}
-
-// create a demo user with UID=1000 and copies the passwd/shadow files
-void mxsnapshot::createUser1000()
-{
-    QString pfile = work_dir + "/passwd";
-    QString user1000 = getCmdOut("grep 1000 " + pfile + "| cut -f1 -d':'");
-    if (user1000 == "") {
-        // create demo user with UID=1000
-        if (system("adduser --disabled-login --uid=1000 --no-create-home --gecos demo demo") == 0) {
-            // copy needed files to work directory
-            system("cp /etc/passwd " + work_dir.toUtf8());
-            system("cp /etc/shadow " + work_dir.toUtf8());
-            system("cp /etc/gshadow " + work_dir.toUtf8());
-            system("cp /etc/group " + work_dir.toUtf8());
-            system("deluser demo");
-        }
-    }
-}
 
 // create squashfs and then the iso
 bool mxsnapshot::createIso(QString filename)
@@ -606,10 +453,7 @@ bool mxsnapshot::createIso(QString filename)
 
     // squash the filesystem copy
     QDir::setCurrent(work_dir);
-    QString source_path = "/";
-    if (reset_accounts) {
-        source_path = work_dir + "/ro_root";
-    }
+    QString source_path = work_dir + "/ro_root";
     cmd = "mksquashfs " + source_path + " iso-template/antiX/linuxfs " + mksq_opt + " -wildcards -ef " + snapshot_excludes.fileName() + " " + session_excludes;
     ui->outputLabel->setText(tr("Squashing filesystem..."));
     if (runCmd(cmd) != 0) {
@@ -661,32 +505,15 @@ void mxsnapshot::cleanUp()
     ui->outputLabel->setText(tr("Cleaning..."));
     QDir::setCurrent("/");
 
-    // umount empty fstab file
-    system("umount /etc/fstab");
-
     // checks if work_dir looks OK
     if (work_dir.contains("/mx-snapshot")) {
-        // clean mount points if resetting accounts
-        if (reset_accounts) {
-            system("umount " + work_dir.toUtf8() + "/ro_root/etc/passwd >/dev/null 2>&1");
-            system("umount " + work_dir.toUtf8() + "/ro_root/etc/shadow >/dev/null 2>&1");
-            system("umount " + work_dir.toUtf8() + "/ro_root/etc/gshadow >/dev/null 2>&1");
-            system("umount " + work_dir.toUtf8() + "/ro_root/etc/lightdm/lightdm.conf >/dev/null 2>&1");
-            system("umount " + work_dir.toUtf8() + "/ro_root/home/demo >/dev/null 2>&1");
-            system("umount " + work_dir.toUtf8() + "/ro_root/home >/dev/null 2>&1");
-            system("umount " + work_dir.toUtf8() + "/ro_root/etc/fstab >/dev/null 2>&1");
-            system("umount " + work_dir.toUtf8() + "/ro_root/etc/skel >/dev/null 2>&1");
-            if (system("umount -l " + work_dir.toUtf8() + "/ro_root") != 0) {
-                return; // exit if it cannot unmount /ro_root
-            }
+        if (runCmd("installed-to-live cleanup")) {
+            system("rm -r " + work_dir.toUtf8());
         }
-        system("rm " + work_dir.toUtf8() + "/fstabdummy");
-        system("rm -r " + work_dir.toUtf8());
     }
-    if (!live) {
+    if (!live && !reset_accounts) {
         // remove installer icon
         system("rm /home/*/Desktop/minstall.desktop");
-        system("rm /etc/skel/Desktop/Installer.desktop");
     }
     ui->outputLabel->clear();
 }
