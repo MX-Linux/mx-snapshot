@@ -1,3 +1,10 @@
+mx-snapshot (15.12mx15) mx; urgency=medium
+
+  * Minor changes to boot config files.
+  * copy-initrd-modules in-Sync with one in build iso  
+
+ -- anticapitalista <antiX@operamail.com>  Tue, 01 Dec 2015 15:00:00 +0200
+
 mx-snapshot (15.11mx15) mx; urgency=medium
 
   * changed to use installed-to-live script 

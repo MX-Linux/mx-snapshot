@@ -8,7 +8,7 @@ MENU TITLE Welcome to MX-15 (Fusion)
 LABEL live
     MENU LABEL custom-name
     KERNEL /antiX/vmlinuz
-    APPEND quiet nosysv=X 
+    APPEND quiet 
     INITRD /antiX/initrd.gz
 
 LABEL harddisk
