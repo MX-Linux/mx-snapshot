@@ -42,6 +42,7 @@ block
 btrfs
 cdrom
 crc16
+crc32c-generic
 crct10dif-pclmul
 crct10dif_common
 crct10dif_generic

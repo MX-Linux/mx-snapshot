@@ -16,7 +16,7 @@ set menu_color_highlight=black/light-gray
 
 menuentry "custom-name" {
 	set gfxpayload=keep
-	linux	/antiX/vmlinuz quiet nosysv=X
+	linux	/antiX/vmlinuz quiet
 	initrd	/antiX/initrd.gz
 }
 
@@ -28,6 +28,6 @@ menuentry "Failsafe" {
 
 menuentry "Custom Boot (with menus)" {
 	set gfxpayload=keep
-	linux	/antiX/vmlinuz quiet menus nosysv=X
+	linux	/antiX/vmlinuz quiet menus
 	initrd	/antiX/initrd.gz
 }
