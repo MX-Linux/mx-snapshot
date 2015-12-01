@@ -18,20 +18,20 @@ Changes:
  .
    * new build
 Checksums-Sha1: 
- b88ff95e6f8c0c73bac0ceaa46043d37e8d3e2f2 5718412 mx-snapshot_15.12.1mx15_i386.deb
+ 7af8870426071823d4186db76121cf1bf0a5029e 5718494 mx-snapshot_15.12.1mx15_i386.deb
 Checksums-Sha256: 
- 400fed772399101e75b9e577713619d9b058b1770ced24723eebd6b5f4e4b3f9 5718412 mx-snapshot_15.12.1mx15_i386.deb
+ 0abfeeb46de2015d86145e9c3023ea7b577804b9eec7f5686611477f5e9727b8 5718494 mx-snapshot_15.12.1mx15_i386.deb
 Files: 
- 7ac16e8cf2cda505e0064ef5f6573273 5718412 admin optional mx-snapshot_15.12.1mx15_i386.deb
+ 479e1dd75b357009d2ded285724f76fa 5718494 admin optional mx-snapshot_15.12.1mx15_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.12 (GNU/Linux)
 
-iQEcBAEBAgAGBQJWXcDlAAoJEHCTjHgGee6YeywIAM+GFcS7U1Q8NGJdNwIOf9kF
-n3y5QMfp3ACf8DCGRjnzhJCHsVWNuQW1ZK1EjxF88SSCTaThj5SxSR43Wlw6PqAE
-BUPzaI6mpHJGVsxo3ifyaPZ/Rs5mqOgeI6F5zF4T1lWcOmXWbflxlx3IlXgF2taY
-3UQWaG8nrPBJLZfti7qv88w9+n8I66Hf36arQjFCrhtGdsAcbPbOVQrqm9VMgVx2
-0HoIlpkwXwB6QbzoCNUdUQkih+XC4IBNOhm4NBrdi9tIDEl1ziGwqlBx866zdruj
-2pmV3s0dpHxECeDG6IeZlK1uswQthbPTLQBY1606RuklBPOG2fNqp4A+llx/sUk=
-=xPw3
+iQEcBAEBAgAGBQJWXhsfAAoJEHCTjHgGee6Y5SAH/1yGxtosKeQRWgUb1vOV4pWe
+kffkiCpKoS6O8IiYuK2oxtc80iILnv9FXl3CdvfB2jBbUKaYiygfCLYifPW1qBVL
+dhz16bayTcmk9qRQI+FWZaLAkqEkl2ooFGoUpuCmWxDvhL6pGm2y2M7+umwR6+u1
+SY8DruNuF/l4L4jfyCYYVvOT77nfvT63lauyXNsavKXTKHeP+qjeAa6chZDBQgbk
+aG0HAfVH6bZct01LFF4GQcsk3YX9zXz3j/W2JC1nSDsdLhkdMQ+w4o5avIVOwsrD
+LO8wAKnaOWfC1Dxwe9xUl5P784yx6k9ueiiFdBMK39Vjpm7iFMpkVrYSG+5nFiI=
+=me2V
 -----END PGP SIGNATURE-----
