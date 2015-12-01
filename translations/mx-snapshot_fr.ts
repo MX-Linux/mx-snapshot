@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.0">
 <context>
     <name>QApplication</name>
     <message>
@@ -272,11 +270,6 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
         <location filename="../mxsnapshot.cpp" line="505"/>
         <source>Cleaning...</source>
         <translation>Nettoyage</translation>
-    </message>
-    <message>
-        <source>Removing live-init-mx</source>
-        <translation type="vanished">On enlève live-init-mx
-</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="556"/>

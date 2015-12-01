@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.0">
 <context>
     <name>QApplication</name>
     <message>
@@ -213,7 +211,7 @@
         <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
 
 Will install leafpad and use it this time.</source>
-        <translation>Графический текстовый редактор есть на %1, но он не установлен. Редактируйте %2 и установите переменную gui_editor на редактор по Вашему выбору. (Например: /usr/bin/gedit, /usr/bin/leafpad)
+        <translation>Графическим текстовым редактором назначен %1, но он не установлен. Редактируйте %2 и установите переменную gui_editor на редактор по Вашему выбору. (Например: /usr/bin/gedit, /usr/bin/leafpad)
 
 Выберите leafpad на этот раз.</translation>
     </message>
@@ -273,10 +271,6 @@ Will install leafpad and use it this time.</source>
         <location filename="../mxsnapshot.cpp" line="505"/>
         <source>Cleaning...</source>
         <translation>Очистка...</translation>
-    </message>
-    <message>
-        <source>Removing live-init-mx</source>
-        <translation type="vanished">Удаление live-init-mx</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="556"/>
