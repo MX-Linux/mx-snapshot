@@ -1,3 +1,9 @@
+mx-snapshot (15.12.1mx15) mx; urgency=medium
+
+  * new build
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 01 Dec 2015 09:23:25 -0500
+
 mx-snapshot (15.12mx15) mx; urgency=medium
 
   * Minor changes to boot config files.
