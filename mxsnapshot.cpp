@@ -30,7 +30,7 @@
 #include <QScrollBar>
 #include <QTextStream>
 
-//#include <QDebug>
+#include <QDebug>
 
 mxsnapshot::mxsnapshot(QWidget *parent) :
     QDialog(parent),
@@ -503,11 +503,12 @@ void mxsnapshot::cleanUp()
     QString cmd;
     ui->stackedWidget->setCurrentWidget(ui->outputPage);
     ui->outputLabel->setText(tr("Cleaning..."));
+    system("pkill mksquashfs; pkill md5sum");
     QDir::setCurrent("/");
 
     // checks if work_dir looks OK
-    if (work_dir.contains("/mx-snapshot")) {
-        if (runCmd("installed-to-live cleanup")) {
+    if (work_dir.contains("/mx-snapshot")) {        
+        if (system("installed-to-live cleanup") == 0) {
             system("rm -r " + work_dir.toUtf8());
         }
     }
