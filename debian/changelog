@@ -1,3 +1,9 @@
+mx-snapshot (15.12.4mx15) mx; urgency=medium
+
+  * initrd.gz fixes
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 08 Dec 2015 12:04:05 -0500
+
 mx-snapshot (15.12.3mx15) mx; urgency=medium
 
   *added initrd-release and live-hwclock to initrd.gz
