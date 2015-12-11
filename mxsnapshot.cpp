@@ -306,8 +306,6 @@ void mxsnapshot::closeInitrd(QString initrd_dir, QString file)
     QString cmd = "(find . | cpio -o -H newc --owner root:root | gzip -9) >" + file;
     runCmd(cmd);
     makeMd5sum(work_dir + "/iso-template/antiX", "initrd.gz");
-//    QDir::setCurrent("/");
-//    system("rm -r " + initrd_dir.toUtf8());
 }
 
 // Copying the iso-template filesystem
@@ -341,8 +339,8 @@ void mxsnapshot::copyNewIso()
     makeMd5sum(work_dir + "/iso-template/antiX", "vmlinuz");
 
     QString initrd_dir = work_dir + "/initrd";
-    openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir);
-    QString mod_dir = initrd_dir + "/lib/modules";
+    openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir);                     
+    runCmd("cp /usr/local/share/live-files/files/etc/initrd-release " + initrd_dir + "/etc");
     if (initrd_dir != "") {
         copyModules(initrd_dir, kernel_used);
         closeInitrd(initrd_dir, work_dir + "/iso-template/antiX/initrd.gz");

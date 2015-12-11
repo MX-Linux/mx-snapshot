@@ -1,3 +1,9 @@
+mx-snapshot (15.12.5mx15) mx; urgency=medium
+
+  * copy initrrd-release file to initrd.gz
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 11 Dec 2015 10:33:54 -0500
+
 mx-snapshot (15.12.4mx15) mx; urgency=medium
 
   * initrd.gz fixes

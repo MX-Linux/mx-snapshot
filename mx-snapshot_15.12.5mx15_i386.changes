@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Fri, 11 Dec 2015 10:33:54 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 15.12.5mx15
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (15.12.5mx15) mx; urgency=medium
+ .
+   * copy initrrd-release file to initrd.gz
+Checksums-Sha1:
+ dc1d282127bd80c8233219b928a5d54e8073cfb4 5747482 mx-snapshot_15.12.5mx15_i386.deb
+Checksums-Sha256:
+ 0fbe098ca1ad3ea3fd69470c9331b3f7a11f781d01158df4693e159596a22f80 5747482 mx-snapshot_15.12.5mx15_i386.deb
+Files:
+ 68103c8e5fe06e3a8a36e767f28ef9ba 5747482 admin optional mx-snapshot_15.12.5mx15_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJWau95AAoJEHCTjHgGee6Yfp4H/2PWCxbYmzCCw2NlQDEfmOsy
+w5x4d4JarWNjOFxSXr9S3H/v3WgkPXTS0C/9dO/ECtQ+AhFl+PNJYsCerf3SLqr8
+b/bC/CnvxzEEZi9W1IOrPA7Uqm65kbStL0HgyPtSKlXLClqbmAxIYGXl/kirjNTb
+kmZFwCLT7e9laJBy81xyb+VojAi88f7f4aXtEA51Az+6EBLe4IE1FnjgDOMB2/F5
+9zwxJbgxEI1SOSL/0nPeJDARJ9Q/Nns1F2kuIzUNA/ai3QUIwFgHSA++HWmKe9PM
+VSwCZ0Tqc6rJwfp1tiDf26cF2apcf6AWwOE61GXNn2fbRAO+752G+l/evMgfIgw=
+=n1MV
+-----END PGP SIGNATURE-----
