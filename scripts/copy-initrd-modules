@@ -70,6 +70,7 @@ nls-utf8
 ntfs
 ohci-pci
 ohci_hcd
+overlay
 pcie-aspm
 printk
 pstore

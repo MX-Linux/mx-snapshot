@@ -1,3 +1,9 @@
+mx-snapshot (15.12.6mx15) mx; urgency=medium
+
+  * copy linuxfs before creating ISO
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 14 Dec 2015 14:44:47 -0500
+
 mx-snapshot (15.12.5mx15) mx; urgency=medium
 
   * copy initrrd-release file to initrd.gz
