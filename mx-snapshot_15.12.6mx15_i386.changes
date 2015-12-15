@@ -18,20 +18,20 @@ Changes:
  .
    * copy linuxfs before creating ISO
 Checksums-Sha1:
- 8867af1982863137de77d6aafa0aed0aa1138cf2 5836176 mx-snapshot_15.12.6mx15_i386.deb
+ af02df63b532a184788b590ddee811f4d3532d65 5753246 mx-snapshot_15.12.6mx15_i386.deb
 Checksums-Sha256:
- cfea8226f7f59f78b27a9322aac3a0be47fafb1009c1c3f3611f859d1a47995a 5836176 mx-snapshot_15.12.6mx15_i386.deb
+ 6c6ae9ef23af1a83fb8029973fee6931bfabd91497aacd29b4f280ebb40e4263 5753246 mx-snapshot_15.12.6mx15_i386.deb
 Files:
- 96041050a281addd049955142621491e 5836176 admin optional mx-snapshot_15.12.6mx15_i386.deb
+ 11b628455419c4c1e5c4b23e351cb85f 5753246 admin optional mx-snapshot_15.12.6mx15_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJWbyRVAAoJEHCTjHgGee6YwXkH/iTYwPWcJCaxC5h4ZvKRoc2E
-OnOo8S5ag5RiY36IZ20yU9NKUz6s6XdYT2xVoPgBIg6gyPadiKo3J+FPj3pPHYsL
-riQNzuh18f9snMoVOtFIPOQQiICEQI0yyjcrktD8L5CWaOYT6W4pWKWpOsW9KcIK
-/8PPUAnYoGTxvIuxd2Bq8vkvF7UTS8c6z0KJu4jeSuH4kXrWqQa/9jhjDCqWHwJQ
-txhgiuaEJFra/yDdn+U0HFjdg2AxRu9lH6QCKszcm/eXex4yOW/cSzJYMYzx1b2B
-er28YVsbhAk6FfT2D1VgKbX0gDSY9sSxs/Bn1hJd6R1WUxt4I0rmcYGEcv1zTmw=
-=muQO
+iQEcBAEBAgAGBQJWcDKQAAoJEHCTjHgGee6Y3noH/RU1HerCMj0lq7k32fNEQqT2
+w05AZ0bsopv6AKXIrc43XrWZw5U+2hyk1JJTddvH0KKCeFrKdRBSA1U+mHW32qI7
+Vi6xmGVG2kc0kXsGU1OWks/zZppt2KZOnJi6c/hvuqvMsUQwvHLk0edPlnsKm/vH
+1hLOVmHv03gBTOnvVzQQvIV0hQjjHy2KWKhoxximT+aKvE/WAZZ72I2LacyK+txp
+fwzjawUIqphhqHqSzHszioEKYfxbjwafU7JIXamvStePrIra73MqdjESvIUzfhiL
+G+qzn+QqF3OKrMPrVWZshvNOIB/M3DO9ECo8XHdC1JtOpeO+IVKUeS1vg4Yb3Ck=
+=4Yzx
 -----END PGP SIGNATURE-----
