@@ -12,6 +12,7 @@ proc/*
 tmp
 live/*
 boot/grub/*
+etc/adjtime
 etc/blkid.tab.old
 etc/defaultdomain
 etc/fstab.backup
