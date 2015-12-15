@@ -425,19 +425,14 @@ void mxsnapshot::setupEnv()
             runCmd("apt-get install mx-installer");
         }
     }
-
-    QDir dir;
-    // mount root partition to work directory
-    dir.mkpath(work_dir + "/ro_root");
-
     // setup environment if creating a respin (reset root/demo, remove personal accounts)
     if (reset_accounts) {
-        system("installed-to-live -b " + work_dir.toUtf8() + "/ro_root start empty=/home general version-file");
+        system("installed-to-live start empty=/home general version-file");
     } else {
         // copy minstall.desktop to Desktop on all accounts
         system("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/mx/minstall.desktop 2>/dev/null");
         system("chmod +x /home/*/Desktop/minstall.desktop");
-        system("installed-to-live -b " + work_dir.toUtf8() + "/ro_root start bind=/home live-files version-file");
+        system("installed-to-live start bind=/home live-files version-file");
     }
 }
 
@@ -451,8 +446,7 @@ bool mxsnapshot::createIso(QString filename)
 
     // squash the filesystem copy
     QDir::setCurrent(work_dir);
-    QString source_path = work_dir + "/ro_root";
-    cmd = "mksquashfs " + source_path + " iso-template/antiX/linuxfs " + mksq_opt + " -wildcards -ef " + snapshot_excludes.fileName() + " " + session_excludes;
+    cmd = "mksquashfs /bind-root iso-template/antiX/linuxfs " + mksq_opt + " -wildcards -ef " + snapshot_excludes.fileName() + " " + session_excludes;
     ui->outputLabel->setText(tr("Squashing filesystem..."));
     if (runCmd(cmd) != 0) {
         QMessageBox::critical(0, tr("Error"), tr("Could not create linuxfs file, please check whether you have enough space on the destination partition."));
@@ -507,12 +501,11 @@ void mxsnapshot::cleanUp()
     ui->outputLabel->setText(tr("Cleaning..."));
     system("pkill mksquashfs; pkill md5sum");
     QDir::setCurrent("/");
+    system("installed-to-live cleanup");
 
     // checks if work_dir looks OK
     if (work_dir.contains("/mx-snapshot")) {        
-        if (system("installed-to-live cleanup") == 0) {
-            system("rm -r " + work_dir.toUtf8());
-        }
+        system("rm -r " + work_dir.toUtf8());
     }
     if (!live && !reset_accounts) {
         // remove installer icon

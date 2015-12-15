@@ -1,3 +1,9 @@
+mx-snapshot (15.12.7mx15) mx; urgency=medium
+
+  * use /bind-root 
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 15 Dec 2015 18:21:28 -0500
+
 mx-snapshot (15.12.6mx15) mx; urgency=medium
 
   * copy linuxfs before creating ISO
