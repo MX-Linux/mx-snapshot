@@ -340,7 +340,7 @@ void mxsnapshot::copyNewIso()
 
     QString initrd_dir = work_dir + "/initrd";
     openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir);                     
-    runCmd("cp /usr/local/share/live-files/files/etc/initrd-release " + initrd_dir + "/etc");
+    runCmd("test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release " + initrd_dir + "/etc");
     if (initrd_dir != "") {
         copyModules(initrd_dir, kernel_used);
         closeInitrd(initrd_dir, work_dir + "/iso-template/antiX/initrd.gz");
