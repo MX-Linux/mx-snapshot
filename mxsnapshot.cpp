@@ -100,7 +100,6 @@ void mxsnapshot::setup()
 // Util function for getting bash command output
 QString mxsnapshot::getCmdOut(QString cmd)
 {
-    qApp->processEvents();
     QEventLoop loop;
     connect(proc, SIGNAL(finished(int)), &loop, SLOT(quit()));
     proc->start("/bin/bash", QStringList() << "-c" << cmd);
