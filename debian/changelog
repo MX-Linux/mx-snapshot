@@ -1,3 +1,9 @@
+mx-snapshot (15.12.10mx15) mx; urgency=medium
+
+  * initrd.gz upates
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 16 Dec 2015 18:21:04 -0500
+
 mx-snapshot (15.12.9mx15) mx; urgency=medium
 
   * fixed bug that crashed app when selecting different folder
