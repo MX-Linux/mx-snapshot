@@ -2,7 +2,7 @@
 # version 15.2.20
 
 # Do NOT edit this entry block unless you know what you are doing
-bind-root
+.bind-root
 dev/*
 cdrom/*
 media/*

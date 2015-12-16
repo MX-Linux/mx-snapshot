@@ -1,3 +1,9 @@
+mx-snapshot (15.12.8mx15) mx; urgency=medium
+
+  * put bind-root in a hidden folder, mount read-only
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 16 Dec 2015 08:32:10 -0500
+
 mx-snapshot (15.12.7mx15) mx; urgency=medium
 
   * use /bind-root 

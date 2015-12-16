@@ -427,12 +427,12 @@ void mxsnapshot::setupEnv()
     }
     // setup environment if creating a respin (reset root/demo, remove personal accounts)
     if (reset_accounts) {
-        system("installed-to-live start empty=/home general version-file");
+        system("installed-to-live -b /.bind-root start empty=/home general version-file read-only");
     } else {
         // copy minstall.desktop to Desktop on all accounts
         system("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/mx/minstall.desktop 2>/dev/null");
         system("chmod +x /home/*/Desktop/minstall.desktop");
-        system("installed-to-live start bind=/home live-files version-file");
+        system("installed-to-live -b /.bind-root start bind=/home live-files version-file adjtime read-only");
     }
 }
 
@@ -446,7 +446,7 @@ bool mxsnapshot::createIso(QString filename)
 
     // squash the filesystem copy
     QDir::setCurrent(work_dir);
-    cmd = "mksquashfs /bind-root iso-template/antiX/linuxfs " + mksq_opt + " -wildcards -ef " + snapshot_excludes.fileName() + " " + session_excludes;
+    cmd = "mksquashfs /.bind-root iso-template/antiX/linuxfs " + mksq_opt + " -wildcards -ef " + snapshot_excludes.fileName() + " " + session_excludes;
     ui->outputLabel->setText(tr("Squashing filesystem..."));
     if (runCmd(cmd) != 0) {
         QMessageBox::critical(0, tr("Error"), tr("Could not create linuxfs file, please check whether you have enough space on the destination partition."));
