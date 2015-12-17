@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Thu, 17 Dec 2015 13:05:04 +0200
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source i386
+Version: 15.12.11mx15
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: anticapitalista <antiX@operamail.com>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (15.12.11mx15) mx; urgency=medium
+ .
+   * initrd.gz locale upates
+Checksums-Sha1:
+ ab6c4cba8b57e5f218b75255ba21e7adcab4c54f 679 mx-snapshot_15.12.11mx15.dsc
+ bc2d889d44af2ee9deec9b19267d3193ef05f3da 3620380 mx-snapshot_15.12.11mx15.tar.xz
+ 8dd0dd142bca5153176a9e7eadaf1444c7fd7cf0 5705158 mx-snapshot_15.12.11mx15_i386.deb
+Checksums-Sha256:
+ 2c2164ad200dd3a3696c4e6bc7c35b58ebe3c6ee5565735266c7fda021709820 679 mx-snapshot_15.12.11mx15.dsc
+ 123f37746d0611e3404c9efd94ae88ab105cd182cdaa605472b4476323f9efaf 3620380 mx-snapshot_15.12.11mx15.tar.xz
+ c27ec0b38e251a9d4d3dffd505e6674efde5da2b40e718add9d8115cdbf506af 5705158 mx-snapshot_15.12.11mx15_i386.deb
+Files:
+ 64e56b504030dc5cd0a72af69ffab36a 679 admin optional mx-snapshot_15.12.11mx15.dsc
+ 1ffe9d8f09becd3b791bee6f1580ed19 3620380 admin optional mx-snapshot_15.12.11mx15.tar.xz
+ 8062fc485ed2adae1c935df51dc6cc93 5705158 admin optional mx-snapshot_15.12.11mx15_i386.deb

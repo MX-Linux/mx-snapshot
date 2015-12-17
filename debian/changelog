@@ -1,3 +1,9 @@
+mx-snapshot (15.12.11mx15) mx; urgency=medium
+
+  * initrd.gz locale upates
+
+ -- anticapitalista <antiX@operamail.com>  Thu, 17 Dec 2015 13:05:04 +0200
+
 mx-snapshot (15.12.10mx15) mx; urgency=medium
 
   * initrd.gz upates
