@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Sat, 19 Dec 2015 09:21:16 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 15.12.12mx15
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (15.12.12mx15) mx; urgency=medium
+ .
+   * split iso-template in a different package
+Checksums-Sha1:
+ 0df5120f3d0783a6869a8d52d9771dd590aa018b 79104 mx-snapshot_15.12.12mx15_i386.deb
+Checksums-Sha256:
+ 4bd521cf1d37f57429d284b330ddd3ea1d9faa76eff59a9b27fab254584167e7 79104 mx-snapshot_15.12.12mx15_i386.deb
+Files:
+ 6cf2a8bfb169ad7e9f2607c6888f5b25 79104 admin optional mx-snapshot_15.12.12mx15_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJWdXIEAAoJEHCTjHgGee6YRkUH/2o3DEzslZB0H6X4jxQbxg09
+Fb6EQX4hxM401wrf58xJGcMejmY8A3MlLk/PWl26GK/XrT5QR41d970zeWQUyiwe
+vTFTk6PyZC+2V4u8e9VAStcbpwG4JV5vYKnPDTZRphfrFKVu+Z8MYJcOBqhJR22a
+YpxtLz7qT4NJ80lpOB8VF2ixEhwtYpBpsZ6pV7W05SBoijGJh0QHET67TNp8Epgc
+ZKY4uzwsWmJprt1uLOsAFywlvfNppGbc4kvlt2iDqybx96JTjX7ckyBG5I3bJWq+
+/Bo0uYN2GPXXvErHqTCr3TddihqGhqd7JTIm2FB0pGaqbJU2GpTmvwrNsVd3AUc=
+=oYkz
+-----END PGP SIGNATURE-----

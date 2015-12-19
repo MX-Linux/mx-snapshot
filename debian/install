@@ -2,7 +2,6 @@ mx-snapshot 		usr/bin
 mx-snapshot.desktop	usr/share/applications/mx
 mx-snapshot.conf	etc
 mx-snapshot-exclude.list	usr/local/share/excludes
-iso-template.tar.gz 	usr/lib/mx-snapshot
 translations/*.qm 	usr/share/mx-snapshot/locale
 mx-snapshot.svg		usr/share/pixmaps
 icons/*			usr/share/mx-snapshot/icons

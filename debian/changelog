@@ -1,3 +1,9 @@
+mx-snapshot (15.12.12mx15) mx; urgency=medium
+
+  * split iso-template in a different package 
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 19 Dec 2015 09:21:16 -0500
+
 mx-snapshot (15.12.11mx15) mx; urgency=medium
 
   * initrd.gz locale upates
