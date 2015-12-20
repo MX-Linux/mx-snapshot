@@ -18,20 +18,20 @@ Changes:
  .
    * split iso-template in a different package
 Checksums-Sha1:
- 0df5120f3d0783a6869a8d52d9771dd590aa018b 79104 mx-snapshot_15.12.12mx15_i386.deb
+ 0ecc1043948513b3b0f74a91d31bfd472b5e739e 79052 mx-snapshot_15.12.12mx15_i386.deb
 Checksums-Sha256:
- 4bd521cf1d37f57429d284b330ddd3ea1d9faa76eff59a9b27fab254584167e7 79104 mx-snapshot_15.12.12mx15_i386.deb
+ 12caaafcecd95853ffe341b330c7a4494c4f6c092d7c1fe4a2a7fe8a0b90cdbf 79052 mx-snapshot_15.12.12mx15_i386.deb
 Files:
- 6cf2a8bfb169ad7e9f2607c6888f5b25 79104 admin optional mx-snapshot_15.12.12mx15_i386.deb
+ 1d268b6527054148f8e9330ea2967f57 79052 admin optional mx-snapshot_15.12.12mx15_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJWdXIEAAoJEHCTjHgGee6YRkUH/2o3DEzslZB0H6X4jxQbxg09
-Fb6EQX4hxM401wrf58xJGcMejmY8A3MlLk/PWl26GK/XrT5QR41d970zeWQUyiwe
-vTFTk6PyZC+2V4u8e9VAStcbpwG4JV5vYKnPDTZRphfrFKVu+Z8MYJcOBqhJR22a
-YpxtLz7qT4NJ80lpOB8VF2ixEhwtYpBpsZ6pV7W05SBoijGJh0QHET67TNp8Epgc
-ZKY4uzwsWmJprt1uLOsAFywlvfNppGbc4kvlt2iDqybx96JTjX7ckyBG5I3bJWq+
-/Bo0uYN2GPXXvErHqTCr3TddihqGhqd7JTIm2FB0pGaqbJU2GpTmvwrNsVd3AUc=
-=oYkz
+iQEcBAEBAgAGBQJWdjbWAAoJEHCTjHgGee6YVwgH/A90nk3l/alj+B0cLm7i4pP/
+W6ixXv0dLAUXsxcGEsB9k8ZXhybynh3FurmVWBfX11+LTIPm92g6IJk2/spzQW/K
+rdCHXoQglm8u70oMsQnmJfWtU2CuU9qw01j6HYTO1vxe26euoHTEohwuO6NVb7ER
+3MtRTwXPk5nOw5hTWqMipEJQQoezhyW9ifRYAEDXLqL9/qTROsRLLA37dr0BHm6O
+alsEGAl3JpXMhFlEgTTdjVUeuBuYpOdIwNQCNmy567vtOzFSoSprfsbeG+WJmT4F
+mn0QlJrGNhLrlIp70XrCeLzfuIoMJoYgOjiiZwsxLlETX0AtwtVhfPqtg9xmqPQ=
+=3aHx
 -----END PGP SIGNATURE-----

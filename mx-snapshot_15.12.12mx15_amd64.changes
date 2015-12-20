@@ -18,26 +18,26 @@ Changes:
  .
    * split iso-template in a different package
 Checksums-Sha1:
- 6ccc035b2178928a1530ae7ca6d475dea1cae64a 1194 mx-snapshot_15.12.12mx15.dsc
- 255e093eefca467b8a2fc63aeba14815614dfcea 79408 mx-snapshot_15.12.12mx15.tar.xz
- f997c65228e0ddcdd588ae2776d6a16882231e5a 77756 mx-snapshot_15.12.12mx15_amd64.deb
+ 33a33a7596c26af194e688395f662516036defdd 1200 mx-snapshot_15.12.12mx15.dsc
+ f5cc1a3a70478d5cd50c0ec36c9726e120e28e8a 4175400 mx-snapshot_15.12.12mx15.tar.xz
+ d83d65e7f371fd68af198eb4967a22bc5140ac66 77682 mx-snapshot_15.12.12mx15_amd64.deb
 Checksums-Sha256:
- a53c6c956cf12d11619699323519cce82b783aae241d8ecaf1bea0ffd99f5310 1194 mx-snapshot_15.12.12mx15.dsc
- ea94f3c65b5ab2edcfd569956b8311c831bcc3b58abad412588b8521db347f30 79408 mx-snapshot_15.12.12mx15.tar.xz
- f73b9d7f57a4650039daa9b7ff40b023132e99f707a0b905fd6cd9a97b9e9789 77756 mx-snapshot_15.12.12mx15_amd64.deb
+ de36c50c3d65b38b5783f67a5c308cc51b0fca58551e67c14f4ba4c0cab025bf 1200 mx-snapshot_15.12.12mx15.dsc
+ 0ebff3930a010794f466c16d8a2896c7868247a67516ec6e19a237e2be44c5df 4175400 mx-snapshot_15.12.12mx15.tar.xz
+ f851f7bc3d01b6e6555917fc210662f70e6d22effcd1757b1429b1c222902fd6 77682 mx-snapshot_15.12.12mx15_amd64.deb
 Files:
- 08d0b4536558b8d5be49d8752c51b2b3 1194 admin optional mx-snapshot_15.12.12mx15.dsc
- b2a678d5933c8a86da856c222afdf43e 79408 admin optional mx-snapshot_15.12.12mx15.tar.xz
- 21e536c52daf120d35a7ca4dba5a4fbd 77756 admin optional mx-snapshot_15.12.12mx15_amd64.deb
+ bb2c4882c3308eb16fc1c0d1fa16d266 1200 admin optional mx-snapshot_15.12.12mx15.dsc
+ b729576d83479a7deaa62c369abfd91e 4175400 admin optional mx-snapshot_15.12.12mx15.tar.xz
+ 784eef804dc58bd6e2eeb9f98d4e18cf 77682 admin optional mx-snapshot_15.12.12mx15_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJWdWioAAoJEHCTjHgGee6YNDcIAMciHtKnjbOzErW7tlVRb0ME
-kHkrj0v8MT69cbE7a+5/a9TY9qAgJQZCUXGssXIG81dw5vGq9HIUmYRAe9zjhTTg
-0e11HisUUer0qP2XgSegqAoCH6e4iw7sRmaYzhi8+oJXZrY6PNaDJEzDp+T/WZS6
-5pWN7tmXq20if6m9ymg+4ktq7QUndN3uniJsUA7OQPrYtHy+xrINPwoFiyUMSN8L
-alqWEg9Ude8kuMGqqHtiicteDrp8TiOFqx3UMBkCCzUv+XnLKpEUDM8Mx+g9JmLB
-d7sfjVyrtFSWw0qOZTBPtwyEhWWSsFKPfz/wiz1XO49t7vj1BuDl0aRcJx3monU=
-=E3ZA
+iQEcBAEBAgAGBQJWdjX+AAoJEHCTjHgGee6YPDcH/0Iv/65uViwRJQGOy6klNIOa
+x2O4EjHS7Qqbyq/v6zwmRByyyi+jR8A5N/Q5pkHJdGTrPLu8pqJVCHg7E1flFkuG
+JsPSMb6Ml0ixvi5lfZ+GhRUt/05bMXgTsuCR0YL10sulpPCCeIymkYJzgsZOUyt+
+A2B6H/+JQEyiUjvpO7Gk7OqY2KlZnIbz74/MlmgMn1/q/PJDRJLHTAFAWzHDned/
+LnVR5wmwlzLD4oXH56OYwaAeZx4qYrOVEhBOz1FAMK8xilSrQDwcezt34nlPbNyV
+Ye8TNiXVpTBDRyvlUTeJUYN/WMazORek5ouCtG4b4DBLBKBOGJNQfWfjPaRGnTs=
+=vsPR
 -----END PGP SIGNATURE-----
