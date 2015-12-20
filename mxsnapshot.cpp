@@ -340,7 +340,11 @@ void mxsnapshot::copyNewIso()
     makeMd5sum(work_dir + "/iso-template/antiX", "vmlinuz");
 
     QString initrd_dir = work_dir + "/initrd";
-    openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir);                     
+    openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir);
+    if (initrd_dir.contains("/mx-snapshot")) {  //just make sure initrd_dir is correct to avoid disaster
+        // strip modules
+        runCmd("test -d " + initrd_dir + "/lib/modules && rm -r " + initrd_dir  + "/lib/modules");
+    }
     runCmd("test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release " + initrd_dir + "/etc");
     if (initrd_dir != "") {
         copyModules(initrd_dir, kernel_used);
