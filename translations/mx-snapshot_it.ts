@@ -16,7 +16,7 @@
         <location filename="../mxsnapshot.cpp" line="46"/>
         <location filename="../mxsnapshot.cpp" line="89"/>
         <location filename="../mxsnapshot.cpp" line="667"/>
-        <location filename="../mxsnapshot.cpp" line="769"/>
+        <location filename="../mxsnapshot.cpp" line="770"/>
         <source>MX Snapshot</source>
         <translation>MX Snapshot</translation>
     </message>
@@ -119,7 +119,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="517"/>
-        <location filename="../mxsnapshot.cpp" line="774"/>
+        <location filename="../mxsnapshot.cpp" line="775"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>
@@ -360,47 +360,47 @@ Verrà installato leafpad e usato per questa volta.</translation>
         <translation>Chiudi</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="768"/>
+        <location filename="../mxsnapshot.cpp" line="769"/>
         <source>About MX Snapshot</source>
         <translation>Riguardo a MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="769"/>
+        <location filename="../mxsnapshot.cpp" line="770"/>
         <source>Version: </source>
         <translation>Versione:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="771"/>
+        <location filename="../mxsnapshot.cpp" line="772"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Programma per creare un CD live dal sistema in esecuzione per MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="772"/>
+        <location filename="../mxsnapshot.cpp" line="773"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="773"/>
+        <location filename="../mxsnapshot.cpp" line="774"/>
         <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="776"/>
+        <location filename="../mxsnapshot.cpp" line="777"/>
         <source>MX Snapshot License</source>
         <translation>Licenza MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="782"/>
+        <location filename="../mxsnapshot.cpp" line="785"/>
         <source>MX Snapshot Help</source>
         <translation>Guida MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="790"/>
+        <location filename="../mxsnapshot.cpp" line="794"/>
         <source>Select Snapshot Directory</source>
         <translation>Seleziona la directory di Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="793"/>
+        <location filename="../mxsnapshot.cpp" line="797"/>
         <source>The snapshot will be placed in </source>
         <translation>La snapshot verrà salvata in</translation>
     </message>
