@@ -56,6 +56,8 @@ fotg210_hcd
 fusbh200-hcd
 fuse
 hid
+hid-logitech-dj
+hid-logitech-hidpp 
 hid-generic
 isofs
 jbd
