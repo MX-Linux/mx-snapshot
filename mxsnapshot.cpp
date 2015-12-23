@@ -764,6 +764,7 @@ void mxsnapshot::on_radioPersonal_clicked(bool checked)
 // About button clicked
 void mxsnapshot::on_buttonAbout_clicked()
 {
+    this->hide();
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About MX Snapshot"), "<p align=\"center\"><b><h2>" +
                        tr("MX Snapshot") + "</h2></b></p><p align=\"center\">" + tr("Version: ") +
@@ -774,12 +775,15 @@ void mxsnapshot::on_buttonAbout_clicked()
     msgBox.addButton(tr("Cancel"), QMessageBox::RejectRole);
     if (msgBox.exec() == QMessageBox::AcceptRole)
         system("mx-viewer file:///usr/share/doc/mx-snapshot/license.html '" + tr("MX Snapshot License").toUtf8() + "'");
+    this->show();
 }
 
 // Help button clicked
 void mxsnapshot::on_buttonHelp_clicked()
 {
+    this->hide();
     system("mx-viewer http://mepiscommunity.org/wiki/help-files/help-mx-save-system-iso-snapshot '" + tr("MX Snapshot Help").toUtf8() + "'");
+    this->show();
 }
 
 // Select snapshot directory

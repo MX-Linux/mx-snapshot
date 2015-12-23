@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Tue, 22 Dec 2015 22:45:15 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 15.12.13mx15
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (15.12.13mx15) mx; urgency=medium
+ .
+   * hide GUI when displaying help/license
+Checksums-Sha1:
+ 7386bab2b9654069479a8ab27d8c3a0b5ce8c261 1200 mx-snapshot_15.12.13mx15.dsc
+ 939449116fe00ad554620ba24ccd4451330dd8b5 4336972 mx-snapshot_15.12.13mx15.tar.xz
+ 61f70d36a3b8e92c3491d92e9b07a9586bc78af4 78050 mx-snapshot_15.12.13mx15_amd64.deb
+Checksums-Sha256:
+ baaede2069a57a95700191bd73d9564ff24e55e920e34107ee11dd4e7c2ab77d 1200 mx-snapshot_15.12.13mx15.dsc
+ 4dffde51fed7b10ad50dda763d2d08557c10a2381224451cbf5a049a916c3410 4336972 mx-snapshot_15.12.13mx15.tar.xz
+ a13cf7c4192be055106ae40e0a41820593f7fb853765c18533c1d8d97b779b0a 78050 mx-snapshot_15.12.13mx15_amd64.deb
+Files:
+ ec4a287e26aa3e9304d55ff75e10397e 1200 admin optional mx-snapshot_15.12.13mx15.dsc
+ c596795b34079eb6cc01ab33ed26bbbe 4336972 admin optional mx-snapshot_15.12.13mx15.tar.xz
+ d05509de3dd4a7e6b66681667f08f606 78050 admin optional mx-snapshot_15.12.13mx15_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJWehllAAoJEHCTjHgGee6YjAsIANZTuWOuYzNpjb216YoTej6/
+spoEOpgVlmfaMIeeH60app1uY+v8/WyRYop72t1SDd+VLbJChn5N2BjJsjHL5Owm
+uqsm3Zl2CgFyNe/tgVrX+cnp9x7Vywzhb8RZcRBJ9l72J8dBIF0u6meddT4/agdA
+tDZjELYJDNB/GsDdNSlP6jouINI9MfFOZvodGe+HIUXj2k6gGIORnIdALh3AbCOH
+MjeJyNo1a1R87+rUDvgAnotdyeCX1mj6AfOOFKKqYUkeoCiMKDzigA6uqqcXPZe9
+WSW0ILjFNHewjn/iRkIKc56wmZhevxUj/D8k5NkEPhC2viX3CYf3/QgDbxV33uA=
+=SAwd
+-----END PGP SIGNATURE-----
