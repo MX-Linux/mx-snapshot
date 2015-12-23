@@ -1,3 +1,9 @@
+mx-snapshot (15.12.15mx15) mx; urgency=medium
+
+  * new build
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 23 Dec 2015 14:24:22 -0500
+
 mx-snapshot (15.12.14mx15) mx; urgency=medium
 
   * new copy-initrd.gz file to fix Gaer Boy's issue"
