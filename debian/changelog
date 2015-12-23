@@ -1,3 +1,9 @@
+mx-snapshot (15.12.14mx15) mx; urgency=medium
+
+  * new copy-initrd.gz file to fix Gaer Boy's issue"
+
+ -- anticapitalista <antiX@operamail.com>  Wed, 23 Dec 2015 20:41:04 +0200
+
 mx-snapshot (15.12.13mx15) mx; urgency=medium
 
   * hide GUI when displaying help/license
