@@ -1,5 +1,12 @@
 mx-snapshot (15.12.15mx15) mx; urgency=medium
 
+  * new copy-initrd-modules to include all modules under kernel/drives/mmc
+
+ -- anticapitalista <antiX@operamail.com>  Mon, 04 Jan 2016 16:29:04 +0200
+
+
+mx-snapshot (15.12.15mx15) mx; urgency=medium
+
   * new build
 
  -- Adrian <adrian@mxlinux.org>  Wed, 23 Dec 2015 14:24:22 -0500
