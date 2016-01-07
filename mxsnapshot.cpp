@@ -316,7 +316,7 @@ void mxsnapshot::copyNewIso()
     QDir::setCurrent(work_dir);
     QString cmd = "tar xf /usr/lib/iso-template/iso-template.tar.gz";
     runCmd(cmd);
-    cmd = "cp /usr/lib/iso-template/initrd.gz iso-template/antiX/";
+    cmd = "cp /usr/lib/iso-template/template-initrd.gz iso-template/antiX/initrd.gz";
     runCmd(cmd);
 
     cmd = "cp /boot/vmlinuz-" + kernel_used + " " + work_dir + "/iso-template/antiX/vmlinuz";
