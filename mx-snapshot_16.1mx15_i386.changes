@@ -18,20 +18,20 @@ Changes:
  .
    * new build that uses new template-initrd.gz
 Checksums-Sha1:
- ddb80b5d30b3ca7e4712db2af1bd147967b30825 79660 mx-snapshot_16.1mx15_i386.deb
+ 6abcfb872c40c39e981a1a6140552e3b5a48a7f5 79584 mx-snapshot_16.1mx15_i386.deb
 Checksums-Sha256:
- bc06ca9d94d4976036bda20324881800b2329fc89cb075c1400087ff00e9c68b 79660 mx-snapshot_16.1mx15_i386.deb
+ bcf227ae46163d8862d3638b335ec7aba6784c693599f0199d3ca0f713cdb52d 79584 mx-snapshot_16.1mx15_i386.deb
 Files:
- b46f8f8ca9a01fa6dfe36979b2768fec 79660 admin optional mx-snapshot_16.1mx15_i386.deb
+ e357fa530ce0e2c88e9c67408b359e30 79584 admin optional mx-snapshot_16.1mx15_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJWjqzwAAoJEHCTjHgGee6YAcwH/j1MtU3hFfin3bEcK91r2D90
-z6PT42z2SuPLsvWA182wuySmrBdKXcDoTnfv8rBg2VCIaV6D3U5pJg66M/vGNYKn
-Dl9Beh+K9Q9hpYTLob/8kkESL2R8mIkkSUZT6YL81XeEWEESZMhL5sP3ZNRD6lba
-3BwAmarqAbc7OJrcBhmQgDIitEpVvwLQauqQFL+gSm2DcOGxNUSwfEI+n1f56gwk
-8in0a1B9he2hHGWBlOzz9v8f4v5+Yr42/N57S7S8qXZmSwiVio5/VqSz+M+Xd1zZ
-Rp3LeGwL0HcZLVfPrn2+ZsPNxyHL7ohDy1/bftGPVX004wWOpybPp+2vZ197oNk=
-=NiwE
+iQEcBAEBAgAGBQJWjq5sAAoJEHCTjHgGee6Yud4H/3bN+CyUbVeLsmt92sQKfVqz
+ZwTzGQJlqspTASH7GTPMo5RA5cdLsF5fC0CyqwNvKqb7of9UmFshwY8t/2wPezxd
+X42+nHopPphpNGMUz3CBoyQmxhTVp0B4KPvZvVsSW6XnjP3f2yqBG61roTz4vN3r
+LIuOE1T1gaISxbwE2HjxyzHN3F8i9DxwfNuT5Pg/+/vXnFMX2zh8Ma7LdM0wUYbe
+ln4DlzazvM+4D7YN2qfSNMYZUMNRrJIYTWRCYh3keKubf97XEqfs/cex9jj/SSF7
+zJ7iACeousRflT5ibpK8CzG3KyxGiuGa13r0s5L6zq3KEhCUhrMhf4KuGTBw2xw=
+=pfCo
 -----END PGP SIGNATURE-----

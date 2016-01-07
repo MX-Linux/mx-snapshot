@@ -44,20 +44,20 @@ cdrom
 crc16
 crc32c-generic
 crct10dif-pclmul
-crct10dif_common
-crct10dif_generic
-ehci_hcd
-ehci_pci
+crct10dif-common
+crct10dif-generic
+ehci-hcd
+ehci-pci
 ext2
 ext3
 ext4
 fat
-fotg210_hcd
+fotg210-hcd
 fusbh200-hcd
 fuse
 hid
 hid-logitech-dj
-hid-logitech-hidpp 
+hid-logitech-hidpp
 hid-generic
 isofs
 jbd
@@ -71,14 +71,14 @@ nls-cp437
 nls-utf8
 ntfs
 ohci-pci
-ohci_hcd
+ohci-hcd
 overlay
 pcie-aspm
 printk
 pstore
 reiserfs
 rts5139
-scsi_mod
+scsi-mod
 sd-mod
 sg
 shpchp
@@ -179,7 +179,7 @@ main() {
         list1=$(cat "$@" | grep -v "^\s*#" | sed 's/\s*#.*//')
     fi
 
-    [ "$default_mode" -a -z "$DIRS" ] && DIRS=kernel/drivers/ata
+    [ "$default_mode" -a -z "$DIRS" ] && DIRS="kernel/drivers/ata kernel/drivers/mmc"
     local d
     for d in $(echo $DIRS | sed 's/,/ /g'); do
         local dir=$mod_dir/$d

@@ -1,14 +1,17 @@
+<<<<<<< HEAD
 mx-snapshot (16.1mx15) mx; urgency=medium
 
   * new build that uses new template-initrd.gz
 
  -- Adrian <adrian@mxlinux.org>  Thu, 07 Jan 2016 12:19:50 -0500
-
+=======
 mx-snapshot (15.12.16mx15) mx; urgency=medium
 
   * new copy-initrd-modules to include all modules under kernel/drives/mmc
 
- -- Adrian <adrian@mxlinux.org>  Thu, 07 Jan 2016 12:19:50 -0500
+ -- anticapitalista <antiX@operamail.com>  Mon, 04 Jan 2016 16:29:04 +0200
+
+>>>>>>> 13442bbff299fe0f17a85c09c2db67f375da2fb3
 
 mx-snapshot (15.12.15mx15) mx; urgency=medium
 
