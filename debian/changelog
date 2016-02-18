@@ -1,3 +1,9 @@
+mx-snapshot (16.2mx15) mx; urgency=medium
+
+  * copy modules for non-PAE kernel
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 17 Feb 2016 16:33:58 -0500
+
 mx-snapshot (16.1mx15) mx; urgency=medium
 
   * new build that uses new template-initrd.gz

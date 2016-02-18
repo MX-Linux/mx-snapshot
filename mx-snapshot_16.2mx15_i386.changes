@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Wed, 17 Feb 2016 16:33:58 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 16.2mx15
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (16.2mx15) mx; urgency=medium
+ .
+   * copy modules for non-PAE kernel
+Checksums-Sha1:
+ c7860a81f3c6c1da059137a0b6f696bb1508388a 79978 mx-snapshot_16.2mx15_i386.deb
+Checksums-Sha256:
+ 308a06fea7b6a67a8df4a791aef0caef0326ee220372cd00a9beb7e8fefc176f 79978 mx-snapshot_16.2mx15_i386.deb
+Files:
+ cc388fa29afefc3c63d011796a02caca 79978 admin optional mx-snapshot_16.2mx15_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEbBAEBAgAGBQJWxOqnAAoJEHCTjHgGee6Yz9AH90c2a2NxH8kZy0S3gH2XHkv9
+utDo024ZB4bU+3Wepn6i4Eet+hsDLVCRfQ9LWQ9WfxAa0Ofo8PVfFjTPUdWUV0Xv
+O7Y+hH2E/jyoF9ZRlR8jwIVibdFL8Ajh1Fk3AjZh5R4s6e0TQfQqWPc5uSdid4eV
+wz/Ft/pD4fCq1wn0ykVzmHC3AMu36QqcxKRgO9FXF6gdLWh0QnZJJNmPuXdb9X0J
+6jS0EP1KV2VCpT1AqFM+pee6qxvxj/efaVIltMg71//r9B5ERt4ewFguyddWUpZn
+iN2ZKnUiwhBLM5L900/oiZfJ568r0h7pIHAM2rnrIPCfdFqzPW1vr77xJ5ufuw==
+=fPr4
+-----END PGP SIGNATURE-----

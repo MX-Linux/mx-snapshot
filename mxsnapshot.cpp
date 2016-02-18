@@ -374,8 +374,14 @@ void mxsnapshot::replaceMenuStrings() {
 // copyModules(mod_dir/kernel_used kernel_used)
 void mxsnapshot::copyModules(QString to, QString kernel)
 {
+    QString kernel586 = "3.16.0-4-586";
     QString cmd = QString("copy-initrd-modules -t=%1 -k=%2").arg(to).arg(kernel);
     system(cmd.toUtf8());
+    // copy 586 modules for the non-PAE kernel
+    if (isi686()) {
+        QString cmd = QString("copy-initrd-modules -t=%1 -k=%2").arg(to).arg(kernel586);
+        system(cmd.toUtf8());
+    }
 }
 
 // Create the output filename
