@@ -159,17 +159,16 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="615"/>
         <source>Start scanning for shares</source>
-        <translation>Empezar a buscar recursos compartidos</translation>
+        <translation type="vanished">Empezar a buscar recursos compartidos</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="618"/>
+        <location filename="../mxsnapshot.ui" line="615"/>
         <source>Next &gt;</source>
         <translation>Siguiente &gt;</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="640"/>
+        <location filename="../mxsnapshot.ui" line="637"/>
         <source>&lt; Back</source>
         <translation>&lt; Anterior</translation>
     </message>

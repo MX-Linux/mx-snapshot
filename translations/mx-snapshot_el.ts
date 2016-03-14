@@ -159,17 +159,16 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="615"/>
         <source>Start scanning for shares</source>
-        <translation>Ξεκινήστε τη σάρωση για τις μετοχές </translation>
+        <translation type="vanished">Ξεκινήστε τη σάρωση για τις μετοχές </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="618"/>
+        <location filename="../mxsnapshot.ui" line="615"/>
         <source>Next &gt;</source>
         <translation>Επόμενο &gt;</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="640"/>
+        <location filename="../mxsnapshot.ui" line="637"/>
         <source>&lt; Back</source>
         <translation>&lt; Πίσω </translation>
     </message>

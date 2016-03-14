@@ -611,9 +611,6 @@ color: rgb(0, 0, 0);</string>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="toolTip">
-        <string>Start scanning for shares</string>
-       </property>
        <property name="text">
         <string>Next &gt;</string>
        </property>

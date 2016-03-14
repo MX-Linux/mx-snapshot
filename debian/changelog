@@ -1,3 +1,9 @@
+mx-snapshot (16.3mx15) mx; urgency=medium
+
+  * removed wrong tooltip
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 14 Mar 2016 19:43:07 -0400
+
 mx-snapshot (16.2mx15) mx; urgency=medium
 
   * copy modules for non-PAE kernel

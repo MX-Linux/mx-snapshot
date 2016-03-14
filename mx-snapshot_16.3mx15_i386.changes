@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Mon, 14 Mar 2016 19:43:07 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 16.3mx15
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (16.3mx15) mx; urgency=medium
+ .
+   * removed wrong tooltip
+Checksums-Sha1:
+ 118f3d022b343acab9911530091463cac8a14a59 79566 mx-snapshot_16.3mx15_i386.deb
+Checksums-Sha256:
+ 5266587e926898e74ba61047c72769c74bef1adecad5334f01c0ffc6edf7adc9 79566 mx-snapshot_16.3mx15_i386.deb
+Files:
+ dbcc7cfe29d5f6d4afc24587ca1fa01e 79566 admin optional mx-snapshot_16.3mx15_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJW508uAAoJEHCTjHgGee6YeocH/04UTi+r8buk7CIjb861hkmg
+OI3J0brR4jPFOxMYFydUNBvzoXBV09me/69T/hSaQwEX7u4//s32rMgAr2fiO+Ld
+ANryTCuNBJlAs6fboziMWU7ZgdDq41cKVlF/CYs1NLQB9CtPRYHznUV1ETpDs/Ke
+EpaYIcx2afxQFxkhjqMVvfqArs6M2ZyNa5C0f9A28ijfa61ExVZuA6qI/l/45J6t
+XJbNJ22RU61NwjLtaNhbmOdNGcG1sMIrp10D9Wfd8MnzfJuCqdHyp8il18+yIZGi
+CtzTEvoy5rkvCLkOULnZEF/Bcrua4bNuvG42v/PoCk4wrszBj4ucXnUOz9Ch4cc=
+=CGal
+-----END PGP SIGNATURE-----
