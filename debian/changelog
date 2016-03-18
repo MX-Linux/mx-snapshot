@@ -1,3 +1,9 @@
+mx-snapshot (16.3+1mx15) mx; urgency=medium
+
+  * added exclusion for file created by BroadcomStartup script
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 17 Mar 2016 19:55:32 -0400
+
 mx-snapshot (16.3mx15) mx; urgency=medium
 
   * removed wrong tooltip

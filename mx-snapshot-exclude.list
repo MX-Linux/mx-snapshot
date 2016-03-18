@@ -14,6 +14,7 @@ tmp
 live/*
 boot/grub/*
 etc/adjtime
+etc/bcm-ckd
 etc/blkid.tab.old
 etc/defaultdomain
 etc/fstab.backup
