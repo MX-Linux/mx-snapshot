@@ -1,3 +1,9 @@
+mx-snapshot (16.3+2mx15) mx; urgency=medium
+
+  * new desktop file
+
+ -- dolphinoracle <dolphinoracle@gmail.com>  Mon, 23 May 2016 13:05:26 -0400
+
 mx-snapshot (16.3+1mx15) mx; urgency=medium
 
   * added exclusion for file created by BroadcomStartup script
