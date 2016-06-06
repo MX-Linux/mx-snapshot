@@ -26,5 +26,5 @@ Exec=su-to-root -X -c mx-snapshot
 Terminal=false
 Type=Application
 Icon=mx-snapshot
-Categories=GNOME;GTK;System;MX-Utilities;
+Categories=GNOME;GTK;System;MX-Live;
 NoDisplay=false

@@ -1,3 +1,9 @@
+mx-snapshot (16.6mx15) mx; urgency=medium
+
+  * minor fix 
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 06 Jun 2016 17:34:57 -0400
+
 mx-snapshot (16.3+2mx15) mx; urgency=medium
 
   * new desktop file
