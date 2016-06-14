@@ -1,3 +1,9 @@
+mx-snapshot (16.6mx15+1) mx; urgency=medium
+
+  * update copy-initrd-modules script
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 14 Jun 2016 15:06:46 -0400
+
 mx-snapshot (16.6mx15) mx; urgency=medium
 
   * minor fix 

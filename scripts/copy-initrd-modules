@@ -70,6 +70,7 @@ msdos
 nls-cp437
 nls-utf8
 ntfs
+nvme
 ohci-pci
 ohci-hcd
 overlay
@@ -84,6 +85,7 @@ sg
 shpchp
 squashfs
 sr-mod
+uas
 udf
 ufshcd-pci
 uhci-hcd
