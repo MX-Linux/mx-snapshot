@@ -69,7 +69,7 @@ void mxsnapshot::loadSettings()
 
     session_excludes = "";
     snapshot_dir = settings.value("snapshot_dir", "/home/snapshot").toString();
-    ui->labelSnapshot->setText(tr("The snapshot will be placed by default in ") + snapshot_dir.absolutePath());
+    ui->labelSnapshotDir->setText(snapshot_dir.absolutePath());
     snapshot_excludes.setFileName(settings.value("snapshot_excludes", "/usr/local/share/excludes/mx-snapshot-exclude.list").toString());
     snapshot_basename = settings.value("snapshot_basename", "snapshot").toString();
     make_md5sum = settings.value("make_md5sum", "no").toString();
@@ -78,7 +78,8 @@ void mxsnapshot::loadSettings()
     edit_boot_menu = settings.value("edit_boot_menu", "no").toString();
     lib_mod_dir = settings.value("lib_mod_dir", "/lib/modules/").toString();
     gui_editor.setFileName(settings.value("gui_editor", "/usr/bin/leafpad").toString());
-    stamp = settings.value("stamp", "datetime").toString();
+    stamp = settings.value("stamp").toString();
+    ui->lineEditName->setText(getFilename());
 }
 
 // setup/refresh versious items first time program runs
@@ -390,16 +391,15 @@ QString mxsnapshot::getFilename()
     if (stamp == "datetime") {
         return snapshot_basename + "-" + getCmdOut("date +%Y%m%d_%H%M") + ".iso";
     } else {
-        int n = 1;
-        QString name = snapshot_dir.absolutePath() + "/" + snapshot_basename + QString::number(n) + ".iso";
+        QString name;
         QDir dir;
-        dir.setPath(name);
-        while (dir.exists(dir.absolutePath())) {
+        int n = 1;
+        do {
+            name = snapshot_basename + QString::number(n) + ".iso";
+            dir.setPath(snapshot_dir.absolutePath() + "/" + name);
             n++;
-            QString name = snapshot_dir.absolutePath() + "/" + snapshot_basename + QString::number(n) + ".iso";
-            dir.setPath(name);
-        }
-        return dir.absolutePath();
+        } while (dir.exists(dir.absolutePath()));
+        return name;
     }
 }
 
@@ -515,7 +515,7 @@ void mxsnapshot::cleanUp()
     system("installed-to-live cleanup");
 
     // checks if work_dir looks OK
-    if (work_dir.contains("/mx-snapshot")) {        
+    if (work_dir.contains("/mx-snapshot")) {
         system("rm -r " + work_dir.toUtf8());
     }
     if (!live && !reset_accounts) {
@@ -620,8 +620,9 @@ void mxsnapshot::on_buttonNext_clicked()
         ui->stackedWidget->setCurrentWidget(ui->settingsPage);
         ui->label_1->setText(tr("Snapshot will use the following settings:*"));
 
-        ui->label_2->setText(QString("\n" + tr("- Snapshot directory:") + " %1\n" +
-                       tr("- Kernel to be used:") + " %2\n").arg(snapshot_dir.absolutePath()).arg(kernel_used));
+        ui->label_2->setText("\n" + tr("- Snapshot directory:") + " " + snapshot_dir.absolutePath() + "\n" +
+                       "- " + tr("ISO filename:") + " " + ui->lineEditName->text() + "\n" +
+                       tr("- Kernel to be used:") + " " + kernel_used + "\n");
         ui->label_3->setText(tr("*These settings can be changed by editing: ") + config_file.fileName());
 
     // on settings page
@@ -640,7 +641,7 @@ void mxsnapshot::on_buttonNext_clicked()
         ui->stackedWidget->setCurrentWidget(ui->outputPage);
         this->setWindowTitle(tr("Output"));
         copyNewIso();
-        QString filename = getFilename();
+        QString filename = ui->lineEditName->text();
         ui->outputLabel->clear();
         mkDir(filename);
         savePackageList(filename);
@@ -800,7 +801,7 @@ void mxsnapshot::on_buttonSelectSnapshot_clicked()
     QDir selected = dialog.getExistingDirectory(this, tr("Select Snapshot Directory"), QString(), QFileDialog::ShowDirsOnly);
     if (selected.exists()) {
         snapshot_dir.setPath(selected.absolutePath() + "/snapshot");
-        ui->labelSnapshot->setText(tr("The snapshot will be placed in ") + snapshot_dir.absolutePath());
+        ui->labelSnapshotDir->setText(snapshot_dir.absolutePath());
         listFreeSpace();
     }
     this->show();
