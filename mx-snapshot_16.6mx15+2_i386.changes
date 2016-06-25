@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Fri, 24 Jun 2016 23:55:11 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 16.6mx15+2
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (16.6mx15+2) mx; urgency=medium
+ .
+   * added GUI snapshot name edit option
+Checksums-Sha1:
+ 60e5954bae2032558de9bc2c450f7a8d55db8414 79716 mx-snapshot_16.6mx15+2_i386.deb
+Checksums-Sha256:
+ f49783b3d5ca1f9d6bb4968f75dc511d9082a8cff067f6aec633d2291aa44f23 79716 mx-snapshot_16.6mx15+2_i386.deb
+Files:
+ bd3dfe42309f3842345ad71483662cdd 79716 admin optional mx-snapshot_16.6mx15+2_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJXbglcAAoJEHCTjHgGee6YsEsH/16tJPpbslYfJxYjEfk5Wh/T
+yfXnGMtI0+kDO6UHaYP6imsvAMwkE5YLe0jBbvQyiJvfGdEd5mQjiiaz8V75sWrl
+lmEza7MLa6hlYWDdPkTIZr7655EcgLuHZW8Cxw+ybJ+jqFO2fJdLGwtI0cUsz/zo
+AMbi341gT5oMa+h46R8uE9OHKrZ+O645P8p8HyEPjyNZf5XyiIAS8eoZzuAQtEUW
+YrYf5SoeMdTt0p/cySuLCJIM9rfSecSktZyTbMMb4ke/yYgDIc9HLGKJ1UrC91cL
+ZXHYYx4i6pi3eLaXCsRZlVFt8s8AAMLmKFRNztsIj0oNWlgu2AYn13KdrepBwFY=
+=KE7v
+-----END PGP SIGNATURE-----

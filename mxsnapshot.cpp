@@ -519,7 +519,7 @@ void mxsnapshot::cleanUp()
         // remove installer icon
         system("rm /home/*/Desktop/minstall.desktop");
     }
-    ui->outputLabel->clear();
+    ui->outputLabel->setText(tr("Done"));
 }
 
 // adds or removes exclusion to the exclusion string

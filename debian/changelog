@@ -1,3 +1,9 @@
+mx-snapshot (16.6mx15+2) mx; urgency=medium
+
+  * added GUI snapshot name edit option
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 24 Jun 2016 23:55:11 -0400
+
 mx-snapshot (16.6mx15+1) mx; urgency=medium
 
   * update copy-initrd-modules script
