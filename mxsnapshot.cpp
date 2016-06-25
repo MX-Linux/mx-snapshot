@@ -123,9 +123,9 @@ int mxsnapshot::runCmd(QString cmd)
 }
 
 // Util function for replacing strings in files
-bool mxsnapshot::replaceStringInFile(QString oldtext, QString newtext, QString filepath)
+bool mxsnapshot::replaceStringInFile(QString old_text, QString new_text, QString file_path)
 {
-    QString cmd = QString("sed -i 's/%1/%2/g' %3").arg(oldtext).arg(newtext).arg(filepath);
+    QString cmd = QString("sed -i 's/%1/%2/g' %3").arg(old_text).arg(new_text).arg(file_path);
     if (system(cmd.toUtf8()) != 0) {
         return false;
     }
@@ -279,12 +279,7 @@ void mxsnapshot::checkDirectories()
     //  Create snapshot dir if it doesn't exist
     if (!snapshot_dir.exists()) {
         snapshot_dir.mkpath(snapshot_dir.absolutePath());
-        QString path = snapshot_dir.absolutePath();
-
-        QString cmd = QString("chmod 777 %1").arg(path);
-        system(cmd.toUtf8());
     }
-
     // Create a work_dir
     work_dir = getCmdOut("mktemp -d " + snapshot_dir.absolutePath() + "/mx-snapshot-XXXXXXXX");
 }
@@ -404,20 +399,22 @@ QString mxsnapshot::getFilename()
 }
 
 // make working directory using the base filename
-void mxsnapshot::mkDir(QString filename)
+void mxsnapshot::mkDir(QString file_name)
 {
     QDir dir;
-    filename.chop(4); //remove ".iso" string
-    dir.setPath(work_dir + "/iso-template/" + filename);
+    QFileInfo fi(file_name);
+    QString base_name = fi.completeBaseName(); // remove extension
+    dir.setPath(work_dir + "/iso-template/" + base_name);
     dir.mkpath(dir.absolutePath());
 }
 
 // save package list in working directory
-void mxsnapshot::savePackageList(QString filename)
+void mxsnapshot::savePackageList(QString file_name)
 {
-    filename.chop(4); //remove .iso
-    filename = work_dir + "/iso-template/" + filename + "/package_list";
-    QString cmd = "dpkg -l | grep \"ii\" | awk '{ print $2 }' >" + filename;
+    QFileInfo fi(file_name);
+    QString base_name = fi.completeBaseName(); // remove extension
+    QString full_name = work_dir + "/iso-template/" + base_name + "/package_list";
+    QString cmd = "dpkg -l | grep \"ii\" | awk '{ print $2 }' >\"" + full_name + "\"";
     system(cmd.toUtf8());
 }
 
@@ -471,7 +468,7 @@ bool mxsnapshot::createIso(QString filename)
 
     // create the iso file
     QDir::setCurrent(work_dir + "/iso-template");
-    cmd = "genisoimage -gid 0 -uid 0 -allow-limited-size -l -V MX-Linux-live -R -J -pad -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin -c boot/isolinux/isolinux.cat -o " + snapshot_dir.absolutePath() + "/" + filename + " . "  + work_dir + "/iso-2";
+    cmd = "genisoimage -gid 0 -uid 0 -allow-limited-size -l -V MX-Linux-live -R -J -pad -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin -c boot/isolinux/isolinux.cat -o " + snapshot_dir.absolutePath() + "/\"" + filename + "\" . "  + work_dir + "/iso-2";
     ui->outputLabel->setText(tr("Creating CD/DVD image file..."));
     if (runCmd(cmd) != 0) {
         QMessageBox::critical(0, tr("Error"), tr("Could not create ISO file, please check whether you have enough space on the destination partition."));
@@ -481,7 +478,7 @@ bool mxsnapshot::createIso(QString filename)
     // make it isohybrid
     if (make_isohybrid == "yes") {
         ui->outputLabel->setText(tr("Making hybrid iso"));
-        cmd = "isohybrid " + snapshot_dir.absolutePath() + "/" + filename;
+        cmd = "isohybrid " + snapshot_dir.absolutePath() + "/\"" + filename + "\"";
         runCmd(cmd);
     }
 
@@ -493,13 +490,13 @@ bool mxsnapshot::createIso(QString filename)
 }
 
 // create md5sum for different files
-void mxsnapshot::makeMd5sum(QString folder, QString filename)
+void mxsnapshot::makeMd5sum(QString folder, QString file_name)
 {
     QDir dir;
     QString current = dir.currentPath();
     dir.setCurrent(folder);
     ui->outputLabel->setText(tr("Making md5sum"));
-    QString cmd = "md5sum " + filename + ">" + folder + "/" + filename + ".md5";
+    QString cmd = "md5sum \"" + file_name + "\">" + folder + "/\"" + file_name + ".md5\"";
     runCmd(cmd);
     dir.setCurrent(current);
 }
@@ -621,7 +618,7 @@ void mxsnapshot::on_buttonNext_clicked()
         ui->label_1->setText(tr("Snapshot will use the following settings:*"));
 
         ui->label_2->setText("\n" + tr("- Snapshot directory:") + " " + snapshot_dir.absolutePath() + "\n" +
-                       "- " + tr("ISO filename:") + " " + ui->lineEditName->text() + "\n" +
+                       "- " + tr("Snapshot name:") + " " + ui->lineEditName->text() + "\n" +
                        tr("- Kernel to be used:") + " " + kernel_used + "\n");
         ui->label_3->setText(tr("*These settings can be changed by editing: ") + config_file.fileName());
 
@@ -798,9 +795,10 @@ void mxsnapshot::on_buttonSelectSnapshot_clicked()
 {
     QFileDialog dialog;
     this->hide();
-    QDir selected = dialog.getExistingDirectory(this, tr("Select Snapshot Directory"), QString(), QFileDialog::ShowDirsOnly);
-    if (selected.exists()) {
-        snapshot_dir.setPath(selected.absolutePath() + "/snapshot");
+
+    QString selected = dialog.getExistingDirectory(this, tr("Select Snapshot Directory"), QString(), QFileDialog::ShowDirsOnly);
+    if (selected != "") {
+        snapshot_dir.setPath(selected + "/snapshot");
         ui->labelSnapshotDir->setText(snapshot_dir.absolutePath());
         listFreeSpace();
     }
