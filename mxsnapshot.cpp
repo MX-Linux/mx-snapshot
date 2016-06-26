@@ -604,6 +604,10 @@ void mxsnapshot::onStdoutAvailable()
 // Next button clicked
 void mxsnapshot::on_buttonNext_clicked()
 {
+    QString file_name = ui->lineEditName->text();
+    if (!file_name.endsWith(".iso")) {
+        file_name += ".iso";
+    }
     // on first page
     if (ui->stackedWidget->currentIndex() == 0) {
         this->setWindowTitle(tr("Settings"));
@@ -618,7 +622,7 @@ void mxsnapshot::on_buttonNext_clicked()
         ui->label_1->setText(tr("Snapshot will use the following settings:*"));
 
         ui->label_2->setText("\n" + tr("- Snapshot directory:") + " " + snapshot_dir.absolutePath() + "\n" +
-                       "- " + tr("Snapshot name:") + " " + ui->lineEditName->text() + "\n" +
+                       "- " + tr("Snapshot name:") + " " + file_name + "\n" +
                        tr("- Kernel to be used:") + " " + kernel_used + "\n");
         ui->label_3->setText(tr("*These settings can be changed by editing: ") + config_file.fileName());
 
@@ -638,10 +642,9 @@ void mxsnapshot::on_buttonNext_clicked()
         ui->stackedWidget->setCurrentWidget(ui->outputPage);
         this->setWindowTitle(tr("Output"));
         copyNewIso();
-        QString filename = ui->lineEditName->text();
         ui->outputLabel->clear();
-        mkDir(filename);
-        savePackageList(filename);
+        mkDir(file_name);
+        savePackageList(file_name);
 
         if (edit_boot_menu == "yes") {
             ans = QMessageBox::question(this, tr("Edit Boot Menu"),
@@ -655,7 +658,7 @@ void mxsnapshot::on_buttonNext_clicked()
             }
         }
         setupEnv();
-        bool success = createIso(filename);
+        bool success = createIso(file_name);
         cleanUp();
         if (success) {
             QMessageBox::information(this, tr("Success"),tr("All finished!"), QMessageBox::Ok);
