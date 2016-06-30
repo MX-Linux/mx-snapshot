@@ -142,9 +142,9 @@ main() {
            -count|c) SHOW_COUNT=true                 ;;
              -dir|d) DIRS="$DIRS,$val"               ;;
             -help|h) usage                           ;;
-            -from|f) from_dir=$val                   ;;
+            -from|f) from_dir=${val%/}               ;;
           -kernel|k) kernel=$val                     ;;
-              -to|t) to_dir=$val                     ;;
+              -to|t) to_dir=${val%/}                 ;;
          -pretend|p) PRETEND=true                    ;;
            -quiet|q) QUIET=true                      ;;
       -very-quiet|Q) VERY_QUIET=true                 ;;
@@ -157,18 +157,18 @@ main() {
     [ "$QUIET" -o "$VERY_QUIET" ] && MP_ARGS="$MP_ARGS --quiet"
     # fill in default kernel if there is only one
     if [ -z "$kernel" ]; then
-        local d=$from_dir/lib/modules
-        test -d $d || fatal "Could not find directory $d"
-        [ "$(ls $d | wc -l)" = 1 ] && kernel=$(ls $d)
+        local d="$from_dir/lib/modules"
+        test -d "$d" || fatal "Could not find directory \"$d\""
+        [ "$(ls "$d" | wc -l)" = 1 ] && kernel=$(ls "$d")
     fi
 
     [ "$kernel"   ] && MP_ARGS="$MP_ARGS -S $kernel"
-    [ "$from_dir" ] && MP_ARGS="$MP_ARGS -d $from_dir"
+    [ "$from_dir" ] && MP_ARGS="$MP_ARGS -d \"$from_dir\""
 
     : ${kernel:=$(uname -r)}
     : ${to_dir:=.}
 
-    local mod_dir="$from_dir"/lib/modules/$kernel
+    local mod_dir="$from_dir/lib/modules/$kernel"
     test -d "$mod_dir" || fatal "Directory $mod_dir does not exist"
 
     local list1 list2 repeats default_mode
@@ -184,7 +184,7 @@ main() {
     [ "$default_mode" -a -z "$DIRS" ] && DIRS="kernel/drivers/ata kernel/drivers/mmc"
     local d
     for d in $(echo $DIRS | sed 's/,/ /g'); do
-        local dir="$mod_dir"/$d
+        local dir=$mod_dir/$d
         test -d "$dir" || fatal "Subdirectory $dir does not exist"
         list1="$list1
 $(find "$dir" -name "*.ko" -printf "%f\n" | sed 's/\.ko//')"
@@ -197,19 +197,22 @@ $(find "$dir" -name "*.ko" -printf "%f\n" | sed 's/\.ko//')"
         echo "$repeats" >&2
     fi
 
-
     list2=$(echo "$list1" | sed 's/_/-/g' | sort -u \
-        | xargs modprobe $MP_ARGS | sed -n 's/^insmod //p' | sort -u)
+        | eval "xargs modprobe $MP_ARGS" | sed -n 's/^insmod //p' | sort -u)
 
     local full cnt=0
-    for full in $list2; do
-        [ "$VERBOSE" ] && printf "  %s\n" $(basename $full)
-        local dir=$(dirname $full)
-        dir="$to_dir"/"${dir##$from_dir/}"
+    [ -z "${from_dir##/*}" ] || from_dir="$PWD/$from_dir"
+    while read full; do
+        [ "$VERBOSE" ] && printf "  %s\n" "$(basename "$full")"
+        local dir=$(dirname "$full")
+        dir="$to_dir/${dir##$from_dir/}"
         test -d "$dir" || echo_cmd mkdir -p "$dir"
-        echo_cmd cp $full "$dir"/
+        echo_cmd cp "$full" "$dir/"
         cnt=$((++cnt))
-    done
+    done<<List_2
+$(echo "$list2")
+List_2
+
     [ "$SHOW_COUNT" ] && echo "$ME: $cnt module(s)"
 }
 

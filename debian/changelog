@@ -1,3 +1,9 @@
+mx-snapshot (16.6mx15+4) mx; urgency=medium
+
+  * updated copy-initrd-modules script
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 30 Jun 2016 08:39:53 -0400
+
 mx-snapshot (16.6mx15+3) mx; urgency=medium
 
   * fix: allow white spaces in the name of the work directory
