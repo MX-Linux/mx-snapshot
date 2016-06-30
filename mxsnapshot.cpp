@@ -125,7 +125,7 @@ int mxsnapshot::runCmd(QString cmd)
 // Util function for replacing strings in files
 bool mxsnapshot::replaceStringInFile(QString old_text, QString new_text, QString file_path)
 {
-    QString cmd = QString("sed -i 's/%1/%2/g' %3").arg(old_text).arg(new_text).arg(file_path);
+    QString cmd = QString("sed -i 's/%1/%2/g' \"%3\"").arg(old_text).arg(new_text).arg(file_path);
     if (system(cmd.toUtf8()) != 0) {
         return false;
     }
@@ -166,7 +166,7 @@ QString mxsnapshot::getSnapshotSize()
 {
     QString size;
     if (snapshot_dir.exists()) {
-        QString cmd = QString("find %1 -maxdepth 1 -type f -name '*.iso' -exec du -shc {} + | tail -1 | awk '{print $1}'").arg(snapshot_dir.absolutePath());
+        QString cmd = QString("find \"%1\" -maxdepth 1 -type f -name '*.iso' -exec du -shc {} + | tail -1 | awk '{print $1}'").arg(snapshot_dir.absolutePath());
         size = getCmdOut(cmd);
         if (size != "" ) {
             return size;
@@ -184,7 +184,7 @@ void mxsnapshot::listUsedSpace()
     ui->buttonSelectSnapshot->setDisabled(true);
     QString cmd;
     if (live) {
-        cmd = QString("du --exclude-from=%1 -sch / 2>/dev/null | tail -n1 | cut -f1").arg(snapshot_excludes.fileName());
+        cmd = QString("du --exclude-from=\"%1\" -sch / 2>/dev/null | tail -n1 | cut -f1").arg(snapshot_excludes.fileName());
     } else {
         cmd = QString("df -h / | awk 'NR==2 {print $3}'");
     }
@@ -209,7 +209,7 @@ void mxsnapshot::listFreeSpace()
     QString cmd;
     QString out;
     QString path = snapshot_dir.absolutePath().remove("/snapshot");
-    cmd = QString("df -h %1 | awk 'NR==2 {print $4}'").arg(path);
+    cmd = QString("df -h \"%1\" | awk 'NR==2 {print $4}'").arg(path);
     ui->labelFreeSpace->clear();
     out.append("- " + tr("Free space on %1, where snapshot folder is placed: ").arg(path) + getCmdOut(cmd) + "\n");
     ui->labelFreeSpace->setText(out);
@@ -281,24 +281,24 @@ void mxsnapshot::checkDirectories()
         snapshot_dir.mkpath(snapshot_dir.absolutePath());
     }
     // Create a work_dir
-    work_dir = getCmdOut("mktemp -d " + snapshot_dir.absolutePath() + "/mx-snapshot-XXXXXXXX");
+    work_dir = getCmdOut("mktemp -d \"" + snapshot_dir.absolutePath() + "/mx-snapshot-XXXXXXXX\"");
 }
 
 void mxsnapshot::openInitrd(QString file, QString initrd_dir)
 {
-    QString cmd = "mkdir -p " + initrd_dir;
+    QString cmd = "mkdir -p \"" + initrd_dir + "\"";
     system(cmd.toUtf8());
-    cmd = "chmod a+rx " + initrd_dir;
+    cmd = "chmod a+rx \"" + initrd_dir + "\"";
     system(cmd.toUtf8());
     QDir::setCurrent(initrd_dir);
-    cmd = QString("gunzip -c %1 | cpio -idum").arg(file);
+    cmd = QString("gunzip -c \"%1\" | cpio -idum").arg(file);
     system(cmd.toUtf8());
 }
 
 void mxsnapshot::closeInitrd(QString initrd_dir, QString file)
 {
     QDir::setCurrent(initrd_dir);
-    QString cmd = "(find . | cpio -o -H newc --owner root:root | gzip -9) >" + file;
+    QString cmd = "(find . | cpio -o -H newc --owner root:root | gzip -9) >\"" + file + "\"";
     runCmd(cmd);
     makeMd5sum(work_dir + "/iso-template/antiX", "initrd.gz");
 }
@@ -315,21 +315,21 @@ void mxsnapshot::copyNewIso()
     cmd = "cp /usr/lib/iso-template/template-initrd.gz iso-template/antiX/initrd.gz";
     runCmd(cmd);
 
-    cmd = "cp /boot/vmlinuz-" + kernel_used + " " + work_dir + "/iso-template/antiX/vmlinuz";
+    cmd = "cp /boot/vmlinuz-" + kernel_used + " \"" + work_dir + "/iso-template/antiX/vmlinuz\"";
     runCmd(cmd);
 
     if(i686) {
-        cmd = "cp /boot/vmlinuz-3.16.0-4-586 " + work_dir + "/iso-template/antiX/vmlinuz1";
+        cmd = "cp /boot/vmlinuz-3.16.0-4-586 \"" + work_dir + "/iso-template/antiX/vmlinuz1\"";
         runCmd(cmd);
         // remove x64 template files
-        runCmd("rm " + work_dir + "/iso-template/boot/grub/grub.cfg_x64");
-        runCmd("rm " + work_dir + "/iso-template/boot/syslinux/syslinux.cfg_x64");
-        runCmd("rm " + work_dir + "/iso-template/boot/isolinux/isolinux.cfg_x64");
+        runCmd("rm \"" + work_dir + "/iso-template/boot/grub/grub.cfg_x64\"");
+        runCmd("rm \"" + work_dir + "/iso-template/boot/syslinux/syslinux.cfg_x64\"");
+        runCmd("rm \"" + work_dir + "/iso-template/boot/isolinux/isolinux.cfg_x64\"");
     } else {
         // mv x64 template files over
-        runCmd("mv " + work_dir + "/iso-template/boot/grub/grub.cfg_x64 " + work_dir + "/iso-template/boot/grub/grub.cfg");
-        runCmd("mv " + work_dir + "/iso-template/boot/syslinux/syslinux.cfg_x64 " + work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
-        runCmd("mv " + work_dir + "/iso-template/boot/isolinux/isolinux.cfg_x64 " + work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
+        runCmd("mv \"" + work_dir + "/iso-template/boot/grub/grub.cfg_x64\" \"" + work_dir + "/iso-template/boot/grub/grub.cfg\"");
+        runCmd("mv \"" + work_dir + "/iso-template/boot/syslinux/syslinux.cfg_x64\" \"" + work_dir + "/iso-template/boot/syslinux/syslinux.cfg\"");
+        runCmd("mv \"" + work_dir + "/iso-template/boot/isolinux/isolinux.cfg_x64\" \"" + work_dir + "/iso-template/boot/isolinux/isolinux.cfg\"");
     }
     replaceMenuStrings();
 
@@ -339,9 +339,9 @@ void mxsnapshot::copyNewIso()
     openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir);
     if (initrd_dir.contains("/mx-snapshot")) {  //just make sure initrd_dir is correct to avoid disaster
         // strip modules
-        runCmd("test -d " + initrd_dir + "/lib/modules && rm -r " + initrd_dir  + "/lib/modules");
+        runCmd("test -d \"" + initrd_dir + "/lib/modules\" && rm -r \"" + initrd_dir  + "/lib/modules\"");
     }
-    runCmd("test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release " + initrd_dir + "/etc");
+    runCmd("test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release \"" + initrd_dir + "/etc\"");
     if (initrd_dir != "") {
         copyModules(initrd_dir, kernel_used);
         closeInitrd(initrd_dir, work_dir + "/iso-template/antiX/initrd.gz");
@@ -371,11 +371,11 @@ void mxsnapshot::replaceMenuStrings() {
 void mxsnapshot::copyModules(QString to, QString kernel)
 {
     QString kernel586 = "3.16.0-4-586";
-    QString cmd = QString("copy-initrd-modules -t=%1 -k=%2").arg(to).arg(kernel);
+    QString cmd = QString("copy-initrd-modules -t=\"%1\" -k=\"%2\"").arg(to).arg(kernel);
     system(cmd.toUtf8());
     // copy 586 modules for the non-PAE kernel
     if (isi686()) {
-        QString cmd = QString("copy-initrd-modules -t=%1 -k=%2").arg(to).arg(kernel586);
+        QString cmd = QString("copy-initrd-modules -t=\"%1\" -k=\"%2\"").arg(to).arg(kernel586);
         system(cmd.toUtf8());
     }
 }
@@ -391,7 +391,7 @@ QString mxsnapshot::getFilename()
         int n = 1;
         do {
             name = snapshot_basename + QString::number(n) + ".iso";
-            dir.setPath(snapshot_dir.absolutePath() + "/" + name);
+            dir.setPath("\"" + snapshot_dir.absolutePath() + "/" + name + "\"");
             n++;
         } while (dir.exists(dir.absolutePath()));
         return name;
@@ -463,12 +463,12 @@ bool mxsnapshot::createIso(QString filename)
     makeMd5sum(work_dir + "/iso-template/antiX", "linuxfs");
 
     // mv linuxfs to another folder
-    runCmd("mkdir -p " + work_dir + "/iso-2/antiX");
-    runCmd("mv " + work_dir + "/iso-template/antiX/linuxfs* " + work_dir + "/iso-2/antiX");
+    runCmd("mkdir -p \"" + work_dir + "/iso-2/antiX\"");
+    runCmd("mv \"" + work_dir + "\"/iso-template/antiX/linuxfs* \"" + work_dir + "/iso-2/antiX\"");
 
     // create the iso file
     QDir::setCurrent(work_dir + "/iso-template");
-    cmd = "genisoimage -gid 0 -uid 0 -allow-limited-size -l -V MX-Linux-live -R -J -pad -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin -c boot/isolinux/isolinux.cat -o " + snapshot_dir.absolutePath() + "/\"" + filename + "\" . "  + work_dir + "/iso-2";
+    cmd = "genisoimage -gid 0 -uid 0 -allow-limited-size -l -V MX-Linux-live -R -J -pad -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin -c boot/isolinux/isolinux.cat -o \"" + snapshot_dir.absolutePath() + "/" + filename + "\" . \""  + work_dir + "/iso-2\"";
     ui->outputLabel->setText(tr("Creating CD/DVD image file..."));
     if (runCmd(cmd) != 0) {
         QMessageBox::critical(0, tr("Error"), tr("Could not create ISO file, please check whether you have enough space on the destination partition."));
@@ -478,7 +478,7 @@ bool mxsnapshot::createIso(QString filename)
     // make it isohybrid
     if (make_isohybrid == "yes") {
         ui->outputLabel->setText(tr("Making hybrid iso"));
-        cmd = "isohybrid " + snapshot_dir.absolutePath() + "/\"" + filename + "\"";
+        cmd = "isohybrid \"" + snapshot_dir.absolutePath() + "/" + filename + "\"";
         runCmd(cmd);
     }
 
@@ -496,7 +496,7 @@ void mxsnapshot::makeMd5sum(QString folder, QString file_name)
     QString current = dir.currentPath();
     dir.setCurrent(folder);
     ui->outputLabel->setText(tr("Making md5sum"));
-    QString cmd = "md5sum \"" + file_name + "\">" + folder + "/\"" + file_name + ".md5\"";
+    QString cmd = "md5sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".md5\"";
     runCmd(cmd);
     dir.setCurrent(current);
 }
@@ -513,7 +513,7 @@ void mxsnapshot::cleanUp()
 
     // checks if work_dir looks OK
     if (work_dir.contains("/mx-snapshot")) {
-        system("rm -r " + work_dir.toUtf8());
+        system("rm -r \"" + work_dir.toUtf8() + "\"");
     }
     if (!live && !reset_accounts) {
         // remove installer icon
@@ -652,7 +652,7 @@ void mxsnapshot::on_buttonNext_clicked()
                                      QMessageBox::Yes | QMessageBox::No);
             if (ans == QMessageBox::Yes) {
                 this->hide();
-                QString cmd = gui_editor.fileName() + " " + work_dir + "/iso-template/boot/isolinux/isolinux.cfg";
+                QString cmd = gui_editor.fileName() + " \"" + work_dir + "/iso-template/boot/isolinux/isolinux.cfg\"";
                 system(cmd.toUtf8());
                 this->show();
             }

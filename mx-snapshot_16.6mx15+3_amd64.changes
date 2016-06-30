@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Wed, 29 Jun 2016 20:30:07 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 16.6mx15+3
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (16.6mx15+3) mx; urgency=medium
+ .
+   * fix: allow white spaces in the name of the work directory
+Checksums-Sha1:
+ 9cc95be4234cab398b8e17275cb7dbeb781e66c7 1189 mx-snapshot_16.6mx15+3.dsc
+ 6e93fa61abb080b03e650710907e5bad10b83a78 325900 mx-snapshot_16.6mx15+3.tar.xz
+ 1d450bfe203b3ac2b0d8d9bfadfe8340b0969607 78406 mx-snapshot_16.6mx15+3_amd64.deb
+Checksums-Sha256:
+ e900eff66026532f0a2d77c08bf46f66dc245a10c476b3177bc7ba01c86e7001 1189 mx-snapshot_16.6mx15+3.dsc
+ 6f24d66ffbba57c3ddaa0bf54a5db01139ea78ab2403504726abc2e1c9afe7d6 325900 mx-snapshot_16.6mx15+3.tar.xz
+ eb27aa467e9a799b3fd434540436303d74fee849992f315e83f2e291ac82a5e5 78406 mx-snapshot_16.6mx15+3_amd64.deb
+Files:
+ 3dcc9b0d8b11718c48804813b51961cb 1189 admin optional mx-snapshot_16.6mx15+3.dsc
+ 181f40ffbc696da8b84b572536006216 325900 admin optional mx-snapshot_16.6mx15+3.tar.xz
+ 2fdbc425cb2feb517d6c33866617b977 78406 admin optional mx-snapshot_16.6mx15+3_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJXdGhkAAoJEHCTjHgGee6Y8FIIAKHaHpWYSpkP7HYNoDWShd1J
+YjXyGBIozRH5hkPQtS/8hJFIPEL4a8SjGUlFrFR8cQnIy8HB2gqUlhHrtAGI7R2w
+ziKS3HBfxHAgpbh3ToBN4NM3w+PXr6k21kmq0uH4UpqsrlmbPk01kXNQYmIZXDFl
+xnROrvU2qZfoFYH5wxGaZCIFHCuRv0Kt2WfHmXT/sMf0MW8+fu509Gc5T6X9cn94
+QPu3rsw/co1IYq/hL2jbjU7wTBj6GAUsUhBedKlp1EQh1mpEYMwm3Nvh1T7fNhtl
+3XQF5FH4MuCYLnE1dLzHqkMqQ7PcksiWwCnI8ECmErV5//1KYbpscDQflIZgkKU=
+=nWpK
+-----END PGP SIGNATURE-----

@@ -168,7 +168,7 @@ main() {
     : ${kernel:=$(uname -r)}
     : ${to_dir:=.}
 
-    local mod_dir=$from_dir/lib/modules/$kernel
+    local mod_dir="$from_dir"/lib/modules/$kernel
     test -d "$mod_dir" || fatal "Directory $mod_dir does not exist"
 
     local list1 list2 repeats default_mode
@@ -184,10 +184,10 @@ main() {
     [ "$default_mode" -a -z "$DIRS" ] && DIRS="kernel/drivers/ata kernel/drivers/mmc"
     local d
     for d in $(echo $DIRS | sed 's/,/ /g'); do
-        local dir=$mod_dir/$d
-        test -d $dir || fatal "Subdirectory $dir does not exist"
+        local dir="$mod_dir"/$d
+        test -d "$dir" || fatal "Subdirectory $dir does not exist"
         list1="$list1
-$(find $dir -name "*.ko" -printf "%f\n" | sed 's/\.ko//')"
+$(find "$dir" -name "*.ko" -printf "%f\n" | sed 's/\.ko//')"
     done
 
     repeats=$(echo "$list1" | sed 's/_/-/g' | sort | uniq --repeated | grep .)
@@ -205,9 +205,9 @@ $(find $dir -name "*.ko" -printf "%f\n" | sed 's/\.ko//')"
     for full in $list2; do
         [ "$VERBOSE" ] && printf "  %s\n" $(basename $full)
         local dir=$(dirname $full)
-        dir=$to_dir/${dir##$from_dir/}
-        test -d $dir || echo_cmd mkdir -p $dir
-        echo_cmd cp $full $dir/
+        dir="$to_dir"/"${dir##$from_dir/}"
+        test -d "$dir" || echo_cmd mkdir -p "$dir"
+        echo_cmd cp $full "$dir"/
         cnt=$((++cnt))
     done
     [ "$SHOW_COUNT" ] && echo "$ME: $cnt module(s)"

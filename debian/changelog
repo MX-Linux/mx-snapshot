@@ -1,3 +1,9 @@
+mx-snapshot (16.6mx15+3) mx; urgency=medium
+
+  * fix: allow white spaces in the name of the work directory
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 29 Jun 2016 20:30:07 -0400
+
 mx-snapshot (16.6mx15+2) mx; urgency=medium
 
   * added GUI snapshot name edit option
