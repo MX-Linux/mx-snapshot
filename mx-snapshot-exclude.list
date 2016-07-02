@@ -3,6 +3,8 @@
 
 # Do NOT edit this entry block unless you know what you are doing
 .bind-root
+.config
+.fehbg
 dev/*
 cdrom/*
 media/*

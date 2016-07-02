@@ -1,3 +1,9 @@
+mx-snapshot (16.7mx15) mx; urgency=medium
+
+  * exclude extra two items
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 02 Jul 2016 18:52:26 -0400
+
 mx-snapshot (16.6mx15+4) mx; urgency=medium
 
   * updated copy-initrd-modules script
