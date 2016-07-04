@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pl">
 <context>
     <name>QApplication</name>
     <message>
@@ -21,7 +23,7 @@
     <message>
         <location filename="../mxsnapshot.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="40"/>
@@ -37,7 +39,7 @@
         <location filename="../mxsnapshot.ui" line="155"/>
         <location filename="../mxsnapshot.cpp" line="625"/>
         <source>Snapshot name:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="162"/>
@@ -245,7 +247,7 @@ Tym razem zainstaluję i użyję programu leafpad.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="460"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="472"/>
@@ -255,7 +257,7 @@ Tym razem zainstaluję i użyję programu leafpad.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="474"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="480"/>
@@ -275,7 +277,7 @@ Tym razem zainstaluję i użyję programu leafpad.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="522"/>
         <source>Done</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="560"/>

@@ -1,3 +1,9 @@
+mx-snapshot (16.7mx15+1) mx; urgency=medium
+
+  * new translations
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 04 Jul 2016 12:33:31 -0400
+
 mx-snapshot (16.7mx15) mx; urgency=medium
 
   * exclude extra two items
