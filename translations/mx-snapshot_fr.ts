@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>QApplication</name>
     <message>
@@ -23,7 +21,7 @@
     <message>
         <location filename="../mxsnapshot.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;emplacement du snapshot:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="40"/>
@@ -39,7 +37,7 @@
         <location filename="../mxsnapshot.ui" line="155"/>
         <location filename="../mxsnapshot.cpp" line="625"/>
         <source>Snapshot name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Le nom du snapshot:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="162"/>
@@ -170,10 +168,6 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <source>Start scanning for shares</source>
-        <translation type="vanished">Commencer à rechercher des partages réseau</translation>
-    </message>
-    <message>
         <location filename="../mxsnapshot.ui" line="640"/>
         <source>Next &gt;</source>
         <translation>Suivant &gt;</translation>
@@ -182,10 +176,6 @@
         <location filename="../mxsnapshot.ui" line="662"/>
         <source>&lt; Back</source>
         <translation>&lt; Précédent</translation>
-    </message>
-    <message>
-        <source>The snapshot will be placed by default in </source>
-        <translation type="vanished">Le snapshot sera mis par défaut dans</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="194"/>
@@ -285,7 +275,7 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="522"/>
         <source>Done</source>
-        <translation type="unfinished"></translation>
+        <translation>Achevé</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="560"/>
@@ -411,10 +401,6 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
         <location filename="../mxsnapshot.cpp" line="802"/>
         <source>Select Snapshot Directory</source>
         <translation>Sélectionnez un répertoire du snapshot</translation>
-    </message>
-    <message>
-        <source>The snapshot will be placed in </source>
-        <translation type="vanished">Le snapshot sera mis dans</translation>
     </message>
 </context>
 </TS>

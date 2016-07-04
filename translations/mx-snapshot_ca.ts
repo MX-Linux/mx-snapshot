@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ca">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ca" version="2.1">
 <context>
     <name>QApplication</name>
     <message>
@@ -23,7 +21,7 @@
     <message>
         <location filename="../mxsnapshot.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ubicació de la instantània:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="40"/>
@@ -39,7 +37,7 @@
         <location filename="../mxsnapshot.ui" line="155"/>
         <location filename="../mxsnapshot.cpp" line="625"/>
         <source>Snapshot name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom de la instantània: </translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="162"/>
@@ -170,10 +168,6 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <source>Start scanning for shares</source>
-        <translation type="vanished">Comença l&apos;escaneig de compartits</translation>
-    </message>
-    <message>
         <location filename="../mxsnapshot.ui" line="640"/>
         <source>Next &gt;</source>
         <translation>Següent &gt;</translation>
@@ -182,10 +176,6 @@
         <location filename="../mxsnapshot.ui" line="662"/>
         <source>&lt; Back</source>
         <translation>&lt; Enrere </translation>
-    </message>
-    <message>
-        <source>The snapshot will be placed by default in </source>
-        <translation type="vanished">La instantània es desarà per omissió a </translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="194"/>
@@ -286,7 +276,7 @@ Aquest cop s&apos;instal·larà i usarà leafpad.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="522"/>
         <source>Done</source>
-        <translation type="unfinished"></translation>
+        <translation>Fet </translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="560"/>
@@ -412,10 +402,6 @@ Aquest cop s&apos;instal·larà i usarà leafpad.</translation>
         <location filename="../mxsnapshot.cpp" line="802"/>
         <source>Select Snapshot Directory</source>
         <translation>Trieu el directori de la instantània </translation>
-    </message>
-    <message>
-        <source>The snapshot will be placed in </source>
-        <translation type="vanished">La instantània es desarà a </translation>
     </message>
 </context>
 </TS>

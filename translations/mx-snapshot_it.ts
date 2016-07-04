@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="it">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
 <context>
     <name>QApplication</name>
     <message>
@@ -23,7 +21,7 @@
     <message>
         <location filename="../mxsnapshot.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Posizione Snapshot</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="40"/>
@@ -39,7 +37,7 @@
         <location filename="../mxsnapshot.ui" line="155"/>
         <location filename="../mxsnapshot.cpp" line="625"/>
         <source>Snapshot name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome Snapshot:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="162"/>
@@ -170,10 +168,6 @@
         <translation>Alt+B</translation>
     </message>
     <message>
-        <source>Start scanning for shares</source>
-        <translation type="vanished">Avvia la ricerca di risorse condivse</translation>
-    </message>
-    <message>
         <location filename="../mxsnapshot.ui" line="640"/>
         <source>Next &gt;</source>
         <translation>Avanti &gt;</translation>
@@ -182,10 +176,6 @@
         <location filename="../mxsnapshot.ui" line="662"/>
         <source>&lt; Back</source>
         <translation>&lt; Indietro</translation>
-    </message>
-    <message>
-        <source>The snapshot will be placed by default in </source>
-        <translation type="vanished">Snapshot verrà salvata di default in</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="194"/>
@@ -286,7 +276,7 @@ Verrà installato leafpad e usato per questa volta.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="522"/>
         <source>Done</source>
-        <translation type="unfinished"></translation>
+        <translation>Fatto</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="560"/>
@@ -386,7 +376,7 @@ Verrà installato leafpad e usato per questa volta.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="779"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
-        <translation>Programma per creare un CD live dal sistema in esecuzione per MX Linux</translation>
+        <translation>Programma di MX Linux per creare un CD live dal sistema in esecuzione</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="780"/>
@@ -412,10 +402,6 @@ Verrà installato leafpad e usato per questa volta.</translation>
         <location filename="../mxsnapshot.cpp" line="802"/>
         <source>Select Snapshot Directory</source>
         <translation>Seleziona la directory di Snapshot</translation>
-    </message>
-    <message>
-        <source>The snapshot will be placed in </source>
-        <translation type="vanished">La snapshot verrà salvata in</translation>
     </message>
 </context>
 </TS>
