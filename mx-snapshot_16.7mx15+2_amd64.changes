@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Sat, 09 Jul 2016 17:55:44 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 16.7mx15+2
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (16.7mx15+2) mx; urgency=medium
+ .
+   * bug fix: can now save snapshots on non-linux partitions
+Checksums-Sha1:
+ 8c949d146635c14ef14b77bd56c643002854c4f7 1192 mx-snapshot_16.7mx15+2.dsc
+ 27586a51516ed5404ce5e1aed009443c8724dd37 6314988 mx-snapshot_16.7mx15+2.tar.xz
+ f9c640e8ad93463b2b95532660aba6d1cc4fe7f7 78586 mx-snapshot_16.7mx15+2_amd64.deb
+Checksums-Sha256:
+ 7bf34496cd5e333ba677198cdb56046686329fe41c0e36efd06e929adccb900d 1192 mx-snapshot_16.7mx15+2.dsc
+ 07dcb2119412253856de47232d3815c6524c707a42f5277b16c91621ab583669 6314988 mx-snapshot_16.7mx15+2.tar.xz
+ 5026e0ffb45adb56d5e6672d2b07afbfa62571b399551788f8a34fb2394ae08c 78586 mx-snapshot_16.7mx15+2_amd64.deb
+Files:
+ b8ba2213158d4978e22788518f0d021c 1192 admin optional mx-snapshot_16.7mx15+2.dsc
+ 9b9d8f942383feb8f7427e5f0ab2cd59 6314988 admin optional mx-snapshot_16.7mx15+2.tar.xz
+ 5fc0728632cacd4fd39cb6bedef41bdb 78586 admin optional mx-snapshot_16.7mx15+2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJXgXNvAAoJEHCTjHgGee6YC+kIALzk+Mjvp9jYwlBBQ7joa6B6
+QBzy7GavajNH+Iv6IT9YLJ+4f576n4Xz8yWEKDbuS1eGHskiJz3WckqzaHs/qsZ9
+olpcYYLJabPzVftSqS7Ysng8pIpBdi/UicPWaPG63E8a61GRx7a+K1QU3PS3BqwR
+mE6wDZn6y1SCAj8S6X97aM1E5aNOfoFnfJfmdenEbRO61ZH1rorMUTx9bLSLaw8I
+tdb9nEOhWgQXowoQ+GhDidBXgwPfub62TtsTCfHBlLWwSpZfgxufTu8y9E8kQ18j
+MJ41mpQa6773mX/ov5g+JwVry0eX1sCcvrqCmNkv7zqaM2VOMVeAb4oNPtiVIL4=
+=76kO
+-----END PGP SIGNATURE-----

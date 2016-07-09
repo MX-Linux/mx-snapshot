@@ -280,15 +280,13 @@ void mxsnapshot::checkDirectories()
     if (!snapshot_dir.exists()) {
         snapshot_dir.mkpath(snapshot_dir.absolutePath());
     }
-    // Create a work_dir
+    // Create a work_dir and mount it as tmpfs
     work_dir = getCmdOut("mktemp -d \"" + snapshot_dir.absolutePath() + "/mx-snapshot-XXXXXXXX\"");
 }
 
 void mxsnapshot::openInitrd(QString file, QString initrd_dir)
 {
-    QString cmd = "mkdir -p \"" + initrd_dir + "\"";
-    system(cmd.toUtf8());
-    cmd = "chmod a+rx \"" + initrd_dir + "\"";
+    QString cmd = "chmod a+rx \"" + initrd_dir + "\"";
     system(cmd.toUtf8());
     QDir::setCurrent(initrd_dir);
     cmd = QString("gunzip -c \"%1\" | cpio -idum").arg(file);
@@ -300,6 +298,9 @@ void mxsnapshot::closeInitrd(QString initrd_dir, QString file)
     QDir::setCurrent(initrd_dir);
     QString cmd = "(find . | cpio -o -H newc --owner root:root | gzip -9) >\"" + file + "\"";
     runCmd(cmd);
+    if (initrd_dir.startsWith("/tmp/tmp.")) {
+        system("rm -r " + initrd_dir.toUtf8());
+    }
     makeMd5sum(work_dir + "/iso-template/antiX", "initrd.gz");
 }
 
@@ -315,29 +316,29 @@ void mxsnapshot::copyNewIso()
     cmd = "cp /usr/lib/iso-template/template-initrd.gz iso-template/antiX/initrd.gz";
     runCmd(cmd);
 
-    cmd = "cp /boot/vmlinuz-" + kernel_used + " \"" + work_dir + "/iso-template/antiX/vmlinuz\"";
+    cmd = "cp /boot/vmlinuz-" + kernel_used + " iso-template/antiX/vmlinuz";
     runCmd(cmd);
 
     if(i686) {
-        cmd = "cp /boot/vmlinuz-3.16.0-4-586 \"" + work_dir + "/iso-template/antiX/vmlinuz1\"";
+        cmd = "cp /boot/vmlinuz-3.16.0-4-586 iso-template/antiX/vmlinuz1";
         runCmd(cmd);
         // remove x64 template files
-        runCmd("rm \"" + work_dir + "/iso-template/boot/grub/grub.cfg_x64\"");
-        runCmd("rm \"" + work_dir + "/iso-template/boot/syslinux/syslinux.cfg_x64\"");
-        runCmd("rm \"" + work_dir + "/iso-template/boot/isolinux/isolinux.cfg_x64\"");
+        runCmd("rm iso-template/boot/grub/grub.cfg_x64");
+        runCmd("rm iso-template/boot/syslinux/syslinux.cfg_x64");
+        runCmd("rm iso-template/boot/isolinux/isolinux.cfg_x64");
     } else {
         // mv x64 template files over
-        runCmd("mv \"" + work_dir + "/iso-template/boot/grub/grub.cfg_x64\" \"" + work_dir + "/iso-template/boot/grub/grub.cfg\"");
-        runCmd("mv \"" + work_dir + "/iso-template/boot/syslinux/syslinux.cfg_x64\" \"" + work_dir + "/iso-template/boot/syslinux/syslinux.cfg\"");
-        runCmd("mv \"" + work_dir + "/iso-template/boot/isolinux/isolinux.cfg_x64\" \"" + work_dir + "/iso-template/boot/isolinux/isolinux.cfg\"");
+        runCmd("mv iso-template/boot/grub/grub.cfg_x64 iso-template/boot/grub/grub.cfg");
+        runCmd("mv iso-template/boot/syslinux/syslinux.cfg_x64 iso-template/boot/syslinux/syslinux.cfg");
+        runCmd("mv iso-template/boot/isolinux/isolinux.cfg_x64 iso-template/boot/isolinux/isolinux.cfg");
     }
     replaceMenuStrings();
 
     makeMd5sum(work_dir + "/iso-template/antiX", "vmlinuz");
 
-    QString initrd_dir = work_dir + "/initrd";
+    QString initrd_dir = getCmdOut("mktemp -d");
     openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir);
-    if (initrd_dir.contains("/mx-snapshot")) {  //just make sure initrd_dir is correct to avoid disaster
+    if (initrd_dir.startsWith("/tmp/tmp.")) {  //just make sure initrd_dir is correct to avoid disaster
         // strip modules
         runCmd("test -d \"" + initrd_dir + "/lib/modules\" && rm -r \"" + initrd_dir  + "/lib/modules\"");
     }
@@ -463,8 +464,8 @@ bool mxsnapshot::createIso(QString filename)
     makeMd5sum(work_dir + "/iso-template/antiX", "linuxfs");
 
     // mv linuxfs to another folder
-    runCmd("mkdir -p \"" + work_dir + "/iso-2/antiX\"");
-    runCmd("mv \"" + work_dir + "\"/iso-template/antiX/linuxfs* \"" + work_dir + "/iso-2/antiX\"");
+    runCmd("mkdir -p iso-2/antiX");
+    runCmd("mv iso-template/antiX/linuxfs* iso-2/antiX");
 
     // create the iso file
     QDir::setCurrent(work_dir + "/iso-template");

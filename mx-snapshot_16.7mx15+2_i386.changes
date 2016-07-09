@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Sat, 09 Jul 2016 17:55:44 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 16.7mx15+2
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (16.7mx15+2) mx; urgency=medium
+ .
+   * bug fix: can now save snapshots on non-linux partitions
+Checksums-Sha1:
+ 2d941c31d4db9ef2d2fdd07dcbe2f9ff16eda7b5 80230 mx-snapshot_16.7mx15+2_i386.deb
+Checksums-Sha256:
+ daa242a7e8bec40ba39745202fd03cc509562d276629a6f6cbd1d8573e411489 80230 mx-snapshot_16.7mx15+2_i386.deb
+Files:
+ e3a3b12541ac1b915ff12faab89e0477 80230 admin optional mx-snapshot_16.7mx15+2_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJXgYODAAoJEHCTjHgGee6Yy0UIALk09jEhH048FXE50ncY4qmk
+04O7k8Cx+yz93NQSSxOeccxPxsxIMNUIpfNoTjUWvMA/I8eqmgpclRLykqaK765j
+BJByAfTlAJ3u9Ode5V4KU75CNlrUyIOSXmFKfnahZ7IiFmnb2VyFNyiHC7Qz2tin
+h6QZst5Ah74/jH00pWKCaswGyhJSkzsxuPkg4RvIVMTwrCYtQfZDcV5umnr80/L4
+geFBnsMrZjkEoWFyn8EcoS6Cbt0BIoV2dpJYmXOxNKSSHnyt7wZKwsMnHI9wHj5j
+UNJTxpK16mtH1eq9EHnMBDKFO03k1wBoygc8B2yfzXy1RFZAIl0/eY4ucEZgnqE=
+=ez2P
+-----END PGP SIGNATURE-----

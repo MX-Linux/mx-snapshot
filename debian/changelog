@@ -1,3 +1,9 @@
+mx-snapshot (16.7mx15+2) mx; urgency=medium
+
+  * bug fix: can now save snapshots on non-linux partitions
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 09 Jul 2016 17:55:44 -0400
+
 mx-snapshot (16.7mx15+1) mx; urgency=medium
 
   * new translations
