@@ -280,7 +280,7 @@ void mxsnapshot::checkDirectories()
     if (!snapshot_dir.exists()) {
         snapshot_dir.mkpath(snapshot_dir.absolutePath());
     }
-    // Create a work_dir and mount it as tmpfs
+    // Create a work_dir
     work_dir = getCmdOut("mktemp -d \"" + snapshot_dir.absolutePath() + "/mx-snapshot-XXXXXXXX\"");
 }
 
