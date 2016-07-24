@@ -1,3 +1,9 @@
+mx-snapshot (16.7mx15+3) mx; urgency=medium
+
+  * added new Mozilla cache location to exclude list
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 24 Jul 2016 16:23:52 -0400
+
 mx-snapshot (16.7mx15+2) mx; urgency=medium
 
   * bug fix: can now save snapshots on non-linux partitions
