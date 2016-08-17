@@ -1,3 +1,9 @@
+mx-snapshot (16.8mx15) mx; urgency=medium
+
+  * added version to installed package list
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 17 Aug 2016 12:47:09 -0400
+
 mx-snapshot (16.7mx15+3) mx; urgency=medium
 
   * added new Mozilla cache location to exclude list

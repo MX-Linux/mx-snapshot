@@ -415,7 +415,7 @@ void mxsnapshot::savePackageList(QString file_name)
     QFileInfo fi(file_name);
     QString base_name = fi.completeBaseName(); // remove extension
     QString full_name = work_dir + "/iso-template/" + base_name + "/package_list";
-    QString cmd = "dpkg -l | grep \"ii\" | awk '{ print $2 }' >\"" + full_name + "\"";
+    QString cmd = "dpkg -l | grep ^ii\\ \\ | awk '{print $2,$3}' | sed 's/:'$(dpkg --print-architecture)'//' | column -t >\"" + full_name + "\"";
     system(cmd.toUtf8());
 }
 
