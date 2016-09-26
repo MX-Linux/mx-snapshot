@@ -4,7 +4,7 @@
  * Copyright (C) 2015 MX Authors
  *
  * Authors: Adrian
- *          MX & MEPIS Community <http://forum.mepiscommunity.org>
+ *          MX & MEPIS Community <http://mxlinux.org>
  *
  * This file is part of MX Snapshot.
  *

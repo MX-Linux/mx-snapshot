@@ -4,7 +4,7 @@
  * Copyright (C) 2015 MX Authors
  *
  * Authors: Adrian
- *          MX & MEPIS Community <http://forum.mepiscommunity.org>
+ *          MX & MEPIS Community <http://mxlinux.org>
  *
  * This file is part of MX Snapshot.
  *
@@ -777,7 +777,7 @@ void mxsnapshot::on_buttonAbout_clicked()
                        tr("About MX Snapshot"), "<p align=\"center\"><b><h2>" +
                        tr("MX Snapshot") + "</h2></b></p><p align=\"center\">" + tr("Version: ") +
                        version + "</p><p align=\"center\"><h3>" +
-                       tr("Program for creating a live-CD from the running system for MX Linux") + "</h3></p><p align=\"center\"><a href=\"http://www.mepiscommunity.org/mx\">http://www.mepiscommunity.org/mx</a><br /></p><p align=\"center\">" +
+                       tr("Program for creating a live-CD from the running system for MX Linux") + "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>", 0, this);
     msgBox.addButton(tr("License"), QMessageBox::AcceptRole);
     msgBox.addButton(tr("Cancel"), QMessageBox::RejectRole);

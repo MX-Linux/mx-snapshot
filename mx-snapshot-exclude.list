@@ -5,15 +5,18 @@
 .bind-root
 .config
 .fehbg
+lost+found
+swapfile
+tmp
 dev/*
 cdrom/*
+grub/*
+live/*
 media/*
-swapfile
 mnt/*
 sys/*
 proc/*
-tmp
-live/*
+run/*
 boot/grub/*
 etc/adjtime
 etc/bcm-ckd
@@ -28,21 +31,20 @@ etc/udev/rules.d/70-persistent-cd.rules
 etc/udev/rules.d/70-persistent-net.rules
 etc/resolv.conf
 home/snapshot
-lost+found
-grub/*
-run/*
 root/.bash_history
 root/.dbus
 root/.gconf
 root/.gnome2
-var/tmp/*
 var/cache/apt/archives/*.deb
+var/cache/apt-xapian-index/index.*
+var/cache/apt-show-versions/*
 var/cache/apt/*.bin
-var/lib/apt/lists/*
-var/lib/dhcp/*
+var/cache/apt/apt-file/*
 var/cache/debconf/*-old
 var/cache/lightdm
 var/cache/samba/browse.dat
+var/lib/apt/lists/*
+var/lib/dhcp/*
 var/lib/dpkg/*-old
 var/lib/lightdm/.cache
 var/lib/lightdm/.Xauthority
@@ -54,6 +56,7 @@ var/log/!(samba)
 var/log/samba/*
 var/mail/*
 var/spool/mail/*
+var/tmp/*
 
 # Entries below this can be edited by the user. If you have any large
 # files or directories, you should exclude them from being copied
