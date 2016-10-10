@@ -29,6 +29,7 @@
 #include <QFileDialog>
 #include <QScrollBar>
 #include <QTextStream>
+#include <QKeyEvent>
 
 #include <QDebug>
 
@@ -809,3 +810,29 @@ void mxsnapshot::on_buttonSelectSnapshot_clicked()
     this->show();
 }
 
+// process keystrokes
+void mxsnapshot::keyPressEvent(QKeyEvent *event) {
+    if (event->key() == Qt::Key_Escape) {
+        closeApp();
+    }
+}
+
+// close application
+void mxsnapshot::closeApp() {
+    // ask for confirmation when on outputPage
+    if (ui->stackedWidget->currentWidget() == ui->outputPage) {
+        int ans = QMessageBox::question(this, tr("Confirmation"), tr("Are you sure you want to quit the application?"),
+                                        QMessageBox::Yes | QMessageBox::No);
+        if (ans == QMessageBox::Yes) {
+            return qApp->quit();
+        }
+    } else {
+        return qApp->quit();
+    }
+
+}
+
+void mxsnapshot::on_buttonCancel_clicked()
+{
+    closeApp();
+}
