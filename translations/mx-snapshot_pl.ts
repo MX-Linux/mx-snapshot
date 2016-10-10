@@ -377,7 +377,7 @@ Tym razem zainstaluję i użyję programu leafpad.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="780"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
-        <translation>Program do tworzenia obrazów Live-CD z działającego systemu dla dystrybucji antiX MX</translation>
+        <translation>Program do tworzenia obrazów Live-CD z działającego systemu dla dystrybucji MX Linux</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="781"/>

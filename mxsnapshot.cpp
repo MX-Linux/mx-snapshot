@@ -4,7 +4,7 @@
  * Copyright (C) 2015 MX Authors
  *
  * Authors: Adrian
- *          MX & MEPIS Community <http://mxlinux.org>
+ *          MX Linux <http://mxlinux.org>
  *
  * This file is part of MX Snapshot.
  *
@@ -790,7 +790,7 @@ void mxsnapshot::on_buttonAbout_clicked()
 void mxsnapshot::on_buttonHelp_clicked()
 {
     this->hide();
-    system("mx-viewer http://mepiscommunity.org/wiki/help-files/help-mx-save-system-iso-snapshot '" + tr("MX Snapshot Help").toUtf8() + "'");
+    system("mx-viewer https://mxlinux.org/wiki/help-files/help-mx-save-system-iso-snapshot '" + tr("MX Snapshot Help").toUtf8() + "'");
     this->show();
 }
 

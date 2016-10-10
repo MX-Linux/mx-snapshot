@@ -1,3 +1,9 @@
+mx-snapshot (16.10mx16) mx; urgency=medium
+
+  * changed URLs
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 10 Oct 2016 14:07:16 -0400
+
 mx-snapshot (16.8mx15) mx; urgency=medium
 
   * added version to installed package list
