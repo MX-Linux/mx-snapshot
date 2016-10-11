@@ -276,6 +276,7 @@ Wollen Sie leafpad installieren und diesmal benutzen?</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="524"/>
+        <location filename="../mxsnapshot.cpp" line="823"/>
         <source>Done</source>
         <translation>Erledigt</translation>
     </message>

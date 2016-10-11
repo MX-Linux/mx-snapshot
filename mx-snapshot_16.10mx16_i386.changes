@@ -18,20 +18,20 @@ Changes:
  .
    * changed URLs
 Checksums-Sha1:
- 5930899cb0f860203927c3c768252e9eea057f92 80744 mx-snapshot_16.10mx16_i386.deb
+ d7695003f534ed488d97ec66ab9d918a3073889b 80846 mx-snapshot_16.10mx16_i386.deb
 Checksums-Sha256:
- 69e6b161112fcf3d89df1086b590d8ef477f11a3791600c2ae908e46bdc2db30 80744 mx-snapshot_16.10mx16_i386.deb
+ 83fd4d8405e50ca1b6fbd9b2ba3062d05b8ef668fbc570283f5dda07a4fb4754 80846 mx-snapshot_16.10mx16_i386.deb
 Files:
- 61d6ce7fc01925f071db91e75fb9cd09 80744 admin optional mx-snapshot_16.10mx16_i386.deb
+ 09512edce75594753bb295467ab6362e 80846 admin optional mx-snapshot_16.10mx16_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJX/AJTAAoJEHCTjHgGee6YAsMIANfTxE0FHqY4wxyQeVFBbGvI
-Drx/SFs3sSC9ICwERpmNDisUNOvEc9WGUqnMEsbE2spx9WhA377zX6SdOifkkeh7
-rfvKB8J7+GsQxvNjGxoFpzlD9dieUb/SAPZj3sl1ww+lF0zTuqxDjSo2WBiCT4l+
-xnPHnUZ+o4v+ifv+jmr3qoY1dswfut+N7MayxT9t+KuAhhtqUELqIc+80UijRs9r
-hKlAuUcJUfeYB4J78UDJtKux2fC077i4+wsHyn/u9GjDZ11GyZ8V74JYOXemyt7i
-/9E1lex7ao6BW2a/v2KTNhrNnYKLcRuoDVMgBs2RYJ6ZwBlDExC6cY4kf7L4oEo=
-=Y+SU
+iQEcBAEBAgAGBQJX/Rk0AAoJEHCTjHgGee6YSYgH/1dYpJikYxPJSXprWTWiQAXL
+N2LXYpUcc/tc+NBQ+wEUaAxBYHZFu3Ie2XjmjOhp4uJzBJDGpt3O9n/oAxvmM9lI
+t2/lNHf5+G8P4eFkF7OcRgRAga6KbmLCPf0j8bSua6qiiGiCUhaMCG2JhrgHfidt
+071/wuAj03fLWdn7X4eKE2fdld0ELd9alUVfYJbtivYiz/m4hkXAzZghCBIMgncc
+XMz3MJIfTR1Nb2C2tmv+R5uO15G20SOHpCVzFi/2pELeO1SwptcC4tNh7iJBn5mM
+mMzgFoVKyBO1UN1KxPPTpqHXPoxDFi+2dPHl5eoCZlMsA5OH3Dt3CniUIXEpho8=
+=oNRo
 -----END PGP SIGNATURE-----

@@ -819,8 +819,8 @@ void mxsnapshot::keyPressEvent(QKeyEvent *event) {
 
 // close application
 void mxsnapshot::closeApp() {
-    // ask for confirmation when on outputPage
-    if (ui->stackedWidget->currentWidget() == ui->outputPage) {
+    // ask for confirmation when on outputPage and not done
+    if (ui->stackedWidget->currentWidget() == ui->outputPage && ui->outputLabel->text() != tr("Done")) {
         int ans = QMessageBox::question(this, tr("Confirmation"), tr("Are you sure you want to quit the application?"),
                                         QMessageBox::Yes | QMessageBox::No);
         if (ans == QMessageBox::Yes) {

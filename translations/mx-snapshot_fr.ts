@@ -276,6 +276,7 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="524"/>
+        <location filename="../mxsnapshot.cpp" line="823"/>
         <source>Done</source>
         <translation>Achevé</translation>
     </message>

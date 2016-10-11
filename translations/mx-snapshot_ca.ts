@@ -277,6 +277,7 @@ Aquest cop s&apos;instal·larà i usarà leafpad.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="524"/>
+        <location filename="../mxsnapshot.cpp" line="823"/>
         <source>Done</source>
         <translation>Fet </translation>
     </message>
