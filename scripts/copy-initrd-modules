@@ -46,6 +46,7 @@ crc32c-generic
 crct10dif-pclmul
 crct10dif-common
 crct10dif-generic
+ecb
 ehci-hcd
 ehci-pci
 ext2
@@ -67,6 +68,7 @@ libcrc32c
 loop
 mbcache
 msdos
+nls-ascii
 nls-cp437
 nls-utf8
 ntfs
@@ -178,7 +180,7 @@ main() {
         default_mode=true
         list1=$(echo "$DEFAULT_LIST" | grep -v "^\s*#" | sed 's/\s*#.*//')
     else
-        list1=$(cat "$@" | grep -v "^\s*#" | sed 's/\s*#.*//')
+        list1=$(cat "$@" | grep -v "^\s*#" | sed -e 's/\s*#.*//' -e "s/,/ /g")
     fi
 
     [ "$default_mode" -a -z "$DIRS" ] && DIRS="kernel/drivers/ata kernel/drivers/mmc"
@@ -213,7 +215,7 @@ $(find "$dir" -name "*.ko" -printf "%f\n" | sed 's/\.ko//')"
 $(echo "$list2")
 List_2
 
-    [ "$SHOW_COUNT" ] && echo "$ME: $cnt module(s)"
+    [ "$SHOW_COUNT" ] && printf "$ME: %s module(s)\n" "$cnt"
 }
 
 echo_cmd() {
