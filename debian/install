@@ -7,4 +7,4 @@ mx-snapshot.svg		usr/share/pixmaps
 icons/*			usr/share/mx-snapshot/icons
 license.html		usr/share/doc/mx-snapshot
 scripts/copy-initrd-modules	usr/sbin
-
+scripts/installed-to-live	usr/share/mx-snapshot

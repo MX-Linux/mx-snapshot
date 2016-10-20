@@ -1,0 +1,855 @@
+#!/bin/bash
+#
+# Start:
+# 1) Bind mount the bind-root
+#
+# General
+# 2) do a bunch of bind mounts under bind-root
+#    (create directories and touch files as needed)
+# 3) Munge files
+#
+# Add:
+# 4) optionally do more bind mounts under ro-root
+#    (create directories and touch files as needed)
+
+# Clean:
+# 5) do a recursive umount
+# 6) Delete touched files and created directories from the *original* FS
+
+
+ME=${0##*/}
+
+USER_PW=demo:demo
+ROOT_PW=root:root
+
+BIND_ROOT=/.bind-root
+REAL_ROOT=/
+WORK_DIR=/tmp/$ME
+
+EXCLUDES_DIR=/usr/local/share/excludes
+VERSION_FILE=/etc/live/version/linuxfs.ver
+
+CONF_FILE=$WORK_DIR/cleanup.conf
+
+TEMPLATE_DIR=/usr/local/share/live-files
+
+DEF_TZ="America/New_York"
+DEF_REPO="us"
+
+PRETEND=
+
+PW_FILES="/etc/passwd /etc/shadow /etc/gshadow /etc/group"
+MUNGE_FILES="/etc/slim.conf /etc/lightdm/lightdm.conf"
+BIND_FILES="$PW_FILES"
+
+LIVE_FILE_LIST="
+/etc/desktop-session/startup
+/etc/fstab
+/etc/grub.d/*
+/etc/init.d/checkfs.sh
+/etc/init.d/cron
+/etc/init.d/debian/*
+/etc/init.d/gpm
+/etc/init.d/hwclock.sh
+/etc/init.d/keyboard-setup
+/etc/init.d/sendsigs
+/etc/init.d/umountfs
+/etc/initrd-release
+/etc/issue
+/etc/rc.local
+/etc/rc?.d/*virtualbox*
+/etc/skel/.fluxbox/menu
+/etc/skel/.icewm/menu
+/etc/skel/.jwm/menu
+/etc/skel/Desktop/Installer.desktop
+/etc/udev/rules.d/90-fstab-automount.rules
+/usr/share/applications/mx/minstall.desktop
+"
+
+GENERAL_LIVE_FILE_LIST="
+/etc/adjtime
+/etc/default/grub
+/etc/default/keyboard
+/etc/default/locale
+/etc/hostname
+/etc/kbd/config
+/etc/lightdm/lightdm.conf
+/etc/modprobe.d/*
+/etc/slim.conf
+"
+
+usage() {
+    local ret=${1:-0}
+
+    cat<<Usage
+Usage: $ME [options] [commands ...]
+Use bind mounts to create a filesystem that looks like the live system.
+
+Create a config file $CONF_FILE that can be used to undo what we did.
+This is needed because sometimes we create directories and touch files.
+
+Commands:
+    start               Do the main bind mount and create cleanup.conf
+
+    status              Show status including contents of cleanup.conf
+
+    live-files          bind mount files under $TEMPLATE_DIR/files
+
+    general-files       bind mount files under $TEMPLATE_DIR/general-files
+
+    read-only           Remount the bind root directory as read-only
+
+    read-write          Remount the bind root directory as read-write
+
+    passwd              Make general purpose password/group files
+
+    add=<dir1,dir2,..>  Add files from the dirs template
+
+    bind=<dir1,dir2,..>  Bind mount each dir IF it is a mountpoint
+
+    general             Same as "empty=/etc/modprobe.d/ empty=/etc/grub.d
+                        all-files passwd repo timezone"
+
+    adjtime             Reset the adjtime file but leave the utc / local selection
+
+    cleanup             Clean up all that we did
+
+    repo[=<country>]    Reset the apt repos to the country given (default us)
+
+    timezone=[<zone>]   Reset the timezone back to EST or as specfied
+
+    empty=<dir1,dir2,...>
+                        Bind mount empty directories at these locations
+
+    exclude[=<prefix>] file1 file2 ...
+                        Generate an exclude list from the files listed. Prepend
+                        each entry with <prefix> if it is given.  (This is a
+                        convenience routine for use with mksquashfs).
+
+    version-file[=<title>]
+                        Create a standard linuxfs.ver file and bind mount it at
+                        the appropriate location: $VERSION_FILE
+
+    populate-live-files <from-dir> [<to-dir>]
+                        Populate the $TEMPLATE_DIR with files extracted from
+                        <from-dir>.  This is usually a mounted linuxfs file.
+                        The optional <to-dir> is the top level directory under
+                        which we will put the template directory.
+Options:
+
+    -b --bind-root=<dir>       The root of the new fs.   Default: $BIND_ROOT
+    -e --excludes-dir=<dir>    Directory for exclude files  Default: $EXCLUDES_DIR
+    -f --from=<dir>            Directory we copy from.  Default: $REAL_ROOT
+    -F --Force                 Delete work directory when starting
+    -h --help                  Show this help
+    -o --output=<file>         Send "exclude" command output to <file> instead of stdout
+    -P --pretend               Don't do anything just show what would be done
+    -r --root=<user:password>  The root user and optional password
+    -t --template=<dir>        Template directory
+    -u --user=<user:password>  Default username and optional password
+    -w --work=<dir>            Temporary directory to hold our work: $WORK_DIR
+
+    -v --verbose               Print more
+
+Note: if passwords aren't given then the username is used as the password.
+
+Current defaults:
+--bind-root=$BIND_ROOT
+     --from=$REAL_ROOT
+ --template=$TEMPLATE_DIR
+
+     --user=$USER_PW
+     --root=$ROOT_PW
+Usage
+
+    exit $ret
+}
+
+main() {
+
+    [ $# -eq 0 ] && usage
+
+    local param val
+    local short_stack="bdefFhoprtuv"
+    while [ $# -gt 0 -a -n "$1" -a -z "${1##-*}" ]; do
+        param=${1#-}
+        shift
+
+       # Unstack single-letter options
+        case $param in
+            [$short_stack][$short_stack]*)
+                if [ -z "${param//[$short_stack]/}" ]; then
+                    set -- $(echo $param | sed -r 's/([a-zA-Z])/ -\1 /g') "$@"
+                    continue
+                fi;;
+        esac
+
+        case $param in
+            -bind-root|-excludes-dir|-from|-output|-root|-template|-user|-work|[befortuw])
+                    [ $# -lt 1 ] && fatal "Expected a parameter after: -$param"
+                    val=$1
+                    [ -n "$val" -a -z "${val##-*}" ] \
+                        && fatal "Suspicious parameter after -$param: $val"
+                    shift           ;;
+
+              *=*)  val=${param#*=} ;;
+                *)  val="???"       ;;
+        esac
+
+        case $param in
+          -bind-root=*|b=*) BIND_ROOT=$val                    ;;
+              -bind-root|b) BIND_ROOT=$val                    ;;
+       -excludes-dir=*|e=*) EXCLUDES_DIR=$val                 ;;
+           -excludes-dir|e) EXCLUDES_DIR=$val                 ;;
+               -from=*|f=*) REAL_ROOT=$val                    ;;
+                   -from|f) REAL_ROOT=$val                    ;;
+                  -Force|F) FORCE=true                        ;;
+                   -help|h) usage                             ;;
+             -output=*|o=*) OUTPUT_FILE=$val                  ;;
+                 -output|o) OUTPUT_FILE=$val                  ;;
+                -pretend|p) PRETEND=true                      ;;
+               -root=*|r=*) ROOT_PW=$val                      ;;
+                   -root|r) ROOT_PW=$val                      ;;
+           -template=*|t=*) TEMPLATE_DIR=$val                 ;;
+               -template|t) TEMPLATE_DIR=$val                 ;;
+               -user=*|u=*) USER_PW=$val                      ;;
+                   -user|u) USER_PW=$val                      ;;
+                -verbose|v) VERBOSE=true                      ;;
+               -work=*|w=*) WORK_DIR=$val                     ;;
+                  -work|w=) WORK_DIR=$val                     ;;
+                         *) fatal "Unknown argument: -$param" ;;
+        esac
+    done
+
+    CONF_FILE=$WORK_DIR/cleanup.conf
+
+    [ $# -eq 0 ] && fatal "Expected as least one commmand"
+    while [ $# -gt 0 ]; do
+        local val cmd=$1
+        shift
+        val=${cmd#*=}
+        case $cmd in
+              start) do_start         $CONF_FILE $WORK_DIR             ;;
+             status) do_status        $CONF_FILE                       ;;
+              add=*) do_add           $CONF_FILE $WORK_DIR "$val"      ;;
+             bind=*) do_bind          $CONF_FILE $WORK_DIR "$val"      ;;
+         live-files) do_live_files    $CONF_FILE $WORK_DIR             ;;
+      general-files) do_general_files $CONF_FILE $WORK_DIR             ;;
+            general) do_general       $CONF_FILE $WORK_DIR             ;;
+             passwd) do_passwd        $CONF_FILE                       ;;
+          read-only) do_read_only     $CONF_FILE                       ;;
+         read-write) do_read_write    $CONF_FILE                       ;;
+            cleanup) do_cleanup       $CONF_FILE $WORK_DIR             ;;
+            empty=*) do_empty         $CONF_FILE $WORK_DIR "$val"      ;;
+       version-file) do_version_file  $CONF_FILE $WORK_DIR             ;;
+     version-file=*) do_version_file  $CONF_FILE $WORK_DIR "$val"      ;;
+            adjtime) do_adjtime       $CONF_FILE $WORK_DIR             ;;
+          exclude=*) do_exclude       "$val" "$@" ; exit 0             ;;
+            exclude) do_exclude       ""     "$@" ; exit 0             ;;
+               repo) do_repo          $CONF_FILE $WORK_DIR "$DEF_REPO" ;;
+             repo=*) do_repo          $CONF_FILE $WORK_DIR "$val"      ;;
+           timezone) do_timezone      $CONF_FILE $WORK_DIR "$DEF_TZ"   ;;
+         timezone=*) do_timezone      $CONF_FILE $WORK_DIR "$val"      ;;
+
+ populate-live-files) do_populate_live "$@"                            ;;
+
+                  *) fatal "Unexpected command: $cmd."
+        esac
+    done
+}
+
+do_populate_live() {
+    [ $# -lt 1 ] && fatal "Missing <from> directory"
+    local from_dir=$1  to_dir=$2
+    test -d "$from_dir" || fatal "$from is not a directory"
+    copy_files "$from_dir" "$LIVE_FILE_LIST"         "$to_dir$TEMPLATE_DIR/files"
+    copy_files "$from_dir" "$GENERAL_LIVE_FILE_LIST" "$to_dir$TEMPLATE_DIR/general-files"
+
+    exit 0
+}
+
+copy_files() {
+    local from_dir=$1 files=$2 to_dir=$3
+    [ -z "$to_dir" -o -n "${to_dir##*[a-zA-Z]*}" ] && fatal "suspicious to-dir: $to_dir"
+
+    pretend rm -rf $to_dir
+    pretend mkdir -p $to_dir
+    local list=$(echo "$files" | grep -v "^\s*#\s*" | sed 's/\s*#.*//' \
+        | grep "^/" | sed "s=^=$from_dir=")
+
+    local file
+    for file in $list; do
+        test -e $file || continue
+        local dest_file=${file#$from_dir}
+        local dest=$to_dir$dest_file
+        local dest_dir=$(dirname $dest)
+        test -d $dest_dir || pretend mkdir -p $dest_dir
+        pretend cp -a $file $dest
+    done
+}
+
+do_version_file() {
+    local conf_file=$1  work_dir=$2  title=$3
+    read_conf_file $conf_file
+    local vdir=$work_dir/version-file
+    local vfile=$vdir$VERSION_FILE
+
+    mkdir -p $(dirname $vfile) || fatal "Could not make directory for version-file"
+    test -e $VERSION_FILE && cp $VERSION_FILE $vfile
+    cat >> $vfile << Version_Info
+$(version_id)
+
+title: $title
+creation date: $(date +"%e %B %Y %T %Z")
+kernel: $(uname -sr)
+machine: $(uname -m)
+Version_Info
+
+    bind_mount_template "$vdir" "$BIND_ROOT" "$REAL_ROOT"
+
+}
+
+do_exclude() {
+    local file ecnt=0 prefix=$1
+    shift
+
+    [ "$OUTPUT_FILE" ] && exec > $OUTPUT_FILE
+
+    for file; do
+        [ -z "${file##/*}" -o -z "${file##.*}" ] || file="$EXCLUDES_DIR/$file"
+        #echo "file: $file"
+        if ! test -f $file; then
+            error "Exclude file $file does not exist"
+            ecnt=$((ecnt + 1))
+            continue
+        fi
+
+        for line in $(grep -v "^\s*#" $file | sed -r -e "s=^\s*/?==" -e 's/\s+#.*//'); do
+            echo "$prefix$line"
+        done
+
+    done  | sort -u
+
+    case $ecnt in
+        0) exit 0;;
+        1) fatal "One missing exclude file"    ; exit 2 ;;
+        *) fatal "$ecnt missing exclude files" ; exit 2 ;;
+    esac
+
+    exit 3
+}
+
+do_start() {
+    local conf_file=$1  work_dir=$2
+
+    [ -z "$FORCE" -a -e "$work_dir" ] && fatal "Work dir $work_dir exists.  Use --Force to delete it"
+    test -e $work_dir && rm -rf $work_dir
+
+    mkdir -p $BIND_ROOT || fatal "Could not make bind root directory $BIND_ROOT"
+    if is_mounted $BIND_ROOT &>/dev/null; then
+
+        [ -z "$FORCE" ] && fatal "bind-root: $BIND_ROOT is already a mount point"
+
+    else
+        mount --bind $REAL_ROOT $BIND_ROOT
+    fi
+
+    write_conf_file $conf_file
+}
+
+do_read_only() {
+    local conf_file=$1  work_dir=$2  dirs=$3
+
+    read_conf_file $conf_file
+
+    is_mounted $BIND_ROOT &>/dev/null || fatal "read-only: $BIND_ROOT is not mounted"
+
+    mount -o remount,bind,ro $BIND_ROOT
+}
+
+do_read_write() {
+    local conf_file=$1  work_dir=$2  dirs=$3
+
+    read_conf_file $conf_file
+
+    is_mounted $BIND_ROOT &>/dev/null || fatal "read-only: $BIND_ROOT is not mounted"
+
+    mount -o remount,bind,rw $BIND_ROOT
+}
+
+do_add() {
+    local conf_file=$1  work_dir=$2  dirs=$3
+
+    read_conf_file $conf_file
+
+    local dir real_dir real_root=${REAL_ROOT%/}
+    echo "$dirs" | tr ',' '\n' | while read dir; do
+	    [ "$dir" ] || continue
+        real_dir=$real_root/${dir#/}
+        test -d $real_dir || fatal "Add dir: $real_dir is not a directory"
+        bind_mount_template "$dir" "$BIND_ROOT" "$REAL_ROOT"
+    done
+
+    write_conf_file $CONF_FILE
+
+}
+
+do_bind() {
+    local conf_file=$1  work_dir=$2  dirs=$3
+
+    read_conf_file $conf_file
+
+    local dir real_dir real_root=${REAL_ROOT%/}
+    echo "$dirs" | tr ',' '\n' | while read dir; do
+        dir=${dir#/}
+	    [ "$dir" ] || continue
+
+        real_dir=$real_root/$dir
+
+        mountpoint -q $real_dir || continue
+        pretend mount --bind $real_dir $BIND_ROOT/$dir
+    done
+
+    write_conf_file $CONF_FILE
+}
+
+do_empty() {
+    local conf_file=$1  work_dir=$2  dirs=$3
+
+    read_conf_file $conf_file
+
+    bind_empty_dirs "$WORK_DIR/empty" "$BIND_ROOT" "$REAL_ROOT" "$dirs"
+}
+
+do_repo() {
+    local conf_file=$1  work_dir=$2  country=$3
+
+    read_conf_file $conf_file
+
+    real_dir="/etc/apt/sources.list.d"
+    repo_dir=$work_dir/repo
+    copy_dir=$repo_dir$real_dir
+    pretend mkdir -p $copy_dir
+    pretend cp $real_dir/*.list $copy_dir
+    pretend localize-repo --dir=$copy_dir $country
+    bind_mount_template "$repo_dir"  "$BIND_ROOT" "$REAL_ROOT"
+}
+
+do_timezone() {
+    local conf_file=$1  work_dir=$2  tz=$3
+
+    read_conf_file $conf_file
+
+    local zone_file=/usr/share/zoneinfo/$tz
+    if ! test -e "$zone_file"; then
+        error "Invalid timezone: $tz"
+        return
+    fi
+
+    local tz_dir=$work_dir/tz
+    local etc_dir=$tz_dir/etc
+    mkdir -p $etc_dir
+    cp $zone_file $etc_dir/localtime
+    echo "$tz" > $etc_dir/timezone
+    bind_mount_template "$tz_dir"  "$BIND_ROOT" "$REAL_ROOT"
+}
+
+
+do_status() {
+    local conf_file=$1
+
+    echo "$ME status:"
+    if ! read_conf_file $conf_file force; then
+        echo "  unstarted"
+        exit 0
+    fi
+
+    echo "  started"
+
+    if ! test -d $BIND_ROOT; then
+        echo "  BIND_ROOT: $BIND_ROOT is not a directory"
+    elif is_mounted $BIND_ROOT; then
+        echo "  BIND_ROOT: $BIND_ROOT is mounted"
+    else
+        echo "  BIND_ROOT: $BIND_ROOT is not mounted"
+    fi
+
+    echo
+    echo "  Config file:"
+    echo ">>>>>>>>>>"
+    cat $conf_file
+    echo "<<<<<<<<<<"
+
+    [ "$VERBOSE" ] || exit 0
+    echo
+    echo ">> df -a | grep $BIND_ROOT | awk '{print \$6}'"
+    df -a | grep $BIND_ROOT | awk '{print $6}'
+
+    exit 0
+}
+
+do_adjtime() {
+    local conf_file=$1  work_dir=$2
+    read_conf_file $conf_file
+    local orig_file=/etc/adjtime
+    test -r $orig_file || return 0
+
+    local template_dir=$work_dir/adjtime
+    local targ_file=$template_dir$orig_file
+    mkdir -p $(dirname $targ_file)
+    cp $orig_file $targ_file
+    sed -i -e "1 s/.*/0.0 0 0.0/" -e "2 s/.*/0/" $targ_file
+    bind_mount_template "$template_dir"  "$BIND_ROOT" "$REAL_ROOT"
+}
+
+do_passwd() {
+    local conf_file=$1
+    read_conf_file $conf_file
+
+    munge_files "$TEMPLATE_DIR" "$BIND_ROOT" "$WORK_DIR" "$USER_PW" "$ROOT_PW"
+
+    write_conf_file $CONF_FILE
+}
+
+do_live_files() {
+    local conf_file=$1  work_dir=$2
+    _do_files $conf_file $work_dir $TEMPLATE_DIR/files $work_dir/live-files
+}
+
+do_general_files() {
+    local conf_file=$1  work_dir=$2
+    _do_files $conf_file $work_dir $TEMPLATE_DIR/general-files $work_dir/general-files
+}
+
+_do_files() {
+    local conf_file=$1 work_dir=$2 from=$3 temp=$4
+    read_conf_file $conf_file
+    test -d $from || fatal "Directory $from does not exist"
+    mkdir -p $temp || fatal "Could not mkdir -p $temp"
+    cp -r $from/* $temp/ 2>/dev/null
+    bind_mount_template "$temp"  "$BIND_ROOT" "$REAL_ROOT"
+
+    write_conf_file $CONF_FILE
+}
+
+do_all_files() {
+    do_live_files "$@"
+    do_general_files "$@"
+}
+
+do_general() {
+    local conf_file=$1  work_dir=$2
+
+    do_empty     $conf_file $work_dir "/etc/modprobe.d"
+    do_empty     $conf_file $work_dir "/etc/grub.d"
+    do_all_files $conf_file $work_dir
+    do_passwd    $conf_file
+    do_repo      $conf_file $work_dir $DEF_REPO
+    do_timezone  $conf_file $work_dir $DEF_TZ
+
+    write_conf_file $conf_file
+}
+
+do_cleanup() {
+    local conf_file=$1  work_dir=$2
+    read_conf_file $conf_file $FORCE
+
+    is_mounted $BIND_ROOT &>/dev/null && pretend umount --recursive $BIND_ROOT
+
+    local i
+    for i in $(seq 1 10); do
+        is_mounted $BIND_ROOT &>/dev/null || break
+        pretend umount --recursive $BIND_ROOT
+        [ "$PRETEND" ] && break
+        sleep 0.1
+    done
+
+    [ -z "$PRETEND" ] && is_mounted $BIND_ROOT &>/dev/null && fatal "Could not umount $BIND_DIR"
+
+    test -d $BIND_ROOT && pretend rmdir $BIND_ROOT
+
+    local file dir
+    echo "$RM_FILES" | tr ',' '\n' | tac | while read file; do
+	[ "$file" ] || continue
+        pretend rm -f "$file"
+    done
+
+    echo "$RM_DIRS" | tr ',' '\n' | tac | while read dir; do
+	[ "$dir" ] || continue
+        pretend rmdir --ignore-fail-on-non-empty --parents "$dir"
+    done
+
+    pretend rm -f $conf_file
+    [ "$work_dir" ] && pretend rm -rf $work_dir
+    exit 0
+}
+
+bind_mount_template() {
+    local template_dir=$1  bind_root=$2  real_root=$3
+
+    # Remove trailing slash from real_root and template_dir
+    real_root=${real_root%/}
+    template_dir=${template_dir%/}
+
+    test -d $template_dir || return
+    local file
+    while read file; do
+        local base=${file#$template_dir}
+        local targ=$bind_root$base
+        local orig=$real_root$base
+        if test -L "$file"; then
+            # Symlinks
+            test -e "$orig" && continue
+            pretend cp -a "$file" "$orig"
+
+            [ "$PRETEND" ] && continue
+
+            # Don't add broken links
+            if test -e $(readlink -f $orig); then
+                RM_FILES="$RM_FILES${RM_FILES:+,}$orig"
+            else
+                pretend rm -f $orig
+            fi
+        else
+            # Normal files
+            touch_file "$targ" "$orig"
+            is_mounted "$targ" && error "File $targ is already mounted"
+            pretend mount --bind "$file" "$targ"
+        fi
+    done <<Bind_Template
+$(find $template_dir -type f -o -type l)
+Bind_Template
+}
+
+bind_empty_dirs() {
+    local template_dir=$1  bind_root=$2  real_root=$3  dirs=$4
+
+    # Remove trailing slash from real_root
+    real_root=${real_root%/}
+
+    local base
+    echo "$dirs" | tr ',' '\n' | tac | while read base; do
+        [ "$base" ] || continue
+        local targ=$bind_root/$base
+        # If directory doesn't exist then skip it
+        test -d $targ || continue
+        make_dir "$targ" "$real_root/$base"
+        pretend mkdir -p $template_dir/$base
+        pretend mount --bind $template_dir/$base $targ
+    done
+}
+
+make_dir() {
+    local dir=$1  orig=$2
+    test -d $dir && return
+    RM_DIRS="$RM_DIRS${RM_DIRS:+,}$orig"
+    pretend mkdir -p $dir
+}
+
+touch_file() {
+    local file=$1  orig=$2
+    local dir=$(dirname $file)
+    make_dir "$dir" "$(dirname $orig)"
+    test -f $file && return
+    test -e $file && fatal "Expected a plain file at $orig"
+
+    RM_FILES="$RM_FILES${RM_FILES:+,}$orig"
+
+    pretend touch $file
+}
+
+munge_files() {
+    local template_dir=$1  bind_root=$2  work_dir=$3  user_pw=${4:-demo}  root_pw=${5:-root}
+    local bind_from=$work_dir/bind
+
+    local def_user=${user_pw%%:*}
+
+    local empty_dir=$work_dir/empty
+    mkdir -p $empty_dir
+
+    # create lists of pw_files and grp_files that actually exist
+    local file pw_files grp_files
+    for file in $PW_FILES; do
+        test -e $bind_root$file || continue
+        pw_files="$pw_files $bind_from$file"
+        case $file in
+            */group|*/gshadow) grp_files="$grp_files $bind_from$file";;
+        esac
+    done
+
+    # Ensure we have a user with uid=1000 in the real system
+    local added_user
+    local user_1000=$(cut -d: -f1,3 /etc/passwd | grep :1000$ | cut -d: -f1)
+    if [ -z "$user_1000" ]; then
+
+        # Don't assume there is no demo user but still try it first
+        user_1000=$def_user
+        while grep -q "^$user_1000:" /etc/passwd; do
+            user_1000=a$(dd if=/dev/urandom bs=1 count=40 2>/dev/null | md5sum | cut -c 1-9)
+        done
+
+        adduser --disabled-login --uid=1000 --no-create-home --gecos $def_user $user_1000
+        added_user=true
+    fi
+
+    # Copy in files to the bind_from *after* we've added user_1000 (if needed)
+    # Use files from template_dir first if they are available.
+    local live_files
+    for file in $BIND_FILES; do
+        test -e $bind_root$file || continue
+        dir=$(dirname $file)
+        bdir=$bind_from$dir
+
+        # Don't munge files that have a template file
+        [ "$template_dir" -a -e $template_dir$file ] && continue
+        pretend mkdir -p $bdir
+
+        # Probably makes no difference that we copy from bind_root, not real_root
+        pretend cp -a $bind_root$file $bdir
+    done
+
+    # Remove the added user from the originals (but it is still in the copies
+    # under bind_from/)
+    [ "$added_user" ] && deluser $user_1000
+
+    # Modify files (under bind_from/)
+
+    # Remove all other normal users from the passwd and group files
+    # Normal means having a home dir under /home and a login shell that ends in "sh"
+    local other_users=$(cut /etc/passwd -d: -f1,6,7 | grep ":/home/.*:.*sh$" | cut -d: -f1 \
+        | grep -v "^$user_1000$")
+
+    local other_user_regex=$(echo $other_users | tr " " '|')
+    pretend sed -i -r "/^($other_user_regex):/d" $pw_files
+    pretend sed -i -r -e "s/:($other_user_regex)(,|$)/:/" -e "s/,($other_user_regex)(,|$)/\2/" $grp_files
+
+    # Replace user_1000 with def_user (demo) if needed
+    if [ $user_1000 != $def_user ]; then
+        pretend sed -i -r "s/^$user_1000:/$def_user:/" $pw_files
+        pretend sed -i -r -e "s/:$user_1000(,|$)/:$def_user/" -e "s/,$user_1000(,|$)/,$def_user\1/" $grp_files
+    fi
+
+    update_home $def_user /home/$def_user $bind_from
+
+    set_password $user_pw $bind_from
+    set_password $root_pw $bind_from
+
+    # Bind mount files under $bind_from/
+    for file in $BIND_FILES; do
+        local from=$bind_from$file
+        local to=$bind_root$file
+        test -e $from || continue
+        is_mounted $to && error "File $to is already mounted"
+        pretend mount --bind $from $to
+    done
+}
+
+# Note: this code is no longer called/used.  We use fresh copies which
+# a lot of problems.  Although we will need to call it if the name of
+# the default user changes.
+do_xorg_login() {
+    exit 10
+    do_sed $bind_from/etc/slim.conf \
+        -e "s/^(\s#)*(default_user +).*/\2$def_user/" \
+        -e "/xserver_arguments/ s/ -dpi\s+[0-9]+//"   \
+        -e "s/^(\s#)*(auto_login +).*/\2yes/"
+
+    do_sed $bind_from/etc/lightdm/lightdm.conf \
+        -e "/autologin-user=demo/ s/^#+//" \
+        -e "/xserver-command/ s/ -dpi [0-9]+//"
+}
+
+do_sed() {
+    local file=$1
+    shift
+    echo sed $* $file
+    if [ "$PRETEND" ]; then
+        local expr
+        file=${file/$bind_from/$real_root}
+        test -e $file || return
+        for expr; do
+            [ "$expr" = -e ] && continue
+            echo sed -n -r "${expr}" $file
+            sed -n -r "${expr}p" $file
+        done
+    else
+        test -e $file || return
+        pretend sed -i -r "$@" $file
+    fi
+}
+
+# first param is "username=password" and the "=password" part is optional
+# If the password is empty then we use the username for the password.
+# Second param is a "chroot" directory containing the /etc/shadow file.
+set_password() {
+    local user_pw=$1  dir=$2
+    local user=${user_pw%%:*}
+    local pw=${user_pw#*:}
+    : ${pw:=$user}
+    local hash=$(mkpasswd -m sha-512 "$pw")
+    pretend sed -i -r "s=^($user):[^:]*:=\1:$hash:=" $dir/etc/shadow
+}
+
+update_home() {
+    local user=$1  home=$2  dir=$3
+    pretend sed -i -r "s=^($user:[^:]*:[^:]*:[^:]*:[^:]*:)[^:]*=\1$home=" $dir/etc/passwd
+}
+
+write_conf_file() {
+    local file=$1
+    mkdir -p $(dirname $file)
+    cat <<Conf_File > $file
+REAL_ROOT="$REAL_ROOT"
+BIND_ROOT="$BIND_ROOT"
+RM_DIRS="$RM_DIRS"
+
+RM_FILES="$RM_FILES"
+Conf_File
+}
+
+read_conf_file() {
+    local conf_file=$1  force=$2
+
+    if ! test -r $conf_file; then
+        [ "$force" ] || fatal "Could not find config file $conf_file"
+        return 1
+    fi
+
+    . $conf_file
+
+    return 0
+}
+
+random_hex_32() {
+    dd if=/dev/urandom bs=1 count=40 2>/dev/null | md5sum | cut -d" " -f1
+}
+
+version_id() {
+    echo "==== $(random_hex_32)"
+}
+
+fatal() {
+    local msg=$1  ret=${2:-2}
+    echo -e "$ME Fatal Error: $msg" >&2
+    exit $ret
+}
+
+error() {
+    local msg=$1
+    echo -e "$ME Error: $msg" >&2
+}
+
+is_mounted() {
+    local file=$1
+    cut -d" " -f2 /proc/mounts | grep -q "^$(readlink -f $file)$"
+    return $?
+}
+
+pretend() {
+    [ "$PRETEND" -o "$VERBOSE" ] && echo "$@"
+    [ "$PRETEND" ] && return
+    "$@"
+}
+
+main "$@"
+

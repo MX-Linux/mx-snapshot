@@ -353,16 +353,16 @@ void mxsnapshot::copyNewIso()
 // replace text in menu items in grub.cfg, syslinux.cfg, isolinux.cfg
 void mxsnapshot::replaceMenuStrings() {
     if (i686) {
-        QString new_string = "MX-15 386 (" + getCmdOut("date +'%d %B %Y'") + ")";
+        QString new_string = "MX Linux 386 (" + getCmdOut("date +'%d %B %Y'") + ")";
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
-        new_string = "MX-15 385 (non pae)";
+        new_string = "MX Linux 385 (non pae)";
         replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
         replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
         replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
     } else {
-        QString new_string = "MX-15_x64 (" + getCmdOut("date +'%d %B %Y'") + ")";
+        QString new_string = "MX Linux x64 (" + getCmdOut("date +'%d %B %Y'") + ")";
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
@@ -437,12 +437,12 @@ void mxsnapshot::setupEnv()
     }
     // setup environment if creating a respin (reset root/demo, remove personal accounts)
     if (reset_accounts) {
-        system("installed-to-live -b /.bind-root start empty=/home general version-file read-only");
+        system("/usr/share/mx-snapshot/installed-to-live -b /.bind-root start empty=/home general version-file read-only");
     } else {
         // copy minstall.desktop to Desktop on all accounts
         system("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/mx/minstall.desktop 2>/dev/null");
         system("chmod +x /home/*/Desktop/minstall.desktop");
-        system("installed-to-live -b /.bind-root start bind=/home live-files version-file adjtime read-only");
+        system("/usr/share/mx-snapshot/installed-to-live -b /.bind-root start bind=/home live-files version-file adjtime read-only");
     }
 }
 
@@ -511,7 +511,7 @@ void mxsnapshot::cleanUp()
     ui->outputLabel->setText(tr("Cleaning..."));
     system("pkill mksquashfs; pkill md5sum");
     QDir::setCurrent("/");
-    system("installed-to-live cleanup");
+    system("/usr/share/mx-snapshot/installed-to-live cleanup");
 
     // checks if work_dir looks OK
     if (work_dir.contains("/mx-snapshot")) {
