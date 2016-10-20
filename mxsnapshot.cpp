@@ -470,7 +470,7 @@ bool mxsnapshot::createIso(QString filename)
 
     // create the iso file
     QDir::setCurrent(work_dir + "/iso-template");
-    cmd = "genisoimage -gid 0 -uid 0 -allow-limited-size -l -V MX-Linux-live -R -J -pad -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin -c boot/isolinux/isolinux.cat -o \"" + snapshot_dir.absolutePath() + "/" + filename + "\" . \""  + work_dir + "/iso-2\"";
+    cmd = "xorriso -as mkisofs -l -V antiXlive -R -J -pad -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin  -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot -c boot/isolinux/isolinux.cat -o \"" + snapshot_dir.absolutePath() + "/" + filename + "\" . \""  + work_dir + "/iso-2\"";
     ui->outputLabel->setText(tr("Creating CD/DVD image file..."));
     if (runCmd(cmd) != 0) {
         QMessageBox::critical(0, tr("Error"), tr("Could not create ISO file, please check whether you have enough space on the destination partition."));

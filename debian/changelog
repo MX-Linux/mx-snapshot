@@ -1,3 +1,9 @@
+mx-snapshot (16.10mx16+1) mx; urgency=medium
+
+  * replaced genisoimage with xorriso
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 20 Oct 2016 13:50:35 -0400
+
 mx-snapshot (16.10mx16) mx; urgency=medium
 
   * changed URLs
