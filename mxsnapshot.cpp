@@ -437,12 +437,12 @@ void mxsnapshot::setupEnv()
     }
     // setup environment if creating a respin (reset root/demo, remove personal accounts)
     if (reset_accounts) {
-        system("/usr/share/mx-snapshot/installed-to-live -b /.bind-root start empty=/home general version-file read-only");
+        system("installed-to-live -b /.bind-root start empty=/home general version-file read-only");
     } else {
         // copy minstall.desktop to Desktop on all accounts
         system("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/mx/minstall.desktop 2>/dev/null");
         system("chmod +x /home/*/Desktop/minstall.desktop");
-        system("/usr/share/mx-snapshot/installed-to-live -b /.bind-root start bind=/home live-files version-file adjtime read-only");
+        system("installed-to-live -b /.bind-root start bind=/home live-files version-file adjtime read-only");
     }
 }
 
@@ -511,7 +511,7 @@ void mxsnapshot::cleanUp()
     ui->outputLabel->setText(tr("Cleaning..."));
     system("pkill mksquashfs; pkill md5sum");
     QDir::setCurrent("/");
-    system("/usr/share/mx-snapshot/installed-to-live cleanup");
+    system("installed-to-live cleanup");
 
     // checks if work_dir looks OK
     if (work_dir.contains("/mx-snapshot")) {
