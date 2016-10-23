@@ -1,6 +1,6 @@
 mx-snapshot (16.10mx16+2) mx; urgency=medium
 
-  * small changes
+  * re-added mx-remaster dependency
 
  -- Adrian <adrian@mxlinux.org>  Sun, 23 Oct 2016 16:42:43 -0400
 

@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Sun, 23 Oct 2016 16:42:43 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 16.10mx16+2
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (16.10mx16+2) mx; urgency=medium
+ .
+   * re-added mx-remaster dependency
+Checksums-Sha1:
+ e225e6496098feaf9155140fa515fd61d29b8a08 80944 mx-snapshot_16.10mx16+2_i386.deb
+Checksums-Sha256:
+ 2d42116faa4512750ff1ab75bcfa998f28ff2befce88a222ba8de234040b7671 80944 mx-snapshot_16.10mx16+2_i386.deb
+Files:
+ c4d0506749060edc4f3492fb25f91da7 80944 admin optional mx-snapshot_16.10mx16+2_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJYDT9RAAoJEHCTjHgGee6Ys24IAMttVhDZ5LQdTWQIAIfPmr6i
+Wfrbgv3caYi8hSgBUfD8vmexWqiSO80tAVm30Xqsh2xeiSNkIyA8/gd6shXiBFzd
+9/FH8oTDwhY/1nbnvedgZBrV3Zg9/xKS7hzN06AK/68R+biAah4ux5UAGc5bIa9t
+nptJUU9XigSybQu6B/Z+O0M4lI+wQV4TTDo4Fw/mhVs95qSJfOUjvyVMY+Do08os
+tdX4T18fCfDUeioxEdGTNU3Zh9gMWTUAYRg80yNNqCxLgmdPOw6ZdkhCEOD40E9R
+qhIBfyr4z5k7jgM2jDJTh2V8JxOnOXmBklR6B/IqVIe7RVjFZfQ3K4FyG/iN0oA=
+=61R3
+-----END PGP SIGNATURE-----

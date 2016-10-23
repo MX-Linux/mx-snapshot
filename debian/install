@@ -1,10 +1,9 @@
-mx-snapshot 		usr/bin
-mx-snapshot.desktop	usr/share/applications/mx
-mx-snapshot.conf	etc
+icons/*				usr/share/mx-snapshot/icons
+license.html			usr/share/doc/mx-snapshot
+mx-snapshot 			usr/bin
+mx-snapshot.desktop		usr/share/applications/mx
+mx-snapshot.conf		etc
 mx-snapshot-exclude.list	usr/local/share/excludes
-translations/*.qm 	usr/share/mx-snapshot/locale
-mx-snapshot.svg		usr/share/pixmaps
-icons/*			usr/share/mx-snapshot/icons
-license.html		usr/share/doc/mx-snapshot
+mx-snapshot.svg			usr/share/pixmaps
 scripts/copy-initrd-modules	usr/sbin
-scripts/installed-to-live	usr/share/mx-snapshot
+translations/*.qm 		usr/share/mx-snapshot/locale

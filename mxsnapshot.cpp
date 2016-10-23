@@ -343,7 +343,8 @@ void mxsnapshot::copyNewIso()
         // strip modules
         runCmd("test -d \"" + initrd_dir + "/lib/modules\" && rm -r \"" + initrd_dir  + "/lib/modules\"");
     }
-    runCmd("test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release \"" + initrd_dir + "/etc\"");
+    runCmd("test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release \"" + initrd_dir + "/etc\""); // We cannot count on this file in the future versions
+    runCmd("test -r /etc/initrd-release && cp /etc/initrd-release \"" + initrd_dir + "/etc\""); // overwrite with this file, probably a better location _if_ the file exists
     if (initrd_dir != "") {
         copyModules(initrd_dir, kernel_used);
         closeInitrd(initrd_dir, work_dir + "/iso-template/antiX/initrd.gz");
