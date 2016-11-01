@@ -1,3 +1,9 @@
+mx-snapshot (16.11mx16) mx; urgency=medium
+
+  * added -iso-level 3 to allow ISOs with files > 4GB
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 01 Nov 2016 11:58:37 -0400
+
 mx-snapshot (16.10mx16+2) mx; urgency=medium
 
   * re-added mx-remaster dependency
