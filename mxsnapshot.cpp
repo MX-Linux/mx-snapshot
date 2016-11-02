@@ -302,6 +302,7 @@ void mxsnapshot::closeInitrd(QString initrd_dir, QString file)
     if (initrd_dir.startsWith("/tmp/tmp.")) {
         system("rm -r " + initrd_dir.toUtf8());
     }
+    runCmd("mkdir -p " + work_dir + "/iso-template/antiX");
     makeMd5sum(work_dir + "/iso-template/antiX", "initrd.gz");
 }
 

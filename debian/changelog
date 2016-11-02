@@ -1,3 +1,9 @@
+mx-snapshot (16.11mx16+1) mx; urgency=medium
+
+  * fix
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 02 Nov 2016 18:30:35 -0400
+
 mx-snapshot (16.11mx16) mx; urgency=medium
 
   * added -iso-level 3 to allow ISOs with files > 4GB
