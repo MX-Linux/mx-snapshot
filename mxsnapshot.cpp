@@ -284,7 +284,7 @@ void mxsnapshot::checkDirectories()
     // Create a work_dir
     work_dir = getCmdOut("mktemp -d \"" + snapshot_dir.absolutePath() + "/mx-snapshot-XXXXXXXX\"");
     runCmd("mkdir -p " + work_dir + "/iso-template/antiX");
-    system("cd..; cd-");
+    system("cd ..; cd -");
 }
 
 void mxsnapshot::openInitrd(QString file, QString initrd_dir)

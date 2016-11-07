@@ -1,3 +1,9 @@
+mx-snapshot (16.11mx16+3) mx; urgency=medium
+
+  * bug fix
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 07 Nov 2016 10:47:06 -0500
+
 mx-snapshot (16.11mx16+2) mx; urgency=medium
 
   * small fix
