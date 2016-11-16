@@ -1,3 +1,9 @@
+mx-snapshot (16.11mx16+4) mx; urgency=medium
+
+  * new translations
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 16 Nov 2016 13:35:53 -0500
+
 mx-snapshot (16.11mx16+3) mx; urgency=medium
 
   * bug fix
