@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" version="2.1">
 <context>
     <name>QApplication</name>
     <message>
@@ -410,12 +408,12 @@ Zal leafpad installeren en dit keer gebruiken.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="827"/>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Bevestiging</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="827"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation type="unfinished"></translation>
+        <translation>Weet u zeker dat u wilt stoppen met deze applicatie?</translation>
     </message>
 </context>
 </TS>

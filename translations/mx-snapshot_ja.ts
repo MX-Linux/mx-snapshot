@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ja">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ja" version="2.1">
 <context>
     <name>QApplication</name>
     <message>
@@ -23,7 +21,7 @@
     <message>
         <location filename="../mxsnapshot.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation type="unfinished"></translation>
+        <translation>スナップショットの場所:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="40"/>
@@ -39,7 +37,7 @@
         <location filename="../mxsnapshot.ui" line="155"/>
         <location filename="../mxsnapshot.cpp" line="630"/>
         <source>Snapshot name:</source>
-        <translation type="unfinished"></translation>
+        <translation>スナップショットの名称:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="162"/>
@@ -295,7 +293,7 @@ leafpad をインストールし、それを使います。</translation>
         <location filename="../mxsnapshot.cpp" line="527"/>
         <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Done</source>
-        <translation type="unfinished"></translation>
+        <translation>完了</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="565"/>
@@ -425,12 +423,12 @@ leafpad をインストールし、それを使います。</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="827"/>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>確認</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="827"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation type="unfinished"></translation>
+        <translation>アプリケーションを終了してよろしいですか？</translation>
     </message>
 </context>
 </TS>

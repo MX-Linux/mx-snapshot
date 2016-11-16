@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="de">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" version="2.1">
 <context>
     <name>QApplication</name>
     <message>
@@ -28,18 +26,18 @@
     <message>
         <location filename="../mxsnapshot.ui" line="40"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Mit Snapshot können Sie ein bootbares Image (ISO) Ihres Arbeitssystems erzeugen, welches als Datensicherung dient oder weiter verteilt werden kann. Während der Prozess läuft können Sie mit den davon nicht abhängigen Anwendungen weiter arbeiten.</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mit &quot;snapshot&quot; können Sie sehr einfach ein bootfähiges Image (.ISO) Ihres modifizierten Arbeitssystems erzeugen für USB-stick oder CD-ROM. Das dient z.B. als Datensicherung oder kann auch weiter verteilt werden (z.B. modifizierte distro mit account reset). Während die snapshot-Erstellung im Hintergrund läuft, können Sie mit den davon nicht abhängigen Programmen weiter arbeiten, wenn Sie möchten.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="50"/>
         <source>Used space on / (root) and /home partitions:</source>
-        <translation>Benötigter Platz für / (root) und /home Verzeichnisse:</translation>
+        <translation>Belegter Platz für / (root) und /home Partitionen:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="155"/>
         <location filename="../mxsnapshot.cpp" line="630"/>
         <source>Snapshot name:</source>
-        <translation>Schnappschussname:</translation>
+        <translation>Name des Schnappschusses:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="162"/>
@@ -106,22 +104,22 @@
     <message>
         <location filename="../mxsnapshot.ui" line="410"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Diese Option setzt das Passwort von&quot;demo&quot; und &quot;root&quot; auf die Vorgabe von MX Linux zurück und kopiert keine anderen persönlich erstellten User Accounts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Diese Option setzt das Passwort von Benutzern &quot;demo&quot; und &quot;root&quot; auf die Vorgabe von MX Linux zurück (nämlich &quot;demo&quot; und &quot;root&quot;) aber kopiert keine anderen persönlich erstellten User Accounts. Passwortänderung ohne Kenntis des alten Passwortes ist auch jederzeit im boot Menü möglich: F4 &quot;private&quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="413"/>
         <source>Resetting accounts (for distribution to others)</source>
-        <translation>Account zurück setzen (zur Weitergabe an andere)</translation>
+        <translation>Account zurücksetzen (z.B. wegen Veröffentlichung als Distro)</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="420"/>
         <source>Type of snapshot:</source>
-        <translation>Snapshot Art</translation>
+        <translation>Art des Snapshots</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="427"/>
         <source>Preserving accounts (for personal backup)</source>
-        <translation>Accounts beibehalten (persönliches Backup)</translation>
+        <translation>Accounts beibehalten (z.B. wegen persönlichem Backup)</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="539"/>
@@ -182,7 +180,7 @@
     <message>
         <location filename="../mxsnapshot.cpp" line="195"/>
         <source>Used space on / (root): </source>
-        <translation>Benötigter Platz für / (root):</translation>
+        <translation>Benötigter Platz für / (root, das Wurzelverzeichnis):</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="198"/>
@@ -242,7 +240,7 @@ Wollen Sie leafpad installieren und diesmal benutzen?</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="463"/>
         <source>Squashing filesystem...</source>
-        <translation>Squashing Dateisystem...</translation>
+        <translation>Squashing (Kompression) Dateisystem...</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="465"/>
@@ -257,12 +255,12 @@ Wollen Sie leafpad installieren und diesmal benutzen?</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="479"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
-        <translation>Die Datei ISO konnte nicht erstellt werden, überprüfen Sie bitte, ob genug Speicherplatz frei ist.</translation>
+        <translation>Die .ISO-Datei konnte nicht erstellt werden, überprüfen Sie bitte, ob genug Speicherplatz frei ist.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="485"/>
         <source>Making hybrid iso</source>
-        <translation>Hybrid-ISO bilden</translation>
+        <translation>Hybrid-ISO erstellen</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="503"/>
@@ -323,7 +321,8 @@ Wollen Sie leafpad installieren und diesmal benutzen?</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="638"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
-        <translation>Snapshot hat jetzt all notwendigen Informationen, um ein ISO Ihres laufenden Systems zu erstellen.</translation>
+        <translation>Snapshot hat jetzt all notwendigen Informationen, um ein ISO Ihres laufenden Systems zu erstellen.
+</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="639"/>
@@ -333,12 +332,12 @@ Wollen Sie leafpad installieren und diesmal benutzen?</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="640"/>
         <source>OK to start?</source>
-        <translation>Ok und anfangen?</translation>
+        <translation>Alles klar zum Loslegen?</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="648"/>
         <source>Output</source>
-        <translation>Anzeige</translation>
+        <translation>Ausgabe</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="655"/>
@@ -368,7 +367,7 @@ Wollen Sie leafpad installieren und diesmal benutzen?</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="781"/>
         <source>About MX Snapshot</source>
-        <translation>Über MX Snapshot</translation>
+        <translation>Impressum MX Snapshot</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="782"/>
@@ -378,7 +377,8 @@ Wollen Sie leafpad installieren und diesmal benutzen?</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="784"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
-        <translation>Programm, um eine Live-CD Ihres mit MX Linux laufenden Systems zu erstellen</translation>
+        <translation>Programm, um eine Live-CD Ihres mit MX Linux laufenden Systems zu erstellen.
+Es wird eine .ISO-Datei erstellt, bootfähig auch von USB-stick. Es ist typischerweise unnötig, das laufende System vorher extra zu remastern, was ca. 15 Minuten dauern würde. Alles, was im RAM zwischengespeichert ist, landet in der ISO-Datei, abzüglich der Ausschlüsse.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="785"/>
@@ -408,12 +408,12 @@ Wollen Sie leafpad installieren und diesmal benutzen?</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="827"/>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestätigung</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="827"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sicherheitsabfrage: Programm wirklich beenden? </translation>
     </message>
 </context>
 </TS>

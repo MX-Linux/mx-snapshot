@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>QApplication</name>
     <message>
         <location filename="../main.cpp" line="52"/>
         <source>You must run this program as root.</source>
-        <translation>Vous devez lancer cette application avec les droits root.</translation>
+        <translation>Vous devez lancer cette application avec les droits administrateur.</translation>
     </message>
 </context>
 <context>
@@ -51,7 +49,7 @@
         <location filename="../mxsnapshot.ui" line="225"/>
         <location filename="../mxsnapshot.ui" line="258"/>
         <source>TextLabel</source>
-        <translation>TexteEtiquette</translation>
+        <translation>Étiquette</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="271"/>
@@ -116,12 +114,12 @@
     <message>
         <location filename="../mxsnapshot.ui" line="420"/>
         <source>Type of snapshot:</source>
-        <translation>Type d&apos;image instantane:</translation>
+        <translation>Type d&apos;image instantanée:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="427"/>
         <source>Preserving accounts (for personal backup)</source>
-        <translation>On conserve les comptes (pour la sauvegarde personelle)</translation>
+        <translation>On conserve les comptes (pour la sauvegarde personnelle)</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="539"/>
@@ -237,27 +235,27 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="315"/>
         <source>Copying the new-iso filesystem...</source>
-        <translation>Copiant le nouveau-iso système de fichiers</translation>
+        <translation>Copie du nouveau système de fichiers iso en cours... </translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="463"/>
         <source>Squashing filesystem...</source>
-        <translation>Ecrasant le système de fichiers</translation>
+        <translation>En train d&apos;écraser le système de fichiers...</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="465"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
-        <translation>Peut pas créer le fichier linuxfs. Veuillez vérifier si l&amp;apos;espace sur la partition de destination suffit.</translation>
+        <translation>Impossible de créer le fichier linuxfs. Veuillez vérifier si l&apos;espace sur la partition de destination suffit.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="477"/>
         <source>Creating CD/DVD image file...</source>
-        <translation>Créent le fichier image pour CD/DVD</translation>
+        <translation>En train de créer le fichier image pour CD/DVD</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="479"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
-        <translation>Peut pas créer le fichier ISO. Veuillez vérifier si l&amp;apos;espace sur la partition de destination suffit.</translation>
+        <translation>Impossible de créer le fichier ISO. Veuillez vérifier si l&apos;espace sur la partition de destination suffit.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="485"/>
@@ -408,12 +406,12 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="827"/>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmation</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="827"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation type="unfinished"></translation>
+        <translation>Êtes-vous sûr de vouloir quitter l&apos;application?</translation>
     </message>
 </context>
 </TS>

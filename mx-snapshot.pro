@@ -50,7 +50,10 @@ TRANSLATIONS += translations/mx-snapshot_ca.ts \
                 translations/mx-snapshot_ja.ts \
                 translations/mx-snapshot_nl.ts \
                 translations/mx-snapshot_pl.ts \
+                translations/mx-snapshot_pt.ts \
+                translations/mx-snapshot_ro.ts \
                 translations/mx-snapshot_ru.ts \
-                translations/mx-snapshot_sv.ts
+                translations/mx-snapshot_sv.ts \
+                translations/mx-snapshot_tr.ts
 
 

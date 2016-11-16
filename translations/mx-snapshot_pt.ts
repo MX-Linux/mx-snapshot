@@ -1,10 +1,10 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt" version="2.1">
 <context>
     <name>QApplication</name>
     <message>
         <location filename="../main.cpp" line="52"/>
         <source>You must run this program as root.</source>
-        <translation>Вы должны запустить программу от имени суперпользователя.</translation>
+        <translation>Tem que executar este programa com a conta de raíz (root)</translation>
     </message>
 </context>
 <context>
@@ -16,121 +16,121 @@
         <location filename="../mxsnapshot.cpp" line="679"/>
         <location filename="../mxsnapshot.cpp" line="782"/>
         <source>MX Snapshot</source>
-        <translation>MX Снимок системы</translation>
+        <translation>MX_Criador de Imagens ISO</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation>Расположение снимков:</translation>
+        <translation>Localização da imagem do disco:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="40"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Утилита Snapshot создает загрузочный образ (ISO) Вашей рабочей системы, который можно использовать для хранения или распространения. Вы можете продолжать работать с нетребовательными приложениями во время его использования.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;O Criador de Imagens ISO é um utilitário que cria uma imagem carregável (bootable) do sistema, que pode ser usada para guardar ou para distribuir. Permite que se trabalhe com aplicações pouco pesadas enquanto está em execução.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="50"/>
         <source>Used space on / (root) and /home partitions:</source>
-        <translation>Используемое место на / (корневом) и домашнем разделах:</translation>
+        <translation>Espaço usado nas partições / (raíz ou root) e /home :</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="155"/>
         <location filename="../mxsnapshot.cpp" line="630"/>
         <source>Snapshot name:</source>
-        <translation>Имя снимка:</translation>
+        <translation>Nome da imagem:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="162"/>
         <source>Select a different snapshot directory</source>
-        <translation>Выбрать другую папку для снимка</translation>
+        <translation>Escolha uma directoria de imagens de disco diferente</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="207"/>
         <location filename="../mxsnapshot.ui" line="225"/>
         <location filename="../mxsnapshot.ui" line="258"/>
         <source>TextLabel</source>
-        <translation>TextLabel</translation>
+        <translation>Rótulo de texto</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="271"/>
         <source>Edit Configuration File</source>
-        <translation>Редактировать конфигурационный файл</translation>
+        <translation>Editar o ficheiro de configuração</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="301"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
-        <translation>Вы также можете исключить определенные папки, отметив их ниже, или нажать на кнопку, чтобы редактировать /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
+        <translation>Também pode excluir algumas directorias marcando as escolhas comuns, abaixo, ou clicando no botão para editar directamente /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="326"/>
         <source>Downloads</source>
-        <translation>Загрузки</translation>
+        <translation>Transferências</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="333"/>
         <source>Documents</source>
-        <translation>Документы</translation>
+        <translation>Documentos</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="340"/>
         <source>All of the above</source>
-        <translation>Все вышеперечисленное</translation>
+        <translation>Tudo o acima</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="347"/>
         <source>Pictures</source>
-        <translation>Изображения</translation>
+        <translation>Fotos</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="354"/>
         <source>Music</source>
-        <translation>Музыка</translation>
+        <translation>Música</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="361"/>
         <source>Desktop</source>
-        <translation>Рабочий стол</translation>
+        <translation>Área de trabalho</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="368"/>
         <source>Videos</source>
-        <translation>Видео</translation>
+        <translation>Vídeos</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="384"/>
         <source>Edit Exclusion File</source>
-        <translation>Редактировать исключение файлов</translation>
+        <translation>Editar o ficheiro de exclusão</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="410"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Эта опция сбросит &amp;quot;demo&amp;quot; и &amp;quot;root&amp;quot; пароли MX Linux по умолчанию и не будет копировать какие-либо созданные персональные учетные записи.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Esta opção restablecerá as senhas &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; para as senhas pré-definidas do Linux MX e não copiará quaisquer contas pessoais criadas.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="413"/>
         <source>Resetting accounts (for distribution to others)</source>
-        <translation>Сброс учетных записей (дистрибутив для других)</translation>
+        <translation>A restablecer contas (para distribuição a outros)</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="420"/>
         <source>Type of snapshot:</source>
-        <translation>Тип снимка:</translation>
+        <translation>Tipo de imagem:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="427"/>
         <source>Preserving accounts (for personal backup)</source>
-        <translation>Сохранение учетных записей (для личного резервного копирования)</translation>
+        <translation>A preservar contas (para segurança pessoal)</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="539"/>
         <source>Quit application</source>
-        <translation>Выйти из приложения</translation>
+        <translation>Sair da aplicação</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="542"/>
         <location filename="../mxsnapshot.cpp" line="787"/>
         <source>Cancel</source>
-        <translation>Отмена</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="549"/>
@@ -140,12 +140,12 @@
     <message>
         <location filename="../mxsnapshot.ui" line="559"/>
         <source>Display help </source>
-        <translation>Показать справку</translation>
+        <translation>Mostrar a ajuda</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="562"/>
         <source>Help</source>
-        <translation>Помощь</translation>
+        <translation>Ajuda</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="569"/>
@@ -155,12 +155,12 @@
     <message>
         <location filename="../mxsnapshot.ui" line="592"/>
         <source>About this application</source>
-        <translation>Об этом приложении</translation>
+        <translation>Sobre esta aplicação</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="595"/>
         <source>About...</source>
-        <translation>O...</translation>
+        <translation>Sobre...</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="602"/>
@@ -170,27 +170,27 @@
     <message>
         <location filename="../mxsnapshot.ui" line="640"/>
         <source>Next &gt;</source>
-        <translation>Дальше&gt;</translation>
+        <translation>Próximo &gt;</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="662"/>
         <source>&lt; Back</source>
-        <translation>&lt;Назад</translation>
+        <translation>&lt; Voltar</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="195"/>
         <source>Used space on / (root): </source>
-        <translation>Используемое место на / (корневом) разделе</translation>
+        <translation>Espaço usado em / (raíz ou root):</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="198"/>
         <source>Used space on /home: </source>
-        <translation>Используемое место на домашнем разделе</translation>
+        <translation>Espaço usado em /home:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="215"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
-        <translation>Свободное место на %1, где будет папка со снимком:</translation>
+        <translation>Espaço livre em %1, onde a pasta de imagens está colocada:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="217"/>
@@ -200,11 +200,11 @@
       by removing previous snapshots and saved copies:
       %1 snapshots are taking up %2 of disk space.
 </source>
-        <translation>Свободного места должно быть достаточно для сжатых данных из / и /home
+        <translation>O espaço livre deve ser suficiente para conter os dados comprimidos de  /   e de  /home
 
-Если нужно, Вы можете создать больше доступного места,
-удалив предыдущие снимки и сохраненные копии:
-%1 снимков занимают %2 дискового пространства.
+Se necessário, pode criar mais espaço disponível
+removendo imagens anteriores e cópias guardadas:
+%1 imagens acupam %2 do espaço em disco.
 </translation>
     </message>
     <message>
@@ -212,207 +212,207 @@
         <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
 
 Will install leafpad and use it this time.</source>
-        <translation>Графическим текстовым редактором назначен %1, но он не установлен. Редактируйте %2 и установите переменную gui_editor на редактор по Вашему выбору. (Например: /usr/bin/gedit, /usr/bin/leafpad)
+        <translation>O editor de texto gráfico está definido para %1, mas não está instalado. Editar %2 e definir a variável  gui_editor para um editor à escolha. (exemplos: /usr/bin/gedit, /usr/bin/leafpad)
 
-Выберите leafpad на этот раз.</translation>
+Irá instalar o Leafpad e usá-lo desta vez.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="253"/>
         <source>Installing </source>
-        <translation>Установка</translation>
+        <translation>A instalar</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="268"/>
         <location filename="../mxsnapshot.cpp" line="465"/>
         <location filename="../mxsnapshot.cpp" line="479"/>
         <source>Error</source>
-        <translation>Ошибка</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="268"/>
         <source>Could not install </source>
-        <translation>Не удалось установить</translation>
+        <translation>Não foi instalado</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="315"/>
         <source>Copying the new-iso filesystem...</source>
-        <translation>Копирование новой ISO файловой системы...</translation>
+        <translation>A copiar o sistema de ficheiros da nova imagem iso...</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="463"/>
         <source>Squashing filesystem...</source>
-        <translation>Сжатие файловой системы...</translation>
+        <translation>A comprimir o sistema de ficheiros...</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="465"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
-        <translation>Не удалось создать файл linuxfs, пожалуйста, проверьте, есть ли у Вас достаточно места на целевом разделе.</translation>
+        <translation>Não foi possível criar o ficheiro linuxfs; verifique se tem espaço suficiente na partição de destino.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="477"/>
         <source>Creating CD/DVD image file...</source>
-        <translation>Создание файла образа CD/DVD...</translation>
+        <translation>A criar o ficheiro de imagem de CD/DVD...</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="479"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
-        <translation>Не удалось создать ISO файл, пожалуйста, проверьте, есть ли у Вас достаточно места на целевом разделе.</translation>
+        <translation>Não foi possível criar o ficheiro ISO; verifique se tem espaço suficiente na partição de destino.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="485"/>
         <source>Making hybrid iso</source>
-        <translation>Создание гибридного ISO</translation>
+        <translation>A produzir imagem iso híbrida</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="503"/>
         <source>Making md5sum</source>
-        <translation>Подсчет контрольной суммы md5</translation>
+        <translation>A produzir md5sum</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="514"/>
         <source>Cleaning...</source>
-        <translation>Очистка...</translation>
+        <translation>A limpar...</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="527"/>
         <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Done</source>
-        <translation>Готово</translation>
+        <translation>Feito</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="565"/>
         <source>Please wait.</source>
-        <translation>Пожалуйста, ждите.</translation>
+        <translation>Aguarde</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="567"/>
         <source>Please wait. Calculating used disk space...</source>
-        <translation>Пожалуйста, ждите. Расчет используемого дискового пространства...</translation>
+        <translation>Aguarde. A calcular o espaço em disco usado...</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="618"/>
         <source>Settings</source>
-        <translation>Настройки</translation>
+        <translation>Definições</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="627"/>
         <source>Snapshot will use the following settings:*</source>
-        <translation>Снимок будет использовать следующие параметры:*</translation>
+        <translation>A imagem usará as seguintes definições:*</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="629"/>
         <source>- Snapshot directory:</source>
-        <translation>- Папка снимков:</translation>
+        <translation>- Directoria de imagens:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="631"/>
         <source>- Kernel to be used:</source>
-        <translation>- Используемое ядро:</translation>
+        <translation>Núcleo (kernel) a ser usado:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="632"/>
         <source>*These settings can be changed by editing: </source>
-        <translation>*Эти параметры могут быть изменены редактированием:</translation>
+        <translation>*Estas definições podem ser alteradas editando:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="637"/>
         <source>Final chance</source>
-        <translation>Последний шанс</translation>
+        <translation>Última hipótese</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="638"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
-        <translation>Имеется вся информация Снимка, необходимая для создания ISO из рабочей системы.</translation>
+        <translation>O Ciador de Imagens tem agora toda a informação de que precisa para criar uma imagem ISO do sistema em uso.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="639"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
-        <translation>Это займет некоторое время, в зависимости от размера установленной системы и способностей Вашего компьютера.</translation>
+        <translation>Demorará algum tempo a terminar, dependendo do tamanho do sistema instalado e da capacidade do computador.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="640"/>
         <source>OK to start?</source>
-        <translation>OK для старта?</translation>
+        <translation>Iniciar?</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="648"/>
         <source>Output</source>
-        <translation>Выход</translation>
+        <translation>Resultado</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="655"/>
         <source>Edit Boot Menu</source>
-        <translation>Редактировать меню загрузки</translation>
+        <translation>Editar o Menu de Iniciação</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="656"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
-        <translation>Теперь программа будет приостановлена, чтобы позволить Вам редактировать файлы в рабочем каталоге. Выберите Да, чтобы отредактировать меню загрузки или выберите Нет, чтобы пропустить этот шаг и продолжить создание образа.</translation>
+        <translation>O programa parará agora para permitir a edição de quaisquer ficheiros na directoria de trabalho (work). Clique em Sim para editar o menu de iniciação ou clique en Não para saltar este passo e continuar a criação da imagem.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="669"/>
         <source>Success</source>
-        <translation>Успешно</translation>
+        <translation>Sucesso</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="669"/>
         <source>All finished!</source>
-        <translation>Все выполнено!</translation>
+        <translation>Tudo terminado!</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="670"/>
         <source>Close</source>
-        <translation>Закрыть</translation>
+        <translation>Fechar</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="781"/>
         <source>About MX Snapshot</source>
-        <translation>О программу MX Снимок системы</translation>
+        <translation>Sobre o MX_Criador de Imagens ISO</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="782"/>
         <source>Version: </source>
-        <translation>Версия:</translation>
+        <translation>Versão:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="784"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
-        <translation>Программа для создания live-CD из работающей системы для MX Linux</translation>
+        <translation>Programa para criar uma instalação externa CD do sistema MX Linux em execução</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="785"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Авторское право (c) MX Linux</translation>
+        <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="786"/>
         <source>License</source>
-        <translation>Лицензия</translation>
+        <translation>Licença</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="789"/>
         <source>MX Snapshot License</source>
-        <translation>Лицензия MX Snapshot</translation>
+        <translation>Licença do MX_Criador de Imagens ISO</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="797"/>
         <source>MX Snapshot Help</source>
-        <translation>Справка MX Snapshot</translation>
+        <translation>Ajuda do MX_Criador de Imagens ISO</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="807"/>
         <source>Select Snapshot Directory</source>
-        <translation>Выберите папку для снимков</translation>
+        <translation>Seleccionar a directoria de imagens</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="827"/>
         <source>Confirmation</source>
-        <translation>Подтверждение</translation>
+        <translation>Confirmação</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="827"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation>Вы уверены, что хотите выйти из приложения?</translation>
+        <translation>Sair realmente da aplicação?</translation>
     </message>
 </context>
 </TS>
