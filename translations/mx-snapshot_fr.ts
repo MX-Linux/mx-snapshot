@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" version="2.1">
 <context>
     <name>QApplication</name>
     <message>
@@ -18,17 +16,17 @@
         <location filename="../mxsnapshot.cpp" line="679"/>
         <location filename="../mxsnapshot.cpp" line="782"/>
         <source>MX Snapshot</source>
-        <translation>MX Snapshot</translation>
+        <translation>MX Instantané</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation>L&apos;emplacement du snapshot:</translation>
+        <translation>Emplacement de l&apos;instantané:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="40"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot est un programme utilitaire qui crée de votre système actuel une image de démarrage (ISO) afin de la garder ou la distribuer. Pendant ce temps, on peut utiliser d&apos;autres  programmes inexigeants&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Instantané est un programme qui crée une image (ISO) amorçable de votre système actuel permettant son stockage ou sa distribution. Vous pourrez continuer à utiliser des programmes légers pendant son fonctionnement&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="50"/>
@@ -39,12 +37,12 @@
         <location filename="../mxsnapshot.ui" line="155"/>
         <location filename="../mxsnapshot.cpp" line="630"/>
         <source>Snapshot name:</source>
-        <translation>Le nom du snapshot:</translation>
+        <translation>Nom de l&apos;instantané:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="162"/>
         <source>Select a different snapshot directory</source>
-        <translation>Sélectionnez un répertoire différent du snapshot</translation>
+        <translation>Sélectionner un répertoire différent pour l&apos;instantané</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="207"/>
@@ -61,7 +59,7 @@
     <message>
         <location filename="../mxsnapshot.ui" line="301"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
-        <translation>Vous pouvez également exclure certains répertoires en sélectionnant les choix communs ci-dessous, ou en cliquant le bouton pour éditer directement  /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
+        <translation>Vous pouvez également exclure certains répertoires en sélectionnant les choix les plus courants ci-dessous, ou en cliquant le bouton pour éditer directement  /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="326"/>
@@ -106,12 +104,12 @@
     <message>
         <location filename="../mxsnapshot.ui" line="410"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cette option restaurera les mots de passe de &amp;quot;demo&amp;quot; et &amp;quot;root&amp;quot; aux défauts MX Linux et ne copiera pas les comptes personels.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cette option réinitialisera les mots de passe &amp;quot;demo&amp;quot; et &amp;quot;root&amp;quot; aux valeurs par défauts de MX Linux et ne copiera pas les comptes personnels.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="413"/>
         <source>Resetting accounts (for distribution to others)</source>
-        <translation>On réinitialise les comptes (pour distribuer aux autres)</translation>
+        <translation>Réinitialisation des comptes (pour distribuer à d&apos;autres personnes)</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="420"/>
@@ -121,7 +119,7 @@
     <message>
         <location filename="../mxsnapshot.ui" line="427"/>
         <source>Preserving accounts (for personal backup)</source>
-        <translation>On conserve les comptes (pour la sauvegarde personnelle)</translation>
+        <translation>Conservation des comptes (pour une sauvegarde personnelle)</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="539"/>
@@ -192,7 +190,7 @@
     <message>
         <location filename="../mxsnapshot.cpp" line="215"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
-        <translation>Espace libre on %1 où sera mis le dossier du snapshot:</translation>
+        <translation>Espace libre disponible dans %1 où sera mis le dossier de l&apos;instantané:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="217"/>
@@ -202,10 +200,11 @@
       by removing previous snapshots and saved copies:
       %1 snapshots are taking up %2 of disk space.
 </source>
-        <translation>L&apos;espace libre doit suffire pour tenir les données comprimées de / et /home
+        <translation>L&apos;espace libre doit être suffisant pour contenir les données compressées de / et /home
 
-Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en enlever les images et les copies crées auparavant:
-%1 images occupent %2 de l&apos;espace sur disque.
+Si nécessaire, vous pouvez obtenir plus d&apos;espace
+en supprimant les instantanés et les copies crées auparavant:
+%1 images instantanées occupent %2 de l&apos;espace disque.
 </translation>
     </message>
     <message>
@@ -213,9 +212,9 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en enlever 
         <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
 
 Will install leafpad and use it this time.</source>
-        <translation>L&apos;éditeur graphique de texte est mis à %1, mais n&apos;est pas installé. Éditer %2 et mettre la variable gui_editor à l&apos;éditeur de votre choix. (exemples: /usr/bin/gedit, /usr/bin/leafpad)
+        <translation>L&apos;éditeur graphique de texte est mis à %1, mais n&apos;est pas installé. Éditer %2 et changer la variable gui_editor selon l&apos;éditeur de votre choix. (exemples: /usr/bin/gedit, /usr/bin/leafpad)
 
-On installera leafpad et s&apos;en servir cette fois.</translation>
+Pour cette fois, leafpad sera installé et utilisé.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="253"/>
@@ -242,43 +241,43 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="463"/>
         <source>Squashing filesystem...</source>
-        <translation>En train d&apos;écraser le système de fichiers...</translation>
+        <translation>Écrasement du système de fichiers...</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="465"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
-        <translation>Impossible de créer le fichier linuxfs. Veuillez vérifier si l&apos;espace sur la partition de destination suffit.</translation>
+        <translation>Impossible de créer le fichier linuxfs. Veuillez vérifier que l&apos;espace sur la partition de destination soit suffisant.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="477"/>
         <source>Creating CD/DVD image file...</source>
-        <translation>En train de créer le fichier image pour CD/DVD</translation>
+        <translation>Création du fichier image pour CD/DVD</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="479"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
-        <translation>Impossible de créer le fichier ISO. Veuillez vérifier si l&apos;espace sur la partition de destination suffit.</translation>
+        <translation>Impossible de créer le fichier ISO. Veuillez vérifier que l&apos;espace sur la partition de destination soit suffisant.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="485"/>
         <source>Making hybrid iso</source>
-        <translation> Créént ISO hybride</translation>
+        <translation> Création d&apos;une image ISO hybride</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="503"/>
         <source>Making md5sum</source>
-        <translation>Créént </translation>
+        <translation>Création du fichier md5sum</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="514"/>
         <source>Cleaning...</source>
-        <translation>Nettoyage</translation>
+        <translation>Nettoyage...</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="527"/>
         <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Done</source>
-        <translation>Achevé</translation>
+        <translation>Terminé</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="565"/>
@@ -288,7 +287,7 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="567"/>
         <source>Please wait. Calculating used disk space...</source>
-        <translation>Veuillez attendre. On calcule l&apos;espace disque utilisé.</translation>
+        <translation>Veuillez patienter. Calcul de l&apos;espace disque utilisé...</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="618"/>
@@ -298,37 +297,37 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="627"/>
         <source>Snapshot will use the following settings:*</source>
-        <translation>Snapshot se servira des réglages suivants:*</translation>
+        <translation>Instantané utilisera les réglages suivants:*</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="629"/>
         <source>- Snapshot directory:</source>
-        <translation>- Répertoire du snapshot</translation>
+        <translation>- Répertoire de l&apos;instantané:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="631"/>
         <source>- Kernel to be used:</source>
-        <translation>- Le noyau à utiliser:</translation>
+        <translation>- Noyau à utiliser:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="632"/>
         <source>*These settings can be changed by editing: </source>
-        <translation>*On peut modifier ces réglages en éditer:</translation>
+        <translation>*Ces réglages peuvent être modifiés en éditant:</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="637"/>
         <source>Final chance</source>
-        <translation>Dernier possibilité</translation>
+        <translation>Dernière possibilité d&apos;arrêter le processus</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="638"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
-        <translation>Maintenant Snapshot possède tous les renseignements dont il en a besoin afin de créer de votre systeme actuel le fichier ISO.</translation>
+        <translation>Instantané dispose désormais de toutes les informations nécessaires à la création du fichier ISO instantané de votre système.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="639"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
-        <translation>Le processus peut durer longtemps. Ça depend de la taille de votre image et la capacité de votre ordinateur.</translation>
+        <translation>Selon la taille de votre image et la puissance de votre ordinateur, le processus peut durer un certain temps.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="640"/>
@@ -338,27 +337,27 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="648"/>
         <source>Output</source>
-        <translation>Sortie</translation>
+        <translation>Résultats</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="655"/>
         <source>Edit Boot Menu</source>
-        <translation>Éditer le menu du démarrage</translation>
+        <translation>Éditer le menu de démarrage</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="656"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
-        <translation>Le programme fait une pause afin de vous permettre d&apos;éditer les fichiers dans le repertoire de travail. Veuillez choisir soit Yes pour éditer le menu du démarrage, soit No pour sauter et continuer a créer l&apos;image instantané.</translation>
+        <translation>Le programme va se mettre en pause afin de vous permettre d&apos;éditer les fichiers dans le répertoire de travail. Veuillez choisir Yes pour éditer le menu de démarrage, ou No pour passer cette étape et continuer à créer l&apos;image instantanée.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="669"/>
         <source>Success</source>
-        <translation>Succès</translation>
+        <translation>Réussi</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="669"/>
         <source>All finished!</source>
-        <translation>Fini</translation>
+        <translation>Terminé!</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="670"/>
@@ -368,7 +367,7 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="781"/>
         <source>About MX Snapshot</source>
-        <translation>À propos de MX Snapshot</translation>
+        <translation>À propos de MX Instantané</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="782"/>
@@ -378,7 +377,7 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="784"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
-        <translation>Ce programme fait un CD-ROM autonome du système actuel MX Linux.</translation>
+        <translation>Programme créant un instantané du système MX Linux en fonctionnement sous forme d&apos;un live CD.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="785"/>
@@ -388,22 +387,22 @@ On installera leafpad et s&apos;en servir cette fois.</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="786"/>
         <source>License</source>
-        <translation>License</translation>
+        <translation>Licence</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="789"/>
         <source>MX Snapshot License</source>
-        <translation>MX Snapshot License</translation>
+        <translation>Licence de MX Instantané</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="797"/>
         <source>MX Snapshot Help</source>
-        <translation>MX Snapshot Aide</translation>
+        <translation>Aide de MX Instantané</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="807"/>
         <source>Select Snapshot Directory</source>
-        <translation>Sélectionnez un répertoire du snapshot</translation>
+        <translation>Sélectionner un répertoire pour l&apos;instantané</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="827"/>
