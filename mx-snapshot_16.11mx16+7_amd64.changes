@@ -18,26 +18,26 @@ Changes:
  .
    * added microsoft keyboard module to copy-initrd-modules
 Checksums-Sha1:
- 2a8c6d6dde6040989b7873b23d1d90d0ec4f0311 1190 mx-snapshot_16.11mx16+7.dsc
- 3a090d71e9a947f6eb930fbf7519838d13dcd606 61796 mx-snapshot_16.11mx16+7.tar.xz
- c2dedcf40b577322b995cc87c4ae3d416e16f022 82596 mx-snapshot_16.11mx16+7_amd64.deb
+ 081a8be40bdc6e3249299972f3104209ec0af13b 1190 mx-snapshot_16.11mx16+7.dsc
+ 516ee2bac673286de05a2703da7f7d027a5c5120 61776 mx-snapshot_16.11mx16+7.tar.xz
+ 64dae96311e5a1fb2d00a704d5e52ab5543bb398 82962 mx-snapshot_16.11mx16+7_amd64.deb
 Checksums-Sha256:
- 2bfb50e7a3a71fd307f2935396f8b0e680c5741d574f123a19fc98f78c5a3194 1190 mx-snapshot_16.11mx16+7.dsc
- 9766202758ca9dea95030d314962a7926735601e2a1b5dac704a0145d7938345 61796 mx-snapshot_16.11mx16+7.tar.xz
- 6f583f6662bfed7b06be1227bac08771e418d8f284db4c35e5bc42337a33ff84 82596 mx-snapshot_16.11mx16+7_amd64.deb
+ f5a8518339e7b893f01e9d196bc15c330cbdb8291ff0dbf8cf8fc9e88a35fe6c 1190 mx-snapshot_16.11mx16+7.dsc
+ 9c1e9e988f92614fb8cb313da6324d2a92babfc01d313df258fabea44d1a0a2f 61776 mx-snapshot_16.11mx16+7.tar.xz
+ cced5da33f17e6892fb72e98b0e3bdc31798af239f263b920871e8b0e1913993 82962 mx-snapshot_16.11mx16+7_amd64.deb
 Files:
- 6fe4b94865ecfecfe7a1e38821819f17 1190 admin optional mx-snapshot_16.11mx16+7.dsc
- 95b2fcdf891e978cc2e3d32c90b712ef 61796 admin optional mx-snapshot_16.11mx16+7.tar.xz
- abc29bf5a4e8d4f644466fa34e3fccb5 82596 admin optional mx-snapshot_16.11mx16+7_amd64.deb
+ b1943fba55e029bbd5d1f1f56adbcc9d 1190 admin optional mx-snapshot_16.11mx16+7.dsc
+ 041b6e0865fe1742c4aae8329d4f3fbd 61776 admin optional mx-snapshot_16.11mx16+7.tar.xz
+ f349ca2c7576717f17f5cb795b318a3e 82962 admin optional mx-snapshot_16.11mx16+7_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJYQdr5AAoJEHCTjHgGee6YB/UIAI/psNYGq1Z4ph+lfMhnB1Uh
-tNR7ezKTUymWnm/dBDPbl/lUbtme3XIkGVQod5BKE+ES1WQ3l+pv9lQeJkHL9GlV
-DHTpSNhcd6Qt4kh2ks5nFf2zSwDvyZU+jtduRQ1v6YxdFesNAPNH8qZ0vIieWLRv
-xWhEoUbfoCdEIl6BtZWofxVaOUzpvjV1K3wH9v8TfZ7fLTyK4zg9Sz6eDMVXuwLq
-IcPK7UDJpRRtj8Osvqjkps6QrJqQDzjQawmTSA4O6tcbi93RCuPo7Wlt5Cwmxu5g
-jyjQMvw1/VW1hIN5/39edWDA51q8RLy5Pkb5XnmvEOU1KZ0nDlZ9QBdYz+D+fZU=
-=a+FL
+iQEcBAEBAgAGBQJYQdwtAAoJEHCTjHgGee6YNV8IAMoP+0/8SkZbY9j3hv1TMQR0
+RtWd828wwBCSLgRWeAV/pZDvOsTm92jw1fvvsGpgEN5l6EDc/Q3O2nj/iPqcHZCL
+f/FiDi+BG2BeB0GdveEhaJ9CgOEXZxadzAzh/S0mHzV997Iu9jpc1ERVMCROjo7M
+VJhygh3eW+Lrj3r+FtTfAd+mHjoUbTpgXt17NKES2+uyurzLEh8YtRJJDhNoGa7e
+Qwt8YdugB/mSmA59z9MKxhUJAYN9gN6Do9pA9guD6ZCJkHDa4iwOVoApPohm6bOh
+McJm8fT4Us+om9ioz4brMs7XbZ+P7zOvl3yuWTkFtrE2R9XnljQ36r1853+R3PY=
+=dAud
 -----END PGP SIGNATURE-----

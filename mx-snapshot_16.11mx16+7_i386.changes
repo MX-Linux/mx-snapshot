@@ -18,20 +18,20 @@ Changes:
  .
    * added microsoft keyboard module to copy-initrd-modules
 Checksums-Sha1:
- 8ffca4aa6e207243640816a7d35f49faf9043f60 84508 mx-snapshot_16.11mx16+7_i386.deb
+ 0df271a8b002f1591af63754e337892400a5b076 84622 mx-snapshot_16.11mx16+7_i386.deb
 Checksums-Sha256:
- db53ae98aa5ef96bc4754e87816f566f9298b16438eafc16e52c7152a7110378 84508 mx-snapshot_16.11mx16+7_i386.deb
+ 02d8a4471abf4bd1a354d806725fa58838dec59be2fdc93bff4f690899834fc6 84622 mx-snapshot_16.11mx16+7_i386.deb
 Files:
- ada998503adc262e7b6f8b59f2842a50 84508 admin optional mx-snapshot_16.11mx16+7_i386.deb
+ b0f3d789b11e8d2448f6e4b060649aec 84622 admin optional mx-snapshot_16.11mx16+7_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJYQds2AAoJEHCTjHgGee6YhTMH/2hc3dA40IZrYr4E1wxOr2HN
-HomaYhc1IO375rimdOKsQzDII9liI4VWnLqH8NSU639grOB85M4dmEUqYodLjscm
-we4QF5vfBF4HuR2WUtXsi6S2Tkjcs+DRCs/ASWR7AnC+xX3R93IvDviALdTtLm2v
-gcKdeAE45N4UTki0fTvm153WG4e76/ZMfzaVuN2AU/S2SEB4lzchewCu75TKSnU1
-gRQnLPhOGwOCwzJB5Kxm59uvjafU9oMtOLAlcpK5LmkH0c0jLVeiTZ/+kXtoo6dh
-FNkMZaQs2Pg18BjRy4RbU2gj1zN6q26EyJtmdVMwHkdbhRX8HgyjOwuLFmdtd68=
-=9gGp
+iQEcBAEBAgAGBQJYQdwDAAoJEHCTjHgGee6YG2AH+waWS77cOkp/uqJNZRxg8MxT
+0dWrPV54QmY0cWdtXalD7Nmw7hYNtJvixfO/Aekp5nnosh26r+HujJYZg+0n6dJB
+Ogtm56vtQK7uPq7QnHKBLC4E1bGieZ+4dqfPzm7TssWv9KKjOjZ0oC/YEKgP2alx
+Qu6LqhAysoG8JhCqR7/v2jx2MKAbvsyg1KUUzge0vhSgDYYk9hK1T3wlwXaHA2x+
+JG5waiN9aaKhbXVaVV4nOMQSO+r8OZJLghSS08ZYjGPrlDjo1Pa53NVEr522+oUC
+jA45KekLAiZwtuJrLmJylfOHQn9pE/04O3J8o/zflB6+IbnELid7oQuHoCQIdWw=
+=MMBl
 -----END PGP SIGNATURE-----
