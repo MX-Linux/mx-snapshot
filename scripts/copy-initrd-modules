@@ -46,6 +46,7 @@ crc32c-generic
 crct10dif-pclmul
 crct10dif-common
 crct10dif-generic
+dm-mod
 ecb
 ehci-hcd
 ehci-pci
@@ -57,9 +58,16 @@ fotg210-hcd
 fusbh200-hcd
 fuse
 hid
+hid-apple
+hid-belkin
+hid-cherry
+hid-generic
+hid-lenovo-tpkbd
 hid-logitech-dj
 hid-logitech-hidpp
-hid-generic
+hid-logitech
+hid-monterey
+hid-samsung
 isofs
 jbd
 jbd2
