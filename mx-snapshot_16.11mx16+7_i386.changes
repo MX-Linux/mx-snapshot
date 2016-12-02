@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Fri, 02 Dec 2016 15:33:02 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 16.11mx16+7
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (16.11mx16+7) mx; urgency=medium
+ .
+   * added microsoft keyboard module to copy-initrd-modules
+Checksums-Sha1:
+ 8ffca4aa6e207243640816a7d35f49faf9043f60 84508 mx-snapshot_16.11mx16+7_i386.deb
+Checksums-Sha256:
+ db53ae98aa5ef96bc4754e87816f566f9298b16438eafc16e52c7152a7110378 84508 mx-snapshot_16.11mx16+7_i386.deb
+Files:
+ ada998503adc262e7b6f8b59f2842a50 84508 admin optional mx-snapshot_16.11mx16+7_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJYQds2AAoJEHCTjHgGee6YhTMH/2hc3dA40IZrYr4E1wxOr2HN
+HomaYhc1IO375rimdOKsQzDII9liI4VWnLqH8NSU639grOB85M4dmEUqYodLjscm
+we4QF5vfBF4HuR2WUtXsi6S2Tkjcs+DRCs/ASWR7AnC+xX3R93IvDviALdTtLm2v
+gcKdeAE45N4UTki0fTvm153WG4e76/ZMfzaVuN2AU/S2SEB4lzchewCu75TKSnU1
+gRQnLPhOGwOCwzJB5Kxm59uvjafU9oMtOLAlcpK5LmkH0c0jLVeiTZ/+kXtoo6dh
+FNkMZaQs2Pg18BjRy4RbU2gj1zN6q26EyJtmdVMwHkdbhRX8HgyjOwuLFmdtd68=
+=9gGp
+-----END PGP SIGNATURE-----

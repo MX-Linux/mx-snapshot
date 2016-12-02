@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Fri, 02 Dec 2016 15:33:02 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 16.11mx16+7
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (16.11mx16+7) mx; urgency=medium
+ .
+   * added microsoft keyboard module to copy-initrd-modules
+Checksums-Sha1:
+ 2a8c6d6dde6040989b7873b23d1d90d0ec4f0311 1190 mx-snapshot_16.11mx16+7.dsc
+ 3a090d71e9a947f6eb930fbf7519838d13dcd606 61796 mx-snapshot_16.11mx16+7.tar.xz
+ c2dedcf40b577322b995cc87c4ae3d416e16f022 82596 mx-snapshot_16.11mx16+7_amd64.deb
+Checksums-Sha256:
+ 2bfb50e7a3a71fd307f2935396f8b0e680c5741d574f123a19fc98f78c5a3194 1190 mx-snapshot_16.11mx16+7.dsc
+ 9766202758ca9dea95030d314962a7926735601e2a1b5dac704a0145d7938345 61796 mx-snapshot_16.11mx16+7.tar.xz
+ 6f583f6662bfed7b06be1227bac08771e418d8f284db4c35e5bc42337a33ff84 82596 mx-snapshot_16.11mx16+7_amd64.deb
+Files:
+ 6fe4b94865ecfecfe7a1e38821819f17 1190 admin optional mx-snapshot_16.11mx16+7.dsc
+ 95b2fcdf891e978cc2e3d32c90b712ef 61796 admin optional mx-snapshot_16.11mx16+7.tar.xz
+ abc29bf5a4e8d4f644466fa34e3fccb5 82596 admin optional mx-snapshot_16.11mx16+7_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJYQdr5AAoJEHCTjHgGee6YB/UIAI/psNYGq1Z4ph+lfMhnB1Uh
+tNR7ezKTUymWnm/dBDPbl/lUbtme3XIkGVQod5BKE+ES1WQ3l+pv9lQeJkHL9GlV
+DHTpSNhcd6Qt4kh2ks5nFf2zSwDvyZU+jtduRQ1v6YxdFesNAPNH8qZ0vIieWLRv
+xWhEoUbfoCdEIl6BtZWofxVaOUzpvjV1K3wH9v8TfZ7fLTyK4zg9Sz6eDMVXuwLq
+IcPK7UDJpRRtj8Osvqjkps6QrJqQDzjQawmTSA4O6tcbi93RCuPo7Wlt5Cwmxu5g
+jyjQMvw1/VW1hIN5/39edWDA51q8RLy5Pkb5XnmvEOU1KZ0nDlZ9QBdYz+D+fZU=
+=a+FL
+-----END PGP SIGNATURE-----
