@@ -1,3 +1,9 @@
+mx-snapshot (16.11mx16+6) mx; urgency=medium
+
+  * new modules keyboard modules in copy-initrd-modules
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 02 Dec 2016 09:06:34 -0500
+
 mx-snapshot (16.11mx16+5) mx; urgency=medium
 
   * FR translation
