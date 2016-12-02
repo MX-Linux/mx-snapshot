@@ -61,11 +61,12 @@ hid
 hid-apple
 hid-belkin
 hid-cherry
-hid-generic
 hid-lenovo-tpkbd
+hid-logitech
 hid-logitech-dj
 hid-logitech-hidpp
-hid-logitech
+hid-generic
+hid-microsoft
 hid-monterey
 hid-samsung
 isofs
