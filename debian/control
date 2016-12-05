@@ -11,6 +11,6 @@ Vcs-Git: git://github.com/AdrianTM/mx-snapshot
 
 Package: mx-snapshot
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, mx-viewer, squashfs-tools, syslinux-utils, mx-iso-template (>= 16.17.1) | iso-template (>= 16.1mx15), xorriso (>= 1.4.6), mx-remaster
+Depends: ${misc:Depends}, ${shlibs:Depends}, mx-viewer, squashfs-tools, syslinux-utils, mx-iso-template | iso-template (>= 16.1mx15), xorriso (>= 1.4.6), mx-remaster
 Description: MX Snapshot
  MX Snapshot is a tool used for creating a live-CD from the running system.

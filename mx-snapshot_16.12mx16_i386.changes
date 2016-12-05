@@ -18,20 +18,20 @@ Changes:
  .
    * alternative dependency: mx-iso-template
 Checksums-Sha1:
- 0a765ddf415fad761762c36f56966ddf3d89871a 84728 mx-snapshot_16.12mx16_i386.deb
+ c819c6afcebc5166e9de7f183351e7b04261aaa0 84652 mx-snapshot_16.12mx16_i386.deb
 Checksums-Sha256:
- af71a38c33b15c4da0956fceaa9b6ddf4544da35f7589d5e1bea565e84ace5d8 84728 mx-snapshot_16.12mx16_i386.deb
+ 1e6aad3184dadabc30b49c88855a79fbfc94921af2dadd2ef8d10f422e931538 84652 mx-snapshot_16.12mx16_i386.deb
 Files:
- f61fe6242d31f81721e75d55417991a3 84728 admin optional mx-snapshot_16.12mx16_i386.deb
+ 4e902d7ec8187e7c56423735b76cbace 84652 admin optional mx-snapshot_16.12mx16_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJYRc8ZAAoJEHCTjHgGee6YfpUH/058FCmAbmv7wQTnlybRcvuO
-UZOl5LeR0suQW9ePdHSeNS7jeEQUdU7j+gb2ExmUyR80RdEl1+XOZ2nLxEnHdDs6
-SORUDEZJtjPbbpDCumsmDYuqjwwvffVBckyj04c1waNMBN7CgzLlgBXupsGALsvr
-MkLmHYDUe8pP3EOeHlRTwDymvXkXjQmgd/D5bz6rJGhXWEXcIiu8vcWGX4g0vBnX
-0HMLvVeRam36YJOLPLi1uVFYeVZc0h5POps10MTeUm/Uk2DCQfew4HVxFlNqAn3y
-sCdw3WuICgGQTE5psiBIt9baL8YGH+DxSWH8pSl58BHWKpwPDdlrBBJCU9pegC4=
-=He2s
+iQEcBAEBAgAGBQJYRdEBAAoJEHCTjHgGee6YYBYH/RQX3qsmZ4NvGzktpOsvqP07
+fxU6Df5m16eHT9svC5U5papAMvpsJo9vuTzEKgAYzH1HWC1a65XhLvRzPUzq44lA
+5QbZ8TguqLC30esYId59d97+8ObbHtHrw5qPsYdSXFoogSMZXn+VvO9k6I+QQ6zB
+vlNIwNH7keJ2vXvQ6BXU301g2Gglse+uimld5iwHgtEuG1vrc6kHcfx/qxxf1z8y
+t729BXVKZqJXEbhbie8O5glQxWzrEok1xzswJ9vYuQ77/+bYmhBKPLgxCVZ6cUmE
+ALcsddPZCajT93iDO2KHtSdYk10uRulHGGLDmI4IlyZsanvJc6OOBXae5pui1oA=
+=nbY3
 -----END PGP SIGNATURE-----

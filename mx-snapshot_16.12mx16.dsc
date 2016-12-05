@@ -13,20 +13,20 @@ Build-Depends: qt5-qmake, qt5-default, qttools5-dev-tools, debhelper (>= 7.0.50~
 Package-List:
  mx-snapshot deb admin optional arch=any
 Checksums-Sha1:
- ad28d2bf8a07f0fca1ea7bc3f29a0902752f4dbe 61844 mx-snapshot_16.12mx16.tar.xz
+ 2fa059049eacecdfde0c474a67b045bf8924a56d 61828 mx-snapshot_16.12mx16.tar.xz
 Checksums-Sha256:
- 252f9aa110306426ca255303f340894ae08a96730dd7b855559c8bead93dac1d 61844 mx-snapshot_16.12mx16.tar.xz
+ 5533b8686b04663f06b42acac5ea7b601f538a5e2c64a0a24899b537c5ea0691 61828 mx-snapshot_16.12mx16.tar.xz
 Files:
- 0fc6d7f149c866ec733a992a0f5dbb80 61844 mx-snapshot_16.12mx16.tar.xz
+ adf448a45cb1e9104b1d1f64d695e9e7 61828 mx-snapshot_16.12mx16.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJYRc7xAAoJEHCTjHgGee6YahMH/3OoVLpBM/48fl5dY9qhiWu1
-4caw92qxOkQgCgf0kRSV9yA+ZjokGyNsSDJm/GjNHXXVG41K+YIGe0X6rkC+Ugcl
-6nMtryScLP7GyuWhxcDCg3XIo6xCSba/4mVp7HbP+Q3jesnwoHBNREJscXWZKC4Q
-zzgx+SV3SW71GS1YSVcu3T0YC/rQXeophhCZctqveQ1AddGTBaYkN1J5IO+ctpQX
-oKGHBy1lrWRhyUIlUtgj2v4veEfH3ZDx41CgFckE9letHn73oQJhlcoGnnOsT9Iw
-+EzfXdfcsLR0bcfAp+kp2yaAhH6RLHEpDPvXTTZADKl8OQtDpCDg0hHwEEyHVRk=
-=u6+2
+iQEcBAEBAgAGBQJYRdEhAAoJEHCTjHgGee6YU8YIAMRpys/VVwZMILM0/q0xGAt/
+G/7EJlPYAmrS/c6itdTZldRu+uY5K0l8KABtuCOIWL5GuG54tJe22Vr/9hwnBQbo
+DxCPMcA7iioANMS74OTtJvxClaYT45tJYju2efMx6CblJm5ZSUGxSoVDR6N5MBHo
+475RqJ28AWvVCdi6Nc9mE7puHTJsPd6usiyMXfxHwhvPf6+fiOjTY4xL9fuzuCaM
+DwwDvPCt0m/1wzNgcVLve/QlZ/RVggOMpO65ai5usmN+uqunHnIk6N7XVarBsOev
+BXXBVndzQbao9usJWoDS/YN4q0yp7agkyG7fLkSBmlLeLu8C/f/oDWyrZVrrlxo=
+=RGh0
 -----END PGP SIGNATURE-----
