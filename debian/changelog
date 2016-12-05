@@ -1,3 +1,9 @@
+mx-snapshot (16.11mx16+8) mx; urgency=medium
+
+  * alternative dependency: mx-iso-template
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 05 Dec 2016 15:12:21 -0500
+
 mx-snapshot (16.11mx16+7) mx; urgency=medium
 
   * added microsoft keyboard module to copy-initrd-modules
