@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Mon, 05 Dec 2016 15:32:14 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 16.12mx16
+Distribution: mx
+Urgency: medium
+Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (16.12mx16) mx; urgency=medium
+ .
+   * alternative dependency: mx-iso-template
+Checksums-Sha1:
+ 59ec5a8208ee4cfdf3ddedea77dceb7381cd146e 1182 mx-snapshot_16.12mx16.dsc
+ ad28d2bf8a07f0fca1ea7bc3f29a0902752f4dbe 61844 mx-snapshot_16.12mx16.tar.xz
+ e9147b19b82cdac4b2ce9bbb1ca65b1335daeba6 82886 mx-snapshot_16.12mx16_amd64.deb
+Checksums-Sha256:
+ 56b0d0f900ea0b21c44dc291ee4e3f471cc9346b22fa61406c746851be7d72dc 1182 mx-snapshot_16.12mx16.dsc
+ 252f9aa110306426ca255303f340894ae08a96730dd7b855559c8bead93dac1d 61844 mx-snapshot_16.12mx16.tar.xz
+ 097da5dcc333e7ffd0a30ab032868e782a9db750b2d0d64182aeace00f7e1697 82886 mx-snapshot_16.12mx16_amd64.deb
+Files:
+ 3855439798177a16a8555b35a59a2d02 1182 admin optional mx-snapshot_16.12mx16.dsc
+ 0fc6d7f149c866ec733a992a0f5dbb80 61844 admin optional mx-snapshot_16.12mx16.tar.xz
+ 2845d6c5d6662cee1f465f368c84dea8 82886 admin optional mx-snapshot_16.12mx16_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJYRc71AAoJEHCTjHgGee6YZ0EH/26EZ7erqngnlx9E/+NmUHT8
+fXaQ7HOBBBS7kpmiaO5ZIfQ+p8OP3zeiS+xysFgsQtV3rdy8CYpEBDhOPUtJTMDT
+blbq4KidEFgCOaud+NTiA0yzDASSMDHu12cem+iRUB0DZ4ue09Lw2YZNFlJY8ZYY
+JOAjo6en0pX1OCz+ED32tm4YkeveomRuEeRp7fqzyjsncERUv6perZuaTkhJLxIh
+HV5+rHTW1Hbkk4zYXxnylR5oOymeDbTdr5N1SkwZgoVh9o4UwVwBQexT0lg8HAaQ
+19byWjVjwNdgUcqxwvsA9AhRwXLtmD/bUHcDNe97C/843XOcTKKdz/1ikSQDXok=
+=5Dfc
+-----END PGP SIGNATURE-----
