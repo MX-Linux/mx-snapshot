@@ -1,3 +1,9 @@
+mx-snapshot (17.2mx16) mx; urgency=medium
+
+  * bug fix
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 16 Feb 2017 17:53:19 -0500
+
 mx-snapshot (16.12mx16) mx; urgency=medium
 
   * alternative dependency: mx-iso-template

@@ -277,7 +277,7 @@ Pour cette fois, leafpad sera installé et utilisé.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="527"/>
-        <location filename="../mxsnapshot.cpp" line="826"/>
+        <location filename="../mxsnapshot.cpp" line="824"/>
         <source>Done</source>
         <translation>Terminé</translation>
     </message>
@@ -402,17 +402,17 @@ Pour cette fois, leafpad sera installé et utilisé.</translation>
         <translation>Aide de MX Instantané</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="807"/>
+        <location filename="../mxsnapshot.cpp" line="806"/>
         <source>Select Snapshot Directory</source>
         <translation>Sélectionner un répertoire pour l&apos;instantané</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="827"/>
+        <location filename="../mxsnapshot.cpp" line="825"/>
         <source>Confirmation</source>
         <translation>Confirmation</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="827"/>
+        <location filename="../mxsnapshot.cpp" line="825"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Êtes-vous sûr de vouloir quitter l&apos;application?</translation>
     </message>

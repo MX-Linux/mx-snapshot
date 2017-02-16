@@ -802,7 +802,6 @@ void mxsnapshot::on_buttonHelp_clicked()
 void mxsnapshot::on_buttonSelectSnapshot_clicked()
 {
     QFileDialog dialog;
-    this->hide();
 
     QString selected = dialog.getExistingDirectory(this, tr("Select Snapshot Directory"), QString(), QFileDialog::ShowDirsOnly);
     if (selected != "") {
@@ -810,7 +809,6 @@ void mxsnapshot::on_buttonSelectSnapshot_clicked()
         ui->labelSnapshotDir->setText(snapshot_dir.absolutePath());
         listFreeSpace();
     }
-    this->show();
 }
 
 // process keystrokes
