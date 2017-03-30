@@ -42,12 +42,14 @@ HEADERS  += mxsnapshot.h
 FORMS    += mxsnapshot.ui
 
 TRANSLATIONS += translations/mx-snapshot_ca.ts \
+                translations/mx-snapshot_cs.ts \
                 translations/mx-snapshot_de.ts \
                 translations/mx-snapshot_el.ts \
                 translations/mx-snapshot_es.ts \
                 translations/mx-snapshot_fr.ts \
                 translations/mx-snapshot_it.ts \
                 translations/mx-snapshot_ja.ts \
+                translations/mx-snapshot_lt.ts \
                 translations/mx-snapshot_nl.ts \
                 translations/mx-snapshot_pl.ts \
                 translations/mx-snapshot_pt.ts \
