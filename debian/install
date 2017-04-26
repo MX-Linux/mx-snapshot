@@ -1,7 +1,7 @@
 icons/*				usr/share/mx-snapshot/icons
 license.html			usr/share/doc/mx-snapshot
 mx-snapshot 			usr/bin
-mx-snapshot.desktop		usr/share/applications/mx
+mx-snapshot.desktop		usr/share/applications
 mx-snapshot.conf		etc
 mx-snapshot-exclude.list	usr/local/share/excludes
 mx-snapshot.svg			usr/share/pixmaps

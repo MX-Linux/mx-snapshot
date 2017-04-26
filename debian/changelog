@@ -1,3 +1,9 @@
+mx-snapshot (17.4mx16) mx; urgency=medium
+
+  * new translations
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 26 Apr 2017 09:54:43 -0400
+
 mx-snapshot (17.2mx16) mx; urgency=medium
 
   * bug fix
