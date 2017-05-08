@@ -443,7 +443,7 @@ void mxsnapshot::setupEnv()
         system("installed-to-live -b /.bind-root start empty=/home general version-file read-only");
     } else {
         // copy minstall.desktop to Desktop on all accounts
-        system("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/mx/minstall.desktop 2>/dev/null");
+        system("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/minstall.desktop 2>/dev/null");
         system("chmod +x /home/*/Desktop/minstall.desktop");
         system("installed-to-live -b /.bind-root start bind=/home live-files version-file adjtime read-only");
     }
