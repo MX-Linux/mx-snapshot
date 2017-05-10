@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Wed, 10 May 2017 15:37:05 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 17.5mx16
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (17.5mx16) mx; urgency=medium
+ .
+   * update icons
+Checksums-Sha1:
+ f418dd7824138146fe6690dd9514ca33a8c6465b 1155 mx-snapshot_17.5mx16.dsc
+ c1f14b8350ac4b3c96cadc0728198cd02f5eb998 165968 mx-snapshot_17.5mx16.tar.xz
+ f81c6d31cb4024e700e1a2494f23cbc74d845688 83532 mx-snapshot_17.5mx16_amd64.deb
+Checksums-Sha256:
+ ab915a41c143233aec3ba8b0140630d00a73ced4f92cb97815d7fcc91ba7deb5 1155 mx-snapshot_17.5mx16.dsc
+ 53a880b795611f692912c04bef04c51b363b79ae3d4349d5914f877006783c23 165968 mx-snapshot_17.5mx16.tar.xz
+ b2403f4f9e3d48f20a9ff08eed3ab3388cb049c1e8e9660c080da451aafc6390 83532 mx-snapshot_17.5mx16_amd64.deb
+Files:
+ 651b5829382df0a7558bad70c7f89d92 1155 admin optional mx-snapshot_17.5mx16.dsc
+ 7021b80534b2603207f8d0d06c2484d8 165968 admin optional mx-snapshot_17.5mx16.tar.xz
+ 9d61feac77ffbbeb764034f96802b6a7 83532 admin optional mx-snapshot_17.5mx16_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJZE23rAAoJEHCTjHgGee6YV9cIAKGE73pbq3GRbzV8ih3Otcy5
+1Fi//u4r1AzqE1cCY+9fEuf/TJmpjO4HLM2HUTySx2arWCwEAikAuEheNm2ctxR+
+NzpeT6rvYS82035THFDzyaOlkKUt/QYh+8Vq925SnOVojZNCAZeNgt0ayJymdhWD
+uR390kcloyyP3E3a+rP2NnjGtENQZ3Yyt9lFgevHmErGUjRHcXO9irVgCyYmhgsX
+IGu4AJbPEgTvh7SV/Wsu7q52PpgYx1cjoSMg6gDQdOJacJmMOTquCdqIZ0YE/x9Z
+/XqJP5vkRhxgz+wyA8NUPMNhIqPKfI81b22buT1mtt0v6u3TePfi3rEXuh5UKgE=
+=NPbL
+-----END PGP SIGNATURE-----

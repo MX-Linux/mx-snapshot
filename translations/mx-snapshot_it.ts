@@ -135,49 +135,57 @@
         <translation>Annulla</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="549"/>
+        <location filename="../mxsnapshot.ui" line="550"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="559"/>
+        <location filename="../mxsnapshot.ui" line="560"/>
         <source>Display help </source>
         <translation>Visualizza aiuto</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="562"/>
+        <location filename="../mxsnapshot.ui" line="563"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="569"/>
+        <location filename="../mxsnapshot.ui" line="571"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="592"/>
+        <location filename="../mxsnapshot.ui" line="594"/>
         <source>About this application</source>
         <translation>Informazioni riguardo questa applicazione</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="595"/>
+        <location filename="../mxsnapshot.ui" line="597"/>
         <source>About...</source>
         <translation>Info...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="602"/>
+        <location filename="../mxsnapshot.ui" line="605"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="640"/>
-        <source>Next &gt;</source>
-        <translation>Avanti &gt;</translation>
+        <location filename="../mxsnapshot.ui" line="643"/>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="662"/>
+        <location filename="../mxsnapshot.ui" line="668"/>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next &gt;</source>
+        <translation type="vanished">Avanti &gt;</translation>
+    </message>
+    <message>
         <source>&lt; Back</source>
-        <translation>&lt; Indietro</translation>
+        <translation type="vanished">&lt; Indietro</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="195"/>
@@ -277,7 +285,7 @@ Verrà installato leafpad e usato per questa volta.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="527"/>
-        <location filename="../mxsnapshot.cpp" line="824"/>
+        <location filename="../mxsnapshot.cpp" line="825"/>
         <source>Done</source>
         <translation>Fatto</translation>
     </message>
@@ -397,22 +405,22 @@ Verrà installato leafpad e usato per questa volta.</translation>
         <translation>Licenza MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="797"/>
+        <location filename="../mxsnapshot.cpp" line="798"/>
         <source>MX Snapshot Help</source>
         <translation>Guida MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="806"/>
+        <location filename="../mxsnapshot.cpp" line="807"/>
         <source>Select Snapshot Directory</source>
         <translation>Seleziona la directory di Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="825"/>
+        <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Confirmation</source>
         <translation>Conferma</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="825"/>
+        <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Sei sicuro di voler chiudere l&apos;applicazione?</translation>
     </message>

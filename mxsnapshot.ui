@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>804</width>
+    <width>808</width>
     <height>517</height>
    </rect>
   </property>
@@ -542,8 +542,9 @@ color: rgb(0, 0, 0);</string>
         <string>Cancel</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../../../../../../../../usr/share/mx-snapshot/icons/gtk-cancel.png</normaloff>../../../../../../../../usr/share/mx-snapshot/icons/gtk-cancel.png</iconset>
+        <iconset theme="window-close">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="shortcut">
         <string>Alt+N</string>
@@ -562,8 +563,9 @@ color: rgb(0, 0, 0);</string>
         <string>Help</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../../../../../../../../usr/share/mx-snapshot/icons/gnome-help.png</normaloff>../../../../../../../../usr/share/mx-snapshot/icons/gnome-help.png</iconset>
+        <iconset theme="help-contents">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="shortcut">
         <string>Alt+H</string>
@@ -595,8 +597,9 @@ color: rgb(0, 0, 0);</string>
         <string>About...</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../../../../../../../../usr/share/mx-snapshot/icons/accessories-text-editor.png</normaloff>../../../../../../../../usr/share/mx-snapshot/icons/accessories-text-editor.png</iconset>
+        <iconset theme="help-about">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="shortcut">
         <string>Alt+B</string>
@@ -621,7 +624,7 @@ color: rgb(0, 0, 0);</string>
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../../../../../../usr/share/mx-snapshot/icons/mxfcelogo.png</pixmap>
+        <pixmap resource="images.qrc">:/icons/logo.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -637,7 +640,10 @@ color: rgb(0, 0, 0);</string>
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Next &gt;</string>
+        <string>Next</string>
+       </property>
+       <property name="icon">
+        <iconset theme="go-next"/>
        </property>
        <property name="shortcut">
         <string/>
@@ -659,7 +665,10 @@ color: rgb(0, 0, 0);</string>
         </sizepolicy>
        </property>
        <property name="text">
-        <string>&lt; Back</string>
+        <string>Back</string>
+       </property>
+       <property name="icon">
+        <iconset theme="go-previous"/>
        </property>
       </widget>
      </item>
@@ -667,7 +676,9 @@ color: rgb(0, 0, 0);</string>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>excludeAll</sender>

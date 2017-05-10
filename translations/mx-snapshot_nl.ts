@@ -135,49 +135,57 @@
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="549"/>
+        <location filename="../mxsnapshot.ui" line="550"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="559"/>
+        <location filename="../mxsnapshot.ui" line="560"/>
         <source>Display help </source>
         <translation>Toon help</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="562"/>
+        <location filename="../mxsnapshot.ui" line="563"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="569"/>
+        <location filename="../mxsnapshot.ui" line="571"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="592"/>
+        <location filename="../mxsnapshot.ui" line="594"/>
         <source>About this application</source>
         <translation>Over deze toepassing</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="595"/>
+        <location filename="../mxsnapshot.ui" line="597"/>
         <source>About...</source>
         <translation>Over...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="602"/>
+        <location filename="../mxsnapshot.ui" line="605"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="640"/>
-        <source>Next &gt;</source>
-        <translation>Volgende &gt;</translation>
+        <location filename="../mxsnapshot.ui" line="643"/>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="662"/>
+        <location filename="../mxsnapshot.ui" line="668"/>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next &gt;</source>
+        <translation type="vanished">Volgende &gt;</translation>
+    </message>
+    <message>
         <source>&lt; Back</source>
-        <translation>&lt; Terug</translation>
+        <translation type="vanished">&lt; Terug</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="195"/>
@@ -278,7 +286,7 @@ Zal leafpad installeren en dit keer gebruiken.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="527"/>
-        <location filename="../mxsnapshot.cpp" line="824"/>
+        <location filename="../mxsnapshot.cpp" line="825"/>
         <source>Done</source>
         <translation>Klaar</translation>
     </message>
@@ -398,22 +406,22 @@ Zal leafpad installeren en dit keer gebruiken.</translation>
         <translation>MX Snapshot Licentie</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="797"/>
+        <location filename="../mxsnapshot.cpp" line="798"/>
         <source>MX Snapshot Help</source>
         <translation>MX Snapshot Hulp</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="806"/>
+        <location filename="../mxsnapshot.cpp" line="807"/>
         <source>Select Snapshot Directory</source>
         <translation>Selecteer Snapshot Folder</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="825"/>
+        <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Confirmation</source>
         <translation>Bevestiging</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="825"/>
+        <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Weet u zeker dat u wilt stoppen met deze applicatie?</translation>
     </message>

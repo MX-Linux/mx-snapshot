@@ -135,49 +135,57 @@
         <translation>Avbryt</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="549"/>
+        <location filename="../mxsnapshot.ui" line="550"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="559"/>
+        <location filename="../mxsnapshot.ui" line="560"/>
         <source>Display help </source>
         <translation>Visa hjälp</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="562"/>
+        <location filename="../mxsnapshot.ui" line="563"/>
         <source>Help</source>
         <translation>Hjälp</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="569"/>
+        <location filename="../mxsnapshot.ui" line="571"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="592"/>
+        <location filename="../mxsnapshot.ui" line="594"/>
         <source>About this application</source>
         <translation>Om detta program</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="595"/>
+        <location filename="../mxsnapshot.ui" line="597"/>
         <source>About...</source>
         <translation>Om...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="602"/>
+        <location filename="../mxsnapshot.ui" line="605"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="640"/>
-        <source>Next &gt;</source>
-        <translation>Nästa&gt;</translation>
+        <location filename="../mxsnapshot.ui" line="643"/>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="662"/>
+        <location filename="../mxsnapshot.ui" line="668"/>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next &gt;</source>
+        <translation type="vanished">Nästa&gt;</translation>
+    </message>
+    <message>
         <source>&lt; Back</source>
-        <translation>&lt; Tillbaka</translation>
+        <translation type="vanished">&lt; Tillbaka</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="195"/>
@@ -277,7 +285,7 @@ Kommer att installera leafpad och använda den.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="527"/>
-        <location filename="../mxsnapshot.cpp" line="824"/>
+        <location filename="../mxsnapshot.cpp" line="825"/>
         <source>Done</source>
         <translation>Klar</translation>
     </message>
@@ -397,22 +405,22 @@ Kommer att installera leafpad och använda den.</translation>
         <translation>MX Snapshot Licens</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="797"/>
+        <location filename="../mxsnapshot.cpp" line="798"/>
         <source>MX Snapshot Help</source>
         <translation>MX Snapshot Hjälp</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="806"/>
+        <location filename="../mxsnapshot.cpp" line="807"/>
         <source>Select Snapshot Directory</source>
         <translation>Välj Snapshot Katalog</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="825"/>
+        <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Confirmation</source>
         <translation>Bekräftelse</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="825"/>
+        <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Är du säker på att du vill avsluta programmet?</translation>
     </message>

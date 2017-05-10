@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Wed, 10 May 2017 15:37:05 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 17.5mx16
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (17.5mx16) mx; urgency=medium
+ .
+   * update icons
+Checksums-Sha1:
+ 616c2afe659e9de70d9452f60cd977f4cdb43bd9 85414 mx-snapshot_17.5mx16_i386.deb
+Checksums-Sha256:
+ d0458430adb2198397c877d31d1f7701e616988e3c75b3d54cceb9fed2782e62 85414 mx-snapshot_17.5mx16_i386.deb
+Files:
+ 6117fc68e5821d20e8347c7bcb80a6dd 85414 admin optional mx-snapshot_17.5mx16_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJZE24RAAoJEHCTjHgGee6Yi0IIALxv3GXX5lGdGNxFvhtw90Pf
+HaokAPVmqTxBUkANgI4B5rhlPNjJbk1jGAcGdMy7jqGyVPLDptftxGzedXLf9HM9
+YmHrxMVG/o8fAjSfmUJYZwt/1eMk/a+2AhQ8hQoidZGQwpoVyxYqBgnmJbwXkcdD
+eFQn177ZjCrtp6x/qFAev1/EMlf+aoyortMix2QjDPeoCG+71aHtn7PTqVRsQygh
+E8ui7+GykmPJLwS3uphjEAvmy3aZsBuXApmodQiDBOkcfFI5x7HNuPnk2uLaE1Rh
+DRrvFMzbR+Mq2nq9cqglFcBGSiGYornvS/pkj9AfiJdL6+H0b0U6wKQq8sCcFAM=
+=NOQn
+-----END PGP SIGNATURE-----

@@ -58,4 +58,7 @@ TRANSLATIONS += translations/mx-snapshot_ca.ts \
                 translations/mx-snapshot_sv.ts \
                 translations/mx-snapshot_tr.ts
 
+RESOURCES += \
+    images.qrc
+
 

@@ -135,49 +135,57 @@
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="549"/>
+        <location filename="../mxsnapshot.ui" line="550"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="559"/>
+        <location filename="../mxsnapshot.ui" line="560"/>
         <source>Display help </source>
         <translation>Zobrazit nápovědu</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="562"/>
+        <location filename="../mxsnapshot.ui" line="563"/>
         <source>Help</source>
         <translation>Nápověda</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="569"/>
+        <location filename="../mxsnapshot.ui" line="571"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="592"/>
+        <location filename="../mxsnapshot.ui" line="594"/>
         <source>About this application</source>
         <translation>O této aplikaci</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="595"/>
+        <location filename="../mxsnapshot.ui" line="597"/>
         <source>About...</source>
         <translation>O programu</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="602"/>
+        <location filename="../mxsnapshot.ui" line="605"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="640"/>
-        <source>Next &gt;</source>
-        <translation>Další &gt;</translation>
+        <location filename="../mxsnapshot.ui" line="643"/>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="662"/>
+        <location filename="../mxsnapshot.ui" line="668"/>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next &gt;</source>
+        <translation type="vanished">Další &gt;</translation>
+    </message>
+    <message>
         <source>&lt; Back</source>
-        <translation>&lt; Předchozí</translation>
+        <translation type="vanished">&lt; Předchozí</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="195"/>
@@ -277,7 +285,7 @@ Nastaví a použije se tím Leafpad. </translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="527"/>
-        <location filename="../mxsnapshot.cpp" line="824"/>
+        <location filename="../mxsnapshot.cpp" line="825"/>
         <source>Done</source>
         <translation>Hotovo</translation>
     </message>
@@ -397,22 +405,22 @@ Nastaví a použije se tím Leafpad. </translation>
         <translation>Licence MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="797"/>
+        <location filename="../mxsnapshot.cpp" line="798"/>
         <source>MX Snapshot Help</source>
         <translation>Pomoc MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="806"/>
+        <location filename="../mxsnapshot.cpp" line="807"/>
         <source>Select Snapshot Directory</source>
         <translation>Vyberte složku pro Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="825"/>
+        <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Confirmation</source>
         <translation>Potvrzení</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="825"/>
+        <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Jste si jistí, že chcete ukončit aplikaci? </translation>
     </message>
