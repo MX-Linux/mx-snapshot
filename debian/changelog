@@ -1,3 +1,9 @@
+mx-snapshot (17.5mx16+1) mx; urgency=medium
+
+  * updated translations
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 11 May 2017 23:19:14 -0400
+
 mx-snapshot (17.5mx16) mx; urgency=medium
 
   * update icons
