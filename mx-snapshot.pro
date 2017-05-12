@@ -55,6 +55,7 @@ TRANSLATIONS += translations/mx-snapshot_ca.ts \
                 translations/mx-snapshot_pt.ts \
                 translations/mx-snapshot_ro.ts \
                 translations/mx-snapshot_ru.ts \
+                translations/mx-snapshot_sk.ts \
                 translations/mx-snapshot_sv.ts \
                 translations/mx-snapshot_tr.ts
 

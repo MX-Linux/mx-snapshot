@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ja">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ja" version="2.1">
 <context>
     <name>QApplication</name>
     <message>
@@ -61,24 +59,7 @@
     <message>
         <location filename="../mxsnapshot.ui" line="301"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
-        <translation>下の選択をチェックする事によって、対象を除外する事ができます。または /usr/lib/mx-snapshot/snapshot-exclude.list で除外ディレクトリを確認して下さい。
-
-    保存
-    Save all (0)
-
-保存して次の文字列に移動するにはTABを押してください
-説明はありません
-詳細を見る
-
-    提案
-    履歴
-    用語集
-    コメント
-
-提案
-提案はありません
-
-</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="326"/>
@@ -179,7 +160,7 @@
     <message>
         <location filename="../mxsnapshot.ui" line="597"/>
         <source>About...</source>
-        <translation>About...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="605"/>
@@ -189,20 +170,12 @@
     <message>
         <location filename="../mxsnapshot.ui" line="643"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>次へ</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="668"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next &gt;</source>
-        <translation type="vanished">次へ &gt;</translation>
-    </message>
-    <message>
-        <source>&lt; Back</source>
-        <translation type="vanished">&lt; 戻る</translation>
+        <translation>戻る</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="195"/>
@@ -228,6 +201,7 @@
       %1 snapshots are taking up %2 of disk space.
 </source>
         <translation>/ および /home は圧縮データを保管する十分な空き容量がないといけません。
+
 必要に応じて、以前生成したスナップショットを削除する事によって
 空き容量を増やし、コピーを保存する事ができます:
 スナップショット %1 は空き容量 %2 が必要です。
@@ -338,7 +312,7 @@ leafpad をインストールし、それを使います。</translation>
     <message>
         <location filename="../mxsnapshot.cpp" line="632"/>
         <source>*These settings can be changed by editing: </source>
-        <translation>変更箇所を編集した設定: </translation>
+        <translation>*変更箇所を編集した設定: </translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="637"/>

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="it">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
 <context>
     <name>QApplication</name>
     <message>
@@ -172,20 +170,12 @@
     <message>
         <location filename="../mxsnapshot.ui" line="643"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Avanti</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="668"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next &gt;</source>
-        <translation type="vanished">Avanti &gt;</translation>
-    </message>
-    <message>
-        <source>&lt; Back</source>
-        <translation type="vanished">&lt; Indietro</translation>
+        <translation>Indietro</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="195"/>
