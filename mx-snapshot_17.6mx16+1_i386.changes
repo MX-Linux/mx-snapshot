@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Fri, 23 Jun 2017 12:03:31 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 17.6mx16+1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (17.6mx16+1) mx; urgency=medium
+ .
+   * added exclusion for network connections
+Checksums-Sha1:
+ 7633762953318e737466d9f9e6103460e7733f20 87338 mx-snapshot_17.6mx16+1_i386.deb
+Checksums-Sha256:
+ 16f9f1ef3cf574344ca5f76157a72bdf778e55e22de210ae0dd0ed26fad0d4a6 87338 mx-snapshot_17.6mx16+1_i386.deb
+Files:
+ e899435a9d890cb74ce9b7e210995c8c 87338 admin optional mx-snapshot_17.6mx16+1_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJZTT/WAAoJEHCTjHgGee6Yv94IAKwzTFjHp0fl4cEhh+ZxbDoP
+u9RN2xzikl+yLEvkddIYQ9At+cmY6eLWpbgF9cjIiCWMsj9Kt+V6XrdNL5ek3duJ
+UQ69/g6wwuLOB6AWpr1dOoDAMkUGQy7pUPzfsNRPUd8tysHpRKsmth2L/zzhPois
+odnW4kDG537V1GB8FedLldxqgID3LefFMkmMdtMAqOO18ZMEJoJdrxS0g2sErL/E
+kax1Zrw6oU/cy1NLihP66UD1Po7iy8bv+v8nd7PRvG7IhVX1AUkp2+9YhDvaCgbd
+a3w51dNDj5SVUU6QOVyAxdEvySY3MehhMPKHlQ/d9U7oTKMlvazX2m0mcm6lzAQ=
+=ke0C
+-----END PGP SIGNATURE-----

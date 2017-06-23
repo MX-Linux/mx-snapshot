@@ -1,3 +1,9 @@
+mx-snapshot (17.6mx16+1) mx; urgency=medium
+
+  * added exclusion for network connections
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 23 Jun 2017 12:03:31 -0400
+
 mx-snapshot (17.6mx16) mx; urgency=medium
 
   * updated translations
