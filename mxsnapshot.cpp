@@ -322,19 +322,21 @@ void mxsnapshot::copyNewIso()
     cmd = "cp /boot/vmlinuz-" + kernel_used + " iso-template/antiX/vmlinuz";
     runCmd(cmd);
 
-    if(i686) {
-        cmd = "cp /boot/vmlinuz-3.16.0-4-586 iso-template/antiX/vmlinuz1";
-        runCmd(cmd);
-        // remove x64 template files
-        runCmd("rm iso-template/boot/grub/grub.cfg_x64");
-        runCmd("rm iso-template/boot/syslinux/syslinux.cfg_x64");
-        runCmd("rm iso-template/boot/isolinux/isolinux.cfg_x64");
-    } else {
-        // mv x64 template files over
-        runCmd("mv iso-template/boot/grub/grub.cfg_x64 iso-template/boot/grub/grub.cfg");
-        runCmd("mv iso-template/boot/syslinux/syslinux.cfg_x64 iso-template/boot/syslinux/syslinux.cfg");
-        runCmd("mv iso-template/boot/isolinux/isolinux.cfg_x64 iso-template/boot/isolinux/isolinux.cfg");
+    if (getDebianVersion().toInt() < 9) { // Only for versions older than Stretch
+        if(i686) {
+            runCmd("cp /boot/vmlinuz-3.16.0-4-586 iso-template/antiX/vmlinuz1");
+        } else {
+            // mv x64 template files over
+            runCmd("mv iso-template/boot/grub/grub.cfg_x64 iso-template/boot/grub/grub.cfg");
+            runCmd("mv iso-template/boot/syslinux/syslinux.cfg_x64 iso-template/boot/syslinux/syslinux.cfg");
+            runCmd("mv iso-template/boot/isolinux/isolinux.cfg_x64 iso-template/boot/isolinux/isolinux.cfg");
+        }
     }
+    // cleanup x64 template files
+    runCmd("rm iso-template/boot/grub/grub.cfg_x64 2>/dev/null");
+    runCmd("rm iso-template/boot/syslinux/syslinux.cfg_x64 2>/dev/null");
+    runCmd("rm iso-template/boot/isolinux/isolinux.cfg_x64 2>/dev/null");
+
     replaceMenuStrings();
 
     makeMd5sum(work_dir + "/iso-template/antiX", "vmlinuz");
@@ -360,10 +362,12 @@ void mxsnapshot::replaceMenuStrings() {
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
-        new_string = "MX Linux 385 (non pae)";
-        replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
-        replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
-        replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
+        if (getDebianVersion().toInt() < 9) { // Only for versions older than Stretch
+            new_string = "MX Linux 385 (non pae)";
+            replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
+            replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+            replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
+        }
     } else {
         QString new_string = "MX Linux x64 (" + getCmdOut("date +'%d %B %Y'") + ")";
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
@@ -379,7 +383,7 @@ void mxsnapshot::copyModules(QString to, QString kernel)
     QString cmd = QString("copy-initrd-modules -t=\"%1\" -k=\"%2\"").arg(to).arg(kernel);
     system(cmd.toUtf8());
     // copy 586 modules for the non-PAE kernel
-    if (isi686()) {
+    if (isi686() && getDebianVersion().toInt() < 9) {  // Not applicable for Stretch (MX17) or more
         QString cmd = QString("copy-initrd-modules -t=\"%1\" -k=\"%2\"").arg(to).arg(kernel586);
         system(cmd.toUtf8());
     }
@@ -447,6 +451,11 @@ void mxsnapshot::setupEnv()
         system("chmod +x /home/*/Desktop/minstall.desktop");
         system("installed-to-live -b /.bind-root start bind=/home live-files version-file adjtime read-only");
     }
+}
+
+QString mxsnapshot::getDebianVersion()
+{
+    return getCmdOut("cat /etc/debian_version | cut -f1 -d'.'");
 }
 
 

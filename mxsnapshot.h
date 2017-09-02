@@ -78,33 +78,37 @@ public:
     QString session_excludes;
 
     int getSnapshotCount();
-    bool installPackage(QString package);
+
     bool checkInstalled(QString package);
-    bool replaceStringInFile(QString old_text, QString new_text, QString file_path);
-    bool createIso(QString filename);
-    bool isLive();
+    bool createIso(QString package);
+    bool installPackage(QString package);
     bool isi686();
-    void closeApp();
-    void loadSettings();
-    void setup();
-    void listUsedSpace();
-    void listFreeSpace();
-    void checkEditor();
+    bool isLive();
+    bool replaceStringInFile(QString old_text, QString new_text, QString file_path);
+
     void checkDirectories();
+    void checkEditor();
     void checkSaveWork();
-    void openInitrd(QString file, QString initrd_dir);
+    void cleanUp();
+    void closeApp();
     void closeInitrd(QString initrd_dir, QString file);
     void copyModules(QString to, QString kernel);
     void copyNewIso();
-    void mkDir(QString file_name);
-    void savePackageList(QString file_name);
-    void setupEnv();
-    void cleanUp();
-    void makeMd5sum(QString folder, QString file_name);
     void fixPermissions();
+    void listFreeSpace();
+    void listUsedSpace();
+    void loadSettings();
+    void makeMd5sum(QString folder, QString file_name);
+    void mkDir(QString file_name);
+    void openInitrd(QString file, QString initrd_dir);
     void replaceMenuStrings();
-    QString getSnapshotSize();
+    void savePackageList(QString file_name);
+    void setup();
+    void setupEnv();
+
+    QString getDebianVersion();
     QString getFilename();
+    QString getSnapshotSize();
     QStringList listUsers();
 
 public slots:

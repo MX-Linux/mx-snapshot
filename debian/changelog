@@ -1,3 +1,9 @@
+mx-snapshot (17.9) mx; urgency=medium
+
+  * preparing package for MX17
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 02 Sep 2017 12:59:28 -0400
+
 mx-snapshot (17.6mx16+1) mx; urgency=medium
 
   * added exclusion for network connections
