@@ -1,3 +1,9 @@
+mx-snapshot (17.9.2) mx; urgency=medium
+
+  * fix replacing custom strings
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 30 Sep 2017 12:13:37 -0400
+
 mx-snapshot (17.9.1) mx; urgency=medium
 
   * replace release number and code name in menus

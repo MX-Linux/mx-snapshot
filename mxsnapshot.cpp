@@ -353,25 +353,51 @@ void mxsnapshot::copyNewIso()
 
 // replace text in menu items in grub.cfg, syslinux.cfg, isolinux.cfg
 void mxsnapshot::replaceMenuStrings() {
-    if (i686) {
-        QString new_string = "MX Linux 386 (" + getCmdOut("date +'%d %B %Y'") + ")";
-        replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
-        replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
-        replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
-    } else {
-        QString new_string = "MX Linux x64 (" + getCmdOut("date +'%d %B %Y'") + ")";
-        replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
-        replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
-        replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
-    }
-    QString release_number = getCmdOut("lsb_release -rs");
+    QString date = getCmdOut("date +'%d %B %Y'");
+    QString distro = getCmdOut("cat /etc/antix-version | cut -f1 -d'_'");
+    QString distro_name = getCmdOut("lsb_release -is");
+    QString full_distro_name = getCmdOut("cat /etc/antix-version | cut -f-2 -d' '");
     QString code_name = getCmdOut("lsb_release -cs");
-    replaceStringInFile("version-number", release_number, work_dir + "/iso-template/boot/grub/grub.cfg");
-    replaceStringInFile("version-number", release_number, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
-    replaceStringInFile("version-number", release_number, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
-    replaceStringInFile("code-name", code_name, work_dir + "/iso-template/boot/grub/grub.cfg");
-    replaceStringInFile("code-name", code_name, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
-    replaceStringInFile("code-name", code_name, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+    QString options = "quiet";
+
+    if (getDebianVersion().toInt() < 9) { // Only for versions older than Stretch which uses old mx-iso-template
+        if (i686) {
+            QString new_string = "MX Linux 386 (" + date + ")";
+            replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
+            replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+            replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
+        } else {
+            QString new_string = "MX Linux x64 (" + date + ")";
+            replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
+            replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+            replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
+        }
+
+    } else { // with new mx-iso-template for MX-17 and greater
+        replaceStringInFile("%DISTRO_NAME%", distro_name, work_dir + "/iso-template/boot/grub/grub.cfg");
+
+        replaceStringInFile("%OPTIONS%", options, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+        replaceStringInFile("%OPTIONS%", options, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
+
+        replaceStringInFile("%FULL_DISTRO_NAME%", full_distro_name, work_dir + "/iso-template/boot/grub/grub.cfg");
+        replaceStringInFile("%FULL_DISTRO_NAME%", full_distro_name, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+        replaceStringInFile("%FULL_DISTRO_NAME%", full_distro_name, work_dir + "/iso-template/boot/syslinux/readme.msg");
+        replaceStringInFile("%FULL_DISTRO_NAME%", full_distro_name, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
+        replaceStringInFile("%FULL_DISTRO_NAME%", full_distro_name, work_dir + "/iso-template/boot/isolinux/readme.msg");
+
+        replaceStringInFile("%DISTRO%", distro, work_dir + "/iso-template/boot/grub/theme/theme.txt");
+        replaceStringInFile("%DISTRO%", distro, work_dir + "/iso-template/boot/grub/grub.cfg");
+
+        replaceStringInFile("%RELEASE_DATE%", date, work_dir + "/iso-template/boot/grub/grub.cfg");
+        replaceStringInFile("%RELEASE_DATE%", date, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+        replaceStringInFile("%RELEASE_DATE%", date, work_dir + "/iso-template/boot/syslinux/readme.msg");
+        replaceStringInFile("%RELEASE_DATE%", date, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
+        replaceStringInFile("%RELEASE_DATE%", date, work_dir + "/iso-template/boot/isolinux/readme.msg");
+
+        replaceStringInFile("%CODE_NAME%", code_name, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+        replaceStringInFile("%CODE_NAME%", code_name, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
+        replaceStringInFile("%ASCII_CODE_NAME%", code_name, work_dir + "/iso-template/boot/grub/theme/theme.txt");
+    }
 }
 
 // copyModules(mod_dir/kernel_used kernel_used)

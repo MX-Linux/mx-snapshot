@@ -15,8 +15,8 @@
         <location filename="../mxsnapshot.ui" line="14"/>
         <location filename="../mxsnapshot.cpp" line="47"/>
         <location filename="../mxsnapshot.cpp" line="91"/>
-        <location filename="../mxsnapshot.cpp" line="686"/>
-        <location filename="../mxsnapshot.cpp" line="789"/>
+        <location filename="../mxsnapshot.cpp" line="712"/>
+        <location filename="../mxsnapshot.cpp" line="815"/>
         <source>MX Snapshot</source>
         <translation>MX Snapshot</translation>
     </message>
@@ -37,7 +37,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="155"/>
-        <location filename="../mxsnapshot.cpp" line="637"/>
+        <location filename="../mxsnapshot.cpp" line="663"/>
         <source>Snapshot name:</source>
         <translation>Názov obrazu:</translation>
     </message>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="794"/>
+        <location filename="../mxsnapshot.cpp" line="820"/>
         <source>Cancel</source>
         <translation>Zrušiť</translation>
     </message>
@@ -225,8 +225,8 @@ Pre tento krát sa nainštaluje a použije Leafpad.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="268"/>
-        <location filename="../mxsnapshot.cpp" line="472"/>
-        <location filename="../mxsnapshot.cpp" line="486"/>
+        <location filename="../mxsnapshot.cpp" line="498"/>
+        <location filename="../mxsnapshot.cpp" line="512"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
@@ -241,178 +241,178 @@ Pre tento krát sa nainštaluje a použije Leafpad.</translation>
         <translation>Kopíruje sa nový ISO systém súborov....</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="470"/>
+        <location filename="../mxsnapshot.cpp" line="496"/>
         <source>Squashing filesystem...</source>
         <translation>Tvorba systému súborov...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="472"/>
+        <location filename="../mxsnapshot.cpp" line="498"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation>Nepodarilo sa vytvoriť súbor linuxfs, prosím skontrolujte, či máte v cieľom umiestnení dostatok voľného miesta </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="484"/>
+        <location filename="../mxsnapshot.cpp" line="510"/>
         <source>Creating CD/DVD image file...</source>
         <translation>Vytváranie CD/DVD obrazu...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="486"/>
+        <location filename="../mxsnapshot.cpp" line="512"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation>Nepodarilo sa vytvoriť ISO súbor, prosím skontrolujte, či máte v cieľom umiestnení dostatok voľného miesta.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="492"/>
+        <location filename="../mxsnapshot.cpp" line="518"/>
         <source>Making hybrid iso</source>
         <translation>Vytváram hybridné ISO</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="510"/>
+        <location filename="../mxsnapshot.cpp" line="536"/>
         <source>Making md5sum</source>
         <translation>Tvorba kontrolného súboru md5sum</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="521"/>
+        <location filename="../mxsnapshot.cpp" line="547"/>
         <source>Cleaning...</source>
         <translation>Čistenie...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="534"/>
-        <location filename="../mxsnapshot.cpp" line="832"/>
+        <location filename="../mxsnapshot.cpp" line="560"/>
+        <location filename="../mxsnapshot.cpp" line="858"/>
         <source>Done</source>
         <translation>Hotovo</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="572"/>
+        <location filename="../mxsnapshot.cpp" line="598"/>
         <source>Please wait.</source>
         <translation>Čakajte prosím...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="574"/>
+        <location filename="../mxsnapshot.cpp" line="600"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation>Čakajte prosím, vypočítava sa použité miesto na disku...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="625"/>
+        <location filename="../mxsnapshot.cpp" line="651"/>
         <source>Settings</source>
         <translation>Nastavenia</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="634"/>
+        <location filename="../mxsnapshot.cpp" line="660"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>Použijú sa nasledujúce nastavenia:*</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="636"/>
+        <location filename="../mxsnapshot.cpp" line="662"/>
         <source>- Snapshot directory:</source>
         <translation>- Zložka obrazu:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="638"/>
+        <location filename="../mxsnapshot.cpp" line="664"/>
         <source>- Kernel to be used:</source>
         <translation>- Linuxové jadro:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="639"/>
+        <location filename="../mxsnapshot.cpp" line="665"/>
         <source>*These settings can be changed by editing: </source>
         <translation>*Tieto nastavenia sa dajú zmeniť editáciou: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="644"/>
+        <location filename="../mxsnapshot.cpp" line="670"/>
         <source>Final chance</source>
         <translation>Posledná šanca</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="645"/>
+        <location filename="../mxsnapshot.cpp" line="671"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation>Snapshot má všetky potrebné informácie k vytvoreniu súboru ISO z vášho funkčného systému.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="646"/>
+        <location filename="../mxsnapshot.cpp" line="672"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation>Tvorba obrazu zaberie nejaký čas, v závislosti na veľkosti nainštalovaného systému a výkone vášho PC. </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="647"/>
+        <location filename="../mxsnapshot.cpp" line="673"/>
         <source>OK to start?</source>
         <translation>Chcete začať?</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="655"/>
+        <location filename="../mxsnapshot.cpp" line="681"/>
         <source>Output</source>
         <translation>Výstup</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="662"/>
+        <location filename="../mxsnapshot.cpp" line="688"/>
         <source>Edit Boot Menu</source>
         <translation>Upraviť ponuku pri štarte </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="663"/>
+        <location filename="../mxsnapshot.cpp" line="689"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation>Program sa pozastaví aby Vám umožnil upraviť súbory v pracovnej zložke. Zvoľte Ano pre editáciu štartovnej ponuky alebo Nie ak si prajete preskočiť tento krok a pokračovať v tvorbe obrazu.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="676"/>
+        <location filename="../mxsnapshot.cpp" line="702"/>
         <source>Success</source>
         <translation>Úspech</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="676"/>
+        <location filename="../mxsnapshot.cpp" line="702"/>
         <source>All finished!</source>
         <translation>Hotovo!</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="677"/>
+        <location filename="../mxsnapshot.cpp" line="703"/>
         <source>Close</source>
         <translation>Zatvoriť</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="788"/>
+        <location filename="../mxsnapshot.cpp" line="814"/>
         <source>About MX Snapshot</source>
         <translation>O programe MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="789"/>
+        <location filename="../mxsnapshot.cpp" line="815"/>
         <source>Version: </source>
         <translation>Verzia:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="791"/>
+        <location filename="../mxsnapshot.cpp" line="817"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Program pre tvorbu Live-CD z funkčného operačného systému MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="792"/>
+        <location filename="../mxsnapshot.cpp" line="818"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="793"/>
+        <location filename="../mxsnapshot.cpp" line="819"/>
         <source>License</source>
         <translation>Licencia</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="796"/>
+        <location filename="../mxsnapshot.cpp" line="822"/>
         <source>MX Snapshot License</source>
         <translation>Licencia MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="805"/>
+        <location filename="../mxsnapshot.cpp" line="831"/>
         <source>MX Snapshot Help</source>
         <translation>Pomocník MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="814"/>
+        <location filename="../mxsnapshot.cpp" line="840"/>
         <source>Select Snapshot Directory</source>
         <translation>Zvoľte zložku pre snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="833"/>
+        <location filename="../mxsnapshot.cpp" line="859"/>
         <source>Confirmation</source>
         <translation>Potvrdenie</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="833"/>
+        <location filename="../mxsnapshot.cpp" line="859"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Skutočne si prajete ukončiť program?</translation>
     </message>

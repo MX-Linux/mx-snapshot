@@ -15,8 +15,8 @@
         <location filename="../mxsnapshot.ui" line="14"/>
         <location filename="../mxsnapshot.cpp" line="47"/>
         <location filename="../mxsnapshot.cpp" line="91"/>
-        <location filename="../mxsnapshot.cpp" line="686"/>
-        <location filename="../mxsnapshot.cpp" line="789"/>
+        <location filename="../mxsnapshot.cpp" line="712"/>
+        <location filename="../mxsnapshot.cpp" line="815"/>
         <source>MX Snapshot</source>
         <translation>MX Snapshot</translation>
     </message>
@@ -37,7 +37,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="155"/>
-        <location filename="../mxsnapshot.cpp" line="637"/>
+        <location filename="../mxsnapshot.cpp" line="663"/>
         <source>Snapshot name:</source>
         <translation>Nombre de la imagen:</translation>
     </message>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="794"/>
+        <location filename="../mxsnapshot.cpp" line="820"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -225,8 +225,8 @@ Se instalará leafpad y se usará en esta ocasión.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="268"/>
-        <location filename="../mxsnapshot.cpp" line="472"/>
-        <location filename="../mxsnapshot.cpp" line="486"/>
+        <location filename="../mxsnapshot.cpp" line="498"/>
+        <location filename="../mxsnapshot.cpp" line="512"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -241,178 +241,178 @@ Se instalará leafpad y se usará en esta ocasión.</translation>
         <translation>Copiando el sistema de archivos new-iso...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="470"/>
+        <location filename="../mxsnapshot.cpp" line="496"/>
         <source>Squashing filesystem...</source>
         <translation>Comprimiendo el sistema de archivos...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="472"/>
+        <location filename="../mxsnapshot.cpp" line="498"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation>No se pudo crear un archivo linuxfs; por favor revise si tiene suficiente espacio en la partición de destino.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="484"/>
+        <location filename="../mxsnapshot.cpp" line="510"/>
         <source>Creating CD/DVD image file...</source>
         <translation>Creando la imagen de CD/DVD...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="486"/>
+        <location filename="../mxsnapshot.cpp" line="512"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation>No se pudo crear un archivo ISO; por favor revise si tiene suficiente espacio en la partición de destino.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="492"/>
+        <location filename="../mxsnapshot.cpp" line="518"/>
         <source>Making hybrid iso</source>
         <translation>Creando un iso híbrido</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="510"/>
+        <location filename="../mxsnapshot.cpp" line="536"/>
         <source>Making md5sum</source>
         <translation>Haciendo md5sum</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="521"/>
+        <location filename="../mxsnapshot.cpp" line="547"/>
         <source>Cleaning...</source>
         <translation>Limpiando...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="534"/>
-        <location filename="../mxsnapshot.cpp" line="832"/>
+        <location filename="../mxsnapshot.cpp" line="560"/>
+        <location filename="../mxsnapshot.cpp" line="858"/>
         <source>Done</source>
         <translation>Hecho</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="572"/>
+        <location filename="../mxsnapshot.cpp" line="598"/>
         <source>Please wait.</source>
         <translation>Espere por favor.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="574"/>
+        <location filename="../mxsnapshot.cpp" line="600"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation>Espere por favor. Calculando el espacio usado en el disco...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="625"/>
+        <location filename="../mxsnapshot.cpp" line="651"/>
         <source>Settings</source>
         <translation>Ajustes</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="634"/>
+        <location filename="../mxsnapshot.cpp" line="660"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>Snapshot usará los siguientes ajustes:*</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="636"/>
+        <location filename="../mxsnapshot.cpp" line="662"/>
         <source>- Snapshot directory:</source>
         <translation>- Directorio de la imagen:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="638"/>
+        <location filename="../mxsnapshot.cpp" line="664"/>
         <source>- Kernel to be used:</source>
         <translation>- Kernel a usarse:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="639"/>
+        <location filename="../mxsnapshot.cpp" line="665"/>
         <source>*These settings can be changed by editing: </source>
         <translation>*Estos ajustes se pueden cambiar modificando: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="644"/>
+        <location filename="../mxsnapshot.cpp" line="670"/>
         <source>Final chance</source>
         <translation>Última oportunidad</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="645"/>
+        <location filename="../mxsnapshot.cpp" line="671"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation>Snapshot ya cuenta con toda la información necesaria para crear una ISO de su sistema actual.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="646"/>
+        <location filename="../mxsnapshot.cpp" line="672"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation>Va a tomar un tiempo terminar, dependiendo del tamaño del sistema instalado y de la capacidad de su computadora.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="647"/>
+        <location filename="../mxsnapshot.cpp" line="673"/>
         <source>OK to start?</source>
         <translation>¿Acepta empezar?</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="655"/>
+        <location filename="../mxsnapshot.cpp" line="681"/>
         <source>Output</source>
         <translation>Salida</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="662"/>
+        <location filename="../mxsnapshot.cpp" line="688"/>
         <source>Edit Boot Menu</source>
         <translation>Editar el Menú de Inicio</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="663"/>
+        <location filename="../mxsnapshot.cpp" line="689"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation>El programa efectuará una pausa para que edite cualquier archivo en el directorio de trabajo.  Seleccione Sí para editar el menú de inicio o No para saltarse este paso y seguir con la creación de la imagen.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="676"/>
+        <location filename="../mxsnapshot.cpp" line="702"/>
         <source>Success</source>
         <translation>Exito</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="676"/>
+        <location filename="../mxsnapshot.cpp" line="702"/>
         <source>All finished!</source>
         <translation>¡Terminado!</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="677"/>
+        <location filename="../mxsnapshot.cpp" line="703"/>
         <source>Close</source>
         <translation>Cerrar</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="788"/>
+        <location filename="../mxsnapshot.cpp" line="814"/>
         <source>About MX Snapshot</source>
         <translation>Acerca de MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="789"/>
+        <location filename="../mxsnapshot.cpp" line="815"/>
         <source>Version: </source>
         <translation>Versión:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="791"/>
+        <location filename="../mxsnapshot.cpp" line="817"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Programa para crear un live-CD del sistema actual de MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="792"/>
+        <location filename="../mxsnapshot.cpp" line="818"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="793"/>
+        <location filename="../mxsnapshot.cpp" line="819"/>
         <source>License</source>
         <translation>Licencia</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="796"/>
+        <location filename="../mxsnapshot.cpp" line="822"/>
         <source>MX Snapshot License</source>
         <translation>MX Snapshot Licencia</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="805"/>
+        <location filename="../mxsnapshot.cpp" line="831"/>
         <source>MX Snapshot Help</source>
         <translation>MX Snapshot Ayuda</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="814"/>
+        <location filename="../mxsnapshot.cpp" line="840"/>
         <source>Select Snapshot Directory</source>
         <translation>Seleccione el directorio para la imagen</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="833"/>
+        <location filename="../mxsnapshot.cpp" line="859"/>
         <source>Confirmation</source>
         <translation>Confirmación</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="833"/>
+        <location filename="../mxsnapshot.cpp" line="859"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>¿Esta seguro que desea salir de la aplicación?</translation>
     </message>
