@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Sat, 30 Sep 2017 01:00:19 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 17.9.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (17.9.1) mx; urgency=medium
+ .
+   * replace release number and code name in menus
+Checksums-Sha1:
+ cd69816a296e57cd24755b55c14921eebf40bc70 1144 mx-snapshot_17.9.1.dsc
+ bb7a54c99183b1950957c6cf16b3632292ad77fe 63780 mx-snapshot_17.9.1.tar.xz
+ 049d88df93a624f58af5c6c12fb3098fcbb50a36 86058 mx-snapshot_17.9.1_amd64.deb
+Checksums-Sha256:
+ c0f188296d8664eb6562a72620f6b6d6fee29acfb5f0e0a163db0d602367cde4 1144 mx-snapshot_17.9.1.dsc
+ 120f8a5825af976bfe2406c8526bd6c8701f3ee94cbfe0437d88f50e17a24c98 63780 mx-snapshot_17.9.1.tar.xz
+ a48761b79e262584b2661253a398391a0f29cbe7d0ff366cae8c86adf1aed0b7 86058 mx-snapshot_17.9.1_amd64.deb
+Files:
+ 113f7ac91017a8c56fbfb16f2ca8a757 1144 admin optional mx-snapshot_17.9.1.dsc
+ 59a6d427faf3834209697b0eaf61e240 63780 admin optional mx-snapshot_17.9.1.tar.xz
+ 1b89665f4b08055f576866d11dae7840 86058 admin optional mx-snapshot_17.9.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJZzyVYAAoJEHCTjHgGee6YOjQIAMi/rvIgPLX7R7OIZHVasc+L
+Klm+paOguzaDzrlVrM4au5ijnh0FoGu54cWpq7omuPbN05LY44CUb/2+2jSLWy/l
+U9gbYO6ttVTDz2g8zbptp2e3BgPCKCA0jLzpB6iLUVR9g2jZ1SUgofKtWl0EiRXf
+S3bqZ1vfArComUn07Q/ts2wEJIewzTvl15hpPU2IXWm3coS+2JZqyf7s0xYSld7O
++opeVeREFmqIbAMYJ271lT9curpvYM9H2I9D+2bpkimqJaRwGOMbGCTAwdrwuvMF
+HVipSnZ+I4LHR7nebB4x4AvsQO2fKyclC3/e/ZTzs3suwLY0Ki2fFodpxE0prOg=
+=s+qb
+-----END PGP SIGNATURE-----

@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Sat, 30 Sep 2017 01:00:19 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 17.9.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (17.9.1) mx; urgency=medium
+ .
+   * replace release number and code name in menus
+Checksums-Sha1:
+ 020412f07fe93206734b359147ebb84fb33ae4d1 87982 mx-snapshot_17.9.1_i386.deb
+Checksums-Sha256:
+ 2c493a9fe5c777d1a73b9150e123ddaf832bb80114a70258d069607ded2fd0e9 87982 mx-snapshot_17.9.1_i386.deb
+Files:
+ ed803572cdf750b5beca81996a6752f5 87982 admin optional mx-snapshot_17.9.1_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJZzyWiAAoJEHCTjHgGee6YPpEH/R4SLBVPU/Y2OqGJCltpk3KU
+27p6gdzDEsUvgh/MDlpwnInE0vel4ujIycH9ZCcGo4VHSaMUmH19HyAUKZugV+Eq
+C2eM3610U8fSrUYhqk2J8d386s+s8M3wt5xdkUSgzJ1DGJtJZ7APGbzO8DPCVFEF
+Z0AmQsjkCtgDdlqtnKatpZsobbyTVGCyXmYYX8NHw2b4NoehRwMMX2RRqinfcMiN
+5f6lfRLwfsQQ/f52wEdvia8j/KqDmt5ErDq6leMoZMUfVpuFJj8t5T2E8eU/p6/t
+L683TFDS0gsP3si/zSFCHgWt5Cnqsf2FyJmSr7AZamAr5A3OCu0S7avzGSfG4NI=
+=D0xu
+-----END PGP SIGNATURE-----

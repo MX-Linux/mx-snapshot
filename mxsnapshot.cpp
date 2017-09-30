@@ -332,10 +332,6 @@ void mxsnapshot::copyNewIso()
             runCmd("mv iso-template/boot/isolinux/isolinux.cfg_x64 iso-template/boot/isolinux/isolinux.cfg");
         }
     }
-    // cleanup x64 template files
-    runCmd("rm iso-template/boot/grub/grub.cfg_x64 2>/dev/null");
-    runCmd("rm iso-template/boot/syslinux/syslinux.cfg_x64 2>/dev/null");
-    runCmd("rm iso-template/boot/isolinux/isolinux.cfg_x64 2>/dev/null");
 
     replaceMenuStrings();
 
@@ -362,18 +358,20 @@ void mxsnapshot::replaceMenuStrings() {
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
-        if (getDebianVersion().toInt() < 9) { // Only for versions older than Stretch
-            new_string = "MX Linux 385 (non pae)";
-            replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
-            replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
-            replaceStringInFile("custom-name (non pae)", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
-        }
     } else {
         QString new_string = "MX Linux x64 (" + getCmdOut("date +'%d %B %Y'") + ")";
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
         replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
     }
+    QString release_number = getCmdOut("lsb_release -rs");
+    QString code_name = getCmdOut("lsb_release -cs");
+    replaceStringInFile("version-number", release_number, work_dir + "/iso-template/boot/grub/grub.cfg");
+    replaceStringInFile("version-number", release_number, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+    replaceStringInFile("version-number", release_number, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+    replaceStringInFile("code-name", code_name, work_dir + "/iso-template/boot/grub/grub.cfg");
+    replaceStringInFile("code-name", code_name, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
+    replaceStringInFile("code-name", code_name, work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
 }
 
 // copyModules(mod_dir/kernel_used kernel_used)
