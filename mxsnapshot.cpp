@@ -78,7 +78,7 @@ void mxsnapshot::loadSettings()
     mksq_opt = settings.value("mksq_opt", "-comp xz").toString();
     edit_boot_menu = settings.value("edit_boot_menu", "no").toString();
     lib_mod_dir = settings.value("lib_mod_dir", "/lib/modules/").toString();
-    gui_editor.setFileName(settings.value("gui_editor", "/usr/bin/leafpad").toString());
+    gui_editor.setFileName(settings.value("gui_editor", "/usr/bin/featherpad").toString());
     stamp = settings.value("stamp").toString();
     ui->lineEditName->setText(getFilename());
 }
@@ -224,6 +224,9 @@ void mxsnapshot::listFreeSpace()
 void mxsnapshot::checkEditor()
 {
     if (gui_editor.exists()) {
+        return;
+    } else if (QFile("/usr/bin/leafpad").exists()) {
+        gui_editor.setFileName("/usr/bin/leafpad");
         return;
     }
     QString msg = tr("The graphical text editor is set to %1, but it is not installed. Edit %2 "
@@ -490,6 +493,11 @@ bool mxsnapshot::createIso(QString filename)
     // add exclusions snapshot dir
     addRemoveExclusion(true, snapshot_dir.absolutePath());
 
+    // exclude /etc/localtime if link
+    if (system("test -L /etc/localtime") == 0 ) {
+        addRemoveExclusion(true, "/etc/localtime");
+    }
+
     // squash the filesystem copy
     QDir::setCurrent(work_dir);
     cmd = "mksquashfs /.bind-root iso-template/antiX/linuxfs " + mksq_opt + " -wildcards -ef " + snapshot_excludes.fileName() + " " + session_excludes;
@@ -563,7 +571,9 @@ void mxsnapshot::cleanUp()
 // adds or removes exclusion to the exclusion string
 void mxsnapshot::addRemoveExclusion(bool add, QString exclusion)
 {
-    exclusion.remove(0, 1); // remove training slash
+    if (exclusion.startsWith("/")) {
+        exclusion.remove(0, 1); // remove training slash
+    }
     if (add) {
         if ( session_excludes == "" ) {
             session_excludes.append("-e '" + exclusion + "'");

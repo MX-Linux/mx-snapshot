@@ -1,3 +1,9 @@
+mx-snapshot (17.10) mx; urgency=medium
+
+  * exclude /etc/localhost if link
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 21 Oct 2017 09:57:44 -0400
+
 mx-snapshot (17.9.2) mx; urgency=medium
 
   * fix replacing custom strings
