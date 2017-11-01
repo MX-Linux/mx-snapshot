@@ -80,6 +80,8 @@ home/*/.recently-used
 home/*/.recently-used.xbel
 home/*/.VirtualBox
 home/*/VirtualBox VMs
+home/*/.xsession-errors*
+home/*/.xfce4-session.verbose-log*
 
 # Examples:
 # home/*/Desktop/*

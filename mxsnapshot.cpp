@@ -493,9 +493,11 @@ bool mxsnapshot::createIso(QString filename)
     // add exclusions snapshot dir
     addRemoveExclusion(true, snapshot_dir.absolutePath());
 
-    // exclude /etc/localtime if link
-    if (system("test -L /etc/localtime") == 0 ) {
-        addRemoveExclusion(true, "/etc/localtime");
+    if (reset_accounts) {
+        // exclude /etc/localtime if link and timezone not America/New_York
+        if (system("test -L /etc/localtime") == 0 && getCmdOut("cat /etc/timezone") != "America/New_York" ) {
+            addRemoveExclusion(true, "/etc/localtime");
+        }
     }
 
     // squash the filesystem copy

@@ -1,3 +1,9 @@
+mx-snapshot (17.11) mx; urgency=medium
+
+  * exclude localhost only for generalized snapshot
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 01 Nov 2017 15:14:13 -0400
+
 mx-snapshot (17.10) mx; urgency=medium
 
   * exclude /etc/localhost if link
