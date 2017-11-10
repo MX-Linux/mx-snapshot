@@ -840,7 +840,18 @@ void mxsnapshot::on_buttonAbout_clicked()
 void mxsnapshot::on_buttonHelp_clicked()
 {
     this->hide();
-    system("mx-viewer https://mxlinux.org/wiki/help-files/help-mx-save-system-iso-snapshot '" + tr("MX Snapshot Help").toUtf8() + "'");
+
+    QLocale locale;
+    QString lang = locale.bcp47Name();
+
+    QString url = "https://mxlinux.org/wiki/help-files/help-mx-save-system-iso-snapshot";
+
+    if (lang == "fr") {
+        url = "https://mxlinux.org/wiki/help-files/help-mx-instantan%C3%A9";
+    }
+
+    system("mx-viewer " + url.toUtf8() + " '" + tr("MX Snapshot Help").toUtf8() + "'");
+
     this->show();
 }
 

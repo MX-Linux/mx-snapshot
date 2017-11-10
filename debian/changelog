@@ -1,3 +1,9 @@
+mx-snapshot (17.11+1) mx; urgency=medium
+
+  * add FR help
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 10 Nov 2017 11:06:49 -0500
+
 mx-snapshot (17.11) mx; urgency=medium
 
   * exclude localhost only for generalized snapshot
