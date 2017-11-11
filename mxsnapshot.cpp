@@ -846,7 +846,7 @@ void mxsnapshot::on_buttonHelp_clicked()
 
     QString url = "https://mxlinux.org/wiki/help-files/help-mx-save-system-iso-snapshot";
 
-    if (lang == "fr") {
+    if (lang.startsWith("fr")) {
         url = "https://mxlinux.org/wiki/help-files/help-mx-instantan%C3%A9";
     }
 

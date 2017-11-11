@@ -1,3 +1,9 @@
+mx-snapshot (17.11+2) mx; urgency=medium
+
+  * fix LANG detection
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 11 Nov 2017 18:49:18 -0500
+
 mx-snapshot (17.11+1) mx; urgency=medium
 
   * add FR help
