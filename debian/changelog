@@ -1,3 +1,9 @@
+mx-snapshot (17.12) mx; urgency=medium
+
+  * new translations
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 04 Dec 2017 15:09:47 -0500
+
 mx-snapshot (17.11+2) mx; urgency=medium
 
   * fix LANG detection
