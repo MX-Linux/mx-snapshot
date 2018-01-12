@@ -59,6 +59,7 @@ var/log/samba/*
 var/mail/*
 var/spool/mail/*
 var/tmp/*
+var/cache/brightness-settings-cache/*
 
 # Entries below this can be edited by the user. If you have any large
 # files or directories, you should exclude them from being copied
