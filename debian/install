@@ -4,5 +4,6 @@ mx-snapshot.desktop		usr/share/applications
 mx-snapshot.conf		etc
 mx-snapshot-exclude.list	usr/local/share/excludes
 mx-snapshot.svg			usr/share/pixmaps
-scripts/copy-initrd-modules	usr/sbin
+scripts/copy-initrd-modules	usr/share/mx-packageinstaller/scripts
+scripts/copy-initrd-programs	usr/share/mx-packageinstaller/scripts
 translations/*.qm 		usr/share/mx-snapshot/locale

@@ -21,9 +21,11 @@ Options:
     --                 Read modules list on stdin
     -c --count         Display a count of the modules found
     -d --dir=DIR       Grab all modules found under DIR
+    -e --encrypt       Include extra modules for encrypted live-usb
     -f --from=FROM     copy from lib/modules under FROM/
     -h --help          Show this usage
     -k --kernel=KERN   Use KERN instead of \`uname -r\`
+    -O --only-encrypt  Only add encryption modules
     -p --pretend       Don't actually copy anything
     -q --quiet         Supress modprobe warnings
     -s --show          Show the default list
@@ -43,10 +45,9 @@ btrfs
 cdrom
 crc16
 crc32c-generic
-crct10dif-pclmul
 crct10dif-common
 crct10dif-generic
-dm-mod
+crct10dif-pclmul
 ecb
 ehci-hcd
 ehci-pci
@@ -61,11 +62,11 @@ hid
 hid-apple
 hid-belkin
 hid-cherry
+hid-generic
 hid-lenovo-tpkbd
 hid-logitech
 hid-logitech-dj
 hid-logitech-hidpp
-hid-generic
 hid-microsoft
 hid-monterey
 hid-samsung
@@ -82,8 +83,8 @@ nls-cp437
 nls-utf8
 ntfs
 nvme
-ohci-pci
 ohci-hcd
+ohci-pci
 overlay
 pcie-aspm
 printk
@@ -115,6 +116,14 @@ xhci-hcd
 xhci-pci
 "
 
+CRYPT_LIST="
+aes
+blowfish
+dm-crypt
+dm-mod
+serpent
+sha256
+"
 # i915
 # nouveau
 # radeon
@@ -123,7 +132,7 @@ main() {
 
     local to_dir from_dir kernel
 
-    local short_stack="cdfhkpqQstv"
+    local short_stack="defhkOpqQstv"
     while [ $# -gt 0 -a -n "$1" -a -z "${1##-*}" ]; do
         local arg=${1#-} val=
         shift
@@ -152,14 +161,16 @@ main() {
                   -) USE_STDIN=true                  ;;
            -count|c) SHOW_COUNT=true                 ;;
              -dir|d) DIRS="$DIRS,$val"               ;;
+         -encrypt|e) ADD_ENCRYPT=true                ;;
             -help|h) usage                           ;;
             -from|f) from_dir=${val%/}               ;;
           -kernel|k) kernel=$val                     ;;
-              -to|t) to_dir=${val%/}                 ;;
+    -only-encrypt|O) ONLY_ENCRYPT=true               ;;
          -pretend|p) PRETEND=true                    ;;
            -quiet|q) QUIET=true                      ;;
       -very-quiet|Q) VERY_QUIET=true                 ;;
             -show|s) echo "$DEFAULT_LIST" ; exit     ;;
+              -to|t) to_dir=${val%/}                 ;;
          -verbose|v) VERBOSE=true                    ;;
                   *) fatal "Unknown argument -$arg"  ;;
         esac
@@ -184,6 +195,12 @@ main() {
 
     local list1 list2 repeats default_mode
     # grab list from files or stdin and strip comments
+
+    if [ "$ADD_ENCRYPT" ]; then
+        DEFAULT_LIST=$DEFAULT_LIST$CRYPT_LIST
+    elif [ "$ONLY_ENCRYPT" ]; then
+        DEFAULT_LIST=$CRYPT_LIST
+    fi
 
     if [ -z "$USE_STDIN" -a $# -eq 0 ]; then
         default_mode=true
@@ -225,6 +242,8 @@ $(echo "$list2")
 List_2
 
     [ "$SHOW_COUNT" ] && printf "$ME: %s module(s)\n" "$cnt"
+
+    exit 0
 }
 
 echo_cmd() {

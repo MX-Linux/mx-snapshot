@@ -1,3 +1,9 @@
+mx-snapshot (18.01) mx; urgency=medium
+
+  * update copy-initrd scripts
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 14 Jan 2018 19:15:22 -0500
+
 mx-snapshot (17.12) mx; urgency=medium
 
   * new translations

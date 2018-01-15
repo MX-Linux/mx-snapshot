@@ -1,0 +1,425 @@
+#!/bin/bash
+
+ME=${0##*/}
+
+: ${PATH_LIST:=/usr/local/bin /usr/sbin /usr/bin /sbin /bin}
+: ${BIN_SUBDIR:=bin}
+: ${LIB_SUBDIR:=lib}
+
+: ${DEFAULT_PROG_LIST:=ntfs-3g eject}
+: ${ENCRYPT_PROG_LIST:=cryptsetup}
+
+
+X86_64_DIR=/lib/x86_64-linux-gnu
+
+VAR_LIST="PATH_LIST BIN_SUBDIR LIB_SUBDIR DEFAULT_PROG_LIST ENCRYPT_PROG_LIST"
+
+#PRETEND=true
+
+
+usage() {
+    cat <<Usage
+usage: $ME [options] <[programs]
+
+Copy dynamic linked programs and their supporting libraries
+into the /bin and /lib directories of the initrd.
+
+Options:
+    -C --clean         Remove existing libraries and programs
+    -c --create        Create the --to directory if it doesn't exist
+    -e --encrypt       Add cryptsetup to built-in list of programs
+    -f --from=<dir>    get libs and programs from under <dir>
+    -F --force         Skip missing programs
+    -h --help          Show this usage
+    -n --no-color      Turn off text colors
+    -p --pretend       Don't actually copy anything
+    -q --quiet         Supress modprobe warnings
+    -s --show          Show default values of environment variables
+    -t --to=<dir>      Copy to /bin and /lib under <dir>
+    -v --verbose       Show more information
+
+A --to directory or a from --directory must be specified.
+Short options can be stacked.  Example:
+
+    $ME -cnp
+Usage
+
+    exit ${1:-0}
+}
+
+#------------------------------------------------------------------------------
+# callback routine for evaluating command line args
+#------------------------------------------------------------------------------
+eval_argument() {
+    local arg=$1 val=$2
+        case $arg in
+            -create|c) CREATE=true             ;;
+             -clean|C) DO_CLEAN=true           ;;
+           -encrypt|e) ADD_ENCRYPT=true        ;;
+              -from|f) FROM_DIR=$val           ;;
+             -force|F) FORCE=true              ;;
+              -from=*) FROM_DIR=$val           ;;
+              -help|h) usage                   ;;
+          -no-color|n) NO_COLOR=true           ;;
+           -pretend|p) PRETEND=true            ;;
+             -quiet|q) QUIET=true              ;;
+              -show|s) do_show        ; exit 0 ;;
+                -to|t) TO_DIR=$val             ;;
+                -to=*) TO_DIR=$val             ;;
+           -verbose|v) VERBOSE=true            ;;
+                    *) fatal "Unknown parameter -$arg" ;;
+    esac
+}
+
+#------------------------------------------------------------------------------
+# callback routine for saying which cli args take a parameter
+#------------------------------------------------------------------------------
+takes_param() {
+    case $1 in
+        -from|f) return 0 ;;
+          -to|t) return 0 ;;
+    esac
+    return 1
+}
+
+#------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------
+main() {
+    [ $# -eq 0 ] && usage 0
+
+    local SHIFT SHORT_STACK="cCefFhnpqtv"
+
+    local SUDO
+    [ "$UID" = 1 ] || SUDO=sudo
+
+    read_params "$@"
+    shift $SHIFT
+
+    [ -n "$NO_COLOR" ] || set_colors
+
+    local prog_list abs_prog_list
+    case $# in
+        0)  prog_list=$DEFAULT_PROG_LIST                     ;;
+        *)  prog_list="$*"
+            qsay "Installing %s program(s) from command line" $#  ;;
+    esac
+
+    if [ $# -eq 0 -a -n "$ADD_ENCRYPT$DO_CLEAN" ]; then
+        #qsay "Adding encryption programs"
+        prog_list="$prog_list $ENCRYPT_PROG_LIST"
+    fi
+
+    : ${TO_DIR:=.}
+
+
+    [ "$CREATE" ] && mkdir -p "$TO_DIR"
+    test -e "$TO_DIR" || fatal "The --to directory %s does not exist.  Use --create to have it created" "$TO_DIR"
+
+    local bin_dir=$TO_DIR/$BIN_SUBDIR  lib_dir=$TO_DIR/$LIB_SUBDIR
+
+    if [ "$DO_CLEAN" ]; then
+        qsay "Cleaning out all libraries and these program(s): %s" "$prog_list"
+        do_clean "$TO_DIR" "$lib_dir" "$bin_dir" "$prog_list"
+        exit 0
+    fi
+
+    test -d "$TO_DIR" || fatal "The --to directory %s parameter is not a directoryparameter is not a directory." "$TO_DIR"
+
+    # Find the absolute path to each program under FROM_DIR
+    local prog  path  abs_prog  abs_prog_list missing_progs
+    for prog in $prog_list; do
+        local found=
+        for path in $PATH_LIST; do
+            abs_prog=$path/$prog
+            test -x ${FROM_DIR%/}/$abs_prog || continue
+            found=true
+            abs_prog_list="$abs_prog_list $abs_prog"
+            break
+        done
+        [ -z "$found" ] && missing_progs="$missing_progs${missing_progs:+ }$prog"
+    done
+
+    [ -n "$missing_progs" ] && warn_err "The following program(s) were not found: %s"  "$missing_progs"
+
+    if [ "$VERBOSE" ]; then
+        say "Full path to programs under %s:" "${FROM_DIR:-/}"
+        for prog in $abs_prog_list; do
+            say "    %s" "$prog"
+        done
+    fi
+
+    my_mkdir "$bin_dir"
+    my_mkdir "$lib_dir"
+
+    # Copy each program to the bin directory ...
+    # And ind the libraries needed for each program
+    for abs_prog in $abs_prog_list; do
+        local from_prog="$FROM_DIR$abs_prog"
+
+        qsay "  add program: %s" "$(basename $abs_prog)"
+        pretend cp "$from_prog" "$bin_dir"
+
+        local raw_libs
+        if [ -n "$FROM_DIR" ]; then
+            local LINUX_ARG=$(get_linux_arg "$from_prog")
+            raw_libs=$($SUDO $LINUX_ARG chroot "$FROM_DIR" /usr/bin/ldd $abs_prog)
+        else
+            raw_libs=$(ldd $abs_prog)
+        fi
+
+        #echo "$raw_libs"
+        local libs=$(echo "$raw_libs" | sed -nr "s/.*=>\s*([^ ]+)\s.*/\1/p")
+
+        if [ -z "$libs" ]; then
+            warn_err "No libs found for %s" "$(basename "$abs_prog")"
+            continue
+        fi
+
+        #echo -e "$libs"
+
+        # For each library, copy the library and the symlink to the lib directory
+        local lib
+        for lib in $libs; do
+            copy_symlink "$FROM_DIR" "$lib" "$lib_dir"
+        done
+
+        # copy in the ld-linux program specifed by the program
+        ld_linux=$(echo "$raw_libs" | sed -nr "s@^\s*(/lib[^ ]*/ld-linux[^ ]*) .*@\1@p")
+        [ -z "$ld_linux" ] && continue
+
+        #echo $ld_linux
+
+        local ld_dir=$TO_DIR$(dirname "$ld_linux")
+        echo "ld_linux: $ld_linux"
+        if [ "${ld_dir##*/}" = lib64 ]; then
+            my_mkdir "$ld_dir"
+            pretend cp -a $FROM_DIR$ld_linux $ld_dir
+
+            ld_dir=${ld_dir%/lib64}$X86_64_DIR
+        fi
+        echo ld_dir: $ld_dir
+        my_mkdir "$ld_dir"
+        copy_symlink "$FROM_DIR" "$ld_linux" "$ld_dir"
+
+    done
+}
+
+#------------------------------------------------------------------------------
+# Copy a symlink and what it points to into dest_dir.  This code seems too
+# complicated for what it does.
+#------------------------------------------------------------------------------
+copy_symlink() {
+    local from_dir=${1:-/}  symlink=$2  dest_dir=$3
+
+    # This works for relative symlinks and absolute symlinks that are also
+    # exist on the host
+    local real_file=$($SUDO $LINUX_ARG chroot $from_dir readlink -f $symlink)
+
+    # echo -e "    symlink: $symlink\n  real_file: $real_file"
+
+    # If it was not really a symlink then just copy and return
+    if [ -z "$real_file" -o "$real_file" = "$symlink" ]; then
+        local dest_file=$dest_dir/$(basename $symlink)
+        test -e $dest_file || pretend cp "$from_dir$symlink" "$dest_file" \
+            || fatal "Failed to copy:\n  %s -->\n  %s" "$from_dir$symlink" "$dest_file"
+        return
+    fi
+
+    # Otherwise, copy the file and then make a relative symlink to it
+    local dest_file=$dest_dir/$(basename $real_file)
+    test -e $dest_file || pretend cp -a "$from_dir$real_file" "$dest_file" \
+        || fatal "Failed to copy:\n  %s -->\n  %s" "$from_dir$real_file" "$dest_file"
+
+    local sym_targ=$(basename $real_file)
+    local sym_sorc=$dest_dir/$(basename $symlink)
+    test -e "$sym_sorc" || pretend ln -s $sym_targ $sym_sorc \
+        || fatal "Failed to create symlink at:\n  %s" "$sym_sorc"
+}
+
+#------------------------------------------------------------------------------
+# We may need to run "linux32" or "linux64" when we do the chroot to find
+# dynamic libs.
+#------------------------------------------------------------------------------
+get_linux_arg() {
+    local prog=$1
+
+    local need_64 new_arch=linux32
+    if file $prog | grep -q x86.64; then
+        need_64=true
+        new_arch=linux64
+    fi
+    local have_64
+    uname -m | grep -q x86.64 && have_64=true
+    local linux_arg
+    [ "$need_64" != "$have_64" ] && linux_arg=$new_arch
+    echo "$linux_arg"
+}
+
+#------------------------------------------------------------------------------
+# Try to remove all libs and binaries that were added in.  We actually try to
+# remove ALL libs since mismatched libs will tend to waste space and cause
+# trouble.
+#------------------------------------------------------------------------------
+do_clean() {
+    local to_dir=$1  lib_dir=$2  bin_dir=$3  prog_list=$4
+
+    local prog
+    for prog in $prog_list; do
+        local full=$bin_dir/$prog
+        test -e "$full" && pretend rm -f "$full"
+    done
+
+    local lib
+    for lib in $to_dir/lib*/{lib,ld}*.so*  $to_dir/$X86_64_DIR/ld-*.so*; do
+        [ -e "$lib" -o -L "$lib" ] && pretend rm -f "$lib"
+    done
+
+    local dir
+    for dir in $to_dir/lib*/ $bin_dir $to_dir$X86_64_DIR; do
+        test -d "$dir" || continue
+        [ -z "$(ls -A "$dir" 2>/dev/null)" ] && pretend rmdir "$dir"
+    done
+}
+
+#------------------------------------------------------------------------------
+# Show default values of our environment variables
+#------------------------------------------------------------------------------
+do_show() {
+    printf "%s environment variables\n" "$ME"
+    local var val
+    for var in $VAR_LIST; do
+        eval val=\$$var
+        printf "%20s: %s\n" "$var" "$val"
+    done
+}
+
+#------------------------------------------------------------------------------
+# Only try to make a directory if it doesn't already exist.  This is slightly
+# convenient and it helps make or verbose reporting cleaner.
+#------------------------------------------------------------------------------
+my_mkdir() {
+    local dir=$1
+    test -e "$dir" || pretend mkdir -p "$dir"
+}
+
+#------------------------------------------------------------------------------
+# Only run the command if not PRETEND.  Show command if PRETEND or VERBOSE.
+#------------------------------------------------------------------------------
+pretend() {
+    [ "$PRETEND" -o "$VERBOSE" ] && echo "$@"
+    [ "$PRETEND" ] && return
+    "$@"
+}
+
+#-------------------------------------------------------------------------------
+# Send "$@".  Expects
+#
+#   SHORT_STACK               variable, list of single chars that stack
+#   fatal(msg)                routine,  fatal("error message")
+#   takes_param(arg)          routine,  true if arg takes a value
+#   eval_argument(arg, [val]) routine,  do whatever you want with $arg and $val
+#
+# Sets "global" variable SHIFT to the number of arguments that have been read.
+#-------------------------------------------------------------------------------
+read_params() {
+    # Most of this code is boiler-plate for parsing cmdline args
+    SHIFT=0
+    # These are the single-char options that can stack
+
+    local arg val
+
+    # Loop through the cmdline args
+    while [ $# -gt 0 -a ${#1} -gt 0 -a -z "${1##-*}" ]; do
+        arg=${1#-}
+        shift
+        SHIFT=$((SHIFT + 1))
+
+        # Expand stacked single-char arguments
+        case $arg in
+            [$SHORT_STACK][$SHORT_STACK]*)
+                if echo "$arg" | grep -q "^[$SHORT_STACK]\+$"; then
+                    local old_cnt=$#
+                    set -- $(echo $arg | sed -r 's/([a-zA-Z])/ -\1 /g') "$@"
+                    SHIFT=$((SHIFT - $# + old_cnt))
+                    continue
+                fi;;
+        esac
+
+        # Deal with all options that take a parameter
+        if takes_param "$arg"; then
+            [ $# -lt 1 ] && fatal "Expected a parameter after: -$arg"
+            val=$1
+            [ -n "$val" -a -z "${val##-*}" ] \
+                && fatal "Suspicious argument after -$arg: $val"
+            SHIFT=$((SHIFT + 1))
+            shift
+        else
+            case $arg in
+                *=*)  val=${arg#*=} ;;
+                  *)  val="???"     ;;
+            esac
+        fi
+
+        eval_argument "$arg" "$val"
+    done
+}
+
+vsay() {
+    [ "$VERBOSE" ] || return
+    local fmt=$1  ; shift
+    printf "$fmt\n" "$@"
+}
+
+say() {
+    local fmt=$1  ; shift
+    printf "$fmt\n" "$@"
+}
+
+
+qsay() {
+    [ "$QUIET" ] && return
+    local fmt=$1  ; shift
+    printf "$fmt\n" "$@"
+}
+
+
+warn() {
+    local fmt=$1; shift
+    printf "$ME$err_co warning:$warn_co $fmt$nc_co\n" "$@" >&2
+}
+
+warn_err() {
+    if [ "$FORCE" ]; then
+        warn "$@"
+    else
+        fatal "$@"
+    fi
+}
+
+fatal() {
+    local fmt=$1; shift
+    printf "$ME$err_co fatal error:$warn_co $fmt$nc_co\n" "$@" >&2
+    exit 2
+}
+
+set_colors() {
+   local e=$(printf "\e")
+
+         black="$e[0;30m" ;    blue="$e[0;34m" ;    green="$e[0;32m" ;    cyan="$e[0;36m" ;
+           red="$e[0;31m" ;  purple="$e[0;35m" ;    brown="$e[0;33m" ; lt_gray="$e[0;37m" ;
+       dk_gray="$e[1;30m" ; lt_blue="$e[1;34m" ; lt_green="$e[1;32m" ; lt_cyan="$e[1;36m" ;
+        lt_red="$e[1;31m" ; magenta="$e[1;35m" ;   yellow="$e[1;33m" ;   white="$e[1;37m" ;
+         nc_co="$e[0m"    ;   brown="$e[0;33m" ;
+
+           m_co=$cyan
+          hi_co=$white
+          err_co=$red
+         bold_co=$yellow
+         warn_co=$yellow
+}
+
+main "$@"
+
+
+

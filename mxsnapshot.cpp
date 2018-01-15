@@ -407,13 +407,15 @@ void mxsnapshot::replaceMenuStrings() {
 void mxsnapshot::copyModules(QString to, QString kernel)
 {
     QString kernel586 = "3.16.0-4-586";
-    QString cmd = QString("copy-initrd-modules -t=\"%1\" -k=\"%2\"").arg(to).arg(kernel);
+    QString cmd = QString("/usr/share/mx-packageinstaller/scripts/copy-initrd-modules -t=\"%1\" -k=\"%2\"").arg(to).arg(kernel);
     system(cmd.toUtf8());
     // copy 586 modules for the non-PAE kernel
     if (isi686() && getDebianVersion().toInt() < 9) {  // Not applicable for Stretch (MX17) or more
-        QString cmd = QString("copy-initrd-modules -t=\"%1\" -k=\"%2\"").arg(to).arg(kernel586);
+        QString cmd = QString("/usr/share/mx-packageinstaller/scripts/copy-initrd-modules -t=\"%1\" -k=\"%2\"").arg(to).arg(kernel586);
         system(cmd.toUtf8());
     }
+    cmd = QString("/usr/share/mx-packageinstaller/scripts/copy-initrd-programs --to=\"%1\"").arg(to);
+    system(cmd.toUtf8());
 }
 
 // Create the output filename
