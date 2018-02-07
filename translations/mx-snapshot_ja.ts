@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ja">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ja" version="2.1">
 <context>
     <name>QApplication</name>
     <message>
@@ -15,8 +13,8 @@
         <location filename="../mxsnapshot.ui" line="14"/>
         <location filename="../mxsnapshot.cpp" line="47"/>
         <location filename="../mxsnapshot.cpp" line="91"/>
-        <location filename="../mxsnapshot.cpp" line="726"/>
-        <location filename="../mxsnapshot.cpp" line="829"/>
+        <location filename="../mxsnapshot.cpp" line="679"/>
+        <location filename="../mxsnapshot.cpp" line="782"/>
         <source>MX Snapshot</source>
         <translation>MX Snapshot</translation>
     </message>
@@ -37,7 +35,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="155"/>
-        <location filename="../mxsnapshot.cpp" line="677"/>
+        <location filename="../mxsnapshot.cpp" line="630"/>
         <source>Snapshot name:</source>
         <translation>スナップショットの名称:</translation>
     </message>
@@ -61,7 +59,7 @@
     <message>
         <location filename="../mxsnapshot.ui" line="301"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="326"/>
@@ -130,7 +128,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="834"/>
+        <location filename="../mxsnapshot.cpp" line="787"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
@@ -162,7 +160,7 @@
     <message>
         <location filename="../mxsnapshot.ui" line="597"/>
         <source>About...</source>
-        <translation type="unfinished"></translation>
+        <translation>About...</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="605"/>
@@ -210,7 +208,7 @@
 </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="232"/>
+        <location filename="../mxsnapshot.cpp" line="229"/>
         <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
 
 Will install leafpad and use it this time.</source>
@@ -219,200 +217,200 @@ Will install leafpad and use it this time.</source>
 leafpad をインストールし、それを使います。</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="256"/>
+        <location filename="../mxsnapshot.cpp" line="253"/>
         <source>Installing </source>
         <translation>インストール中</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="271"/>
-        <location filename="../mxsnapshot.cpp" line="510"/>
-        <location filename="../mxsnapshot.cpp" line="524"/>
+        <location filename="../mxsnapshot.cpp" line="268"/>
+        <location filename="../mxsnapshot.cpp" line="465"/>
+        <location filename="../mxsnapshot.cpp" line="479"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="271"/>
+        <location filename="../mxsnapshot.cpp" line="268"/>
         <source>Could not install </source>
         <translation>インストールできません</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="318"/>
+        <location filename="../mxsnapshot.cpp" line="315"/>
         <source>Copying the new-iso filesystem...</source>
         <translation>新たなファイルシステムをコピー中...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="508"/>
+        <location filename="../mxsnapshot.cpp" line="463"/>
         <source>Squashing filesystem...</source>
         <translation>ファイルシステムに Squash を適用中...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="510"/>
+        <location filename="../mxsnapshot.cpp" line="465"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation>linuxfsファイルを作成できませんでした。パーティションに十分な空き容量があるかご確認ください。</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="522"/>
+        <location filename="../mxsnapshot.cpp" line="477"/>
         <source>Creating CD/DVD image file...</source>
         <translation>CD/DVD イメージファイルを生成中...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="524"/>
+        <location filename="../mxsnapshot.cpp" line="479"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation>ISOファイルを作成できませんでした。パーティションに十分な空き容量があるかご確認ください。</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="530"/>
+        <location filename="../mxsnapshot.cpp" line="485"/>
         <source>Making hybrid iso</source>
         <translation>ハイブリット ISO 作成中</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="548"/>
+        <location filename="../mxsnapshot.cpp" line="503"/>
         <source>Making md5sum</source>
         <translation>MD5 チェックサム生成</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="559"/>
+        <location filename="../mxsnapshot.cpp" line="514"/>
         <source>Cleaning...</source>
         <translation>クリーニング...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="572"/>
-        <location filename="../mxsnapshot.cpp" line="883"/>
+        <location filename="../mxsnapshot.cpp" line="527"/>
+        <location filename="../mxsnapshot.cpp" line="825"/>
         <source>Done</source>
         <translation>完了</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="612"/>
+        <location filename="../mxsnapshot.cpp" line="565"/>
         <source>Please wait.</source>
         <translation>お待ち下さい。</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="614"/>
+        <location filename="../mxsnapshot.cpp" line="567"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation>お待ち下さい。使用する空き容量を計算しています...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="665"/>
+        <location filename="../mxsnapshot.cpp" line="618"/>
         <source>Settings</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="674"/>
+        <location filename="../mxsnapshot.cpp" line="627"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>Snapshot は次の設定を使用します:*</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="676"/>
+        <location filename="../mxsnapshot.cpp" line="629"/>
         <source>- Snapshot directory:</source>
         <translation>- スナップショットディレクトリ: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="678"/>
+        <location filename="../mxsnapshot.cpp" line="631"/>
         <source>- Kernel to be used:</source>
         <translation>- 使用するカーネル: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="679"/>
+        <location filename="../mxsnapshot.cpp" line="632"/>
         <source>*These settings can be changed by editing: </source>
         <translation>*変更箇所を編集した設定: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="684"/>
+        <location filename="../mxsnapshot.cpp" line="637"/>
         <source>Final chance</source>
         <translation>最終確認</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="685"/>
+        <location filename="../mxsnapshot.cpp" line="638"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation>Snapshot には現在実行しているシステムから ISO を生成するすべての情報があります。</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="686"/>
+        <location filename="../mxsnapshot.cpp" line="639"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation>インストールを行うシステムのサイズとコンピュータの性能によって、完了まではかなりの時間がかかります。</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="687"/>
+        <location filename="../mxsnapshot.cpp" line="640"/>
         <source>OK to start?</source>
         <translation>OK で開始します</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="695"/>
+        <location filename="../mxsnapshot.cpp" line="648"/>
         <source>Output</source>
         <translation>出力</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="702"/>
+        <location filename="../mxsnapshot.cpp" line="655"/>
         <source>Edit Boot Menu</source>
         <translation>起動メニューの編集</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="703"/>
+        <location filename="../mxsnapshot.cpp" line="656"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation>プログラムは、作業ディレクトリで任意ファイルを編集するために休止しています。 はい を選び、起動メニューを編集するか、いいえ を選んでこのステップを無視し、スナップショット作成を継続するか選んでください。</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="716"/>
+        <location filename="../mxsnapshot.cpp" line="669"/>
         <source>Success</source>
         <translation>完了</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="716"/>
+        <location filename="../mxsnapshot.cpp" line="669"/>
         <source>All finished!</source>
         <translation>すべて完了しました！</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="717"/>
+        <location filename="../mxsnapshot.cpp" line="670"/>
         <source>Close</source>
         <translation>閉じる</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="828"/>
+        <location filename="../mxsnapshot.cpp" line="781"/>
         <source>About MX Snapshot</source>
         <translation>MX Snapshot について</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="829"/>
+        <location filename="../mxsnapshot.cpp" line="782"/>
         <source>Version: </source>
         <translation>Version: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="831"/>
+        <location filename="../mxsnapshot.cpp" line="784"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>実行している MX Linux を元に live-CD を生成するプログラム</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="832"/>
+        <location filename="../mxsnapshot.cpp" line="785"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="833"/>
+        <location filename="../mxsnapshot.cpp" line="786"/>
         <source>License</source>
         <translation>ライセンス</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="836"/>
+        <location filename="../mxsnapshot.cpp" line="789"/>
         <source>MX Snapshot License</source>
         <translation>MX Snapshot ライセンス</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="855"/>
+        <location filename="../mxsnapshot.cpp" line="798"/>
         <source>MX Snapshot Help</source>
         <translation>MX Snapshot ヘルプ</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="865"/>
+        <location filename="../mxsnapshot.cpp" line="807"/>
         <source>Select Snapshot Directory</source>
         <translation>スナップショットディレクトリを選択</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="884"/>
+        <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Confirmation</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="884"/>
+        <location filename="../mxsnapshot.cpp" line="826"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>アプリケーションを終了してよろしいですか？</translation>
     </message>
