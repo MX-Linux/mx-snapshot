@@ -41,28 +41,28 @@ HEADERS  += mxsnapshot.h
 
 FORMS    += mxsnapshot.ui
 
-TRANSLATIONS += translations/mx-bootrepair_am.ts \
-                translations/mx-bootrepair_ca.ts \
-                translations/mx-bootrepair_cs.ts \
-                translations/mx-bootrepair_de.ts \
-                translations/mx-bootrepair_el.ts \
-                translations/mx-bootrepair_es.ts \
-                translations/mx-bootrepair_fr.ts \
-                translations/mx-bootrepair_hu.ts \
-                translations/mx-bootrepair_it.ts \
-                translations/mx-bootrepair_ja.ts \
-                translations/mx-bootrepair_kk.ts \
-                translations/mx-bootrepair_lt.ts \
-                translations/mx-bootrepair_nl.ts \
-                translations/mx-bootrepair_pl.ts \
-                translations/mx-bootrepair_pt.ts \
-                translations/mx-bootrepair_pt_BR.ts \
-                translations/mx-bootrepair_ro.ts \
-                translations/mx-bootrepair_ru.ts \
-                translations/mx-bootrepair_sk.ts \
-                translations/mx-bootrepair_sv.ts \
-                translations/mx-bootrepair_tr.ts \
-                translations/mx-bootrepair_uk.ts
+TRANSLATIONS += translations/mx-snapshot_am.ts \
+                translations/mx-snapshot_ca.ts \
+                translations/mx-snapshot_cs.ts \
+                translations/mx-snapshot_de.ts \
+                translations/mx-snapshot_el.ts \
+                translations/mx-snapshot_es.ts \
+                translations/mx-snapshot_fr.ts \
+                translations/mx-snapshot_hu.ts \
+                translations/mx-snapshot_it.ts \
+                translations/mx-snapshot_ja.ts \
+                translations/mx-snapshot_kk.ts \
+                translations/mx-snapshot_lt.ts \
+                translations/mx-snapshot_nl.ts \
+                translations/mx-snapshot_pl.ts \
+                translations/mx-snapshot_pt.ts \
+                translations/mx-snapshot_pt_BR.ts \
+                translations/mx-snapshot_ro.ts \
+                translations/mx-snapshot_ru.ts \
+                translations/mx-snapshot_sk.ts \
+                translations/mx-snapshot_sv.ts \
+                translations/mx-snapshot_tr.ts \
+                translations/mx-snapshot_uk.ts
 
 RESOURCES += \
     images.qrc
