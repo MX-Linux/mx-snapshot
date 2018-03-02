@@ -592,6 +592,20 @@ void mxsnapshot::addRemoveExclusion(bool add, QString exclusion)
     }
 }
 
+void mxsnapshot::displayDoc(QString url)
+{
+    QProcess proc;
+    proc.start("logname");
+    proc.waitForFinished();
+    QString user = proc.readAllStandardOutput().trimmed();
+    QString exec = "xdg-open";
+    if (system("command -v mx-viewer") == 0) { // use mx-viewer if available
+        exec = "mx-viewer";
+    }
+    QString cmd = "su " + user + " -c \"" + exec + " " + url + "\"&";
+    system(cmd.toUtf8());
+}
+
 //// sync process events ////
 void mxsnapshot::procStart()
 {
@@ -833,7 +847,8 @@ void mxsnapshot::on_buttonAbout_clicked()
     msgBox.addButton(tr("License"), QMessageBox::AcceptRole);
     msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
     if (msgBox.exec() == QMessageBox::AcceptRole) {
-        system("mx-viewer file:///usr/share/doc/mx-snapshot/license.html '" + tr("MX Snapshot License").toUtf8() + "'");
+        QString url = "file:///usr/share/doc/mx-snapshot/license.html";
+        displayDoc(url);
     }
     this->show();
 }
@@ -841,8 +856,6 @@ void mxsnapshot::on_buttonAbout_clicked()
 // Help button clicked
 void mxsnapshot::on_buttonHelp_clicked()
 {
-    this->hide();
-
     QLocale locale;
     QString lang = locale.bcp47Name();
 
@@ -851,10 +864,7 @@ void mxsnapshot::on_buttonHelp_clicked()
     if (lang.startsWith("fr")) {
         url = "https://mxlinux.org/wiki/help-files/help-mx-instantan%C3%A9";
     }
-
-    system("mx-viewer " + url.toUtf8() + " '" + tr("MX Snapshot Help").toUtf8() + "'");
-
-    this->show();
+    displayDoc(url);
 }
 
 // Select snapshot directory

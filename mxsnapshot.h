@@ -55,6 +55,7 @@ public:
     int runCmd(QString cmd);
     QString getVersion(QString name);
     void addRemoveExclusion(bool add, QString exclusion);
+    void displayDoc(QString url);
     QSettings settings;
 
     bool live;

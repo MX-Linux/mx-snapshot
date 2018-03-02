@@ -5,8 +5,8 @@ Maintainer: Adrian <adrian@mxlinux.org>
 Build-Depends: qt5-qmake,
 	qt5-default,
 	qttools5-dev-tools,
-	debhelper (>=7.0.50~)
-Standards-Version: 3.9.5
+	debhelper (>=9)
+Standards-Version: 3.9.8
 Vcs-Git: git://github.com/AdrianTM/mx-snapshot
 
 Package: mx-snapshot
