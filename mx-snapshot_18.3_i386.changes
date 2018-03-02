@@ -18,20 +18,20 @@ Changes:
  .
    * new translations
 Checksums-Sha1:
- a398febfdecab6a6eb1787364e773e4bdaa44b9a 97374 mx-snapshot_18.3_i386.deb
+ 098abdb75bcae945d288d86eb6e612bc7c43c360 97280 mx-snapshot_18.3_i386.deb
 Checksums-Sha256:
- b6513a0f1f4bdab750a441c3e34072bfbd53621a1edfd727af961d8cf0e90a3f 97374 mx-snapshot_18.3_i386.deb
+ 7fca3f01bea1a6a1821e353642da72bc6103576e8b86a213b626d0f3db2f5e21 97280 mx-snapshot_18.3_i386.deb
 Files:
- aac090d17744e76715a2a1b7736f3a10 97374 admin optional mx-snapshot_18.3_i386.deb
+ 18458605277d3c94ce8cb796e25a235d 97280 admin optional mx-snapshot_18.3_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJamYEQAAoJEHCTjHgGee6Ya0sIAMThtFYHJ3QkgCG4JnsgGRW6
-/sMhPVl6peqZKAIM2IXrz1Z06gIfVsxacZj+vowTEoRsac0tM6/i239RHjAXnoir
-+4y7MY9CN0C9sOEu8i5Y3oWbl+rdAX7QobEFgyHJGrsNBSr5qSonyk08PBbQTA2f
-o5w2aBKQFThtYMdFRQyM9WuT+ZX907NyHRBtzfyGzhAKPVzdmCy/LhLwOR/pgkrz
-cjRLwTtwugQn4gpgUxcbjcWR6tb/In4Jf5Y+6mfeilcIAZuF9FPF26j5JIBmSWUN
-WEQ1AbQdyNOjl1gokOq9XWBsukd3lHrmGr2G/WC3b5qx9CNRofMrlYfENYLmuW4=
-=hElj
+iQEcBAEBAgAGBQJamYKvAAoJEHCTjHgGee6Yp3EIAJ9pwZhPB+PkivRhcLmwo+WB
+QcMpo7k6eol4j2jdCT1CSLrnDkBtobqU79cqBCFhH934tQCSJI44GCUor2rEFQOF
+hqPM9Yai5OSrAgPhkYnXcIaW1RspuFTwpVN4QvdjVHGXFmVspMNDYksNwFpSu3lh
+shOOCUL/SHAK0E0WtNulO7gJYqt0vU8VskoVzZJXwK1mnXwIiVYQy+HGLm7TGFr6
+fqXwJzsOfT16f7t6gZ7DvWla+O4YshpVq3MSkslem2QOayf7WCg9sSM4ehKqdk/9
+t2MY2tr63k8cTrcmI9r/AJl+GFXpgseaxuAk/ClvNC1ZNzLCMg1chyuuw6WFQos=
+=RciJ
 -----END PGP SIGNATURE-----
