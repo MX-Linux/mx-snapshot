@@ -78,8 +78,9 @@ void mxsnapshot::loadSettings()
     mksq_opt = settings.value("mksq_opt", "-comp xz").toString();
     edit_boot_menu = settings.value("edit_boot_menu", "no").toString();
     lib_mod_dir = settings.value("lib_mod_dir", "/lib/modules/").toString();
-    gui_editor.setFileName(settings.value("gui_editor", "/usr/bin/featherpad").toString());
+    gui_editor.setFileName(settings.value("gui_editor", "/usr/bin/gnome-text-editor").toString());
     stamp = settings.value("stamp").toString();
+    force_installer = settings.value("force_installer", "true").toBool();
     ui->lineEditName->setText(getFilename());
 }
 
@@ -225,6 +226,9 @@ void mxsnapshot::checkEditor()
 {
     if (gui_editor.exists()) {
         return;
+    } else if (QFile("/usr/bin/featherpad").exists()) {
+        gui_editor.setFileName("/usr/bin/featherpad");
+        return;
     } else if (QFile("/usr/bin/leafpad").exists()) {
         gui_editor.setFileName("/usr/bin/leafpad");
         return;
@@ -263,7 +267,7 @@ bool mxsnapshot::installPackage(QString package)
     connect(proc, SIGNAL(finished(int)), &loop, SLOT(quit()));
     proc->start("apt-get update");
     loop.exec();
-    proc->start("apt-get install " + package);
+    proc->start("apt-get install -y " + package);
     loop.exec();
     disconnectAll();
     this->hide();
@@ -465,11 +469,9 @@ void mxsnapshot::setupEnv()
     }
 
     // install mx-installer if absent
-    if (!checkInstalled("mx-installer")) {
+    if (force_installer && !checkInstalled("mx-installer")) {
         runCmd("apt-get update");
-        if (!checkInstalled("mx-installer")) {
-            runCmd("apt-get install mx-installer");
-        }
+        runCmd("apt-get install -y mx-installer");
     }
     // setup environment if creating a respin (reset root/demo, remove personal accounts)
     if (reset_accounts) {

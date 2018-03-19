@@ -1,3 +1,9 @@
+mx-snapshot (18.3+1) mx; urgency=medium
+
+  * add option to force installation of installer
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 19 Mar 2018 13:38:27 -0400
+
 mx-snapshot (18.3) mx; urgency=medium
 
   * new translations

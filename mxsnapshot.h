@@ -58,25 +58,27 @@ public:
     void displayDoc(QString url);
     QSettings settings;
 
-    bool live;
-    bool reset_accounts;
     bool i686;
-    QDir snapshot_dir;
+    bool live;
+    bool force_installer;
+    bool reset_accounts;
+
     QDir lib_mod_dir;
+    QDir snapshot_dir;
     QFile config_file;
-    QFile snapshot_excludes;
     QFile gui_editor;
-    QString version;
-    QString work_dir;
-    QString stamp;
-    QString snapshot_basename;
-    QString make_md5sum;
-    QString make_isohybrid;
+    QFile snapshot_excludes;
     QString edit_boot_menu;
     QString kernel_used;
-    QString save_message;
+    QString make_isohybrid;
+    QString make_md5sum;
     QString mksq_opt;
+    QString save_message;
     QString session_excludes;
+    QString snapshot_basename;
+    QString stamp;
+    QString version;
+    QString work_dir;
 
     int getSnapshotCount();
 
