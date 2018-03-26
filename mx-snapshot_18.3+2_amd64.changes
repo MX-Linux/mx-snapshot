@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Mon, 26 Mar 2018 13:52:20 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 18.3+2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (18.3+2) mx; urgency=medium
+ .
+   * copy Installer.desktop only if force_installer=true
+Checksums-Sha1:
+ e12753ed7f1f6b4b3619d062988b4bf2189e73a1 1138 mx-snapshot_18.3+2.dsc
+ 4e8e1ff21eb7cb4a824772a799e64caed8fffb45 71144 mx-snapshot_18.3+2.tar.xz
+ a8544020fe0984e4f888eef7d9b3decc60943e3e 95622 mx-snapshot_18.3+2_amd64.deb
+Checksums-Sha256:
+ 8eb23683b324e66f61bf9240eff6c96df2c4f595b34f165dcc13d1730b73422c 1138 mx-snapshot_18.3+2.dsc
+ 5ccffae9c6a0b22a60926f13525973ffd0f0764391988fa35660619cc0be8f3d 71144 mx-snapshot_18.3+2.tar.xz
+ f3166ad19129212cfcdad0b0111a6d2a8cece2663253a8d4e0030eb0bf188320 95622 mx-snapshot_18.3+2_amd64.deb
+Files:
+ 11dd0e19a6fb9d268577c2814358f9c0 1138 admin optional mx-snapshot_18.3+2.dsc
+ 434a83620a16e4c20091666302141195 71144 admin optional mx-snapshot_18.3+2.tar.xz
+ 772d89b35f8c8dce1bbc67896281f89b 95622 admin optional mx-snapshot_18.3+2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJauTPFAAoJEHCTjHgGee6Yb9EH/RuF0KsXaKBpH6/cmZMZluiK
+XjEfi8M6QzLOxZMzCzFngL1AKuG0MWX1c9q5ZeM4h6i4keJeaj1ZZEOGM03XsY/J
++s+M7ja/kkhT8jFytoRhTjmCai9xi4PlGTdmEyzO/Ut/834nmNZOp4nIlsRu+26x
+VB504ull4+Yo/IGIbBs9vSyuqW2XgoeZEog4z0fJGNrF4QAZE4BE2lzlxtzJwHjO
+pPwUYczfOVzkuiO1Vevu0aFjjx+dsrlq/i7fcsDe9YvFWS4gHWfRHaZ+Zu3XvrPp
+86IS8JNSqUfN2QjnbzHNhg9tKxh5FL8I2DNGu9guRG8dw8dXwUJmaixLBlcxBCY=
+=l+E9
+-----END PGP SIGNATURE-----

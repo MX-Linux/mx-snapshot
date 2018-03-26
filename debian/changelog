@@ -1,3 +1,9 @@
+mx-snapshot (18.3+2) mx; urgency=medium
+
+  * copy Installer.desktop only if force_installer=true
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 26 Mar 2018 13:52:20 -0400
+
 mx-snapshot (18.3+1) mx; urgency=medium
 
   * add option to force installation of installer
