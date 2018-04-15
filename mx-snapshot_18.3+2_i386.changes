@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Mon, 26 Mar 2018 13:52:20 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 18.3+2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (18.3+2) mx; urgency=medium
+ .
+   * copy Installer.desktop only if force_installer=true
+Checksums-Sha1:
+ 945fdbd27fac354081ba09ad9af2ce874c3f095e 97284 mx-snapshot_18.3+2_i386.deb
+Checksums-Sha256:
+ 91030240527cdc7126d85498ed2a08827b8447c529554aa2b0ab4d8b496113ab 97284 mx-snapshot_18.3+2_i386.deb
+Files:
+ ddbe52536114578d1fe40d0d9283409a 97284 admin optional mx-snapshot_18.3+2_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJauTS1AAoJEHCTjHgGee6YXoYH+gIXha/RjzUiwC9lgmGcbvQS
+bcWZfkxC8OFlNCfrHl0OnmPztRTlW4nammqDWm3alkwCzs6bmYYNtSegKjOM1fMM
+j5v6PiwwchPhk6x8Q61ReBbLYBJTyeN7zwaIe7xjU4jDzZj0q2WAiJv8/Fs6wbH/
+Xp2kgKPrxkjoFRhDloKbTGZDyRONYR4Rq0WJbnxZhHNO/9UMxtHAYkx5xhXFInQs
+L9OGTOkDCVbNIq1Odb0+DsHreqvPiiiAvgrxFQdU4raQ+TBosB0iLEYmAVnVUPkt
+OkowgamlxBPZE+386Gk/DadXInlNFulvXKqTYBM3XGGRJ589Nb5b2Sx1V6/E+LQ=
+=8CSb
+-----END PGP SIGNATURE-----
