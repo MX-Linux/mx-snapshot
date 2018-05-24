@@ -18,20 +18,20 @@ Changes:
  .
    * exclude user directories set in other languages
 Checksums-Sha1:
- a2c1f08cae4d48df7c659771b5f182a37c1efc1e 99272 mx-snapshot_18.5_i386.deb
+ 5639df95d3c36200f7d13b5ec4d8bc90f6ad7143 99348 mx-snapshot_18.5_i386.deb
 Checksums-Sha256:
- d424333aea367d3d45768791472a5cf0241661f50bc12c3ac6add5ba4d9733e3 99272 mx-snapshot_18.5_i386.deb
+ d785ccbf7ea2f0ea72dcae7598720fd59acfc4ce37fcdc061b94e5cb8094dc37 99348 mx-snapshot_18.5_i386.deb
 Files:
- 24ed9962f6c2acb386ac8c61fba07d99 99272 admin optional mx-snapshot_18.5_i386.deb
+ 39045069e10700f351d6df7cd8c22f67 99348 admin optional mx-snapshot_18.5_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJbBxhNAAoJEHCTjHgGee6Yoz4IAJesVNKSIaKR4DkzV0rukk/N
-Xh5Jj/lT7Bs+t7sWLJdsHLlHT1Qub42cFFOFV1kPvF9NteCSnN8Ln/RTcR/jzm9S
-U9jUedU2jbZigekjQTVInB82Si6q+NlU9BT0181Zr88nrzFKRAjPJ0fjCopvdall
-QWNPwrwlZwO0ULDPASWsvFIvW08L9hx4yVOIOWCMHG87FUnzMR4lKMWFLNfj9Chk
-lcfTOvU78FzXxSsolFHolqQw//yIhKN5s9I/wlGIMzYDf4xgGs0AqQpxJrhZCohN
-HRuBnE3AA9jd8xeqnWVoOdm6rHj5mgtVK8z5rnqqGpe8JSFcQDu/vpKAvg2hSqQ=
-=SWsc
+iQEcBAEBAgAGBQJbBzjUAAoJEHCTjHgGee6YJkwH/1ZpcJgTo01jqN5FRHk+U0Oa
+5kK1IhtPlvNEb44+AtwHdp4y19pl5WVwQXr9d+rD5QoqOe0Tqc1CCX5bciOLkq5A
+M+DnuRljuLeTfvU0y83B/bY4ASC0F88BfHI1Zw5uPyRVVQ1Cch/7Jzmk4VZg5D4F
+WK3dUmvH6G8qSspMmAVkJeRMecN7bhw0vQ8awnCFgFUhNRaCX+81I7GO4Ucn2Gm2
+jSdsih/dJWb4Bpt4wT+7iKBTX6zmmpIw0isE/5H7NvdhCaIhrNfR0GseN4vGsZO+
+4aXIhsQXIUB8LL/S2KSOXEWZ0Ul6OVN79mcB+ISAl4cIERwOcGpLhswqUuRePUU=
+=0Ti5
 -----END PGP SIGNATURE-----

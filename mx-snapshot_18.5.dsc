@@ -13,20 +13,20 @@ Build-Depends: qt5-qmake, qt5-default, qttools5-dev-tools, debhelper (>= 9)
 Package-List:
  mx-snapshot deb admin optional arch=any
 Checksums-Sha1:
- 90b19a8f9e15a9b88397da36d5b3035002a325da 71328 mx-snapshot_18.5.tar.xz
+ 66f814719051be6b5cc30e2e105f19c06c194b1f 71380 mx-snapshot_18.5.tar.xz
 Checksums-Sha256:
- 3b5ae8e31e02adb0f61e65ad0ab15940898c4909bfb1c9f2653a4d104a83ae2a 71328 mx-snapshot_18.5.tar.xz
+ 4e83793ae7d8bd3e6893d6539d689f5faeff332cc1a973518492d5347f5dec5f 71380 mx-snapshot_18.5.tar.xz
 Files:
- 18663c36730b0f7853cd2dc249a3ae1a 71328 mx-snapshot_18.5.tar.xz
+ f88cd5055d2fd8de063bb6c5bc931fc5 71380 mx-snapshot_18.5.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJbBxedAAoJEHCTjHgGee6Yj4cIAJvhBp6PHUvKB0p/bOd15UoY
-vKD4J6NvZ3w4sS7eHSEkS0+twpoz3kxJ0ccArFCmMEnlsm9d5AiEfYxYnQWLlOY9
-S2n+E0DQIWKLhxjyDnSRfgEebZBpB4O/MznZTKxVcXBWC2lR9CB8xQ+cRTDAz7XT
-ab2UF/J9P0WHJSzgqKKXDA+Wm3+d2qYtrwihodZ+cF8YnOCLX1ycu807rz2AFcU2
-iivvUifYc5BHJ6Hpw0WOpXgr4fQN9FqBb3zs/7k5U0sYTCWeozQ14iU72s7W8u74
-v4NAXfahRXsRStI9MJpmH5c2oGOn07PFpgADAVZ87y74LwlfAsSv+RBqsrMsKKg=
-=7Vw2
+iQEcBAEBAgAGBQJbBzfhAAoJEHCTjHgGee6YCxEH/R5hF7sXNXY6rVe9MiNd3MXU
+hXGkGrfr56ZcJIqGdHbaJ7dUb1l/7uZFYdSkup9sI7w+agrw3GNiIw2AxzPQBbVu
+1pTXSiC9toASUszAQcpibpWTq39MX6DtZwJrocxQR0lAUx+SqetpAzoCKVw9Kxg9
+VLqDi4WUYOtDaRYlLUiGVPzxPCG+zW3oMY3wCP/6b+1X9cBRgphP4Gu3aL9Yb6Ub
+jRona//uNKhFbAge4+/S8jJPjdgonlzcGYACX4ps47HLg+FFVstnZRI+IStJk6io
+ZMYQe1EUgxD0ygYGFYktbzI7ciQ4yYmdUCcWDPMppOOX2fcu5UcJXjQHBjX6HD4=
+=jFiT
 -----END PGP SIGNATURE-----

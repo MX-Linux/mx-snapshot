@@ -1,0 +1,1 @@
+ln -fs /etc/mx-snapshot-exclude.list /usr/local/share/excludes/mx-snapshot-exclude.list
