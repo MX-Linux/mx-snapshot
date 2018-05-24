@@ -765,7 +765,8 @@ void mxsnapshot::on_buttonEditExclude_clicked()
 
 void mxsnapshot::on_excludeDocuments_toggled(bool checked)
 {
-    QString xdg_user_dir = getCmdOut("xdg-open-dir DOCUMENTS") + "/*";
+    QString user = getCmdOut("logname");
+    QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir DOCUMENTS\"") + "/*";
     QString exclusion = "/home/*/Documents/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
@@ -775,7 +776,8 @@ void mxsnapshot::on_excludeDocuments_toggled(bool checked)
 
 void mxsnapshot::on_excludeDownloads_toggled(bool checked)
 {
-    QString xdg_user_dir = getCmdOut("xdg-open-dir DOWNLOAD") + "/*";
+    QString user = getCmdOut("logname");
+    QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir DOWNLOAD\"") + "/*";
     QString exclusion = "/home/*/Downloads/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
@@ -785,7 +787,8 @@ void mxsnapshot::on_excludeDownloads_toggled(bool checked)
 
 void mxsnapshot::on_excludePictures_toggled(bool checked)
 {
-    QString xdg_user_dir = getCmdOut("xdg-open-dir PICTURES") + "/*";
+    QString user = getCmdOut("logname");
+    QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir PICTURES\"") + "/*";
     QString exclusion = "/home/*/Pictures/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
@@ -795,7 +798,8 @@ void mxsnapshot::on_excludePictures_toggled(bool checked)
 
 void mxsnapshot::on_excludeMusic_toggled(bool checked)
 {
-    QString xdg_user_dir = getCmdOut("xdg-open-dir MUSIC") + "/*";
+    QString user = getCmdOut("logname");
+    QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir MUSIC\"") + "/*";
     QString exclusion = "/home/*/Music/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
@@ -805,7 +809,8 @@ void mxsnapshot::on_excludeMusic_toggled(bool checked)
 
 void mxsnapshot::on_excludeVideos_toggled(bool checked)
 {
-    QString xdg_user_dir = getCmdOut("xdg-open-dir VIDEOS") + "/*";
+    QString user = getCmdOut("logname");
+    QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir VIDEOS\"") + "/*";
     QString exclusion = "/home/*/Videos/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
@@ -815,7 +820,8 @@ void mxsnapshot::on_excludeVideos_toggled(bool checked)
 
 void mxsnapshot::on_excludeDesktop_toggled(bool checked)
 {
-    QString xdg_user_dir = getCmdOut("xdg-open-dir DESKTOP");
+    QString user = getCmdOut("logname");
+    QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir DESKTOP\"");
     QString exclusion = "/home/*/Desktop/!(minstall.desktop) " + xdg_user_dir + "/!(minstall.desktop)";
     addRemoveExclusion(checked, exclusion);
     if (!checked) {

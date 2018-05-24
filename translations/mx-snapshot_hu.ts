@@ -16,7 +16,7 @@
         <location filename="../mxsnapshot.cpp" line="47"/>
         <location filename="../mxsnapshot.cpp" line="92"/>
         <location filename="../mxsnapshot.cpp" line="743"/>
-        <location filename="../mxsnapshot.cpp" line="852"/>
+        <location filename="../mxsnapshot.cpp" line="858"/>
         <source>MX Snapshot</source>
         <translation type="unfinished"></translation>
     </message>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="857"/>
+        <location filename="../mxsnapshot.cpp" line="863"/>
         <source>Cancel</source>
         <translation>Mégsem</translation>
     </message>
@@ -175,7 +175,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="668"/>
+        <location filename="../mxsnapshot.ui" line="670"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
@@ -270,7 +270,7 @@ Will install leafpad and use it this time.</source>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="575"/>
-        <location filename="../mxsnapshot.cpp" line="902"/>
+        <location filename="../mxsnapshot.cpp" line="908"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>
@@ -360,42 +360,42 @@ Will install leafpad and use it this time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="851"/>
+        <location filename="../mxsnapshot.cpp" line="857"/>
         <source>About MX Snapshot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="852"/>
+        <location filename="../mxsnapshot.cpp" line="858"/>
         <source>Version: </source>
         <translation>Verzió:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="854"/>
+        <location filename="../mxsnapshot.cpp" line="860"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="855"/>
+        <location filename="../mxsnapshot.cpp" line="861"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="856"/>
+        <location filename="../mxsnapshot.cpp" line="862"/>
         <source>License</source>
         <translation>Liszensz</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="884"/>
+        <location filename="../mxsnapshot.cpp" line="890"/>
         <source>Select Snapshot Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="903"/>
+        <location filename="../mxsnapshot.cpp" line="909"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="903"/>
+        <location filename="../mxsnapshot.cpp" line="909"/>
         <source>Are you sure you want to quit the application?</source>
         <translation type="unfinished"></translation>
     </message>

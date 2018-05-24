@@ -16,7 +16,7 @@
         <location filename="../mxsnapshot.cpp" line="47"/>
         <location filename="../mxsnapshot.cpp" line="92"/>
         <location filename="../mxsnapshot.cpp" line="743"/>
-        <location filename="../mxsnapshot.cpp" line="852"/>
+        <location filename="../mxsnapshot.cpp" line="858"/>
         <source>MX Snapshot</source>
         <translation>MX Snapshot</translation>
     </message>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="857"/>
+        <location filename="../mxsnapshot.cpp" line="863"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
@@ -175,7 +175,7 @@
         <translation>Weiter</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="668"/>
+        <location filename="../mxsnapshot.ui" line="670"/>
         <source>Back</source>
         <translation>Zurück</translation>
     </message>
@@ -276,7 +276,7 @@ Wollen Sie leafpad installieren und diesmal benutzen?</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="575"/>
-        <location filename="../mxsnapshot.cpp" line="902"/>
+        <location filename="../mxsnapshot.cpp" line="908"/>
         <source>Done</source>
         <translation>Erledigt</translation>
     </message>
@@ -367,28 +367,28 @@ Wollen Sie leafpad installieren und diesmal benutzen?</translation>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="851"/>
+        <location filename="../mxsnapshot.cpp" line="857"/>
         <source>About MX Snapshot</source>
         <translation>Impressum MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="852"/>
+        <location filename="../mxsnapshot.cpp" line="858"/>
         <source>Version: </source>
         <translation>Version:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="854"/>
+        <location filename="../mxsnapshot.cpp" line="860"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Programm, um eine Live-CD Ihres mit MX Linux laufenden Systems zu erstellen.
 Es wird eine .ISO-Datei erstellt, bootfähig auch von USB-stick. Es ist typischerweise unnötig, das laufende System vorher extra zu remastern, was ca. 15 Minuten dauern würde. Alles, was im RAM zwischengespeichert ist, landet in der ISO-Datei, abzüglich der Ausschlüsse.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="855"/>
+        <location filename="../mxsnapshot.cpp" line="861"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="856"/>
+        <location filename="../mxsnapshot.cpp" line="862"/>
         <source>License</source>
         <translation>Lizenz</translation>
     </message>
@@ -401,17 +401,17 @@ Es wird eine .ISO-Datei erstellt, bootfähig auch von USB-stick. Es ist typische
         <translation type="vanished">Hilfe für MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="884"/>
+        <location filename="../mxsnapshot.cpp" line="890"/>
         <source>Select Snapshot Directory</source>
         <translation>Wähle Schnappschuss-Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="903"/>
+        <location filename="../mxsnapshot.cpp" line="909"/>
         <source>Confirmation</source>
         <translation>Bestätigung</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="903"/>
+        <location filename="../mxsnapshot.cpp" line="909"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Sicherheitsabfrage: Programm wirklich beenden? </translation>
     </message>

@@ -16,7 +16,7 @@
         <location filename="../mxsnapshot.cpp" line="47"/>
         <location filename="../mxsnapshot.cpp" line="92"/>
         <location filename="../mxsnapshot.cpp" line="743"/>
-        <location filename="../mxsnapshot.cpp" line="852"/>
+        <location filename="../mxsnapshot.cpp" line="858"/>
         <source>MX Snapshot</source>
         <translation>MX_Criador de Imagens ISO</translation>
     </message>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="857"/>
+        <location filename="../mxsnapshot.cpp" line="863"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -175,7 +175,7 @@
         <translation>Próximo</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="668"/>
+        <location filename="../mxsnapshot.ui" line="670"/>
         <source>Back</source>
         <translation>Voltar</translation>
     </message>
@@ -277,7 +277,7 @@ Irá instalar o Leafpad e usá-lo desta vez.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="575"/>
-        <location filename="../mxsnapshot.cpp" line="902"/>
+        <location filename="../mxsnapshot.cpp" line="908"/>
         <source>Done</source>
         <translation>Feito</translation>
     </message>
@@ -367,27 +367,27 @@ Irá instalar o Leafpad e usá-lo desta vez.</translation>
         <translation>Fechar</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="851"/>
+        <location filename="../mxsnapshot.cpp" line="857"/>
         <source>About MX Snapshot</source>
         <translation>Sobre o MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="852"/>
+        <location filename="../mxsnapshot.cpp" line="858"/>
         <source>Version: </source>
         <translation>Versão:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="854"/>
+        <location filename="../mxsnapshot.cpp" line="860"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Programa para criar uma instalação externa CD do sistema MX Linux em execução</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="855"/>
+        <location filename="../mxsnapshot.cpp" line="861"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="856"/>
+        <location filename="../mxsnapshot.cpp" line="862"/>
         <source>License</source>
         <translation>Licença</translation>
     </message>
@@ -400,17 +400,17 @@ Irá instalar o Leafpad e usá-lo desta vez.</translation>
         <translation type="vanished">Ajuda do MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="884"/>
+        <location filename="../mxsnapshot.cpp" line="890"/>
         <source>Select Snapshot Directory</source>
         <translation>Seleccionar a directoria de imagens</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="903"/>
+        <location filename="../mxsnapshot.cpp" line="909"/>
         <source>Confirmation</source>
         <translation>Confirmação</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="903"/>
+        <location filename="../mxsnapshot.cpp" line="909"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Deseja mesmo sair da aplicação?</translation>
     </message>
