@@ -16,7 +16,7 @@
         <location filename="../mxsnapshot.cpp" line="47"/>
         <location filename="../mxsnapshot.cpp" line="92"/>
         <location filename="../mxsnapshot.cpp" line="743"/>
-        <location filename="../mxsnapshot.cpp" line="846"/>
+        <location filename="../mxsnapshot.cpp" line="852"/>
         <source>MX Snapshot</source>
         <translation>MX Snapshot </translation>
     </message>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="851"/>
+        <location filename="../mxsnapshot.cpp" line="857"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
@@ -277,7 +277,7 @@ Aquest cop s&apos;instal·larà i usarà leafpad.</translation>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="575"/>
-        <location filename="../mxsnapshot.cpp" line="896"/>
+        <location filename="../mxsnapshot.cpp" line="902"/>
         <source>Done</source>
         <translation>Fet </translation>
     </message>
@@ -367,27 +367,27 @@ Aquest cop s&apos;instal·larà i usarà leafpad.</translation>
         <translation>Tanca </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="845"/>
+        <location filename="../mxsnapshot.cpp" line="851"/>
         <source>About MX Snapshot</source>
         <translation>Quant a MX Snapshot </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="846"/>
+        <location filename="../mxsnapshot.cpp" line="852"/>
         <source>Version: </source>
         <translation>Versió: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="848"/>
+        <location filename="../mxsnapshot.cpp" line="854"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Programa de MX Linux per crear un CD autònom a partir del sistema en execució </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="849"/>
+        <location filename="../mxsnapshot.cpp" line="855"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="850"/>
+        <location filename="../mxsnapshot.cpp" line="856"/>
         <source>License</source>
         <translation>Llicència</translation>
     </message>
@@ -400,17 +400,17 @@ Aquest cop s&apos;instal·larà i usarà leafpad.</translation>
         <translation type="vanished">Ajuda de MX Snapshot </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="878"/>
+        <location filename="../mxsnapshot.cpp" line="884"/>
         <source>Select Snapshot Directory</source>
         <translation>Trieu el directori de la instantània </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="897"/>
+        <location filename="../mxsnapshot.cpp" line="903"/>
         <source>Confirmation</source>
         <translation>Confirmació</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="897"/>
+        <location filename="../mxsnapshot.cpp" line="903"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Esteu segurs de voler sortir de l&apos;aplicació?</translation>
     </message>

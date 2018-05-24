@@ -1,3 +1,9 @@
+mx-snapshot (18.5) mx; urgency=medium
+
+  * exclude user directories set in other languages
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 24 May 2018 08:18:11 -0400
+
 mx-snapshot (18.3+2) mx; urgency=medium
 
   * copy Installer.desktop only if force_installer=true

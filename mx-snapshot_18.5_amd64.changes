@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Thu, 24 May 2018 08:18:11 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 18.5
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (18.5) mx; urgency=medium
+ .
+   * exclude user directories set in other languages
+Checksums-Sha1:
+ 26a5535ade4db613260f2de70b7f4381b3379291 1130 mx-snapshot_18.5.dsc
+ 8016d7f5a1c5fa65b54486d2b8d36c5f7393e15d 71292 mx-snapshot_18.5.tar.xz
+ 9cbf495e6591250dc275b2e38ffe34577fe28b1e 96506 mx-snapshot_18.5_amd64.deb
+Checksums-Sha256:
+ 7cf3ad35b75a4de45c1ad070c8ffc7d8a2432c05d5f59bdf66db3aeb19e873af 1130 mx-snapshot_18.5.dsc
+ 21f57c7768ae60247239cbde8c2b7d9443a03f93186cda33ea7fc95fb6252531 71292 mx-snapshot_18.5.tar.xz
+ 505243e59617fa4014d41126dfd3da7ad8f98e6053b0a7cc521206c05745b3bb 96506 mx-snapshot_18.5_amd64.deb
+Files:
+ c44f3a1277a4c343661f7d120c89ae90 1130 admin optional mx-snapshot_18.5.dsc
+ 3d8904f53b93d984b74927f3669223c4 71292 admin optional mx-snapshot_18.5.tar.xz
+ 91f0ed48fc56595f9b58a396ef7b34a2 96506 admin optional mx-snapshot_18.5_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJbBq3nAAoJEHCTjHgGee6YOCUH/jSWInBhNizHSJdfiLVkouzj
+59Yt08d+YvRolRY/eVXGSBy0WSrVEmrLzGPxnxYlKWmb4Lyw99Rlwjqvv7bxOCyt
+QOVWY7mLl/LqXEzD7MyayHsppQmXWu146mKS0ePoakZ4HD6V+Sfggz4LSUx1Uz6v
+pn3dbutO+0RSH5xeESgOXt/4UPtUsoUIUbuHlNsFjPZZsJSMk3hHCyf+PPD2R6I6
+v1qnkoIaLD2e9EFt4DX4LFNfmwQsRDAy51ag8kt+I+S1EdwI5YKzI7Xqvpx7FqNg
+bdUGwdL3ro0B0T4L2Wh9HgMRHjrneWuNT8lWm/vyq5aoIAmeFBrlcH/yOUPDp/0=
+=4Fz8
+-----END PGP SIGNATURE-----

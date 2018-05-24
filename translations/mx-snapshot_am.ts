@@ -16,7 +16,7 @@
         <location filename="../mxsnapshot.cpp" line="47"/>
         <location filename="../mxsnapshot.cpp" line="92"/>
         <location filename="../mxsnapshot.cpp" line="743"/>
-        <location filename="../mxsnapshot.cpp" line="846"/>
+        <location filename="../mxsnapshot.cpp" line="852"/>
         <source>MX Snapshot</source>
         <translation>MX የ መመልከቻ ፎቶ</translation>
     </message>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="851"/>
+        <location filename="../mxsnapshot.cpp" line="857"/>
         <source>Cancel</source>
         <translation>መሰረዣ</translation>
     </message>
@@ -270,7 +270,7 @@ Will install leafpad and use it this time.</source>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="575"/>
-        <location filename="../mxsnapshot.cpp" line="896"/>
+        <location filename="../mxsnapshot.cpp" line="902"/>
         <source>Done</source>
         <translation>ጨርሷል</translation>
     </message>
@@ -360,27 +360,27 @@ Will install leafpad and use it this time.</source>
         <translation>መዝጊያ</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="845"/>
+        <location filename="../mxsnapshot.cpp" line="851"/>
         <source>About MX Snapshot</source>
         <translation>ስለ MX የ መመልከቻ ፎቶ</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="846"/>
+        <location filename="../mxsnapshot.cpp" line="852"/>
         <source>Version: </source>
         <translation>እትም</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="848"/>
+        <location filename="../mxsnapshot.cpp" line="854"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>እርስዎ ከሚያስኬዱት በ ቀጥታ-ሲዲ የ MX ሊነክስ ለ መፍጠር የሚያስችል ፕሮግራም </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="849"/>
+        <location filename="../mxsnapshot.cpp" line="855"/>
         <source>Copyright (c) MX Linux</source>
         <translation>የ ቅጂ መብት (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="850"/>
+        <location filename="../mxsnapshot.cpp" line="856"/>
         <source>License</source>
         <translation>ፍቃድ</translation>
     </message>
@@ -393,17 +393,17 @@ Will install leafpad and use it this time.</source>
         <translation type="vanished">MX የ መመልከቻ ፎቶ እርዳታ</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="878"/>
+        <location filename="../mxsnapshot.cpp" line="884"/>
         <source>Select Snapshot Directory</source>
         <translation>የ መመልከቻ ፎቶ ዳይሬክቶሪ ይምረጡ</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="897"/>
+        <location filename="../mxsnapshot.cpp" line="903"/>
         <source>Confirmation</source>
         <translation>ማረጋገጫ</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="897"/>
+        <location filename="../mxsnapshot.cpp" line="903"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>እርስዎ በ እርግጥ መተግበሪያውን ማቋረጥ ይፈልጋሉ?  </translation>
     </message>

@@ -765,7 +765,8 @@ void mxsnapshot::on_buttonEditExclude_clicked()
 
 void mxsnapshot::on_excludeDocuments_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Documents/*";
+    QString xdg_user_dir = getCmdOut("xdg-open-dir DOCUMENTS") + "/*";
+    QString exclusion = "/home/*/Documents/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -774,7 +775,8 @@ void mxsnapshot::on_excludeDocuments_toggled(bool checked)
 
 void mxsnapshot::on_excludeDownloads_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Downloads/*";
+    QString xdg_user_dir = getCmdOut("xdg-open-dir DOWNLOAD") + "/*";
+    QString exclusion = "/home/*/Downloads/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -783,7 +785,8 @@ void mxsnapshot::on_excludeDownloads_toggled(bool checked)
 
 void mxsnapshot::on_excludePictures_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Pictures/*";
+    QString xdg_user_dir = getCmdOut("xdg-open-dir PICTURES") + "/*";
+    QString exclusion = "/home/*/Pictures/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -792,7 +795,8 @@ void mxsnapshot::on_excludePictures_toggled(bool checked)
 
 void mxsnapshot::on_excludeMusic_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Music/*";
+    QString xdg_user_dir = getCmdOut("xdg-open-dir MUSIC") + "/*";
+    QString exclusion = "/home/*/Music/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -801,7 +805,8 @@ void mxsnapshot::on_excludeMusic_toggled(bool checked)
 
 void mxsnapshot::on_excludeVideos_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Videos/*";
+    QString xdg_user_dir = getCmdOut("xdg-open-dir VIDEOS") + "/*";
+    QString exclusion = "/home/*/Videos/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -810,7 +815,8 @@ void mxsnapshot::on_excludeVideos_toggled(bool checked)
 
 void mxsnapshot::on_excludeDesktop_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Desktop/!(minstall.desktop)";
+    QString xdg_user_dir = getCmdOut("xdg-open-dir DESKTOP");
+    QString exclusion = "/home/*/Desktop/!(minstall.desktop) " + xdg_user_dir + "/!(minstall.desktop)";
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);

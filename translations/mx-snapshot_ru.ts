@@ -16,7 +16,7 @@
         <location filename="../mxsnapshot.cpp" line="47"/>
         <location filename="../mxsnapshot.cpp" line="92"/>
         <location filename="../mxsnapshot.cpp" line="743"/>
-        <location filename="../mxsnapshot.cpp" line="846"/>
+        <location filename="../mxsnapshot.cpp" line="852"/>
         <source>MX Snapshot</source>
         <translation>MX Снимок системы</translation>
     </message>
@@ -130,7 +130,7 @@
     </message>
     <message>
         <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="851"/>
+        <location filename="../mxsnapshot.cpp" line="857"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
@@ -277,7 +277,7 @@ Will install leafpad and use it this time.</source>
     </message>
     <message>
         <location filename="../mxsnapshot.cpp" line="575"/>
-        <location filename="../mxsnapshot.cpp" line="896"/>
+        <location filename="../mxsnapshot.cpp" line="902"/>
         <source>Done</source>
         <translation>Готово</translation>
     </message>
@@ -367,27 +367,27 @@ Will install leafpad and use it this time.</source>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="845"/>
+        <location filename="../mxsnapshot.cpp" line="851"/>
         <source>About MX Snapshot</source>
         <translation>О программу MX Снимок системы</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="846"/>
+        <location filename="../mxsnapshot.cpp" line="852"/>
         <source>Version: </source>
         <translation>Версия:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="848"/>
+        <location filename="../mxsnapshot.cpp" line="854"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Программа для создания live-CD из работающей системы для MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="849"/>
+        <location filename="../mxsnapshot.cpp" line="855"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Авторское право (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="850"/>
+        <location filename="../mxsnapshot.cpp" line="856"/>
         <source>License</source>
         <translation>Лицензия</translation>
     </message>
@@ -400,17 +400,17 @@ Will install leafpad and use it this time.</source>
         <translation type="vanished">Справка MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="878"/>
+        <location filename="../mxsnapshot.cpp" line="884"/>
         <source>Select Snapshot Directory</source>
         <translation>Выберите папку для снимков</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="897"/>
+        <location filename="../mxsnapshot.cpp" line="903"/>
         <source>Confirmation</source>
         <translation>Подтверждение</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="897"/>
+        <location filename="../mxsnapshot.cpp" line="903"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Вы уверены, что хотите выйти из приложения?</translation>
     </message>
