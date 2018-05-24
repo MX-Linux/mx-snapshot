@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Thu, 24 May 2018 08:18:11 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 18.5
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (18.5) mx; urgency=medium
+ .
+   * exclude user directories set in other languages
+Checksums-Sha1:
+ 26c5ebd78792f4c3b13f8b84a3d9243c6025316f 98604 mx-snapshot_18.5_i386.deb
+Checksums-Sha256:
+ d11683a2f26b3c84ce1d67f28c68a6f2e03b81b9ec52378b5265bc95cfa7d838 98604 mx-snapshot_18.5_i386.deb
+Files:
+ 5deaf36a456757307448530d58589b3a 98604 admin optional mx-snapshot_18.5_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJbBuFzAAoJEHCTjHgGee6YQOAIAIFtimm06wPy8VIzQC4AFxgs
+c7qqmg5xZqBckmcOmP0sHx5DOwzdVrrTHBby0Y16yYcAVTithiLlVoG+XhXDs6Ok
+KPdcsgFaRpicWYbT+sDvddc90FOHG3YF6kez6+GVylg1W5BL9g/09KOMM7L9fM6/
+q0SFgvR8muAsNpqjEa3q/KWmxjIbeenpTKGZRTvmzIbQr+yZDJhvNd6X6QQudj0I
+/PfUbCOZQYyMnmcZLiczKhNuanxCa8aThodYdB1nyE8hF21EhNc0FBv7zFFsl7LP
+DSQiFgBiUMfYBneTn7kNQvbApyfUS29jVb3EWy/dbUKoD8/QMmBqn87NnIBxWPM=
+=Mmhj
+-----END PGP SIGNATURE-----

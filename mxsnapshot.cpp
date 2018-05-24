@@ -767,6 +767,7 @@ void mxsnapshot::on_excludeDocuments_toggled(bool checked)
 {
     QString user = getCmdOut("logname");
     QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir DOCUMENTS\"") + "/*";
+    xdg_user_dir.replace(user, "*");
     QString exclusion = "/home/*/Documents/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
@@ -778,6 +779,7 @@ void mxsnapshot::on_excludeDownloads_toggled(bool checked)
 {
     QString user = getCmdOut("logname");
     QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir DOWNLOAD\"") + "/*";
+    xdg_user_dir.replace(user, "*");
     QString exclusion = "/home/*/Downloads/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
@@ -789,6 +791,7 @@ void mxsnapshot::on_excludePictures_toggled(bool checked)
 {
     QString user = getCmdOut("logname");
     QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir PICTURES\"") + "/*";
+    xdg_user_dir.replace(user, "*");
     QString exclusion = "/home/*/Pictures/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
@@ -800,6 +803,7 @@ void mxsnapshot::on_excludeMusic_toggled(bool checked)
 {
     QString user = getCmdOut("logname");
     QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir MUSIC\"") + "/*";
+    xdg_user_dir.replace(user, "*");
     QString exclusion = "/home/*/Music/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
@@ -811,6 +815,7 @@ void mxsnapshot::on_excludeVideos_toggled(bool checked)
 {
     QString user = getCmdOut("logname");
     QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir VIDEOS\"") + "/*";
+    xdg_user_dir.replace(user, "*");
     QString exclusion = "/home/*/Videos/* " + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
@@ -822,6 +827,7 @@ void mxsnapshot::on_excludeDesktop_toggled(bool checked)
 {
     QString user = getCmdOut("logname");
     QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir DESKTOP\"");
+    xdg_user_dir.replace(user, "*");
     QString exclusion = "/home/*/Desktop/!(minstall.desktop) " + xdg_user_dir + "/!(minstall.desktop)";
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
