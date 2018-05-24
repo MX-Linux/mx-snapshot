@@ -18,26 +18,26 @@ Changes:
  .
    * exclude user directories set in other languages
 Checksums-Sha1:
- 23eca3007eb5cf9d90ec948c6db719de713fcf4b 1130 mx-snapshot_18.5.dsc
- 3f2afcb5811a2d4db6decacf353b13a7235d52fa 71324 mx-snapshot_18.5.tar.xz
- 2eb1dbd2a2a397e952267489b227da1a52776b17 96734 mx-snapshot_18.5_amd64.deb
+ c3346a2b11bb0de2ee172cdff96ec21c9fac24b5 1130 mx-snapshot_18.5.dsc
+ 90b19a8f9e15a9b88397da36d5b3035002a325da 71328 mx-snapshot_18.5.tar.xz
+ b192951a2a88d0335e41bf0678ce6f7a3d565fee 97598 mx-snapshot_18.5_amd64.deb
 Checksums-Sha256:
- c694006432f07d3205cdfe017dd84274827722129557a7b068ad365910fb2eec 1130 mx-snapshot_18.5.dsc
- 409177d2ca7097a57f202e754f7c368aeb86563b987c483203cada3e03854318 71324 mx-snapshot_18.5.tar.xz
- 489859c9a3e6a6d4534f9b877794de0a25437cf44b9d1af2e57619192705985c 96734 mx-snapshot_18.5_amd64.deb
+ 97668b18f6db168553793aaa190f5990024b8b86729a716c315a5f6d352942a4 1130 mx-snapshot_18.5.dsc
+ 3b5ae8e31e02adb0f61e65ad0ab15940898c4909bfb1c9f2653a4d104a83ae2a 71328 mx-snapshot_18.5.tar.xz
+ 2f1329a08a1977528d1ed284f2502765300dd144be792bb69de09d930afda4a5 97598 mx-snapshot_18.5_amd64.deb
 Files:
- 1fa92cc0301df07720c7c830e80cfb8a 1130 admin optional mx-snapshot_18.5.dsc
- 6e719ec9c7ff2ad727c43ab3e54679f3 71324 admin optional mx-snapshot_18.5.tar.xz
- 925015ac133f6213a597edd489fd4e82 96734 admin optional mx-snapshot_18.5_amd64.deb
+ 6e828b070a3a651440f67ef10023753e 1130 admin optional mx-snapshot_18.5.dsc
+ 18663c36730b0f7853cd2dc249a3ae1a 71328 admin optional mx-snapshot_18.5.tar.xz
+ c85aaed6d6da46b57b7fe45ac46db189 97598 admin optional mx-snapshot_18.5_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQEcBAEBAgAGBQJbBuJzAAoJEHCTjHgGee6YK9kH+gO2HlQzu6862TwRut6CP6di
-QLwPJLqJckud3lzmLvDBcow7vilcuKCjxj5RyrsmXjVjeY6dy1JOXwFZkol/CcU7
-D4wb9qvXEr+Fb07rBI56WxJyKrbo0jxWqsfO19BSHhfUF8gX4owqB0URpHYey7ZX
-wnNCmPfUqc6pFqLNOhzH6sZb65gawDZNgqGoQ73VVTRBcnEihC5E9YZkDWN7XR0f
-C3IPsJ1nq2Ql9SbkqkCkU82MYPYZj10c9W4Yp601xvnnkm3TJpsaKwD7t6Il9u4L
-m65RhBdgFqpVC/bLAEiHrZhMZFTOgxpolvK63/ssy1BjEuYWrTHbNaVnGLXXB1Q=
-=k7FY
+iQEcBAEBAgAGBQJbBxehAAoJEHCTjHgGee6YgaEH/2rr2uqQwGLVR0RRj97v+QIV
+tJkuP38MN4bJRIWZyts/xJgmZlJMHGB05iI4VUsIqcXgRC8xJ76cJXcmsSiujfUV
+L64Cj+at8rPnMCQNobMMZgMWn0ArSzz2DOEFe3SAXhlDJp54V3WWFI/IZ7NY96Wj
++dgUabHwMKMFHEAJ98Le4EdYlL7Aw0TE579/PPgaZ2wyqywU2OsL2q6z+lv2vSqh
+UeEXp+CNyyj++bhI89h2q1ZivFfJ9d7AwnXgeNc9dRtbD6H45EslphsxJTM1B8VV
+vroieWkh6F86bV+b6zhZ54Y1gdqInCjaHYwTiBA0+QCFsraLQFAA7aVrLpITtSU=
+=9YdK
 -----END PGP SIGNATURE-----

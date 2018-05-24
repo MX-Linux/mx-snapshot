@@ -508,6 +508,7 @@ bool mxsnapshot::createIso(QString filename)
     // squash the filesystem copy
     QDir::setCurrent(work_dir);
     cmd = "mksquashfs /.bind-root iso-template/antiX/linuxfs " + mksq_opt + " -wildcards -ef " + snapshot_excludes.fileName() + " " + session_excludes;
+    qDebug() << "mksquash:" << cmd;
     ui->outputLabel->setText(tr("Squashing filesystem..."));
     if (runCmd(cmd) != 0) {
         QMessageBox::critical(0, tr("Error"), tr("Could not create linuxfs file, please check whether you have enough space on the destination partition."));
@@ -582,14 +583,14 @@ void mxsnapshot::addRemoveExclusion(bool add, QString exclusion)
         exclusion.remove(0, 1); // remove training slash
     }
     if (add) {
-        if ( session_excludes == "" ) {
+        if (session_excludes == "") {
             session_excludes.append("-e '" + exclusion + "'");
         } else {
             session_excludes.append(" '" + exclusion + "'");
         }
     } else {
         session_excludes.remove(" '" + exclusion + "'");
-        if ( session_excludes == "-e" ) {
+        if (session_excludes == "-e") {
             session_excludes = "";
         }
     }
@@ -768,7 +769,10 @@ void mxsnapshot::on_excludeDocuments_toggled(bool checked)
     QString user = getCmdOut("logname");
     QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir DOCUMENTS\"") + "/*";
     xdg_user_dir.replace(user, "*");
-    QString exclusion = "/home/*/Documents/* " + xdg_user_dir;
+    if (xdg_user_dir.startsWith("/")) {
+        xdg_user_dir.remove(0, 1); // remove training slash
+    }
+    QString exclusion = "/home/*/Documents/*' '" + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -780,7 +784,10 @@ void mxsnapshot::on_excludeDownloads_toggled(bool checked)
     QString user = getCmdOut("logname");
     QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir DOWNLOAD\"") + "/*";
     xdg_user_dir.replace(user, "*");
-    QString exclusion = "/home/*/Downloads/* " + xdg_user_dir;
+    if (xdg_user_dir.startsWith("/")) {
+        xdg_user_dir.remove(0, 1); // remove training slash
+    }
+    QString exclusion = "/home/*/Downloads/*' '" + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -792,7 +799,10 @@ void mxsnapshot::on_excludePictures_toggled(bool checked)
     QString user = getCmdOut("logname");
     QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir PICTURES\"") + "/*";
     xdg_user_dir.replace(user, "*");
-    QString exclusion = "/home/*/Pictures/* " + xdg_user_dir;
+    if (xdg_user_dir.startsWith("/")) {
+        xdg_user_dir.remove(0, 1); // remove training slash
+    }
+    QString exclusion = "/home/*/Pictures/*' '" + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -804,7 +814,10 @@ void mxsnapshot::on_excludeMusic_toggled(bool checked)
     QString user = getCmdOut("logname");
     QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir MUSIC\"") + "/*";
     xdg_user_dir.replace(user, "*");
-    QString exclusion = "/home/*/Music/* " + xdg_user_dir;
+    if (xdg_user_dir.startsWith("/")) {
+        xdg_user_dir.remove(0, 1); // remove training slash
+    }
+    QString exclusion = "/home/*/Music/*' '" + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -816,7 +829,10 @@ void mxsnapshot::on_excludeVideos_toggled(bool checked)
     QString user = getCmdOut("logname");
     QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir VIDEOS\"") + "/*";
     xdg_user_dir.replace(user, "*");
-    QString exclusion = "/home/*/Videos/* " + xdg_user_dir;
+    if (xdg_user_dir.startsWith("/")) {
+        xdg_user_dir.remove(0, 1); // remove training slash
+    }
+    QString exclusion = "/home/*/Videos/*' '" + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -828,7 +844,10 @@ void mxsnapshot::on_excludeDesktop_toggled(bool checked)
     QString user = getCmdOut("logname");
     QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir DESKTOP\"");
     xdg_user_dir.replace(user, "*");
-    QString exclusion = "/home/*/Desktop/!(minstall.desktop) " + xdg_user_dir + "/!(minstall.desktop)";
+    if (xdg_user_dir.startsWith("/")) {
+        xdg_user_dir.remove(0, 1); // remove training slash
+    }
+    QString exclusion = "/home/*/Desktop/!(minstall.desktop)' '" + xdg_user_dir + "/!(minstall.desktop)";
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
