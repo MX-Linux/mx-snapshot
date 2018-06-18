@@ -939,7 +939,6 @@ void mxsnapshot::closeApp() {
     } else {
         return qApp->quit();
     }
-
 }
 
 void mxsnapshot::on_buttonCancel_clicked()

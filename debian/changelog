@@ -1,3 +1,9 @@
+mx-snapshot (18.6) mx; urgency=medium
+
+  * new translations
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 18 Jun 2018 17:34:20 -0400
+
 mx-snapshot (18.5) mx; urgency=medium
 
   * exclude user directories set in other languages
