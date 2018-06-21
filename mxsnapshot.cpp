@@ -149,8 +149,7 @@ bool mxsnapshot::isi686()
 // Get version of the program
 QString mxsnapshot::getVersion(QString name)
 {
-    QString cmd = QString("dpkg -l %1 | awk 'NR==6 {print $3}'").arg(name);
-    return getCmdOut(cmd);
+    return getCmdOut("dpkg-query -f '${Version}' -W " + name);
 }
 
 // return number of snapshots in snapshot_dir
