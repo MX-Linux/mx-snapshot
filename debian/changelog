@@ -1,3 +1,11 @@
+mx-snapshot (18.6.1) mx; urgency=medium
+
+  * use libcmd to run shell commands
+  * added changelog button
+  * added /var/log/mx-snapshot.log
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 27 Jun 2018 17:29:54 -0400
+
 mx-snapshot (18.6) mx; urgency=medium
 
   * new translations

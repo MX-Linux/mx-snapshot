@@ -2,207 +2,199 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="it">
 <context>
-    <name>QApplication</name>
+    <name>MainWindow</name>
     <message>
-        <location filename="../main.cpp" line="52"/>
-        <source>You must run this program as root.</source>
-        <translation>Devi eseguire questo programma come amministratore</translation>
-    </message>
-</context>
-<context>
-    <name>mxsnapshot</name>
-    <message>
-        <location filename="../mxsnapshot.ui" line="14"/>
-        <location filename="../mxsnapshot.cpp" line="47"/>
-        <location filename="../mxsnapshot.cpp" line="92"/>
-        <location filename="../mxsnapshot.cpp" line="744"/>
-        <location filename="../mxsnapshot.cpp" line="883"/>
+        <location filename="../mainwindow.ui" line="14"/>
+        <location filename="../mainwindow.cpp" line="48"/>
+        <location filename="../mainwindow.cpp" line="97"/>
+        <location filename="../mainwindow.cpp" line="727"/>
+        <location filename="../mainwindow.cpp" line="866"/>
         <source>MX Snapshot</source>
-        <translation>MX Snapshot</translation>
+        <translation type="unfinished">MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="27"/>
+        <location filename="../mainwindow.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation>Posizione Snapshot</translation>
+        <translation type="unfinished">Posizione Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="40"/>
+        <location filename="../mainwindow.ui" line="40"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot è un utility che crea un immagine (ISO) avviabile del tuo attuale sistema che potrai conservare come copia di sicurezza o distribuire. Puoi continuare a lavorare con applicazioni leggere mentre il programma va avanti.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot è un utility che crea un immagine (ISO) avviabile del tuo attuale sistema che potrai conservare come copia di sicurezza o distribuire. Puoi continuare a lavorare con applicazioni leggere mentre il programma va avanti.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="50"/>
+        <location filename="../mainwindow.ui" line="50"/>
         <source>Used space on / (root) and /home partitions:</source>
-        <translation>Spazio utilizzato nelle partizioni / (root) e /home:</translation>
+        <translation type="unfinished">Spazio utilizzato nelle partizioni / (root) e /home:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="155"/>
-        <location filename="../mxsnapshot.cpp" line="695"/>
+        <location filename="../mainwindow.ui" line="155"/>
+        <location filename="../mainwindow.cpp" line="678"/>
         <source>Snapshot name:</source>
-        <translation>Nome Snapshot:</translation>
+        <translation type="unfinished">Nome Snapshot:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="162"/>
+        <location filename="../mainwindow.ui" line="162"/>
         <source>Select a different snapshot directory</source>
-        <translation>Seleziona una directory diversa per snapshot</translation>
+        <translation type="unfinished">Seleziona una directory diversa per snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="207"/>
-        <location filename="../mxsnapshot.ui" line="225"/>
-        <location filename="../mxsnapshot.ui" line="258"/>
+        <location filename="../mainwindow.ui" line="207"/>
+        <location filename="../mainwindow.ui" line="225"/>
+        <location filename="../mainwindow.ui" line="258"/>
         <source>TextLabel</source>
-        <translation>TextLabel</translation>
+        <translation type="unfinished">TextLabel</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="271"/>
+        <location filename="../mainwindow.ui" line="271"/>
         <source>Edit Configuration File</source>
-        <translation>Modifica il file di configurazione</translation>
+        <translation type="unfinished">Modifica il file di configurazione</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="301"/>
+        <location filename="../mainwindow.ui" line="301"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
-        <translation>Puoi escludere alcune directory barrando le scelte comuni qui sotto, oppure cliccando sul pulsante per editare direttamente il file /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
+        <translation type="unfinished">Puoi escludere alcune directory barrando le scelte comuni qui sotto, oppure cliccando sul pulsante per editare direttamente il file /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="326"/>
+        <location filename="../mainwindow.ui" line="326"/>
         <source>Downloads</source>
-        <translation>Download</translation>
+        <translation type="unfinished">Download</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="333"/>
+        <location filename="../mainwindow.ui" line="333"/>
         <source>Documents</source>
-        <translation>Documenti</translation>
+        <translation type="unfinished">Documenti</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="340"/>
+        <location filename="../mainwindow.ui" line="340"/>
         <source>All of the above</source>
-        <translation>Tutti gli elementi qua sopra</translation>
+        <translation type="unfinished">Tutti gli elementi qua sopra</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="347"/>
+        <location filename="../mainwindow.ui" line="347"/>
         <source>Pictures</source>
-        <translation>Immagini</translation>
+        <translation type="unfinished">Immagini</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="354"/>
+        <location filename="../mainwindow.ui" line="354"/>
         <source>Music</source>
-        <translation>Musica</translation>
+        <translation type="unfinished">Musica</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="361"/>
+        <location filename="../mainwindow.ui" line="361"/>
         <source>Desktop</source>
-        <translation>Desktop</translation>
+        <translation type="unfinished">Desktop</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="368"/>
+        <location filename="../mainwindow.ui" line="368"/>
         <source>Videos</source>
-        <translation>Video</translation>
+        <translation type="unfinished">Video</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="384"/>
+        <location filename="../mainwindow.ui" line="384"/>
         <source>Edit Exclusion File</source>
-        <translation>Modifica il file delle esclusioni</translation>
+        <translation type="unfinished">Modifica il file delle esclusioni</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="410"/>
+        <location filename="../mainwindow.ui" line="410"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Questa opzione resetterà le passwords &amp;quot;demo&amp;quot; e &amp;quot;root&amp;quot; a quelle di default di MX Linux e non copierà alcun accounts personale creato da te.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Questa opzione resetterà le passwords &amp;quot;demo&amp;quot; e &amp;quot;root&amp;quot; a quelle di default di MX Linux e non copierà alcun accounts personale creato da te.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="413"/>
+        <location filename="../mainwindow.ui" line="413"/>
         <source>Resetting accounts (for distribution to others)</source>
-        <translation>Resettaggio degli accounts (per distribuire ad altri)</translation>
+        <translation type="unfinished">Resettaggio degli accounts (per distribuire ad altri)</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="420"/>
+        <location filename="../mainwindow.ui" line="420"/>
         <source>Type of snapshot:</source>
-        <translation>Tipo di snapshot:</translation>
+        <translation type="unfinished">Tipo di snapshot:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="427"/>
+        <location filename="../mainwindow.ui" line="427"/>
         <source>Preserving accounts (for personal backup)</source>
-        <translation>Preservazione degli account in corso (per un backup personale)</translation>
+        <translation type="unfinished">Preservazione degli account in corso (per un backup personale)</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="539"/>
+        <location filename="../mainwindow.ui" line="539"/>
         <source>Quit application</source>
-        <translation> Chiudi l&apos;applicazione</translation>
+        <translation type="unfinished"> Chiudi l&apos;applicazione</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="888"/>
+        <location filename="../mainwindow.ui" line="542"/>
+        <location filename="../mainwindow.cpp" line="872"/>
         <source>Cancel</source>
-        <translation>Annulla</translation>
+        <translation type="unfinished">Annulla</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="550"/>
+        <location filename="../mainwindow.ui" line="549"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished">Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="560"/>
+        <location filename="../mainwindow.ui" line="559"/>
         <source>Display help </source>
-        <translation>Visualizza la guida</translation>
+        <translation type="unfinished">Visualizza la guida</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="563"/>
+        <location filename="../mainwindow.ui" line="562"/>
         <source>Help</source>
-        <translation>Aiuto</translation>
+        <translation type="unfinished">Aiuto</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="571"/>
+        <location filename="../mainwindow.ui" line="569"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="unfinished">Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="594"/>
+        <location filename="../mainwindow.ui" line="592"/>
         <source>About this application</source>
-        <translation>Informazioni su questa applicazione</translation>
+        <translation type="unfinished">Informazioni su questa applicazione</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="597"/>
+        <location filename="../mainwindow.ui" line="595"/>
         <source>About...</source>
-        <translation>Info...</translation>
+        <translation type="unfinished">Info...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="605"/>
+        <location filename="../mainwindow.ui" line="602"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="unfinished">Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="643"/>
+        <location filename="../mainwindow.ui" line="640"/>
         <source>Next</source>
-        <translation>Avanti</translation>
+        <translation type="unfinished">Avanti</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="670"/>
+        <location filename="../mainwindow.ui" line="666"/>
         <source>Back</source>
-        <translation>Indietro</translation>
+        <translation type="unfinished">Indietro</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="196"/>
+        <location filename="../mainwindow.cpp" line="176"/>
         <source>Used space on / (root): </source>
-        <translation>Spazio utilizzato su / (root):</translation>
+        <translation type="unfinished">Spazio utilizzato su / (root):</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="199"/>
+        <location filename="../mainwindow.cpp" line="179"/>
         <source>Used space on /home: </source>
-        <translation>Spazio utilizzato su /home:</translation>
+        <translation type="unfinished">Spazio utilizzato su /home:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="216"/>
+        <location filename="../mainwindow.cpp" line="197"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
-        <translation>Spazio libero su %1, dove la cartella della snapshot è localizzata: </translation>
+        <translation type="unfinished">Spazio libero su %1, dove la cartella della snapshot è localizzata: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="218"/>
+        <location filename="../mainwindow.cpp" line="199"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
       by removing previous snapshots and saved copies:
       %1 snapshots are taking up %2 of disk space.
 </source>
-        <translation>Lo spazio libero dovrebbe essere sufficiente per contenere i dati compressi da / e da /home
+        <translation type="unfinished">Lo spazio libero dovrebbe essere sufficiente per contenere i dati compressi da / e da /home
 
 Se necessario, puoi creare più spazio disponibile
 rimuovendo precedenti snapshots e copie salvate:
@@ -210,201 +202,538 @@ rimuovendo precedenti snapshots e copie salvate:
 </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="236"/>
+        <location filename="../mainwindow.cpp" line="218"/>
         <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
 
 Will install leafpad and use it this time.</source>
-        <translation>L&apos;editor grafico di testo è impostato su %1, ma non è installato. Edita %2 e imposta la variabile gui_editor con l&apos;editor di tua scelta. (esempi: /usr/bin/gedit, /usr/bin/leafpad)
+        <translation type="unfinished">L&apos;editor grafico di testo è impostato su %1, ma non è installato. Edita %2 e imposta la variabile gui_editor con l&apos;editor di tua scelta. (esempi: /usr/bin/gedit, /usr/bin/leafpad)
 
 Verrà installato leafpad e usato per questa volta.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="260"/>
+        <location filename="../mainwindow.cpp" line="246"/>
+        <location filename="../mainwindow.cpp" line="247"/>
         <source>Installing </source>
-        <translation>Installazione in corso</translation>
+        <translation type="unfinished">Installazione in corso</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="275"/>
-        <location filename="../mxsnapshot.cpp" line="514"/>
-        <location filename="../mxsnapshot.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="256"/>
+        <location filename="../mainwindow.cpp" line="506"/>
+        <location filename="../mainwindow.cpp" line="520"/>
         <source>Error</source>
-        <translation>Errore</translation>
+        <translation type="unfinished">Errore</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="275"/>
+        <location filename="../mainwindow.cpp" line="256"/>
         <source>Could not install </source>
-        <translation>Non è stato possibile installare</translation>
+        <translation type="unfinished">Non è stato possibile installare</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="322"/>
+        <location filename="../mainwindow.cpp" line="280"/>
+        <source>Building new initrd...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="306"/>
         <source>Copying the new-iso filesystem...</source>
-        <translation>Copia del filesystem della nuova-iso ...</translation>
+        <translation type="unfinished">Copia del filesystem della nuova-iso ...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="512"/>
+        <location filename="../mainwindow.cpp" line="503"/>
         <source>Squashing filesystem...</source>
-        <translation>Compressione del filesystem...</translation>
+        <translation type="unfinished">Compressione del filesystem...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="514"/>
+        <location filename="../mainwindow.cpp" line="506"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
-        <translation>Impossibile creare il file linuxfs, verifica di avere spazio a sufficienza sulla partizione di destinazione.</translation>
+        <translation type="unfinished">Impossibile creare il file linuxfs, verifica di avere spazio a sufficienza sulla partizione di destinazione.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="518"/>
         <source>Creating CD/DVD image file...</source>
-        <translation>Creazione del file immagine CD/DVD in corso...</translation>
+        <translation type="unfinished">Creazione del file immagine CD/DVD in corso...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="520"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
-        <translation>Impossibile creare il file ISO, verifica di avere spazio a sufficienza sulla partizione di destinazione.</translation>
+        <translation type="unfinished">Impossibile creare il file ISO, verifica di avere spazio a sufficienza sulla partizione di destinazione.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="534"/>
+        <location filename="../mainwindow.cpp" line="527"/>
         <source>Making hybrid iso</source>
-        <translation>Creazione di un&apos;ISO ibrida in corso</translation>
+        <translation type="unfinished">Creazione di un&apos;ISO ibrida in corso</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="552"/>
+        <location filename="../mainwindow.cpp" line="547"/>
         <source>Making md5sum</source>
-        <translation>Creazione di md5sum in corso</translation>
+        <translation type="unfinished">Creazione di md5sum in corso</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="563"/>
+        <location filename="../mainwindow.cpp" line="558"/>
         <source>Cleaning...</source>
-        <translation>Pulizia in corso...</translation>
+        <translation type="unfinished">Pulizia in corso...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="576"/>
-        <location filename="../mxsnapshot.cpp" line="933"/>
+        <location filename="../mainwindow.cpp" line="571"/>
+        <location filename="../mainwindow.cpp" line="939"/>
         <source>Done</source>
-        <translation>Fatto</translation>
+        <translation type="unfinished">Fatto</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="630"/>
+        <location filename="../mainwindow.cpp" line="649"/>
         <source>Please wait.</source>
-        <translation>Aspetta, per piacere</translation>
+        <translation type="unfinished">Aspetta, per piacere</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="632"/>
+        <location filename="../mainwindow.cpp" line="651"/>
         <source>Please wait. Calculating used disk space...</source>
-        <translation>Prego attendi. Calcolo dello spazio usato sul disco...</translation>
+        <translation type="unfinished">Prego attendi. Calcolo dello spazio usato sul disco...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="683"/>
+        <location filename="../mainwindow.cpp" line="666"/>
         <source>Settings</source>
-        <translation>Impostazioni</translation>
+        <translation type="unfinished">Impostazioni</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="692"/>
+        <location filename="../mainwindow.cpp" line="675"/>
         <source>Snapshot will use the following settings:*</source>
-        <translation>Snapshot utilizzerà le seguenti impostazioni:*</translation>
+        <translation type="unfinished">Snapshot utilizzerà le seguenti impostazioni:*</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="694"/>
+        <location filename="../mainwindow.cpp" line="677"/>
         <source>- Snapshot directory:</source>
-        <translation>- Snapshot directory:</translation>
+        <translation type="unfinished">- Snapshot directory:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="696"/>
+        <location filename="../mainwindow.cpp" line="679"/>
         <source>- Kernel to be used:</source>
-        <translation>- Kernel da utilizzare:</translation>
+        <translation type="unfinished">- Kernel da utilizzare:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="697"/>
+        <location filename="../mainwindow.cpp" line="680"/>
         <source>*These settings can be changed by editing: </source>
-        <translation>*Queste impostazioni possono essere cambiate modificando:</translation>
+        <translation type="unfinished">*Queste impostazioni possono essere cambiate modificando:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="702"/>
+        <location filename="../mainwindow.cpp" line="685"/>
         <source>Final chance</source>
-        <translation>Ultima occasione</translation>
+        <translation type="unfinished">Ultima occasione</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="703"/>
+        <location filename="../mainwindow.cpp" line="686"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
-        <translation>Snapshot ha ora tutte le informazioni necessarie per creare una ISO del tuo attuale sistema in uso.</translation>
+        <translation type="unfinished">Snapshot ha ora tutte le informazioni necessarie per creare una ISO del tuo attuale sistema in uso.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="704"/>
+        <location filename="../mainwindow.cpp" line="687"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
-        <translation>Ci vorrà abbastanza tempo per finire, in funzione della dimensione del sistema installato e della velocità del tuo computer</translation>
+        <translation type="unfinished">Ci vorrà abbastanza tempo per finire, in funzione della dimensione del sistema installato e della velocità del tuo computer</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="705"/>
+        <location filename="../mainwindow.cpp" line="688"/>
         <source>OK to start?</source>
-        <translation>Ok ad iniziare?</translation>
+        <translation type="unfinished">Ok ad iniziare?</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="713"/>
+        <location filename="../mainwindow.cpp" line="696"/>
         <source>Output</source>
-        <translation>Output</translation>
+        <translation type="unfinished">Output</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="720"/>
+        <location filename="../mainwindow.cpp" line="703"/>
         <source>Edit Boot Menu</source>
-        <translation>Modifica il menù di avvio</translation>
+        <translation type="unfinished">Modifica il menù di avvio</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="721"/>
+        <location filename="../mainwindow.cpp" line="704"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
-        <translation>Il programma ora andrà in pausa per permetterti di editare alcuni files nella directory di lavoro. Seleziona Yes per editare il menù del boot o seleziona No per bypassare questa fase e continuare a creare la snapshot.</translation>
+        <translation type="unfinished">Il programma ora andrà in pausa per permetterti di editare alcuni files nella directory di lavoro. Seleziona Yes per editare il menù del boot o seleziona No per bypassare questa fase e continuare a creare la snapshot.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="734"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>Success</source>
-        <translation>Successo</translation>
+        <translation type="unfinished">Successo</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="734"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>All finished!</source>
-        <translation>Tutto finito!</translation>
+        <translation type="unfinished">Tutto finito!</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="735"/>
+        <location filename="../mainwindow.cpp" line="718"/>
         <source>Close</source>
-        <translation>Chiudi</translation>
+        <translation type="unfinished">Chiudi</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="882"/>
+        <location filename="../mainwindow.cpp" line="865"/>
         <source>About MX Snapshot</source>
-        <translation>Riguardo a MX Snapshot</translation>
+        <translation type="unfinished">Riguardo a MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="883"/>
+        <location filename="../mainwindow.cpp" line="866"/>
         <source>Version: </source>
-        <translation>Versione:</translation>
+        <translation type="unfinished">Versione:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="885"/>
+        <location filename="../mainwindow.cpp" line="868"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
-        <translation>Programma di MX Linux per creare un CD live dal sistema in esecuzione</translation>
+        <translation type="unfinished">Programma di MX Linux per creare un CD live dal sistema in esecuzione</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="886"/>
+        <location filename="../mainwindow.cpp" line="869"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="unfinished">Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="870"/>
         <source>License</source>
-        <translation>Licenza</translation>
+        <translation type="unfinished">Licenza</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="915"/>
+        <location filename="../mainwindow.cpp" line="871"/>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="889"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="921"/>
         <source>Select Snapshot Directory</source>
-        <translation>Seleziona la directory di Snapshot</translation>
+        <translation type="unfinished">Seleziona la directory di Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="934"/>
+        <location filename="../mainwindow.cpp" line="940"/>
         <source>Confirmation</source>
-        <translation>Conferma</translation>
+        <translation type="unfinished">Conferma</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="934"/>
+        <location filename="../mainwindow.cpp" line="940"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation>Sei sicuro di voler chiudere l&apos;applicazione?</translation>
+        <translation type="unfinished">Sei sicuro di voler chiudere l&apos;applicazione?</translation>
+    </message>
+</context>
+<context>
+    <name>QApplication</name>
+    <message>
+        <location filename="../main.cpp" line="68"/>
+        <source>You must run this program as root.</source>
+        <translation>Devi eseguire questo programma come amministratore</translation>
+    </message>
+</context>
+<context>
+    <name>mxsnapshot</name>
+    <message>
+        <source>MX Snapshot</source>
+        <translation type="vanished">MX Snapshot</translation>
+    </message>
+    <message>
+        <source>Snapshot location:</source>
+        <translation type="vanished">Posizione Snapshot</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot è un utility che crea un immagine (ISO) avviabile del tuo attuale sistema che potrai conservare come copia di sicurezza o distribuire. Puoi continuare a lavorare con applicazioni leggere mentre il programma va avanti.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Used space on / (root) and /home partitions:</source>
+        <translation type="vanished">Spazio utilizzato nelle partizioni / (root) e /home:</translation>
+    </message>
+    <message>
+        <source>Snapshot name:</source>
+        <translation type="vanished">Nome Snapshot:</translation>
+    </message>
+    <message>
+        <source>Select a different snapshot directory</source>
+        <translation type="vanished">Seleziona una directory diversa per snapshot</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation type="vanished">TextLabel</translation>
+    </message>
+    <message>
+        <source>Edit Configuration File</source>
+        <translation type="vanished">Modifica il file di configurazione</translation>
+    </message>
+    <message>
+        <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
+        <translation type="vanished">Puoi escludere alcune directory barrando le scelte comuni qui sotto, oppure cliccando sul pulsante per editare direttamente il file /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation type="vanished">Download</translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation type="vanished">Documenti</translation>
+    </message>
+    <message>
+        <source>All of the above</source>
+        <translation type="vanished">Tutti gli elementi qua sopra</translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation type="vanished">Immagini</translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation type="vanished">Musica</translation>
+    </message>
+    <message>
+        <source>Desktop</source>
+        <translation type="vanished">Desktop</translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation type="vanished">Video</translation>
+    </message>
+    <message>
+        <source>Edit Exclusion File</source>
+        <translation type="vanished">Modifica il file delle esclusioni</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Questa opzione resetterà le passwords &amp;quot;demo&amp;quot; e &amp;quot;root&amp;quot; a quelle di default di MX Linux e non copierà alcun accounts personale creato da te.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Resetting accounts (for distribution to others)</source>
+        <translation type="vanished">Resettaggio degli accounts (per distribuire ad altri)</translation>
+    </message>
+    <message>
+        <source>Type of snapshot:</source>
+        <translation type="vanished">Tipo di snapshot:</translation>
+    </message>
+    <message>
+        <source>Preserving accounts (for personal backup)</source>
+        <translation type="vanished">Preservazione degli account in corso (per un backup personale)</translation>
+    </message>
+    <message>
+        <source>Quit application</source>
+        <translation type="vanished"> Chiudi l&apos;applicazione</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="vanished">Annulla</translation>
+    </message>
+    <message>
+        <source>Alt+N</source>
+        <translation type="vanished">Alt+N</translation>
+    </message>
+    <message>
+        <source>Display help </source>
+        <translation type="vanished">Visualizza la guida</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="vanished">Aiuto</translation>
+    </message>
+    <message>
+        <source>Alt+H</source>
+        <translation type="vanished">Alt+H</translation>
+    </message>
+    <message>
+        <source>About this application</source>
+        <translation type="vanished">Informazioni su questa applicazione</translation>
+    </message>
+    <message>
+        <source>About...</source>
+        <translation type="vanished">Info...</translation>
+    </message>
+    <message>
+        <source>Alt+B</source>
+        <translation type="vanished">Alt+B</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="vanished">Avanti</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="vanished">Indietro</translation>
+    </message>
+    <message>
+        <source>Used space on / (root): </source>
+        <translation type="vanished">Spazio utilizzato su / (root):</translation>
+    </message>
+    <message>
+        <source>Used space on /home: </source>
+        <translation type="vanished">Spazio utilizzato su /home:</translation>
+    </message>
+    <message>
+        <source>Free space on %1, where snapshot folder is placed: </source>
+        <translation type="vanished">Spazio libero su %1, dove la cartella della snapshot è localizzata: </translation>
+    </message>
+    <message>
+        <source>The free space should be sufficient to hold the compressed data from / and /home
+
+      If necessary, you can create more available space
+      by removing previous snapshots and saved copies:
+      %1 snapshots are taking up %2 of disk space.
+</source>
+        <translation type="vanished">Lo spazio libero dovrebbe essere sufficiente per contenere i dati compressi da / e da /home
+
+Se necessario, puoi creare più spazio disponibile
+rimuovendo precedenti snapshots e copie salvate:
+%1 snapshots occupano circa %2 di spazio del disco.
+</translation>
+    </message>
+    <message>
+        <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
+
+Will install leafpad and use it this time.</source>
+        <translation type="vanished">L&apos;editor grafico di testo è impostato su %1, ma non è installato. Edita %2 e imposta la variabile gui_editor con l&apos;editor di tua scelta. (esempi: /usr/bin/gedit, /usr/bin/leafpad)
+
+Verrà installato leafpad e usato per questa volta.</translation>
+    </message>
+    <message>
+        <source>Installing </source>
+        <translation type="vanished">Installazione in corso</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Errore</translation>
+    </message>
+    <message>
+        <source>Could not install </source>
+        <translation type="vanished">Non è stato possibile installare</translation>
+    </message>
+    <message>
+        <source>Copying the new-iso filesystem...</source>
+        <translation type="vanished">Copia del filesystem della nuova-iso ...</translation>
+    </message>
+    <message>
+        <source>Squashing filesystem...</source>
+        <translation type="vanished">Compressione del filesystem...</translation>
+    </message>
+    <message>
+        <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
+        <translation type="vanished">Impossibile creare il file linuxfs, verifica di avere spazio a sufficienza sulla partizione di destinazione.</translation>
+    </message>
+    <message>
+        <source>Creating CD/DVD image file...</source>
+        <translation type="vanished">Creazione del file immagine CD/DVD in corso...</translation>
+    </message>
+    <message>
+        <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
+        <translation type="vanished">Impossibile creare il file ISO, verifica di avere spazio a sufficienza sulla partizione di destinazione.</translation>
+    </message>
+    <message>
+        <source>Making hybrid iso</source>
+        <translation type="vanished">Creazione di un&apos;ISO ibrida in corso</translation>
+    </message>
+    <message>
+        <source>Making md5sum</source>
+        <translation type="vanished">Creazione di md5sum in corso</translation>
+    </message>
+    <message>
+        <source>Cleaning...</source>
+        <translation type="vanished">Pulizia in corso...</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="vanished">Fatto</translation>
+    </message>
+    <message>
+        <source>Please wait.</source>
+        <translation type="vanished">Aspetta, per piacere</translation>
+    </message>
+    <message>
+        <source>Please wait. Calculating used disk space...</source>
+        <translation type="vanished">Prego attendi. Calcolo dello spazio usato sul disco...</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="vanished">Impostazioni</translation>
+    </message>
+    <message>
+        <source>Snapshot will use the following settings:*</source>
+        <translation type="vanished">Snapshot utilizzerà le seguenti impostazioni:*</translation>
+    </message>
+    <message>
+        <source>- Snapshot directory:</source>
+        <translation type="vanished">- Snapshot directory:</translation>
+    </message>
+    <message>
+        <source>- Kernel to be used:</source>
+        <translation type="vanished">- Kernel da utilizzare:</translation>
+    </message>
+    <message>
+        <source>*These settings can be changed by editing: </source>
+        <translation type="vanished">*Queste impostazioni possono essere cambiate modificando:</translation>
+    </message>
+    <message>
+        <source>Final chance</source>
+        <translation type="vanished">Ultima occasione</translation>
+    </message>
+    <message>
+        <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
+        <translation type="vanished">Snapshot ha ora tutte le informazioni necessarie per creare una ISO del tuo attuale sistema in uso.</translation>
+    </message>
+    <message>
+        <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
+        <translation type="vanished">Ci vorrà abbastanza tempo per finire, in funzione della dimensione del sistema installato e della velocità del tuo computer</translation>
+    </message>
+    <message>
+        <source>OK to start?</source>
+        <translation type="vanished">Ok ad iniziare?</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation type="vanished">Output</translation>
+    </message>
+    <message>
+        <source>Edit Boot Menu</source>
+        <translation type="vanished">Modifica il menù di avvio</translation>
+    </message>
+    <message>
+        <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
+        <translation type="vanished">Il programma ora andrà in pausa per permetterti di editare alcuni files nella directory di lavoro. Seleziona Yes per editare il menù del boot o seleziona No per bypassare questa fase e continuare a creare la snapshot.</translation>
+    </message>
+    <message>
+        <source>Success</source>
+        <translation type="vanished">Successo</translation>
+    </message>
+    <message>
+        <source>All finished!</source>
+        <translation type="vanished">Tutto finito!</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="vanished">Chiudi</translation>
+    </message>
+    <message>
+        <source>About MX Snapshot</source>
+        <translation type="vanished">Riguardo a MX Snapshot</translation>
+    </message>
+    <message>
+        <source>Version: </source>
+        <translation type="vanished">Versione:</translation>
+    </message>
+    <message>
+        <source>Program for creating a live-CD from the running system for MX Linux</source>
+        <translation type="vanished">Programma di MX Linux per creare un CD live dal sistema in esecuzione</translation>
+    </message>
+    <message>
+        <source>Copyright (c) MX Linux</source>
+        <translation type="vanished">Copyright (c) MX Linux</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation type="vanished">Licenza</translation>
+    </message>
+    <message>
+        <source>Select Snapshot Directory</source>
+        <translation type="vanished">Seleziona la directory di Snapshot</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation type="vanished">Conferma</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to quit the application?</source>
+        <translation type="vanished">Sei sicuro di voler chiudere l&apos;applicazione?</translation>
     </message>
 </context>
 </TS>

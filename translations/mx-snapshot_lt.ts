@@ -2,200 +2,192 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="lt">
 <context>
-    <name>QApplication</name>
+    <name>MainWindow</name>
     <message>
-        <location filename="../main.cpp" line="52"/>
-        <source>You must run this program as root.</source>
-        <translation>Privalote paleisti šią programą kaip pagrindinis (root) naudotojas.</translation>
-    </message>
-</context>
-<context>
-    <name>mxsnapshot</name>
-    <message>
-        <location filename="../mxsnapshot.ui" line="14"/>
-        <location filename="../mxsnapshot.cpp" line="47"/>
-        <location filename="../mxsnapshot.cpp" line="92"/>
-        <location filename="../mxsnapshot.cpp" line="744"/>
-        <location filename="../mxsnapshot.cpp" line="883"/>
+        <location filename="../mainwindow.ui" line="14"/>
+        <location filename="../mainwindow.cpp" line="48"/>
+        <location filename="../mainwindow.cpp" line="97"/>
+        <location filename="../mainwindow.cpp" line="727"/>
+        <location filename="../mainwindow.cpp" line="866"/>
         <source>MX Snapshot</source>
-        <translation>MX momentinė kopija</translation>
+        <translation type="unfinished">MX momentinė kopija</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="27"/>
+        <location filename="../mainwindow.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation>Momentinės kopijos vieta:</translation>
+        <translation type="unfinished">Momentinės kopijos vieta:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="40"/>
+        <location filename="../mainwindow.ui" line="40"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="50"/>
+        <location filename="../mainwindow.ui" line="50"/>
         <source>Used space on / (root) and /home partitions:</source>
-        <translation>Panaudota vieta / (šaknies) ir /home skaidiniuose:</translation>
+        <translation type="unfinished">Panaudota vieta / (šaknies) ir /home skaidiniuose:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="155"/>
-        <location filename="../mxsnapshot.cpp" line="695"/>
+        <location filename="../mainwindow.ui" line="155"/>
+        <location filename="../mainwindow.cpp" line="678"/>
         <source>Snapshot name:</source>
-        <translation>Momentinės kopijos pavadinimas:</translation>
+        <translation type="unfinished">Momentinės kopijos pavadinimas:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="162"/>
+        <location filename="../mainwindow.ui" line="162"/>
         <source>Select a different snapshot directory</source>
-        <translation>Pasirinkti kitą momentinės kopijos katalogą</translation>
+        <translation type="unfinished">Pasirinkti kitą momentinės kopijos katalogą</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="207"/>
-        <location filename="../mxsnapshot.ui" line="225"/>
-        <location filename="../mxsnapshot.ui" line="258"/>
+        <location filename="../mainwindow.ui" line="207"/>
+        <location filename="../mainwindow.ui" line="225"/>
+        <location filename="../mainwindow.ui" line="258"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="271"/>
+        <location filename="../mainwindow.ui" line="271"/>
         <source>Edit Configuration File</source>
-        <translation>Redaguoti konfigūracijos failą</translation>
+        <translation type="unfinished">Redaguoti konfigūracijos failą</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="301"/>
+        <location filename="../mainwindow.ui" line="301"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="326"/>
+        <location filename="../mainwindow.ui" line="326"/>
         <source>Downloads</source>
-        <translation>Atsiuntimai</translation>
+        <translation type="unfinished">Atsiuntimai</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="333"/>
+        <location filename="../mainwindow.ui" line="333"/>
         <source>Documents</source>
-        <translation>Dokumentai</translation>
+        <translation type="unfinished">Dokumentai</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="340"/>
+        <location filename="../mainwindow.ui" line="340"/>
         <source>All of the above</source>
-        <translation>Viskas iš aukščiau paminėtų</translation>
+        <translation type="unfinished">Viskas iš aukščiau paminėtų</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="347"/>
+        <location filename="../mainwindow.ui" line="347"/>
         <source>Pictures</source>
-        <translation>Paveikslai</translation>
+        <translation type="unfinished">Paveikslai</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="354"/>
+        <location filename="../mainwindow.ui" line="354"/>
         <source>Music</source>
-        <translation>Muzika</translation>
+        <translation type="unfinished">Muzika</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="361"/>
+        <location filename="../mainwindow.ui" line="361"/>
         <source>Desktop</source>
-        <translation>Darbalaukis</translation>
+        <translation type="unfinished">Darbalaukis</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="368"/>
+        <location filename="../mainwindow.ui" line="368"/>
         <source>Videos</source>
-        <translation>Vaizdo įrašai</translation>
+        <translation type="unfinished">Vaizdo įrašai</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="384"/>
+        <location filename="../mainwindow.ui" line="384"/>
         <source>Edit Exclusion File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="410"/>
+        <location filename="../mainwindow.ui" line="410"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="413"/>
+        <location filename="../mainwindow.ui" line="413"/>
         <source>Resetting accounts (for distribution to others)</source>
-        <translation>Atstatant paskyras (platinimui kitiems žmonėms)</translation>
+        <translation type="unfinished">Atstatant paskyras (platinimui kitiems žmonėms)</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="420"/>
+        <location filename="../mainwindow.ui" line="420"/>
         <source>Type of snapshot:</source>
-        <translation>Momentinės kopijos tipas:</translation>
+        <translation type="unfinished">Momentinės kopijos tipas:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="427"/>
+        <location filename="../mainwindow.ui" line="427"/>
         <source>Preserving accounts (for personal backup)</source>
-        <translation>Išsaugant paskyras (asmeninei atsarginei kopijai)</translation>
+        <translation type="unfinished">Išsaugant paskyras (asmeninei atsarginei kopijai)</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="539"/>
+        <location filename="../mainwindow.ui" line="539"/>
         <source>Quit application</source>
-        <translation>Išeiti iš programos</translation>
+        <translation type="unfinished">Išeiti iš programos</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="888"/>
+        <location filename="../mainwindow.ui" line="542"/>
+        <location filename="../mainwindow.cpp" line="872"/>
         <source>Cancel</source>
-        <translation>Atsisakyti</translation>
+        <translation type="unfinished">Atsisakyti</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="550"/>
+        <location filename="../mainwindow.ui" line="549"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished">Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="560"/>
+        <location filename="../mainwindow.ui" line="559"/>
         <source>Display help </source>
-        <translation>Rodyti žinyną</translation>
+        <translation type="unfinished">Rodyti žinyną</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="563"/>
+        <location filename="../mainwindow.ui" line="562"/>
         <source>Help</source>
-        <translation>Žinynas</translation>
+        <translation type="unfinished">Žinynas</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="571"/>
+        <location filename="../mainwindow.ui" line="569"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="unfinished">Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="594"/>
+        <location filename="../mainwindow.ui" line="592"/>
         <source>About this application</source>
-        <translation>Apie šią programą</translation>
+        <translation type="unfinished">Apie šią programą</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="597"/>
+        <location filename="../mainwindow.ui" line="595"/>
         <source>About...</source>
-        <translation>Apie...</translation>
+        <translation type="unfinished">Apie...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="605"/>
+        <location filename="../mainwindow.ui" line="602"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="unfinished">Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="643"/>
+        <location filename="../mainwindow.ui" line="640"/>
         <source>Next</source>
-        <translation>Kitas</translation>
+        <translation type="unfinished">Kitas</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="670"/>
+        <location filename="../mainwindow.ui" line="666"/>
         <source>Back</source>
-        <translation>Atgal</translation>
+        <translation type="unfinished">Atgal</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="196"/>
+        <location filename="../mainwindow.cpp" line="176"/>
         <source>Used space on / (root): </source>
-        <translation>Panaudota vieta / (šaknies) skaidinyje: </translation>
+        <translation type="unfinished">Panaudota vieta / (šaknies) skaidinyje: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="199"/>
+        <location filename="../mainwindow.cpp" line="179"/>
         <source>Used space on /home: </source>
-        <translation>Panaudota vieta /home skaidinyje: </translation>
+        <translation type="unfinished">Panaudota vieta /home skaidinyje: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="216"/>
+        <location filename="../mainwindow.cpp" line="197"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
-        <translation>Laisva vieta %1 skaidinyje, kuriame yra patalpintas momentinės kopijos aplankas: </translation>
+        <translation type="unfinished">Laisva vieta %1 skaidinyje, kuriame yra patalpintas momentinės kopijos aplankas: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="218"/>
+        <location filename="../mainwindow.cpp" line="199"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -205,199 +197,454 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="236"/>
+        <location filename="../mainwindow.cpp" line="218"/>
         <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
 
 Will install leafpad and use it this time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="260"/>
+        <location filename="../mainwindow.cpp" line="246"/>
+        <location filename="../mainwindow.cpp" line="247"/>
         <source>Installing </source>
-        <translation>Įdiegiama </translation>
+        <translation type="unfinished">Įdiegiama </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="275"/>
-        <location filename="../mxsnapshot.cpp" line="514"/>
-        <location filename="../mxsnapshot.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="256"/>
+        <location filename="../mainwindow.cpp" line="506"/>
+        <location filename="../mainwindow.cpp" line="520"/>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation type="unfinished">Klaida</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="275"/>
+        <location filename="../mainwindow.cpp" line="256"/>
         <source>Could not install </source>
-        <translation>Nepavyko įdiegti</translation>
+        <translation type="unfinished">Nepavyko įdiegti</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="322"/>
+        <location filename="../mainwindow.cpp" line="280"/>
+        <source>Building new initrd...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="306"/>
         <source>Copying the new-iso filesystem...</source>
-        <translation>Kopijuojama new-iso failų sistema...</translation>
+        <translation type="unfinished">Kopijuojama new-iso failų sistema...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="512"/>
+        <location filename="../mainwindow.cpp" line="503"/>
         <source>Squashing filesystem...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="514"/>
+        <location filename="../mainwindow.cpp" line="506"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="518"/>
         <source>Creating CD/DVD image file...</source>
-        <translation>Kuriamas CD/DVD atvaizdžio failas...</translation>
+        <translation type="unfinished">Kuriamas CD/DVD atvaizdžio failas...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="520"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
-        <translation>Nepavyko sukurti ISO failo, prašome patikrinti ar paskirties skaidinyje yra pakankamai vietos.</translation>
+        <translation type="unfinished">Nepavyko sukurti ISO failo, prašome patikrinti ar paskirties skaidinyje yra pakankamai vietos.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="534"/>
+        <location filename="../mainwindow.cpp" line="527"/>
         <source>Making hybrid iso</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="552"/>
+        <location filename="../mainwindow.cpp" line="547"/>
         <source>Making md5sum</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="563"/>
+        <location filename="../mainwindow.cpp" line="558"/>
         <source>Cleaning...</source>
-        <translation>Išvaloma...</translation>
+        <translation type="unfinished">Išvaloma...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="576"/>
-        <location filename="../mxsnapshot.cpp" line="933"/>
+        <location filename="../mainwindow.cpp" line="571"/>
+        <location filename="../mainwindow.cpp" line="939"/>
         <source>Done</source>
-        <translation>Atlikta</translation>
+        <translation type="unfinished">Atlikta</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="630"/>
+        <location filename="../mainwindow.cpp" line="649"/>
         <source>Please wait.</source>
-        <translation>Prašome palaukti.</translation>
+        <translation type="unfinished">Prašome palaukti.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="632"/>
+        <location filename="../mainwindow.cpp" line="651"/>
         <source>Please wait. Calculating used disk space...</source>
-        <translation>Prašome palaukti. Apskaičiuojama panaudota disko vieta...</translation>
+        <translation type="unfinished">Prašome palaukti. Apskaičiuojama panaudota disko vieta...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="683"/>
+        <location filename="../mainwindow.cpp" line="666"/>
         <source>Settings</source>
-        <translation>Nustatymai</translation>
+        <translation type="unfinished">Nustatymai</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="692"/>
+        <location filename="../mainwindow.cpp" line="675"/>
         <source>Snapshot will use the following settings:*</source>
-        <translation>Momentinė kopija naudos šiuos nustatymus:*</translation>
+        <translation type="unfinished">Momentinė kopija naudos šiuos nustatymus:*</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="694"/>
+        <location filename="../mainwindow.cpp" line="677"/>
         <source>- Snapshot directory:</source>
-        <translation>- Momentinės kopijos katalogas:</translation>
+        <translation type="unfinished">- Momentinės kopijos katalogas:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="696"/>
+        <location filename="../mainwindow.cpp" line="679"/>
         <source>- Kernel to be used:</source>
-        <translation>- Bus naudojamas branduolys:</translation>
+        <translation type="unfinished">- Bus naudojamas branduolys:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="697"/>
+        <location filename="../mainwindow.cpp" line="680"/>
         <source>*These settings can be changed by editing: </source>
-        <translation>*Šie nustatymai gali būti pakeisti, redaguojant: </translation>
+        <translation type="unfinished">*Šie nustatymai gali būti pakeisti, redaguojant: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="702"/>
+        <location filename="../mainwindow.cpp" line="685"/>
         <source>Final chance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="703"/>
+        <location filename="../mainwindow.cpp" line="686"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="704"/>
+        <location filename="../mainwindow.cpp" line="687"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="705"/>
+        <location filename="../mainwindow.cpp" line="688"/>
         <source>OK to start?</source>
-        <translation>Galima pradėti?</translation>
+        <translation type="unfinished">Galima pradėti?</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="713"/>
+        <location filename="../mainwindow.cpp" line="696"/>
         <source>Output</source>
-        <translation>Išvestis</translation>
+        <translation type="unfinished">Išvestis</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="720"/>
+        <location filename="../mainwindow.cpp" line="703"/>
         <source>Edit Boot Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="721"/>
+        <location filename="../mainwindow.cpp" line="704"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="734"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>Success</source>
-        <translation>Pavyko</translation>
+        <translation type="unfinished">Pavyko</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="734"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>All finished!</source>
-        <translation>Viskas užbaigta!</translation>
+        <translation type="unfinished">Viskas užbaigta!</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="735"/>
+        <location filename="../mainwindow.cpp" line="718"/>
         <source>Close</source>
-        <translation>Užverti</translation>
+        <translation type="unfinished">Užverti</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="882"/>
+        <location filename="../mainwindow.cpp" line="865"/>
         <source>About MX Snapshot</source>
-        <translation>Apie MX momentinė kopija</translation>
+        <translation type="unfinished">Apie MX momentinė kopija</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="883"/>
+        <location filename="../mainwindow.cpp" line="866"/>
         <source>Version: </source>
-        <translation>Versija: </translation>
+        <translation type="unfinished">Versija: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="885"/>
+        <location filename="../mainwindow.cpp" line="868"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="886"/>
+        <location filename="../mainwindow.cpp" line="869"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Autorių teisės (c) MX Linux</translation>
+        <translation type="unfinished">Autorių teisės (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="870"/>
         <source>License</source>
-        <translation>Licencija</translation>
+        <translation type="unfinished">Licencija</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="915"/>
+        <location filename="../mainwindow.cpp" line="871"/>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="889"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="921"/>
         <source>Select Snapshot Directory</source>
-        <translation>Pasirinkite momentinės kopijos katalogą</translation>
+        <translation type="unfinished">Pasirinkite momentinės kopijos katalogą</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="934"/>
+        <location filename="../mainwindow.cpp" line="940"/>
         <source>Confirmation</source>
-        <translation>Patvirtinimas</translation>
+        <translation type="unfinished">Patvirtinimas</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="934"/>
+        <location filename="../mainwindow.cpp" line="940"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation>Ar tikrai norite išeiti iš programos?</translation>
+        <translation type="unfinished">Ar tikrai norite išeiti iš programos?</translation>
+    </message>
+</context>
+<context>
+    <name>QApplication</name>
+    <message>
+        <location filename="../main.cpp" line="68"/>
+        <source>You must run this program as root.</source>
+        <translation>Privalote paleisti šią programą kaip pagrindinis (root) naudotojas.</translation>
+    </message>
+</context>
+<context>
+    <name>mxsnapshot</name>
+    <message>
+        <source>MX Snapshot</source>
+        <translation type="vanished">MX momentinė kopija</translation>
+    </message>
+    <message>
+        <source>Snapshot location:</source>
+        <translation type="vanished">Momentinės kopijos vieta:</translation>
+    </message>
+    <message>
+        <source>Used space on / (root) and /home partitions:</source>
+        <translation type="vanished">Panaudota vieta / (šaknies) ir /home skaidiniuose:</translation>
+    </message>
+    <message>
+        <source>Snapshot name:</source>
+        <translation type="vanished">Momentinės kopijos pavadinimas:</translation>
+    </message>
+    <message>
+        <source>Select a different snapshot directory</source>
+        <translation type="vanished">Pasirinkti kitą momentinės kopijos katalogą</translation>
+    </message>
+    <message>
+        <source>Edit Configuration File</source>
+        <translation type="vanished">Redaguoti konfigūracijos failą</translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation type="vanished">Atsiuntimai</translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation type="vanished">Dokumentai</translation>
+    </message>
+    <message>
+        <source>All of the above</source>
+        <translation type="vanished">Viskas iš aukščiau paminėtų</translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation type="vanished">Paveikslai</translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation type="vanished">Muzika</translation>
+    </message>
+    <message>
+        <source>Desktop</source>
+        <translation type="vanished">Darbalaukis</translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation type="vanished">Vaizdo įrašai</translation>
+    </message>
+    <message>
+        <source>Resetting accounts (for distribution to others)</source>
+        <translation type="vanished">Atstatant paskyras (platinimui kitiems žmonėms)</translation>
+    </message>
+    <message>
+        <source>Type of snapshot:</source>
+        <translation type="vanished">Momentinės kopijos tipas:</translation>
+    </message>
+    <message>
+        <source>Preserving accounts (for personal backup)</source>
+        <translation type="vanished">Išsaugant paskyras (asmeninei atsarginei kopijai)</translation>
+    </message>
+    <message>
+        <source>Quit application</source>
+        <translation type="vanished">Išeiti iš programos</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="vanished">Atsisakyti</translation>
+    </message>
+    <message>
+        <source>Alt+N</source>
+        <translation type="vanished">Alt+N</translation>
+    </message>
+    <message>
+        <source>Display help </source>
+        <translation type="vanished">Rodyti žinyną</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="vanished">Žinynas</translation>
+    </message>
+    <message>
+        <source>Alt+H</source>
+        <translation type="vanished">Alt+H</translation>
+    </message>
+    <message>
+        <source>About this application</source>
+        <translation type="vanished">Apie šią programą</translation>
+    </message>
+    <message>
+        <source>About...</source>
+        <translation type="vanished">Apie...</translation>
+    </message>
+    <message>
+        <source>Alt+B</source>
+        <translation type="vanished">Alt+B</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="vanished">Kitas</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="vanished">Atgal</translation>
+    </message>
+    <message>
+        <source>Used space on / (root): </source>
+        <translation type="vanished">Panaudota vieta / (šaknies) skaidinyje: </translation>
+    </message>
+    <message>
+        <source>Used space on /home: </source>
+        <translation type="vanished">Panaudota vieta /home skaidinyje: </translation>
+    </message>
+    <message>
+        <source>Free space on %1, where snapshot folder is placed: </source>
+        <translation type="vanished">Laisva vieta %1 skaidinyje, kuriame yra patalpintas momentinės kopijos aplankas: </translation>
+    </message>
+    <message>
+        <source>Installing </source>
+        <translation type="vanished">Įdiegiama </translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Klaida</translation>
+    </message>
+    <message>
+        <source>Could not install </source>
+        <translation type="vanished">Nepavyko įdiegti</translation>
+    </message>
+    <message>
+        <source>Copying the new-iso filesystem...</source>
+        <translation type="vanished">Kopijuojama new-iso failų sistema...</translation>
+    </message>
+    <message>
+        <source>Creating CD/DVD image file...</source>
+        <translation type="vanished">Kuriamas CD/DVD atvaizdžio failas...</translation>
+    </message>
+    <message>
+        <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
+        <translation type="vanished">Nepavyko sukurti ISO failo, prašome patikrinti ar paskirties skaidinyje yra pakankamai vietos.</translation>
+    </message>
+    <message>
+        <source>Cleaning...</source>
+        <translation type="vanished">Išvaloma...</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="vanished">Atlikta</translation>
+    </message>
+    <message>
+        <source>Please wait.</source>
+        <translation type="vanished">Prašome palaukti.</translation>
+    </message>
+    <message>
+        <source>Please wait. Calculating used disk space...</source>
+        <translation type="vanished">Prašome palaukti. Apskaičiuojama panaudota disko vieta...</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="vanished">Nustatymai</translation>
+    </message>
+    <message>
+        <source>Snapshot will use the following settings:*</source>
+        <translation type="vanished">Momentinė kopija naudos šiuos nustatymus:*</translation>
+    </message>
+    <message>
+        <source>- Snapshot directory:</source>
+        <translation type="vanished">- Momentinės kopijos katalogas:</translation>
+    </message>
+    <message>
+        <source>- Kernel to be used:</source>
+        <translation type="vanished">- Bus naudojamas branduolys:</translation>
+    </message>
+    <message>
+        <source>*These settings can be changed by editing: </source>
+        <translation type="vanished">*Šie nustatymai gali būti pakeisti, redaguojant: </translation>
+    </message>
+    <message>
+        <source>OK to start?</source>
+        <translation type="vanished">Galima pradėti?</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation type="vanished">Išvestis</translation>
+    </message>
+    <message>
+        <source>Success</source>
+        <translation type="vanished">Pavyko</translation>
+    </message>
+    <message>
+        <source>All finished!</source>
+        <translation type="vanished">Viskas užbaigta!</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="vanished">Užverti</translation>
+    </message>
+    <message>
+        <source>About MX Snapshot</source>
+        <translation type="vanished">Apie MX momentinė kopija</translation>
+    </message>
+    <message>
+        <source>Version: </source>
+        <translation type="vanished">Versija: </translation>
+    </message>
+    <message>
+        <source>Copyright (c) MX Linux</source>
+        <translation type="vanished">Autorių teisės (c) MX Linux</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation type="vanished">Licencija</translation>
+    </message>
+    <message>
+        <source>Select Snapshot Directory</source>
+        <translation type="vanished">Pasirinkite momentinės kopijos katalogą</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation type="vanished">Patvirtinimas</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to quit the application?</source>
+        <translation type="vanished">Ar tikrai norite išeiti iš programos?</translation>
     </message>
 </context>
 </TS>

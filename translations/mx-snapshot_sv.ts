@@ -2,207 +2,199 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="sv">
 <context>
-    <name>QApplication</name>
+    <name>MainWindow</name>
     <message>
-        <location filename="../main.cpp" line="52"/>
-        <source>You must run this program as root.</source>
-        <translation>Du måste köra detta program som root</translation>
-    </message>
-</context>
-<context>
-    <name>mxsnapshot</name>
-    <message>
-        <location filename="../mxsnapshot.ui" line="14"/>
-        <location filename="../mxsnapshot.cpp" line="47"/>
-        <location filename="../mxsnapshot.cpp" line="92"/>
-        <location filename="../mxsnapshot.cpp" line="744"/>
-        <location filename="../mxsnapshot.cpp" line="883"/>
+        <location filename="../mainwindow.ui" line="14"/>
+        <location filename="../mainwindow.cpp" line="48"/>
+        <location filename="../mainwindow.cpp" line="97"/>
+        <location filename="../mainwindow.cpp" line="727"/>
+        <location filename="../mainwindow.cpp" line="866"/>
         <source>MX Snapshot</source>
-        <translation>MX Snapshot</translation>
+        <translation type="unfinished">MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="27"/>
+        <location filename="../mainwindow.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation>Snapshotets plats</translation>
+        <translation type="unfinished">Snapshotets plats</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="40"/>
+        <location filename="../mainwindow.ui" line="40"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot är ett verktyg som skapar en bootbar avbild (ISO) av ditt nuvarande system som du kan använda för lagring eller distribuering. Du kan fortsätta att arbeta med lätta program medan det körs.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot är ett verktyg som skapar en bootbar avbild (ISO) av ditt nuvarande system som du kan använda för lagring eller distribuering. Du kan fortsätta att arbeta med lätta program medan det körs.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="50"/>
+        <location filename="../mainwindow.ui" line="50"/>
         <source>Used space on / (root) and /home partitions:</source>
-        <translation>Använt utrymme på / (root) och /home partitioner:</translation>
+        <translation type="unfinished">Använt utrymme på / (root) och /home partitioner:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="155"/>
-        <location filename="../mxsnapshot.cpp" line="695"/>
+        <location filename="../mainwindow.ui" line="155"/>
+        <location filename="../mainwindow.cpp" line="678"/>
         <source>Snapshot name:</source>
-        <translation>Snapshotets namn</translation>
+        <translation type="unfinished">Snapshotets namn</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="162"/>
+        <location filename="../mainwindow.ui" line="162"/>
         <source>Select a different snapshot directory</source>
-        <translation>Välj en annan snapshot katalog</translation>
+        <translation type="unfinished">Välj en annan snapshot katalog</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="207"/>
-        <location filename="../mxsnapshot.ui" line="225"/>
-        <location filename="../mxsnapshot.ui" line="258"/>
+        <location filename="../mainwindow.ui" line="207"/>
+        <location filename="../mainwindow.ui" line="225"/>
+        <location filename="../mainwindow.ui" line="258"/>
         <source>TextLabel</source>
-        <translation>Text-Etikett</translation>
+        <translation type="unfinished">Text-Etikett</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="271"/>
+        <location filename="../mainwindow.ui" line="271"/>
         <source>Edit Configuration File</source>
-        <translation>Redigera Konfigurationsfil</translation>
+        <translation type="unfinished">Redigera Konfigurationsfil</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="301"/>
+        <location filename="../mainwindow.ui" line="301"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
-        <translation>Du kan också undanta speciella kataloger genom att kryssa för de vanliga valen nedan, eller genom att klicka på knappen för att direkt redigera /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
+        <translation type="unfinished">Du kan också undanta speciella kataloger genom att kryssa för de vanliga valen nedan, eller genom att klicka på knappen för att direkt redigera /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="326"/>
+        <location filename="../mainwindow.ui" line="326"/>
         <source>Downloads</source>
-        <translation>Nerladdningar</translation>
+        <translation type="unfinished">Nerladdningar</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="333"/>
+        <location filename="../mainwindow.ui" line="333"/>
         <source>Documents</source>
-        <translation>Dokument</translation>
+        <translation type="unfinished">Dokument</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="340"/>
+        <location filename="../mainwindow.ui" line="340"/>
         <source>All of the above</source>
-        <translation>Alla ovan nämnda</translation>
+        <translation type="unfinished">Alla ovan nämnda</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="347"/>
+        <location filename="../mainwindow.ui" line="347"/>
         <source>Pictures</source>
-        <translation>Bilder</translation>
+        <translation type="unfinished">Bilder</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="354"/>
+        <location filename="../mainwindow.ui" line="354"/>
         <source>Music</source>
-        <translation>Musik</translation>
+        <translation type="unfinished">Musik</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="361"/>
+        <location filename="../mainwindow.ui" line="361"/>
         <source>Desktop</source>
-        <translation>Skrivbord</translation>
+        <translation type="unfinished">Skrivbord</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="368"/>
+        <location filename="../mainwindow.ui" line="368"/>
         <source>Videos</source>
-        <translation>Video</translation>
+        <translation type="unfinished">Video</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="384"/>
+        <location filename="../mainwindow.ui" line="384"/>
         <source>Edit Exclusion File</source>
-        <translation>Redigera Exklusionsfil</translation>
+        <translation type="unfinished">Redigera Exklusionsfil</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="410"/>
+        <location filename="../mainwindow.ui" line="410"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Detta alternativ kommer att återställa &amp;quot;demo&amp;quot; och &amp;quot;root&amp;quot; lösenorden till MX Linux standardvärde och kommer inte att kopiera några personliga konton som skapats.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Detta alternativ kommer att återställa &amp;quot;demo&amp;quot; och &amp;quot;root&amp;quot; lösenorden till MX Linux standardvärde och kommer inte att kopiera några personliga konton som skapats.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="413"/>
+        <location filename="../mainwindow.ui" line="413"/>
         <source>Resetting accounts (for distribution to others)</source>
-        <translation>Återställa konton (för distribution till andra)</translation>
+        <translation type="unfinished">Återställa konton (för distribution till andra)</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="420"/>
+        <location filename="../mainwindow.ui" line="420"/>
         <source>Type of snapshot:</source>
-        <translation>Typ av snapshot:</translation>
+        <translation type="unfinished">Typ av snapshot:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="427"/>
+        <location filename="../mainwindow.ui" line="427"/>
         <source>Preserving accounts (for personal backup)</source>
-        <translation>Bevara konton (för personlig backup)</translation>
+        <translation type="unfinished">Bevara konton (för personlig backup)</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="539"/>
+        <location filename="../mainwindow.ui" line="539"/>
         <source>Quit application</source>
-        <translation>Stäng programmet</translation>
+        <translation type="unfinished">Stäng programmet</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="888"/>
+        <location filename="../mainwindow.ui" line="542"/>
+        <location filename="../mainwindow.cpp" line="872"/>
         <source>Cancel</source>
-        <translation>Avbryt</translation>
+        <translation type="unfinished">Avbryt</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="550"/>
+        <location filename="../mainwindow.ui" line="549"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished">Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="560"/>
+        <location filename="../mainwindow.ui" line="559"/>
         <source>Display help </source>
-        <translation>Visa hjälp</translation>
+        <translation type="unfinished">Visa hjälp</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="563"/>
+        <location filename="../mainwindow.ui" line="562"/>
         <source>Help</source>
-        <translation>Hjälp</translation>
+        <translation type="unfinished">Hjälp</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="571"/>
+        <location filename="../mainwindow.ui" line="569"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="unfinished">Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="594"/>
+        <location filename="../mainwindow.ui" line="592"/>
         <source>About this application</source>
-        <translation>Om detta program</translation>
+        <translation type="unfinished">Om detta program</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="597"/>
+        <location filename="../mainwindow.ui" line="595"/>
         <source>About...</source>
-        <translation>Om...</translation>
+        <translation type="unfinished">Om...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="605"/>
+        <location filename="../mainwindow.ui" line="602"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="unfinished">Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="643"/>
+        <location filename="../mainwindow.ui" line="640"/>
         <source>Next</source>
-        <translation>Nästa</translation>
+        <translation type="unfinished">Nästa</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="670"/>
+        <location filename="../mainwindow.ui" line="666"/>
         <source>Back</source>
-        <translation>Tillbaka</translation>
+        <translation type="unfinished">Tillbaka</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="196"/>
+        <location filename="../mainwindow.cpp" line="176"/>
         <source>Used space on / (root): </source>
-        <translation>Använt utrymme på / (root): </translation>
+        <translation type="unfinished">Använt utrymme på / (root): </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="199"/>
+        <location filename="../mainwindow.cpp" line="179"/>
         <source>Used space on /home: </source>
-        <translation>Använt utrymme på/home: </translation>
+        <translation type="unfinished">Använt utrymme på/home: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="216"/>
+        <location filename="../mainwindow.cpp" line="197"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
-        <translation>Fritt utrymme på %1, där snapshotkatalogen är placerad:</translation>
+        <translation type="unfinished">Fritt utrymme på %1, där snapshotkatalogen är placerad:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="218"/>
+        <location filename="../mainwindow.cpp" line="199"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
       by removing previous snapshots and saved copies:
       %1 snapshots are taking up %2 of disk space.
 </source>
-        <translation>Det fria utrymmet borde vara tillräckligt för att rymma den komprimerade datan från / och /home
+        <translation type="unfinished">Det fria utrymmet borde vara tillräckligt för att rymma den komprimerade datan från / och /home
 
 Om nödvändigt kan du skapa mer tillgängligt utrymme
 genom att avlägsna tidigare snapshots och sparade kopior:
@@ -210,201 +202,538 @@ genom att avlägsna tidigare snapshots och sparade kopior:
 </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="236"/>
+        <location filename="../mainwindow.cpp" line="218"/>
         <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
 
 Will install leafpad and use it this time.</source>
-        <translation>Den grafiska textredigeraren är inställd på %1, men är inte installerad. Redigera %2 och ställ in gui_editor variable på ditt val av textredigerare. (exempel: /usr/bin/gedit, /usr/bin/leafpad)
+        <translation type="unfinished">Den grafiska textredigeraren är inställd på %1, men är inte installerad. Redigera %2 och ställ in gui_editor variable på ditt val av textredigerare. (exempel: /usr/bin/gedit, /usr/bin/leafpad)
 
 Kommer att installera leafpad och använda den.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="260"/>
+        <location filename="../mainwindow.cpp" line="246"/>
+        <location filename="../mainwindow.cpp" line="247"/>
         <source>Installing </source>
-        <translation>Installerar</translation>
+        <translation type="unfinished">Installerar</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="275"/>
-        <location filename="../mxsnapshot.cpp" line="514"/>
-        <location filename="../mxsnapshot.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="256"/>
+        <location filename="../mainwindow.cpp" line="506"/>
+        <location filename="../mainwindow.cpp" line="520"/>
         <source>Error</source>
-        <translation>Fel</translation>
+        <translation type="unfinished">Fel</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="275"/>
+        <location filename="../mainwindow.cpp" line="256"/>
         <source>Could not install </source>
-        <translation>Kunde inte installera</translation>
+        <translation type="unfinished">Kunde inte installera</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="322"/>
+        <location filename="../mainwindow.cpp" line="280"/>
+        <source>Building new initrd...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="306"/>
         <source>Copying the new-iso filesystem...</source>
-        <translation>Kopierar new-iso filsystem...</translation>
+        <translation type="unfinished">Kopierar new-iso filsystem...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="512"/>
+        <location filename="../mainwindow.cpp" line="503"/>
         <source>Squashing filesystem...</source>
-        <translation>Squashing filsystem...</translation>
+        <translation type="unfinished">Squashing filsystem...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="514"/>
+        <location filename="../mainwindow.cpp" line="506"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
-        <translation>Kunde inte skapa linuxfs fil, var vänlig kontrollera om du har tillräckligt med utrymme på målpartitionen.</translation>
+        <translation type="unfinished">Kunde inte skapa linuxfs fil, var vänlig kontrollera om du har tillräckligt med utrymme på målpartitionen.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="518"/>
         <source>Creating CD/DVD image file...</source>
-        <translation>Skapar CD/DVD avbildsfil...</translation>
+        <translation type="unfinished">Skapar CD/DVD avbildsfil...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="520"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
-        <translation>Kunde inte skapa ISO fil, var vänlig kontrollera om du har tillräckligt med utrymme på målpartitionen.</translation>
+        <translation type="unfinished">Kunde inte skapa ISO fil, var vänlig kontrollera om du har tillräckligt med utrymme på målpartitionen.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="534"/>
+        <location filename="../mainwindow.cpp" line="527"/>
         <source>Making hybrid iso</source>
-        <translation>Skapar hybrid iso</translation>
+        <translation type="unfinished">Skapar hybrid iso</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="552"/>
+        <location filename="../mainwindow.cpp" line="547"/>
         <source>Making md5sum</source>
-        <translation>Skapar md5 summa</translation>
+        <translation type="unfinished">Skapar md5 summa</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="563"/>
+        <location filename="../mainwindow.cpp" line="558"/>
         <source>Cleaning...</source>
-        <translation>Rensar...</translation>
+        <translation type="unfinished">Rensar...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="576"/>
-        <location filename="../mxsnapshot.cpp" line="933"/>
+        <location filename="../mainwindow.cpp" line="571"/>
+        <location filename="../mainwindow.cpp" line="939"/>
         <source>Done</source>
-        <translation>Klar</translation>
+        <translation type="unfinished">Klar</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="630"/>
+        <location filename="../mainwindow.cpp" line="649"/>
         <source>Please wait.</source>
-        <translation>Var vänlig vänta.</translation>
+        <translation type="unfinished">Var vänlig vänta.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="632"/>
+        <location filename="../mainwindow.cpp" line="651"/>
         <source>Please wait. Calculating used disk space...</source>
-        <translation>Var vänlig vänta. Beräknar använt hårddiskutrymme...</translation>
+        <translation type="unfinished">Var vänlig vänta. Beräknar använt hårddiskutrymme...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="683"/>
+        <location filename="../mainwindow.cpp" line="666"/>
         <source>Settings</source>
-        <translation>Inställningar</translation>
+        <translation type="unfinished">Inställningar</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="692"/>
+        <location filename="../mainwindow.cpp" line="675"/>
         <source>Snapshot will use the following settings:*</source>
-        <translation>Snapshot kommer att använda följande inställningar.*</translation>
+        <translation type="unfinished">Snapshot kommer att använda följande inställningar.*</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="694"/>
+        <location filename="../mainwindow.cpp" line="677"/>
         <source>- Snapshot directory:</source>
-        <translation>-Snapshot katalog:</translation>
+        <translation type="unfinished">-Snapshot katalog:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="696"/>
+        <location filename="../mainwindow.cpp" line="679"/>
         <source>- Kernel to be used:</source>
-        <translation>-Linuxkärna som ska användas:</translation>
+        <translation type="unfinished">-Linuxkärna som ska användas:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="697"/>
+        <location filename="../mainwindow.cpp" line="680"/>
         <source>*These settings can be changed by editing: </source>
-        <translation>*Dessa inställningar kan ändras genom redigering:</translation>
+        <translation type="unfinished">*Dessa inställningar kan ändras genom redigering:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="702"/>
+        <location filename="../mainwindow.cpp" line="685"/>
         <source>Final chance</source>
-        <translation>Sista chansen</translation>
+        <translation type="unfinished">Sista chansen</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="703"/>
+        <location filename="../mainwindow.cpp" line="686"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
-        <translation>Snapshot har nu all information det behöver för att skapa en ISO av systemet du kör.</translation>
+        <translation type="unfinished">Snapshot har nu all information det behöver för att skapa en ISO av systemet du kör.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="704"/>
+        <location filename="../mainwindow.cpp" line="687"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
-        <translation>Det kommer att ta en del tid att avsluta, beroende på storleken av det installerade systemet och din dators prestanda.</translation>
+        <translation type="unfinished">Det kommer att ta en del tid att avsluta, beroende på storleken av det installerade systemet och din dators prestanda.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="705"/>
+        <location filename="../mainwindow.cpp" line="688"/>
         <source>OK to start?</source>
-        <translation>OK att börja?</translation>
+        <translation type="unfinished">OK att börja?</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="713"/>
+        <location filename="../mainwindow.cpp" line="696"/>
         <source>Output</source>
-        <translation>Output</translation>
+        <translation type="unfinished">Output</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="720"/>
+        <location filename="../mainwindow.cpp" line="703"/>
         <source>Edit Boot Menu</source>
-        <translation>Redigera Boot Menu</translation>
+        <translation type="unfinished">Redigera Boot Menu</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="721"/>
+        <location filename="../mainwindow.cpp" line="704"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
-        <translation>Programmet kommer nu ta en paus för att låta dig redigera filer i arbetskatalogen. Välj Ja för att redigera boot menyn eller välj Nej för att hoppa över detta steg och fortsätta skapandet av snapshotet.</translation>
+        <translation type="unfinished">Programmet kommer nu ta en paus för att låta dig redigera filer i arbetskatalogen. Välj Ja för att redigera boot menyn eller välj Nej för att hoppa över detta steg och fortsätta skapandet av snapshotet.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="734"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>Success</source>
-        <translation>Det lyckades</translation>
+        <translation type="unfinished">Det lyckades</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="734"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>All finished!</source>
-        <translation>Allt klart!</translation>
+        <translation type="unfinished">Allt klart!</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="735"/>
+        <location filename="../mainwindow.cpp" line="718"/>
         <source>Close</source>
-        <translation>Stäng</translation>
+        <translation type="unfinished">Stäng</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="882"/>
+        <location filename="../mainwindow.cpp" line="865"/>
         <source>About MX Snapshot</source>
-        <translation>Om MX Snapshot</translation>
+        <translation type="unfinished">Om MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="883"/>
+        <location filename="../mainwindow.cpp" line="866"/>
         <source>Version: </source>
-        <translation>Version:</translation>
+        <translation type="unfinished">Version:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="885"/>
+        <location filename="../mainwindow.cpp" line="868"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
-        <translation>Program för att skapa en live-CD från systemet som körs för MX-Linux</translation>
+        <translation type="unfinished">Program för att skapa en live-CD från systemet som körs för MX-Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="886"/>
+        <location filename="../mainwindow.cpp" line="869"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="unfinished">Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="870"/>
         <source>License</source>
-        <translation>Licens</translation>
+        <translation type="unfinished">Licens</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="915"/>
+        <location filename="../mainwindow.cpp" line="871"/>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="889"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="921"/>
         <source>Select Snapshot Directory</source>
-        <translation>Välj Snapshot Katalog</translation>
+        <translation type="unfinished">Välj Snapshot Katalog</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="934"/>
+        <location filename="../mainwindow.cpp" line="940"/>
         <source>Confirmation</source>
-        <translation>Bekräftelse</translation>
+        <translation type="unfinished">Bekräftelse</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="934"/>
+        <location filename="../mainwindow.cpp" line="940"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation>Är du säker på att du vill avsluta programmet?</translation>
+        <translation type="unfinished">Är du säker på att du vill avsluta programmet?</translation>
+    </message>
+</context>
+<context>
+    <name>QApplication</name>
+    <message>
+        <location filename="../main.cpp" line="68"/>
+        <source>You must run this program as root.</source>
+        <translation>Du måste köra detta program som root</translation>
+    </message>
+</context>
+<context>
+    <name>mxsnapshot</name>
+    <message>
+        <source>MX Snapshot</source>
+        <translation type="vanished">MX Snapshot</translation>
+    </message>
+    <message>
+        <source>Snapshot location:</source>
+        <translation type="vanished">Snapshotets plats</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot är ett verktyg som skapar en bootbar avbild (ISO) av ditt nuvarande system som du kan använda för lagring eller distribuering. Du kan fortsätta att arbeta med lätta program medan det körs.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Used space on / (root) and /home partitions:</source>
+        <translation type="vanished">Använt utrymme på / (root) och /home partitioner:</translation>
+    </message>
+    <message>
+        <source>Snapshot name:</source>
+        <translation type="vanished">Snapshotets namn</translation>
+    </message>
+    <message>
+        <source>Select a different snapshot directory</source>
+        <translation type="vanished">Välj en annan snapshot katalog</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation type="vanished">Text-Etikett</translation>
+    </message>
+    <message>
+        <source>Edit Configuration File</source>
+        <translation type="vanished">Redigera Konfigurationsfil</translation>
+    </message>
+    <message>
+        <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
+        <translation type="vanished">Du kan också undanta speciella kataloger genom att kryssa för de vanliga valen nedan, eller genom att klicka på knappen för att direkt redigera /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation type="vanished">Nerladdningar</translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation type="vanished">Dokument</translation>
+    </message>
+    <message>
+        <source>All of the above</source>
+        <translation type="vanished">Alla ovan nämnda</translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation type="vanished">Bilder</translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation type="vanished">Musik</translation>
+    </message>
+    <message>
+        <source>Desktop</source>
+        <translation type="vanished">Skrivbord</translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation type="vanished">Video</translation>
+    </message>
+    <message>
+        <source>Edit Exclusion File</source>
+        <translation type="vanished">Redigera Exklusionsfil</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Detta alternativ kommer att återställa &amp;quot;demo&amp;quot; och &amp;quot;root&amp;quot; lösenorden till MX Linux standardvärde och kommer inte att kopiera några personliga konton som skapats.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Resetting accounts (for distribution to others)</source>
+        <translation type="vanished">Återställa konton (för distribution till andra)</translation>
+    </message>
+    <message>
+        <source>Type of snapshot:</source>
+        <translation type="vanished">Typ av snapshot:</translation>
+    </message>
+    <message>
+        <source>Preserving accounts (for personal backup)</source>
+        <translation type="vanished">Bevara konton (för personlig backup)</translation>
+    </message>
+    <message>
+        <source>Quit application</source>
+        <translation type="vanished">Stäng programmet</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="vanished">Avbryt</translation>
+    </message>
+    <message>
+        <source>Alt+N</source>
+        <translation type="vanished">Alt+N</translation>
+    </message>
+    <message>
+        <source>Display help </source>
+        <translation type="vanished">Visa hjälp</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="vanished">Hjälp</translation>
+    </message>
+    <message>
+        <source>Alt+H</source>
+        <translation type="vanished">Alt+H</translation>
+    </message>
+    <message>
+        <source>About this application</source>
+        <translation type="vanished">Om detta program</translation>
+    </message>
+    <message>
+        <source>About...</source>
+        <translation type="vanished">Om...</translation>
+    </message>
+    <message>
+        <source>Alt+B</source>
+        <translation type="vanished">Alt+B</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="vanished">Nästa</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="vanished">Tillbaka</translation>
+    </message>
+    <message>
+        <source>Used space on / (root): </source>
+        <translation type="vanished">Använt utrymme på / (root): </translation>
+    </message>
+    <message>
+        <source>Used space on /home: </source>
+        <translation type="vanished">Använt utrymme på/home: </translation>
+    </message>
+    <message>
+        <source>Free space on %1, where snapshot folder is placed: </source>
+        <translation type="vanished">Fritt utrymme på %1, där snapshotkatalogen är placerad:</translation>
+    </message>
+    <message>
+        <source>The free space should be sufficient to hold the compressed data from / and /home
+
+      If necessary, you can create more available space
+      by removing previous snapshots and saved copies:
+      %1 snapshots are taking up %2 of disk space.
+</source>
+        <translation type="vanished">Det fria utrymmet borde vara tillräckligt för att rymma den komprimerade datan från / och /home
+
+Om nödvändigt kan du skapa mer tillgängligt utrymme
+genom att avlägsna tidigare snapshots och sparade kopior:
+%1 snapshots upptar %2 av diskutrymmet
+</translation>
+    </message>
+    <message>
+        <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
+
+Will install leafpad and use it this time.</source>
+        <translation type="vanished">Den grafiska textredigeraren är inställd på %1, men är inte installerad. Redigera %2 och ställ in gui_editor variable på ditt val av textredigerare. (exempel: /usr/bin/gedit, /usr/bin/leafpad)
+
+Kommer att installera leafpad och använda den.</translation>
+    </message>
+    <message>
+        <source>Installing </source>
+        <translation type="vanished">Installerar</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Fel</translation>
+    </message>
+    <message>
+        <source>Could not install </source>
+        <translation type="vanished">Kunde inte installera</translation>
+    </message>
+    <message>
+        <source>Copying the new-iso filesystem...</source>
+        <translation type="vanished">Kopierar new-iso filsystem...</translation>
+    </message>
+    <message>
+        <source>Squashing filesystem...</source>
+        <translation type="vanished">Squashing filsystem...</translation>
+    </message>
+    <message>
+        <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
+        <translation type="vanished">Kunde inte skapa linuxfs fil, var vänlig kontrollera om du har tillräckligt med utrymme på målpartitionen.</translation>
+    </message>
+    <message>
+        <source>Creating CD/DVD image file...</source>
+        <translation type="vanished">Skapar CD/DVD avbildsfil...</translation>
+    </message>
+    <message>
+        <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
+        <translation type="vanished">Kunde inte skapa ISO fil, var vänlig kontrollera om du har tillräckligt med utrymme på målpartitionen.</translation>
+    </message>
+    <message>
+        <source>Making hybrid iso</source>
+        <translation type="vanished">Skapar hybrid iso</translation>
+    </message>
+    <message>
+        <source>Making md5sum</source>
+        <translation type="vanished">Skapar md5 summa</translation>
+    </message>
+    <message>
+        <source>Cleaning...</source>
+        <translation type="vanished">Rensar...</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="vanished">Klar</translation>
+    </message>
+    <message>
+        <source>Please wait.</source>
+        <translation type="vanished">Var vänlig vänta.</translation>
+    </message>
+    <message>
+        <source>Please wait. Calculating used disk space...</source>
+        <translation type="vanished">Var vänlig vänta. Beräknar använt hårddiskutrymme...</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="vanished">Inställningar</translation>
+    </message>
+    <message>
+        <source>Snapshot will use the following settings:*</source>
+        <translation type="vanished">Snapshot kommer att använda följande inställningar.*</translation>
+    </message>
+    <message>
+        <source>- Snapshot directory:</source>
+        <translation type="vanished">-Snapshot katalog:</translation>
+    </message>
+    <message>
+        <source>- Kernel to be used:</source>
+        <translation type="vanished">-Linuxkärna som ska användas:</translation>
+    </message>
+    <message>
+        <source>*These settings can be changed by editing: </source>
+        <translation type="vanished">*Dessa inställningar kan ändras genom redigering:</translation>
+    </message>
+    <message>
+        <source>Final chance</source>
+        <translation type="vanished">Sista chansen</translation>
+    </message>
+    <message>
+        <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
+        <translation type="vanished">Snapshot har nu all information det behöver för att skapa en ISO av systemet du kör.</translation>
+    </message>
+    <message>
+        <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
+        <translation type="vanished">Det kommer att ta en del tid att avsluta, beroende på storleken av det installerade systemet och din dators prestanda.</translation>
+    </message>
+    <message>
+        <source>OK to start?</source>
+        <translation type="vanished">OK att börja?</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation type="vanished">Output</translation>
+    </message>
+    <message>
+        <source>Edit Boot Menu</source>
+        <translation type="vanished">Redigera Boot Menu</translation>
+    </message>
+    <message>
+        <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
+        <translation type="vanished">Programmet kommer nu ta en paus för att låta dig redigera filer i arbetskatalogen. Välj Ja för att redigera boot menyn eller välj Nej för att hoppa över detta steg och fortsätta skapandet av snapshotet.</translation>
+    </message>
+    <message>
+        <source>Success</source>
+        <translation type="vanished">Det lyckades</translation>
+    </message>
+    <message>
+        <source>All finished!</source>
+        <translation type="vanished">Allt klart!</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="vanished">Stäng</translation>
+    </message>
+    <message>
+        <source>About MX Snapshot</source>
+        <translation type="vanished">Om MX Snapshot</translation>
+    </message>
+    <message>
+        <source>Version: </source>
+        <translation type="vanished">Version:</translation>
+    </message>
+    <message>
+        <source>Program for creating a live-CD from the running system for MX Linux</source>
+        <translation type="vanished">Program för att skapa en live-CD från systemet som körs för MX-Linux</translation>
+    </message>
+    <message>
+        <source>Copyright (c) MX Linux</source>
+        <translation type="vanished">Copyright (c) MX Linux</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation type="vanished">Licens</translation>
+    </message>
+    <message>
+        <source>Select Snapshot Directory</source>
+        <translation type="vanished">Välj Snapshot Katalog</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation type="vanished">Bekräftelse</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to quit the application?</source>
+        <translation type="vanished">Är du säker på att du vill avsluta programmet?</translation>
     </message>
 </context>
 </TS>

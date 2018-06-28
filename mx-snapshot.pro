@@ -28,18 +28,22 @@
 
 QT       += core gui
 
+CONFIG   += c++11
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = mx-snapshot
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mxsnapshot.cpp
+SOURCES += main.cpp \
+    mainwindow.cpp
 
-HEADERS  += mxsnapshot.h
+HEADERS  += \
+    mainwindow.h
 
-FORMS    += mxsnapshot.ui
+FORMS    += \
+    mainwindow.ui
 
 TRANSLATIONS += translations/mx-snapshot_am.ts \
                 translations/mx-snapshot_ca.ts \
@@ -71,4 +75,4 @@ TRANSLATIONS += translations/mx-snapshot_am.ts \
 RESOURCES += \
     images.qrc
 
-
+unix:!macx: LIBS += -lcmd

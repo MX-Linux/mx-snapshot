@@ -1,5 +1,5 @@
 /**********************************************************************
- *  mxsnapshot.cpp
+ *  mainwindow.cpp
  **********************************************************************
  * Copyright (C) 2015 MX Authors
  *
@@ -23,8 +23,8 @@
  **********************************************************************/
 
 
-#include "mxsnapshot.h"
-#include "ui_mxsnapshot.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
 #include <QFileDialog>
 #include <QScrollBar>
@@ -33,16 +33,17 @@
 
 #include <QDebug>
 
-mxsnapshot::mxsnapshot(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::mxsnapshot)
+    ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    proc = new QProcess(this);
-    timer = new QTimer(this);
-    proc->setReadChannel(QProcess::StandardOutput);
-    proc->setReadChannelMode(QProcess::MergedChannels);
+    shell = new Cmd(this);
+    connect(shell, &Cmd::started, this, &MainWindow::procStart);
+    connect(shell, &Cmd::finished, this, &MainWindow::procDone);
+    connect(shell, &Cmd::runTime, this, &MainWindow::progress);
+    connect(shell, &Cmd::outputAvailable, [](QString out) {qDebug() << out;});
+    connect(shell, &Cmd::errorAvailable, [](QString out) {qWarning() << out;});
 
     this->setWindowTitle(tr("MX Snapshot"));
     ui->buttonBack->setHidden(true);
@@ -51,20 +52,23 @@ mxsnapshot::mxsnapshot(QWidget *parent) :
 
     version = getVersion("mx-snapshot");
     live = isLive();
+
     i686 = isi686();
+    debian_version = getDebianVersion();
     setup();
     reset_accounts = false;
     listUsedSpace();
 }
 
-mxsnapshot::~mxsnapshot()
+MainWindow::~MainWindow()
 {
     delete ui;
 }
 
 // load settings or use the default value
-void mxsnapshot::loadSettings()
+void MainWindow::loadSettings()
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     config_file.setFileName("/etc/mx-snapshot.conf");
     QSettings settings(config_file.fileName(), QSettings::IniFormat);
 
@@ -85,8 +89,9 @@ void mxsnapshot::loadSettings()
 }
 
 // setup/refresh versious items first time program runs
-void mxsnapshot::setup()
+void MainWindow::setup()
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     qApp->processEvents();
     this->show();
     this->setWindowTitle(tr("MX Snapshot"));
@@ -100,61 +105,39 @@ void mxsnapshot::setup()
     listFreeSpace();
 }
 
-// Util function for getting bash command output
-QString mxsnapshot::getCmdOut(QString cmd)
-{
-    QEventLoop loop;
-    connect(proc, SIGNAL(finished(int)), &loop, SLOT(quit()));
-    proc->start("/bin/bash", QStringList() << "-c" << cmd);
-    loop.exec();
-    disconnectAll();
-    return proc->readAllStandardOutput().trimmed();
-}
-
-// Util function for running bash commands with progress bar and output in output box
-int mxsnapshot::runCmd(QString cmd)
-{
-    qApp->processEvents();
-    QEventLoop loop;
-    setConnections();
-    connect(proc, SIGNAL(finished(int)), &loop, SLOT(quit()));
-    proc->start("/bin/bash", QStringList() << "-c" << cmd);
-    loop.exec();
-    disconnectAll();
-    return proc->exitCode();
-}
 
 // Util function for replacing strings in files
-bool mxsnapshot::replaceStringInFile(QString old_text, QString new_text, QString file_path)
+bool MainWindow::replaceStringInFile(QString old_text, QString new_text, QString file_path)
 {
     QString cmd = QString("sed -i 's/%1/%2/g' \"%3\"").arg(old_text).arg(new_text).arg(file_path);
-    if (system(cmd.toUtf8()) != 0) {
+    if (shell->run(cmd) != 0) {
         return false;
     }
     return true;
 }
 
 // Check if running from a live envoronment
-bool mxsnapshot::isLive()
+bool MainWindow::isLive()
 {
-    return (system("mountpoint -q /live/aufs") == 0 );
+    return (shell->run("mountpoint -q /live/aufs") == 0 );
 }
 
 // Check if running from a 32bit environment
-bool mxsnapshot::isi686()
+bool MainWindow::isi686()
 {
-    return (getCmdOut("uname -m") == "i686");
+    return (shell->getOutput("uname -m") == "i686");
 }
 
 // Get version of the program
-QString mxsnapshot::getVersion(QString name)
+QString MainWindow::getVersion(QString name)
 {
-    return getCmdOut("dpkg-query -f '${Version}' -W " + name);
+    return shell->getOutput("dpkg-query -f '${Version}' -W " + name);
 }
 
 // return number of snapshots in snapshot_dir
-int mxsnapshot::getSnapshotCount()
+int MainWindow::getSnapshotCount()
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     if (snapshot_dir.exists()) {
         QFileInfoList list = snapshot_dir.entryInfoList(QStringList("*.iso"), QDir::Files);
         return list.size();
@@ -163,12 +146,13 @@ int mxsnapshot::getSnapshotCount()
 }
 
 // return the size of the work folder
-QString mxsnapshot::getSnapshotSize()
+QString MainWindow::getSnapshotSize()
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     QString size;
     if (snapshot_dir.exists()) {
         QString cmd = QString("find \"%1\" -maxdepth 1 -type f -name '*.iso' -exec du -shc {} + | tail -1 | awk '{print $1}'").arg(snapshot_dir.absolutePath());
-        size = getCmdOut(cmd);
+        size = shell->getOutput(cmd);
         if (size != "" ) {
             return size;
         }
@@ -177,7 +161,7 @@ QString mxsnapshot::getSnapshotSize()
 }
 
 // List used space
-void mxsnapshot::listUsedSpace()
+void MainWindow::listUsedSpace()
 {
     this->show();
     ui->buttonNext->setDisabled(true);
@@ -189,13 +173,10 @@ void mxsnapshot::listUsedSpace()
     } else {
         cmd = QString("df -h / | awk 'NR==2 {print $3}'");
     }
-    connect(timer, SIGNAL(timeout()), SLOT(procTime()));
-    connect(proc, SIGNAL(started()), SLOT(procStart()));
-    connect(proc, SIGNAL(finished(int)), SLOT(procDone(int)));
-    QString out = "\n- " + tr("Used space on / (root): ") + getCmdOut(cmd);
-    if (system("mountpoint -q /home") == 0 ) {
+    QString out = "\n- " + tr("Used space on / (root): ") + shell->getOutput(cmd);
+    if (shell->run("mountpoint -q /home") == 0 ) {
         cmd = QString("df -h /home | awk 'NR==2 {print $3}'");
-        out.append("\n- " + tr("Used space on /home: ") + getCmdOut(cmd));
+        out.append("\n- " + tr("Used space on /home: ") + shell->getOutput(cmd));
     }
     ui->buttonNext->setEnabled(true);
     ui->buttonCancel->setEnabled(true);
@@ -205,14 +186,15 @@ void mxsnapshot::listUsedSpace()
 
 
 // List free space on drives
-void mxsnapshot::listFreeSpace()
+void MainWindow::listFreeSpace()
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     QString cmd;
     QString out;
     QString path = snapshot_dir.absolutePath().remove("/snapshot");
     cmd = QString("df -h \"%1\" | awk 'NR==2 {print $4}'").arg(path);
     ui->labelFreeSpace->clear();
-    out.append("- " + tr("Free space on %1, where snapshot folder is placed: ").arg(path) + getCmdOut(cmd) + "\n");
+    out.append("- " + tr("Free space on %1, where snapshot folder is placed: ").arg(path) + shell->getOutput(cmd) + "\n");
     ui->labelFreeSpace->setText(out);
     ui->labelDiskSpaceHelp->setText(tr("The free space should be sufficient to hold the compressed data from / and /home\n\n"
                                        "      If necessary, you can create more available space\n"
@@ -221,7 +203,7 @@ void mxsnapshot::listFreeSpace()
 }
 
 // Checks if the editor listed in the config file is present
-void mxsnapshot::checkEditor()
+void MainWindow::checkEditor()
 {
     if (gui_editor.exists()) {
         return;
@@ -232,110 +214,115 @@ void mxsnapshot::checkEditor()
         gui_editor.setFileName("/usr/bin/leafpad");
         return;
     }
+    this->show();
     QString msg = tr("The graphical text editor is set to %1, but it is not installed. Edit %2 "
                      "and set the gui_editor variable to the editor of your choice. "
                      "(examples: /usr/bin/gedit, /usr/bin/leafpad)\n\n"
                      "Will install leafpad and use it this time.").arg(gui_editor.fileName()).arg(config_file.fileName());
-    QMessageBox::information(0, QString::null, msg);
+    QMessageBox::information(this, QString::null, msg);
     if (installPackage("leafpad")) {
+        this->hide();
         gui_editor.setFileName("/usr/bin/leafpad");
     }
+    ui->stackedWidget->setCurrentWidget(ui->settingsPage);
+    ui->buttonNext->setEnabled(true);
+    ui->buttonBack->setEnabled(true);
 }
 
 // Checks if package is installed
-bool mxsnapshot::checkInstalled(QString package)
+bool MainWindow::checkInstalled(QString package)
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     QString cmd = QString("dpkg -s %1 | grep Status").arg(package);
-    if (getCmdOut(cmd) == "Status: install ok installed") {
+    if (shell->getOutput(cmd) == "Status: install ok installed") {
         return true;
     }
     return false;
 }
 
 // Installs package
-bool mxsnapshot::installPackage(QString package)
+bool MainWindow::installPackage(QString package)
 {
-    QEventLoop loop;
     this->setWindowTitle(tr("Installing ") + package);
+    ui->outputLabel->setText(tr("Installing ") + package);
     ui->outputBox->clear();
     ui->buttonNext->setDisabled(true);
     ui->buttonBack->setDisabled(true);
-    this->show();
     ui->stackedWidget->setCurrentWidget(ui->outputPage);
-    setConnections();
-    connect(proc, SIGNAL(finished(int)), &loop, SLOT(quit()));
-    proc->start("apt-get update");
-    loop.exec();
-    proc->start("apt-get install -y " + package);
-    loop.exec();
-    disconnectAll();
-    this->hide();
-    if (proc->exitCode() != 0) {
-        QMessageBox::critical(0, tr("Error"), tr("Could not install ") + package);
+    displayOutput();
+    shell->run("apt-get update");
+    shell->run("apt-get install -y " + package);
+    if (shell->getExitCode() != 0) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not install ") + package);
+        disableOutput();
         return false;
     }
-    this->show();
-    ui->stackedWidget->setCurrentWidget(ui->settingsPage);
-    ui->buttonNext->setEnabled(true);
-    ui->buttonBack->setEnabled(true);
+    disableOutput();
     return true;
 }
 
-void mxsnapshot::checkDirectories()
+void MainWindow::checkDirectories()
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     //  Create snapshot dir if it doesn't exist
     if (!snapshot_dir.exists()) {
         snapshot_dir.mkpath(snapshot_dir.absolutePath());
     }
     // Create a work_dir
-    work_dir = getCmdOut("mktemp -d \"" + snapshot_dir.absolutePath() + "/mx-snapshot-XXXXXXXX\"");
-    runCmd("mkdir -p " + work_dir + "/iso-template/antiX");
+    work_dir = shell->getOutput("mktemp -d \"" + snapshot_dir.absolutePath() + "/mx-snapshot-XXXXXXXX\"");
+    system("mkdir -p " + work_dir.toUtf8() + "/iso-template/antiX");
     system("cd ..; cd -");
 }
 
-void mxsnapshot::openInitrd(QString file, QString initrd_dir)
+void MainWindow::openInitrd(QString file, QString initrd_dir)
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    ui->outputLabel->setText(tr("Building new initrd..."));
     QString cmd = "chmod a+rx \"" + initrd_dir + "\"";
-    system(cmd.toUtf8());
+    shell->run(cmd);
     QDir::setCurrent(initrd_dir);
     cmd = QString("gunzip -c \"%1\" | cpio -idum").arg(file);
-    system(cmd.toUtf8());
+    shell->run(cmd, QStringList() << "slowtick");
 }
 
-void mxsnapshot::closeInitrd(QString initrd_dir, QString file)
+void MainWindow::closeInitrd(QString initrd_dir, QString file)
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     QDir::setCurrent(initrd_dir);
     QString cmd = "(find . | cpio -o -H newc --owner root:root | gzip -9) >\"" + file + "\"";
-    runCmd(cmd);
+    shell->run(cmd, QStringList() << "slowtick");
     if (initrd_dir.startsWith("/tmp/tmp.")) {
-        system("rm -r " + initrd_dir.toUtf8());
+        shell->run("rm -r " + initrd_dir);
     }
     makeMd5sum(work_dir + "/iso-template/antiX", "initrd.gz");
 }
 
 // Copying the iso-template filesystem
-void mxsnapshot::copyNewIso()
+void MainWindow::copyNewIso()
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     ui->outputBox->clear();
 
     ui->outputLabel->setText(tr("Copying the new-iso filesystem..."));
     QDir::setCurrent(work_dir);
+
     QString cmd = "tar xf /usr/lib/iso-template/iso-template.tar.gz";
-    runCmd(cmd);
+    shell->run(cmd);
+
     cmd = "cp /usr/lib/iso-template/template-initrd.gz iso-template/antiX/initrd.gz";
-    runCmd(cmd);
+    shell->run(cmd);
 
     cmd = "cp /boot/vmlinuz-" + kernel_used + " iso-template/antiX/vmlinuz";
-    runCmd(cmd);
+    shell->run(cmd);
 
-    if (getDebianVersion().toInt() < 9) { // Only for versions older than Stretch
+    if (debian_version < 9) { // Only for versions older than Stretch
         if(i686) {
-            runCmd("cp /boot/vmlinuz-3.16.0-4-586 iso-template/antiX/vmlinuz1");
+            shell->run("cp /boot/vmlinuz-3.16.0-4-586 iso-template/antiX/vmlinuz1");
         } else {
             // mv x64 template files over
-            runCmd("mv iso-template/boot/grub/grub.cfg_x64 iso-template/boot/grub/grub.cfg");
-            runCmd("mv iso-template/boot/syslinux/syslinux.cfg_x64 iso-template/boot/syslinux/syslinux.cfg");
-            runCmd("mv iso-template/boot/isolinux/isolinux.cfg_x64 iso-template/boot/isolinux/isolinux.cfg");
+            shell->run("mv iso-template/boot/grub/grub.cfg_x64 iso-template/boot/grub/grub.cfg");
+            shell->run("mv iso-template/boot/syslinux/syslinux.cfg_x64 iso-template/boot/syslinux/syslinux.cfg");
+            shell->run("mv iso-template/boot/isolinux/isolinux.cfg_x64 iso-template/boot/isolinux/isolinux.cfg");
         }
     }
 
@@ -343,14 +330,14 @@ void mxsnapshot::copyNewIso()
 
     makeMd5sum(work_dir + "/iso-template/antiX", "vmlinuz");
 
-    QString initrd_dir = getCmdOut("mktemp -d");
+    QString initrd_dir = shell->getOutput("mktemp -d");
     openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir);
     if (initrd_dir.startsWith("/tmp/tmp.")) {  //just make sure initrd_dir is correct to avoid disaster
         // strip modules
-        runCmd("test -d \"" + initrd_dir + "/lib/modules\" && rm -r \"" + initrd_dir  + "/lib/modules\"");
+        shell->run("test -d \"" + initrd_dir + "/lib/modules\" && rm -r \"" + initrd_dir  + "/lib/modules\"");
     }
-    runCmd("test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release \"" + initrd_dir + "/etc\""); // We cannot count on this file in the future versions
-    runCmd("test -r /etc/initrd-release && cp /etc/initrd-release \"" + initrd_dir + "/etc\""); // overwrite with this file, probably a better location _if_ the file exists
+    shell->run("test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release \"" + initrd_dir + "/etc\""); // We cannot count on this file in the future versions
+    shell->run("test -r /etc/initrd-release && cp /etc/initrd-release \"" + initrd_dir + "/etc\""); // overwrite with this file, probably a better location _if_ the file exists
     if (initrd_dir != "") {
         copyModules(initrd_dir, kernel_used);
         closeInitrd(initrd_dir, work_dir + "/iso-template/antiX/initrd.gz");
@@ -358,15 +345,16 @@ void mxsnapshot::copyNewIso()
 }
 
 // replace text in menu items in grub.cfg, syslinux.cfg, isolinux.cfg
-void mxsnapshot::replaceMenuStrings() {
-    QString date = getCmdOut("date +'%d %B %Y'");
-    QString distro = getCmdOut("cat /etc/antix-version | cut -f1 -d'_'");
-    QString distro_name = getCmdOut("lsb_release -is");
-    QString full_distro_name = getCmdOut("cat /etc/antix-version | cut -f-2 -d' '");
-    QString code_name = getCmdOut("lsb_release -cs");
+void MainWindow::replaceMenuStrings() {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    QString date = shell->getOutput("date +'%d %B %Y'");
+    QString distro = shell->getOutput("cat /etc/antix-version | cut -f1 -d'_'");
+    QString distro_name = shell->getOutput("lsb_release -is");
+    QString full_distro_name = shell->getOutput("cat /etc/antix-version | cut -f-2 -d' '");
+    QString code_name = shell->getOutput("lsb_release -cs");
     QString options = "quiet";
 
-    if (getDebianVersion().toInt() < 9) { // Only for versions older than Stretch which uses old mx-iso-template
+    if (debian_version < 9) { // Only for versions older than Stretch which uses old mx-iso-template
         if (i686) {
             QString new_string = "MX Linux 386 (" + date + ")";
             replaceStringInFile("custom-name", new_string, work_dir + "/iso-template/boot/grub/grub.cfg");
@@ -407,25 +395,26 @@ void mxsnapshot::replaceMenuStrings() {
 }
 
 // copyModules(mod_dir/kernel_used kernel_used)
-void mxsnapshot::copyModules(QString to, QString kernel)
+void MainWindow::copyModules(QString to, QString kernel)
 {
     QString kernel586 = "3.16.0-4-586";
     QString cmd = QString("/usr/share/mx-packageinstaller/scripts/copy-initrd-modules -t=\"%1\" -k=\"%2\"").arg(to).arg(kernel);
-    system(cmd.toUtf8());
+    shell->run(cmd);
     // copy 586 modules for the non-PAE kernel
-    if (isi686() && getDebianVersion().toInt() < 9) {  // Not applicable for Stretch (MX17) or more
+    if (i686 && debian_version < 9) {  // Not applicable for Stretch (MX17) or more
         QString cmd = QString("/usr/share/mx-packageinstaller/scripts/copy-initrd-modules -t=\"%1\" -k=\"%2\"").arg(to).arg(kernel586);
-        system(cmd.toUtf8());
+        shell->run(cmd);
     }
     cmd = QString("/usr/share/mx-packageinstaller/scripts/copy-initrd-programs --to=\"%1\"").arg(to);
-    system(cmd.toUtf8());
+    shell->run(cmd);
 }
 
 // Create the output filename
-QString mxsnapshot::getFilename()
+QString MainWindow::getFilename()
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     if (stamp == "datetime") {
-        return snapshot_basename + "-" + getCmdOut("date +%Y%m%d_%H%M") + ".iso";
+        return snapshot_basename + "-" + shell->getOutput("date +%Y%m%d_%H%M") + ".iso";
     } else {
         QString name;
         QDir dir;
@@ -440,8 +429,9 @@ QString mxsnapshot::getFilename()
 }
 
 // make working directory using the base filename
-void mxsnapshot::mkDir(QString file_name)
+void MainWindow::mkDir(QString file_name)
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     QDir dir;
     QFileInfo fi(file_name);
     QString base_name = fi.completeBaseName(); // remove extension
@@ -450,18 +440,20 @@ void mxsnapshot::mkDir(QString file_name)
 }
 
 // save package list in working directory
-void mxsnapshot::savePackageList(QString file_name)
+void MainWindow::savePackageList(QString file_name)
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     QFileInfo fi(file_name);
     QString base_name = fi.completeBaseName(); // remove extension
     QString full_name = work_dir + "/iso-template/" + base_name + "/package_list";
     QString cmd = "dpkg -l | grep ^ii\\ \\ | awk '{print $2,$3}' | sed 's/:'$(dpkg --print-architecture)'//' | column -t >\"" + full_name + "\"";
-    system(cmd.toUtf8());
+    shell->run(cmd);
 }
 
 // setup the environment before taking the snapshot
-void mxsnapshot::setupEnv()
+void MainWindow::setupEnv()
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     // checks if work_dir looks OK
     if (!work_dir.contains("/mx-snapshot")) {
         return;
@@ -469,62 +461,64 @@ void mxsnapshot::setupEnv()
 
     // install mx-installer if absent
     if (force_installer && !checkInstalled("mx-installer")) {
-        runCmd("apt-get update");
-        runCmd("apt-get install -y mx-installer");
+        installPackage("mx-installer");
     }
     // setup environment if creating a respin (reset root/demo, remove personal accounts)
     if (reset_accounts) {
-        system("installed-to-live -b /.bind-root start empty=/home general version-file read-only");
+        shell->run("installed-to-live -b /.bind-root start empty=/home general version-file read-only");
     } else {
         if (force_installer == true) {  // copy minstall.desktop to Desktop on all accounts
-            system("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/minstall.desktop 2>/dev/null");
-            system("chmod +x /home/*/Desktop/minstall.desktop");
+            shell->run("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/minstall.desktop 2>/dev/null");
+            shell->run("chmod +x /home/*/Desktop/minstall.desktop");
         }
-        system("installed-to-live -b /.bind-root start bind=/home live-files version-file adjtime read-only");
+        shell->run("installed-to-live -b /.bind-root start bind=/home live-files version-file adjtime read-only");
     }
 }
 
-QString mxsnapshot::getDebianVersion()
+int MainWindow::getDebianVersion()
 {
-    return getCmdOut("cat /etc/debian_version | cut -f1 -d'.'");
+    return shell->getOutput("cat /etc/debian_version | cut -f1 -d'.'").toInt();
 }
 
 
 // create squashfs and then the iso
-bool mxsnapshot::createIso(QString filename)
+bool MainWindow::createIso(QString filename)
 {
-    QString cmd;
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     // add exclusions snapshot dir
     addRemoveExclusion(true, snapshot_dir.absolutePath());
 
     if (reset_accounts) {
         // exclude /etc/localtime if link and timezone not America/New_York
-        if (system("test -L /etc/localtime") == 0 && getCmdOut("cat /etc/timezone") != "America/New_York" ) {
+        if (shell->run("test -L /etc/localtime") == 0 && shell->getOutput("cat /etc/timezone") != "America/New_York" ) {
             addRemoveExclusion(true, "/etc/localtime");
         }
     }
 
     // squash the filesystem copy
     QDir::setCurrent(work_dir);
+    QString cmd;
     cmd = "mksquashfs /.bind-root iso-template/antiX/linuxfs " + mksq_opt + " -wildcards -ef " + snapshot_excludes.fileName() + " " + session_excludes;
-    qDebug() << "mksquash:" << cmd;
+
     ui->outputLabel->setText(tr("Squashing filesystem..."));
-    if (runCmd(cmd) != 0) {
-        QMessageBox::critical(0, tr("Error"), tr("Could not create linuxfs file, please check whether you have enough space on the destination partition."));
+    displayOutput();
+    if (shell->run(cmd, QStringList() << "slowtick") != 0) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not create linuxfs file, please check whether you have enough space on the destination partition."));
         return false;
     }
     makeMd5sum(work_dir + "/iso-template/antiX", "linuxfs");
 
     // mv linuxfs to another folder
-    runCmd("mkdir -p iso-2/antiX");
-    runCmd("mv iso-template/antiX/linuxfs* iso-2/antiX");
+    system("mkdir -p iso-2/antiX");
+    shell->run("mv iso-template/antiX/linuxfs* iso-2/antiX");
 
     // create the iso file
     QDir::setCurrent(work_dir + "/iso-template");
     cmd = "xorriso -as mkisofs -l -V MXLIVE -R -J -pad -iso-level 3 -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin  -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot -c boot/isolinux/isolinux.cat -o \"" + snapshot_dir.absolutePath() + "/" + filename + "\" . \""  + work_dir + "/iso-2\"";
     ui->outputLabel->setText(tr("Creating CD/DVD image file..."));
-    if (runCmd(cmd) != 0) {
-        QMessageBox::critical(0, tr("Error"), tr("Could not create ISO file, please check whether you have enough space on the destination partition."));
+    if (shell->run(cmd, QStringList() << "slowtick") != 0) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not create ISO file, please check whether you have enough space on the destination partition."));
+        disableOutput();
         return false;
     }
 
@@ -532,52 +526,55 @@ bool mxsnapshot::createIso(QString filename)
     if (make_isohybrid == "yes") {
         ui->outputLabel->setText(tr("Making hybrid iso"));
         cmd = "isohybrid \"" + snapshot_dir.absolutePath() + "/" + filename + "\"";
-        runCmd(cmd);
+        shell->run(cmd);
     }
 
     // make md5sum
     if (make_md5sum == "yes") {
         makeMd5sum(snapshot_dir.absolutePath(), filename);
     }
+    disableOutput();
     return true;
 }
 
 // create md5sum for different files
-void mxsnapshot::makeMd5sum(QString folder, QString file_name)
+void MainWindow::makeMd5sum(QString folder, QString file_name)
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     QDir dir;
     QString current = dir.currentPath();
     dir.setCurrent(folder);
     ui->outputLabel->setText(tr("Making md5sum"));
     QString cmd = "md5sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".md5\"";
-    runCmd(cmd);
+    shell->run(cmd, QStringList() << "slowtick");
     dir.setCurrent(current);
 }
 
 // clean up changes before exit
-void mxsnapshot::cleanUp()
+void MainWindow::cleanUp()
 {
-    QString cmd;
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     ui->stackedWidget->setCurrentWidget(ui->outputPage);
     ui->outputLabel->setText(tr("Cleaning..."));
-    system("pkill mksquashfs; pkill md5sum");
+    shell->run("pkill mksquashfs; pkill md5sum");
     QDir::setCurrent("/");
-    system("installed-to-live cleanup");
+    shell->run("installed-to-live cleanup");
 
     // checks if work_dir looks OK
     if (work_dir.contains("/mx-snapshot")) {
-        system("rm -r \"" + work_dir.toUtf8() + "\"");
+        shell->run("rm -r \"" + work_dir + "\"");
     }
     if (!live && !reset_accounts) {
         // remove installer icon
-        system("rm /home/*/Desktop/minstall.desktop");
+        shell->run("rm /home/*/Desktop/minstall.desktop");
     }
     ui->outputLabel->setText(tr("Done"));
 }
 
 // adds or removes exclusion to the exclusion string
-void mxsnapshot::addRemoveExclusion(bool add, QString exclusion)
+void MainWindow::addRemoveExclusion(bool add, QString exclusion)
 {
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     if (exclusion.startsWith("/")) {
         exclusion.remove(0, 1); // remove training slash
     }
@@ -595,34 +592,57 @@ void mxsnapshot::addRemoveExclusion(bool add, QString exclusion)
     }
 }
 
-void mxsnapshot::displayDoc(QString url)
+void MainWindow::displayDoc(QString url)
 {
     QProcess proc;
     proc.start("logname");
     proc.waitForFinished();
     QString user = proc.readAllStandardOutput().trimmed();
     QString exec = "xdg-open";
-    if (system("command -v mx-viewer") == 0) { // use mx-viewer if available
+    if (shell->run("command -v mx-viewer") == 0) { // use mx-viewer if available
         exec = "mx-viewer";
     }
     QString cmd = "su " + user + " -c \"" + exec + " " + url + "\"&";
-    system(cmd.toUtf8());
+    shell->run(cmd);
 }
 
 //// sync process events ////
-void mxsnapshot::procStart()
+void MainWindow::procStart()
 {
-    timer->start(100);
     setCursor(QCursor(Qt::BusyCursor));
 }
 
-void mxsnapshot::procTime()
+void MainWindow::procDone()
 {
-    int i = ui->progressBar->value() + 1;
-    if (i > 100) {
-        i = 0;
-    }
-    ui->progressBar->setValue(i);
+    ui->progressBar->setValue(100);
+    setCursor(QCursor(Qt::ArrowCursor));
+}
+
+// set proc and timer connections
+void MainWindow::displayOutput()
+{
+    connect(shell, &Cmd::outputAvailable, this, &MainWindow::outputAvailable);
+    connect(shell, &Cmd::errorAvailable, this, &MainWindow::outputAvailable);
+}
+
+void MainWindow::disableOutput()
+{
+    disconnect(shell, &Cmd::outputAvailable, 0, 0);
+    disconnect(shell, &Cmd::errorAvailable, 0, 0);
+}
+
+// update output box on Stdout
+void MainWindow::outputAvailable(const QString &output)
+{
+    ui->outputBox->insertPlainText(output);
+    QScrollBar *sb = ui->outputBox->verticalScrollBar();
+    sb->setValue(sb->maximum());
+}
+
+void MainWindow::progress(int counter, int duration) // processes tick emited by Cmd to be used by a progress bar
+{
+    ui->progressBar->setMaximum(duration);
+    ui->progressBar->setValue(counter % (duration + 1));
     // in live environment and first page, blink text while calculating used disk space
     if (live && (ui->stackedWidget->currentIndex() == 0)) {
         if (ui->progressBar->value()%4 == 0 ) {
@@ -633,45 +653,9 @@ void mxsnapshot::procTime()
     }
 }
 
-void mxsnapshot::procDone(int)
-{
-    timer->stop();
-    ui->progressBar->setValue(100);
-    setCursor(QCursor(Qt::ArrowCursor));
-}
-
-// set proc and timer connections
-void mxsnapshot::setConnections()
-{
-    connect(timer, SIGNAL(timeout()), SLOT(procTime()));
-    connect(proc, SIGNAL(started()), SLOT(procStart()));
-    connect(proc, SIGNAL(readyReadStandardOutput()), SLOT(onStdoutAvailable()));
-    connect(proc, SIGNAL(finished(int)), SLOT(procDone(int)));
-}
-
-// disconnect all connections
-void mxsnapshot::disconnectAll()
-{
-    disconnect(timer, SIGNAL(timeout()), 0, 0);
-    disconnect(proc, SIGNAL(started()), 0, 0);
-    disconnect(proc, SIGNAL(readyReadStandardOutput()), 0, 0);
-    disconnect(proc, SIGNAL(finished(int)), 0, 0);
-}
-
-//// slots ////
-
-// update output box on Stdout
-void mxsnapshot::onStdoutAvailable()
-{
-    QByteArray output = proc->readAllStandardOutput();
-    ui->outputBox->insertPlainText(output);
-    QScrollBar *sb = ui->outputBox->verticalScrollBar();
-    sb->setValue(sb->maximum());
-}
-
 
 // Next button clicked
-void mxsnapshot::on_buttonNext_clicked()
+void MainWindow::on_buttonNext_clicked()
 {
     QString file_name = ui->lineEditName->text();
     if (!file_name.endsWith(".iso")) {
@@ -686,7 +670,7 @@ void mxsnapshot::on_buttonNext_clicked()
         if (edit_boot_menu == "yes") {
             checkEditor();
         }
-        kernel_used = getCmdOut("uname -r");
+        kernel_used = shell->getOutput("uname -r");
         ui->stackedWidget->setCurrentWidget(ui->settingsPage);
         ui->label_1->setText(tr("Snapshot will use the following settings:*"));
 
@@ -711,7 +695,7 @@ void mxsnapshot::on_buttonNext_clicked()
         ui->stackedWidget->setCurrentWidget(ui->outputPage);
         this->setWindowTitle(tr("Output"));
         copyNewIso();
-        ui->outputLabel->clear();
+        ui->outputLabel->setText("");
         mkDir(file_name);
         savePackageList(file_name);
 
@@ -722,7 +706,7 @@ void mxsnapshot::on_buttonNext_clicked()
             if (ans == QMessageBox::Yes) {
                 this->hide();
                 QString cmd = gui_editor.fileName() + " \"" + work_dir + "/iso-template/boot/isolinux/isolinux.cfg\"";
-                system(cmd.toUtf8());
+                shell->run(cmd);
                 this->show();
             }
         }
@@ -738,7 +722,7 @@ void mxsnapshot::on_buttonNext_clicked()
     }
 }
 
-void mxsnapshot::on_buttonBack_clicked()
+void MainWindow::on_buttonBack_clicked()
 {
     this->setWindowTitle(tr("MX Snapshot"));
     ui->stackedWidget->setCurrentIndex(0);
@@ -747,26 +731,26 @@ void mxsnapshot::on_buttonBack_clicked()
     ui->outputBox->clear();
 }
 
-void mxsnapshot::on_buttonEditConfig_clicked()
+void MainWindow::on_buttonEditConfig_clicked()
 {
     this->hide();
     checkEditor();
-    system((gui_editor.fileName() + " " + config_file.fileName()).toUtf8());
+    shell->run((gui_editor.fileName() + " " + config_file.fileName()));
     setup();
 }
 
-void mxsnapshot::on_buttonEditExclude_clicked()
+void MainWindow::on_buttonEditExclude_clicked()
 {
     this->hide();
     checkEditor();
-    system((gui_editor.fileName() + " " + snapshot_excludes.fileName()).toUtf8());
+    shell->run((gui_editor.fileName() + " " + snapshot_excludes.fileName()));
     this->show();
 }
 
-void mxsnapshot::on_excludeDocuments_toggled(bool checked)
+void MainWindow::on_excludeDocuments_toggled(bool checked)
 {
-    QString user = getCmdOut("logname");
-    QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir DOCUMENTS\"") + "/*";
+    QString user = shell->getOutput("logname");
+    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir DOCUMENTS\"") + "/*";
     xdg_user_dir.replace(user, "*");
     if (xdg_user_dir.startsWith("/")) {
         xdg_user_dir.remove(0, 1); // remove training slash
@@ -778,10 +762,10 @@ void mxsnapshot::on_excludeDocuments_toggled(bool checked)
     }
 }
 
-void mxsnapshot::on_excludeDownloads_toggled(bool checked)
+void MainWindow::on_excludeDownloads_toggled(bool checked)
 {
-    QString user = getCmdOut("logname");
-    QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir DOWNLOAD\"") + "/*";
+    QString user = shell->getOutput("logname");
+    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir DOWNLOAD\"") + "/*";
     xdg_user_dir.replace(user, "*");
     if (xdg_user_dir.startsWith("/")) {
         xdg_user_dir.remove(0, 1); // remove training slash
@@ -793,10 +777,10 @@ void mxsnapshot::on_excludeDownloads_toggled(bool checked)
     }
 }
 
-void mxsnapshot::on_excludePictures_toggled(bool checked)
+void MainWindow::on_excludePictures_toggled(bool checked)
 {
-    QString user = getCmdOut("logname");
-    QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir PICTURES\"") + "/*";
+    QString user = shell->getOutput("logname");
+    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir PICTURES\"") + "/*";
     xdg_user_dir.replace(user, "*");
     if (xdg_user_dir.startsWith("/")) {
         xdg_user_dir.remove(0, 1); // remove training slash
@@ -808,10 +792,10 @@ void mxsnapshot::on_excludePictures_toggled(bool checked)
     }
 }
 
-void mxsnapshot::on_excludeMusic_toggled(bool checked)
+void MainWindow::on_excludeMusic_toggled(bool checked)
 {
-    QString user = getCmdOut("logname");
-    QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir MUSIC\"") + "/*";
+    QString user = shell->getOutput("logname");
+    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir MUSIC\"") + "/*";
     xdg_user_dir.replace(user, "*");
     if (xdg_user_dir.startsWith("/")) {
         xdg_user_dir.remove(0, 1); // remove training slash
@@ -823,10 +807,10 @@ void mxsnapshot::on_excludeMusic_toggled(bool checked)
     }
 }
 
-void mxsnapshot::on_excludeVideos_toggled(bool checked)
+void MainWindow::on_excludeVideos_toggled(bool checked)
 {
-    QString user = getCmdOut("logname");
-    QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir VIDEOS\"") + "/*";
+    QString user = shell->getOutput("logname");
+    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir VIDEOS\"") + "/*";
     xdg_user_dir.replace(user, "*");
     if (xdg_user_dir.startsWith("/")) {
         xdg_user_dir.remove(0, 1); // remove training slash
@@ -838,10 +822,10 @@ void mxsnapshot::on_excludeVideos_toggled(bool checked)
     }
 }
 
-void mxsnapshot::on_excludeDesktop_toggled(bool checked)
+void MainWindow::on_excludeDesktop_toggled(bool checked)
 {
-    QString user = getCmdOut("logname");
-    QString xdg_user_dir = getCmdOut("su " + user + " -c \"xdg-user-dir DESKTOP\"");
+    QString user = shell->getOutput("logname");
+    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir DESKTOP\"");
     xdg_user_dir.replace(user, "*");
     if (xdg_user_dir.startsWith("/")) {
         xdg_user_dir.remove(0, 1); // remove training slash
@@ -853,7 +837,7 @@ void mxsnapshot::on_excludeDesktop_toggled(bool checked)
     }
 }
 
-void mxsnapshot::on_radioRespin_clicked(bool checked)
+void MainWindow::on_radioRespin_clicked(bool checked)
 {
     if (checked) {
         reset_accounts = true;
@@ -863,7 +847,7 @@ void mxsnapshot::on_radioRespin_clicked(bool checked)
     }
 }
 
-void mxsnapshot::on_radioPersonal_clicked(bool checked)
+void MainWindow::on_radioPersonal_clicked(bool checked)
 {
     if (checked) {
         if (ui->excludeAll->isChecked()) {
@@ -874,7 +858,7 @@ void mxsnapshot::on_radioPersonal_clicked(bool checked)
 
 
 // About button clicked
-void mxsnapshot::on_buttonAbout_clicked()
+void MainWindow::on_buttonAbout_clicked()
 {
     this->hide();
     QMessageBox msgBox(QMessageBox::NoIcon,
@@ -883,17 +867,40 @@ void mxsnapshot::on_buttonAbout_clicked()
                        version + "</p><p align=\"center\"><h3>" +
                        tr("Program for creating a live-CD from the running system for MX Linux") + "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>", 0, this);
-    msgBox.addButton(tr("License"), QMessageBox::AcceptRole);
-    msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
-    if (msgBox.exec() == QMessageBox::AcceptRole) {
+    QPushButton *btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);
+    QPushButton *btnChangelog = msgBox.addButton(tr("Changelog"), QMessageBox::HelpRole);
+    QPushButton *btnCancel = msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
+    btnCancel->setIcon(QIcon::fromTheme("window-close"));
+
+    msgBox.exec();
+
+    if (msgBox.clickedButton() == btnLicense) {
         QString url = "file:///usr/share/doc/mx-snapshot/license.html";
         displayDoc(url);
+    } else if (msgBox.clickedButton() == btnChangelog) {
+        QDialog *changelog = new QDialog(this);
+        changelog->resize(600, 500);
+
+        QTextEdit *text = new QTextEdit;
+        text->setReadOnly(true);
+        Cmd cmd;
+        text->setText(cmd.getOutput("zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"));
+
+        QPushButton *btnClose = new QPushButton(tr("&Close"));
+        btnClose->setIcon(QIcon::fromTheme("window-close"));
+        connect(btnClose, &QPushButton::clicked, changelog, &QDialog::close);
+
+        QVBoxLayout *layout = new QVBoxLayout;
+        layout->addWidget(text);
+        layout->addWidget(btnClose);
+        changelog->setLayout(layout);
+        changelog->exec();
     }
     this->show();
 }
 
 // Help button clicked
-void mxsnapshot::on_buttonHelp_clicked()
+void MainWindow::on_buttonHelp_clicked()
 {
     QLocale locale;
     QString lang = locale.bcp47Name();
@@ -907,7 +914,7 @@ void mxsnapshot::on_buttonHelp_clicked()
 }
 
 // Select snapshot directory
-void mxsnapshot::on_buttonSelectSnapshot_clicked()
+void MainWindow::on_buttonSelectSnapshot_clicked()
 {
     QFileDialog dialog;
 
@@ -920,14 +927,14 @@ void mxsnapshot::on_buttonSelectSnapshot_clicked()
 }
 
 // process keystrokes
-void mxsnapshot::keyPressEvent(QKeyEvent *event) {
+void MainWindow::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Escape) {
         closeApp();
     }
 }
 
 // close application
-void mxsnapshot::closeApp() {
+void MainWindow::closeApp() {
     // ask for confirmation when on outputPage and not done
     if (ui->stackedWidget->currentWidget() == ui->outputPage && ui->outputLabel->text() != tr("Done")) {
         int ans = QMessageBox::question(this, tr("Confirmation"), tr("Are you sure you want to quit the application?"),
@@ -940,7 +947,7 @@ void mxsnapshot::closeApp() {
     }
 }
 
-void mxsnapshot::on_buttonCancel_clicked()
+void MainWindow::on_buttonCancel_clicked()
 {
     closeApp();
 }

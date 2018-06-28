@@ -1,5 +1,5 @@
 /**********************************************************************
- *  mxsnapshot.h
+ *  mainwindow.h
  **********************************************************************
  * Copyright (C) 2015 MX Authors
  *
@@ -23,36 +23,31 @@
  **********************************************************************/
 
 
-#ifndef MXSNAPSHOT_H
-#define MXSNAPSHOT_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
 #include <QMessageBox>
-#include <QProcess>
-#include <QTimer>
 #include <QSettings>
-
 #include <QDir>
 
+#include "cmd.h"
+
 namespace Ui {
-class mxsnapshot;
+class MainWindow;
 }
 
-class mxsnapshot : public QDialog
+class MainWindow : public QDialog
 {
     Q_OBJECT
 
 protected:
-    QProcess *proc;
-    QTimer *timer;
     void keyPressEvent(QKeyEvent* event);
 
 
 public:
-    explicit mxsnapshot(QWidget *parent = 0);
-    ~mxsnapshot();
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
 
-    QString getCmdOut(QString cmd);
-    int runCmd(QString cmd);
     QString getVersion(QString name);
     void addRemoveExclusion(bool add, QString exclusion);
     void displayDoc(QString url);
@@ -62,6 +57,8 @@ public:
     bool live;
     bool force_installer;
     bool reset_accounts;
+
+    int debian_version;
 
     QDir lib_mod_dir;
     QDir snapshot_dir;
@@ -80,6 +77,7 @@ public:
     QString version;
     QString work_dir;
 
+    int getDebianVersion();
     int getSnapshotCount();
 
     bool checkInstalled(QString package);
@@ -109,18 +107,17 @@ public:
     void setup();
     void setupEnv();
 
-    QString getDebianVersion();
     QString getFilename();
     QString getSnapshotSize();
     QStringList listUsers();
 
 public slots:
+    void outputAvailable(const QString &output);
     void procStart();
-    void procTime();
-    void procDone(int);
-    void setConnections();
-    void disconnectAll();
-    void onStdoutAvailable();
+    void procDone();
+    void progress(int elapsed, int duration); // updates progressBar when tick signal is emited
+    void displayOutput();
+    void disableOutput();
 
 private slots:
 
@@ -131,7 +128,7 @@ private slots:
     void on_buttonEditExclude_clicked();
     void on_buttonHelp_clicked();
     void on_buttonNext_clicked();
-    void on_buttonSelectSnapshot_clicked();   ;
+    void on_buttonSelectSnapshot_clicked();
     void on_excludeDocuments_toggled(bool checked);
     void on_excludeDownloads_toggled(bool checked);
     void on_excludePictures_toggled(bool checked);
@@ -143,9 +140,10 @@ private slots:
 
 
 private:
-    Ui::mxsnapshot *ui;
+    Ui::MainWindow *ui;
+    Cmd *shell;
 
 };
 
-#endif // MXSNAPSHOT_H
+#endif // MainWindow_H
 

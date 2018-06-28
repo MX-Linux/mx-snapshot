@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>mxsnapshot</class>
- <widget class="QDialog" name="mxsnapshot">
+ <class>MainWindow</class>
+ <widget class="QDialog" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -543,8 +543,7 @@ color: rgb(0, 0, 0);</string>
        </property>
        <property name="icon">
         <iconset theme="window-close">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string>Alt+N</string>
@@ -564,8 +563,7 @@ color: rgb(0, 0, 0);</string>
        </property>
        <property name="icon">
         <iconset theme="help-contents">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string>Alt+H</string>
@@ -598,8 +596,7 @@ color: rgb(0, 0, 0);</string>
        </property>
        <property name="icon">
         <iconset theme="help-about">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string>Alt+B</string>
@@ -644,8 +641,7 @@ color: rgb(0, 0, 0);</string>
        </property>
        <property name="icon">
         <iconset theme="go-next">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string/>
@@ -671,8 +667,7 @@ color: rgb(0, 0, 0);</string>
        </property>
        <property name="icon">
         <iconset theme="go-previous">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>

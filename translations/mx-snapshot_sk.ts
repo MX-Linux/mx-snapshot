@@ -2,207 +2,199 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="sk">
 <context>
-    <name>QApplication</name>
+    <name>MainWindow</name>
     <message>
-        <location filename="../main.cpp" line="52"/>
-        <source>You must run this program as root.</source>
-        <translation>Tento program musíte spustiť ako root užívateľ.</translation>
-    </message>
-</context>
-<context>
-    <name>mxsnapshot</name>
-    <message>
-        <location filename="../mxsnapshot.ui" line="14"/>
-        <location filename="../mxsnapshot.cpp" line="47"/>
-        <location filename="../mxsnapshot.cpp" line="92"/>
-        <location filename="../mxsnapshot.cpp" line="744"/>
-        <location filename="../mxsnapshot.cpp" line="883"/>
+        <location filename="../mainwindow.ui" line="14"/>
+        <location filename="../mainwindow.cpp" line="48"/>
+        <location filename="../mainwindow.cpp" line="97"/>
+        <location filename="../mainwindow.cpp" line="727"/>
+        <location filename="../mainwindow.cpp" line="866"/>
         <source>MX Snapshot</source>
-        <translation>MX Snapshot</translation>
+        <translation type="unfinished">MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="27"/>
+        <location filename="../mainwindow.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation>Zložka obrazu:</translation>
+        <translation type="unfinished">Zložka obrazu:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="40"/>
+        <location filename="../mainwindow.ui" line="40"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot je aplikácia na tvorbu spustiteľných (ISO) obrazov vášho funkčného systému, ktoré môžete použiť pre zálohovanie alebo distribúciu. Počas tvorby zálohy môžete paralelne používať nemej náročné aplikácie.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot je aplikácia na tvorbu spustiteľných (ISO) obrazov vášho funkčného systému, ktoré môžete použiť pre zálohovanie alebo distribúciu. Počas tvorby zálohy môžete paralelne používať nemej náročné aplikácie.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="50"/>
+        <location filename="../mainwindow.ui" line="50"/>
         <source>Used space on / (root) and /home partitions:</source>
-        <translation>Použitý priestor na diskoch / (root) a /home:</translation>
+        <translation type="unfinished">Použitý priestor na diskoch / (root) a /home:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="155"/>
-        <location filename="../mxsnapshot.cpp" line="695"/>
+        <location filename="../mainwindow.ui" line="155"/>
+        <location filename="../mainwindow.cpp" line="678"/>
         <source>Snapshot name:</source>
-        <translation>Názov obrazu:</translation>
+        <translation type="unfinished">Názov obrazu:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="162"/>
+        <location filename="../mainwindow.ui" line="162"/>
         <source>Select a different snapshot directory</source>
-        <translation>Zvoľte inú zložku pre obraz</translation>
+        <translation type="unfinished">Zvoľte inú zložku pre obraz</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="207"/>
-        <location filename="../mxsnapshot.ui" line="225"/>
-        <location filename="../mxsnapshot.ui" line="258"/>
+        <location filename="../mainwindow.ui" line="207"/>
+        <location filename="../mainwindow.ui" line="225"/>
+        <location filename="../mainwindow.ui" line="258"/>
         <source>TextLabel</source>
-        <translation>Textové označenie</translation>
+        <translation type="unfinished">Textové označenie</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="271"/>
+        <location filename="../mainwindow.ui" line="271"/>
         <source>Edit Configuration File</source>
-        <translation>Upraviť konfiguračný súbor</translation>
+        <translation type="unfinished">Upraviť konfiguračný súbor</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="301"/>
+        <location filename="../mainwindow.ui" line="301"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
-        <translation>Vybraním položiek nižšie môžete zo zálohy vynechať určité zložky alebo kliknutím na tlačidlo priamo upraviť ich zoznam definovaný v súbore /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
+        <translation type="unfinished">Vybraním položiek nižšie môžete zo zálohy vynechať určité zložky alebo kliknutím na tlačidlo priamo upraviť ich zoznam definovaný v súbore /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="326"/>
+        <location filename="../mainwindow.ui" line="326"/>
         <source>Downloads</source>
-        <translation>Stiahnuté</translation>
+        <translation type="unfinished">Stiahnuté</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="333"/>
+        <location filename="../mainwindow.ui" line="333"/>
         <source>Documents</source>
-        <translation>Dokumenty</translation>
+        <translation type="unfinished">Dokumenty</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="340"/>
+        <location filename="../mainwindow.ui" line="340"/>
         <source>All of the above</source>
-        <translation>Všetko vyššie</translation>
+        <translation type="unfinished">Všetko vyššie</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="347"/>
+        <location filename="../mainwindow.ui" line="347"/>
         <source>Pictures</source>
-        <translation>Obrázky</translation>
+        <translation type="unfinished">Obrázky</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="354"/>
+        <location filename="../mainwindow.ui" line="354"/>
         <source>Music</source>
-        <translation>Hudba</translation>
+        <translation type="unfinished">Hudba</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="361"/>
+        <location filename="../mainwindow.ui" line="361"/>
         <source>Desktop</source>
-        <translation>Pracovná plocha</translation>
+        <translation type="unfinished">Pracovná plocha</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="368"/>
+        <location filename="../mainwindow.ui" line="368"/>
         <source>Videos</source>
-        <translation>Videá</translation>
+        <translation type="unfinished">Videá</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="384"/>
+        <location filename="../mainwindow.ui" line="384"/>
         <source>Edit Exclusion File</source>
-        <translation>Upraviť zoznam vynechaných</translation>
+        <translation type="unfinished">Upraviť zoznam vynechaných</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="410"/>
+        <location filename="../mainwindow.ui" line="410"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Táto voľba zresetuje heslá pre &amp;quot;demo&amp;quot; a &amp;quot;root&amp;quot; na MX Linux predvolené a neprenesie žiadne uživateľom vytvorené kontá.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Táto voľba zresetuje heslá pre &amp;quot;demo&amp;quot; a &amp;quot;root&amp;quot; na MX Linux predvolené a neprenesie žiadne uživateľom vytvorené kontá.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="413"/>
+        <location filename="../mainwindow.ui" line="413"/>
         <source>Resetting accounts (for distribution to others)</source>
-        <translation>Resetovať kontá (distribúcia iným)</translation>
+        <translation type="unfinished">Resetovať kontá (distribúcia iným)</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="420"/>
+        <location filename="../mainwindow.ui" line="420"/>
         <source>Type of snapshot:</source>
-        <translation>Typ obrazu:</translation>
+        <translation type="unfinished">Typ obrazu:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="427"/>
+        <location filename="../mainwindow.ui" line="427"/>
         <source>Preserving accounts (for personal backup)</source>
-        <translation>Zachovať kontá (pre vlastné zazálohovanie)</translation>
+        <translation type="unfinished">Zachovať kontá (pre vlastné zazálohovanie)</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="539"/>
+        <location filename="../mainwindow.ui" line="539"/>
         <source>Quit application</source>
-        <translation>Zatvoriť aplikáciu</translation>
+        <translation type="unfinished">Zatvoriť aplikáciu</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="542"/>
-        <location filename="../mxsnapshot.cpp" line="888"/>
+        <location filename="../mainwindow.ui" line="542"/>
+        <location filename="../mainwindow.cpp" line="872"/>
         <source>Cancel</source>
-        <translation>Zrušiť</translation>
+        <translation type="unfinished">Zrušiť</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="550"/>
+        <location filename="../mainwindow.ui" line="549"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished">Alt+N</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="560"/>
+        <location filename="../mainwindow.ui" line="559"/>
         <source>Display help </source>
-        <translation>Zobraziť nápovedu</translation>
+        <translation type="unfinished">Zobraziť nápovedu</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="563"/>
+        <location filename="../mainwindow.ui" line="562"/>
         <source>Help</source>
-        <translation>Pomoc</translation>
+        <translation type="unfinished">Pomoc</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="571"/>
+        <location filename="../mainwindow.ui" line="569"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="unfinished">Alt+H</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="594"/>
+        <location filename="../mainwindow.ui" line="592"/>
         <source>About this application</source>
-        <translation>O tejto aplikácii</translation>
+        <translation type="unfinished">O tejto aplikácii</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="597"/>
+        <location filename="../mainwindow.ui" line="595"/>
         <source>About...</source>
-        <translation>O Programe</translation>
+        <translation type="unfinished">O Programe</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="605"/>
+        <location filename="../mainwindow.ui" line="602"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="unfinished">Alt+B</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="643"/>
+        <location filename="../mainwindow.ui" line="640"/>
         <source>Next</source>
-        <translation>Ďalej</translation>
+        <translation type="unfinished">Ďalej</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.ui" line="670"/>
+        <location filename="../mainwindow.ui" line="666"/>
         <source>Back</source>
-        <translation>Naspäť</translation>
+        <translation type="unfinished">Naspäť</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="196"/>
+        <location filename="../mainwindow.cpp" line="176"/>
         <source>Used space on / (root): </source>
-        <translation>Použitý priestor na disku / (root):</translation>
+        <translation type="unfinished">Použitý priestor na disku / (root):</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="199"/>
+        <location filename="../mainwindow.cpp" line="179"/>
         <source>Used space on /home: </source>
-        <translation>Použitý priestor na disku /home:</translation>
+        <translation type="unfinished">Použitý priestor na disku /home:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="216"/>
+        <location filename="../mainwindow.cpp" line="197"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
-        <translation>Voľné miesto na disku %1, na ktorom je obraz umiestnený: </translation>
+        <translation type="unfinished">Voľné miesto na disku %1, na ktorom je obraz umiestnený: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="218"/>
+        <location filename="../mainwindow.cpp" line="199"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
       by removing previous snapshots and saved copies:
       %1 snapshots are taking up %2 of disk space.
 </source>
-        <translation>Voľné miesto musí byť dostatočné pre umiestnenie komprimovaných dát z diskov / a /home
+        <translation type="unfinished">Voľné miesto musí byť dostatočné pre umiestnenie komprimovaných dát z diskov / a /home
 
 Ak to bude nutné, môžete uvoľnit miesto
 odstránením predošlých obrazov alebo kópií systému:
@@ -210,201 +202,538 @@ odstránením predošlých obrazov alebo kópií systému:
 </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="236"/>
+        <location filename="../mainwindow.cpp" line="218"/>
         <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
 
 Will install leafpad and use it this time.</source>
-        <translation>Editor textu je nastavený na %1, ale nie je nainštalovaný. Upravte %2 a nastavte premennú gui_editor na Vami zvolenú hodnotu. (príklady: /usr/bin/gedit, /usr/bin/leafpad)
+        <translation type="unfinished">Editor textu je nastavený na %1, ale nie je nainštalovaný. Upravte %2 a nastavte premennú gui_editor na Vami zvolenú hodnotu. (príklady: /usr/bin/gedit, /usr/bin/leafpad)
 
 Pre tento krát sa nainštaluje a použije Leafpad.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="260"/>
+        <location filename="../mainwindow.cpp" line="246"/>
+        <location filename="../mainwindow.cpp" line="247"/>
         <source>Installing </source>
-        <translation>Inštalácia</translation>
+        <translation type="unfinished">Inštalácia</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="275"/>
-        <location filename="../mxsnapshot.cpp" line="514"/>
-        <location filename="../mxsnapshot.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="256"/>
+        <location filename="../mainwindow.cpp" line="506"/>
+        <location filename="../mainwindow.cpp" line="520"/>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation type="unfinished">Chyba</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="275"/>
+        <location filename="../mainwindow.cpp" line="256"/>
         <source>Could not install </source>
-        <translation>Nešlo nainštalovať</translation>
+        <translation type="unfinished">Nešlo nainštalovať</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="322"/>
+        <location filename="../mainwindow.cpp" line="280"/>
+        <source>Building new initrd...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="306"/>
         <source>Copying the new-iso filesystem...</source>
-        <translation>Kopíruje sa nový ISO systém súborov....</translation>
+        <translation type="unfinished">Kopíruje sa nový ISO systém súborov....</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="512"/>
+        <location filename="../mainwindow.cpp" line="503"/>
         <source>Squashing filesystem...</source>
-        <translation>Tvorba systému súborov...</translation>
+        <translation type="unfinished">Tvorba systému súborov...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="514"/>
+        <location filename="../mainwindow.cpp" line="506"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
-        <translation>Nepodarilo sa vytvoriť súbor linuxfs, prosím skontrolujte, či máte v cieľom umiestnení dostatok voľného miesta </translation>
+        <translation type="unfinished">Nepodarilo sa vytvoriť súbor linuxfs, prosím skontrolujte, či máte v cieľom umiestnení dostatok voľného miesta </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="518"/>
         <source>Creating CD/DVD image file...</source>
-        <translation>Vytváranie CD/DVD obrazu...</translation>
+        <translation type="unfinished">Vytváranie CD/DVD obrazu...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="520"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
-        <translation>Nepodarilo sa vytvoriť ISO súbor, prosím skontrolujte, či máte v cieľom umiestnení dostatok voľného miesta.</translation>
+        <translation type="unfinished">Nepodarilo sa vytvoriť ISO súbor, prosím skontrolujte, či máte v cieľom umiestnení dostatok voľného miesta.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="534"/>
+        <location filename="../mainwindow.cpp" line="527"/>
         <source>Making hybrid iso</source>
-        <translation>Vytváram hybridné ISO</translation>
+        <translation type="unfinished">Vytváram hybridné ISO</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="552"/>
+        <location filename="../mainwindow.cpp" line="547"/>
         <source>Making md5sum</source>
-        <translation>Tvorba kontrolného súboru md5sum</translation>
+        <translation type="unfinished">Tvorba kontrolného súboru md5sum</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="563"/>
+        <location filename="../mainwindow.cpp" line="558"/>
         <source>Cleaning...</source>
-        <translation>Čistenie...</translation>
+        <translation type="unfinished">Čistenie...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="576"/>
-        <location filename="../mxsnapshot.cpp" line="933"/>
+        <location filename="../mainwindow.cpp" line="571"/>
+        <location filename="../mainwindow.cpp" line="939"/>
         <source>Done</source>
-        <translation>Hotovo</translation>
+        <translation type="unfinished">Hotovo</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="630"/>
+        <location filename="../mainwindow.cpp" line="649"/>
         <source>Please wait.</source>
-        <translation>Čakajte prosím...</translation>
+        <translation type="unfinished">Čakajte prosím...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="632"/>
+        <location filename="../mainwindow.cpp" line="651"/>
         <source>Please wait. Calculating used disk space...</source>
-        <translation>Čakajte prosím, vypočítava sa použité miesto na disku...</translation>
+        <translation type="unfinished">Čakajte prosím, vypočítava sa použité miesto na disku...</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="683"/>
+        <location filename="../mainwindow.cpp" line="666"/>
         <source>Settings</source>
-        <translation>Nastavenia</translation>
+        <translation type="unfinished">Nastavenia</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="692"/>
+        <location filename="../mainwindow.cpp" line="675"/>
         <source>Snapshot will use the following settings:*</source>
-        <translation>Použijú sa nasledujúce nastavenia:*</translation>
+        <translation type="unfinished">Použijú sa nasledujúce nastavenia:*</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="694"/>
+        <location filename="../mainwindow.cpp" line="677"/>
         <source>- Snapshot directory:</source>
-        <translation>- Zložka obrazu:</translation>
+        <translation type="unfinished">- Zložka obrazu:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="696"/>
+        <location filename="../mainwindow.cpp" line="679"/>
         <source>- Kernel to be used:</source>
-        <translation>- Linuxové jadro:</translation>
+        <translation type="unfinished">- Linuxové jadro:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="697"/>
+        <location filename="../mainwindow.cpp" line="680"/>
         <source>*These settings can be changed by editing: </source>
-        <translation>*Tieto nastavenia sa dajú zmeniť editáciou: </translation>
+        <translation type="unfinished">*Tieto nastavenia sa dajú zmeniť editáciou: </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="702"/>
+        <location filename="../mainwindow.cpp" line="685"/>
         <source>Final chance</source>
-        <translation>Posledná šanca</translation>
+        <translation type="unfinished">Posledná šanca</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="703"/>
+        <location filename="../mainwindow.cpp" line="686"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
-        <translation>Snapshot má všetky potrebné informácie k vytvoreniu súboru ISO z vášho funkčného systému.</translation>
+        <translation type="unfinished">Snapshot má všetky potrebné informácie k vytvoreniu súboru ISO z vášho funkčného systému.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="704"/>
+        <location filename="../mainwindow.cpp" line="687"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
-        <translation>Tvorba obrazu zaberie nejaký čas, v závislosti na veľkosti nainštalovaného systému a výkone vášho PC. </translation>
+        <translation type="unfinished">Tvorba obrazu zaberie nejaký čas, v závislosti na veľkosti nainštalovaného systému a výkone vášho PC. </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="705"/>
+        <location filename="../mainwindow.cpp" line="688"/>
         <source>OK to start?</source>
-        <translation>Chcete začať?</translation>
+        <translation type="unfinished">Chcete začať?</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="713"/>
+        <location filename="../mainwindow.cpp" line="696"/>
         <source>Output</source>
-        <translation>Výstup</translation>
+        <translation type="unfinished">Výstup</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="720"/>
+        <location filename="../mainwindow.cpp" line="703"/>
         <source>Edit Boot Menu</source>
-        <translation>Upraviť ponuku pri štarte </translation>
+        <translation type="unfinished">Upraviť ponuku pri štarte </translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="721"/>
+        <location filename="../mainwindow.cpp" line="704"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
-        <translation>Program sa pozastaví aby Vám umožnil upraviť súbory v pracovnej zložke. Zvoľte Ano pre editáciu štartovnej ponuky alebo Nie ak si prajete preskočiť tento krok a pokračovať v tvorbe obrazu.</translation>
+        <translation type="unfinished">Program sa pozastaví aby Vám umožnil upraviť súbory v pracovnej zložke. Zvoľte Ano pre editáciu štartovnej ponuky alebo Nie ak si prajete preskočiť tento krok a pokračovať v tvorbe obrazu.</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="734"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>Success</source>
-        <translation>Úspech</translation>
+        <translation type="unfinished">Úspech</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="734"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>All finished!</source>
-        <translation>Hotovo!</translation>
+        <translation type="unfinished">Hotovo!</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="735"/>
+        <location filename="../mainwindow.cpp" line="718"/>
         <source>Close</source>
-        <translation>Zatvoriť</translation>
+        <translation type="unfinished">Zatvoriť</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="882"/>
+        <location filename="../mainwindow.cpp" line="865"/>
         <source>About MX Snapshot</source>
-        <translation>O programe MX Snapshot</translation>
+        <translation type="unfinished">O programe MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="883"/>
+        <location filename="../mainwindow.cpp" line="866"/>
         <source>Version: </source>
-        <translation>Verzia:</translation>
+        <translation type="unfinished">Verzia:</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="885"/>
+        <location filename="../mainwindow.cpp" line="868"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
-        <translation>Program pre tvorbu Live-CD z funkčného operačného systému MX Linux</translation>
+        <translation type="unfinished">Program pre tvorbu Live-CD z funkčného operačného systému MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="886"/>
+        <location filename="../mainwindow.cpp" line="869"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation type="unfinished">Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="870"/>
         <source>License</source>
-        <translation>Licencia</translation>
+        <translation type="unfinished">Licencia</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="915"/>
+        <location filename="../mainwindow.cpp" line="871"/>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="889"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="921"/>
         <source>Select Snapshot Directory</source>
-        <translation>Zvoľte zložku pre snapshot</translation>
+        <translation type="unfinished">Zvoľte zložku pre snapshot</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="934"/>
+        <location filename="../mainwindow.cpp" line="940"/>
         <source>Confirmation</source>
-        <translation>Potvrdenie</translation>
+        <translation type="unfinished">Potvrdenie</translation>
     </message>
     <message>
-        <location filename="../mxsnapshot.cpp" line="934"/>
+        <location filename="../mainwindow.cpp" line="940"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation>Skutočne si prajete ukončiť program?</translation>
+        <translation type="unfinished">Skutočne si prajete ukončiť program?</translation>
+    </message>
+</context>
+<context>
+    <name>QApplication</name>
+    <message>
+        <location filename="../main.cpp" line="68"/>
+        <source>You must run this program as root.</source>
+        <translation>Tento program musíte spustiť ako root užívateľ.</translation>
+    </message>
+</context>
+<context>
+    <name>mxsnapshot</name>
+    <message>
+        <source>MX Snapshot</source>
+        <translation type="vanished">MX Snapshot</translation>
+    </message>
+    <message>
+        <source>Snapshot location:</source>
+        <translation type="vanished">Zložka obrazu:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot je aplikácia na tvorbu spustiteľných (ISO) obrazov vášho funkčného systému, ktoré môžete použiť pre zálohovanie alebo distribúciu. Počas tvorby zálohy môžete paralelne používať nemej náročné aplikácie.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Used space on / (root) and /home partitions:</source>
+        <translation type="vanished">Použitý priestor na diskoch / (root) a /home:</translation>
+    </message>
+    <message>
+        <source>Snapshot name:</source>
+        <translation type="vanished">Názov obrazu:</translation>
+    </message>
+    <message>
+        <source>Select a different snapshot directory</source>
+        <translation type="vanished">Zvoľte inú zložku pre obraz</translation>
+    </message>
+    <message>
+        <source>TextLabel</source>
+        <translation type="vanished">Textové označenie</translation>
+    </message>
+    <message>
+        <source>Edit Configuration File</source>
+        <translation type="vanished">Upraviť konfiguračný súbor</translation>
+    </message>
+    <message>
+        <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
+        <translation type="vanished">Vybraním položiek nižšie môžete zo zálohy vynechať určité zložky alebo kliknutím na tlačidlo priamo upraviť ich zoznam definovaný v súbore /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation type="vanished">Stiahnuté</translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation type="vanished">Dokumenty</translation>
+    </message>
+    <message>
+        <source>All of the above</source>
+        <translation type="vanished">Všetko vyššie</translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation type="vanished">Obrázky</translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation type="vanished">Hudba</translation>
+    </message>
+    <message>
+        <source>Desktop</source>
+        <translation type="vanished">Pracovná plocha</translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation type="vanished">Videá</translation>
+    </message>
+    <message>
+        <source>Edit Exclusion File</source>
+        <translation type="vanished">Upraviť zoznam vynechaných</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Táto voľba zresetuje heslá pre &amp;quot;demo&amp;quot; a &amp;quot;root&amp;quot; na MX Linux predvolené a neprenesie žiadne uživateľom vytvorené kontá.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Resetting accounts (for distribution to others)</source>
+        <translation type="vanished">Resetovať kontá (distribúcia iným)</translation>
+    </message>
+    <message>
+        <source>Type of snapshot:</source>
+        <translation type="vanished">Typ obrazu:</translation>
+    </message>
+    <message>
+        <source>Preserving accounts (for personal backup)</source>
+        <translation type="vanished">Zachovať kontá (pre vlastné zazálohovanie)</translation>
+    </message>
+    <message>
+        <source>Quit application</source>
+        <translation type="vanished">Zatvoriť aplikáciu</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="vanished">Zrušiť</translation>
+    </message>
+    <message>
+        <source>Alt+N</source>
+        <translation type="vanished">Alt+N</translation>
+    </message>
+    <message>
+        <source>Display help </source>
+        <translation type="vanished">Zobraziť nápovedu</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="vanished">Pomoc</translation>
+    </message>
+    <message>
+        <source>Alt+H</source>
+        <translation type="vanished">Alt+H</translation>
+    </message>
+    <message>
+        <source>About this application</source>
+        <translation type="vanished">O tejto aplikácii</translation>
+    </message>
+    <message>
+        <source>About...</source>
+        <translation type="vanished">O Programe</translation>
+    </message>
+    <message>
+        <source>Alt+B</source>
+        <translation type="vanished">Alt+B</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="vanished">Ďalej</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="vanished">Naspäť</translation>
+    </message>
+    <message>
+        <source>Used space on / (root): </source>
+        <translation type="vanished">Použitý priestor na disku / (root):</translation>
+    </message>
+    <message>
+        <source>Used space on /home: </source>
+        <translation type="vanished">Použitý priestor na disku /home:</translation>
+    </message>
+    <message>
+        <source>Free space on %1, where snapshot folder is placed: </source>
+        <translation type="vanished">Voľné miesto na disku %1, na ktorom je obraz umiestnený: </translation>
+    </message>
+    <message>
+        <source>The free space should be sufficient to hold the compressed data from / and /home
+
+      If necessary, you can create more available space
+      by removing previous snapshots and saved copies:
+      %1 snapshots are taking up %2 of disk space.
+</source>
+        <translation type="vanished">Voľné miesto musí byť dostatočné pre umiestnenie komprimovaných dát z diskov / a /home
+
+Ak to bude nutné, môžete uvoľnit miesto
+odstránením predošlých obrazov alebo kópií systému:
+%1 obrazy zaberajú %2 diskového priestoru.
+</translation>
+    </message>
+    <message>
+        <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
+
+Will install leafpad and use it this time.</source>
+        <translation type="vanished">Editor textu je nastavený na %1, ale nie je nainštalovaný. Upravte %2 a nastavte premennú gui_editor na Vami zvolenú hodnotu. (príklady: /usr/bin/gedit, /usr/bin/leafpad)
+
+Pre tento krát sa nainštaluje a použije Leafpad.</translation>
+    </message>
+    <message>
+        <source>Installing </source>
+        <translation type="vanished">Inštalácia</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">Chyba</translation>
+    </message>
+    <message>
+        <source>Could not install </source>
+        <translation type="vanished">Nešlo nainštalovať</translation>
+    </message>
+    <message>
+        <source>Copying the new-iso filesystem...</source>
+        <translation type="vanished">Kopíruje sa nový ISO systém súborov....</translation>
+    </message>
+    <message>
+        <source>Squashing filesystem...</source>
+        <translation type="vanished">Tvorba systému súborov...</translation>
+    </message>
+    <message>
+        <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
+        <translation type="vanished">Nepodarilo sa vytvoriť súbor linuxfs, prosím skontrolujte, či máte v cieľom umiestnení dostatok voľného miesta </translation>
+    </message>
+    <message>
+        <source>Creating CD/DVD image file...</source>
+        <translation type="vanished">Vytváranie CD/DVD obrazu...</translation>
+    </message>
+    <message>
+        <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
+        <translation type="vanished">Nepodarilo sa vytvoriť ISO súbor, prosím skontrolujte, či máte v cieľom umiestnení dostatok voľného miesta.</translation>
+    </message>
+    <message>
+        <source>Making hybrid iso</source>
+        <translation type="vanished">Vytváram hybridné ISO</translation>
+    </message>
+    <message>
+        <source>Making md5sum</source>
+        <translation type="vanished">Tvorba kontrolného súboru md5sum</translation>
+    </message>
+    <message>
+        <source>Cleaning...</source>
+        <translation type="vanished">Čistenie...</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="vanished">Hotovo</translation>
+    </message>
+    <message>
+        <source>Please wait.</source>
+        <translation type="vanished">Čakajte prosím...</translation>
+    </message>
+    <message>
+        <source>Please wait. Calculating used disk space...</source>
+        <translation type="vanished">Čakajte prosím, vypočítava sa použité miesto na disku...</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="vanished">Nastavenia</translation>
+    </message>
+    <message>
+        <source>Snapshot will use the following settings:*</source>
+        <translation type="vanished">Použijú sa nasledujúce nastavenia:*</translation>
+    </message>
+    <message>
+        <source>- Snapshot directory:</source>
+        <translation type="vanished">- Zložka obrazu:</translation>
+    </message>
+    <message>
+        <source>- Kernel to be used:</source>
+        <translation type="vanished">- Linuxové jadro:</translation>
+    </message>
+    <message>
+        <source>*These settings can be changed by editing: </source>
+        <translation type="vanished">*Tieto nastavenia sa dajú zmeniť editáciou: </translation>
+    </message>
+    <message>
+        <source>Final chance</source>
+        <translation type="vanished">Posledná šanca</translation>
+    </message>
+    <message>
+        <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
+        <translation type="vanished">Snapshot má všetky potrebné informácie k vytvoreniu súboru ISO z vášho funkčného systému.</translation>
+    </message>
+    <message>
+        <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
+        <translation type="vanished">Tvorba obrazu zaberie nejaký čas, v závislosti na veľkosti nainštalovaného systému a výkone vášho PC. </translation>
+    </message>
+    <message>
+        <source>OK to start?</source>
+        <translation type="vanished">Chcete začať?</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation type="vanished">Výstup</translation>
+    </message>
+    <message>
+        <source>Edit Boot Menu</source>
+        <translation type="vanished">Upraviť ponuku pri štarte </translation>
+    </message>
+    <message>
+        <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
+        <translation type="vanished">Program sa pozastaví aby Vám umožnil upraviť súbory v pracovnej zložke. Zvoľte Ano pre editáciu štartovnej ponuky alebo Nie ak si prajete preskočiť tento krok a pokračovať v tvorbe obrazu.</translation>
+    </message>
+    <message>
+        <source>Success</source>
+        <translation type="vanished">Úspech</translation>
+    </message>
+    <message>
+        <source>All finished!</source>
+        <translation type="vanished">Hotovo!</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="vanished">Zatvoriť</translation>
+    </message>
+    <message>
+        <source>About MX Snapshot</source>
+        <translation type="vanished">O programe MX Snapshot</translation>
+    </message>
+    <message>
+        <source>Version: </source>
+        <translation type="vanished">Verzia:</translation>
+    </message>
+    <message>
+        <source>Program for creating a live-CD from the running system for MX Linux</source>
+        <translation type="vanished">Program pre tvorbu Live-CD z funkčného operačného systému MX Linux</translation>
+    </message>
+    <message>
+        <source>Copyright (c) MX Linux</source>
+        <translation type="vanished">Copyright (c) MX Linux</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation type="vanished">Licencia</translation>
+    </message>
+    <message>
+        <source>Select Snapshot Directory</source>
+        <translation type="vanished">Zvoľte zložku pre snapshot</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation type="vanished">Potvrdenie</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to quit the application?</source>
+        <translation type="vanished">Skutočne si prajete ukončiť program?</translation>
     </message>
 </context>
 </TS>
