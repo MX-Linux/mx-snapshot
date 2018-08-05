@@ -614,7 +614,7 @@ void MainWindow::procStart()
 
 void MainWindow::procDone()
 {
-    ui->progressBar->setValue(100);
+    ui->progressBar->setValue(ui->progressBar->maximum());
     setCursor(QCursor(Qt::ArrowCursor));
 }
 
