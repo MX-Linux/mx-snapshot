@@ -1,3 +1,9 @@
+mx-snapshot (18.8) mx; urgency=medium
+
+  * minor fix: progress bar
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 04 Aug 2018 23:29:04 -0400
+
 mx-snapshot (18.6.1) mx; urgency=medium
 
   * use libcmd to run shell commands
