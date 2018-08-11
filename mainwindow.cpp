@@ -556,17 +556,17 @@ void MainWindow::cleanUp()
     qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     ui->stackedWidget->setCurrentWidget(ui->outputPage);
     ui->outputLabel->setText(tr("Cleaning..."));
-    shell->run("pkill mksquashfs; pkill md5sum");
+    system("pkill mksquashfs; pkill md5sum");
     QDir::setCurrent("/");
-    shell->run("installed-to-live cleanup");
+    system("installed-to-live cleanup");
 
     // checks if work_dir looks OK
     if (work_dir.contains("/mx-snapshot")) {
-        shell->run("rm -r \"" + work_dir + "\"");
+        system("rm -r \"" + work_dir.toUtf8() + "\"");
     }
     if (!live && !reset_accounts) {
         // remove installer icon
-        shell->run("rm /home/*/Desktop/minstall.desktop");
+        system("rm /home/*/Desktop/minstall.desktop");
     }
     ui->outputLabel->setText(tr("Done"));
 }

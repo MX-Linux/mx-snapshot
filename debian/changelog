@@ -1,3 +1,9 @@
+mx-snapshot (18.8.1) mx; urgency=medium
+
+  * fix cleanup if canceled
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 11 Aug 2018 01:09:29 -0400
+
 mx-snapshot (18.8) mx; urgency=medium
 
   * minor fix: progress bar
