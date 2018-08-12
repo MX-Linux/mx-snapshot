@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sun, 12 Aug 2018 16:36:33 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 18.8.3
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (18.8.3) mx; urgency=medium
+ .
+   * enable saving snapshot to NTFS and FAT32 partitions
+Checksums-Sha1:
+ fc2c008e881aa679926976ffdafe302352c333d4 1187 mx-snapshot_18.8.3.dsc
+ b2c6c0861a59344ca77e599eaf7b6a7c969de6d3 83844 mx-snapshot_18.8.3.tar.xz
+ 51c3748dc3ff7f840a0a7be58a765ff98537a639 104886 mx-snapshot_18.8.3_amd64.deb
+Checksums-Sha256:
+ 427d9b1eb136a7f88fadd969ea91614f821bcbce3f35283edd88e50ab577b519 1187 mx-snapshot_18.8.3.dsc
+ 519185ea77803de42ebce87041c36016d08f1b527162e59fcfe9e461dd615767 83844 mx-snapshot_18.8.3.tar.xz
+ 93735f3d0c4afd96e5cfba34d98cb05c4497920af9bd270d60b57d35e99dffe6 104886 mx-snapshot_18.8.3_amd64.deb
+Files:
+ 4bda25085fd179e30492f9617739c5bc 1187 admin optional mx-snapshot_18.8.3.dsc
+ ac48045add6b0bde939aa9f7ceab1cec 83844 admin optional mx-snapshot_18.8.3.tar.xz
+ 3caccc8c7d3086b54bdada394a871594 104886 admin optional mx-snapshot_18.8.3_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAltwnI4THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumLJOCACSw5BryuLBPmiT+8CHZz0cF1pNurZ6
+BnvzAiwy9s46AtUjoKePvx3SWx/Tnzkr/JmTC/VinBz9R6tT8nAX4Mtdo7fUiLlD
+i988xHlYtyr84KNQq6LnhdziCmQTeVngFBGCbBnG8+/W6DQzYjrgBfaRl+F9OFb1
+2axt6cZL4kpzQh2bxoJzHilQDJv9A1dB2jXcmDWH/jh3Frjj6Zc0XrgMKMfJJg/P
+v8S/AX52uPTzui8ntQ6PANLgpd5WbIPKgOtCkCPEanpe+QX+2Se3dkEfOkRN/OsP
+JjwzLsEQUZCBt+SiQ376lxJxW3XR0wpkx9XuvWaw6p3ZTT8gZmDtmlTK
+=55f+
+-----END PGP SIGNATURE-----

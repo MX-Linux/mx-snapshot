@@ -85,6 +85,7 @@ public:
     bool installPackage(QString package);
     bool isi686();
     bool isLive();
+    bool isOnLinuxPart(QDir dir);
     bool replaceStringInFile(QString old_text, QString new_text, QString file_path);
 
     void checkDirectories();

@@ -122,6 +122,17 @@ bool MainWindow::isLive()
     return (shell->run("mountpoint -q /live/aufs") == 0 );
 }
 
+
+// checks if the directory is on a Linux partition
+bool MainWindow::isOnLinuxPart(QDir dir)
+{
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    QStringList linux_partitions = (QStringList() << "ext2/ext3" << "btrfs" << "jfs" << "reiserfs" << "xfs"); // supported Linux partition types
+    QString part_type = shell->getOutput("stat --file-system --format=%T " + dir.absolutePath()).trimmed();
+    qDebug() << "detected partition" << part_type << "supported linux part:" << linux_partitions.contains(part_type);
+    return linux_partitions.contains(part_type);
+}
+
 // Check if running from a 32bit environment
 bool MainWindow::isi686()
 {
@@ -269,7 +280,11 @@ void MainWindow::checkDirectories()
         snapshot_dir.mkpath(snapshot_dir.absolutePath());
     }
     // Create a work_dir
-    work_dir = shell->getOutput("mktemp -d \"" + snapshot_dir.absolutePath() + "/mx-snapshot-XXXXXXXX\"");
+    QString parent_dir = snapshot_dir.absolutePath();
+    if (!isOnLinuxPart(snapshot_dir)) { // if not saving snapshot on a Linux partition put working dir in /home
+        parent_dir = "/home";
+    }
+    work_dir = shell->getOutput("mktemp -d \"" + parent_dir + "/mx-snapshot-XXXXXXXX\"");
     system("mkdir -p " + work_dir.toUtf8() + "/iso-template/antiX");
     system("cd ..; cd -");
 }
