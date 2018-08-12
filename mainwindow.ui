@@ -17,7 +17,7 @@
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="selectionPage">
       <layout class="QGridLayout" name="gridLayout_2">
@@ -161,6 +161,9 @@ color: rgb(0, 0, 0);</string>
          <property name="text">
           <string>Select a different snapshot directory</string>
          </property>
+         <property name="icon">
+          <iconset theme="cursor-arrow"/>
+         </property>
         </widget>
        </item>
        <item row="11" column="0" colspan="3">
@@ -269,6 +272,9 @@ color: rgb(0, 0, 0);</string>
          </property>
          <property name="text">
           <string>Edit Configuration File</string>
+         </property>
+         <property name="icon">
+          <iconset theme="edit"/>
          </property>
         </widget>
        </item>
@@ -382,6 +388,9 @@ color: rgb(0, 0, 0);</string>
          </property>
          <property name="text">
           <string>Edit Exclusion File</string>
+         </property>
+         <property name="icon">
+          <iconset theme="edit"/>
          </property>
         </widget>
        </item>

@@ -109,8 +109,10 @@ public:
     void setupEnv();
 
     QString getFilename();
+    QString largerFreeSpace(QString dir1, QString dir2);
     QString getSnapshotSize();
     QStringList listUsers();
+
 
 public slots:
     void outputAvailable(const QString &output);

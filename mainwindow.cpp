@@ -282,7 +282,7 @@ void MainWindow::checkDirectories()
     // Create a work_dir
     QString parent_dir = snapshot_dir.absolutePath();
     if (!isOnLinuxPart(snapshot_dir)) { // if not saving snapshot on a Linux partition put working dir in /home
-        parent_dir = "/home";
+        parent_dir = largerFreeSpace("/tmp", "/home");
     }
     work_dir = shell->getOutput("mktemp -d \"" + parent_dir + "/mx-snapshot-XXXXXXXX\"");
     system("mkdir -p " + work_dir.toUtf8() + "/iso-template/antiX");
@@ -440,6 +440,20 @@ QString MainWindow::getFilename()
             n++;
         } while (dir.exists(dir.absolutePath()));
         return name;
+    }
+}
+
+// return the directory that has more free space available
+QString MainWindow::largerFreeSpace(QString dir1, QString dir2)
+{
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    int dir1_free = shell->getOutput("df -k --output=avail " + dir1 + " 2>/dev/null | tail -n1").toInt();
+    int dir2_free = shell->getOutput("df -k --output=avail " + dir2 + " 2>/dev/null | tail -n1").toInt();
+
+    if (dir1_free >= dir2_free) {
+        return dir1;
+    } else {
+        return dir2;
     }
 }
 
