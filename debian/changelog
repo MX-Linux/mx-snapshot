@@ -1,3 +1,10 @@
+mx-snapshot (18.8.4) mx; urgency=medium
+
+  * select larger / or /home for work folder
+  * add work folder exclusion
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 13 Aug 2018 21:34:34 -0400
+
 mx-snapshot (18.8.3) mx; urgency=medium
 
   * enable saving snapshot to NTFS and FAT32 partitions

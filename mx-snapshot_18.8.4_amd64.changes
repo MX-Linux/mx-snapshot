@@ -1,0 +1,44 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Mon, 13 Aug 2018 21:34:34 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 18.8.4
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (18.8.4) mx; urgency=medium
+ .
+   * select larger / or /home for work folder
+   * add work folder exclusion
+Checksums-Sha1:
+ c8f6a76bcd2ce53a417d3a3b207a87b51cda2f35 1187 mx-snapshot_18.8.4.dsc
+ 726904f8e89dce6d3356f9c56d1884760228be78 84044 mx-snapshot_18.8.4.tar.xz
+ 2018b38c3ce52b95b65bb6c662a29c4eff7cab87 105420 mx-snapshot_18.8.4_amd64.deb
+Checksums-Sha256:
+ b1dcbf4f3083fc0689cbc03843b9ae528ac4a70ad4094f62a23865e7b8891d17 1187 mx-snapshot_18.8.4.dsc
+ c1a777d4e240e9dc561614ea9b5542afb6875d38fd6293ea18d0f62ce8d14a42 84044 mx-snapshot_18.8.4.tar.xz
+ fce7d5bcf9aea20b72501c15422a8067ccd02e5f421e5cc0df0f3cb1f8a3d138 105420 mx-snapshot_18.8.4_amd64.deb
+Files:
+ 465592fa37347943b501b1576521ef27 1187 admin optional mx-snapshot_18.8.4.dsc
+ 9dc890b6221eb8735d85dc5ee000fba6 84044 admin optional mx-snapshot_18.8.4.tar.xz
+ e535a29dd0601ac2cada8a5ca52268b7 105420 admin optional mx-snapshot_18.8.4_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAltyM1UTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPWxCACFFViI2+Y+jmVM3gHarv0wZQ4nJlOP
+ab+02QHXbHj/om1GtTX15HR72PJm49z3k0B/9MPqWlNNc6sRE0uHamcvre/cHXeB
+GDg5IMaONeo7GNx04nqu/qXwTxY/FKSHnK8Ham5OdTyyPKkx01FPTNABvLQEttsy
+/pro0V6SY+FMn80H1Nb7xJ1WZPpyG5C2M++PzhxgMXdvJYboYmOro6yZugZCk4WJ
+v3h5Mp8lanl0NDoK+X8UlCbxMsTVG+MpRA+QxrYgpk3XrmNy8gM8uZb6jip8q5pJ
+uThuvswxmeJEV3PdPZxUk2Zw6nF29zbRXBJG6k3nvbIqqTALWIdDlzlL
+=xaei
+-----END PGP SIGNATURE-----

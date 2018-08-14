@@ -514,8 +514,9 @@ int MainWindow::getDebianVersion()
 bool MainWindow::createIso(QString filename)
 {
     qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
-    // add exclusions snapshot dir
+    // add exclusions snapshot and work dirs
     addRemoveExclusion(true, snapshot_dir.absolutePath());
+    addRemoveExclusion(true, work_dir);
 
     if (reset_accounts) {
         // exclude /etc/localtime if link and timezone not America/New_York
@@ -605,7 +606,7 @@ void MainWindow::addRemoveExclusion(bool add, QString exclusion)
 {
     qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     if (exclusion.startsWith("/")) {
-        exclusion.remove(0, 1); // remove training slash
+        exclusion.remove(0, 1); // remove preceding slash
     }
     if (add) {
         if (session_excludes == "") {
