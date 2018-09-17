@@ -7,8 +7,8 @@
         <location filename="../mainwindow.ui" line="14"/>
         <location filename="../mainwindow.cpp" line="48"/>
         <location filename="../mainwindow.cpp" line="97"/>
-        <location filename="../mainwindow.cpp" line="757"/>
-        <location filename="../mainwindow.cpp" line="896"/>
+        <location filename="../mainwindow.cpp" line="741"/>
+        <location filename="../mainwindow.cpp" line="878"/>
         <source>MX Snapshot</source>
         <translation type="unfinished">MX Zrzut dysku</translation>
     </message>
@@ -29,7 +29,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="155"/>
-        <location filename="../mainwindow.cpp" line="708"/>
+        <location filename="../mainwindow.cpp" line="692"/>
         <source>Snapshot name:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="551"/>
-        <location filename="../mainwindow.cpp" line="902"/>
+        <location filename="../mainwindow.cpp" line="884"/>
         <source>Cancel</source>
         <translation type="unfinished">Anuluj</translation>
     </message>
@@ -201,215 +201,214 @@ poprzez usunięcie poprzednich zrzutów i zapisanych kopii:
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="229"/>
         <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
 
 Will install leafpad and use it this time.</source>
-        <translation type="unfinished">Wybrany edytor to %1, lecz nie jest on zainstalowany. Zmień %2 i ustaw zmienną qui_editor na Twój wybrany program (na przykład: /usr/bin/gedit, /usr/bin/leafpad)
+        <translation type="obsolete">Wybrany edytor to %1, lecz nie jest on zainstalowany. Zmień %2 i ustaw zmienną qui_editor na Twój wybrany program (na przykład: /usr/bin/gedit, /usr/bin/leafpad)
 
 Tym razem zainstaluję i użyję programu leafpad.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="257"/>
-        <location filename="../mainwindow.cpp" line="258"/>
+        <location filename="../mainwindow.cpp" line="230"/>
+        <location filename="../mainwindow.cpp" line="231"/>
         <source>Installing </source>
         <translation type="unfinished">Instalowanie</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
-        <location filename="../mainwindow.cpp" line="536"/>
-        <location filename="../mainwindow.cpp" line="550"/>
+        <location filename="../mainwindow.cpp" line="240"/>
+        <location filename="../mainwindow.cpp" line="523"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Error</source>
         <translation type="unfinished">Bląd</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
+        <location filename="../mainwindow.cpp" line="240"/>
         <source>Could not install </source>
         <translation type="unfinished">Nie można zainstalować</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="295"/>
+        <location filename="../mainwindow.cpp" line="268"/>
         <source>Building new initrd...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="321"/>
+        <location filename="../mainwindow.cpp" line="294"/>
         <source>Copying the new-iso filesystem...</source>
         <translation type="unfinished">Kopiowanie nowego systemu plików iso...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="533"/>
+        <location filename="../mainwindow.cpp" line="520"/>
         <source>Squashing filesystem...</source>
         <translation type="unfinished">Kompresowanie systemu plików...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="536"/>
+        <location filename="../mainwindow.cpp" line="523"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="548"/>
+        <location filename="../mainwindow.cpp" line="535"/>
         <source>Creating CD/DVD image file...</source>
         <translation type="unfinished">Tworzenie obrazu CD/DVD...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="550"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="557"/>
+        <location filename="../mainwindow.cpp" line="544"/>
         <source>Making hybrid iso</source>
         <translation type="unfinished">Tworzenie obrazu hybrydowego iso</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="577"/>
+        <location filename="../mainwindow.cpp" line="564"/>
         <source>Making md5sum</source>
         <translation type="unfinished">Tworzenie sumy kontrolnej md5</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="588"/>
+        <location filename="../mainwindow.cpp" line="575"/>
         <source>Cleaning...</source>
         <translation type="unfinished">Czyszczenie...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="601"/>
-        <location filename="../mainwindow.cpp" line="969"/>
+        <location filename="../mainwindow.cpp" line="588"/>
+        <location filename="../mainwindow.cpp" line="951"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="679"/>
+        <location filename="../mainwindow.cpp" line="666"/>
         <source>Please wait.</source>
         <translation type="unfinished">Proszę czekaj.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="681"/>
+        <location filename="../mainwindow.cpp" line="668"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation type="unfinished">Proszę czekaj. Obliczenie wykorzystanej przestrzeni dyskowej...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="696"/>
+        <location filename="../mainwindow.cpp" line="683"/>
         <source>Settings</source>
         <translation type="unfinished">Ustawienia</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="705"/>
+        <location filename="../mainwindow.cpp" line="689"/>
         <source>Snapshot will use the following settings:*</source>
         <translation type="unfinished">Zrzut wykorzysta następujące ustawienia:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="707"/>
+        <location filename="../mainwindow.cpp" line="691"/>
         <source>- Snapshot directory:</source>
         <translation type="unfinished">- Katalog zrzutu:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="709"/>
+        <location filename="../mainwindow.cpp" line="693"/>
         <source>- Kernel to be used:</source>
         <translation type="unfinished">- Jądro systemu:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="710"/>
+        <location filename="../mainwindow.cpp" line="694"/>
         <source>*These settings can be changed by editing: </source>
         <translation type="unfinished">* Te opcje mogą zostać zmienione przez edycję:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="715"/>
+        <location filename="../mainwindow.cpp" line="699"/>
         <source>Final chance</source>
         <translation type="unfinished">Ostatnia szansa</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="716"/>
+        <location filename="../mainwindow.cpp" line="700"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation type="unfinished">Zrzut zawiera teraz wszystkie informacje potrzebne do utworzenia obrazu ISO z Twojego systemu.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="717"/>
+        <location filename="../mainwindow.cpp" line="701"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation type="unfinished">Zakończenie pracy zajmie dłuższą chwilę, w zależności od wielkości zainstalowanego systemu oraz możliwości sprzętowych Twojego komputera.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="718"/>
+        <location filename="../mainwindow.cpp" line="702"/>
         <source>OK to start?</source>
         <translation type="unfinished">Zaczynamy?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="726"/>
+        <location filename="../mainwindow.cpp" line="710"/>
         <source>Output</source>
         <translation type="unfinished">Log:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="733"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>Edit Boot Menu</source>
         <translation type="unfinished">Edytuj menu rozruchu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="734"/>
+        <location filename="../mainwindow.cpp" line="718"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation type="unfinished">Program zatrzyma pracę, by pozwolić Ci na edycję plików w katalogu roboczym. Wybierz Tak by edytować menu rozruchu lub Nie by wznowić tworzenie zrzutu.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="747"/>
+        <location filename="../mainwindow.cpp" line="731"/>
         <source>Success</source>
         <translation type="unfinished">Sukces</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="747"/>
+        <location filename="../mainwindow.cpp" line="731"/>
         <source>All finished!</source>
         <translation type="unfinished">Proces zakończony!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="748"/>
+        <location filename="../mainwindow.cpp" line="732"/>
         <source>Close</source>
         <translation type="unfinished">Zamknij</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="895"/>
+        <location filename="../mainwindow.cpp" line="877"/>
         <source>About MX Snapshot</source>
         <translation type="unfinished">O MX Zrzut dysku</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="896"/>
+        <location filename="../mainwindow.cpp" line="878"/>
         <source>Version: </source>
         <translation type="unfinished">Wersja:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="898"/>
+        <location filename="../mainwindow.cpp" line="880"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation type="unfinished">Program do tworzenia obrazów Live-CD z działającego systemu dla dystrybucji antiX MX</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="899"/>
+        <location filename="../mainwindow.cpp" line="881"/>
         <source>Copyright (c) MX Linux</source>
         <translation type="unfinished">Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="900"/>
+        <location filename="../mainwindow.cpp" line="882"/>
         <source>License</source>
         <translation type="unfinished">Licencja</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="901"/>
+        <location filename="../mainwindow.cpp" line="883"/>
         <source>Changelog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="919"/>
+        <location filename="../mainwindow.cpp" line="901"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="951"/>
+        <location filename="../mainwindow.cpp" line="933"/>
         <source>Select Snapshot Directory</source>
         <translation type="unfinished">Wybierz katalog zrzutu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="970"/>
+        <location filename="../mainwindow.cpp" line="952"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="970"/>
+        <location filename="../mainwindow.cpp" line="952"/>
         <source>Are you sure you want to quit the application?</source>
         <translation type="unfinished"></translation>
     </message>

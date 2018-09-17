@@ -1,3 +1,9 @@
+mx-snapshot (18.9) mx; urgency=medium
+
+  * use default editor if the editor is set in .conf file is absent
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 17 Sep 2018 17:44:00 -0400
+
 mx-snapshot (18.8.4) mx; urgency=medium
 
   * select larger / or /home for work folder

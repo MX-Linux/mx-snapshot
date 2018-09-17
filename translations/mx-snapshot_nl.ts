@@ -7,8 +7,8 @@
         <location filename="../mainwindow.ui" line="14"/>
         <location filename="../mainwindow.cpp" line="48"/>
         <location filename="../mainwindow.cpp" line="97"/>
-        <location filename="../mainwindow.cpp" line="757"/>
-        <location filename="../mainwindow.cpp" line="896"/>
+        <location filename="../mainwindow.cpp" line="741"/>
+        <location filename="../mainwindow.cpp" line="878"/>
         <source>MX Snapshot</source>
         <translation type="unfinished">MX Snapshot</translation>
     </message>
@@ -29,7 +29,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="155"/>
-        <location filename="../mainwindow.cpp" line="708"/>
+        <location filename="../mainwindow.cpp" line="692"/>
         <source>Snapshot name:</source>
         <translation type="unfinished">Snapshot naam:</translation>
     </message>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="551"/>
-        <location filename="../mainwindow.cpp" line="902"/>
+        <location filename="../mainwindow.cpp" line="884"/>
         <source>Cancel</source>
         <translation type="unfinished">Cancel</translation>
     </message>
@@ -203,215 +203,214 @@ door oudere snapshots en opgeslagen kopieën te verwijderen:
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="229"/>
         <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
 
 Will install leafpad and use it this time.</source>
-        <translation type="unfinished">De graphische editor is ingesteld op %1, maar deze is niet geïnstalleerd. Pas %2 aan en stel de gui_editor variabele in op de editor van uw keuze. (voorbeelden: /usr/bin/gedit, /usr/bin/leafpad)
+        <translation type="obsolete">De graphische editor is ingesteld op %1, maar deze is niet geïnstalleerd. Pas %2 aan en stel de gui_editor variabele in op de editor van uw keuze. (voorbeelden: /usr/bin/gedit, /usr/bin/leafpad)
 
 Zal leafpad installeren en dit keer gebruiken.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="257"/>
-        <location filename="../mainwindow.cpp" line="258"/>
+        <location filename="../mainwindow.cpp" line="230"/>
+        <location filename="../mainwindow.cpp" line="231"/>
         <source>Installing </source>
         <translation type="unfinished">Installeren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
-        <location filename="../mainwindow.cpp" line="536"/>
-        <location filename="../mainwindow.cpp" line="550"/>
+        <location filename="../mainwindow.cpp" line="240"/>
+        <location filename="../mainwindow.cpp" line="523"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Error</source>
         <translation type="unfinished">Fout</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
+        <location filename="../mainwindow.cpp" line="240"/>
         <source>Could not install </source>
         <translation type="unfinished">Kon niet installeren</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="295"/>
+        <location filename="../mainwindow.cpp" line="268"/>
         <source>Building new initrd...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="321"/>
+        <location filename="../mainwindow.cpp" line="294"/>
         <source>Copying the new-iso filesystem...</source>
         <translation type="unfinished">New-iso bestandssysteem kopiëren...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="533"/>
+        <location filename="../mainwindow.cpp" line="520"/>
         <source>Squashing filesystem...</source>
         <translation type="unfinished">Comprimeren van het bestandsysteem</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="536"/>
+        <location filename="../mainwindow.cpp" line="523"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">Kon geen linuxfs bestand creëren, controleer aub of u genoeg ruimte op de doelpartitie heeft.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="548"/>
+        <location filename="../mainwindow.cpp" line="535"/>
         <source>Creating CD/DVD image file...</source>
         <translation type="unfinished">CD/DVD image bestand maken...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="550"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">Kon geen ISO bestand creëren, controleer aub of u genoeg ruimte op de doelpartitie heeft.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="557"/>
+        <location filename="../mainwindow.cpp" line="544"/>
         <source>Making hybrid iso</source>
         <translation type="unfinished">Hybride iso maken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="577"/>
+        <location filename="../mainwindow.cpp" line="564"/>
         <source>Making md5sum</source>
         <translation type="unfinished">Md5sum maken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="588"/>
+        <location filename="../mainwindow.cpp" line="575"/>
         <source>Cleaning...</source>
         <translation type="unfinished">Opruimen...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="601"/>
-        <location filename="../mainwindow.cpp" line="969"/>
+        <location filename="../mainwindow.cpp" line="588"/>
+        <location filename="../mainwindow.cpp" line="951"/>
         <source>Done</source>
         <translation type="unfinished">Klaar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="679"/>
+        <location filename="../mainwindow.cpp" line="666"/>
         <source>Please wait.</source>
         <translation type="unfinished">Even wachten aub.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="681"/>
+        <location filename="../mainwindow.cpp" line="668"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation type="unfinished">Even wachten aub. Gebruikte schijfruimte aan het berekenen...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="696"/>
+        <location filename="../mainwindow.cpp" line="683"/>
         <source>Settings</source>
         <translation type="unfinished">Instellingen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="705"/>
+        <location filename="../mainwindow.cpp" line="689"/>
         <source>Snapshot will use the following settings:*</source>
         <translation type="unfinished">Snapshot zal de volgende instellingen gebruiken:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="707"/>
+        <location filename="../mainwindow.cpp" line="691"/>
         <source>- Snapshot directory:</source>
         <translation type="unfinished">- Snapshot folder:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="709"/>
+        <location filename="../mainwindow.cpp" line="693"/>
         <source>- Kernel to be used:</source>
         <translation type="unfinished">- Te gebruiken kernel:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="710"/>
+        <location filename="../mainwindow.cpp" line="694"/>
         <source>*These settings can be changed by editing: </source>
         <translation type="unfinished">*Deze instellingen kunnen door te bewerken veranderd worden:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="715"/>
+        <location filename="../mainwindow.cpp" line="699"/>
         <source>Final chance</source>
         <translation type="unfinished">Laatste kans</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="716"/>
+        <location filename="../mainwindow.cpp" line="700"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation type="unfinished">Snapshot heeft nu alle informatie die het nodig heeft om een ISO van uw lopende systeem te creëren. </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="717"/>
+        <location filename="../mainwindow.cpp" line="701"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation type="unfinished">Dit zal enige tijd duren, afhankelijk van de afmeting van het geïnstalleerde systeem en de capaciteit van uw computer.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="718"/>
+        <location filename="../mainwindow.cpp" line="702"/>
         <source>OK to start?</source>
         <translation type="unfinished">OK om te beginnen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="726"/>
+        <location filename="../mainwindow.cpp" line="710"/>
         <source>Output</source>
         <translation type="unfinished">Output</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="733"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>Edit Boot Menu</source>
         <translation type="unfinished">Boot Menu aanpassen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="734"/>
+        <location filename="../mainwindow.cpp" line="718"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation type="unfinished">Het programma zal nu pauzeren om u in staat te stellen bestanden aan te passen in de werk folder. Selecteer Ja om het opstartmenu aan te passen of selecteer Nee om deze stap over te slaan en door te gaan met het creëren van het snapshot.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="747"/>
+        <location filename="../mainwindow.cpp" line="731"/>
         <source>Success</source>
         <translation type="unfinished">Gelukt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="747"/>
+        <location filename="../mainwindow.cpp" line="731"/>
         <source>All finished!</source>
         <translation type="unfinished">Helemaal klaar!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="748"/>
+        <location filename="../mainwindow.cpp" line="732"/>
         <source>Close</source>
         <translation type="unfinished">Sluiten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="895"/>
+        <location filename="../mainwindow.cpp" line="877"/>
         <source>About MX Snapshot</source>
         <translation type="unfinished">Over MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="896"/>
+        <location filename="../mainwindow.cpp" line="878"/>
         <source>Version: </source>
         <translation type="unfinished">Versie:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="898"/>
+        <location filename="../mainwindow.cpp" line="880"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation type="unfinished">Programma om een live-CD te creëren van het lopende systeem voor MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="899"/>
+        <location filename="../mainwindow.cpp" line="881"/>
         <source>Copyright (c) MX Linux</source>
         <translation type="unfinished">Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="900"/>
+        <location filename="../mainwindow.cpp" line="882"/>
         <source>License</source>
         <translation type="unfinished">Licentie</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="901"/>
+        <location filename="../mainwindow.cpp" line="883"/>
         <source>Changelog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="919"/>
+        <location filename="../mainwindow.cpp" line="901"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="951"/>
+        <location filename="../mainwindow.cpp" line="933"/>
         <source>Select Snapshot Directory</source>
         <translation type="unfinished">Selecteer Snapshot Folder</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="970"/>
+        <location filename="../mainwindow.cpp" line="952"/>
         <source>Confirmation</source>
         <translation type="unfinished">Bevestiging</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="970"/>
+        <location filename="../mainwindow.cpp" line="952"/>
         <source>Are you sure you want to quit the application?</source>
         <translation type="unfinished">Weet u zeker dat u wilt stoppen met deze applicatie?</translation>
     </message>

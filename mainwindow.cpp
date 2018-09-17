@@ -213,33 +213,6 @@ void MainWindow::listFreeSpace()
                                        "      %1 snapshots are taking up %2 of disk space.\n").arg(QString::number(getSnapshotCount())).arg(getSnapshotSize()));
 }
 
-// Checks if the editor listed in the config file is present
-void MainWindow::checkEditor()
-{
-    if (gui_editor.exists()) {
-        return;
-    } else if (QFile("/usr/bin/featherpad").exists()) {
-        gui_editor.setFileName("/usr/bin/featherpad");
-        return;
-    } else if (QFile("/usr/bin/leafpad").exists()) {
-        gui_editor.setFileName("/usr/bin/leafpad");
-        return;
-    }
-    this->show();
-    QString msg = tr("The graphical text editor is set to %1, but it is not installed. Edit %2 "
-                     "and set the gui_editor variable to the editor of your choice. "
-                     "(examples: /usr/bin/gedit, /usr/bin/leafpad)\n\n"
-                     "Will install leafpad and use it this time.").arg(gui_editor.fileName()).arg(config_file.fileName());
-    QMessageBox::information(this, QString::null, msg);
-    if (installPackage("leafpad")) {
-        this->hide();
-        gui_editor.setFileName("/usr/bin/leafpad");
-    }
-    ui->stackedWidget->setCurrentWidget(ui->settingsPage);
-    ui->buttonNext->setEnabled(true);
-    ui->buttonBack->setEnabled(true);
-}
-
 // Checks if package is installed
 bool MainWindow::checkInstalled(QString package)
 {
@@ -455,6 +428,20 @@ QString MainWindow::largerFreeSpace(QString dir1, QString dir2)
     } else {
         return dir2;
     }
+}
+
+QString MainWindow::getEditor()
+{
+    QString editor;
+    if (!QFile(gui_editor.fileName()).exists()) {  // if specified editor doesn't exist get the default one
+        editor = shell->getOutput("grep Exec $(locate $(xdg-mime query default text/plain))|cut -d= -f2|cut -d\" \" -f1");
+        if (editor == "" || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exist use nano as backup editor
+            editor = "x-terminal-emulator -e nano";
+        }
+    } else {
+        editor = gui_editor.fileName();
+    }
+    return editor;
 }
 
 // make working directory using the base filename
@@ -697,9 +684,6 @@ void MainWindow::on_buttonNext_clicked()
         ui->stackedWidget->setCurrentWidget(ui->settingsPage);
         ui->buttonBack->setHidden(false);
         ui->buttonBack->setEnabled(true);
-        if (edit_boot_menu == "yes") {
-            checkEditor();
-        }
         kernel_used = shell->getOutput("uname -r");
         ui->stackedWidget->setCurrentWidget(ui->settingsPage);
         ui->label_1->setText(tr("Snapshot will use the following settings:*"));
@@ -735,7 +719,7 @@ void MainWindow::on_buttonNext_clicked()
                                      QMessageBox::Yes | QMessageBox::No);
             if (ans == QMessageBox::Yes) {
                 this->hide();
-                QString cmd = gui_editor.fileName() + " \"" + work_dir + "/iso-template/boot/isolinux/isolinux.cfg\"";
+                QString cmd = getEditor() + " \"" + work_dir + "/iso-template/boot/isolinux/isolinux.cfg\"";
                 shell->run(cmd);
                 this->show();
             }
@@ -764,16 +748,14 @@ void MainWindow::on_buttonBack_clicked()
 void MainWindow::on_buttonEditConfig_clicked()
 {
     this->hide();
-    checkEditor();
-    shell->run((gui_editor.fileName() + " " + config_file.fileName()));
+    shell->run(getEditor() + " " + config_file.fileName());
     setup();
 }
 
 void MainWindow::on_buttonEditExclude_clicked()
 {
     this->hide();
-    checkEditor();
-    shell->run((gui_editor.fileName() + " " + snapshot_excludes.fileName()));
+    shell->run(getEditor() + " " + snapshot_excludes.fileName());
     this->show();
 }
 

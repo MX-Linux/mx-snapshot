@@ -7,8 +7,8 @@
         <location filename="../mainwindow.ui" line="14"/>
         <location filename="../mainwindow.cpp" line="48"/>
         <location filename="../mainwindow.cpp" line="97"/>
-        <location filename="../mainwindow.cpp" line="757"/>
-        <location filename="../mainwindow.cpp" line="896"/>
+        <location filename="../mainwindow.cpp" line="741"/>
+        <location filename="../mainwindow.cpp" line="878"/>
         <source>MX Snapshot</source>
         <translation type="unfinished">MX Snapshot</translation>
     </message>
@@ -29,7 +29,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="155"/>
-        <location filename="../mainwindow.cpp" line="708"/>
+        <location filename="../mainwindow.cpp" line="692"/>
         <source>Snapshot name:</source>
         <translation type="unfinished">スナップショットの名称:</translation>
     </message>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="551"/>
-        <location filename="../mainwindow.cpp" line="902"/>
+        <location filename="../mainwindow.cpp" line="884"/>
         <source>Cancel</source>
         <translation type="unfinished">キャンセル</translation>
     </message>
@@ -202,215 +202,214 @@
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="229"/>
         <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
 
 Will install leafpad and use it this time.</source>
-        <translation type="unfinished">グラフィカルテキストエディタとして %1 が設定されています。しかしインストールされていない場合、 gui_editor の値として %2 を編集し任意のエディタを設定する事ができます。 (例えば: /usr/bin/gedit、/usr/bin/leafpad)
+        <translation type="obsolete">グラフィカルテキストエディタとして %1 が設定されています。しかしインストールされていない場合、 gui_editor の値として %2 を編集し任意のエディタを設定する事ができます。 (例えば: /usr/bin/gedit、/usr/bin/leafpad)
 
 leafpad をインストールし、それを使います。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="257"/>
-        <location filename="../mainwindow.cpp" line="258"/>
+        <location filename="../mainwindow.cpp" line="230"/>
+        <location filename="../mainwindow.cpp" line="231"/>
         <source>Installing </source>
         <translation type="unfinished">インストール中</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
-        <location filename="../mainwindow.cpp" line="536"/>
-        <location filename="../mainwindow.cpp" line="550"/>
+        <location filename="../mainwindow.cpp" line="240"/>
+        <location filename="../mainwindow.cpp" line="523"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Error</source>
         <translation type="unfinished">エラー</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
+        <location filename="../mainwindow.cpp" line="240"/>
         <source>Could not install </source>
         <translation type="unfinished">インストールできません</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="295"/>
+        <location filename="../mainwindow.cpp" line="268"/>
         <source>Building new initrd...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="321"/>
+        <location filename="../mainwindow.cpp" line="294"/>
         <source>Copying the new-iso filesystem...</source>
         <translation type="unfinished">新たなファイルシステムをコピー中...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="533"/>
+        <location filename="../mainwindow.cpp" line="520"/>
         <source>Squashing filesystem...</source>
         <translation type="unfinished">ファイルシステムに Squash を適用中...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="536"/>
+        <location filename="../mainwindow.cpp" line="523"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">linuxfsファイルを作成できませんでした。パーティションに十分な空き容量があるかご確認ください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="548"/>
+        <location filename="../mainwindow.cpp" line="535"/>
         <source>Creating CD/DVD image file...</source>
         <translation type="unfinished">CD/DVD イメージファイルを生成中...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="550"/>
+        <location filename="../mainwindow.cpp" line="537"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">ISOファイルを作成できませんでした。パーティションに十分な空き容量があるかご確認ください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="557"/>
+        <location filename="../mainwindow.cpp" line="544"/>
         <source>Making hybrid iso</source>
         <translation type="unfinished">ハイブリット ISO 作成中</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="577"/>
+        <location filename="../mainwindow.cpp" line="564"/>
         <source>Making md5sum</source>
         <translation type="unfinished">MD5 チェックサム生成</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="588"/>
+        <location filename="../mainwindow.cpp" line="575"/>
         <source>Cleaning...</source>
         <translation type="unfinished">クリーニング...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="601"/>
-        <location filename="../mainwindow.cpp" line="969"/>
+        <location filename="../mainwindow.cpp" line="588"/>
+        <location filename="../mainwindow.cpp" line="951"/>
         <source>Done</source>
         <translation type="unfinished">完了</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="679"/>
+        <location filename="../mainwindow.cpp" line="666"/>
         <source>Please wait.</source>
         <translation type="unfinished">お待ち下さい。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="681"/>
+        <location filename="../mainwindow.cpp" line="668"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation type="unfinished">お待ち下さい。使用する空き容量を計算しています...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="696"/>
+        <location filename="../mainwindow.cpp" line="683"/>
         <source>Settings</source>
         <translation type="unfinished">設定</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="705"/>
+        <location filename="../mainwindow.cpp" line="689"/>
         <source>Snapshot will use the following settings:*</source>
         <translation type="unfinished">Snapshot は次の設定を使用します:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="707"/>
+        <location filename="../mainwindow.cpp" line="691"/>
         <source>- Snapshot directory:</source>
         <translation type="unfinished">- スナップショットディレクトリ: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="709"/>
+        <location filename="../mainwindow.cpp" line="693"/>
         <source>- Kernel to be used:</source>
         <translation type="unfinished">- 使用するカーネル: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="710"/>
+        <location filename="../mainwindow.cpp" line="694"/>
         <source>*These settings can be changed by editing: </source>
         <translation type="unfinished">*変更箇所を編集した設定: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="715"/>
+        <location filename="../mainwindow.cpp" line="699"/>
         <source>Final chance</source>
         <translation type="unfinished">最終確認</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="716"/>
+        <location filename="../mainwindow.cpp" line="700"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation type="unfinished">Snapshot には現在実行しているシステムから ISO を生成するすべての情報があります。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="717"/>
+        <location filename="../mainwindow.cpp" line="701"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation type="unfinished">インストールを行うシステムのサイズとコンピュータの性能によって、完了まではかなりの時間がかかります。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="718"/>
+        <location filename="../mainwindow.cpp" line="702"/>
         <source>OK to start?</source>
         <translation type="unfinished">OK で開始します</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="726"/>
+        <location filename="../mainwindow.cpp" line="710"/>
         <source>Output</source>
         <translation type="unfinished">出力</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="733"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>Edit Boot Menu</source>
         <translation type="unfinished">起動メニューの編集</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="734"/>
+        <location filename="../mainwindow.cpp" line="718"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation type="unfinished">プログラムは、作業ディレクトリで任意ファイルを編集するために休止しています。 はい を選び、起動メニューを編集するか、いいえ を選んでこのステップを無視し、スナップショット作成を継続するか選んでください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="747"/>
+        <location filename="../mainwindow.cpp" line="731"/>
         <source>Success</source>
         <translation type="unfinished">完了</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="747"/>
+        <location filename="../mainwindow.cpp" line="731"/>
         <source>All finished!</source>
         <translation type="unfinished">すべて完了しました！</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="748"/>
+        <location filename="../mainwindow.cpp" line="732"/>
         <source>Close</source>
         <translation type="unfinished">閉じる</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="895"/>
+        <location filename="../mainwindow.cpp" line="877"/>
         <source>About MX Snapshot</source>
         <translation type="unfinished">MX Snapshot について</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="896"/>
+        <location filename="../mainwindow.cpp" line="878"/>
         <source>Version: </source>
         <translation type="unfinished">Version: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="898"/>
+        <location filename="../mainwindow.cpp" line="880"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation type="unfinished">実行している MX Linux を元に live-CD を生成するプログラム</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="899"/>
+        <location filename="../mainwindow.cpp" line="881"/>
         <source>Copyright (c) MX Linux</source>
         <translation type="unfinished">Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="900"/>
+        <location filename="../mainwindow.cpp" line="882"/>
         <source>License</source>
         <translation type="unfinished">ライセンス</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="901"/>
+        <location filename="../mainwindow.cpp" line="883"/>
         <source>Changelog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="919"/>
+        <location filename="../mainwindow.cpp" line="901"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="951"/>
+        <location filename="../mainwindow.cpp" line="933"/>
         <source>Select Snapshot Directory</source>
         <translation type="unfinished">スナップショットディレクトリを選択</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="970"/>
+        <location filename="../mainwindow.cpp" line="952"/>
         <source>Confirmation</source>
         <translation type="unfinished">確認</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="970"/>
+        <location filename="../mainwindow.cpp" line="952"/>
         <source>Are you sure you want to quit the application?</source>
         <translation type="unfinished">アプリケーションを終了してよろしいですか？</translation>
     </message>

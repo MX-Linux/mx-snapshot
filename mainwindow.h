@@ -89,7 +89,6 @@ public:
     bool replaceStringInFile(QString old_text, QString new_text, QString file_path);
 
     void checkDirectories();
-    void checkEditor();
     void checkSaveWork();
     void cleanUp();
     void closeApp();
@@ -110,6 +109,7 @@ public:
 
     QString getFilename();
     QString largerFreeSpace(QString dir1, QString dir2);
+    QString getEditor();
     QString getSnapshotSize();
     QStringList listUsers();
 
