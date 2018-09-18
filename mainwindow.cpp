@@ -164,7 +164,7 @@ QString MainWindow::getSnapshotSize()
     if (snapshot_dir.exists()) {
         QString cmd = QString("find \"%1\" -maxdepth 1 -type f -name '*.iso' -exec du -shc {} + | tail -1 | awk '{print $1}'").arg(snapshot_dir.absolutePath());
         size = shell->getOutput(cmd);
-        if (size != "" ) {
+        if (!size.isEmpty()) {
             return size;
         }
     }
@@ -326,7 +326,7 @@ void MainWindow::copyNewIso()
     }
     shell->run("test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release \"" + initrd_dir + "/etc\""); // We cannot count on this file in the future versions
     shell->run("test -r /etc/initrd-release && cp /etc/initrd-release \"" + initrd_dir + "/etc\""); // overwrite with this file, probably a better location _if_ the file exists
-    if (initrd_dir != "") {
+    if (!initrd_dir.isEmpty()) {
         copyModules(initrd_dir, kernel_used);
         closeInitrd(initrd_dir, work_dir + "/iso-template/antiX/initrd.gz");
     }
@@ -435,7 +435,7 @@ QString MainWindow::getEditor()
     QString editor;
     if (!QFile(gui_editor.fileName()).exists()) {  // if specified editor doesn't exist get the default one
         editor = shell->getOutput("grep Exec $(locate $(xdg-mime query default text/plain))|cut -d= -f2|cut -d\" \" -f1");
-        if (editor == "" || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exist use nano as backup editor
+        if (editor.isEmpty() || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exist use nano as backup editor
             editor = "x-terminal-emulator -e nano";
         }
     } else {
@@ -596,7 +596,7 @@ void MainWindow::addRemoveExclusion(bool add, QString exclusion)
         exclusion.remove(0, 1); // remove preceding slash
     }
     if (add) {
-        if (session_excludes == "") {
+        if (session_excludes.isEmpty()) {
             session_excludes.append("-e '" + exclusion + "'");
         } else {
             session_excludes.append(" '" + exclusion + "'");
@@ -931,7 +931,7 @@ void MainWindow::on_buttonSelectSnapshot_clicked()
     QFileDialog dialog;
 
     QString selected = dialog.getExistingDirectory(this, tr("Select Snapshot Directory"), QString(), QFileDialog::ShowDirsOnly);
-    if (selected != "") {
+    if (!selected.isEmpty()) {
         snapshot_dir.setPath(selected + "/snapshot");
         ui->labelSnapshotDir->setText(snapshot_dir.absolutePath());
         listFreeSpace();
