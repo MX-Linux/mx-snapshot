@@ -85,7 +85,7 @@ public:
     bool installPackage(QString package);
     bool isi686();
     bool isLive();
-    bool isOnLinuxPart(QDir dir);
+    bool isOnSupportedPart(QDir dir);
     bool replaceStringInFile(QString old_text, QString new_text, QString file_path);
 
     void checkDirectories();
@@ -109,6 +109,7 @@ public:
 
     QString getFilename();
     QString largerFreeSpace(QString dir1, QString dir2);
+    QString largerFreeSpace(QString dir1, QString dir2, QString dir3);
     QString getEditor();
     QString getSnapshotSize();
     QStringList listUsers();

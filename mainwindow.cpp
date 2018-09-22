@@ -124,13 +124,13 @@ bool MainWindow::isLive()
 
 
 // checks if the directory is on a Linux partition
-bool MainWindow::isOnLinuxPart(QDir dir)
+bool MainWindow::isOnSupportedPart(QDir dir)
 {
     qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
-    QStringList linux_partitions = (QStringList() << "ext2/ext3" << "btrfs" << "jfs" << "reiserfs" << "xfs"); // supported Linux partition types
+    QStringList supported_partitions = (QStringList() << "ext2/ext3" << "btrfs" << "jfs" << "reiserfs" << "xfs" << "fuseblk"); // supported partition types (NTFS returns fuseblk)
     QString part_type = shell->getOutput("stat --file-system --format=%T " + dir.absolutePath()).trimmed();
-    qDebug() << "detected partition" << part_type << "supported linux part:" << linux_partitions.contains(part_type);
-    return linux_partitions.contains(part_type);
+    qDebug() << "detected partition" << part_type << "supported part:" << supported_partitions.contains(part_type);
+    return supported_partitions.contains(part_type);
 }
 
 // Check if running from a 32bit environment
@@ -254,8 +254,10 @@ void MainWindow::checkDirectories()
     }
     // Create a work_dir
     QString parent_dir = snapshot_dir.absolutePath();
-    if (!isOnLinuxPart(snapshot_dir)) { // if not saving snapshot on a Linux partition put working dir in /home
+    if (!isOnSupportedPart(snapshot_dir)) { // if not saving snapshot on a Linux partition put working dir in /home
         parent_dir = largerFreeSpace("/tmp", "/home");
+    } else {
+        parent_dir = largerFreeSpace("/tmp", "/home", snapshot_dir.absolutePath());
     }
     work_dir = shell->getOutput("mktemp -d \"" + parent_dir + "/mx-snapshot-XXXXXXXX\"");
     system("mkdir -p " + work_dir.toUtf8() + "/iso-template/antiX");
@@ -428,6 +430,13 @@ QString MainWindow::largerFreeSpace(QString dir1, QString dir2)
     } else {
         return dir2;
     }
+}
+
+// return the directory that has more free space available
+QString MainWindow::largerFreeSpace(QString dir1, QString dir2, QString dir3)
+{
+    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    return largerFreeSpace(largerFreeSpace(dir1, dir2), dir3);
 }
 
 QString MainWindow::getEditor()

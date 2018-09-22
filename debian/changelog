@@ -1,3 +1,9 @@
+mx-snapshot (18.9.1) mx; urgency=medium
+
+  * allow writing environment to NTFS partitions
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 22 Sep 2018 18:10:26 -0400
+
 mx-snapshot (18.9) mx; urgency=medium
 
   * use default editor if the editor is set in .conf file is absent
