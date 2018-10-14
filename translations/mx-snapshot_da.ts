@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="da" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
@@ -8,12 +8,12 @@
         <location filename="mainwindow.cpp" line="750"/>
         <location filename="mainwindow.cpp" line="887"/>
         <source>MX Snapshot</source>
-        <translation>MX Tilannevedos</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation>Tilannevedoksen sijainti:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="40"/>
@@ -23,18 +23,18 @@
     <message>
         <location filename="mainwindow.ui" line="50"/>
         <source>Used space on / (root) and /home partitions:</source>
-        <translation>Käytetty tila / (root) ja /home osioissa:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="155"/>
         <location filename="mainwindow.cpp" line="701"/>
         <source>Snapshot name:</source>
-        <translation>Tilannevedoksen nimi:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="162"/>
         <source>Select a different snapshot directory</source>
-        <translation>Valitse toinen tilannevedosten hakemisto</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="210"/>
@@ -56,37 +56,37 @@
     <message>
         <location filename="mainwindow.ui" line="332"/>
         <source>Downloads</source>
-        <translation>Lataukset</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="339"/>
         <source>Documents</source>
-        <translation>Tiedostot</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="346"/>
         <source>All of the above</source>
-        <translation>Kaikki yläpuolella olevat</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="353"/>
         <source>Pictures</source>
-        <translation>Kuvat</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="360"/>
         <source>Music</source>
-        <translation>Musiikki</translation>
+        <translation>Musik</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="367"/>
         <source>Desktop</source>
-        <translation>Työpöytä</translation>
+        <translation>Skrivebord</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="374"/>
         <source>Videos</source>
-        <translation>Videot</translation>
+        <translation>Videoer</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="390"/>
@@ -106,7 +106,7 @@
     <message>
         <location filename="mainwindow.ui" line="429"/>
         <source>Type of snapshot:</source>
-        <translation>Tilannevedoksen tyyppi:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="436"/>
@@ -116,13 +116,13 @@
     <message>
         <location filename="mainwindow.ui" line="548"/>
         <source>Quit application</source>
-        <translation>Lopeta sovellus</translation>
+        <translation>Afslut programmet</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="551"/>
         <location filename="mainwindow.cpp" line="893"/>
         <source>Cancel</source>
-        <translation>Peru</translation>
+        <translation>Annuller</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="558"/>
@@ -132,12 +132,12 @@
     <message>
         <location filename="mainwindow.ui" line="568"/>
         <source>Display help </source>
-        <translation>Näytä ohje</translation>
+        <translation>Vis hjælp</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="571"/>
         <source>Help</source>
-        <translation>Ohje</translation>
+        <translation>Hjælp</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="578"/>
@@ -147,27 +147,27 @@
     <message>
         <location filename="mainwindow.ui" line="601"/>
         <source>About this application</source>
-        <translation>Tietoja tästä sovelluksesta</translation>
+        <translation>Om programmet</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="604"/>
         <source>About...</source>
-        <translation>Tietoja...</translation>
+        <translation>Om...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="611"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation>Alt+O</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="649"/>
         <source>Next</source>
-        <translation>Seuraava</translation>
+        <translation>Næste</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="675"/>
         <source>Back</source>
-        <translation>Takaisin</translation>
+        <translation>Tilbage</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="187"/>
@@ -177,7 +177,7 @@
     <message>
         <location filename="mainwindow.cpp" line="190"/>
         <source>Used space on /home: </source>
-        <translation>Käytetty tila /home -hakemistossa: </translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="208"/>
@@ -198,19 +198,19 @@
         <location filename="mainwindow.cpp" line="230"/>
         <location filename="mainwindow.cpp" line="231"/>
         <source>Installing </source>
-        <translation>Asennetaan</translation>
+        <translation>Installerer</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="240"/>
         <location filename="mainwindow.cpp" line="532"/>
         <location filename="mainwindow.cpp" line="546"/>
         <source>Error</source>
-        <translation>Virhe</translation>
+        <translation>Fejl</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="240"/>
         <source>Could not install </source>
-        <translation>Ei voitu asentaa</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="270"/>
@@ -250,7 +250,7 @@
     <message>
         <location filename="mainwindow.cpp" line="573"/>
         <source>Making md5sum</source>
-        <translation>Tehdään md5sum</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="584"/>
@@ -261,37 +261,37 @@
         <location filename="mainwindow.cpp" line="597"/>
         <location filename="mainwindow.cpp" line="960"/>
         <source>Done</source>
-        <translation>Valmis</translation>
+        <translation>Færdig</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="675"/>
         <source>Please wait.</source>
-        <translation>Odota, ole hyvä.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="677"/>
         <source>Please wait. Calculating used disk space...</source>
-        <translation>Odota, ole hyvä. Lasketaan käytettyä levytilaa...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="692"/>
         <source>Settings</source>
-        <translation>Asetukset</translation>
+        <translation>Indstillinger</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="698"/>
         <source>Snapshot will use the following settings:*</source>
-        <translation>Tilannevedos tulee käyttämään seuraavia asetuksia:*</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="700"/>
         <source>- Snapshot directory:</source>
-        <translation>- Tilannevedosten hakemisto:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="702"/>
         <source>- Kernel to be used:</source>
-        <translation>- Käytettävä ydin:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="703"/>
@@ -321,12 +321,12 @@
     <message>
         <location filename="mainwindow.cpp" line="719"/>
         <source>Output</source>
-        <translation>Tuloste</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="726"/>
         <source>Edit Boot Menu</source>
-        <translation>Muokkaa käynnistysvalikkoa</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="727"/>
@@ -336,7 +336,7 @@
     <message>
         <location filename="mainwindow.cpp" line="740"/>
         <source>Success</source>
-        <translation>Onnistui</translation>
+        <translation>Det lykkedes</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="740"/>
@@ -346,7 +346,7 @@
     <message>
         <location filename="mainwindow.cpp" line="741"/>
         <source>Close</source>
-        <translation>Sulje</translation>
+        <translation>Luk</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="886"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="mainwindow.cpp" line="887"/>
         <source>Version: </source>
-        <translation>Versio: </translation>
+        <translation>Version: </translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="889"/>
@@ -366,37 +366,37 @@
     <message>
         <location filename="mainwindow.cpp" line="890"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation>Ophavsret (c) MX Linux</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="891"/>
         <source>License</source>
-        <translation>Lisenssi</translation>
+        <translation>Licens</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="892"/>
         <source>Changelog</source>
-        <translation type="unfinished"/>
+        <translation>Ændringslog</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="910"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Luk</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="942"/>
         <source>Select Snapshot Directory</source>
-        <translation>Valitse tilannevedosten hakemisto</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="961"/>
         <source>Confirmation</source>
-        <translation>Vahvistus</translation>
+        <translation>Bekræftelse</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="961"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation type="unfinished"/>
+        <translation>Er du sikker på, at du vil afslutte programmet?</translation>
     </message>
 </context>
 <context>
@@ -404,7 +404,7 @@
     <message>
         <location filename="main.cpp" line="68"/>
         <source>You must run this program as root.</source>
-        <translation>Sinun täytyy suorittaa tämä ohjelma pääkäyttäjänä.</translation>
+        <translation>Du skal køre programmet som root.</translation>
     </message>
 </context>
 </TS>

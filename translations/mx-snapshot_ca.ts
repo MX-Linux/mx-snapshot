@@ -1,200 +1,198 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ca">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ca" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="14"/>
-        <location filename="../mainwindow.cpp" line="48"/>
-        <location filename="../mainwindow.cpp" line="97"/>
-        <location filename="../mainwindow.cpp" line="750"/>
-        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="mainwindow.ui" line="14"/>
+        <location filename="mainwindow.cpp" line="48"/>
+        <location filename="mainwindow.cpp" line="97"/>
+        <location filename="mainwindow.cpp" line="750"/>
+        <location filename="mainwindow.cpp" line="887"/>
         <source>MX Snapshot</source>
-        <translation type="unfinished">MX Snapshot </translation>
+        <translation>MX Snapshot </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="27"/>
+        <location filename="mainwindow.ui" line="27"/>
         <source>Snapshot location:</source>
-        <translation type="unfinished">Ubicació de la instantània:</translation>
+        <translation>Ubicació de la instantània:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="40"/>
+        <location filename="mainwindow.ui" line="40"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot és una eina que crea una imatge arrencable (ISO) del vostre sistema en funcionament, que podeu usar per a emmagatzematge o distribució. Podeu continuar usant aplicacions poc intensives mentre s&apos;executa.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot és una eina que crea una imatge arrencable (ISO) del vostre sistema en funcionament, que podeu usar per a emmagatzematge o distribució. Podeu continuar usant aplicacions poc intensives mentre s&apos;executa.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="50"/>
+        <location filename="mainwindow.ui" line="50"/>
         <source>Used space on / (root) and /home partitions:</source>
-        <translation type="unfinished">Espai usat a les particions / (arrel) i /home: </translation>
+        <translation>Espai usat a les particions / (arrel) i /home: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="155"/>
-        <location filename="../mainwindow.cpp" line="701"/>
+        <location filename="mainwindow.ui" line="155"/>
+        <location filename="mainwindow.cpp" line="701"/>
         <source>Snapshot name:</source>
-        <translation type="unfinished">Nom de la instantània: </translation>
+        <translation>Nom de la instantània: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="162"/>
+        <location filename="mainwindow.ui" line="162"/>
         <source>Select a different snapshot directory</source>
-        <translation type="unfinished">Trieu un directori diferent per a la instantània </translation>
+        <translation>Trieu un directori diferent per a la instantània </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="210"/>
-        <location filename="../mainwindow.ui" line="228"/>
-        <location filename="../mainwindow.ui" line="261"/>
+        <location filename="mainwindow.ui" line="210"/>
+        <location filename="mainwindow.ui" line="228"/>
+        <location filename="mainwindow.ui" line="261"/>
         <source>TextLabel</source>
-        <translation type="unfinished">Etiqueta</translation>
+        <translation>Etiqueta</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="274"/>
+        <location filename="mainwindow.ui" line="274"/>
         <source>Edit Configuration File</source>
-        <translation type="unfinished">Edita el fitxer de configuració </translation>
+        <translation>Edita el fitxer de configuració </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="307"/>
+        <location filename="mainwindow.ui" line="307"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
-        <translation type="unfinished">Podeu excloure alguns directoris tot marcant les opcions comunes més avall, o clicant al botó per editar directament /usr/lib/mx-snapshot/snapshot-exclude.list. </translation>
+        <translation>Podeu excloure alguns directoris tot marcant les opcions comunes més avall, o clicant al botó per editar directament /usr/lib/mx-snapshot/snapshot-exclude.list. </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="332"/>
+        <location filename="mainwindow.ui" line="332"/>
         <source>Downloads</source>
-        <translation type="unfinished">Baixades </translation>
+        <translation>Baixades </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="339"/>
+        <location filename="mainwindow.ui" line="339"/>
         <source>Documents</source>
-        <translation type="unfinished">Documents</translation>
+        <translation>Documents</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="346"/>
+        <location filename="mainwindow.ui" line="346"/>
         <source>All of the above</source>
-        <translation type="unfinished">Tots els esmentats</translation>
+        <translation>Tots els esmentats</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="353"/>
+        <location filename="mainwindow.ui" line="353"/>
         <source>Pictures</source>
-        <translation type="unfinished">Imatges</translation>
+        <translation>Imatges</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="360"/>
+        <location filename="mainwindow.ui" line="360"/>
         <source>Music</source>
-        <translation type="unfinished">Música</translation>
+        <translation>Música</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="367"/>
+        <location filename="mainwindow.ui" line="367"/>
         <source>Desktop</source>
-        <translation type="unfinished">Escriptori</translation>
+        <translation>Escriptori</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="374"/>
+        <location filename="mainwindow.ui" line="374"/>
         <source>Videos</source>
-        <translation type="unfinished">Vídeos</translation>
+        <translation>Vídeos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="390"/>
+        <location filename="mainwindow.ui" line="390"/>
         <source>Edit Exclusion File</source>
-        <translation type="unfinished">Edita el fitxer d&apos;exclusions</translation>
+        <translation>Edita el fitxer d&apos;exclusions</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="419"/>
+        <location filename="mainwindow.ui" line="419"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aquesta opció inicialitzarà les contrasenyes per &amp;quot;demo&amp;quot; i &amp;quot;root&amp;quot; als valors per omissió de MX Linux i no copiarà cap compte personal que s&apos;hagi creat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aquesta opció inicialitzarà les contrasenyes per &amp;quot;demo&amp;quot; i &amp;quot;root&amp;quot; als valors per omissió de MX Linux i no copiarà cap compte personal que s&apos;hagi creat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="422"/>
+        <location filename="mainwindow.ui" line="422"/>
         <source>Resetting accounts (for distribution to others)</source>
-        <translation type="unfinished">Inicialitzant els comptes (per distribuir a tercers) </translation>
+        <translation>Inicialitzant els comptes (per distribuir a tercers) </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="429"/>
+        <location filename="mainwindow.ui" line="429"/>
         <source>Type of snapshot:</source>
-        <translation type="unfinished">Tipus d&apos;instantània: </translation>
+        <translation>Tipus d&apos;instantània: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="436"/>
+        <location filename="mainwindow.ui" line="436"/>
         <source>Preserving accounts (for personal backup)</source>
-        <translation type="unfinished">Preservant els comptes (còpia de seguretat personal) </translation>
+        <translation>Preservant els comptes (còpia de seguretat personal) </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="548"/>
+        <location filename="mainwindow.ui" line="548"/>
         <source>Quit application</source>
-        <translation type="unfinished">Surt del programa</translation>
+        <translation>Surt de l&apos;aplicació</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="551"/>
-        <location filename="../mainwindow.cpp" line="893"/>
+        <location filename="mainwindow.ui" line="551"/>
+        <location filename="mainwindow.cpp" line="893"/>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="558"/>
+        <location filename="mainwindow.ui" line="558"/>
         <source>Alt+N</source>
-        <translation type="unfinished">Alt+N</translation>
+        <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="568"/>
+        <location filename="mainwindow.ui" line="568"/>
         <source>Display help </source>
-        <translation type="unfinished">Mostra l&apos;ajuda </translation>
+        <translation>Mostra l&apos;ajuda</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="571"/>
+        <location filename="mainwindow.ui" line="571"/>
         <source>Help</source>
-        <translation type="unfinished">Ajuda</translation>
+        <translation>Ajuda </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="578"/>
+        <location filename="mainwindow.ui" line="578"/>
         <source>Alt+H</source>
-        <translation type="unfinished">Alt+H</translation>
+        <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="601"/>
+        <location filename="mainwindow.ui" line="601"/>
         <source>About this application</source>
-        <translation type="unfinished">Quant al programa</translation>
+        <translation>Quant a aquest programa</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="604"/>
+        <location filename="mainwindow.ui" line="604"/>
         <source>About...</source>
-        <translation type="unfinished">Quant a...</translation>
+        <translation>Quant a...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="611"/>
+        <location filename="mainwindow.ui" line="611"/>
         <source>Alt+B</source>
-        <translation type="unfinished">Alt+B</translation>
+        <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="649"/>
+        <location filename="mainwindow.ui" line="649"/>
         <source>Next</source>
-        <translation type="unfinished">Següent</translation>
+        <translation>Següent</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="675"/>
+        <location filename="mainwindow.ui" line="675"/>
         <source>Back</source>
-        <translation type="unfinished">Enrere  </translation>
+        <translation>Enrere</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="187"/>
+        <location filename="mainwindow.cpp" line="187"/>
         <source>Used space on / (root): </source>
-        <translation type="unfinished">Espai usat a / (arrel): </translation>
+        <translation>Espai usat a / (arrel): </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="190"/>
+        <location filename="mainwindow.cpp" line="190"/>
         <source>Used space on /home: </source>
-        <translation type="unfinished">Espai usat a /home: </translation>
+        <translation>Espai usat a /home: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="208"/>
+        <location filename="mainwindow.cpp" line="208"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
-        <translation type="unfinished">Espai lliure a %1, on es desarà la instantània: </translation>
+        <translation>Espai lliure a %1, on es desarà la instantània: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="210"/>
+        <location filename="mainwindow.cpp" line="210"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
       by removing previous snapshots and saved copies:
       %1 snapshots are taking up %2 of disk space.
 </source>
-        <translation type="unfinished">L&apos;espai lliure hauria de ser suficient per encabir les dades comprimides de / i /home
+        <translation>L&apos;espai lliure hauria de ser suficient per encabir les dades comprimides de / i /home
 
       Si cal, podeu disposar de més espai eliminant
       instantànies anteriors i còpies desades:
@@ -202,537 +200,216 @@
 </translation>
     </message>
     <message>
-        <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
-
-Will install leafpad and use it this time.</source>
-        <translation type="obsolete">L&apos;editor de text gràfic està definit com a %1, però no està instal·lat. Editeu %2 i definiu la variable gui_editor amb el vostre editor preferit. (exemples: /usr/bin/kwrite, /usr/bin/leafpad)
-
-Aquest cop s&apos;instal·larà i usarà leafpad.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="230"/>
-        <location filename="../mainwindow.cpp" line="231"/>
+        <location filename="mainwindow.cpp" line="230"/>
+        <location filename="mainwindow.cpp" line="231"/>
         <source>Installing </source>
-        <translation type="unfinished">Instal·lant </translation>
+        <translation>Instal·lant </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="240"/>
-        <location filename="../mainwindow.cpp" line="532"/>
-        <location filename="../mainwindow.cpp" line="546"/>
+        <location filename="mainwindow.cpp" line="240"/>
+        <location filename="mainwindow.cpp" line="532"/>
+        <location filename="mainwindow.cpp" line="546"/>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation>Error</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="240"/>
+        <location filename="mainwindow.cpp" line="240"/>
         <source>Could not install </source>
-        <translation type="unfinished">No s&apos;ha pogut instal·lar </translation>
+        <translation>No s&apos;ha pogut instal·lar </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="270"/>
+        <location filename="mainwindow.cpp" line="270"/>
         <source>Building new initrd...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="296"/>
+        <location filename="mainwindow.cpp" line="296"/>
         <source>Copying the new-iso filesystem...</source>
-        <translation type="unfinished">Copiant el sistema de fitxers del nou-iso: </translation>
+        <translation>Copiant el sistema de fitxers del nou-iso: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="529"/>
+        <location filename="mainwindow.cpp" line="529"/>
         <source>Squashing filesystem...</source>
-        <translation type="unfinished">Compactant el sistema de fitxers... </translation>
+        <translation>Compactant el sistema de fitxers... </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="532"/>
+        <location filename="mainwindow.cpp" line="532"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
-        <translation type="unfinished">No s&apos;ha pogut crear el fitxer linuxfs; si us plau, comproveu que hi hagi prou espai a la partició de destí.</translation>
+        <translation>No s&apos;ha pogut crear el fitxer linuxfs; si us plau, comproveu que hi hagi prou espai a la partició de destí.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="544"/>
+        <location filename="mainwindow.cpp" line="544"/>
         <source>Creating CD/DVD image file...</source>
-        <translation type="unfinished">Creant el fitxer d&apos;imatge CD/DVD...</translation>
+        <translation>Creant el fitxer d&apos;imatge CD/DVD...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="546"/>
+        <location filename="mainwindow.cpp" line="546"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
-        <translation type="unfinished">No s&apos;ha pogut crear el fitxer ISO; si us plau, comproveu que hi hagi prou espai a la partició de destí.</translation>
+        <translation>No s&apos;ha pogut crear el fitxer ISO; si us plau, comproveu que hi hagi prou espai a la partició de destinació.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="553"/>
+        <location filename="mainwindow.cpp" line="553"/>
         <source>Making hybrid iso</source>
-        <translation type="unfinished">Creant imatge ISO híbrida </translation>
+        <translation>Creant imatge ISO híbrida </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="573"/>
+        <location filename="mainwindow.cpp" line="573"/>
         <source>Making md5sum</source>
-        <translation type="unfinished">Creant md5sum </translation>
+        <translation>Creant md5sum </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="584"/>
+        <location filename="mainwindow.cpp" line="584"/>
         <source>Cleaning...</source>
-        <translation type="unfinished">Fent neteja... </translation>
+        <translation>Endreçant... </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="597"/>
-        <location filename="../mainwindow.cpp" line="960"/>
+        <location filename="mainwindow.cpp" line="597"/>
+        <location filename="mainwindow.cpp" line="960"/>
         <source>Done</source>
-        <translation type="unfinished">Fet </translation>
+        <translation>Fet </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="675"/>
+        <location filename="mainwindow.cpp" line="675"/>
         <source>Please wait.</source>
-        <translation type="unfinished">Espereu, si us plau. </translation>
+        <translation>Espereu, si us plau. </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="677"/>
+        <location filename="mainwindow.cpp" line="677"/>
         <source>Please wait. Calculating used disk space...</source>
-        <translation type="unfinished">Espereu, si us plau. Calculant l&apos;espai de disc usat...</translation>
+        <translation>Espereu, si us plau. Calculant l&apos;espai de disc usat...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="692"/>
+        <location filename="mainwindow.cpp" line="692"/>
         <source>Settings</source>
-        <translation type="unfinished">Paràmetres </translation>
+        <translation>Paràmetres</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="698"/>
+        <location filename="mainwindow.cpp" line="698"/>
         <source>Snapshot will use the following settings:*</source>
-        <translation type="unfinished">La instantània usarà aquests paràmetres:*</translation>
+        <translation>La instantània usarà aquests paràmetres:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="700"/>
+        <location filename="mainwindow.cpp" line="700"/>
         <source>- Snapshot directory:</source>
-        <translation type="unfinished">- Directori de la instantània: </translation>
+        <translation>- Directori de la instantània: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="702"/>
+        <location filename="mainwindow.cpp" line="702"/>
         <source>- Kernel to be used:</source>
-        <translation type="unfinished">- Kernel a usar: </translation>
+        <translation>- Kernel a usar: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="703"/>
+        <location filename="mainwindow.cpp" line="703"/>
         <source>*These settings can be changed by editing: </source>
-        <translation type="unfinished">*Aquests paràmetres es poden canviar editant: </translation>
+        <translation>*Aquests paràmetres es poden canviar editant: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="708"/>
+        <location filename="mainwindow.cpp" line="708"/>
         <source>Final chance</source>
-        <translation type="unfinished">Darrera oportunitat </translation>
+        <translation>Darrera oportunitat </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="709"/>
+        <location filename="mainwindow.cpp" line="709"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
-        <translation type="unfinished">La instantània ara té tota la informació necessària per crear una ISO a partir del vostre sistema en execució. </translation>
+        <translation>La instantània ara té tota la informació necessària per crear una ISO a partir del vostre sistema en execució. </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="710"/>
+        <location filename="mainwindow.cpp" line="710"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
-        <translation type="unfinished">Cal un cert temps per acabar, depenent de la mida del vostre sistema instal·lat i de la potència de l&apos;ordinador. </translation>
+        <translation>Cal un cert temps per acabar, depenent de la mida del vostre sistema instal·lat i de la potència de l&apos;ordinador. </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="711"/>
+        <location filename="mainwindow.cpp" line="711"/>
         <source>OK to start?</source>
-        <translation type="unfinished">D&apos;acord per començar?</translation>
+        <translation>D&apos;acord per començar?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="719"/>
+        <location filename="mainwindow.cpp" line="719"/>
         <source>Output</source>
-        <translation type="unfinished">Sortida </translation>
+        <translation>Sortida </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="726"/>
+        <location filename="mainwindow.cpp" line="726"/>
         <source>Edit Boot Menu</source>
-        <translation type="unfinished">Edita el Menú d&apos;Arrencada </translation>
+        <translation>Edita el Menú d&apos;Arrencada </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="727"/>
+        <location filename="mainwindow.cpp" line="727"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
-        <translation type="unfinished">El programa ara farà una pausa per permetre-us editar fitxers al directori de treball. Trieu Sí per editar el menú d&apos;arrencada, o No per saltar aquest pas i continuar creant la instantània. </translation>
+        <translation>El programa ara farà una pausa per permetre-us editar fitxers al directori de treball. Trieu Sí per editar el menú d&apos;arrencada, o No per saltar aquest pas i continuar creant la instantània. </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="740"/>
+        <location filename="mainwindow.cpp" line="740"/>
         <source>Success</source>
-        <translation type="unfinished">Èxit</translation>
+        <translation>Èxit</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="740"/>
+        <location filename="mainwindow.cpp" line="740"/>
         <source>All finished!</source>
-        <translation type="unfinished">Finalitzat!</translation>
+        <translation>Finalitzat!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="741"/>
+        <location filename="mainwindow.cpp" line="741"/>
         <source>Close</source>
-        <translation type="unfinished">Tanca </translation>
+        <translation>Tanca</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="886"/>
+        <location filename="mainwindow.cpp" line="886"/>
         <source>About MX Snapshot</source>
-        <translation type="unfinished">Quant a MX Snapshot </translation>
+        <translation>Quant a MX Snapshot </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="mainwindow.cpp" line="887"/>
         <source>Version: </source>
-        <translation type="unfinished">Versió: </translation>
+        <translation>Versió: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="889"/>
+        <location filename="mainwindow.cpp" line="889"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
-        <translation type="unfinished">Programa de MX Linux per crear un CD autònom a partir del sistema en execució </translation>
+        <translation>Programa de MX Linux per crear un CD autònom a partir del sistema en execució </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="890"/>
+        <location filename="mainwindow.cpp" line="890"/>
         <source>Copyright (c) MX Linux</source>
-        <translation type="unfinished">Copyright (c) MX Linux </translation>
+        <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="891"/>
+        <location filename="mainwindow.cpp" line="891"/>
         <source>License</source>
-        <translation type="unfinished">Llicència</translation>
+        <translation>Llicència</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="892"/>
+        <location filename="mainwindow.cpp" line="892"/>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Registre de canvis</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="910"/>
+        <location filename="mainwindow.cpp" line="910"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Tan&amp;ca </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="942"/>
+        <location filename="mainwindow.cpp" line="942"/>
         <source>Select Snapshot Directory</source>
-        <translation type="unfinished">Trieu el directori de la instantània </translation>
+        <translation>Trieu el directori de la instantània </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="961"/>
+        <location filename="mainwindow.cpp" line="961"/>
         <source>Confirmation</source>
-        <translation type="unfinished">Confirmació</translation>
+        <translation>Confirmació</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="961"/>
+        <location filename="mainwindow.cpp" line="961"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation type="unfinished">Esteu segurs de voler sortir de l&apos;aplicació?</translation>
+        <translation>Esteu segurs de voler sortir de l&apos;aplicació?</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="68"/>
+        <location filename="main.cpp" line="68"/>
         <source>You must run this program as root.</source>
-        <translation>Cal ser administrador per executar aquest programa.</translation>
-    </message>
-</context>
-<context>
-    <name>mxsnapshot</name>
-    <message>
-        <source>MX Snapshot</source>
-        <translation type="vanished">MX Snapshot </translation>
-    </message>
-    <message>
-        <source>Snapshot location:</source>
-        <translation type="vanished">Ubicació de la instantània:</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot és una eina que crea una imatge arrencable (ISO) del vostre sistema en funcionament, que podeu usar per a emmagatzematge o distribució. Podeu continuar usant aplicacions poc intensives mentre s&apos;executa.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Used space on / (root) and /home partitions:</source>
-        <translation type="vanished">Espai usat a les particions / (arrel) i /home: </translation>
-    </message>
-    <message>
-        <source>Snapshot name:</source>
-        <translation type="vanished">Nom de la instantània: </translation>
-    </message>
-    <message>
-        <source>Select a different snapshot directory</source>
-        <translation type="vanished">Trieu un directori diferent per a la instantània </translation>
-    </message>
-    <message>
-        <source>TextLabel</source>
-        <translation type="vanished">Etiqueta</translation>
-    </message>
-    <message>
-        <source>Edit Configuration File</source>
-        <translation type="vanished">Edita el fitxer de configuració </translation>
-    </message>
-    <message>
-        <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
-        <translation type="vanished">Podeu excloure alguns directoris tot marcant les opcions comunes més avall, o clicant al botó per editar directament /usr/lib/mx-snapshot/snapshot-exclude.list. </translation>
-    </message>
-    <message>
-        <source>Downloads</source>
-        <translation type="vanished">Baixades </translation>
-    </message>
-    <message>
-        <source>Documents</source>
-        <translation type="vanished">Documents</translation>
-    </message>
-    <message>
-        <source>All of the above</source>
-        <translation type="vanished">Tots els esmentats</translation>
-    </message>
-    <message>
-        <source>Pictures</source>
-        <translation type="vanished">Imatges</translation>
-    </message>
-    <message>
-        <source>Music</source>
-        <translation type="vanished">Música</translation>
-    </message>
-    <message>
-        <source>Desktop</source>
-        <translation type="vanished">Escriptori</translation>
-    </message>
-    <message>
-        <source>Videos</source>
-        <translation type="vanished">Vídeos</translation>
-    </message>
-    <message>
-        <source>Edit Exclusion File</source>
-        <translation type="vanished">Edita el fitxer d&apos;exclusions</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aquesta opció inicialitzarà les contrasenyes per &amp;quot;demo&amp;quot; i &amp;quot;root&amp;quot; als valors per omissió de MX Linux i no copiarà cap compte personal que s&apos;hagi creat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Resetting accounts (for distribution to others)</source>
-        <translation type="vanished">Inicialitzant els comptes (per distribuir a tercers) </translation>
-    </message>
-    <message>
-        <source>Type of snapshot:</source>
-        <translation type="vanished">Tipus d&apos;instantània: </translation>
-    </message>
-    <message>
-        <source>Preserving accounts (for personal backup)</source>
-        <translation type="vanished">Preservant els comptes (còpia de seguretat personal) </translation>
-    </message>
-    <message>
-        <source>Quit application</source>
-        <translation type="vanished">Surt del programa</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Cancel·la</translation>
-    </message>
-    <message>
-        <source>Alt+N</source>
-        <translation type="vanished">Alt+N</translation>
-    </message>
-    <message>
-        <source>Display help </source>
-        <translation type="vanished">Mostra l&apos;ajuda </translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation type="vanished">Ajuda</translation>
-    </message>
-    <message>
-        <source>Alt+H</source>
-        <translation type="vanished">Alt+H</translation>
-    </message>
-    <message>
-        <source>About this application</source>
-        <translation type="vanished">Quant al programa</translation>
-    </message>
-    <message>
-        <source>About...</source>
-        <translation type="vanished">Quant a...</translation>
-    </message>
-    <message>
-        <source>Alt+B</source>
-        <translation type="vanished">Alt+B</translation>
-    </message>
-    <message>
-        <source>Next</source>
-        <translation type="vanished">Següent</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation type="vanished">Enrere  </translation>
-    </message>
-    <message>
-        <source>Used space on / (root): </source>
-        <translation type="vanished">Espai usat a / (arrel): </translation>
-    </message>
-    <message>
-        <source>Used space on /home: </source>
-        <translation type="vanished">Espai usat a /home: </translation>
-    </message>
-    <message>
-        <source>Free space on %1, where snapshot folder is placed: </source>
-        <translation type="vanished">Espai lliure a %1, on es desarà la instantània: </translation>
-    </message>
-    <message>
-        <source>The free space should be sufficient to hold the compressed data from / and /home
-
-      If necessary, you can create more available space
-      by removing previous snapshots and saved copies:
-      %1 snapshots are taking up %2 of disk space.
-</source>
-        <translation type="vanished">L&apos;espai lliure hauria de ser suficient per encabir les dades comprimides de / i /home
-
-      Si cal, podeu disposar de més espai eliminant
-      instantànies anteriors i còpies desades:
-      %1 instantànies usen fins a %2 d&apos;espai de disc.
-</translation>
-    </message>
-    <message>
-        <source>The graphical text editor is set to %1, but it is not installed. Edit %2 and set the gui_editor variable to the editor of your choice. (examples: /usr/bin/gedit, /usr/bin/leafpad)
-
-Will install leafpad and use it this time.</source>
-        <translation type="vanished">L&apos;editor de text gràfic està definit com a %1, però no està instal·lat. Editeu %2 i definiu la variable gui_editor amb el vostre editor preferit. (exemples: /usr/bin/kwrite, /usr/bin/leafpad)
-
-Aquest cop s&apos;instal·larà i usarà leafpad.</translation>
-    </message>
-    <message>
-        <source>Installing </source>
-        <translation type="vanished">Instal·lant </translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Error</translation>
-    </message>
-    <message>
-        <source>Could not install </source>
-        <translation type="vanished">No s&apos;ha pogut instal·lar </translation>
-    </message>
-    <message>
-        <source>Copying the new-iso filesystem...</source>
-        <translation type="vanished">Copiant el sistema de fitxers del nou-iso: </translation>
-    </message>
-    <message>
-        <source>Squashing filesystem...</source>
-        <translation type="vanished">Compactant el sistema de fitxers... </translation>
-    </message>
-    <message>
-        <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
-        <translation type="vanished">No s&apos;ha pogut crear el fitxer linuxfs; si us plau, comproveu que hi hagi prou espai a la partició de destí.</translation>
-    </message>
-    <message>
-        <source>Creating CD/DVD image file...</source>
-        <translation type="vanished">Creant el fitxer d&apos;imatge CD/DVD...</translation>
-    </message>
-    <message>
-        <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
-        <translation type="vanished">No s&apos;ha pogut crear el fitxer ISO; si us plau, comproveu que hi hagi prou espai a la partició de destí.</translation>
-    </message>
-    <message>
-        <source>Making hybrid iso</source>
-        <translation type="vanished">Creant imatge ISO híbrida </translation>
-    </message>
-    <message>
-        <source>Making md5sum</source>
-        <translation type="vanished">Creant md5sum </translation>
-    </message>
-    <message>
-        <source>Cleaning...</source>
-        <translation type="vanished">Fent neteja... </translation>
-    </message>
-    <message>
-        <source>Done</source>
-        <translation type="vanished">Fet </translation>
-    </message>
-    <message>
-        <source>Please wait.</source>
-        <translation type="vanished">Espereu, si us plau. </translation>
-    </message>
-    <message>
-        <source>Please wait. Calculating used disk space...</source>
-        <translation type="vanished">Espereu, si us plau. Calculant l&apos;espai de disc usat...</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Paràmetres </translation>
-    </message>
-    <message>
-        <source>Snapshot will use the following settings:*</source>
-        <translation type="vanished">La instantània usarà aquests paràmetres:*</translation>
-    </message>
-    <message>
-        <source>- Snapshot directory:</source>
-        <translation type="vanished">- Directori de la instantània: </translation>
-    </message>
-    <message>
-        <source>- Kernel to be used:</source>
-        <translation type="vanished">- Kernel a usar: </translation>
-    </message>
-    <message>
-        <source>*These settings can be changed by editing: </source>
-        <translation type="vanished">*Aquests paràmetres es poden canviar editant: </translation>
-    </message>
-    <message>
-        <source>Final chance</source>
-        <translation type="vanished">Darrera oportunitat </translation>
-    </message>
-    <message>
-        <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
-        <translation type="vanished">La instantània ara té tota la informació necessària per crear una ISO a partir del vostre sistema en execució. </translation>
-    </message>
-    <message>
-        <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
-        <translation type="vanished">Cal un cert temps per acabar, depenent de la mida del vostre sistema instal·lat i de la potència de l&apos;ordinador. </translation>
-    </message>
-    <message>
-        <source>OK to start?</source>
-        <translation type="vanished">D&apos;acord per començar?</translation>
-    </message>
-    <message>
-        <source>Output</source>
-        <translation type="vanished">Sortida </translation>
-    </message>
-    <message>
-        <source>Edit Boot Menu</source>
-        <translation type="vanished">Edita el Menú d&apos;Arrencada </translation>
-    </message>
-    <message>
-        <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
-        <translation type="vanished">El programa ara farà una pausa per permetre-us editar fitxers al directori de treball. Trieu Sí per editar el menú d&apos;arrencada, o No per saltar aquest pas i continuar creant la instantània. </translation>
-    </message>
-    <message>
-        <source>Success</source>
-        <translation type="vanished">Èxit</translation>
-    </message>
-    <message>
-        <source>All finished!</source>
-        <translation type="vanished">Finalitzat!</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="vanished">Tanca </translation>
-    </message>
-    <message>
-        <source>About MX Snapshot</source>
-        <translation type="vanished">Quant a MX Snapshot </translation>
-    </message>
-    <message>
-        <source>Version: </source>
-        <translation type="vanished">Versió: </translation>
-    </message>
-    <message>
-        <source>Program for creating a live-CD from the running system for MX Linux</source>
-        <translation type="vanished">Programa de MX Linux per crear un CD autònom a partir del sistema en execució </translation>
-    </message>
-    <message>
-        <source>Copyright (c) MX Linux</source>
-        <translation type="vanished">Copyright (c) MX Linux </translation>
-    </message>
-    <message>
-        <source>License</source>
-        <translation type="vanished">Llicència</translation>
-    </message>
-    <message>
-        <source>Select Snapshot Directory</source>
-        <translation type="vanished">Trieu el directori de la instantània </translation>
-    </message>
-    <message>
-        <source>Confirmation</source>
-        <translation type="vanished">Confirmació</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to quit the application?</source>
-        <translation type="vanished">Esteu segurs de voler sortir de l&apos;aplicació?</translation>
+        <translation>Cal ser usuari principal per executar aquest programa.</translation>
     </message>
 </context>
 </TS>

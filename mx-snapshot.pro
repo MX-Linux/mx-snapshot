@@ -48,6 +48,7 @@ FORMS    += \
 TRANSLATIONS += translations/mx-snapshot_am.ts \
                 translations/mx-snapshot_ca.ts \
                 translations/mx-snapshot_cs.ts \
+                translations/mx-snapshot_da.ts \
                 translations/mx-snapshot_de.ts \
                 translations/mx-snapshot_el.ts \
                 translations/mx-snapshot_es.ts \
