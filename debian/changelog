@@ -1,3 +1,9 @@
+mx-snapshot (18.10) mx; urgency=medium
+
+  * updated translations
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 14 Oct 2018 20:08:06 -0400
+
 mx-snapshot (18.9.1) mx; urgency=medium
 
   * allow writing environment to NTFS partitions
