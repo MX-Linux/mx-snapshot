@@ -33,12 +33,13 @@
 
 #include <QDebug>
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent, QStringList args) :
     QDialog(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     shell = new Cmd(this);
+    this->args = args;
     connect(shell, &Cmd::started, this, &MainWindow::procStart);
     connect(shell, &Cmd::finished, this, &MainWindow::procDone);
     connect(shell, &Cmd::runTime, this, &MainWindow::progress);
@@ -57,7 +58,13 @@ MainWindow::MainWindow(QWidget *parent) :
     debian_version = getDebianVersion();
     setup();
     reset_accounts = false;
-    listUsedSpace();
+    if (args.contains("--monthly") || args.contains("-m")) {
+        ui->buttonNext->click();
+        ui->radioRespin->click();
+        ui->buttonNext->click();
+    } else {
+        listUsedSpace();
+    }
 }
 
 MainWindow::~MainWindow()
@@ -86,6 +93,15 @@ void MainWindow::loadSettings()
     stamp = settings.value("stamp").toString();
     force_installer = settings.value("force_installer", "true").toBool();
     ui->lineEditName->setText(getFilename());
+    QString prev; //previous arg
+    foreach (QString arg, args) {
+        if (prev == "--monthly" || prev == "-m") {
+            QString name = shell->getOutput("cat /etc/mx-version | cut -f1 -d' '");
+            qDebug() << "MONTH" << arg;
+            ui->lineEditName->setText(name.section("_", 0, 0) + "_" + arg + "_" + name.section("_", 1, 1) + ".iso");
+        }
+        prev = arg;
+    }
 }
 
 // setup/refresh versious items first time program runs
@@ -558,6 +574,7 @@ bool MainWindow::createIso(QString filename)
     // make md5sum
     if (make_md5sum == "yes") {
         makeMd5sum(snapshot_dir.absolutePath(), filename);
+        makeSha512sum(snapshot_dir.absolutePath(), filename);
     }
     disableOutput();
     return true;
@@ -572,6 +589,18 @@ void MainWindow::makeMd5sum(QString folder, QString file_name)
     dir.setCurrent(folder);
     ui->outputLabel->setText(tr("Making md5sum"));
     QString cmd = "md5sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".md5\"";
+    shell->run(cmd, QStringList() << "slowtick");
+    dir.setCurrent(current);
+}
+
+// create sha512sum
+void MainWindow::makeSha512sum(QString folder, QString file_name)
+{
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
+    QDir dir;
+    QString current = dir.currentPath();
+    dir.setCurrent(folder);
+    QString cmd = "sha512sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".sha512\"";
     shell->run(cmd, QStringList() << "slowtick");
     dir.setCurrent(current);
 }

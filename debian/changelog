@@ -1,3 +1,10 @@
+mx-snapshot (18.11) mx; urgency=medium
+
+  * create sha512 sum
+  * added -m "Month" option, convenience shortcut for Monthly snapshot
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 15 Nov 2018 16:58:25 -0500
+
 mx-snapshot (18.10) mx; urgency=medium
 
   * updated translations

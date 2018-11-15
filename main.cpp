@@ -30,14 +30,27 @@
 #include <QIcon>
 #include <QScopedPointer>
 #include <QDateTime>
+#include <QDebug>
 
 QScopedPointer<QFile> logFile;
 
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
+void printHelp();
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    if (a.arguments().contains("--help") || a.arguments().contains("-h") ) {
+        printHelp();
+        return 0;
+    }
+    if (a.arguments().contains("--version") || a.arguments().contains("-v") ) {
+       system("echo 'Installer version'; dpkg-query -f '${Version}' -W mx-snapshot; echo");
+       return 0;
+    }
+
+
     a.setWindowIcon(QIcon("/usr/share/pixmaps/mx-snapshot.svg"));
 
     QString log_name= "/var/log/mx-snapshot.log";
@@ -59,7 +72,7 @@ int main(int argc, char *argv[])
     a.installTranslator(&appTran);
 
     if (getuid() == 0) {
-        MainWindow w;
+        MainWindow w(0, a.arguments());
         w.show();
         return a.exec();
     } else {
@@ -97,3 +110,13 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
         << msg << endl;
     out.flush();    // Clear the buffered data
 }
+
+// print CLI help info
+void printHelp()
+{
+    qDebug() << "Usage: mx-snapshot [<options>]\n";
+    qDebug() << "Options:";
+    qDebug() << "  -m --monthly Month   Create a montly snapshot, add 'Month' in the ISO name, skip used space calculation";
+    qDebug() << "  -v --version         Show version information";
+}
+

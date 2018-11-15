@@ -45,13 +45,14 @@ protected:
 
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = 0, QStringList args = QStringList());
     ~MainWindow();
 
     QString getVersion(QString name);
     void addRemoveExclusion(bool add, QString exclusion);
     void displayDoc(QString url);
     QSettings settings;
+    QStringList args;
 
     bool i686;
     bool live;
@@ -100,6 +101,7 @@ public:
     void listUsedSpace();
     void loadSettings();
     void makeMd5sum(QString folder, QString file_name);
+    void makeSha512sum(QString folder, QString file_name);
     void mkDir(QString file_name);
     void openInitrd(QString file, QString initrd_dir);
     void replaceMenuStrings();

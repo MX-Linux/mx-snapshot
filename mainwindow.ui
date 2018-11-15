@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>808</width>
-    <height>517</height>
+    <height>518</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -162,7 +162,8 @@ color: rgb(0, 0, 0);</string>
           <string>Select a different snapshot directory</string>
          </property>
          <property name="icon">
-          <iconset theme="cursor-arrow"/>
+          <iconset theme="cursor-arrow">
+           <normaloff>.</normaloff>.</iconset>
          </property>
         </widget>
        </item>
@@ -274,7 +275,8 @@ color: rgb(0, 0, 0);</string>
           <string>Edit Configuration File</string>
          </property>
          <property name="icon">
-          <iconset theme="edit"/>
+          <iconset theme="edit">
+           <normaloff>.</normaloff>.</iconset>
          </property>
         </widget>
        </item>
@@ -390,7 +392,8 @@ color: rgb(0, 0, 0);</string>
           <string>Edit Exclusion File</string>
          </property>
          <property name="icon">
-          <iconset theme="edit"/>
+          <iconset theme="edit">
+           <normaloff>.</normaloff>.</iconset>
          </property>
         </widget>
        </item>
