@@ -68,7 +68,7 @@ MainWindow::~MainWindow()
 // load settings or use the default value
 void MainWindow::loadSettings()
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     config_file.setFileName("/etc/mx-snapshot.conf");
     QSettings settings(config_file.fileName(), QSettings::IniFormat);
 
@@ -91,7 +91,7 @@ void MainWindow::loadSettings()
 // setup/refresh versious items first time program runs
 void MainWindow::setup()
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     qApp->processEvents();
     this->show();
     this->setWindowTitle(tr("MX Snapshot"));
@@ -126,7 +126,7 @@ bool MainWindow::isLive()
 // checks if the directory is on a Linux partition
 bool MainWindow::isOnSupportedPart(QDir dir)
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QStringList supported_partitions = (QStringList() << "ext2/ext3" << "btrfs" << "jfs" << "reiserfs" << "xfs" << "fuseblk"); // supported partition types (NTFS returns fuseblk)
     QString part_type = shell->getOutput("stat --file-system --format=%T " + dir.absolutePath()).trimmed();
     qDebug() << "detected partition" << part_type << "supported part:" << supported_partitions.contains(part_type);
@@ -148,7 +148,7 @@ QString MainWindow::getVersion(QString name)
 // return number of snapshots in snapshot_dir
 int MainWindow::getSnapshotCount()
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     if (snapshot_dir.exists()) {
         QFileInfoList list = snapshot_dir.entryInfoList(QStringList("*.iso"), QDir::Files);
         return list.size();
@@ -159,7 +159,7 @@ int MainWindow::getSnapshotCount()
 // return the size of the work folder
 QString MainWindow::getSnapshotSize()
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QString size;
     if (snapshot_dir.exists()) {
         QString cmd = QString("find \"%1\" -maxdepth 1 -type f -name '*.iso' -exec du -shc {} + | tail -1 | awk '{print $1}'").arg(snapshot_dir.absolutePath());
@@ -199,7 +199,7 @@ void MainWindow::listUsedSpace()
 // List free space on drives
 void MainWindow::listFreeSpace()
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QString cmd;
     QString out;
     QString path = snapshot_dir.absolutePath().remove("/snapshot");
@@ -216,7 +216,7 @@ void MainWindow::listFreeSpace()
 // Checks if package is installed
 bool MainWindow::checkInstalled(QString package)
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QString cmd = QString("dpkg -s %1 | grep Status").arg(package);
     if (shell->getOutput(cmd) == "Status: install ok installed") {
         return true;
@@ -247,7 +247,7 @@ bool MainWindow::installPackage(QString package)
 
 void MainWindow::checkDirectories()
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     //  Create snapshot dir if it doesn't exist
     if (!snapshot_dir.exists()) {
         snapshot_dir.mkpath(snapshot_dir.absolutePath());
@@ -266,7 +266,7 @@ void MainWindow::checkDirectories()
 
 void MainWindow::openInitrd(QString file, QString initrd_dir)
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     ui->outputLabel->setText(tr("Building new initrd..."));
     QString cmd = "chmod a+rx \"" + initrd_dir + "\"";
     shell->run(cmd);
@@ -277,7 +277,7 @@ void MainWindow::openInitrd(QString file, QString initrd_dir)
 
 void MainWindow::closeInitrd(QString initrd_dir, QString file)
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QDir::setCurrent(initrd_dir);
     QString cmd = "(find . | cpio -o -H newc --owner root:root | gzip -9) >\"" + file + "\"";
     shell->run(cmd, QStringList() << "slowtick");
@@ -290,7 +290,7 @@ void MainWindow::closeInitrd(QString initrd_dir, QString file)
 // Copying the iso-template filesystem
 void MainWindow::copyNewIso()
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     ui->outputBox->clear();
 
     ui->outputLabel->setText(tr("Copying the new-iso filesystem..."));
@@ -336,7 +336,7 @@ void MainWindow::copyNewIso()
 
 // replace text in menu items in grub.cfg, syslinux.cfg, isolinux.cfg
 void MainWindow::replaceMenuStrings() {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QString date = shell->getOutput("date +'%d %B %Y'");
     QString distro = shell->getOutput("cat /etc/antix-version | cut -f1 -d'_'");
     QString distro_name = shell->getOutput("lsb_release -is");
@@ -402,7 +402,7 @@ void MainWindow::copyModules(QString to, QString kernel)
 // Create the output filename
 QString MainWindow::getFilename()
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     if (stamp == "datetime") {
         return snapshot_basename + "-" + shell->getOutput("date +%Y%m%d_%H%M") + ".iso";
     } else {
@@ -421,7 +421,7 @@ QString MainWindow::getFilename()
 // return the directory that has more free space available
 QString MainWindow::largerFreeSpace(QString dir1, QString dir2)
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     int dir1_free = shell->getOutput("df -k --output=avail " + dir1 + " 2>/dev/null | tail -n1").toInt();
     int dir2_free = shell->getOutput("df -k --output=avail " + dir2 + " 2>/dev/null | tail -n1").toInt();
 
@@ -435,7 +435,7 @@ QString MainWindow::largerFreeSpace(QString dir1, QString dir2)
 // return the directory that has more free space available
 QString MainWindow::largerFreeSpace(QString dir1, QString dir2, QString dir3)
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     return largerFreeSpace(largerFreeSpace(dir1, dir2), dir3);
 }
 
@@ -456,7 +456,7 @@ QString MainWindow::getEditor()
 // make working directory using the base filename
 void MainWindow::mkDir(QString file_name)
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QDir dir;
     QFileInfo fi(file_name);
     QString base_name = fi.completeBaseName(); // remove extension
@@ -467,7 +467,7 @@ void MainWindow::mkDir(QString file_name)
 // save package list in working directory
 void MainWindow::savePackageList(QString file_name)
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QFileInfo fi(file_name);
     QString base_name = fi.completeBaseName(); // remove extension
     QString full_name = work_dir + "/iso-template/" + base_name + "/package_list";
@@ -478,7 +478,7 @@ void MainWindow::savePackageList(QString file_name)
 // setup the environment before taking the snapshot
 void MainWindow::setupEnv()
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     // checks if work_dir looks OK
     if (!work_dir.contains("/mx-snapshot")) {
         return;
@@ -509,7 +509,7 @@ int MainWindow::getDebianVersion()
 // create squashfs and then the iso
 bool MainWindow::createIso(QString filename)
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     // add exclusions snapshot and work dirs
     addRemoveExclusion(true, snapshot_dir.absolutePath());
     addRemoveExclusion(true, work_dir);
@@ -566,7 +566,7 @@ bool MainWindow::createIso(QString filename)
 // create md5sum for different files
 void MainWindow::makeMd5sum(QString folder, QString file_name)
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QDir dir;
     QString current = dir.currentPath();
     dir.setCurrent(folder);
@@ -579,7 +579,7 @@ void MainWindow::makeMd5sum(QString folder, QString file_name)
 // clean up changes before exit
 void MainWindow::cleanUp()
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     ui->stackedWidget->setCurrentWidget(ui->outputPage);
     ui->outputLabel->setText(tr("Cleaning..."));
     system("pkill mksquashfs; pkill md5sum");
@@ -600,7 +600,7 @@ void MainWindow::cleanUp()
 // adds or removes exclusion to the exclusion string
 void MainWindow::addRemoveExclusion(bool add, QString exclusion)
 {
-    qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     if (exclusion.startsWith("/")) {
         exclusion.remove(0, 1); // remove preceding slash
     }
