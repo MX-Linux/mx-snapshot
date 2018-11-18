@@ -22,6 +22,7 @@ etc/adjtime
 etc/bcm-ckd
 etc/blkid.tab.old
 etc/defaultdomain
+etc/crypttab
 etc/fstab.backup
 etc/ioctl.save
 etc/live/protect
@@ -36,6 +37,7 @@ root/.bash_history
 root/.dbus
 root/.gconf
 root/.gnome2
+root/keyfile
 var/cache/apt/archives/*.deb
 var/cache/apt-xapian-index/index.*
 var/cache/apt-show-versions/*
@@ -70,6 +72,7 @@ home/*/.cache/mozilla/firefox/*/cache2/*
 home/*/.mozilla/firefox/*/Cache/*
 home/*/.mozilla/seamonkey/*/Cache/*
 home/*/.adobe
+home/*/.keyfileDONOTdelete
 home/*/.macromedia
 home/*/.thumbnails/large/*
 home/*/.thumbnails/normal/*
