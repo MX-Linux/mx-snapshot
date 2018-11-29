@@ -5,10 +5,10 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
-        <location filename="../mainwindow.cpp" line="48"/>
-        <location filename="../mainwindow.cpp" line="97"/>
-        <location filename="../mainwindow.cpp" line="750"/>
-        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="49"/>
+        <location filename="../mainwindow.cpp" line="113"/>
+        <location filename="../mainwindow.cpp" line="779"/>
+        <location filename="../mainwindow.cpp" line="916"/>
         <source>MX Snapshot</source>
         <translation>MX የ መመልከቻ ፎቶ</translation>
     </message>
@@ -29,7 +29,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="155"/>
-        <location filename="../mainwindow.cpp" line="701"/>
+        <location filename="../mainwindow.cpp" line="730"/>
         <source>Snapshot name:</source>
         <translation>የ መመልከቻ ፎቶ ስም: </translation>
     </message>
@@ -39,155 +39,155 @@
         <translation>የ ተለየ የ መመልከቻ ፎቶ ዳይሬክቶሪ ይምረጡ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="210"/>
-        <location filename="../mainwindow.ui" line="228"/>
-        <location filename="../mainwindow.ui" line="261"/>
+        <location filename="../mainwindow.ui" line="211"/>
+        <location filename="../mainwindow.ui" line="229"/>
+        <location filename="../mainwindow.ui" line="262"/>
         <source>TextLabel</source>
         <translation>የ ጽሁፍ ምልክት</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="274"/>
+        <location filename="../mainwindow.ui" line="275"/>
         <source>Edit Configuration File</source>
         <translation>የ ማሰናጃ ፋይል ማረሚያ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="307"/>
+        <location filename="../mainwindow.ui" line="309"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /usr/lib/mx-snapshot/snapshot-exclude.list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="332"/>
+        <location filename="../mainwindow.ui" line="334"/>
         <source>Downloads</source>
         <translation>የ ወረዱ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="339"/>
+        <location filename="../mainwindow.ui" line="341"/>
         <source>Documents</source>
         <translation>ሰነዶች</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="346"/>
+        <location filename="../mainwindow.ui" line="348"/>
         <source>All of the above</source>
         <translation>ሁሉንም ከ ላይ ያሉ </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="353"/>
+        <location filename="../mainwindow.ui" line="355"/>
         <source>Pictures</source>
         <translation>ስእሎች</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="360"/>
+        <location filename="../mainwindow.ui" line="362"/>
         <source>Music</source>
         <translation>ሙዚቃ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="367"/>
+        <location filename="../mainwindow.ui" line="369"/>
         <source>Desktop</source>
         <translation>ዴስክቶፕ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="374"/>
+        <location filename="../mainwindow.ui" line="376"/>
         <source>Videos</source>
         <translation>ቪዲዮ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="390"/>
+        <location filename="../mainwindow.ui" line="392"/>
         <source>Edit Exclusion File</source>
         <translation>የማይካተቱ ፋይሎች ማረሚያ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="419"/>
+        <location filename="../mainwindow.ui" line="422"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="422"/>
+        <location filename="../mainwindow.ui" line="425"/>
         <source>Resetting accounts (for distribution to others)</source>
         <translation>መግለጫ እንደ ነበር ማሰናጃ (ለሌሎች ስርጭቶች)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="429"/>
+        <location filename="../mainwindow.ui" line="432"/>
         <source>Type of snapshot:</source>
         <translation>የ መመልከቻ ፎቶ አይነት</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="436"/>
+        <location filename="../mainwindow.ui" line="439"/>
         <source>Preserving accounts (for personal backup)</source>
         <translation>መግለጫ በ ማስቀመጥ ላይ (ለ ግል ተተኪ)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="548"/>
+        <location filename="../mainwindow.ui" line="551"/>
         <source>Quit application</source>
         <translation>መተግበሪያ ማጥፊያ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="551"/>
-        <location filename="../mainwindow.cpp" line="893"/>
+        <location filename="../mainwindow.ui" line="554"/>
+        <location filename="../mainwindow.cpp" line="922"/>
         <source>Cancel</source>
         <translation>መሰረዣ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="558"/>
+        <location filename="../mainwindow.ui" line="561"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="568"/>
+        <location filename="../mainwindow.ui" line="571"/>
         <source>Display help </source>
         <translation>እርዳታ ማሳያ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="571"/>
+        <location filename="../mainwindow.ui" line="574"/>
         <source>Help</source>
         <translation>እርዳታ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="578"/>
+        <location filename="../mainwindow.ui" line="581"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="601"/>
+        <location filename="../mainwindow.ui" line="604"/>
         <source>About this application</source>
         <translation>ስለዚህ መተግበሪያ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="604"/>
+        <location filename="../mainwindow.ui" line="607"/>
         <source>About...</source>
         <translation>ስለ...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="611"/>
+        <location filename="../mainwindow.ui" line="614"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="649"/>
+        <location filename="../mainwindow.ui" line="652"/>
         <source>Next</source>
         <translation>ይቀጥሉ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="675"/>
+        <location filename="../mainwindow.ui" line="678"/>
         <source>Back</source>
         <translation>ወደ ኋላ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="187"/>
+        <location filename="../mainwindow.cpp" line="203"/>
         <source>Used space on / (root): </source>
         <translation>የ ተጠቀሙት ቦታ በ / (root): </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="190"/>
+        <location filename="../mainwindow.cpp" line="206"/>
         <source>Used space on /home: </source>
         <translation>የ ተጠቀሙት ቦታ በ /home: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="208"/>
+        <location filename="../mainwindow.cpp" line="224"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation>ነፃ ቦታ በ %1, የ መመልከቻ ፎቶ ፎልደር የሚቀመጥበት:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="210"/>
+        <location filename="../mainwindow.cpp" line="226"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -197,206 +197,206 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="230"/>
-        <location filename="../mainwindow.cpp" line="231"/>
+        <location filename="../mainwindow.cpp" line="246"/>
+        <location filename="../mainwindow.cpp" line="247"/>
         <source>Installing </source>
         <translation>በ መግጠም ላይ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="240"/>
-        <location filename="../mainwindow.cpp" line="532"/>
-        <location filename="../mainwindow.cpp" line="546"/>
+        <location filename="../mainwindow.cpp" line="256"/>
+        <location filename="../mainwindow.cpp" line="548"/>
+        <location filename="../mainwindow.cpp" line="562"/>
         <source>Error</source>
         <translation>ስህተት</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="240"/>
+        <location filename="../mainwindow.cpp" line="256"/>
         <source>Could not install </source>
         <translation>መግጠም አልተቻለም</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="270"/>
+        <location filename="../mainwindow.cpp" line="286"/>
         <source>Building new initrd...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="296"/>
+        <location filename="../mainwindow.cpp" line="312"/>
         <source>Copying the new-iso filesystem...</source>
         <translation>አዲሱን የ ፋይል ስርአት ኮፒ በ ማድረግ ላይ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="529"/>
+        <location filename="../mainwindow.cpp" line="545"/>
         <source>Squashing filesystem...</source>
         <translation>የ ፋይል ስርአት በ ማመቅ ላይ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="532"/>
+        <location filename="../mainwindow.cpp" line="548"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation>የ linuxfs ፋይል መፍጠር አልተቻለም: እባክዎን በቂ ነፃ ቦታ እንዳለዎት ያረጋግጡ በ መድረሻው ክፍልፋይ ላይ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="544"/>
+        <location filename="../mainwindow.cpp" line="560"/>
         <source>Creating CD/DVD image file...</source>
         <translation>የ ሲዲ/ዲቪዲ ምስል ፋይል በ መፍጠር ላይ...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="546"/>
+        <location filename="../mainwindow.cpp" line="562"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation>የ ISO ፋይል መፍጠር አልተቻለም: እባክዎን በቂ ነፃ ቦታ እንዳለዎት ያረጋግጡ በ መድረሻው ክፍልፋይ ላይ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="553"/>
+        <location filename="../mainwindow.cpp" line="569"/>
         <source>Making hybrid iso</source>
         <translation>የ hybrid iso ማሰናጃ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="573"/>
+        <location filename="../mainwindow.cpp" line="590"/>
         <source>Making md5sum</source>
         <translation>የ md5sum ማሰናጃ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="584"/>
+        <location filename="../mainwindow.cpp" line="613"/>
         <source>Cleaning...</source>
         <translation>በ መፍጠር ላይ...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="597"/>
-        <location filename="../mainwindow.cpp" line="960"/>
+        <location filename="../mainwindow.cpp" line="626"/>
+        <location filename="../mainwindow.cpp" line="989"/>
         <source>Done</source>
         <translation>ጨርሷል</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="675"/>
+        <location filename="../mainwindow.cpp" line="704"/>
         <source>Please wait.</source>
         <translation>እባክዎን ይቆዩ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="677"/>
+        <location filename="../mainwindow.cpp" line="706"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation>እባክዎን ይቆዩ: የ ተጠቀሙትን የ ዲስክ ቦታ በ ማስላት ላይ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="692"/>
+        <location filename="../mainwindow.cpp" line="721"/>
         <source>Settings</source>
         <translation>ማሰናጃ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="698"/>
+        <location filename="../mainwindow.cpp" line="727"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>የ መመልከቻ ፎቶ የሚቀጥለውን ማሰናጃ ይጠቀማል:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="700"/>
+        <location filename="../mainwindow.cpp" line="729"/>
         <source>- Snapshot directory:</source>
         <translation>የ መመልከቻ ፎቶ ዳይሬክቶሪ </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="702"/>
+        <location filename="../mainwindow.cpp" line="731"/>
         <source>- Kernel to be used:</source>
         <translation>- Kernel የሚጠቀሙት:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="703"/>
+        <location filename="../mainwindow.cpp" line="732"/>
         <source>*These settings can be changed by editing: </source>
         <translation>*ይህን ማሰናጃ በ ማረም መቀየር ይቻላል: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="708"/>
+        <location filename="../mainwindow.cpp" line="737"/>
         <source>Final chance</source>
         <translation>የ መጨረሻ ዕድል</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="709"/>
+        <location filename="../mainwindow.cpp" line="738"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation>የ መመልከቻ ፎቶ አሁን በቂ መረጃ አለው ISO ለ መፍጠር እርስዎ ከሚያስኬዱት ስርአት ውስጥ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="710"/>
+        <location filename="../mainwindow.cpp" line="739"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation>ይህ ትንሽ ጊዜ ይወስዳል ለ መጨረስ: እንደ ተገጠመው ስርአት መጠን እና የ እርስዎ ኮምፒዩተር ፍጥነት </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="711"/>
+        <location filename="../mainwindow.cpp" line="740"/>
         <source>OK to start?</source>
         <translation>እሺ ለ ማስጀመር?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="719"/>
+        <location filename="../mainwindow.cpp" line="748"/>
         <source>Output</source>
         <translation>ውጤት</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="726"/>
+        <location filename="../mainwindow.cpp" line="755"/>
         <source>Edit Boot Menu</source>
         <translation>የ ማስነሻ ዝርዝር ማረሚያ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="727"/>
+        <location filename="../mainwindow.cpp" line="756"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="740"/>
+        <location filename="../mainwindow.cpp" line="769"/>
         <source>Success</source>
         <translation>ተሳክቷል</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="740"/>
+        <location filename="../mainwindow.cpp" line="769"/>
         <source>All finished!</source>
         <translation>ሁሉንም ጨርሷል!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="741"/>
+        <location filename="../mainwindow.cpp" line="770"/>
         <source>Close</source>
         <translation>መዝጊያ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="886"/>
+        <location filename="../mainwindow.cpp" line="915"/>
         <source>About MX Snapshot</source>
         <translation>ስለ MX የ መመልከቻ ፎቶ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="916"/>
         <source>Version: </source>
         <translation>እትም</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="889"/>
+        <location filename="../mainwindow.cpp" line="918"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>እርስዎ ከሚያስኬዱት በ ቀጥታ-ሲዲ የ MX ሊነክስ ለ መፍጠር የሚያስችል ፕሮግራም </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="890"/>
+        <location filename="../mainwindow.cpp" line="919"/>
         <source>Copyright (c) MX Linux</source>
         <translation>የ ቅጂ መብት (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="891"/>
+        <location filename="../mainwindow.cpp" line="920"/>
         <source>License</source>
         <translation>ፍቃድ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="892"/>
+        <location filename="../mainwindow.cpp" line="921"/>
         <source>Changelog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="910"/>
+        <location filename="../mainwindow.cpp" line="939"/>
         <source>&amp;Close</source>
         <translation>&amp;መዝጊያ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="942"/>
+        <location filename="../mainwindow.cpp" line="971"/>
         <source>Select Snapshot Directory</source>
         <translation>የ መመልከቻ ፎቶ ዳይሬክቶሪ ይምረጡ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="961"/>
+        <location filename="../mainwindow.cpp" line="990"/>
         <source>Confirmation</source>
         <translation>ማረጋገጫ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="961"/>
+        <location filename="../mainwindow.cpp" line="990"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>እርስዎ በ እርግጥ መተግበሪያውን ማቋረጥ ይፈልጋሉ?  </translation>
     </message>
@@ -404,7 +404,7 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="68"/>
+        <location filename="../main.cpp" line="81"/>
         <source>You must run this program as root.</source>
         <translation>ይህን ፕሮግራም እንደ root ማስኬድ አለብዎት</translation>
     </message>
