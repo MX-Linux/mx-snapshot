@@ -1,9 +1,3 @@
-mx-snapshot (18.11.1) mx; urgency=medium
-
-  * exclude encryption files
-
- -- Adrian <adrian@mxlinux.org>  Wed, 28 Nov 2018 21:43:24 -0500
-
 mx-snapshot (18.11) mx; urgency=medium
 
   * create sha512 sum
