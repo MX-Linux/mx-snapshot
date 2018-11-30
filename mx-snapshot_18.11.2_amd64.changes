@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Fri, 30 Nov 2018 15:41:51 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 18.11.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (18.11.2) mx; urgency=medium
+ .
+   * exclude /etc/X11/xorg.conf.d/20-amd.conf
+Checksums-Sha1:
+ 1e067cf65fb3fc53d80a6eaa3f6d728f27aa3166 1191 mx-snapshot_18.11.2.dsc
+ bb232798888a035b5e248164110c338b108e4f02 75708 mx-snapshot_18.11.2.tar.xz
+ db2a12c874011417024d5d7ee7d9568ed21c0c45 11219 mx-snapshot_18.11.2_amd64.buildinfo
+ a7373921535c8450137e9acb72533e79c28174b4 109390 mx-snapshot_18.11.2_amd64.deb
+Checksums-Sha256:
+ f623f5151fc1b5d71e92e7117e3c569c398edd3710e80bcfb263f1e5600d012b 1191 mx-snapshot_18.11.2.dsc
+ 45f8828ce3cd210c92105ce2f6b7cc1fdb8df52760d2203c6e8da314c25bb200 75708 mx-snapshot_18.11.2.tar.xz
+ ce56e11b7e20a35e432c4f02c1d314d9f4d9f3c2e11bff320ed6ce8d83f3e9c6 11219 mx-snapshot_18.11.2_amd64.buildinfo
+ 41374383eb25ecb9b7f40c24baacdf487372d5083150683f0f5058adf075b4c7 109390 mx-snapshot_18.11.2_amd64.deb
+Files:
+ 03bb2e61d816a73a19a1beab7882ac79 1191 admin optional mx-snapshot_18.11.2.dsc
+ f41da3331090b0f778c767fba6582bfc 75708 admin optional mx-snapshot_18.11.2.tar.xz
+ 5c04bf2160e61977ff8625d2eb782640 11219 admin optional mx-snapshot_18.11.2_amd64.buildinfo
+ 7ad0aa2b3f725cea7db081cc86d3afeb 109390 admin optional mx-snapshot_18.11.2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlwBoXgTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumNRnB/421sr1DcTLIshM2/KIkBjpgLhHqus2
+A2pvaegsg1IKe607FtlSMOKfYHMIbbAlGSgvCmvtCOJNP7QRc+oSLFq5uIjtcO6p
+Y07HJoBU6gwtgwvz/9HMpxymYNW0O9ua1vk9Zy1cJxuygEmfu1dP5giTUc/GB2x2
+g2WZog0/ypVLKXBKwuaq0Hw71z08lXZXw0KrujAf2/A//VtJKlpdLflVOT+DjESu
+vqjiIYvaD97qltyZVEpe3Cux6vdlPohT+gTaGaPnsU9vcskLEQbUJgXSVspEDdIi
+pNqMr4qL9zTETWoiwh0Rc5QdwIdZblL6WMVytYPcv3g+t1+mP/s+RG7s
+=HTLp
+-----END PGP SIGNATURE-----

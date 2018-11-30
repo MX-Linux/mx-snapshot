@@ -1,3 +1,9 @@
+mx-snapshot (18.11.2) mx; urgency=medium
+
+  * exclude /etc/X11/xorg.conf.d/20-amd.conf
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 30 Nov 2018 15:41:51 -0500
+
 mx-snapshot (18.11.1) mx; urgency=medium
 
   * exclude encryption files

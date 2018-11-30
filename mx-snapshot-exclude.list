@@ -109,3 +109,4 @@ etc/X11/xorg.conf
 etc/X11/xorg.conf.d/20-nvidia.conf
 etc/X11/xorg.conf.d/20-intel.conf 
 etc/X11/xorg.conf.d/20-radeon.conf
+etc/X11/xorg.conf.d/20-amd.conf
