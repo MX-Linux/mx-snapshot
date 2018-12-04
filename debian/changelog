@@ -1,3 +1,9 @@
+mx-snapshot (18.12) mx; urgency=medium
+
+  * fix quotation, might solve installer icon missing on Desktop
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 04 Dec 2018 17:12:25 -0500
+
 mx-snapshot (18.11.2) mx; urgency=medium
 
   * exclude /etc/X11/xorg.conf.d/20-amd.conf

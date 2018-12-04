@@ -635,12 +635,12 @@ void MainWindow::addRemoveExclusion(bool add, QString exclusion)
     }
     if (add) {
         if (session_excludes.isEmpty()) {
-            session_excludes.append("-e '" + exclusion + "'");
+            session_excludes.append("-e \"" + exclusion + "\"");
         } else {
-            session_excludes.append(" '" + exclusion + "'");
+            session_excludes.append(" \"" + exclusion + "\"");
         }
     } else {
-        session_excludes.remove(" '" + exclusion + "'");
+        session_excludes.remove(" \"" + exclusion + "\"");
         if (session_excludes == "-e") {
             session_excludes = "";
         }
@@ -805,7 +805,7 @@ void MainWindow::on_excludeDocuments_toggled(bool checked)
     if (xdg_user_dir.startsWith("/")) {
         xdg_user_dir.remove(0, 1); // remove training slash
     }
-    QString exclusion = "/home/*/Documents/*' '" + xdg_user_dir;
+    QString exclusion = "/home/*/Documents/*\" \"" + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -820,7 +820,7 @@ void MainWindow::on_excludeDownloads_toggled(bool checked)
     if (xdg_user_dir.startsWith("/")) {
         xdg_user_dir.remove(0, 1); // remove training slash
     }
-    QString exclusion = "/home/*/Downloads/*' '" + xdg_user_dir;
+    QString exclusion = "/home/*/Downloads/*\" \"" + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -835,7 +835,7 @@ void MainWindow::on_excludePictures_toggled(bool checked)
     if (xdg_user_dir.startsWith("/")) {
         xdg_user_dir.remove(0, 1); // remove training slash
     }
-    QString exclusion = "/home/*/Pictures/*' '" + xdg_user_dir;
+    QString exclusion = "/home/*/Pictures/*\" \"" + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -850,7 +850,7 @@ void MainWindow::on_excludeMusic_toggled(bool checked)
     if (xdg_user_dir.startsWith("/")) {
         xdg_user_dir.remove(0, 1); // remove training slash
     }
-    QString exclusion = "/home/*/Music/*' '" + xdg_user_dir;
+    QString exclusion = "/home/*/Music/*\" \"" + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -865,7 +865,7 @@ void MainWindow::on_excludeVideos_toggled(bool checked)
     if (xdg_user_dir.startsWith("/")) {
         xdg_user_dir.remove(0, 1); // remove training slash
     }
-    QString exclusion = "/home/*/Videos/*' '" + xdg_user_dir;
+    QString exclusion = "/home/*/Videos/*\" \"" + xdg_user_dir;
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -880,7 +880,7 @@ void MainWindow::on_excludeDesktop_toggled(bool checked)
     if (xdg_user_dir.startsWith("/")) {
         xdg_user_dir.remove(0, 1); // remove training slash
     }
-    QString exclusion = "/home/*/Desktop/!(minstall.desktop)' '" + xdg_user_dir + "/!(minstall.desktop)";
+    QString exclusion = "/home/*/Desktop/!(minstall.desktop)\" \"" + xdg_user_dir + "/!(minstall.desktop)";
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
