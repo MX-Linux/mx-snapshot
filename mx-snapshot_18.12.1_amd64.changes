@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Tue, 04 Dec 2018 22:41:58 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 18.12.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (18.12.1) mx; urgency=medium
+ .
+   * make featherpad default editor, set nano as fallback
+Checksums-Sha1:
+ 9d12856a1cb9fa8c667245ffe67cb1508863c6a8 1191 mx-snapshot_18.12.1.dsc
+ b26cb558ab655b4a34360eacc21938f037f7609a 75556 mx-snapshot_18.12.1.tar.xz
+ b3f3cafd349d98eb6ab17b929feadefc00008f59 109130 mx-snapshot_18.12.1_amd64.deb
+Checksums-Sha256:
+ 126191ba31c4640044e5c811da4d4e4c50c008217b566b6c1b6113689c9a4734 1191 mx-snapshot_18.12.1.dsc
+ dd236d372a1c702edc28bebb4d8b5aab2b09e5031b0e24014e4fca76f6843553 75556 mx-snapshot_18.12.1.tar.xz
+ eae551dc94c77e963033d14016be2fcd38db0e326c30a4c7acb445aa15a4380b 109130 mx-snapshot_18.12.1_amd64.deb
+Files:
+ 0b56754f84fd6209edd8404103e8ec58 1191 admin optional mx-snapshot_18.12.1.dsc
+ a700ca13cb6c479300ee373319c058d0 75556 admin optional mx-snapshot_18.12.1.tar.xz
+ 268264ba61e071831d1dedceb19db607 109130 admin optional mx-snapshot_18.12.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlwHSfoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMknB/4kK8sLfPiCuwO7ZhFmnvI8Fv02NMy/
+naCX6OqakaI7Ep0fgUIc5IrvQvgT+Uq9Hz9OS94koWnPHy9beYxfR8W9/tTJXr3f
+TQmnacTsEZXAS2itq/qEVB7970NMt3RHlzsWF9l1UNQ7THMuzl+agR6J+HExukzE
+p+bvBTg4zrmyyc3yXAu90xIjaFWE6HMuCJX8S8AM5hLxs3NyCsl1ldzQbu0xGLX/
+qbp/YdZIYlGWToB7vUk9b28ngauB3JW6BywKWQ6EkaKNtSlYtMED4KW1ksYhHoYM
+w5YIb1OvPvsFi/8EIsPX86AWCd1iLwSaFlR+PWusA/4p4TLsXD79yraZ
+=LMfI
+-----END PGP SIGNATURE-----

@@ -89,7 +89,7 @@ void MainWindow::loadSettings()
     mksq_opt = settings.value("mksq_opt", "-comp xz").toString();
     edit_boot_menu = settings.value("edit_boot_menu", "no").toString();
     lib_mod_dir = settings.value("lib_mod_dir", "/lib/modules/").toString();
-    gui_editor.setFileName(settings.value("gui_editor", "/usr/bin/gnome-text-editor").toString());
+    gui_editor.setFileName(settings.value("gui_editor", "/usr/bin/featherpad").toString());
     stamp = settings.value("stamp").toString();
     force_installer = settings.value("force_installer", "true").toBool();
     ui->lineEditName->setText(getFilename());
@@ -459,10 +459,10 @@ QString MainWindow::getEditor()
 {
     QString editor;
     if (!QFile(gui_editor.fileName()).exists()) {  // if specified editor doesn't exist get the default one
-        editor = shell->getOutput("grep Exec $(locate $(xdg-mime query default text/plain))|cut -d= -f2|cut -d\" \" -f1");
-        if (editor.isEmpty() || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exist use nano as backup editor
+//        editor = shell->getOutput("grep Exec $(locate $(xdg-mime query default text/plain))|cut -d= -f2|cut -d\" \" -f1");
+//        if (editor.isEmpty() || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exist use nano as backup editor
             editor = "x-terminal-emulator -e nano";
-        }
+//        }
     } else {
         editor = gui_editor.fileName();
     }
