@@ -69,13 +69,14 @@ var/cache/brightness-settings-cache/*
 # by adding them to this list.
 
 home/*/.cache/mozilla/firefox/*/cache2/*
+home/*/.cache/mozilla/firefox/*/thumbnails/*
 home/*/.mozilla/firefox/*/Cache/*
+home/*/.mozilla/firefox/*/cache2/*
 home/*/.mozilla/seamonkey/*/Cache/*
 home/*/.adobe
 home/*/.keyfileDONOTdelete
 home/*/.macromedia
-home/*/.thumbnails/large/*
-home/*/.thumbnails/normal/*
+home/*/.thumbnails/*
 home/*/.Trash*
 home/*/.local/share/Trash/*
 # home/*/.cache
