@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Mon, 10 Dec 2018 11:58:09 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 18.12.3
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (18.12.3) mx; urgency=medium
+ .
+   * copy modules change
+Checksums-Sha1:
+ 46c1c9a7d67d3e8503e40c235acf06e8b541a0ad 1191 mx-snapshot_18.12.3.dsc
+ 9762079fac8b8754ec5b0d82df9a7d5efdfe050e 75868 mx-snapshot_18.12.3.tar.xz
+ 67f6a609f54919b038f2c9f88bee238341aa29a1 11219 mx-snapshot_18.12.3_amd64.buildinfo
+ 4a692eef481a2a1b0f1f1319576dd620519d6ff9 109310 mx-snapshot_18.12.3_amd64.deb
+Checksums-Sha256:
+ c2de65076a25671e2148af39745610db2b2eb79ee3dc29152765b77e8ce66d6f 1191 mx-snapshot_18.12.3.dsc
+ b8b6ea07d13cbdf18627ea948ab227729abba2f507b935a956fa30187ced63f5 75868 mx-snapshot_18.12.3.tar.xz
+ b7e03cdb4d0e35b56a256b4fc39f5b30a915f9a1a455fb46ca46467ae6233658 11219 mx-snapshot_18.12.3_amd64.buildinfo
+ 744bfbf21f92364fc298317ed6b1704433bf5e4163ca7434972c4b7e79b5c89e 109310 mx-snapshot_18.12.3_amd64.deb
+Files:
+ e7d923594be97492b92eb259ac0d74d8 1191 admin optional mx-snapshot_18.12.3.dsc
+ e0979727fd8733a3edae2b0820633f04 75868 admin optional mx-snapshot_18.12.3.tar.xz
+ fe3d6c131f25c335511fac1870ee90d3 11219 admin optional mx-snapshot_18.12.3_amd64.buildinfo
+ b784da5348a279b180859f294c83f5d2 109310 admin optional mx-snapshot_18.12.3_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlwOm7sTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumDaNB/9SzWFp/UCiWr1DJyovvhhEy9zy9EEJ
+P61oAqMIuUA0fUuIpWaGVXhW8z6DhkqlLCkbR9lbFHXWMSo4QRVnlywoWrq0euLi
+m2tr+Bzp89Y3fVGVn8uF+yqEDB1iILIs5vGh+ZGUJc8hEl9nvxPezP+2bTf7ZapO
+r5si5pqqmnxItk3WwQDWYOxZLfaP1MHO8kxE0o8Nir9nv/ziDjpowG4zqQWhPRME
+ZZtQJTb7UaSjrhREKziL7vNe4NcRZfAW+U51PbdtSMBqq+dzN3RHEY1bUzAlKFiE
+0WxTxQN6sDxd0pY7fz71t55QSc/KrREl7ACQO15KSXtR6xOuJVj0IQ0Z
+=9HlB
+-----END PGP SIGNATURE-----

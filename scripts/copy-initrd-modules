@@ -123,6 +123,7 @@ dm-crypt
 dm-mod
 serpent
 sha256
+xts
 "
 # i915
 # nouveau

@@ -1,3 +1,9 @@
+mx-snapshot (18.12.3) mx; urgency=medium
+
+  * copy modules change
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 10 Dec 2018 11:58:09 -0500
+
 mx-snapshot (18.12.2) mx; urgency=medium
 
   * adjust exclusions
