@@ -1,3 +1,9 @@
+mx-snapshot (19.1) mx; urgency=medium
+
+  * update exclusion list to not exclude /boot/grub/themes
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 04 Jan 2019 08:41:48 -0500
+
 mx-snapshot (18.12.3) mx; urgency=medium
 
   * copy modules change

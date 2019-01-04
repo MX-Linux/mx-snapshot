@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Fri, 04 Jan 2019 08:41:48 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.1) mx; urgency=medium
+ .
+   * update exclusion list to not exclude /boot/grub/themes
+Checksums-Sha1:
+ b46057562757a7e5addff973566d5021a1df4420 1179 mx-snapshot_19.1.dsc
+ f02b14b1103aa21ac97d4870f5303d58f77384d1 75664 mx-snapshot_19.1.tar.xz
+ 1339fbc622a74249472af3b7b5fceb72b447b05c 109350 mx-snapshot_19.1_amd64.deb
+Checksums-Sha256:
+ 392358bd2e4aa0f7e86ee363903608281d66694a20f26988f58215fa626c32ee 1179 mx-snapshot_19.1.dsc
+ 2c9cd329acf0860d3ad98416fdc91213850048f9b91243160346656e4d543182 75664 mx-snapshot_19.1.tar.xz
+ eb987f1e64e781525ed77278cd5cef9bea882046d6633943b78fa483559c449b 109350 mx-snapshot_19.1_amd64.deb
+Files:
+ 154e30c74178a57bf83167cf75ef06df 1179 admin optional mx-snapshot_19.1.dsc
+ 2bfdcec479aa80bedf843ac8ad673c0b 75664 admin optional mx-snapshot_19.1.tar.xz
+ 4f68e68df025f0b7497f37a17c5834e7 109350 admin optional mx-snapshot_19.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlwvY3cTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumOzrB/4oxzysnY/ETh5Z/V/izoH6CSzQgphr
+5EmypaF3FLJ0DmOeLDMuAKdBPu30Rbila0rRBR5dYMpcir8eecOAzYQxWXh+ua9o
+rjJgt3U+W8d54jWYIEnCgWmLsoxB4WrNRv4gOgbGyS7aGm2g/O7jg4cULdZC0/wG
+4TIjYavdGJonryTfU3AOHiTuLDFG9+UQ/nnj295g2yXp4pIZA3yuLrNlM9kKt6+4
+vgMSa9qB9XWG9dzp55qumVUbJr/20++a6HZYCR4mPMINSvdICp/9VDM2gIwTpJ+S
+lMNolvpY7iXnOa5GyAxLhCPYbyLphXTFNsug8Te9CnnlQR8xcxJKr2L4
+=ddRv
+-----END PGP SIGNATURE-----

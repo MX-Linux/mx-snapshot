@@ -10,14 +10,13 @@ swapfile
 tmp
 dev/*
 cdrom/*
-grub/*
 live/*
 media/*
 mnt/*
 sys/*
 proc/*
 run/*
-boot/grub/*
+boot/grub/!(themes|unicode.pf2)
 etc/adjtime
 etc/bcm-ckd
 etc/blkid.tab.old
