@@ -25,6 +25,7 @@ etc/crypttab
 etc/fstab.backup
 etc/ioctl.save
 etc/live/protect
+etc/machine-id
 etc/mailname
 etc/mtab
 etc/NetworkManager/system-connections/*
