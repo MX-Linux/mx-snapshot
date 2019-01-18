@@ -1,3 +1,10 @@
+mx-snapshot (19.1.1) mx; urgency=medium
+
+  * exclude /etc/machine-id
+  * exclude /var/lib/NetworkManager/*
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 18 Jan 2019 11:09:29 -0500
+
 mx-snapshot (19.1) mx; urgency=medium
 
   * update exclusion list to not exclude /boot/grub/themes

@@ -1,0 +1,50 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Fri, 18 Jan 2019 11:09:29 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.1.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.1.1) mx; urgency=medium
+ .
+   * exclude /etc/machine-id
+   * exclude /var/lib/NetworkManager/*
+Checksums-Sha1:
+ c89b8c49b91bb8addb05ab39d9d760ef487e6fce 1187 mx-snapshot_19.1.1.dsc
+ 4007c64b5d6b66c709a58c6105b4c286a6b28ac1 75956 mx-snapshot_19.1.1.tar.xz
+ adad1c0404a12267fc987b926bf6d3244914a7d8 486008 mx-snapshot-dbgsym_19.1.1_amd64.deb
+ 7d5174ad4695a9c6f6a7e04da511967b2068482f 11632 mx-snapshot_19.1.1_amd64.buildinfo
+ f0510e54df961912cc3ac8a3206065a2caf2f531 109440 mx-snapshot_19.1.1_amd64.deb
+Checksums-Sha256:
+ 490d8c6159cf34037ef5fced89290a858c7da3916a88c95767923890894366e5 1187 mx-snapshot_19.1.1.dsc
+ f23ca8d8ae818984d9bd80e9201f6155a6fec24dd65249eee3725b211345d4f7 75956 mx-snapshot_19.1.1.tar.xz
+ 484d4781cbe183fc836f873f541dc1539b659ca85c3e02649cb286ceb9626cc1 486008 mx-snapshot-dbgsym_19.1.1_amd64.deb
+ ba3a3e8f94e2648d18499ed78e053d1ab22e369e7ee48d63947f58a00a15e251 11632 mx-snapshot_19.1.1_amd64.buildinfo
+ 8da4929bb04e7bf8c6dd2dd0092e2adc05e1babb0941b41c14e5133c7cb913f3 109440 mx-snapshot_19.1.1_amd64.deb
+Files:
+ e9ce135c8e05334aa0aa249c01a9df4a 1187 admin optional mx-snapshot_19.1.1.dsc
+ f5ee9dd6601f2f5aab1fc6b58aee1447 75956 admin optional mx-snapshot_19.1.1.tar.xz
+ 2a8e61d293a3083c67633850dfeafc28 486008 debug optional mx-snapshot-dbgsym_19.1.1_amd64.deb
+ a8eff1a239b001e86b7e88bfb1846ce3 11632 admin optional mx-snapshot_19.1.1_amd64.buildinfo
+ 4260479f4581dd7c2c6fa68c9e9d54c5 109440 admin optional mx-snapshot_19.1.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlxB+ykTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumJO9CACACxDPBp+7X5triNBqJvzWdKWhUu0y
+9SWR3DVVYdcW/TNjFQFrks5/r8qtp83WPIpSS78SuH99ZGC0DHGXNL5YXZ7aR3fw
+yHVxXayqdY+sIrT4BZWh12nKntr3o8/RgTQpE73WDGx4DhWQFSt3frQICUCJwbnp
+LdZgFimaIRYsdR0Un2hmusx5pQedEXN8g99oNNq1FZUo8xdZWqkiIQIRL9VMFced
+LNALj6mZWd/KQbIhchPA2tWWRLAGMDcCL3uBSDg7jT16JUogo05oRKFnX5FK1Ayr
+04RGCSrFSEGAuGjptaiTm86MoH0XUqmr/gv2tkHGCzCRyvFPM1DkdRhD
+=nNzx
+-----END PGP SIGNATURE-----
