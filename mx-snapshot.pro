@@ -46,22 +46,33 @@ FORMS    += \
     mainwindow.ui
 
 TRANSLATIONS += translations/mx-snapshot_am.ts \
+                translations/mx-snapshot_ar.ts \
+                translations/mx-snapshot_bg.ts \
                 translations/mx-snapshot_ca.ts \
                 translations/mx-snapshot_cs.ts \
                 translations/mx-snapshot_da.ts \
                 translations/mx-snapshot_de.ts \
                 translations/mx-snapshot_el.ts \
                 translations/mx-snapshot_es.ts \
+                translations/mx-snapshot_et.ts \
+                translations/mx-snapshot_eu.ts \
+                translations/mx-snapshot_fa.ts \
                 translations/mx-snapshot_fi.ts \
                 translations/mx-snapshot_fr.ts \
+                translations/mx-snapshot_he_IL.ts \
                 translations/mx-snapshot_hi.ts \
                 translations/mx-snapshot_hr.ts \
                 translations/mx-snapshot_hu.ts \
+                translations/mx-snapshot_id.ts \
                 translations/mx-snapshot_is.ts \
                 translations/mx-snapshot_it.ts \
                 translations/mx-snapshot_ja.ts \
+                translations/mx-snapshot_ja_JP.ts \
                 translations/mx-snapshot_kk.ts \
+                translations/mx-snapshot_ko.ts \
                 translations/mx-snapshot_lt.ts \
+                translations/mx-snapshot_mk.ts \
+                translations/mx-snapshot_nb.ts \
                 translations/mx-snapshot_nl.ts \
                 translations/mx-snapshot_pl.ts \
                 translations/mx-snapshot_pt.ts \
@@ -69,10 +80,13 @@ TRANSLATIONS += translations/mx-snapshot_am.ts \
                 translations/mx-snapshot_ro.ts \
                 translations/mx-snapshot_ru.ts \
                 translations/mx-snapshot_sk.ts \
+                translations/mx-snapshot_sl.ts \
                 translations/mx-snapshot_sq.ts \
+                translations/mx-snapshot_sr.ts \
                 translations/mx-snapshot_sv.ts \
                 translations/mx-snapshot_tr.ts \
                 translations/mx-snapshot_uk.ts \
+                translations/mx-snapshot_zh_CN.ts \
                 translations/mx-snapshot_zh_TW.ts
 
 RESOURCES += \

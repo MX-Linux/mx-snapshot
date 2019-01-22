@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sq" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ar" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
@@ -81,12 +81,12 @@
     <message>
         <location filename="mainwindow.ui" line="367"/>
         <source>Desktop</source>
-        <translation>Desktopi</translation>
+        <translation>سطح مكتب</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="374"/>
         <source>Videos</source>
-        <translation>Videot</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="390"/>
@@ -116,18 +116,18 @@
     <message>
         <location filename="mainwindow.ui" line="548"/>
         <source>Quit application</source>
-        <translation>Dil nga aplikacioni</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="551"/>
         <location filename="mainwindow.cpp" line="893"/>
         <source>Cancel</source>
-        <translation>Anullo</translation>
+        <translation>إلغاء</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="558"/>
         <source>Alt+N</source>
-        <translation>Alt+N</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="568"/>
@@ -137,7 +137,7 @@
     <message>
         <location filename="mainwindow.ui" line="571"/>
         <source>Help</source>
-        <translation>Ndihmë</translation>
+        <translation>مساعدة</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="578"/>
@@ -147,27 +147,27 @@
     <message>
         <location filename="mainwindow.ui" line="601"/>
         <source>About this application</source>
-        <translation>Rreth këtij aplikacioni</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="604"/>
         <source>About...</source>
-        <translation>Rreth...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="611"/>
         <source>Alt+B</source>
-        <translation>Alt+B</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="649"/>
         <source>Next</source>
-        <translation type="unfinished"/>
+        <translation>التالي</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="675"/>
         <source>Back</source>
-        <translation type="unfinished"/>
+        <translation>للخلف</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="187"/>
@@ -205,7 +205,7 @@
         <location filename="mainwindow.cpp" line="532"/>
         <location filename="mainwindow.cpp" line="546"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>خطأ</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="240"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="mainwindow.cpp" line="692"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation>إعدادات</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="698"/>
@@ -346,7 +346,7 @@
     <message>
         <location filename="mainwindow.cpp" line="741"/>
         <source>Close</source>
-        <translation>Mbyll</translation>
+        <translation>إغلاق</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="886"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="mainwindow.cpp" line="887"/>
         <source>Version: </source>
-        <translation>Versioni:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="889"/>
@@ -366,22 +366,22 @@
     <message>
         <location filename="mainwindow.cpp" line="890"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Të drejtat e rezervuara (c) MX Linux</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="891"/>
         <source>License</source>
-        <translation>Liçensa</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="892"/>
         <source>Changelog</source>
-        <translation>Ndryshimet</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="910"/>
         <source>&amp;Close</source>
-        <translation>&amp;Mbyll</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="942"/>

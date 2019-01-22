@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sq" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ja_JP" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
@@ -81,12 +81,12 @@
     <message>
         <location filename="mainwindow.ui" line="367"/>
         <source>Desktop</source>
-        <translation>Desktopi</translation>
+        <translation>デスクトップ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="374"/>
         <source>Videos</source>
-        <translation>Videot</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="390"/>
@@ -116,13 +116,13 @@
     <message>
         <location filename="mainwindow.ui" line="548"/>
         <source>Quit application</source>
-        <translation>Dil nga aplikacioni</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="551"/>
         <location filename="mainwindow.cpp" line="893"/>
         <source>Cancel</source>
-        <translation>Anullo</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="558"/>
@@ -132,27 +132,27 @@
     <message>
         <location filename="mainwindow.ui" line="568"/>
         <source>Display help </source>
-        <translation type="unfinished"/>
+        <translation>ヘルプの表示</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="571"/>
         <source>Help</source>
-        <translation>Ndihmë</translation>
+        <translation>ヘルプ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="578"/>
         <source>Alt+H</source>
-        <translation type="unfinished"/>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="601"/>
         <source>About this application</source>
-        <translation>Rreth këtij aplikacioni</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="604"/>
         <source>About...</source>
-        <translation>Rreth...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="611"/>
@@ -205,7 +205,7 @@
         <location filename="mainwindow.cpp" line="532"/>
         <location filename="mainwindow.cpp" line="546"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>エラー</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="240"/>
@@ -346,7 +346,7 @@
     <message>
         <location filename="mainwindow.cpp" line="741"/>
         <source>Close</source>
-        <translation>Mbyll</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="886"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="mainwindow.cpp" line="887"/>
         <source>Version: </source>
-        <translation>Versioni:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="889"/>
@@ -366,22 +366,22 @@
     <message>
         <location filename="mainwindow.cpp" line="890"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Të drejtat e rezervuara (c) MX Linux</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="891"/>
         <source>License</source>
-        <translation>Liçensa</translation>
+        <translation>ライセンス</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="892"/>
         <source>Changelog</source>
-        <translation>Ndryshimet</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="910"/>
         <source>&amp;Close</source>
-        <translation>&amp;Mbyll</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="942"/>
@@ -404,7 +404,7 @@
     <message>
         <location filename="main.cpp" line="68"/>
         <source>You must run this program as root.</source>
-        <translation type="unfinished"/>
+        <translation>このプログラムは root 権限で実行する必要があります。</translation>
     </message>
 </context>
 </TS>
