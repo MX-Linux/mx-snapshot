@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Tue, 22 Jan 2019 20:06:36 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.1.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.1.2) mx; urgency=medium
+ .
+   * add vmd to copy-initrd-modules
+Checksums-Sha1:
+ 59c9887d3ab6d202de25933d31dc1fd2afdc4306 1187 mx-snapshot_19.1.2.dsc
+ ca406741068a60375cca4ea7a9fc941a5b5c48a2 79844 mx-snapshot_19.1.2.tar.xz
+ 719585660b56db8edf94f5c24eb5c09c0f740863 113008 mx-snapshot_19.1.2_amd64.deb
+Checksums-Sha256:
+ e26e5b60f715969530a7ff90e7e0433717ec3d999e3cfd6774f263b3e5473271 1187 mx-snapshot_19.1.2.dsc
+ 95486979f083ed5a44587aaed99f17569733f764faced93b0cef4c061c3577a7 79844 mx-snapshot_19.1.2.tar.xz
+ 55147567efe594288baa6125284979b88d64de02974fae3ef54e08b3534e00a7 113008 mx-snapshot_19.1.2_amd64.deb
+Files:
+ 13464f8627e58887f088e2099e301b2b 1187 admin optional mx-snapshot_19.1.2.dsc
+ be8032dc8824ba4e1f7b1c9029287353 79844 admin optional mx-snapshot_19.1.2.tar.xz
+ 761a9ae128cfc628ccd65d91e2f4039b 113008 admin optional mx-snapshot_19.1.2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlxHvv0THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPVTB/9SupYmr0HZKNURFpD+30I5o0W9xidT
+ZM8Z+Ct99QW71FkpSSIuCudf1OHjju/ZXgF4ibap738l6Nl6QVX+GQV4gl3L5u5u
+33+GWh+nHu4Z267O5EjBl5b8xZAAT4AVGwZRWY2BdZMov6nkqk1RjqeUcwikr2tC
+9LdA01/EDXImBpRubxdZy6dpmmHIKZc2UT4XDXW8ZolmqF1U49OqxJlH9EoM5KoF
+IYmrgPMeq01sAJJk3RnYs3+i9sPy0Lx2CWHKbpQZVtFxQ2mCrM9WhJejqHwo8FjJ
+Otho6IA572G7TeQEWvdl3R6Q6grZDRSWQvSMkC4/Yqj8fQKy7ESi7uUP
+=F4O3
+-----END PGP SIGNATURE-----
