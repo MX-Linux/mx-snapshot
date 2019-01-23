@@ -108,6 +108,7 @@ usbcore
 usbhid
 usbmon
 vfat
+vmd
 whc-rc
 whci-hcd
 xcbc
