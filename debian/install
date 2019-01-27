@@ -5,6 +5,5 @@ mx-snapshot.conf		etc
 mx-snapshot-exclude.list	etc 
 mx-snapshot.svg			usr/share/pixmaps
 mx-snapshot.svg			usr/share/icons/hicolor/scalable/apps
-scripts/copy-initrd-modules	usr/share/mx-packageinstaller/scripts
-scripts/copy-initrd-programs	usr/share/mx-packageinstaller/scripts
+scripts/*			usr/share/mx-packageinstaller/scripts
 translations/*.qm		usr/share/mx-snapshot/locale

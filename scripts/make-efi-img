@@ -1,0 +1,153 @@
+#!/bin/bash
+
+#
+#    gather files (or at least get size)
+#    make and mount filesystem
+#    copy files to fs
+#    edit grub.cfg
+#    umount
+#    copy to iso directory
+
+     MEM_TEST=true
+
+   MAX_MARGIN=500 # in Kilobytes
+ MARGIN_START=30
+  MARGIN_STEP=10
+SAFETY_MARGIN=10  # Extra kilobytes to add after it works
+
+OUTPUT_FILE="boot/grub/efi.img"
+GRUB_CFG="boot/grub/grub.cfg"
+
+ME=${0##*/}
+
+WORK_DIR="/tmp/$ME"
+
+LABEL="EFI-LIVE"
+
+INPUT_FILE_LIST="
+EFI/BOOT/BOOTx64.EFI
+EFI/BOOT/bootx64.efi
+EFI/BOOT/grubx64.efi
+boot/grub/grub.cfg
+EFI/BOOT/fallback.efi"
+
+[ "$MEM_TEST" ] && INPUT_FILE_LIST="$INPUT_FILE_LIST
+EFI/BOOT/mt86.png
+boot/uefi-mt/mtest-64.efi"
+
+usage() {
+    local ret=${1:-0}
+
+    cat<<Usage
+Usage: $ME <directory> [label]
+
+Create a efi.img fat32 filesystem-on-a-file containing:
+$(echo "$INPUT_FILE_LIST" | sed "s/^/    /")
+
+You can specify the partition label with a 2nd argument.
+Usage
+    exit $ret
+}
+
+main() {
+    [ $# -eq 0 ] && usage
+    [ $# -gt 2 ] && usage
+
+    case $1 in
+        -h|--help) usage ;;
+    esac
+
+    local dir=${1%/}
+
+    test -d $dir || fatal "$dir is not a directory"
+
+    [ $# -eq 2 ] && LABEL=$2
+
+    local file full needed=0
+    for file in $INPUT_FILE_LIST; do
+        full=$dir/$file
+        if test -e $full; then
+            needed=$((needed + $(duk_size $full)))
+        else
+            warn "Missing file %s" $full
+        fi
+    done
+    echo "Kilobytes needed: $needed"
+
+    local margin  mp="$WORK_DIR/mp" img="$dir/$OUTPUT_FILE"
+    for margin in $(seq $MARGIN_START $MARGIN_STEP $MAX_MARGIN); do
+        local size=$((needed + margin))
+        echo "  Try size: $size  margin: $margin"
+        make_efi_img "$img" "$mp" "$INPUT_FILE_LIST" $size 2>/dev/null
+        local ret=$?
+        sudo umount "$mp"
+        [ $ret -eq 0 ] || continue
+
+        margin=$((margin + SAFETY_MARGIN))
+        size=$((needed + margin))
+        make_efi_img "$img" "$mp" "$INPUT_FILE_LIST" $size 2>/dev/null
+        echo "Final size: $size  margin: $margin"
+        sudo umount "$mp"
+        rmdir "$mp"
+        rmdir "$WORK_DIR"
+
+        echo -e "\n$ME created ${img#$dir/}"
+        return 0
+    done
+    fatal "$ME Failed!"
+}
+
+make_efi_img() {
+    local  img=$1  mp=$2  list=$3  size=$4
+
+    dd if=/dev/zero of="$img" bs=1K count=$size
+    mkfs.vfat -n "${LABEL:0:11}" "$img" >/dev/null
+
+    mkdir -p "$mp"
+    sudo mount -o loop "$img" "$mp"
+    local targ
+    for file in $list; do
+        full="$dir/$file"
+        test -r "$full" || continue
+        targ="$mp/$file"
+        sudo mkdir -p "$(dirname "$targ")" || return 1
+        sudo cp "$full" "$targ"            || return 1
+    done
+
+    local full_grub="$mp/$GRUB_CFG"
+    munge_grub "$full_grub"
+    return 0
+}
+
+munge_grub() {
+    local file=$1
+    # Boot from the weird iso9660 partition
+    sudo sed -i "1 iset root=(hd0)" "$file"
+    # Erase the memtest entries
+    sudo sed -i  "/in_64/,$ d" "$file"
+    [ "$MEM_TEST" ] || return
+    # Add a simple memtest entry that works with "dd"
+    cat<<Munge_Grub | sudo tee -a "$file" &>/dev/null
+menuentry " Memory Test" {
+set root=(hd0,msdos2)
+chainloader /boot/uefi-mt/mtest-64.efi
+}
+Munge_Grub
+}
+
+duk_size() {
+    du -kc "$@" | tail -n1 | awk '{print $1}'
+}
+
+warn() {
+    local fmt=$1 ; shift
+    printf "$fmt\n" "$@" >&2
+}
+
+fatal() {
+    local fmt=$1 ; shift
+    printf "$fmt\n" "$@" >&2
+    exit 3
+}
+
+main "$@"
