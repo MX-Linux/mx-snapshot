@@ -568,7 +568,7 @@ bool MainWindow::createIso(QString filename)
     // make it isohybrid
     if (make_isohybrid == "yes") {
         ui->outputLabel->setText(tr("Making hybrid iso"));
-        cmd = "isohybrid \"" + snapshot_dir.absolutePath() + "/" + filename + "\"";
+        cmd = "isohybrid --uefi \"" + snapshot_dir.absolutePath() + "/" + filename + "\"";
         shell->run(cmd);
     }
 
