@@ -562,6 +562,8 @@ bool MainWindow::createIso(QString filename)
     system("mkdir -p iso-2/antiX");
     shell->run("mv iso-template/antiX/linuxfs* iso-2/antiX");
 
+    shell->run("installed-to-live cleanup");
+
     // create the iso file
     QDir::setCurrent(work_dir + "/iso-template");
     cmd = "xorriso -as mkisofs -l -V MXLIVE -R -J -pad -iso-level 3 -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin  -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot -c boot/isolinux/isolinux.cat -o \"" + snapshot_dir.absolutePath() + "/" + filename + "\" . \""  + work_dir + "/iso-2\"";
@@ -621,7 +623,6 @@ void MainWindow::cleanUp()
     ui->outputLabel->setText(tr("Cleaning..."));
     system("pkill mksquashfs; pkill md5sum");
     QDir::setCurrent("/");
-    system("installed-to-live cleanup");
 
     // checks if work_dir looks OK
     if (work_dir.contains("/mx-snapshot")) {
