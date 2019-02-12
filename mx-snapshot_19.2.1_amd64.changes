@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Tue, 12 Feb 2019 10:39:15 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.2.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.2.1) mx; urgency=medium
+ .
+   * mount bind /boot if on separate partition
+Checksums-Sha1:
+ 49881b510dbcb74878e17efd9d3d3096231f5a36 1187 mx-snapshot_19.2.1.dsc
+ 5ac728abc1763e8ce91b6454f7bf0fb159ff6602 80824 mx-snapshot_19.2.1.tar.xz
+ a436a5c4344e87dde9d7914f74950f74cb2301a8 488232 mx-snapshot-dbgsym_19.2.1_amd64.deb
+ 101e581d88e2388c9305730d3259d843e9d7ff15 11632 mx-snapshot_19.2.1_amd64.buildinfo
+ abbc0b151e46cc08b98ca8882bb0a8ab42f21c16 114812 mx-snapshot_19.2.1_amd64.deb
+Checksums-Sha256:
+ 67ee439ff3cdfa91cf929e5b0b88adf11129bdf9ff8294c112fbaa4bc08efe1e 1187 mx-snapshot_19.2.1.dsc
+ 53e04e1f88d96fceb2bce6285445443aa2c6a0ea2b52b593857400c06700b276 80824 mx-snapshot_19.2.1.tar.xz
+ e807b554389208d91582de21c3a4d12c74076c8635e059f830e823e4d2da0f20 488232 mx-snapshot-dbgsym_19.2.1_amd64.deb
+ 3a0a814bf5b9c09f37d9ec4fa561e48b41655997033a068b1845fc0daa6cf35f 11632 mx-snapshot_19.2.1_amd64.buildinfo
+ ed40551f7ffea82f9d7f37a591598805b251d4551e81efef94c5780e96b1ec15 114812 mx-snapshot_19.2.1_amd64.deb
+Files:
+ 398d274be572be2c4ac3c353f38df569 1187 admin optional mx-snapshot_19.2.1.dsc
+ c590e844d8a37d4aa0b737f5f90de445 80824 admin optional mx-snapshot_19.2.1.tar.xz
+ 31bf404826028e46f9463784c73bdfb0 488232 debug optional mx-snapshot-dbgsym_19.2.1_amd64.deb
+ d7963a856fd002c0eb9e0f5b58a3d1b1 11632 admin optional mx-snapshot_19.2.1_amd64.buildinfo
+ 10bdc51e4bf500448402c37abb614f0b 114812 admin optional mx-snapshot_19.2.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlxi6WUTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumIJeB/9oiFvpFrC+g+wgi8lESRzVlu+w5DUo
+H9xXlwUbwUzg2533SDzhIbgbKCPzOY1oI1zJaSY5/sn3PJ2I5TLBBZS0+9LlD09w
+bcz7OHEX0n0sWZKmTuKo9mEjWz5sPl20Cxsb2shTopoJZr+XUXe+I9tLPwcHdAxf
+4LCqV7stuOmAx76HlCpMLy/gyavO4IpB76/j3znVLGpfD/U5+ysV5HzM7ovlF/Rj
+TaVvrH54OxsfgnU1p8RKaORVt8Ce8cAxSD6+7Jrmcbv/yX5XKrOW/cqS5ywjS+59
+ETqRWWYSGBB0Ol7kn+qqUFPZXZLogXPZMqUJ3+sIvNMFU5z+YMz7Db4d
+=CP4u
+-----END PGP SIGNATURE-----

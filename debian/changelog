@@ -1,3 +1,9 @@
+mx-snapshot (19.2.1) mx; urgency=medium
+
+  * mount bind /boot if on separate partition
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 12 Feb 2019 10:39:15 -0500
+
 mx-snapshot (19.2) mx; urgency=medium
 
   * build EFI bootable image

@@ -501,19 +501,26 @@ void MainWindow::setupEnv()
         return;
     }
 
+    QString bind_boot = "";
+    QString bind_boot_too = "";
+    if (shell->run("mountpoint /boot") == 0) {
+        bind_boot = "bind=/boot ";
+        bind_boot_too = ",/boot";
+    }
+
     // install mx-installer if absent
     if (force_installer && !checkInstalled("mx-installer")) {
         installPackage("mx-installer");
     }
     // setup environment if creating a respin (reset root/demo, remove personal accounts)
     if (reset_accounts) {
-        shell->run("installed-to-live -b /.bind-root start empty=/home general version-file read-only");
+        shell->run("installed-to-live -b /.bind-root start " + bind_boot + "empty=/home general version-file read-only");
     } else {
         if (force_installer == true) {  // copy minstall.desktop to Desktop on all accounts
             shell->run("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/minstall.desktop 2>/dev/null");
             shell->run("chmod +x /home/*/Desktop/minstall.desktop");
         }
-        shell->run("installed-to-live -b /.bind-root start bind=/home live-files version-file adjtime read-only");
+        shell->run("installed-to-live -b /.bind-root start bind=/home" + bind_boot_too + " live-files version-file adjtime read-only");
     }
 }
 
