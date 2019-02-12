@@ -18,32 +18,32 @@ Changes:
  .
    * mount bind /boot if on separate partition
 Checksums-Sha1:
- 0fd3f7fbabfe3eea87ef16a9301dcbd30a791e56 1187 mx-snapshot_19.2.1.dsc
- dfad69bcac53df331315b6145f2e0492849d45ec 80748 mx-snapshot_19.2.1.tar.xz
- bcd11c59b598a97668402b7cbc9407ce5e35e7e1 488346 mx-snapshot-dbgsym_19.2.1_amd64.deb
- cd87b8cf5cacdce070571020bc8ee5ce7409abe1 11632 mx-snapshot_19.2.1_amd64.buildinfo
- b7d91cc92b8f15dcf435362ea5334a79c04d1644 114750 mx-snapshot_19.2.1_amd64.deb
+ 515003eade04a7f0cb1486d39aa34a8c04c0934c 1187 mx-snapshot_19.2.1.dsc
+ 2436ab0f8e9628f3d1b792687185dfb173772843 80796 mx-snapshot_19.2.1.tar.xz
+ 585cf44610c7142b45ae7913b73a20d506c48c0e 488188 mx-snapshot-dbgsym_19.2.1_amd64.deb
+ 51ca924e6ef37ab4135f7dfc143c68988879c2c7 11632 mx-snapshot_19.2.1_amd64.buildinfo
+ 4a9b25b514aeb4b5d3cb876ed95a8266def8acc1 114772 mx-snapshot_19.2.1_amd64.deb
 Checksums-Sha256:
- 3318d546394d65a446f59d38ffd8ba8e37b94770d5d51ba9ca31bc7bda46e882 1187 mx-snapshot_19.2.1.dsc
- 52cc50df190a6a45ceb6765bcc1d3b66168813645decdfd9da00a01387db1bae 80748 mx-snapshot_19.2.1.tar.xz
- 26c66936aa7ece529238011779889803c367bb69f169a352c9b1ad0b308aa1fd 488346 mx-snapshot-dbgsym_19.2.1_amd64.deb
- 36adb6da82b6fcc90f3f30965607e884286086acfc3d5608d618e900e276bdb3 11632 mx-snapshot_19.2.1_amd64.buildinfo
- 6612d8df2900ccdf3a00c83bb28fa67e9b2d6ac1fece1923b244cfd705624eb4 114750 mx-snapshot_19.2.1_amd64.deb
+ 70670fee8aaab0b5b2b20e0ca55a8bc922f88e41d7e002de696c1595d1f98534 1187 mx-snapshot_19.2.1.dsc
+ 9b0cfdbdd5e184d7a5eeb7b089045078eab7bac312dbfcc367f708b65be09392 80796 mx-snapshot_19.2.1.tar.xz
+ cc602fd2ff94c98ceafcf046724568fa2aa6970efdfabffd1c99391227432c07 488188 mx-snapshot-dbgsym_19.2.1_amd64.deb
+ 79d9e671812dcbbeff1cd901c54c504a2914e48421b5d03e57247f1341e0fed9 11632 mx-snapshot_19.2.1_amd64.buildinfo
+ dc6bb109988eda31c7f161738542e58b032dd3c6e278e82d878a1a78577427e1 114772 mx-snapshot_19.2.1_amd64.deb
 Files:
- 9340048eb804005854e701756b8ad032 1187 admin optional mx-snapshot_19.2.1.dsc
- 3150181c1b747b1075681cd3029a5d80 80748 admin optional mx-snapshot_19.2.1.tar.xz
- cf10e838b45557360d8e02477f8c70f2 488346 debug optional mx-snapshot-dbgsym_19.2.1_amd64.deb
- 587a5f77e244931dc4df5bb2b227ae56 11632 admin optional mx-snapshot_19.2.1_amd64.buildinfo
- c0e47087d7876b3d23703c0c7ca92f72 114750 admin optional mx-snapshot_19.2.1_amd64.deb
+ 844b18a6b2acd13fcee3c4ba720fc2d1 1187 admin optional mx-snapshot_19.2.1.dsc
+ 5753f7e5f86dc1c280faf2cc1312aa08 80796 admin optional mx-snapshot_19.2.1.tar.xz
+ 5d362fc2e9cecb887ae2b12ed075bd85 488188 debug optional mx-snapshot-dbgsym_19.2.1_amd64.deb
+ 7e925db102bb43ffb43f3242011715c7 11632 admin optional mx-snapshot_19.2.1_amd64.buildinfo
+ 4e966c78ac2f7ac75789fc0bc93da808 114772 admin optional mx-snapshot_19.2.1_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlxjCRQTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPQrB/448v42CoMjqnbpldhdlp2bkNH3GYMc
-tR19f4qtgEgQn2sLNhgv+mIhwRueFtimSY9zOLnwn8jnPuwRY201w0N+XVU6sw1y
-wc62HODqrpTWBNbZRf/GNmhS+WSS0cv57/bnDG4L5zCRNjNVFAxEpdzuqn+Xqr1V
-QlYgFMAYFJSUL5cxMPuz1mthb0LeAkoQo676aaN/jy3aXpSP3x9OIEEtsC/Qgaxt
-JXi1jVWa0NUqGw0ufRieQ839J0anbKfIs64Of+uMHP1TDHjzdWmnBWPoLAO/z6gx
-dMHjwNUTBKFKtBGnUaXZPR3lwzYdtOFx7q37Sn55wbtVd2YBVNMBwbOc
-=kJi2
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlxjDzkTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumEJHCACpFmDmjvIlNLY9z59PSJEWqSfgKRGr
+2qUffo/QUK0+0BN0cnl+hcWnsPChI7ICixpkY3xTfddUsfldBRZkf+lwltkjqpq9
+CasM7D25A7ImB57cg997v/2/PiTck/+CPyr2IlQKhSgFUtoCEZeCaad9KaqPgjGO
+rIZK0hBeItDWcEpDKbijGOyiskeHfGsDw6bcXSf2Oy7nwwyMUNzyR5to8/hfb3m3
+J+omoqofkOuouV8vcoaP9gAtzgVWOyOs5PuswBgdZmlcVI4qfq06VHqCrpBcVnZr
+Cok1NcjtT0YShun3QBvWAKSkCdhvvxh6tnR/56SoSTXzrYtEy5Cl5Ppw
+=xmHe
 -----END PGP SIGNATURE-----
