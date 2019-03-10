@@ -94,7 +94,7 @@ void MainWindow::loadSettings()
     force_installer = settings.value("force_installer", "true").toBool();
     ui->lineEditName->setText(getFilename());
     QString prev; //previous arg
-    foreach (QString arg, args) {
+    for (const QString &arg : args) {
         if (prev == "--monthly" || prev == "-m") {
             QString name = shell->getOutput("cat /etc/mx-version | cut -f1 -d' '");
             qDebug() << "MONTH" << arg;
