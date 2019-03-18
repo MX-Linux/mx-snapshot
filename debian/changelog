@@ -1,3 +1,9 @@
+mx-snapshot (19.3) mx; urgency=medium
+
+  * fix running cleanup script twice
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 18 Mar 2019 11:35:26 -0400
+
 mx-snapshot (19.2.1) mx; urgency=medium
 
   * mount bind /boot if on separate partition

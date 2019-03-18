@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Mon, 18 Mar 2019 11:35:26 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.3
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.3) mx; urgency=medium
+ .
+   * fix running cleanup script twice
+Checksums-Sha1:
+ 7aa827f807d908a1b7cef7be7abf80d4dbe1393a 1179 mx-snapshot_19.3.dsc
+ a1469bc4c176bd3bf37015aec1a73252bb026410 80668 mx-snapshot_19.3.tar.xz
+ e3548cefa6194fa87229d5e4d291e2837b0bbf81 487640 mx-snapshot-dbgsym_19.3_amd64.deb
+ e96d8db1eb739698e153cc3c9dd2ad583c5af856 11610 mx-snapshot_19.3_amd64.buildinfo
+ eabcb028780a67bd292009e2a648af10d4d2b453 114560 mx-snapshot_19.3_amd64.deb
+Checksums-Sha256:
+ 2ee85653324f03f3d89f47af67c4696a6068332d3ef263692746620eb001c534 1179 mx-snapshot_19.3.dsc
+ dfd00cdca13f8e4e82658aa286a3bc8babd4096dfd83dc27690a2a9365788de6 80668 mx-snapshot_19.3.tar.xz
+ 3a3d0efd313d4a5f249971fd48ba2d1faf50838ff318a4532d0e6e5a5c5ed452 487640 mx-snapshot-dbgsym_19.3_amd64.deb
+ 1dcea4f50cb2a06e8b996de8f727921c7c41a325cb411745f6abafef8e05d2bb 11610 mx-snapshot_19.3_amd64.buildinfo
+ e28499ba5e86445a7ee4ffa781d9aeeca8bd9985f06e9997415efa35531c8832 114560 mx-snapshot_19.3_amd64.deb
+Files:
+ 5bb4d5ca2a9ce6cf5ade65fb8dc8a32c 1179 admin optional mx-snapshot_19.3.dsc
+ a1c0c7afa81788104aab62909e20d857 80668 admin optional mx-snapshot_19.3.tar.xz
+ 54f5a1b698739f737bcfd1dd45f0df16 487640 debug optional mx-snapshot-dbgsym_19.3_amd64.deb
+ 910f11490fcedadb4e80bc3981161413 11610 admin optional mx-snapshot_19.3_amd64.buildinfo
+ bb594a5cf83740fdab14549bcbbe48c6 114560 admin optional mx-snapshot_19.3_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlyPv5kTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHQxB/9BLju1wfQXEBM9D9vBGeShURJVE9vF
+CGGlYrPeJphazuCJql7POlUbl+PLwHrGDY6PEJpCf+4+1e447JSrLUgibpenpdVQ
+aDeXIk5qrX3ri3UA8D61tcFQ2mKg40mSNZK6kl7ITSFMdHaRpkLynROn4ooIRmHt
+jAmeeo8HG1YXLFtcdbOkG1Js51jLZP9HW8ZNTfiSWXghpDnnTebP5iD6eCI7EV8M
+z705//agYRisZQ+1FLhGp45vZumQSpBiMw/MZ9zI3JGh6ZuPBCzy4+FlLnbjow6S
+ZHSN6W22JRaUkcCVF7pYLsfc9eOojjxbsGP/z2hNHSqFCDXaFQ12nXa9
+=4YnW
+-----END PGP SIGNATURE-----

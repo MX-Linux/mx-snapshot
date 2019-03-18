@@ -623,7 +623,7 @@ void MainWindow::cleanUp()
     ui->outputLabel->setText(tr("Cleaning..."));
     system("pkill mksquashfs; pkill md5sum");
     QDir::setCurrent("/");
-    system("installed-to-live cleanup");
+    system("[ -f /tmp/installed-to-live/cleanup.conf ] && installed-to-live cleanup");
 
     // checks if work_dir looks OK
     if (work_dir.contains("/mx-snapshot")) {

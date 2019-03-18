@@ -8,7 +8,7 @@ override_dh_auto_clean:
 	rm -f src/translations/*.qm
 
 override_dh_auto_build:
-	lrelease mx-snapshot.pro
+	lrelease src.pro
 	dh_auto_build -- $(MAKE_OPTS)
 
 override_dh_auto_install:
