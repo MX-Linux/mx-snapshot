@@ -53,9 +53,19 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
 
     version = getVersion("mx-snapshot");
     live = isLive();
-
+    users = listUsers();
     i686 = isi686();
     debian_version = getDebianVersion();
+
+    englishDirs = {
+        {"DOCUMENTS", "Documents"},
+        {"DOWNLOAD", "Downloads"},
+        {"DESKTOP", "Desktop"},
+        {"MUSIC", "Music"},
+        {"PICTURES", "Pictures"},
+        {"VIDEOS", "Videos"},
+    };
+
     setup();
     reset_accounts = false;
     if (args.contains("--monthly") || args.contains("-m")) {
@@ -185,6 +195,33 @@ QString MainWindow::getSnapshotSize()
         }
     }
     return "0";
+}
+
+// return the XDG User Directory for each user with different localizations than English
+QString MainWindow::getXdgUserDirs(const QString& folder)
+{
+    QString result = "";
+
+    for (const QString &user : users) {
+        if (shell->run("su " + user + " -c \"xdg-user-dir " + folder + "\"") == 0) {
+            QString dir = shell->getOutput();
+            if (englishDirs.value(folder) == dir.section("/", -1) || dir == "/home/" + user || dir.isEmpty()) { // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
+                continue;
+            }
+            if (dir.startsWith("/")) {
+                dir.remove(0, 1); // remove training slash
+            }
+            (folder == "DESKTOP") ? dir.append("/!(minstall.desktop)") : dir.append("/*");
+            (result.isEmpty()) ? result.append("\" \"" + dir) : result.append(" \"" + dir);
+        }
+    }
+    return result;
+}
+
+// return a list of users that have folders in /home
+QStringList MainWindow::listUsers()
+{
+    return shell->getOutput("ls /home | grep -v lost+found | grep -v snapshot | grep [a-zA-Z0-9]").split("\n");
 }
 
 // List used space
@@ -809,13 +846,7 @@ void MainWindow::on_buttonEditExclude_clicked()
 
 void MainWindow::on_excludeDocuments_toggled(bool checked)
 {
-    QString user = shell->getOutput("logname");
-    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir DOCUMENTS\"") + "/*";
-    xdg_user_dir.replace(user, "*");
-    if (xdg_user_dir.startsWith("/")) {
-        xdg_user_dir.remove(0, 1); // remove training slash
-    }
-    QString exclusion = "/home/*/Documents/*\" \"" + xdg_user_dir;
+    QString exclusion = "/home/*/Documents/*" + getXdgUserDirs("DOCUMENTS");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -824,13 +855,7 @@ void MainWindow::on_excludeDocuments_toggled(bool checked)
 
 void MainWindow::on_excludeDownloads_toggled(bool checked)
 {
-    QString user = shell->getOutput("logname");
-    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir DOWNLOAD\"") + "/*";
-    xdg_user_dir.replace(user, "*");
-    if (xdg_user_dir.startsWith("/")) {
-        xdg_user_dir.remove(0, 1); // remove training slash
-    }
-    QString exclusion = "/home/*/Downloads/*\" \"" + xdg_user_dir;
+    QString exclusion = "/home/*/Downloads/*" + getXdgUserDirs("DOWNLOAD");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -839,13 +864,7 @@ void MainWindow::on_excludeDownloads_toggled(bool checked)
 
 void MainWindow::on_excludePictures_toggled(bool checked)
 {
-    QString user = shell->getOutput("logname");
-    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir PICTURES\"") + "/*";
-    xdg_user_dir.replace(user, "*");
-    if (xdg_user_dir.startsWith("/")) {
-        xdg_user_dir.remove(0, 1); // remove training slash
-    }
-    QString exclusion = "/home/*/Pictures/*\" \"" + xdg_user_dir;
+    QString exclusion = "/home/*/Pictures/*" + getXdgUserDirs("PICTURES");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -854,13 +873,7 @@ void MainWindow::on_excludePictures_toggled(bool checked)
 
 void MainWindow::on_excludeMusic_toggled(bool checked)
 {
-    QString user = shell->getOutput("logname");
-    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir MUSIC\"") + "/*";
-    xdg_user_dir.replace(user, "*");
-    if (xdg_user_dir.startsWith("/")) {
-        xdg_user_dir.remove(0, 1); // remove training slash
-    }
-    QString exclusion = "/home/*/Music/*\" \"" + xdg_user_dir;
+    QString exclusion = "/home/*/Music/*" + getXdgUserDirs("MUSIC");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -869,13 +882,7 @@ void MainWindow::on_excludeMusic_toggled(bool checked)
 
 void MainWindow::on_excludeVideos_toggled(bool checked)
 {
-    QString user = shell->getOutput("logname");
-    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir VIDEOS\"") + "/*";
-    xdg_user_dir.replace(user, "*");
-    if (xdg_user_dir.startsWith("/")) {
-        xdg_user_dir.remove(0, 1); // remove training slash
-    }
-    QString exclusion = "/home/*/Videos/*\" \"" + xdg_user_dir;
+    QString exclusion = "/home/*/Videos/*" + getXdgUserDirs("VIDEOS");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -884,13 +891,7 @@ void MainWindow::on_excludeVideos_toggled(bool checked)
 
 void MainWindow::on_excludeDesktop_toggled(bool checked)
 {
-    QString user = shell->getOutput("logname");
-    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir DESKTOP\"");
-    xdg_user_dir.replace(user, "*");
-    if (xdg_user_dir.startsWith("/")) {
-        xdg_user_dir.remove(0, 1); // remove training slash
-    }
-    QString exclusion = "/home/*/Desktop/!(minstall.desktop)\" \"" + xdg_user_dir + "/!(minstall.desktop)";
+    QString exclusion = "/home/*/Desktop/!(minstall.desktop)" + getXdgUserDirs("DESKTOP");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);

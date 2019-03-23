@@ -114,6 +114,7 @@ public:
     QString largerFreeSpace(QString dir1, QString dir2, QString dir3);
     QString getEditor();
     QString getSnapshotSize();
+    QString getXdgUserDirs(const QString &folder);
     QStringList listUsers();
 
 
@@ -148,6 +149,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Cmd *shell;
+    QStringList users; // list of users with /home folders
+    QHash<QString, QString> englishDirs; // English names of /home directories
 
 };
 

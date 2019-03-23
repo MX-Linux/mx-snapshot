@@ -1,6 +1,6 @@
-mx-snapshot (19.3.1) mx; urgency=medium
+mx-snapshot (19.4) UNRELEASED; urgency=medium
 
-  * exclude home directory for other localized users
+  * 
 
  -- Adrian <adrian@mxlinux.org>  Sat, 23 Mar 2019 00:58:20 -0400
 
