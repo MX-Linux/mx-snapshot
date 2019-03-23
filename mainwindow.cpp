@@ -708,6 +708,18 @@ void MainWindow::displayDoc(QString url)
     shell->run(cmd);
 }
 
+// check if compression is available in the kernel (for now only lz4 and xz)
+bool MainWindow::checkCompression()
+{
+    if (mksq_opt.contains("lz4")) {
+        return (shell->run("grep ^CONFIG_SQUASHFS_LZ4=y /boot/config-$(uname -r)") == 0);
+    } else if (mksq_opt.contains("xz")) {
+        return (shell->run("grep ^CONFIG_SQUASHFS_XZ=y /boot/config-$(uname -r)") == 0);
+    } else {
+        return true;
+    }
+}
+
 //// sync process events ////
 void MainWindow::procStart()
 {
@@ -780,6 +792,11 @@ void MainWindow::on_buttonNext_clicked()
 
     // on settings page
     } else if (ui->stackedWidget->currentWidget() == ui->settingsPage) {
+        if (!checkCompression()) {
+            QMessageBox::critical(this, tr("Error"),
+                    tr("Current kernel doesn't support selected compression algorithm, please edit the configuration file and select a different algorithm."));
+            return;
+        }
 
         int ans = QMessageBox::question(this, tr("Final chance"),
                               tr("Snapshot now has all the information it needs to create an ISO from your running system.") + "\n\n" +

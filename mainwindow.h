@@ -54,6 +54,7 @@ public:
     QSettings settings;
     QStringList args;
 
+    bool checkCompression();
     bool i686;
     bool live;
     bool force_installer;
