@@ -708,13 +708,18 @@ void MainWindow::displayDoc(QString url)
     shell->run(cmd);
 }
 
-// check if compression is available in the kernel (for now only lz4 and xz)
+// check if compression is available in the kernel (lz4, lzo, xz)
 bool MainWindow::checkCompression()
 {
+    if (shell->run("[ -f /boot/config-$(uname -r) ]") != 0) { // return true if cannot check config file
+        return true;
+    }
     if (mksq_opt.contains("lz4")) {
         return (shell->run("grep ^CONFIG_SQUASHFS_LZ4=y /boot/config-$(uname -r)") == 0);
     } else if (mksq_opt.contains("xz")) {
         return (shell->run("grep ^CONFIG_SQUASHFS_XZ=y /boot/config-$(uname -r)") == 0);
+    } else if (mksq_opt.contains("lzo")) {
+        return (shell->run("grep ^CONFIG_SQUASHFS_LZO=y /boot/config-$(uname -r)") == 0);
     } else {
         return true;
     }

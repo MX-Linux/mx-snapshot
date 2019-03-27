@@ -71,6 +71,13 @@ int main(int argc, char *argv[])
     appTran.load(QString("mx-snapshot_") + QLocale::system().name(), "/usr/share/mx-snapshot/locale");
     a.installTranslator(&appTran);
 
+    // Check if SQUASHFS is available
+    if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
+        QMessageBox::critical(0, QApplication::tr("Error"),
+                QApplication::tr("Current kernel doesn't support Squashfs, cannot continue."));
+        return 1;
+    }
+
     if (getuid() == 0) {
         MainWindow w(0, a.arguments());
         w.show();

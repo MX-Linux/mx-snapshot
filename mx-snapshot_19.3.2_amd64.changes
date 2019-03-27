@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Tue, 26 Mar 2019 23:57:33 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.3.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.3.2) mx; urgency=medium
+ .
+   * check for compression support in kernel
+Checksums-Sha1:
+ 00ff8e437a4ee7ea399703725c093261dfb6570d 1187 mx-snapshot_19.3.2.dsc
+ b919fb2053b62c0d818155b33e88477d5975fb82 82008 mx-snapshot_19.3.2.tar.xz
+ 1d05fb983eea78fee573013c9c13fe9e575e4ee2 117004 mx-snapshot_19.3.2_amd64.deb
+Checksums-Sha256:
+ 20ae472b6db9ca46e5425718d2c893d8987f705550c1d612f044a2226dac9bc0 1187 mx-snapshot_19.3.2.dsc
+ d8b8e34b6c227c1af2c69f9ccc60175ec020d7980d86474498f28b9b3d0e220d 82008 mx-snapshot_19.3.2.tar.xz
+ 4bc58e970df2de14e2b4f6fc58c38f0b1f62131b8145a647adc311da8f4c1f28 117004 mx-snapshot_19.3.2_amd64.deb
+Files:
+ 9eba42b8bc4d88e9c1667981f72074bd 1187 admin optional mx-snapshot_19.3.2.dsc
+ 3608f8b88d12428b35fffe3d1a32a027 82008 admin optional mx-snapshot_19.3.2.tar.xz
+ d325ab5d42b8a2e37f2cfd2fb12bce2a 117004 admin optional mx-snapshot_19.3.2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlya9VUTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumGgmCACj+pxTX+uh+PRb4wdrceurHyHy3eFU
+jlCWyjuh6wMZNgK7uP7uVWG+YIbwiduyI7XqtX62Le1rJIE3wBYI7MnXq/Y4D62E
+VkQzgTOgna+y8J3jIlizNHjDwO54l1++bVNEzX81S5jCsK2eSlMI5cW5LswgAajT
+CQemVFLPM/qNPqKWVhKgEB5eN1Pa5zyMoBG+bWCCh+fdSG63yKhxHl4kNwsJXtw8
+FagGU5oWcp66uvprmW19PquQss7I2bCox5VTyqB+WHe62QHlr8PRsstvx/SqQ16V
+8BBlhtPuA7VYwD4kFsOJuJ/DXiVu31jOitAmFIsvueJ8arp0PUtRx/id
+=kYzO
+-----END PGP SIGNATURE-----
