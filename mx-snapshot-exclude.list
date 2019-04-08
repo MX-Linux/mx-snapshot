@@ -110,6 +110,6 @@ home/*/.xfce4-session.verbose-log*
 # This stops any video drivers from loading - safe option.
 etc/X11/xorg.conf
 etc/X11/xorg.conf.d/20-nvidia.conf
-etc/X11/xorg.conf.d/20-intel.conf 
+etc/X11/xorg.conf.d/20-intel.conf
 etc/X11/xorg.conf.d/20-radeon.conf
 etc/X11/xorg.conf.d/20-amd.conf
