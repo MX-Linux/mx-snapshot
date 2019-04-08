@@ -1,3 +1,9 @@
+mx-snapshot (19.4.1) mx; urgency=medium
+
+  * fix trailing space in exclusion file
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 08 Apr 2019 09:54:58 -0400
+
 mx-snapshot (19.4) mx; urgency=medium
 
   * updated translations
