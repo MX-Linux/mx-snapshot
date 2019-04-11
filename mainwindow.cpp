@@ -104,7 +104,7 @@ void MainWindow::loadSettings()
     force_installer = settings.value("force_installer", "true").toBool();
     ui->lineEditName->setText(getFilename());
     QString prev; //previous arg
-    for (const QString &arg : args) {
+    for (const QString &arg : qAsConst(args)) {
         if (prev == "--monthly" || prev == "-m") {
             QString name = shell->getOutput("cat /etc/mx-version | cut -f1 -d' '");
             qDebug() << "MONTH" << arg;
@@ -202,7 +202,7 @@ QString MainWindow::getXdgUserDirs(const QString& folder)
 {
     QString result = "";
 
-    for (const QString &user : users) {
+    for (const QString &user : qAsConst(users)) {
         if (shell->run("su " + user + " -c \"xdg-user-dir " + folder + "\"") == 0) {
             QString dir = shell->getOutput();
             if (englishDirs.value(folder) == dir.section("/", -1) || dir == "/home/" + user || dir.isEmpty()) { // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
