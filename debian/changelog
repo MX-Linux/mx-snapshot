@@ -1,3 +1,9 @@
+mx-snapshot (19.4.2) mx; urgency=medium
+
+  * fix help file URL
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 21 Apr 2019 17:49:45 -0400
+
 mx-snapshot (19.4.1) mx; urgency=medium
 
   * fix trailing space in exclusion file

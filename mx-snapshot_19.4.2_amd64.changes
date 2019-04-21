@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sun, 21 Apr 2019 17:49:45 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.4.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.4.2) mx; urgency=medium
+ .
+   * fix help file URL
+Checksums-Sha1:
+ 805a0890f0f21812cf7d06da22f4ec8fefb57305 1187 mx-snapshot_19.4.2.dsc
+ 049769ae2c97d7496f5b80b97d8cb061dcb2252f 82428 mx-snapshot_19.4.2.tar.xz
+ bf34eccd18e1a13617814a8c778fa7833a672b43 117188 mx-snapshot_19.4.2_amd64.deb
+Checksums-Sha256:
+ 1772ce3162df1477301266e2521d5f0fdbbb23c4cf2ead10158bb99a50002669 1187 mx-snapshot_19.4.2.dsc
+ 9c066c1bda6f58ed1bb06e457ec27d85792fb7f02b083d06a6c58d5453a3cfe3 82428 mx-snapshot_19.4.2.tar.xz
+ 7268757bc91aa1847c8523c46e292642d73451dbc4b0eab284361ef923704667 117188 mx-snapshot_19.4.2_amd64.deb
+Files:
+ 2c72e1c0f9ba62f495b4acb10709d461 1187 admin optional mx-snapshot_19.4.2.dsc
+ 45a6a5cd6c0ceab83ccbfb647ac3289a 82428 admin optional mx-snapshot_19.4.2.tar.xz
+ c6f1983a8f88b362596f7c8a8b10d0ab 117188 admin optional mx-snapshot_19.4.2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAly85kcTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumBSKB/42Y1llfSwMcjtq/BoWutMvgv2Suu61
+aUW4g+Su/Jv5MymSHtebOCLlrXBbL5Cv6VjHDlnptaZnf8gqKq251QQchyQLk5cO
+BS4lOUQLBn7d+MtM6KIj/i7AuwZdSCj6vh9bWk0cRZ7wntHrx6NGDYIKVU0L24cq
+Sid2KdWs7wLogRYhga6jc41/4GxB6c8MIxvzfu1dq1R6FJ7qRX/G+N/wpgZe/5P2
+y0+tZxyUb9ua0OsoNtTMHKsUqE0B0G+UAJtuHZ8ANUWvn/PWfkfJlGz0hAm3UGhj
+oIumgcwTcKFqP9qkjrlWwf9oeudfxAjgdve+ni+ltKVG0/VLsbxMiVst
+=jeIP
+-----END PGP SIGNATURE-----
