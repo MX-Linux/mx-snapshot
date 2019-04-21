@@ -988,10 +988,10 @@ void MainWindow::on_buttonHelp_clicked()
     QLocale locale;
     QString lang = locale.bcp47Name();
 
-    QString url = "https://mxlinux.org/wiki/help-files/help-mx-save-system-iso-snapshot";
+    QString url = "https://mxlinux.org/wiki/help-files/help-mx-save-system-to-iso-snapshot";
 
     if (lang.startsWith("fr")) {
-        url = "https://mxlinux.org/wiki/help-files/help-mx-instantan%C3%A9";
+        url = "https://mxlinux.org/french-wiki/help-files-fr/help-mx-instantane";
     }
     displayDoc(url);
 }
