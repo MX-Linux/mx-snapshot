@@ -1,3 +1,9 @@
+mx-snapshot (19.4.3) mx; urgency=medium
+
+  * updated translations
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 24 Apr 2019 15:11:37 -0400
+
 mx-snapshot (19.4.2) mx; urgency=medium
 
   * fix help file URL

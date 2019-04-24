@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Wed, 24 Apr 2019 15:11:37 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.4.3
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.4.3) mx; urgency=medium
+ .
+   * updated translations
+Checksums-Sha1:
+ 0eeb6a39f36b4cc0d6b2ec9af8ecd5133b593f81 1187 mx-snapshot_19.4.3.dsc
+ 8c51e7ac5395ae57249cdeab45ce85474c7608c6 82428 mx-snapshot_19.4.3.tar.xz
+ c36f4e8751c4c9ecc42d17493e3d4e45a682a627 11333 mx-snapshot_19.4.3_amd64.buildinfo
+ 0c56c9fd624177acc31b2ed93279678cc1d620ab 117840 mx-snapshot_19.4.3_amd64.deb
+Checksums-Sha256:
+ 6d0d4710763a430a3876a70d115c1c6f3a8c1c7be209dc3d8873d1480bf1aa8a 1187 mx-snapshot_19.4.3.dsc
+ 030976a805051b437b0a7e7f6f6374cb2c15ce89e1928794f0b754239e2d50cf 82428 mx-snapshot_19.4.3.tar.xz
+ 333d6be8c2a90545b76ce804a20d89591dc0a2ad349b6c8c5de8d4fde407d8e6 11333 mx-snapshot_19.4.3_amd64.buildinfo
+ 9fb65ab66ff39211d03ebe9cb1fec2dcbc2c4f48bc0bed748c93f11d7b04d215 117840 mx-snapshot_19.4.3_amd64.deb
+Files:
+ 5b4674287643a0204e71a9edec1061c5 1187 admin optional mx-snapshot_19.4.3.dsc
+ 7d68284daac68805d272c481280b0e63 82428 admin optional mx-snapshot_19.4.3.tar.xz
+ 65bb6d871d2428861965a56325a4b5d1 11333 admin optional mx-snapshot_19.4.3_amd64.buildinfo
+ 1b907dc8f3b8b918badbea5b729a67e2 117840 admin optional mx-snapshot_19.4.3_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlzAtTgTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumCU8B/4pG52Y+A6r2lXQ9OQKYaZFPh5+U9/0
+5YaE+N1Ql7Z8evOt1Ox593foPxaLMlMXbjEeaBraugdDLH3VR8fOJA7Vx/l2ztYG
+l8DuTrMU0lI18TSOq+C2oEl6RtG2FgZCJhkY00M4hiE3IEfS1Fu1jWzp3yu2g+Jp
+X7nJK54TXUFDFhxXFwd52S2pmk0VW8KlI0hGoZoO60CPuKl+klLbNL62p2gp1U1h
+W0MTzg0R7RpWx3CUY+vezoFFUahNYiMcxX3Qj/Y5/d8KN2L5j+bBHjVvbdK/Cpp+
+WUohxyMqWaZWUTS0VjLItJgjHJkEYjMDEB3/bIg7G99rEFebWPNm/GO/
+=8jCl
+-----END PGP SIGNATURE-----
