@@ -40,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     ui->setupUi(this);
     shell = new Cmd(this);
     this->args = args;
+
     QFont font("monospace");
     font.setStyleHint(QFont::Monospace);
     ui->outputBox->setFont(font);
@@ -626,6 +627,11 @@ bool MainWindow::createIso(QString filename)
     if (make_md5sum == "yes") {
         makeMd5sum(snapshot_dir.absolutePath(), filename);
         makeSha512sum(snapshot_dir.absolutePath(), filename);
+    }
+
+    if (shell->getError() == 0) {
+        ui->outputBox->insertPlainText("\n" + tr("MX Snapshot completed sucessfully!") + "\n");
+        ui->outputBox->insertPlainText(tr("Thanks for using MX Tools, run mx-live-usb-maker next!"));
     }
     disableOutput();
     return true;
