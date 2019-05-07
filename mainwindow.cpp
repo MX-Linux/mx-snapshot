@@ -40,6 +40,10 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     ui->setupUi(this);
     shell = new Cmd(this);
     this->args = args;
+    QFont font("monospace");
+    font.setStyleHint(QFont::Monospace);
+    ui->outputBox->setFont(font);
+
     connect(shell, &Cmd::started, this, &MainWindow::procStart);
     connect(shell, &Cmd::finished, this, &MainWindow::procDone);
     connect(shell, &Cmd::runTime, this, &MainWindow::progress);

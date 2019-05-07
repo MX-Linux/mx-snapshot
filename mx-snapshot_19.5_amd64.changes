@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Tue, 07 May 2019 17:13:00 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.5
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.5) mx; urgency=medium
+ .
+   * use monospace font in output box
+Checksums-Sha1:
+ 1b17fb1117c389783f2259b6223c91bc3dd36705 1179 mx-snapshot_19.5.dsc
+ 1a6dcf2579d72e1240413a663733878d79070b0b 82540 mx-snapshot_19.5.tar.xz
+ b68a2744591571ae034a861e3a09b9f3f06ca2cc 11317 mx-snapshot_19.5_amd64.buildinfo
+ b0fc018c5c23fcb3d70f45f42b16abb541a438d3 118168 mx-snapshot_19.5_amd64.deb
+Checksums-Sha256:
+ 2490576e47762e40a013b300af964f1b0e65382ba035f32584230f040c1d6ecb 1179 mx-snapshot_19.5.dsc
+ 7bfde39c096b659690838323ee3cd0923b2233cae0e64efb3cfa3c10412b8dcb 82540 mx-snapshot_19.5.tar.xz
+ 4fcbe7973771ddd98f447ea441ecb678f033faed12c3494d50cc285cd019e6bf 11317 mx-snapshot_19.5_amd64.buildinfo
+ 6a150c6cb28844ae41f8d1d2e7aa24157112e316716241c04bc9674d7dd470eb 118168 mx-snapshot_19.5_amd64.deb
+Files:
+ 53d528e3be67ff8848e3a420bdc9da8b 1179 admin optional mx-snapshot_19.5.dsc
+ cf7f32019205b972ac75615fb765c06b 82540 admin optional mx-snapshot_19.5.tar.xz
+ 17c39aa09fe0e2cea5683182b5b59fcb 11317 admin optional mx-snapshot_19.5_amd64.buildinfo
+ ac81b7d0cc674d79cde6db70b2f3f267 118168 admin optional mx-snapshot_19.5_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlzR9UwTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumKFxB/9VYQmzB/zdUfWBiQJFLqT+pOqNoGex
+TjLGCUOKN9HjZhsCLuIo9bIpsaCuCYy1MDEJIfcEuhg1v4DgP4L4leS7tPnvEhmH
+cdJmdfACNZju7tZpgexaZt1HzwCrZHdIV84SNOfqBznh+hzlZSUX1/nYSiWnuaNB
+aVx32YLL7Sv83fwnvTNgI1VAHyOhVdB9jlKET0/UsrrLg8G6wdUQXInmOesjRavi
+M9IkCiFRxTs8elIQyvsDm2tj9Z1dTtEl9GouSe4re1b1E4onQF2SmvXy1R2aDcE/
+HNleABObR0Dcs0jFlDIZ8kLX4v21uGw+fLZNnWlm3sCxFrPLLAAq7TR5
+=iMkx
+-----END PGP SIGNATURE-----

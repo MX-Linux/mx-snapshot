@@ -1,3 +1,9 @@
+mx-snapshot (19.5) mx; urgency=medium
+
+  * use monospace font in output box
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 07 May 2019 17:13:00 -0400
+
 mx-snapshot (19.4.3) mx; urgency=medium
 
   * updated translations
