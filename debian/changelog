@@ -1,3 +1,9 @@
+mx-snapshot (19.5.1) mx; urgency=medium
+
+  * added a couple of syncs to make sure the files are fully written before checksum is calculated
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 14 May 2019 16:30:15 -0400
+
 mx-snapshot (19.5) mx; urgency=medium
 
   * use monospace font in output box

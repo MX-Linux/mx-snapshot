@@ -30,6 +30,7 @@
 #include <QScrollBar>
 #include <QTextStream>
 #include <QKeyEvent>
+#include <QTime>
 
 #include <QDebug>
 
@@ -630,8 +631,12 @@ bool MainWindow::createIso(QString filename)
     }
 
     if (shell->getError() == 0) {
-        ui->outputBox->insertPlainText("\n" + tr("MX Snapshot completed sucessfully!") + "\n");
-        ui->outputBox->insertPlainText(tr("Thanks for using MX Tools, run mx-live-usb-maker next!"));
+        QTime time(0, 0);
+        time = time.addMSecs(timer.elapsed());
+        outputAvailable("\n" + tr("MX Snapshot completed sucessfully!") + "\n");
+        outputAvailable(tr("Snapshot took %1 to finish.").arg(time.toString("hh:mm:ss")) + "\n");
+        qDebug() << tr("Snapshot took %1 to finish.").arg(time.toString("hh:mm:ss"));
+        outputAvailable(tr("Thanks for using MX Snapshot, run MX Live USB Maker next!"));
     }
     disableOutput();
     return true;
@@ -641,6 +646,7 @@ bool MainWindow::createIso(QString filename)
 void MainWindow::makeMd5sum(QString folder, QString file_name)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
+    shell->run("sync");
     QDir dir;
     QString current = dir.currentPath();
     dir.setCurrent(folder);
@@ -654,6 +660,7 @@ void MainWindow::makeMd5sum(QString folder, QString file_name)
 void MainWindow::makeSha512sum(QString folder, QString file_name)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
+    shell->run("sync");
     QDir dir;
     QString current = dir.currentPath();
     dir.setCurrent(folder);
@@ -668,6 +675,7 @@ void MainWindow::cleanUp()
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     ui->stackedWidget->setCurrentWidget(ui->outputPage);
     ui->outputLabel->setText(tr("Cleaning..."));
+    shell->run("sync");
     system("pkill mksquashfs; pkill md5sum");
     QDir::setCurrent("/");
     system("[ -f /tmp/installed-to-live/cleanup.conf ] && installed-to-live cleanup");
@@ -764,8 +772,7 @@ void MainWindow::disableOutput()
 void MainWindow::outputAvailable(const QString &output)
 {
     ui->outputBox->insertPlainText(output);
-    QScrollBar *sb = ui->outputBox->verticalScrollBar();
-    sb->setValue(sb->maximum());
+    ui->outputBox->verticalScrollBar()->setValue(ui->outputBox->verticalScrollBar()->maximum());
 }
 
 void MainWindow::progress(int counter, int duration) // processes tick emited by Cmd to be used by a progress bar
@@ -820,6 +827,7 @@ void MainWindow::on_buttonNext_clicked()
         if (ans == QMessageBox::Cancel) {
             return;
         }
+        timer.start();
         checkDirectories();
         ui->buttonNext->setEnabled(false);
         ui->buttonBack->setEnabled(false);

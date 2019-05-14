@@ -26,6 +26,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QElapsedTimer>
 #include <QMessageBox>
 #include <QSettings>
 #include <QDir>
@@ -150,6 +151,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Cmd *shell;
+    QElapsedTimer timer;
     QStringList users; // list of users with /home folders
     QHash<QString, QString> englishDirs; // English names of /home directories
 
