@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Tue, 14 May 2019 16:30:15 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.5.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.5.1) mx; urgency=medium
+ .
+   * added a couple of syncs to make sure the files are fully written before checksum is calculated
+Checksums-Sha1:
+ f8d8ce48bfb4b1e35f8e37378ffd5107bb2c6bf1 1187 mx-snapshot_19.5.1.dsc
+ 87c22f7c8f47f9c49a255f9dc41edf07c228a53c 82908 mx-snapshot_19.5.1.tar.xz
+ 7e768fdf7b0230549276ebd98871c36fb0fcac24 11333 mx-snapshot_19.5.1_amd64.buildinfo
+ 52d60faa873716764efe632c2967a8cf71041e7d 119080 mx-snapshot_19.5.1_amd64.deb
+Checksums-Sha256:
+ f52c94b7ce2f7bbebfded17e54275f13e1704afcc9156fd3ecae078378a0d524 1187 mx-snapshot_19.5.1.dsc
+ 1100db0383de5b11d44f3d8403056cbb51bb0d64e435c72f13227572c2359132 82908 mx-snapshot_19.5.1.tar.xz
+ 4320a0de5f495cd4e6f499edf128d5f44645372f975992096fc2aadb7333fcf3 11333 mx-snapshot_19.5.1_amd64.buildinfo
+ 3dac5da7f8f4cfa3b4aff0ddc57351f1717d6f0432b7d2a355d51e65fcef3533 119080 mx-snapshot_19.5.1_amd64.deb
+Files:
+ cc6d951d6e68ff1595bb183e22a3421c 1187 admin optional mx-snapshot_19.5.1.dsc
+ efc90653b2c2d8b8c0007c686930ffa4 82908 admin optional mx-snapshot_19.5.1.tar.xz
+ 23b89292003b0d8784776f296d909d08 11333 admin optional mx-snapshot_19.5.1_amd64.buildinfo
+ 1a28bdeea4abc37fe292df6e73cd62eb 119080 admin optional mx-snapshot_19.5.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlzbNSgTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHbnB/9BR+O7KPQwKshPt5C/05OitRiPUz5r
+mVJGuwllmWLQYXLu+Dn4WTtXpabtLJTv0cMrfaiJP075CHF6HMENeB/uG5UMA3J4
+qrRVX3yL3bXAoauF8B4UGIvEltAEaxLPdPI6Fe3PkC6dMv89uyg7yh2e14eZk4xm
+hKC9uuytJwwO5yzXvAFTErYNgJFIL5LKtZj2yvcqr68RT58FlS7LelaitwyKPl7U
+wz3JBRBH4FFjLDJ1LWDVJPoQtTVJfM1Y5J+j8zzcmYyUMZJJFUZN8bxEWvwniQ9S
+MhT14H+Fq6TEO/tpaNuu9+qDPPZUqPGSVCuO/HlYnrx2HO6DEG9KayEg
+=Dqp7
+-----END PGP SIGNATURE-----
