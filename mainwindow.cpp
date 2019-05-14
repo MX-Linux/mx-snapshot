@@ -38,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     QDialog(parent),
     ui(new Ui::MainWindow)
 {
+    qDebug() << "Program Version:" << VERSION;
     ui->setupUi(this);
     shell = new Cmd(this);
     this->args = args;
@@ -57,7 +58,6 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     ui->buttonSelectSnapshot->setHidden(true);
     ui->stackedWidget->setCurrentIndex(0);
 
-    version = getVersion("mx-snapshot");
     live = isLive();
     users = listUsers();
     i686 = isi686();
@@ -169,12 +169,6 @@ bool MainWindow::isOnSupportedPart(QDir dir)
 bool MainWindow::isi686()
 {
     return (shell->getOutput("uname -m") == "i686");
-}
-
-// Get version of the program
-QString MainWindow::getVersion(QString name)
-{
-    return shell->getOutput("dpkg-query -f '${Version}' -W " + name);
 }
 
 // return number of snapshots in snapshot_dir
@@ -965,7 +959,7 @@ void MainWindow::on_buttonAbout_clicked()
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About MX Snapshot"), "<p align=\"center\"><b><h2>" +
                        tr("MX Snapshot") + "</h2></b></p><p align=\"center\">" + tr("Version: ") +
-                       version + "</p><p align=\"center\"><h3>" +
+                       VERSION + "</p><p align=\"center\"><h3>" +
                        tr("Program for creating a live-CD from the running system for MX Linux") + "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>", 0, this);
     QPushButton *btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);

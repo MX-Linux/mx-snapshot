@@ -18,29 +18,26 @@ Changes:
  .
    * added a couple of syncs to make sure the files are fully written before checksum is calculated
 Checksums-Sha1:
- f8d8ce48bfb4b1e35f8e37378ffd5107bb2c6bf1 1187 mx-snapshot_19.5.1.dsc
- 87c22f7c8f47f9c49a255f9dc41edf07c228a53c 82908 mx-snapshot_19.5.1.tar.xz
- 7e768fdf7b0230549276ebd98871c36fb0fcac24 11333 mx-snapshot_19.5.1_amd64.buildinfo
- 52d60faa873716764efe632c2967a8cf71041e7d 119080 mx-snapshot_19.5.1_amd64.deb
+ 074699859382ee5076e22bb442d5ef805462b0a5 1187 mx-snapshot_19.5.1.dsc
+ 670df6423ef4eb92ef8e18a84e79735550b788b4 83480 mx-snapshot_19.5.1.tar.xz
+ 6baef073f9d4c40dcb9a9209795a5c446d2ea5cb 118922 mx-snapshot_19.5.1_amd64.deb
 Checksums-Sha256:
- f52c94b7ce2f7bbebfded17e54275f13e1704afcc9156fd3ecae078378a0d524 1187 mx-snapshot_19.5.1.dsc
- 1100db0383de5b11d44f3d8403056cbb51bb0d64e435c72f13227572c2359132 82908 mx-snapshot_19.5.1.tar.xz
- 4320a0de5f495cd4e6f499edf128d5f44645372f975992096fc2aadb7333fcf3 11333 mx-snapshot_19.5.1_amd64.buildinfo
- 3dac5da7f8f4cfa3b4aff0ddc57351f1717d6f0432b7d2a355d51e65fcef3533 119080 mx-snapshot_19.5.1_amd64.deb
+ 843a384f2a6c3a338324a71414842ac5863da02c2085c03e218b1b84880c871f 1187 mx-snapshot_19.5.1.dsc
+ 9487bd5eb9bb11cc66ff843db3a3bf8f312a47e4492676d95936ce1ce9648340 83480 mx-snapshot_19.5.1.tar.xz
+ e37802ecaee037b8d3d7cea15f520c628ab93133f22a397324a0c3d1db0b48e1 118922 mx-snapshot_19.5.1_amd64.deb
 Files:
- cc6d951d6e68ff1595bb183e22a3421c 1187 admin optional mx-snapshot_19.5.1.dsc
- efc90653b2c2d8b8c0007c686930ffa4 82908 admin optional mx-snapshot_19.5.1.tar.xz
- 23b89292003b0d8784776f296d909d08 11333 admin optional mx-snapshot_19.5.1_amd64.buildinfo
- 1a28bdeea4abc37fe292df6e73cd62eb 119080 admin optional mx-snapshot_19.5.1_amd64.deb
+ 74d988cf35153d5448f8c5720189818d 1187 admin optional mx-snapshot_19.5.1.dsc
+ 889d6c4a9ce29e94f9cb013f7fe99db7 83480 admin optional mx-snapshot_19.5.1.tar.xz
+ e35b8919619830afe56cb2d3e98e44de 118922 admin optional mx-snapshot_19.5.1_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlzbNSgTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHbnB/9BR+O7KPQwKshPt5C/05OitRiPUz5r
-mVJGuwllmWLQYXLu+Dn4WTtXpabtLJTv0cMrfaiJP075CHF6HMENeB/uG5UMA3J4
-qrRVX3yL3bXAoauF8B4UGIvEltAEaxLPdPI6Fe3PkC6dMv89uyg7yh2e14eZk4xm
-hKC9uuytJwwO5yzXvAFTErYNgJFIL5LKtZj2yvcqr68RT58FlS7LelaitwyKPl7U
-wz3JBRBH4FFjLDJ1LWDVJPoQtTVJfM1Y5J+j8zzcmYyUMZJJFUZN8bxEWvwniQ9S
-MhT14H+Fq6TEO/tpaNuu9+qDPPZUqPGSVCuO/HlYnrx2HO6DEG9KayEg
-=Dqp7
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlzbQEgTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHUyCACyQ9hcljrVnLucYoa28yydValwhx2c
+zKdGSIXLTvZvnH1/tzG6va4ZwnjLlCmtwqAyc5da8wDrQeHwt0AlhlU5lc22vPiF
+GNWVW6soHEcl0hnBq0Ni3EYEn+3w5Ph4YUv3jmxcRBbhXdD1q/bQ6R2u0fEZEyhl
+tv44JhP/8Ptb9/sRUmWqj8qr+b0YH7tCGZBsKyO0sJVoUdjKhyCSjvLLtrmTmDL4
+Vz4MqGeOcrExGM/j9Kg4XdfjqZOWtw3uNJg0gQ0I4QsErMT9ngGTd6oVMujJUGfh
+PQ3zQgTQ/V5ifk65lLeUhOikGVZLPHC5r9viJrMI723pAscSAlXpdlTq
+=jyDF
 -----END PGP SIGNATURE-----

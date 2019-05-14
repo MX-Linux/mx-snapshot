@@ -40,7 +40,8 @@ SOURCES += main.cpp \
     mainwindow.cpp
 
 HEADERS  += \
-    mainwindow.h
+    mainwindow.h \
+    version.h
 
 FORMS    += \
     mainwindow.ui

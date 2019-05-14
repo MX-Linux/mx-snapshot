@@ -32,6 +32,7 @@
 #include <QDir>
 
 #include "cmd.h"
+#include "version.h"
 
 namespace Ui {
 class MainWindow;
@@ -49,7 +50,6 @@ public:
     explicit MainWindow(QWidget *parent = 0, QStringList args = QStringList());
     ~MainWindow();
 
-    QString getVersion(QString name);
     void addRemoveExclusion(bool add, QString exclusion);
     void displayDoc(QString url);
     QSettings settings;
