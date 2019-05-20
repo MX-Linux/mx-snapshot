@@ -1,3 +1,9 @@
+mx-snapshot (19.5.2) mx; urgency=medium
+
+  * updated copy-initrd-modules
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 20 May 2019 18:00:51 -0400
+
 mx-snapshot (19.5.1) mx; urgency=medium
 
   * added a couple of syncs to make sure the files are fully written before checksum is calculated
