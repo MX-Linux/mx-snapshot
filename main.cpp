@@ -43,11 +43,11 @@ int main(int argc, char *argv[])
 
     if (a.arguments().contains("--help") || a.arguments().contains("-h") ) {
         printHelp();
-        return 0;
+        return EXIT_SUCCESS;
     }
     if (a.arguments().contains("--version") || a.arguments().contains("-v") ) {
        system("echo 'Installer version'; dpkg-query -f '${Version}' -W mx-snapshot; echo");
-       return 0;
+       return EXIT_SUCCESS;
     }
 
 
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
     if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
         QMessageBox::critical(0, QApplication::tr("Error"),
                 QApplication::tr("Current kernel doesn't support Squashfs, cannot continue."));
-        return 1;
+        return EXIT_FAILURE;
     }
 
     if (getuid() == 0) {
@@ -84,9 +84,9 @@ int main(int argc, char *argv[])
         return a.exec();
     } else {
         QApplication::beep();
-        QMessageBox::critical(0, QString::null,
+        QMessageBox::critical(0, QApplication::tr("Error"),
                               QApplication::tr("You must run this program as root."));
-        return 1;
+        return EXIT_FAILURE;
     }
 }
 
