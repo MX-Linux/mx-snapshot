@@ -2,24 +2,25 @@ Source: mx-snapshot
 Section: admin
 Priority: optional
 Maintainer: Adrian <adrian@mxlinux.org>
-Build-Depends: qt5-qmake,
-	qtbase5-dev,
-	qttools5-dev-tools,
-	debhelper (>=9),
-	libcmd
+Build-Depends: debhelper (>=9),
+               libcmd,
+               qt5-qmake,
+               qtbase5-dev,
+               qttools5-dev-tools
 Standards-Version: 3.9.8
 Vcs-Git: git://github.com/AdrianTM/mx-snapshot
 
 Package: mx-snapshot
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}, 
-	mx-viewer | xdg-utils, 
-	squashfs-tools, 
-	syslinux-utils, 
-	mx-iso-template | iso-template (>= 16.1mx15), 
-	xorriso (>= 1.4.6), 
-	mx-remaster, 
-	menu, 
-	xdg-user-dirs
+Depends: menu,
+         mx-iso-template | iso-template (>= 16.1mx15),
+         mx-remaster,
+         mx-viewer | xdg-utils,
+         squashfs-tools,
+         syslinux-utils,
+         xdg-user-dirs,
+         xorriso (>= 1.4.6),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: MX Snapshot
  MX Snapshot is a tool used for creating a live-CD from the running system.

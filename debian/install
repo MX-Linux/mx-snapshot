@@ -1,9 +1,9 @@
 license.html			usr/share/doc/mx-snapshot
 mx-snapshot			usr/bin
-mx-snapshot.desktop		usr/share/applications
+mx-snapshot-exclude.list	etc
 mx-snapshot.conf		etc
-mx-snapshot-exclude.list	etc 
-mx-snapshot.svg			usr/share/pixmaps
+mx-snapshot.desktop		usr/share/applications
 mx-snapshot.svg			usr/share/icons/hicolor/scalable/apps
+mx-snapshot.svg			usr/share/pixmaps
 scripts/*			usr/share/mx-packageinstaller/scripts
 translations/*.qm		usr/share/mx-snapshot/locale
