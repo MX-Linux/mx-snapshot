@@ -75,6 +75,8 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     setup();
     reset_accounts = false;
     if (args.contains("--monthly") || args.contains("-m")) {
+        QString name = shell->getOutput("cat /etc/mx-version | cut -f1 -d' '");
+        ui->lineEditName->setText(name.section("_", 0, 0) + "_" + QDate::currentDate().toString("MMMM") + "_" + name.section("_", 1, 1) + ".iso");
         ui->buttonNext->click();
         ui->radioRespin->click();
         ui->buttonNext->click();
@@ -109,15 +111,6 @@ void MainWindow::loadSettings()
     stamp = settings.value("stamp").toString();
     force_installer = settings.value("force_installer", "true").toBool();
     ui->lineEditName->setText(getFilename());
-    QString prev; //previous arg
-    foreach (const QString &arg, args) {
-        if (prev == "--monthly" || prev == "-m") {
-            QString name = shell->getOutput("cat /etc/mx-version | cut -f1 -d' '");
-            qDebug() << "MONTH" << arg;
-            ui->lineEditName->setText(name.section("_", 0, 0) + "_" + arg + "_" + name.section("_", 1, 1) + ".iso");
-        }
-        prev = arg;
-    }
 }
 
 // setup/refresh versious items first time program runs
