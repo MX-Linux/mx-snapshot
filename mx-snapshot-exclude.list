@@ -38,6 +38,7 @@ root/.dbus
 root/.gconf
 root/.gnome2
 root/keyfile
+timeshift/snapshots/*
 var/cache/apt/archives/*.deb
 var/cache/apt-xapian-index/index.*
 var/cache/apt-show-versions/*
