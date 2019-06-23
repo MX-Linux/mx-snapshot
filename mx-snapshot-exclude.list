@@ -32,13 +32,14 @@ etc/NetworkManager/system-connections/*
 etc/udev/rules.d/70-persistent-cd.rules
 etc/udev/rules.d/70-persistent-net.rules
 etc/resolv.conf
+home/timeshift/snapshots
 home/snapshot
 root/.bash_history
 root/.dbus
 root/.gconf
 root/.gnome2
 root/keyfile
-timeshift/snapshots/*
+timeshift/snapshots
 var/cache/apt/archives/*.deb
 var/cache/apt-xapian-index/index.*
 var/cache/apt-show-versions/*
