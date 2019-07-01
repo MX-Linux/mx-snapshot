@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Mon, 01 Jul 2019 14:39:20 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.7) mx; urgency=medium
+ .
+   * exclude timeshift folders
+Checksums-Sha1:
+ 8c6baaa61edbb7fa5425c9479d3e774bea635e83 1179 mx-snapshot_19.7.dsc
+ 378071b8eb660ae4ea79dbd3e6e2240f09325772 82976 mx-snapshot_19.7.tar.xz
+ 25832f2d75ac2c14f9d9fda69f953828b552a728 11317 mx-snapshot_19.7_amd64.buildinfo
+ 85a51bda04702ed2211cb10023b109a5cd36666e 118732 mx-snapshot_19.7_amd64.deb
+Checksums-Sha256:
+ d07b3824f0bbc146c2aee6e9db1a7ad804cadea70642420a43ec46d5e9151c3f 1179 mx-snapshot_19.7.dsc
+ 57eaeb57cd76bcedabb823b3943b61de284339831bdef465dfe2d1e640ceb5da 82976 mx-snapshot_19.7.tar.xz
+ 6e0d81f3a2a412a674d479a7198177d7b09eb9877074fdbc821f1c5c15ff791b 11317 mx-snapshot_19.7_amd64.buildinfo
+ 4b3b65bdf7a97ba011c94362076535645667a63997dc7f9bd882b727a7cc26e6 118732 mx-snapshot_19.7_amd64.deb
+Files:
+ 29843ac5b9434c70fca469a61c3c9e4a 1179 admin optional mx-snapshot_19.7.dsc
+ fa26b23d268d0cd97abfd98c7eacde5d 82976 admin optional mx-snapshot_19.7.tar.xz
+ ee379abd7dcdfaaeae9bc787617e8241 11317 admin optional mx-snapshot_19.7_amd64.buildinfo
+ 44d6fb567fcd19b23a60a551449fc737 118732 admin optional mx-snapshot_19.7_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl0aU78THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumL6jB/4jv/V18v4h18flaLVgMrdvrVZSmQfB
+q99IiLJz5CMSl384XnoJL+bKa1m+mIhwhof/qZMnhdqinKlyvjjTuwDe8ez5yWHE
+eeh/tF21mRDydrviMGNB10quRx6brH8hW8OncdWtPjQI8B7zq0GJuGykzyIyqsWt
+enmz5PFe32haiVppflLResOvl3n6a+OJAIIPy5UBOs7xoZJpllPawga+nyplPB+O
+sO8dpluefKzA++cQRao2HGRcfB6rcoT34F/UGQL15qorrnZlFLgvqVGNy9ttDcUg
+hOXAI7oa6bpmYe9o+4Lo1rzTUPr5OMHoXBAeA66fR2ejEsdRU4ck2skt
+=jsc6
+-----END PGP SIGNATURE-----
