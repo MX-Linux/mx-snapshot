@@ -1,3 +1,9 @@
+mx-snapshot (19.7.1) mx; urgency=medium
+
+  * fix window buttons for Buster
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 07 Jul 2019 14:02:03 -0400
+
 mx-snapshot (19.7) mx; urgency=medium
 
   * exclude timeshift folders

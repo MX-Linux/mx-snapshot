@@ -5,10 +5,10 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
-        <location filename="../mainwindow.cpp" line="56"/>
-        <location filename="../mainwindow.cpp" line="122"/>
-        <location filename="../mainwindow.cpp" line="853"/>
-        <location filename="../mainwindow.cpp" line="954"/>
+        <location filename="../mainwindow.cpp" line="57"/>
+        <location filename="../mainwindow.cpp" line="123"/>
+        <location filename="../mainwindow.cpp" line="854"/>
+        <location filename="../mainwindow.cpp" line="955"/>
         <source>MX Snapshot</source>
         <translation>MX_Criador de Imagens ISO</translation>
     </message>
@@ -29,7 +29,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="155"/>
-        <location filename="../mainwindow.cpp" line="798"/>
+        <location filename="../mainwindow.cpp" line="799"/>
         <source>Snapshot name:</source>
         <translation>Nome da imagem:</translation>
     </message>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="554"/>
-        <location filename="../mainwindow.cpp" line="960"/>
+        <location filename="../mainwindow.cpp" line="961"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -172,22 +172,22 @@
         <translation>Voltar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="233"/>
+        <location filename="../mainwindow.cpp" line="234"/>
         <source>Used space on / (root): </source>
         <translation>Espaço usado em / (root):</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="236"/>
+        <location filename="../mainwindow.cpp" line="237"/>
         <source>Used space on /home: </source>
         <translation>Espaço usado em /home:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="254"/>
+        <location filename="../mainwindow.cpp" line="255"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation>Espaço livre em %1, onde a pasta de imagens está colocada:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="256"/>
+        <location filename="../mainwindow.cpp" line="257"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -202,228 +202,228 @@ removendo imagens anteriores e cópias guardadas:
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="276"/>
         <location filename="../mainwindow.cpp" line="277"/>
+        <location filename="../mainwindow.cpp" line="278"/>
         <source>Installing </source>
         <translation>A instalar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="286"/>
-        <location filename="../mainwindow.cpp" line="586"/>
-        <location filename="../mainwindow.cpp" line="602"/>
-        <location filename="../mainwindow.cpp" line="805"/>
+        <location filename="../mainwindow.cpp" line="287"/>
+        <location filename="../mainwindow.cpp" line="587"/>
+        <location filename="../mainwindow.cpp" line="603"/>
+        <location filename="../mainwindow.cpp" line="806"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="286"/>
+        <location filename="../mainwindow.cpp" line="287"/>
         <source>Could not install </source>
         <translation>Não foi instalado</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="316"/>
+        <location filename="../mainwindow.cpp" line="317"/>
         <source>Building new initrd...</source>
         <translation>A criar novo initrd...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="342"/>
+        <location filename="../mainwindow.cpp" line="343"/>
         <source>Copying the new-iso filesystem...</source>
         <translation>A copiar o sistema de ficheiros da nova imagem iso...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="583"/>
+        <location filename="../mainwindow.cpp" line="584"/>
         <source>Squashing filesystem...</source>
         <translation>A comprimir o sistema de ficheiros...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="586"/>
+        <location filename="../mainwindow.cpp" line="587"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation>Não foi possível criar o ficheiro linuxfs; verificar se há espaço suficiente na partição de destino.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="600"/>
+        <location filename="../mainwindow.cpp" line="601"/>
         <source>Creating CD/DVD image file...</source>
         <translation>A criar o ficheiro de imagem de CD/DVD...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="602"/>
+        <location filename="../mainwindow.cpp" line="603"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation>Não foi possível criar o ficheiro ISO; verificar se há espaço suficiente na partição de destino.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="609"/>
+        <location filename="../mainwindow.cpp" line="610"/>
         <source>Making hybrid iso</source>
         <translation>A produzir imagem iso híbrida</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="623"/>
+        <location filename="../mainwindow.cpp" line="624"/>
         <source>MX Snapshot completed sucessfully!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="624"/>
         <location filename="../mainwindow.cpp" line="625"/>
+        <location filename="../mainwindow.cpp" line="626"/>
         <source>Snapshot took %1 to finish.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="626"/>
+        <location filename="../mainwindow.cpp" line="627"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="640"/>
+        <location filename="../mainwindow.cpp" line="641"/>
         <source>Making md5sum</source>
         <translation>A produzir md5sum</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="664"/>
+        <location filename="../mainwindow.cpp" line="665"/>
         <source>Cleaning...</source>
         <translation>A limpar...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="678"/>
-        <location filename="../mainwindow.cpp" line="1027"/>
+        <location filename="../mainwindow.cpp" line="679"/>
+        <location filename="../mainwindow.cpp" line="1028"/>
         <source>Done</source>
         <translation>Concluído</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="772"/>
+        <location filename="../mainwindow.cpp" line="773"/>
         <source>Please wait.</source>
         <translation>Aguarde</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="774"/>
+        <location filename="../mainwindow.cpp" line="775"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation>Aguarde. A calcular o espaço em disco usado...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="789"/>
+        <location filename="../mainwindow.cpp" line="790"/>
         <source>Settings</source>
         <translation>Definições</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="795"/>
+        <location filename="../mainwindow.cpp" line="796"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>O Criador de Imagens de Disco usará as seguintes definições:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="797"/>
+        <location filename="../mainwindow.cpp" line="798"/>
         <source>- Snapshot directory:</source>
         <translation>- Directoria de imagens:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="799"/>
+        <location filename="../mainwindow.cpp" line="800"/>
         <source>- Kernel to be used:</source>
         <translation>Núcleo (kernel) a ser usado:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="800"/>
+        <location filename="../mainwindow.cpp" line="801"/>
         <source>*These settings can be changed by editing: </source>
         <translation>*Estas definições podem ser alteradas editando:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="806"/>
+        <location filename="../mainwindow.cpp" line="807"/>
         <source>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="810"/>
+        <location filename="../mainwindow.cpp" line="811"/>
         <source>Final chance</source>
         <translation>Última hipótese</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="811"/>
+        <location filename="../mainwindow.cpp" line="812"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation>O Ciador de Imagens tem agora toda a informação de que precisa para criar uma imagem ISO do sistema em uso.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="812"/>
+        <location filename="../mainwindow.cpp" line="813"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation>Demorará algum tempo a terminar, dependendo do tamanho do sistema instalado e da capacidade do computador.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="813"/>
+        <location filename="../mainwindow.cpp" line="814"/>
         <source>OK to start?</source>
         <translation>Iniciar?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="822"/>
+        <location filename="../mainwindow.cpp" line="823"/>
         <source>Output</source>
         <translation>Resultado</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="829"/>
+        <location filename="../mainwindow.cpp" line="830"/>
         <source>Edit Boot Menu</source>
         <translation>Editar o Menu de Iniciação</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="830"/>
+        <location filename="../mainwindow.cpp" line="831"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation>O programa parará agora para permitir a edição de quaisquer ficheiros na directoria de trabalho (work). Clique em Sim para editar o menu de iniciação ou clique en Não para saltar este passo e continuar a criação da imagem.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="843"/>
+        <location filename="../mainwindow.cpp" line="844"/>
         <source>Success</source>
         <translation>Êxito</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="843"/>
+        <location filename="../mainwindow.cpp" line="844"/>
         <source>All finished!</source>
         <translation>Tudo terminado!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="844"/>
+        <location filename="../mainwindow.cpp" line="845"/>
         <source>Close</source>
         <translation>Fechar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="953"/>
+        <location filename="../mainwindow.cpp" line="954"/>
         <source>About MX Snapshot</source>
         <translation>Sobre o MX Snapshot</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="954"/>
+        <location filename="../mainwindow.cpp" line="955"/>
         <source>Version: </source>
         <translation>Versão:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="956"/>
+        <location filename="../mainwindow.cpp" line="957"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Programa para criar uma instalação externa CD do sistema MX Linux em execução</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="957"/>
+        <location filename="../mainwindow.cpp" line="958"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Direitos de autor (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="958"/>
+        <location filename="../mainwindow.cpp" line="959"/>
         <source>License</source>
         <translation>Licença</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="959"/>
+        <location filename="../mainwindow.cpp" line="960"/>
         <source>Changelog</source>
         <translation>Registo de alterações</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="977"/>
+        <location filename="../mainwindow.cpp" line="978"/>
         <source>&amp;Close</source>
         <translation>&amp;Fechar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1009"/>
+        <location filename="../mainwindow.cpp" line="1010"/>
         <source>Select Snapshot Directory</source>
         <translation>Selecionar a directoria de imagens</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1028"/>
+        <location filename="../mainwindow.cpp" line="1029"/>
         <source>Confirmation</source>
         <translation>Confirmação</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1028"/>
+        <location filename="../mainwindow.cpp" line="1029"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Deseja mesmo sair da aplicação?</translation>
     </message>

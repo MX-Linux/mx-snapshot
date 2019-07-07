@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sun, 07 Jul 2019 14:02:03 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.7.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.7.1) mx; urgency=medium
+ .
+   * fix window buttons for Buster
+Checksums-Sha1:
+ 7d37853804aa0c5831fd2010511f453f88874591 1187 mx-snapshot_19.7.1.dsc
+ f31347fe137bff14298b09e058d6e1083f925b72 83676 mx-snapshot_19.7.1.tar.xz
+ 81a9a0c73e00f756aee680ddffe76cea7915ce49 119062 mx-snapshot_19.7.1_amd64.deb
+Checksums-Sha256:
+ f07e715cac266ea9d6b79137ba54912e0eb7cc3269304d3d1d620e503c07b010 1187 mx-snapshot_19.7.1.dsc
+ 08a5cbcde29e7ee0e8f94e5b41aea1ac8cd3aea31b4ae3f99d818afbc4197511 83676 mx-snapshot_19.7.1.tar.xz
+ d1708576a0e88777535bf46b3f634338ca194cb092efaf15465d9bd1120f3669 119062 mx-snapshot_19.7.1_amd64.deb
+Files:
+ 0384a4adc03fd1c4811cb26d5a364964 1187 admin optional mx-snapshot_19.7.1.dsc
+ 4ddeac3e4b303dedaf561c1b72b9df15 83676 admin optional mx-snapshot_19.7.1.tar.xz
+ cca9085e6b78f5531654695c5dfc7871 119062 admin optional mx-snapshot_19.7.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl0iNA4THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHxdCADJfSx0hhYHAcVJ4WuVWxV8/W0WmcVF
+Z3YImN2MiBbVZ070sIRPQ3m5XQlJmM+T/vxNvk0LwCJA7YpoRB1X5Le4XE2tPgJT
+OuH9lQxAOLWcp8qxRaQ4VwL65B9MrGigHZF6Z37SjguCsxELtPVvkbH6WKecBmeP
+QfXPk1BY50rzhmSLj99JNxs3fU/PtIBeMMg7Op0o0d5CIQTJ7AnJrhLO2fWHUuXh
+f3xqS+U/g86/lnFmUG25+P6wq1YeFd/4vcMavcJouxqrGunzEf4lPpZ4ovkeLNXu
+5x4Zer821V3cH5W7ePi7p7J9rrdxVT/cS3jsz43k3fUVsvCF8BZAr9pR
+=dKyT
+-----END PGP SIGNATURE-----

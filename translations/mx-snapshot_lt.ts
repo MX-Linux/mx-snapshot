@@ -5,10 +5,10 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
-        <location filename="../mainwindow.cpp" line="56"/>
-        <location filename="../mainwindow.cpp" line="122"/>
-        <location filename="../mainwindow.cpp" line="853"/>
-        <location filename="../mainwindow.cpp" line="954"/>
+        <location filename="../mainwindow.cpp" line="57"/>
+        <location filename="../mainwindow.cpp" line="123"/>
+        <location filename="../mainwindow.cpp" line="854"/>
+        <location filename="../mainwindow.cpp" line="955"/>
         <source>MX Snapshot</source>
         <translation>MX momentinė kopija</translation>
     </message>
@@ -29,7 +29,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="155"/>
-        <location filename="../mainwindow.cpp" line="798"/>
+        <location filename="../mainwindow.cpp" line="799"/>
         <source>Snapshot name:</source>
         <translation>Momentinės kopijos pavadinimas:</translation>
     </message>
@@ -122,7 +122,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="554"/>
-        <location filename="../mainwindow.cpp" line="960"/>
+        <location filename="../mainwindow.cpp" line="961"/>
         <source>Cancel</source>
         <translation>Atsisakyti</translation>
     </message>
@@ -172,22 +172,22 @@
         <translation>Atgal</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="233"/>
+        <location filename="../mainwindow.cpp" line="234"/>
         <source>Used space on / (root): </source>
         <translation>Panaudota vieta / (šaknies) skaidinyje: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="236"/>
+        <location filename="../mainwindow.cpp" line="237"/>
         <source>Used space on /home: </source>
         <translation>Panaudota vieta /home skaidinyje: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="254"/>
+        <location filename="../mainwindow.cpp" line="255"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation>Laisva vieta %1 skaidinyje, kuriame yra patalpintas momentinės kopijos aplankas: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="256"/>
+        <location filename="../mainwindow.cpp" line="257"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -197,228 +197,228 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="276"/>
         <location filename="../mainwindow.cpp" line="277"/>
+        <location filename="../mainwindow.cpp" line="278"/>
         <source>Installing </source>
         <translation>Įdiegiama </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="286"/>
-        <location filename="../mainwindow.cpp" line="586"/>
-        <location filename="../mainwindow.cpp" line="602"/>
-        <location filename="../mainwindow.cpp" line="805"/>
+        <location filename="../mainwindow.cpp" line="287"/>
+        <location filename="../mainwindow.cpp" line="587"/>
+        <location filename="../mainwindow.cpp" line="603"/>
+        <location filename="../mainwindow.cpp" line="806"/>
         <source>Error</source>
         <translation>Klaida</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="286"/>
+        <location filename="../mainwindow.cpp" line="287"/>
         <source>Could not install </source>
         <translation>Nepavyko įdiegti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="316"/>
+        <location filename="../mainwindow.cpp" line="317"/>
         <source>Building new initrd...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="342"/>
+        <location filename="../mainwindow.cpp" line="343"/>
         <source>Copying the new-iso filesystem...</source>
         <translation>Kopijuojama new-iso failų sistema...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="583"/>
+        <location filename="../mainwindow.cpp" line="584"/>
         <source>Squashing filesystem...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="586"/>
+        <location filename="../mainwindow.cpp" line="587"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation>Nepavyko sukurti linuxfs failo, prašome patikrinti ar paskirties skaidinyje yra pakankamai vietos.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="600"/>
+        <location filename="../mainwindow.cpp" line="601"/>
         <source>Creating CD/DVD image file...</source>
         <translation>Kuriamas CD/DVD atvaizdžio failas...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="602"/>
+        <location filename="../mainwindow.cpp" line="603"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation>Nepavyko sukurti ISO failo, prašome patikrinti ar paskirties skaidinyje yra pakankamai vietos.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="609"/>
+        <location filename="../mainwindow.cpp" line="610"/>
         <source>Making hybrid iso</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="623"/>
+        <location filename="../mainwindow.cpp" line="624"/>
         <source>MX Snapshot completed sucessfully!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="624"/>
         <location filename="../mainwindow.cpp" line="625"/>
+        <location filename="../mainwindow.cpp" line="626"/>
         <source>Snapshot took %1 to finish.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="626"/>
+        <location filename="../mainwindow.cpp" line="627"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="640"/>
+        <location filename="../mainwindow.cpp" line="641"/>
         <source>Making md5sum</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="664"/>
+        <location filename="../mainwindow.cpp" line="665"/>
         <source>Cleaning...</source>
         <translation>Išvaloma...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="678"/>
-        <location filename="../mainwindow.cpp" line="1027"/>
+        <location filename="../mainwindow.cpp" line="679"/>
+        <location filename="../mainwindow.cpp" line="1028"/>
         <source>Done</source>
         <translation>Atlikta</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="772"/>
+        <location filename="../mainwindow.cpp" line="773"/>
         <source>Please wait.</source>
         <translation>Prašome palaukti.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="774"/>
+        <location filename="../mainwindow.cpp" line="775"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation>Prašome palaukti. Apskaičiuojama panaudota disko vieta...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="789"/>
+        <location filename="../mainwindow.cpp" line="790"/>
         <source>Settings</source>
         <translation>Nuostatos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="795"/>
+        <location filename="../mainwindow.cpp" line="796"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>Momentinė kopija naudos šiuos nustatymus:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="797"/>
+        <location filename="../mainwindow.cpp" line="798"/>
         <source>- Snapshot directory:</source>
         <translation>- Momentinės kopijos katalogas:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="799"/>
+        <location filename="../mainwindow.cpp" line="800"/>
         <source>- Kernel to be used:</source>
         <translation>- Bus naudojamas branduolys:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="800"/>
+        <location filename="../mainwindow.cpp" line="801"/>
         <source>*These settings can be changed by editing: </source>
         <translation>*Šie nustatymai gali būti pakeisti, redaguojant: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="806"/>
+        <location filename="../mainwindow.cpp" line="807"/>
         <source>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="810"/>
+        <location filename="../mainwindow.cpp" line="811"/>
         <source>Final chance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="811"/>
+        <location filename="../mainwindow.cpp" line="812"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="812"/>
+        <location filename="../mainwindow.cpp" line="813"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="813"/>
+        <location filename="../mainwindow.cpp" line="814"/>
         <source>OK to start?</source>
         <translation>Galima pradėti?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="822"/>
+        <location filename="../mainwindow.cpp" line="823"/>
         <source>Output</source>
         <translation>Išvestis</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="829"/>
+        <location filename="../mainwindow.cpp" line="830"/>
         <source>Edit Boot Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="830"/>
+        <location filename="../mainwindow.cpp" line="831"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="843"/>
+        <location filename="../mainwindow.cpp" line="844"/>
         <source>Success</source>
         <translation>Pavyko</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="843"/>
+        <location filename="../mainwindow.cpp" line="844"/>
         <source>All finished!</source>
         <translation>Viskas užbaigta!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="844"/>
+        <location filename="../mainwindow.cpp" line="845"/>
         <source>Close</source>
         <translation>Užverti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="953"/>
+        <location filename="../mainwindow.cpp" line="954"/>
         <source>About MX Snapshot</source>
         <translation>Apie MX momentinė kopija</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="954"/>
+        <location filename="../mainwindow.cpp" line="955"/>
         <source>Version: </source>
         <translation>Versija: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="956"/>
+        <location filename="../mainwindow.cpp" line="957"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="957"/>
+        <location filename="../mainwindow.cpp" line="958"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Autorių teisės (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="958"/>
+        <location filename="../mainwindow.cpp" line="959"/>
         <source>License</source>
         <translation>Licencija</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="959"/>
+        <location filename="../mainwindow.cpp" line="960"/>
         <source>Changelog</source>
         <translation>Keitinių žurnalas</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="977"/>
+        <location filename="../mainwindow.cpp" line="978"/>
         <source>&amp;Close</source>
         <translation>&amp;Užverti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1009"/>
+        <location filename="../mainwindow.cpp" line="1010"/>
         <source>Select Snapshot Directory</source>
         <translation>Pasirinkite momentinės kopijos katalogą</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1028"/>
+        <location filename="../mainwindow.cpp" line="1029"/>
         <source>Confirmation</source>
         <translation>Patvirtinimas</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1028"/>
+        <location filename="../mainwindow.cpp" line="1029"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Ar tikrai norite išeiti iš programos?</translation>
     </message>

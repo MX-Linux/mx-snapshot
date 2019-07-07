@@ -40,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
 {
     qDebug() << "Program Version:" << VERSION;
     ui->setupUi(this);
+    setWindowFlags(Qt::Window); // for the close, min and max buttons
     shell = new Cmd(this);
     this->args = args;
 
