@@ -50,8 +50,7 @@ int main(int argc, char *argv[])
        return EXIT_SUCCESS;
     }
 
-
-    a.setWindowIcon(QIcon("/usr/share/pixmaps/mx-snapshot.svg"));
+    a.setWindowIcon(QIcon::fromTheme("mx-snapshot"));
 
     QString log_name= "/var/log/mx-snapshot.log";
     // archive old log

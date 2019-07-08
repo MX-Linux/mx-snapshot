@@ -426,18 +426,18 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="76"/>
-        <location filename="../main.cpp" line="87"/>
+        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Eroare</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="77"/>
+        <location filename="../main.cpp" line="76"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="88"/>
+        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>Trebuie să rulați programul ca administrator.</translation>
     </message>

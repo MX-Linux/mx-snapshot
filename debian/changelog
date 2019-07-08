@@ -1,3 +1,9 @@
+mx-snapshot (19.7.2) mx; urgency=medium
+
+  * new icon
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 08 Jul 2019 14:33:21 -0400
+
 mx-snapshot (19.7.1) mx; urgency=medium
 
   * fix window buttons for Buster

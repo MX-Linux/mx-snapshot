@@ -431,18 +431,18 @@ rimuovendo precedenti snapshots e copie salvate:
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="76"/>
-        <location filename="../main.cpp" line="87"/>
+        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="77"/>
+        <location filename="../main.cpp" line="76"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Il kernel attuale non supporta Squashfs, non si può continuare.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="88"/>
+        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>Devi eseguire questo programma come amministratore</translation>
     </message>

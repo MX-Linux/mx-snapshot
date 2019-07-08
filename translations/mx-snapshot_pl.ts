@@ -430,18 +430,18 @@ poprzez usunięcie poprzednich zrzutów i zapisanych kopii:
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="76"/>
-        <location filename="../main.cpp" line="87"/>
+        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="77"/>
+        <location filename="../main.cpp" line="76"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Bieżące jądro (kernel) nie obsługuje Squashfs, nie można kontynuować.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="88"/>
+        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>Musisz uruchomić ten program jako administrator. </translation>
     </message>

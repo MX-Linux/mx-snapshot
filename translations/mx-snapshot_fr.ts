@@ -430,18 +430,18 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="76"/>
-        <location filename="../main.cpp" line="87"/>
+        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="77"/>
+        <location filename="../main.cpp" line="76"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Le noyau actuel ne supporte pas Squashfs, impossible de continuer.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="88"/>
+        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>Vous devez lancer cette application avec les droits administrateur.</translation>
     </message>

@@ -432,18 +432,18 @@ door oudere snapshots en opgeslagen kopieën te verwijderen:
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="76"/>
-        <location filename="../main.cpp" line="87"/>
+        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="77"/>
+        <location filename="../main.cpp" line="76"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Huidige kernel ondersteunt geen Squashfs, kan niet doorgaan.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="88"/>
+        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>U dient deze toepassing als &apos;root&apos; uit te voeren.</translation>
     </message>

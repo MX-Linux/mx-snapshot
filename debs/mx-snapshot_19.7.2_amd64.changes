@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Mon, 08 Jul 2019 14:33:21 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.7.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.7.2) mx; urgency=medium
+ .
+   * new icon
+Checksums-Sha1:
+ dc236b7969ab479cba0babbc94be5e1eb1ba9a63 1187 mx-snapshot_19.7.2.dsc
+ 359b5580783dfe5a1766480689151bcaa9f7dacb 81108 mx-snapshot_19.7.2.tar.xz
+ d767e3d2ce1ac0580968382eec9287b998709110 11333 mx-snapshot_19.7.2_amd64.buildinfo
+ 29f079b13b347d573c7c99940ce15f3de0fdd73a 116940 mx-snapshot_19.7.2_amd64.deb
+Checksums-Sha256:
+ 7bdafc0556d6c7d9dbb1e57c83e417bbbe1cbf69f13ddad387467221e4a304ce 1187 mx-snapshot_19.7.2.dsc
+ c0ad270f81ae7f1fd3c9ad7a0cd6929f31a89cabd53b134123e1517e9f6520a2 81108 mx-snapshot_19.7.2.tar.xz
+ 556c0f557c0a294febea811f94ceede04e34848ddbe47e3993e1535981bb9886 11333 mx-snapshot_19.7.2_amd64.buildinfo
+ db2011aa769d201cc62f902d4733c88d353a77a03c87ddd5818ad7f6c97dcefa 116940 mx-snapshot_19.7.2_amd64.deb
+Files:
+ a37a739fee9906b1167309f470974cb9 1187 admin optional mx-snapshot_19.7.2.dsc
+ 9cb2eab452b0f795f67b4ab5482d6943 81108 admin optional mx-snapshot_19.7.2.tar.xz
+ 2fcc94a7a3051d7248afacceb4c3d498 11333 admin optional mx-snapshot_19.7.2_amd64.buildinfo
+ b02a75d64f35529e0a221a27d377d80c 116940 admin optional mx-snapshot_19.7.2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl0jjUoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumN+5CACY/lDekhc3ZQfsF1WPmSxCmOTIkM04
+aIRBpR0uK0K4XtrjErLROvZxjKOMWr8/v1V1xxebjDcmh6F6p73KYCdOZ4WniOh7
+DymoREAc4EVmPW/kOwDkp6DaPaHjk/Pqg+HOrWhhNyVvDg3dV44VfnLlm/tDBQb1
+fD1uRM7nA6EzVqLgnTKvrEDVUUHvdeEF1slH+uBWsW2RvkeJExZSlC1sfniA7Mv1
+yiwXNQXxJ2xZ7UVWrkQckoFMD5ssvPNuXwBTiFuBvjggn/iEFZjrhyepC5kHh+n7
+VSoeJgIVW25h3EdCdKxv+pgikSGJg4bkM0dCi6QuNoSvYCjvVVCGAuYy
+=j1/t
+-----END PGP SIGNATURE-----
