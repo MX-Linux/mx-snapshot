@@ -72,7 +72,12 @@ hid-logitech-hidpp
 hid-microsoft
 hid-monterey
 hid-samsung
+hv_balloon
+hv_vmbus
+hv_utils
+hv_storvsc
 hv_netvsc
+hyperv
 hyperv-keyboard
 hyperv_fb
 isofs
@@ -98,6 +103,7 @@ pstore
 reiserfs
 rts5139
 scsi-mod
+scsi-transport-fc
 sd-mod
 sg
 shpchp
@@ -115,6 +121,7 @@ usbhid
 usbmon
 vfat
 vmd
+virtio-gpu
 whc-rc
 whci-hcd
 xcbc
