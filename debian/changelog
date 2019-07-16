@@ -1,3 +1,9 @@
+mx-snapshot (19.7.3) mx; urgency=medium
+
+  * revised modules
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 16 Jul 2019 00:22:42 -0400
+
 mx-snapshot (19.7.2) mx; urgency=medium
 
   * new icon

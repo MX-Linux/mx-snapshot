@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Tue, 16 Jul 2019 00:22:42 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.7.3
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.7.3) mx; urgency=medium
+ .
+   * revised modules
+Checksums-Sha1:
+ a951dd2e7e63e40cc8eff726b59274b801717da9 1187 mx-snapshot_19.7.3.dsc
+ e0df138aee995f682750383c6fc884852b1c46b7 81772 mx-snapshot_19.7.3.tar.xz
+ f1b22484cd4dde26e5cc31fab10dfb12b9e6f28f 117096 mx-snapshot_19.7.3_amd64.deb
+Checksums-Sha256:
+ 2fea5f84ff626a166f78237b429fee87c8627450edd31b3487ff21ff27c9ce44 1187 mx-snapshot_19.7.3.dsc
+ 54601713f5b73fd944d6cec726b670cffa1f0a059394ab709f4e9f12adcd5e4c 81772 mx-snapshot_19.7.3.tar.xz
+ 64f5dc20dac8dbb6e3da8ef831adbdca39a381105689825c8f2eaf84fae6b722 117096 mx-snapshot_19.7.3_amd64.deb
+Files:
+ 4d5b2ce7a231077e9a99d623a0146eec 1187 admin optional mx-snapshot_19.7.3.dsc
+ d48f5bc83f7afb3069079ffaa19e7a91 81772 admin optional mx-snapshot_19.7.3.tar.xz
+ c1b236b148d8a8c916dd491920e5dbff 117096 admin optional mx-snapshot_19.7.3_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl0tUlYTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAaQB/4w2kpvp5+vE2arAxoSBAbCgvck4t0R
+4xSffxoTCuusehoBYXvnlJ1ZoNT5eOyPrRtTdngeKvadBMAdC731Q6ZiUjwrDvf8
+hKaLx1F72Pcpn1lbyHqAxuerMV2mEpIUdlSmXk1z4nlaAExTz6zYTL6uMz5fr4xk
+mxRdAwWfGR6uRMcgLFAAVdHfyxMVQhVjAb/bq9t7+G37VZTZw9DVNGOGUU2wDLc2
+WpfDzLstkDY1XM9mwmuunsjmgJFeJit0ogxZW/12x7H1HqsHEFOc7L+94fz09WMx
+Z+E1xwj8vCDTTPZ4lo1dRbdzOdiTGSszStsxjPPdWzu2zJ8nZS86dNCS
+=F4Bi
+-----END PGP SIGNATURE-----
