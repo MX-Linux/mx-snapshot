@@ -215,7 +215,7 @@ QString MainWindow::getXdgUserDirs(const QString& folder)
 // return a list of users that have folders in /home
 QStringList MainWindow::listUsers()
 {
-    return shell->getOutput("ls /home | grep -v lost+found | grep -v snapshot | grep [a-zA-Z0-9]").split("\n");
+    return shell->getOutput("lslogins --noheadings -u -o user | grep -vw root").split("\n");
 }
 
 // List used space
