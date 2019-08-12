@@ -387,9 +387,9 @@ void MainWindow::replaceMenuStrings() {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QString date = shell->getOutput("date +'%d %B %Y'");
     QString distro = shell->getOutput("cat /etc/antix-version | cut -f1 -d'_'");
-    QString distro_name = shell->getOutput("lsb_release -is");
+    QString distro_name = shell->getOutput("grep -oP '(?<=DISTRIB_ID=).*' /etc/lsb-release");
     QString full_distro_name = shell->getOutput("cat /etc/antix-version | cut -f-2 -d' '");
-    QString code_name = shell->getOutput("lsb_release -cs");
+    QString code_name = shell->getOutput("grep -oP '(?<=DISTRIB_CODENAME=).*' /etc/lsb-release");
     QString options = "quiet";
 
     if (debian_version < 9) { // Only for versions older than Stretch which uses old mx-iso-template
