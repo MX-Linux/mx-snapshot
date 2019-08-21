@@ -1,3 +1,4 @@
+help				usr/share/doc/mx-snapshot
 license.html			usr/share/doc/mx-snapshot
 mx-snapshot			usr/bin
 mx-snapshot-exclude.list	etc

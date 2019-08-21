@@ -1,3 +1,9 @@
+mx-snapshot (19.8.1) mx; urgency=medium
+
+  * added offline help file
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 21 Aug 2019 15:21:04 -0400
+
 mx-snapshot (19.8) mx; urgency=medium
 
   * change to make it compatible with Buster base
