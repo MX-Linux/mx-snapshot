@@ -710,7 +710,7 @@ void MainWindow::displayDoc(QString url)
     if (shell->run("command -v mx-viewer") == 0) { // use mx-viewer if available
         exec = "mx-viewer";
     }
-    QString cmd = "su " + user + " -c \"" + exec + " " + url + "\"&";
+    QString cmd = "su " + user + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user + ") " + exec + " " + url + "\"&";
     shell->run(cmd);
 }
 

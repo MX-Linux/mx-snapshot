@@ -1,3 +1,9 @@
+mx-snapshot (19.8.2) mx; urgency=medium
+
+  * update modules list in copy-initrd-modules
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 24 Aug 2019 03:01:39 -0400
+
 mx-snapshot (19.8.1) mx; urgency=medium
 
   * added offline help file
