@@ -54,6 +54,7 @@ ehci-pci
 ext2
 ext3
 ext4
+f2fs
 fat
 fotg210-hcd
 fusbh200-hcd
@@ -63,6 +64,7 @@ hid-apple
 hid-belkin
 hid-cherry
 hid-generic
+hid-hyperv
 hid-lenovo-tpkbd
 hid-logitech
 hid-logitech-dj
@@ -70,6 +72,14 @@ hid-logitech-hidpp
 hid-microsoft
 hid-monterey
 hid-samsung
+hv_balloon
+hv_vmbus
+hv_utils
+hv_storvsc
+hv_netvsc
+hyperv
+hyperv-keyboard
+hyperv_fb
 isofs
 jbd
 jbd2
@@ -86,12 +96,14 @@ nvme
 ohci-hcd
 ohci-pci
 overlay
+pci-hyperv
 pcie-aspm
 printk
 pstore
 reiserfs
 rts5139
 scsi-mod
+scsi-transport-fc
 sd-mod
 sg
 shpchp
@@ -109,6 +121,7 @@ usbhid
 usbmon
 vfat
 vmd
+virtio-gpu
 whc-rc
 whci-hcd
 xcbc

@@ -32,12 +32,14 @@ etc/NetworkManager/system-connections/*
 etc/udev/rules.d/70-persistent-cd.rules
 etc/udev/rules.d/70-persistent-net.rules
 etc/resolv.conf
+home/timeshift/snapshots
 home/snapshot
 root/.bash_history
 root/.dbus
 root/.gconf
 root/.gnome2
 root/keyfile
+timeshift/snapshots
 var/cache/apt/archives/*.deb
 var/cache/apt-xapian-index/index.*
 var/cache/apt-show-versions/*
@@ -110,6 +112,6 @@ home/*/.xfce4-session.verbose-log*
 # This stops any video drivers from loading - safe option.
 etc/X11/xorg.conf
 etc/X11/xorg.conf.d/20-nvidia.conf
-etc/X11/xorg.conf.d/20-intel.conf 
+etc/X11/xorg.conf.d/20-intel.conf
 etc/X11/xorg.conf.d/20-radeon.conf
 etc/X11/xorg.conf.d/20-amd.conf

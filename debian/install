@@ -1,10 +1,10 @@
+help				usr/share/doc/mx-snapshot
 license.html			usr/share/doc/mx-snapshot
 mx-snapshot			usr/bin
-mx-snapshot.desktop		usr/share/applications
+mx-snapshot-exclude.list	etc
 mx-snapshot.conf		etc
-mx-snapshot-exclude.list	etc 
-mx-snapshot.svg			usr/share/pixmaps
-mx-snapshot.svg			usr/share/icons/hicolor/scalable/apps
-scripts/copy-initrd-modules	usr/share/mx-packageinstaller/scripts
-scripts/copy-initrd-programs	usr/share/mx-packageinstaller/scripts
+mx-snapshot.desktop		usr/share/applications
+icons/mx-snapshot.png		usr/share/icons/hicolor/48x48/apps
+icons/mx-snapshot.svg		usr/share/icons/hicolor/scalable/apps
+scripts/*			usr/share/mx-packageinstaller/scripts
 translations/*.qm		usr/share/mx-snapshot/locale

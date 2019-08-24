@@ -30,6 +30,7 @@
 #include <QScrollBar>
 #include <QTextStream>
 #include <QKeyEvent>
+#include <QTime>
 
 #include <QDebug>
 
@@ -37,9 +38,16 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     QDialog(parent),
     ui(new Ui::MainWindow)
 {
+    qDebug() << "Program Version:" << VERSION;
     ui->setupUi(this);
+    setWindowFlags(Qt::Window); // for the close, min and max buttons
     shell = new Cmd(this);
     this->args = args;
+
+    QFont font("monospace");
+    font.setStyleHint(QFont::Monospace);
+    ui->outputBox->setFont(font);
+
     connect(shell, &Cmd::started, this, &MainWindow::procStart);
     connect(shell, &Cmd::finished, this, &MainWindow::procDone);
     connect(shell, &Cmd::runTime, this, &MainWindow::progress);
@@ -51,14 +59,25 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     ui->buttonSelectSnapshot->setHidden(true);
     ui->stackedWidget->setCurrentIndex(0);
 
-    version = getVersion("mx-snapshot");
     live = isLive();
-
+    users = listUsers();
     i686 = isi686();
     debian_version = getDebianVersion();
+
+    englishDirs = {
+        {"DOCUMENTS", "Documents"},
+        {"DOWNLOAD", "Downloads"},
+        {"DESKTOP", "Desktop"},
+        {"MUSIC", "Music"},
+        {"PICTURES", "Pictures"},
+        {"VIDEOS", "Videos"},
+    };
+
     setup();
     reset_accounts = false;
     if (args.contains("--monthly") || args.contains("-m")) {
+        QString name = shell->getOutput("cat /etc/mx-version | cut -f1 -d' '");
+        ui->lineEditName->setText(name.section("_", 0, 0) + "_" + QDate::currentDate().toString("MMMM") + "_" + name.section("_", 1, 1) + ".iso");
         ui->buttonNext->click();
         ui->radioRespin->click();
         ui->buttonNext->click();
@@ -93,15 +112,6 @@ void MainWindow::loadSettings()
     stamp = settings.value("stamp").toString();
     force_installer = settings.value("force_installer", "true").toBool();
     ui->lineEditName->setText(getFilename());
-    QString prev; //previous arg
-    foreach (QString arg, args) {
-        if (prev == "--monthly" || prev == "-m") {
-            QString name = shell->getOutput("cat /etc/mx-version | cut -f1 -d' '");
-            qDebug() << "MONTH" << arg;
-            ui->lineEditName->setText(name.section("_", 0, 0) + "_" + arg + "_" + name.section("_", 1, 1) + ".iso");
-        }
-        prev = arg;
-    }
 }
 
 // setup/refresh versious items first time program runs
@@ -155,12 +165,6 @@ bool MainWindow::isi686()
     return (shell->getOutput("uname -m") == "i686");
 }
 
-// Get version of the program
-QString MainWindow::getVersion(QString name)
-{
-    return shell->getOutput("dpkg-query -f '${Version}' -W " + name);
-}
-
 // return number of snapshots in snapshot_dir
 int MainWindow::getSnapshotCount()
 {
@@ -185,6 +189,33 @@ QString MainWindow::getSnapshotSize()
         }
     }
     return "0";
+}
+
+// return the XDG User Directory for each user with different localizations than English
+QString MainWindow::getXdgUserDirs(const QString& folder)
+{
+    QString result = "";
+
+    foreach (const QString &user, users) {
+        if (shell->run("su " + user + " -c \"xdg-user-dir " + folder + "\"") == 0) {
+            QString dir = shell->getOutput();
+            if (englishDirs.value(folder) == dir.section("/", -1) || dir == "/home/" + user || dir.isEmpty()) { // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
+                continue;
+            }
+            if (dir.startsWith("/")) {
+                dir.remove(0, 1); // remove training slash
+            }
+            (folder == "DESKTOP") ? dir.append("/!(minstall.desktop)") : dir.append("/*");
+            (result.isEmpty()) ? result.append("\" \"" + dir) : result.append(" \"" + dir);
+        }
+    }
+    return result;
+}
+
+// return a list of users that have folders in /home
+QStringList MainWindow::listUsers()
+{
+    return shell->getOutput("lslogins --noheadings -u -o user | grep -vw root").split("\n");
 }
 
 // List used space
@@ -333,6 +364,7 @@ void MainWindow::copyNewIso()
     }
 
     replaceMenuStrings();
+    shell->run("/usr/share/mx-packageinstaller/scripts/make-efi-img " + work_dir + "/iso-template/");
 
     makeMd5sum(work_dir + "/iso-template/antiX", "vmlinuz");
 
@@ -355,9 +387,9 @@ void MainWindow::replaceMenuStrings() {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QString date = shell->getOutput("date +'%d %B %Y'");
     QString distro = shell->getOutput("cat /etc/antix-version | cut -f1 -d'_'");
-    QString distro_name = shell->getOutput("lsb_release -is");
+    QString distro_name = shell->getOutput("grep -oP '(?<=DISTRIB_ID=).*' /etc/lsb-release");
     QString full_distro_name = shell->getOutput("cat /etc/antix-version | cut -f-2 -d' '");
-    QString code_name = shell->getOutput("lsb_release -cs");
+    QString code_name = shell->getOutput("grep -oP '(?<=DISTRIB_CODENAME=).*' /etc/lsb-release");
     QString options = "quiet";
 
     if (debian_version < 9) { // Only for versions older than Stretch which uses old mx-iso-template
@@ -500,19 +532,26 @@ void MainWindow::setupEnv()
         return;
     }
 
+    QString bind_boot = "";
+    QString bind_boot_too = "";
+    if (shell->run("mountpoint /boot") == 0) {
+        bind_boot = "bind=/boot ";
+        bind_boot_too = ",/boot";
+    }
+
     // install mx-installer if absent
     if (force_installer && !checkInstalled("mx-installer")) {
         installPackage("mx-installer");
     }
     // setup environment if creating a respin (reset root/demo, remove personal accounts)
     if (reset_accounts) {
-        shell->run("installed-to-live -b /.bind-root start empty=/home general version-file read-only");
+        shell->run("installed-to-live -b /.bind-root start " + bind_boot + "empty=/home general version-file read-only");
     } else {
         if (force_installer == true) {  // copy minstall.desktop to Desktop on all accounts
             shell->run("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/minstall.desktop 2>/dev/null");
             shell->run("chmod +x /home/*/Desktop/minstall.desktop");
         }
-        shell->run("installed-to-live -b /.bind-root start bind=/home live-files version-file adjtime read-only");
+        shell->run("installed-to-live -b /.bind-root start bind=/home" + bind_boot_too + " live-files version-file adjtime read-only");
     }
 }
 
@@ -554,6 +593,8 @@ bool MainWindow::createIso(QString filename)
     system("mkdir -p iso-2/antiX");
     shell->run("mv iso-template/antiX/linuxfs* iso-2/antiX");
 
+    shell->run("installed-to-live cleanup");
+
     // create the iso file
     QDir::setCurrent(work_dir + "/iso-template");
     cmd = "xorriso -as mkisofs -l -V MXLIVE -R -J -pad -iso-level 3 -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin  -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot -c boot/isolinux/isolinux.cat -o \"" + snapshot_dir.absolutePath() + "/" + filename + "\" . \""  + work_dir + "/iso-2\"";
@@ -567,7 +608,7 @@ bool MainWindow::createIso(QString filename)
     // make it isohybrid
     if (make_isohybrid == "yes") {
         ui->outputLabel->setText(tr("Making hybrid iso"));
-        cmd = "isohybrid \"" + snapshot_dir.absolutePath() + "/" + filename + "\"";
+        cmd = "isohybrid --uefi \"" + snapshot_dir.absolutePath() + "/" + filename + "\"";
         shell->run(cmd);
     }
 
@@ -575,6 +616,15 @@ bool MainWindow::createIso(QString filename)
     if (make_md5sum == "yes") {
         makeMd5sum(snapshot_dir.absolutePath(), filename);
         makeSha512sum(snapshot_dir.absolutePath(), filename);
+    }
+
+    if (shell->getError() == 0) {
+        QTime time(0, 0);
+        time = time.addMSecs(timer.elapsed());
+        outputAvailable("\n" + tr("MX Snapshot completed sucessfully!") + "\n");
+        outputAvailable(tr("Snapshot took %1 to finish.").arg(time.toString("hh:mm:ss")) + "\n");
+        qDebug() << tr("Snapshot took %1 to finish.").arg(time.toString("hh:mm:ss"));
+        outputAvailable(tr("Thanks for using MX Snapshot, run MX Live USB Maker next!"));
     }
     disableOutput();
     return true;
@@ -584,6 +634,7 @@ bool MainWindow::createIso(QString filename)
 void MainWindow::makeMd5sum(QString folder, QString file_name)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
+    shell->run("sync");
     QDir dir;
     QString current = dir.currentPath();
     dir.setCurrent(folder);
@@ -597,6 +648,7 @@ void MainWindow::makeMd5sum(QString folder, QString file_name)
 void MainWindow::makeSha512sum(QString folder, QString file_name)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
+    shell->run("sync");
     QDir dir;
     QString current = dir.currentPath();
     dir.setCurrent(folder);
@@ -611,9 +663,10 @@ void MainWindow::cleanUp()
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     ui->stackedWidget->setCurrentWidget(ui->outputPage);
     ui->outputLabel->setText(tr("Cleaning..."));
+    shell->run("sync");
     system("pkill mksquashfs; pkill md5sum");
     QDir::setCurrent("/");
-    system("installed-to-live cleanup");
+    system("[ -f /tmp/installed-to-live/cleanup.conf ] && installed-to-live cleanup");
 
     // checks if work_dir looks OK
     if (work_dir.contains("/mx-snapshot")) {
@@ -661,6 +714,23 @@ void MainWindow::displayDoc(QString url)
     shell->run(cmd);
 }
 
+// check if compression is available in the kernel (lz4, lzo, xz)
+bool MainWindow::checkCompression()
+{
+    if (shell->run("[ -f /boot/config-$(uname -r) ]") != 0) { // return true if cannot check config file
+        return true;
+    }
+    if (mksq_opt.contains("lz4")) {
+        return (shell->run("grep ^CONFIG_SQUASHFS_LZ4=y /boot/config-$(uname -r)") == 0);
+    } else if (mksq_opt.contains("xz")) {
+        return (shell->run("grep ^CONFIG_SQUASHFS_XZ=y /boot/config-$(uname -r)") == 0);
+    } else if (mksq_opt.contains("lzo")) {
+        return (shell->run("grep ^CONFIG_SQUASHFS_LZO=y /boot/config-$(uname -r)") == 0);
+    } else {
+        return true;
+    }
+}
+
 //// sync process events ////
 void MainWindow::procStart()
 {
@@ -690,8 +760,7 @@ void MainWindow::disableOutput()
 void MainWindow::outputAvailable(const QString &output)
 {
     ui->outputBox->insertPlainText(output);
-    QScrollBar *sb = ui->outputBox->verticalScrollBar();
-    sb->setValue(sb->maximum());
+    ui->outputBox->verticalScrollBar()->setValue(ui->outputBox->verticalScrollBar()->maximum());
 }
 
 void MainWindow::progress(int counter, int duration) // processes tick emited by Cmd to be used by a progress bar
@@ -733,6 +802,11 @@ void MainWindow::on_buttonNext_clicked()
 
     // on settings page
     } else if (ui->stackedWidget->currentWidget() == ui->settingsPage) {
+        if (!checkCompression()) {
+            QMessageBox::critical(this, tr("Error"),
+                    tr("Current kernel doesn't support selected compression algorithm, please edit the configuration file and select a different algorithm."));
+            return;
+        }
 
         int ans = QMessageBox::question(this, tr("Final chance"),
                               tr("Snapshot now has all the information it needs to create an ISO from your running system.") + "\n\n" +
@@ -741,6 +815,7 @@ void MainWindow::on_buttonNext_clicked()
         if (ans == QMessageBox::Cancel) {
             return;
         }
+        timer.start();
         checkDirectories();
         ui->buttonNext->setEnabled(false);
         ui->buttonBack->setEnabled(false);
@@ -799,13 +874,7 @@ void MainWindow::on_buttonEditExclude_clicked()
 
 void MainWindow::on_excludeDocuments_toggled(bool checked)
 {
-    QString user = shell->getOutput("logname");
-    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir DOCUMENTS\"") + "/*";
-    xdg_user_dir.replace(user, "*");
-    if (xdg_user_dir.startsWith("/")) {
-        xdg_user_dir.remove(0, 1); // remove training slash
-    }
-    QString exclusion = "/home/*/Documents/*\" \"" + xdg_user_dir;
+    QString exclusion = "/home/*/Documents/*" + getXdgUserDirs("DOCUMENTS");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -814,13 +883,7 @@ void MainWindow::on_excludeDocuments_toggled(bool checked)
 
 void MainWindow::on_excludeDownloads_toggled(bool checked)
 {
-    QString user = shell->getOutput("logname");
-    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir DOWNLOAD\"") + "/*";
-    xdg_user_dir.replace(user, "*");
-    if (xdg_user_dir.startsWith("/")) {
-        xdg_user_dir.remove(0, 1); // remove training slash
-    }
-    QString exclusion = "/home/*/Downloads/*\" \"" + xdg_user_dir;
+    QString exclusion = "/home/*/Downloads/*" + getXdgUserDirs("DOWNLOAD");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -829,13 +892,7 @@ void MainWindow::on_excludeDownloads_toggled(bool checked)
 
 void MainWindow::on_excludePictures_toggled(bool checked)
 {
-    QString user = shell->getOutput("logname");
-    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir PICTURES\"") + "/*";
-    xdg_user_dir.replace(user, "*");
-    if (xdg_user_dir.startsWith("/")) {
-        xdg_user_dir.remove(0, 1); // remove training slash
-    }
-    QString exclusion = "/home/*/Pictures/*\" \"" + xdg_user_dir;
+    QString exclusion = "/home/*/Pictures/*" + getXdgUserDirs("PICTURES");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -844,13 +901,7 @@ void MainWindow::on_excludePictures_toggled(bool checked)
 
 void MainWindow::on_excludeMusic_toggled(bool checked)
 {
-    QString user = shell->getOutput("logname");
-    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir MUSIC\"") + "/*";
-    xdg_user_dir.replace(user, "*");
-    if (xdg_user_dir.startsWith("/")) {
-        xdg_user_dir.remove(0, 1); // remove training slash
-    }
-    QString exclusion = "/home/*/Music/*\" \"" + xdg_user_dir;
+    QString exclusion = "/home/*/Music/*" + getXdgUserDirs("MUSIC");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -859,13 +910,7 @@ void MainWindow::on_excludeMusic_toggled(bool checked)
 
 void MainWindow::on_excludeVideos_toggled(bool checked)
 {
-    QString user = shell->getOutput("logname");
-    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir VIDEOS\"") + "/*";
-    xdg_user_dir.replace(user, "*");
-    if (xdg_user_dir.startsWith("/")) {
-        xdg_user_dir.remove(0, 1); // remove training slash
-    }
-    QString exclusion = "/home/*/Videos/*\" \"" + xdg_user_dir;
+    QString exclusion = "/home/*/Videos/*" + getXdgUserDirs("VIDEOS");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -874,13 +919,7 @@ void MainWindow::on_excludeVideos_toggled(bool checked)
 
 void MainWindow::on_excludeDesktop_toggled(bool checked)
 {
-    QString user = shell->getOutput("logname");
-    QString xdg_user_dir = shell->getOutput("su " + user + " -c \"xdg-user-dir DESKTOP\"");
-    xdg_user_dir.replace(user, "*");
-    if (xdg_user_dir.startsWith("/")) {
-        xdg_user_dir.remove(0, 1); // remove training slash
-    }
-    QString exclusion = "/home/*/Desktop/!(minstall.desktop)\" \"" + xdg_user_dir + "/!(minstall.desktop)";
+    QString exclusion = "/home/*/Desktop/!(minstall.desktop)" + getXdgUserDirs("DESKTOP");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -914,7 +953,7 @@ void MainWindow::on_buttonAbout_clicked()
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About MX Snapshot"), "<p align=\"center\"><b><h2>" +
                        tr("MX Snapshot") + "</h2></b></p><p align=\"center\">" + tr("Version: ") +
-                       version + "</p><p align=\"center\"><h3>" +
+                       VERSION + "</p><p align=\"center\"><h3>" +
                        tr("Program for creating a live-CD from the running system for MX Linux") + "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>", 0, this);
     QPushButton *btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);
@@ -955,10 +994,10 @@ void MainWindow::on_buttonHelp_clicked()
     QLocale locale;
     QString lang = locale.bcp47Name();
 
-    QString url = "https://mxlinux.org/wiki/help-files/help-mx-save-system-iso-snapshot";
+    QString url = "/usr/share/doc/mx-snapshot/help/mx-snapshot.html";
 
     if (lang.startsWith("fr")) {
-        url = "https://mxlinux.org/wiki/help-files/help-mx-instantan%C3%A9";
+        url = "https://mxlinux.org/french-wiki/help-files-fr/help-mx-instantane";
     }
     displayDoc(url);
 }

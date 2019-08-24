@@ -26,11 +26,13 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QElapsedTimer>
 #include <QMessageBox>
 #include <QSettings>
 #include <QDir>
 
 #include "cmd.h"
+#include "version.h"
 
 namespace Ui {
 class MainWindow;
@@ -48,12 +50,12 @@ public:
     explicit MainWindow(QWidget *parent = 0, QStringList args = QStringList());
     ~MainWindow();
 
-    QString getVersion(QString name);
     void addRemoveExclusion(bool add, QString exclusion);
     void displayDoc(QString url);
     QSettings settings;
     QStringList args;
 
+    bool checkCompression();
     bool i686;
     bool live;
     bool force_installer;
@@ -114,6 +116,7 @@ public:
     QString largerFreeSpace(QString dir1, QString dir2, QString dir3);
     QString getEditor();
     QString getSnapshotSize();
+    QString getXdgUserDirs(const QString &folder);
     QStringList listUsers();
 
 
@@ -148,6 +151,9 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Cmd *shell;
+    QElapsedTimer timer;
+    QStringList users; // list of users with /home folders
+    QHash<QString, QString> englishDirs; // English names of /home directories
 
 };
 

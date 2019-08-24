@@ -1,26 +1,19 @@
 #!/usr/bin/make -f
 
-QMAKE_OPTS = DEFINES+=NO_DEBUG_ON_CONSOLE
-MAKE_OPTS  = QMAKE=qmake-qt5 LRELEASE=lrelease-qt5 QMAKE_OPTS="$(QMAKE_OPTS)"
+export QT_SELECT=5
 
 override_dh_auto_clean:
 	dh_auto_clean
 	rm -f src/translations/*.qm
 
 override_dh_auto_build:
-	lrelease mx-snapshot.pro
-	dh_auto_build -- $(MAKE_OPTS)
+	lrelease src.pro
+	head -n1 debian/changelog | sed -e "s/.*(\([^(]*\)).*/#define VERSION \"\1\"/" > version.h
+	dh_auto_build
 
-override_dh_auto_install:
-	dh_auto_install -- $(MAKE_OPTS)
-
-override_dh_builddeb:
-	dh_builddeb -- -Z xz
-
-override_dh_usrlocal:
-
+# Uncomment if building in Virtual Box
 override_dh_shlibdeps:
-	dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+	dh_shlibdeps -- -xvirtualbox-guest-x11 --ignore-missing-info
 
 %:
 	dh $@ --parallel 

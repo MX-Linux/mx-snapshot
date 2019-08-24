@@ -43,15 +43,14 @@ int main(int argc, char *argv[])
 
     if (a.arguments().contains("--help") || a.arguments().contains("-h") ) {
         printHelp();
-        return 0;
+        return EXIT_SUCCESS;
     }
     if (a.arguments().contains("--version") || a.arguments().contains("-v") ) {
        system("echo 'Installer version'; dpkg-query -f '${Version}' -W mx-snapshot; echo");
-       return 0;
+       return EXIT_SUCCESS;
     }
 
-
-    a.setWindowIcon(QIcon("/usr/share/pixmaps/mx-snapshot.svg"));
+    a.setWindowIcon(QIcon::fromTheme("mx-snapshot"));
 
     QString log_name= "/var/log/mx-snapshot.log";
     // archive old log
@@ -71,15 +70,22 @@ int main(int argc, char *argv[])
     appTran.load(QString("mx-snapshot_") + QLocale::system().name(), "/usr/share/mx-snapshot/locale");
     a.installTranslator(&appTran);
 
+    // Check if SQUASHFS is available
+    if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
+        QMessageBox::critical(0, QApplication::tr("Error"),
+                QApplication::tr("Current kernel doesn't support Squashfs, cannot continue."));
+        return EXIT_FAILURE;
+    }
+
     if (getuid() == 0) {
         MainWindow w(0, a.arguments());
         w.show();
         return a.exec();
     } else {
         QApplication::beep();
-        QMessageBox::critical(0, QString::null,
+        QMessageBox::critical(0, QApplication::tr("Error"),
                               QApplication::tr("You must run this program as root."));
-        return 1;
+        return EXIT_FAILURE;
     }
 }
 
