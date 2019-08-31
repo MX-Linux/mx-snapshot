@@ -707,11 +707,12 @@ void MainWindow::displayDoc(QString url)
     proc.waitForFinished();
     QString user = proc.readAllStandardOutput().trimmed();
     QString exec = "xdg-open";
-    if (shell->run("command -v mx-viewer") == 0) { // use mx-viewer if available
+    Cmd cmd;
+    if (cmd.run("command -v mx-viewer") == 0) { // use mx-viewer if available
         exec = "mx-viewer";
     }
-    QString cmd = "su " + user + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user + ") " + exec + " " + url + "\"&";
-    shell->run(cmd);
+    QString cmd_str = "su " + user + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user + ") " + exec + " " + url + "\"&";
+    cmd.run(cmd_str);
 }
 
 // check if compression is available in the kernel (lz4, lzo, xz)

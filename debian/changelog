@@ -1,3 +1,9 @@
+mx-snapshot (19.8.3) mx; urgency=medium
+
+  * fix: allow about/help to run while calculating space used by system
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 31 Aug 2019 12:26:39 -0400
+
 mx-snapshot (19.8.2) mx; urgency=medium
 
   * update modules list in copy-initrd-modules

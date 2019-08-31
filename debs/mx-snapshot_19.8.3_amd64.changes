@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sat, 31 Aug 2019 12:26:39 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.8.3
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.8.3) mx; urgency=medium
+ .
+   * fix: allow about/help to run while calculating space used by system
+Checksums-Sha1:
+ e6431c61a1c8470e7ae989a801f2c216706436fa 1190 mx-snapshot_19.8.3.dsc
+ 6500722aeab51621ea5ccf1d670ffcf8fbc7ac40 161284 mx-snapshot_19.8.3.tar.xz
+ 70eb91845476f67f15acf7efcb2308f050362097 542204 mx-snapshot-dbgsym_19.8.3_amd64.deb
+ 8fc064fa4293a103eeb84888493093bb95de4e85 11202 mx-snapshot_19.8.3_amd64.buildinfo
+ 55955fafc9deded316b185ddec37f362ad91f68e 192604 mx-snapshot_19.8.3_amd64.deb
+Checksums-Sha256:
+ c7a5dcafba3b80665b5c52de0d4220199565046d0b36d050c320ebf00ad0f77b 1190 mx-snapshot_19.8.3.dsc
+ 6370a86dc0df9aade27530fdfa9bf00273fa67614ba54b133bd0e8407605e3a1 161284 mx-snapshot_19.8.3.tar.xz
+ cb6e14be75dbfbf9ef7b592cc55416eab0ea47474bf72ce17dee221ae0110be4 542204 mx-snapshot-dbgsym_19.8.3_amd64.deb
+ d6dd3ba2c79d3f894fe9072e06bab528a1284e529f2c2a3feccaec011b629d02 11202 mx-snapshot_19.8.3_amd64.buildinfo
+ f6807fcdfc1a50c421cef637b62ceff7ef54012faae003c99ebe302379b0a4b6 192604 mx-snapshot_19.8.3_amd64.deb
+Files:
+ ed6b5f640e88bc3d88bcb47a2ccb85db 1190 admin optional mx-snapshot_19.8.3.dsc
+ 3d8cd2ceffdca6f2567fb26482e7c7f0 161284 admin optional mx-snapshot_19.8.3.tar.xz
+ 33615055b853677e122fc8f1bfe5901f 542204 debug optional mx-snapshot-dbgsym_19.8.3_amd64.deb
+ 3e058515bf209c573cfc0fd5717de284 11202 admin optional mx-snapshot_19.8.3_amd64.buildinfo
+ 32e2fc97134f5b79bb266c09898467b5 192604 admin optional mx-snapshot_19.8.3_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl1qpOsTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumF9XB/43IuDVWlBlOJCsMynEkUF/VWvHIfYD
+IAISOINLPE8b1+s2NuVfpundQ9jNq3IwuFvMPUK3zI1sELplcrUwdyUxMh7Yhry2
+m8BbGjjGZYipuBuz7LO/x87FIwahCv0dcMBYaAOdZF8RGf9AB3R+TcHnZOPM1ZVe
+faNc6MRF8oAwTf8lD617+bWnRO05CjlyGDgI4nGqxNGrx2clWtSHXNoYmwVhJ1q6
+CCEUArfUxsJuORfk4IXmHodaf2voM4ymPEfeI/7oHnN01fR8q3QTKmG7+GXqne0P
+LfbT4lNIgc3/fhH0BxhlLj2Qddd5rvLRw6d6SSdRIu6rbXbFgipoZZ4J
+=z10t
+-----END PGP SIGNATURE-----
