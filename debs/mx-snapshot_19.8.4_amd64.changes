@@ -1,0 +1,50 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sat, 31 Aug 2019 23:12:10 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.8.4
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.8.4) mx; urgency=medium
+ .
+   * added compression settings dropdown
+   * removed "edit configuration file" button
+Checksums-Sha1:
+ 36f49c725f36f447289be223a4c63a3bb9057417 1190 mx-snapshot_19.8.4.dsc
+ 96cb6ffc11b0b0cec83b1b6a9bb1a92196351898 161620 mx-snapshot_19.8.4.tar.xz
+ 2c1f74bfec0f9cd1434ee587d083e15f96598817 545708 mx-snapshot-dbgsym_19.8.4_amd64.deb
+ f1e24346d32eb0bd390ca5575b611f6ddb32ebd0 11202 mx-snapshot_19.8.4_amd64.buildinfo
+ d6bf93744cf8180c492b0408378d99008d0aa7e4 192062 mx-snapshot_19.8.4_amd64.deb
+Checksums-Sha256:
+ 5709e75057602450d13e05486249aa8a403538e97067b48d8cb3a8814426d2a3 1190 mx-snapshot_19.8.4.dsc
+ f369a24c10de57b7d4b4ada144b89940e575d293cca8d8c399b6a7a5c22c9882 161620 mx-snapshot_19.8.4.tar.xz
+ b25fbd4b8c1ea34a52895a8c026ac599c0ee72f79474f8f5cf421ba6a0c32e78 545708 mx-snapshot-dbgsym_19.8.4_amd64.deb
+ 133403f8d1bfcfa644432f3eadbbfb9c96b5f643bb442e3ff54661817e31649f 11202 mx-snapshot_19.8.4_amd64.buildinfo
+ c388d708d6616a23c5a3b9c5aabd729728a770499931433236e0836dfb66b016 192062 mx-snapshot_19.8.4_amd64.deb
+Files:
+ d1baf714f4d241681308da84fbbf06f2 1190 admin optional mx-snapshot_19.8.4.dsc
+ 4a52808bc7667ef1159a0499b6bdbed2 161620 admin optional mx-snapshot_19.8.4.tar.xz
+ adb7de779f282d7108b33dd3fc6c05d8 545708 debug optional mx-snapshot-dbgsym_19.8.4_amd64.deb
+ 8bbdf1a94a3284a72651db0d22ca9bbf 11202 admin optional mx-snapshot_19.8.4_amd64.buildinfo
+ 906381e13083baf5809289951f9c6d8a 192062 admin optional mx-snapshot_19.8.4_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl1rN8ITHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumCvHCADOLe+OrPSAVR2T02L13ip6zoJU7aZ2
++DTvQGpMJ3yyxqqaNEy9uQLCZbuaFym1eBcD9I9Xcar//5Cybr4NkwcCQZ9Cp/Ze
+XA9a2rR7vMB3lqLjJYmjfVIVIxJsRwO6WQkA+vBCl69MJwbX5bF2P0iCjaLx4Wky
+20LcoGawc6ssYjeaYEARYl61vRSjOJJ8v5u8zEOlBwNW9ej+TGO6+KHl3Clzc9rr
+W5re6iu/UqTpBYtXmd5m6poyqgB9pECvmYcO89qKASz78I2j3T6hBXTwXUU23Ibl
+OWFmIXMLZuLZiTzzvBaa4Ibxnf+fKacuiRd7PKozE57CI1H0+iB0rezV
+=dBNR
+-----END PGP SIGNATURE-----

@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
     a.installTranslator(&appTran);
 
     // Check if SQUASHFS is available
-    if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
+    if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
         QMessageBox::critical(0, QApplication::tr("Error"),
                 QApplication::tr("Current kernel doesn't support Squashfs, cannot continue."));
         return EXIT_FAILURE;

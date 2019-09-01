@@ -52,7 +52,6 @@ public:
 
     void addRemoveExclusion(bool add, QString exclusion);
     void displayDoc(QString url);
-    QSettings settings;
     QStringList args;
 
     bool checkCompression();
@@ -72,6 +71,7 @@ public:
     QString kernel_used;
     QString make_isohybrid;
     QString make_md5sum;
+    QString compression;
     QString mksq_opt;
     QString save_message;
     QString session_excludes;
@@ -133,7 +133,6 @@ private slots:
     void on_buttonAbout_clicked();
     void on_buttonBack_clicked();
     void on_buttonCancel_clicked();
-    void on_buttonEditConfig_clicked();
     void on_buttonEditExclude_clicked();
     void on_buttonHelp_clicked();
     void on_buttonNext_clicked();
@@ -147,6 +146,8 @@ private slots:
     void on_radioRespin_clicked(bool checked);
     void on_radioPersonal_clicked(bool checked);
 
+
+    void on_cbCompression_currentIndexChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;

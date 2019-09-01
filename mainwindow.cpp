@@ -38,7 +38,7 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     QDialog(parent),
     ui(new Ui::MainWindow)
 {
-    qDebug() << "Program Version:" << VERSION;
+    qDebug().noquote() << QCoreApplication::applicationName() << "version:" << VERSION;
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
     shell = new Cmd(this);
@@ -78,6 +78,7 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     if (args.contains("--monthly") || args.contains("-m")) {
         QString name = shell->getOutput("cat /etc/mx-version | cut -f1 -d' '");
         ui->lineEditName->setText(name.section("_", 0, 0) + "_" + QDate::currentDate().toString("MMMM") + "_" + name.section("_", 1, 1) + ".iso");
+        ui->cbCompression->setCurrentIndex(ui->cbCompression->findText("xz")); // use XZ by default on Monthly snapshots
         ui->buttonNext->click();
         ui->radioRespin->click();
         ui->buttonNext->click();
@@ -105,7 +106,8 @@ void MainWindow::loadSettings()
     snapshot_basename = settings.value("snapshot_basename", "snapshot").toString();
     make_md5sum = settings.value("make_md5sum", "no").toString();
     make_isohybrid = settings.value("make_isohybrid", "yes").toString();
-    mksq_opt = settings.value("mksq_opt", "-comp xz").toString();
+    compression = settings.value("compression", "lz4").toString();
+    mksq_opt = settings.value("mksq_opt").toString();
     edit_boot_menu = settings.value("edit_boot_menu", "no").toString();
     lib_mod_dir = settings.value("lib_mod_dir", "/lib/modules/").toString();
     gui_editor.setFileName(settings.value("gui_editor", "/usr/bin/featherpad").toString());
@@ -129,6 +131,8 @@ void MainWindow::setup()
 
     loadSettings();
     listFreeSpace();
+
+    ui->cbCompression->setCurrentIndex(ui->cbCompression->findText(compression));
 }
 
 
@@ -579,7 +583,7 @@ bool MainWindow::createIso(QString filename)
     // squash the filesystem copy
     QDir::setCurrent(work_dir);
     QString cmd;
-    cmd = "mksquashfs /.bind-root iso-template/antiX/linuxfs " + mksq_opt + " -wildcards -ef " + snapshot_excludes.fileName() + " " + session_excludes;
+    cmd = "mksquashfs /.bind-root iso-template/antiX/linuxfs -comp " + compression + ((mksq_opt.isEmpty()) ? "" : " " + mksq_opt) + " -wildcards -ef " + snapshot_excludes.fileName() + " " + session_excludes;
 
     ui->outputLabel->setText(tr("Squashing filesystem..."));
     displayOutput();
@@ -706,13 +710,11 @@ void MainWindow::displayDoc(QString url)
     proc.start("logname");
     proc.waitForFinished();
     QString user = proc.readAllStandardOutput().trimmed();
-    QString exec = "xdg-open";
-    Cmd cmd;
-    if (cmd.run("command -v mx-viewer") == 0) { // use mx-viewer if available
-        exec = "mx-viewer";
+    if (system("command -v mx-viewer >/dev/null") == 0) {
+        system("mx-viewer " + url.toUtf8());
+    } else {
+        system("su " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
     }
-    QString cmd_str = "su " + user + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user + ") " + exec + " " + url + "\"&";
-    cmd.run(cmd_str);
 }
 
 // check if compression is available in the kernel (lz4, lzo, xz)
@@ -721,11 +723,11 @@ bool MainWindow::checkCompression()
     if (shell->run("[ -f /boot/config-$(uname -r) ]") != 0) { // return true if cannot check config file
         return true;
     }
-    if (mksq_opt.contains("lz4")) {
+    if (compression == "lz4") {
         return (shell->run("grep ^CONFIG_SQUASHFS_LZ4=y /boot/config-$(uname -r)") == 0);
-    } else if (mksq_opt.contains("xz")) {
+    } else if (compression == "xz") {
         return (shell->run("grep ^CONFIG_SQUASHFS_XZ=y /boot/config-$(uname -r)") == 0);
-    } else if (mksq_opt.contains("lzo")) {
+    } else if (compression == "lzo") {
         return (shell->run("grep ^CONFIG_SQUASHFS_LZO=y /boot/config-$(uname -r)") == 0);
     } else {
         return true;
@@ -799,7 +801,6 @@ void MainWindow::on_buttonNext_clicked()
         ui->label_2->setText("\n" + tr("- Snapshot directory:") + " " + snapshot_dir.absolutePath() + "\n" +
                        "- " + tr("Snapshot name:") + " " + file_name + "\n" +
                        tr("- Kernel to be used:") + " " + kernel_used + "\n");
-        ui->label_3->setText(tr("*These settings can be changed by editing: ") + config_file.fileName());
 
     // on settings page
     } else if (ui->stackedWidget->currentWidget() == ui->settingsPage) {
@@ -857,13 +858,6 @@ void MainWindow::on_buttonBack_clicked()
     ui->buttonNext->setEnabled(true);
     ui->buttonBack->setHidden(true);
     ui->outputBox->clear();
-}
-
-void MainWindow::on_buttonEditConfig_clicked()
-{
-    this->hide();
-    shell->run(getEditor() + " " + config_file.fileName());
-    setup();
 }
 
 void MainWindow::on_buttonEditExclude_clicked()
@@ -950,7 +944,6 @@ void MainWindow::on_radioPersonal_clicked(bool checked)
 // About button clicked
 void MainWindow::on_buttonAbout_clicked()
 {
-    this->hide();
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About MX Snapshot"), "<p align=\"center\"><b><h2>" +
                        tr("MX Snapshot") + "</h2></b></p><p align=\"center\">" + tr("Version: ") +
@@ -986,7 +979,6 @@ void MainWindow::on_buttonAbout_clicked()
         changelog->setLayout(layout);
         changelog->exec();
     }
-    this->show();
 }
 
 // Help button clicked
@@ -1040,4 +1032,11 @@ void MainWindow::closeApp() {
 void MainWindow::on_buttonCancel_clicked()
 {
     closeApp();
+}
+
+void MainWindow::on_cbCompression_currentIndexChanged(const QString &arg1)
+{
+    QSettings settings(config_file.fileName(), QSettings::IniFormat);
+    settings.setValue("compression", arg1);
+    compression = arg1;
 }

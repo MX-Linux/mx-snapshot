@@ -1,3 +1,10 @@
+mx-snapshot (19.8.4) mx; urgency=medium
+
+  * added compression settings dropdown
+  * removed "edit configuration file" button
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 31 Aug 2019 23:12:10 -0400
+
 mx-snapshot (19.8.3) mx; urgency=medium
 
   * fix: allow about/help to run while calculating space used by system
