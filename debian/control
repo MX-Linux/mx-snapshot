@@ -4,7 +4,6 @@ Priority: optional
 Maintainer: Adrian <adrian@mxlinux.org>
 Build-Depends: debhelper (>=9),
                libcmd,
-               qt5-qmake,
                qtbase5-dev,
                qttools5-dev-tools
 Standards-Version: 3.9.8

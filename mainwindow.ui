@@ -529,6 +529,12 @@ color: rgb(0, 0, 0);</string>
      </property>
      <item row="0" column="1">
       <widget class="QPushButton" name="buttonHelp">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="toolTip">
         <string>Display help </string>
        </property>
@@ -572,7 +578,7 @@ color: rgb(0, 0, 0);</string>
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Minimum</enum>
+        <enum>QSizePolicy::Expanding</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -584,6 +590,12 @@ color: rgb(0, 0, 0);</string>
      </item>
      <item row="0" column="0">
       <widget class="QPushButton" name="buttonAbout">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="toolTip">
         <string>About this application</string>
        </property>
@@ -605,7 +617,7 @@ color: rgb(0, 0, 0);</string>
      <item row="0" column="10">
       <widget class="QPushButton" name="buttonCancel">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -631,7 +643,7 @@ color: rgb(0, 0, 0);</string>
      <item row="0" column="8">
       <widget class="QPushButton" name="buttonNext">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -660,7 +672,7 @@ color: rgb(0, 0, 0);</string>
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Minimum</enum>
+        <enum>QSizePolicy::Expanding</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -673,7 +685,7 @@ color: rgb(0, 0, 0);</string>
      <item row="0" column="7">
       <widget class="QPushButton" name="buttonBack">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
