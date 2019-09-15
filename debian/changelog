@@ -1,3 +1,9 @@
+mx-snapshot (19.9) mx; urgency=medium
+
+  * fix: trim characters when testing if xdg-user-dir returns useful info
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 15 Sep 2019 17:40:39 -0400
+
 mx-snapshot (19.8.4) mx; urgency=medium
 
   * added compression settings dropdown
