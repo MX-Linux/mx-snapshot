@@ -209,7 +209,7 @@ QString MainWindow::getXdgUserDirs(const QString& folder)
             if (dir.startsWith("/")) {
                 dir.remove(0, 1); // remove training slash
             }
-            (folder == "DESKTOP") ? dir.append("/!(minstall.desktop)") : dir.append("/*");
+            (folder == "DESKTOP") ? dir.append("/!(minstall.desktop)") : dir.append("/");
             (result.isEmpty()) ? result.append("\" \"" + dir) : result.append(" \"" + dir);
         }
     }
@@ -869,7 +869,7 @@ void MainWindow::on_buttonEditExclude_clicked()
 
 void MainWindow::on_excludeDocuments_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Documents/*" + getXdgUserDirs("DOCUMENTS");
+    QString exclusion = "/home/*/Documents/" + getXdgUserDirs("DOCUMENTS");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -878,7 +878,7 @@ void MainWindow::on_excludeDocuments_toggled(bool checked)
 
 void MainWindow::on_excludeDownloads_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Downloads/*" + getXdgUserDirs("DOWNLOAD");
+    QString exclusion = "/home/*/Downloads/" + getXdgUserDirs("DOWNLOAD");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -887,7 +887,7 @@ void MainWindow::on_excludeDownloads_toggled(bool checked)
 
 void MainWindow::on_excludePictures_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Pictures/*" + getXdgUserDirs("PICTURES");
+    QString exclusion = "/home/*/Pictures/" + getXdgUserDirs("PICTURES");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -896,7 +896,7 @@ void MainWindow::on_excludePictures_toggled(bool checked)
 
 void MainWindow::on_excludeMusic_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Music/*" + getXdgUserDirs("MUSIC");
+    QString exclusion = "/home/*/Music/" + getXdgUserDirs("MUSIC");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -905,7 +905,7 @@ void MainWindow::on_excludeMusic_toggled(bool checked)
 
 void MainWindow::on_excludeVideos_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Videos/*" + getXdgUserDirs("VIDEOS");
+    QString exclusion = "/home/*/Videos/" + getXdgUserDirs("VIDEOS");
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
