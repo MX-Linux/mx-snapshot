@@ -48,13 +48,11 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     font.setStyleHint(QFont::Monospace);
     ui->outputBox->setFont(font);
 
-    timer.start(500);
-
     connect(shell, &Cmd::started, this, &MainWindow::procStart);
     connect(shell, &Cmd::finished, this, &MainWindow::procDone);
     connect(&timer, &QTimer::timeout, this, &MainWindow::progress);
-    connect(shell, &Cmd::outputAvailable, [](QString out) {qDebug() << out.trimmed();});
-    connect(shell, &Cmd::errorAvailable, [](QString out) {qWarning() << out.trimmed();});
+    connect(shell, &Cmd::outputAvailable, [](const QString &out) {qDebug() << out.trimmed();});
+    connect(shell, &Cmd::errorAvailable, [](const QString &out) {qWarning() << out.trimmed();});
 
     this->setWindowTitle(tr("MX Snapshot"));
     ui->buttonBack->setHidden(true);
@@ -725,7 +723,7 @@ bool MainWindow::checkCompression()
 //// sync process events ////
 void MainWindow::procStart()
 {
-    timer.start();
+    timer.start(500);
     setCursor(QCursor(Qt::BusyCursor));
 }
 
@@ -736,7 +734,6 @@ void MainWindow::procDone()
     setCursor(QCursor(Qt::ArrowCursor));
 }
 
-// set proc and timer connections
 void MainWindow::displayOutput()
 {
     connect(shell, &Cmd::outputAvailable, this, &MainWindow::outputAvailable);
@@ -749,7 +746,7 @@ void MainWindow::disableOutput()
     disconnect(shell, &Cmd::errorAvailable, 0, 0);
 }
 
-// update output box on Stdout
+// update output box
 void MainWindow::outputAvailable(const QString &output)
 {
     if (output.contains("\r")) {
