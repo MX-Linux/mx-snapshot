@@ -37,11 +37,15 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    about.cpp \
+    cmd.cpp
 
 HEADERS  += \
     mainwindow.h \
-    version.h
+    version.h \
+    about.h \
+    cmd.h
 
 FORMS    += \
     mainwindow.ui
@@ -93,5 +97,3 @@ TRANSLATIONS += translations/mx-snapshot_am.ts \
 
 RESOURCES += \
     images.qrc
-
-unix:!macx: LIBS += -lcmd

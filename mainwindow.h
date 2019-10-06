@@ -26,10 +26,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QDir>
 #include <QElapsedTimer>
 #include <QMessageBox>
 #include <QSettings>
-#include <QDir>
+#include <QTimer>
 
 #include "cmd.h"
 #include "version.h"
@@ -51,7 +52,6 @@ public:
     ~MainWindow();
 
     void addRemoveExclusion(bool add, QString exclusion);
-    void displayDoc(QString url);
     QStringList args;
 
     bool checkCompression();
@@ -124,7 +124,7 @@ public slots:
     void outputAvailable(const QString &output);
     void procStart();
     void procDone();
-    void progress(int elapsed, int duration); // updates progressBar when tick signal is emited
+    void progress();
     void displayOutput();
     void disableOutput();
 
@@ -152,9 +152,11 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Cmd *shell;
-    QElapsedTimer timer;
-    QStringList users; // list of users with /home folders
     QHash<QString, QString> englishDirs; // English names of /home directories
+    QElapsedTimer e_timer;
+    QStringList users; // list of users with /home folders
+    QTimer timer;
+
 
 };
 

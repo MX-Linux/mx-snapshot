@@ -1,3 +1,11 @@
+mx-snapshot (19.10) mx; urgency=medium
+
+  * exclude minstall.conf for generic snapshots
+  * remove libcmd dependency
+  * show mkquashfs progress bar in a line
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 06 Oct 2019 09:44:39 -0400
+
 mx-snapshot (19.9) mx; urgency=medium
 
   * fix: trim characters when testing if xdg-user-dir returns useful info

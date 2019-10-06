@@ -104,7 +104,7 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     // By type determine to what level belongs message
     switch (type)
     {
-    //case QtInfoMsg:     out << "INF "; break; Not in older Qt versions
+    case QtInfoMsg:     out << "INF "; break;
     case QtDebugMsg:    out << "DBG "; break;
     case QtWarningMsg:  out << "WRN "; break;
     case QtCriticalMsg: out << "CRT "; break;

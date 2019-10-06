@@ -22,7 +22,7 @@
  * along with MX Snapshot.  If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-
+#include "about.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -48,11 +48,13 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     font.setStyleHint(QFont::Monospace);
     ui->outputBox->setFont(font);
 
+    timer.start(500);
+
     connect(shell, &Cmd::started, this, &MainWindow::procStart);
     connect(shell, &Cmd::finished, this, &MainWindow::procDone);
-    connect(shell, &Cmd::runTime, this, &MainWindow::progress);
-    connect(shell, &Cmd::outputAvailable, [](QString out) {qDebug() << out;});
-    connect(shell, &Cmd::errorAvailable, [](QString out) {qWarning() << out;});
+    connect(&timer, &QTimer::timeout, this, &MainWindow::progress);
+    connect(shell, &Cmd::outputAvailable, [](QString out) {qDebug() << out.trimmed();});
+    connect(shell, &Cmd::errorAvailable, [](QString out) {qWarning() << out.trimmed();});
 
     this->setWindowTitle(tr("MX Snapshot"));
     ui->buttonBack->setHidden(true);
@@ -76,7 +78,7 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     setup();
     reset_accounts = false;
     if (args.contains("--monthly") || args.contains("-m")) {
-        QString name = shell->getOutput("cat /etc/mx-version | cut -f1 -d' '");
+        QString name = shell->getCmdOut("cat /etc/mx-version | cut -f1 -d' '");
         ui->lineEditName->setText(name.section("_", 0, 0) + "_" + QDate::currentDate().toString("MMMM") + "_" + name.section("_", 1, 1) + ".iso");
         ui->cbCompression->setCurrentIndex(ui->cbCompression->findText("xz")); // use XZ by default on Monthly snapshots
         ui->buttonNext->click();
@@ -140,16 +142,13 @@ void MainWindow::setup()
 bool MainWindow::replaceStringInFile(QString old_text, QString new_text, QString file_path)
 {
     QString cmd = QString("sed -i 's/%1/%2/g' \"%3\"").arg(old_text).arg(new_text).arg(file_path);
-    if (shell->run(cmd) != 0) {
-        return false;
-    }
-    return true;
+    return shell->run(cmd);
 }
 
 // Check if running from a live envoronment
 bool MainWindow::isLive()
 {
-    return (shell->run("mountpoint -q /live/aufs") == 0 );
+    return (shell->run("mountpoint -q /live/aufs"));
 }
 
 
@@ -158,7 +157,7 @@ bool MainWindow::isOnSupportedPart(QDir dir)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QStringList supported_partitions = (QStringList() << "ext2/ext3" << "btrfs" << "jfs" << "reiserfs" << "xfs" << "fuseblk"); // supported partition types (NTFS returns fuseblk)
-    QString part_type = shell->getOutput("stat --file-system --format=%T " + dir.absolutePath()).trimmed();
+    QString part_type = shell->getCmdOut("stat --file-system --format=%T " + dir.absolutePath()).trimmed();
     qDebug() << "detected partition" << part_type << "supported part:" << supported_partitions.contains(part_type);
     return supported_partitions.contains(part_type);
 }
@@ -166,7 +165,7 @@ bool MainWindow::isOnSupportedPart(QDir dir)
 // Check if running from a 32bit environment
 bool MainWindow::isi686()
 {
-    return (shell->getOutput("uname -m") == "i686");
+    return (shell->getCmdOut("uname -m") == "i686");
 }
 
 // return number of snapshots in snapshot_dir
@@ -187,7 +186,7 @@ QString MainWindow::getSnapshotSize()
     QString size;
     if (snapshot_dir.exists()) {
         QString cmd = QString("find \"%1\" -maxdepth 1 -type f -name '*.iso' -exec du -shc {} + | tail -1 | awk '{print $1}'").arg(snapshot_dir.absolutePath());
-        size = shell->getOutput(cmd);
+        size = shell->getCmdOut(cmd);
         if (!size.isEmpty()) {
             return size;
         }
@@ -201,8 +200,10 @@ QString MainWindow::getXdgUserDirs(const QString& folder)
     QString result = "";
 
     foreach (const QString &user, users) {
-        if (shell->run("su " + user + " -c \"xdg-user-dir " + folder + "\"") == 0) {
-            QString dir = shell->getOutput();
+        QByteArray out;
+        bool success = shell->run("su " + user + " -c \"xdg-user-dir " + folder + "\"", out);
+        QString dir = QString(out);
+        if (success) {
             if (englishDirs.value(folder) == dir.section("/", -1) || dir.trimmed() == "/home/" + user || dir.isEmpty()) { // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
                 continue;
             }
@@ -219,7 +220,9 @@ QString MainWindow::getXdgUserDirs(const QString& folder)
 // return a list of users that have folders in /home
 QStringList MainWindow::listUsers()
 {
-    return shell->getOutput("lslogins --noheadings -u -o user | grep -vw root").split("\n");
+    QStringList users = shell->getCmdOut("lslogins --noheadings -u -o user | grep -vw root").split("\n");
+    qDebug() << "USERS" << users;
+    return users;
 }
 
 // List used space
@@ -235,10 +238,10 @@ void MainWindow::listUsedSpace()
     } else {
         cmd = QString("df -h / | awk 'NR==2 {print $3}'");
     }
-    QString out = "\n- " + tr("Used space on / (root): ") + shell->getOutput(cmd);
-    if (shell->run("mountpoint -q /home") == 0 ) {
+    QString out = "\n- " + tr("Used space on / (root): ") + shell->getCmdOut(cmd);
+    if (shell->run("mountpoint -q /home")) {
         cmd = QString("df -h /home | awk 'NR==2 {print $3}'");
-        out.append("\n- " + tr("Used space on /home: ") + shell->getOutput(cmd));
+        out.append("\n- " + tr("Used space on /home: ") + shell->getCmdOut(cmd));
     }
     ui->buttonNext->setEnabled(true);
     ui->buttonCancel->setEnabled(true);
@@ -256,7 +259,7 @@ void MainWindow::listFreeSpace()
     QString path = snapshot_dir.absolutePath().remove("/snapshot");
     cmd = QString("df -h \"%1\" | awk 'NR==2 {print $4}'").arg(path);
     ui->labelFreeSpace->clear();
-    out.append("- " + tr("Free space on %1, where snapshot folder is placed: ").arg(path) + shell->getOutput(cmd) + "\n");
+    out.append("- " + tr("Free space on %1, where snapshot folder is placed: ").arg(path) + shell->getCmdOut(cmd) + "\n");
     ui->labelFreeSpace->setText(out);
     ui->labelDiskSpaceHelp->setText(tr("The free space should be sufficient to hold the compressed data from / and /home\n\n"
                                        "      If necessary, you can create more available space\n"
@@ -269,7 +272,7 @@ bool MainWindow::checkInstalled(QString package)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QString cmd = QString("dpkg -s %1 | grep Status").arg(package);
-    if (shell->getOutput(cmd) == "Status: install ok installed") {
+    if (shell->getCmdOut(cmd) == "Status: install ok installed") {
         return true;
     }
     return false;
@@ -286,8 +289,7 @@ bool MainWindow::installPackage(QString package)
     ui->stackedWidget->setCurrentWidget(ui->outputPage);
     displayOutput();
     shell->run("apt-get update");
-    shell->run("apt-get install -y " + package);
-    if (shell->getExitCode() != 0) {
+    if (!shell->run("apt-get install -y " + package)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not install ") + package);
         disableOutput();
         return false;
@@ -310,7 +312,7 @@ void MainWindow::checkDirectories()
     } else {
         parent_dir = largerFreeSpace("/tmp", "/home", snapshot_dir.absolutePath());
     }
-    work_dir = shell->getOutput("mktemp -d \"" + parent_dir + "/mx-snapshot-XXXXXXXX\"");
+    work_dir = shell->getCmdOut("mktemp -d \"" + parent_dir + "/mx-snapshot-XXXXXXXX\"");
     system("mkdir -p " + work_dir.toUtf8() + "/iso-template/antiX");
     system("cd ..; cd -");
 }
@@ -323,7 +325,7 @@ void MainWindow::openInitrd(QString file, QString initrd_dir)
     shell->run(cmd);
     QDir::setCurrent(initrd_dir);
     cmd = QString("gunzip -c \"%1\" | cpio -idum").arg(file);
-    shell->run(cmd, QStringList() << "slowtick");
+    shell->run(cmd);
 }
 
 void MainWindow::closeInitrd(QString initrd_dir, QString file)
@@ -331,7 +333,7 @@ void MainWindow::closeInitrd(QString initrd_dir, QString file)
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QDir::setCurrent(initrd_dir);
     QString cmd = "(find . | cpio -o -H newc --owner root:root | gzip -9) >\"" + file + "\"";
-    shell->run(cmd, QStringList() << "slowtick");
+    shell->run(cmd);
     if (initrd_dir.startsWith("/tmp/tmp.")) {
         shell->run("rm -r " + initrd_dir);
     }
@@ -372,7 +374,7 @@ void MainWindow::copyNewIso()
 
     makeMd5sum(work_dir + "/iso-template/antiX", "vmlinuz");
 
-    QString initrd_dir = shell->getOutput("mktemp -d");
+    QString initrd_dir = shell->getCmdOut("mktemp -d");
     openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir);
     if (initrd_dir.startsWith("/tmp/tmp.")) {  //just make sure initrd_dir is correct to avoid disaster
         // strip modules
@@ -389,11 +391,11 @@ void MainWindow::copyNewIso()
 // replace text in menu items in grub.cfg, syslinux.cfg, isolinux.cfg
 void MainWindow::replaceMenuStrings() {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    QString date = shell->getOutput("date +'%d %B %Y'");
-    QString distro = shell->getOutput("cat /etc/antix-version | cut -f1 -d'_'");
-    QString distro_name = shell->getOutput("grep -oP '(?<=DISTRIB_ID=).*' /etc/lsb-release");
-    QString full_distro_name = shell->getOutput("cat /etc/antix-version | cut -f-2 -d' '");
-    QString code_name = shell->getOutput("grep -oP '(?<=DISTRIB_CODENAME=).*' /etc/lsb-release");
+    QString date = shell->getCmdOut("date +'%d %B %Y'");
+    QString distro = shell->getCmdOut("cat /etc/antix-version | cut -f1 -d'_'");
+    QString distro_name = shell->getCmdOut("grep -oP '(?<=DISTRIB_ID=).*' /etc/lsb-release");
+    QString full_distro_name = shell->getCmdOut("cat /etc/antix-version | cut -f-2 -d' '");
+    QString code_name = shell->getCmdOut("grep -oP '(?<=DISTRIB_CODENAME=).*' /etc/lsb-release");
     QString options = "quiet";
 
     if (debian_version < 9) { // Only for versions older than Stretch which uses old mx-iso-template
@@ -456,7 +458,7 @@ QString MainWindow::getFilename()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     if (stamp == "datetime") {
-        return snapshot_basename + "-" + shell->getOutput("date +%Y%m%d_%H%M") + ".iso";
+        return snapshot_basename + "-" + shell->getCmdOut("date +%Y%m%d_%H%M") + ".iso";
     } else {
         QString name;
         QDir dir;
@@ -474,8 +476,8 @@ QString MainWindow::getFilename()
 QString MainWindow::largerFreeSpace(QString dir1, QString dir2)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    int dir1_free = shell->getOutput("df -k --output=avail " + dir1 + " 2>/dev/null | tail -n1").toInt();
-    int dir2_free = shell->getOutput("df -k --output=avail " + dir2 + " 2>/dev/null | tail -n1").toInt();
+    int dir1_free = shell->getCmdOut("df -k --output=avail " + dir1 + " 2>/dev/null | tail -n1").toInt();
+    int dir2_free = shell->getCmdOut("df -k --output=avail " + dir2 + " 2>/dev/null | tail -n1").toInt();
 
     if (dir1_free >= dir2_free) {
         return dir1;
@@ -495,7 +497,7 @@ QString MainWindow::getEditor()
 {
     QString editor;
     if (!QFile(gui_editor.fileName()).exists()) {  // if specified editor doesn't exist get the default one
-//        editor = shell->getOutput("grep Exec $(locate $(xdg-mime query default text/plain))|cut -d= -f2|cut -d\" \" -f1");
+//        editor = shell->getCmdOut("grep Exec $(locate $(xdg-mime query default text/plain))|cut -d= -f2|cut -d\" \" -f1");
 //        if (editor.isEmpty() || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exist use nano as backup editor
             editor = "x-terminal-emulator -e nano";
 //        }
@@ -538,7 +540,7 @@ void MainWindow::setupEnv()
 
     QString bind_boot = "";
     QString bind_boot_too = "";
-    if (shell->run("mountpoint /boot") == 0) {
+    if (shell->run("mountpoint /boot")) {
         bind_boot = "bind=/boot ";
         bind_boot_too = ",/boot";
     }
@@ -561,7 +563,7 @@ void MainWindow::setupEnv()
 
 int MainWindow::getDebianVersion()
 {
-    return shell->getOutput("cat /etc/debian_version | cut -f1 -d'.'").toInt();
+    return shell->getCmdOut("cat /etc/debian_version | cut -f1 -d'.'").toInt();
 }
 
 
@@ -574,8 +576,9 @@ bool MainWindow::createIso(QString filename)
     addRemoveExclusion(true, work_dir);
 
     if (reset_accounts) {
+        addRemoveExclusion(true, "/etc/minstall.conf");
         // exclude /etc/localtime if link and timezone not America/New_York
-        if (shell->run("test -L /etc/localtime") == 0 && shell->getOutput("cat /etc/timezone") != "America/New_York" ) {
+        if (shell->run("test -L /etc/localtime") && shell->getCmdOut("cat /etc/timezone") != "America/New_York" ) {
             addRemoveExclusion(true, "/etc/localtime");
         }
     }
@@ -587,7 +590,7 @@ bool MainWindow::createIso(QString filename)
 
     ui->outputLabel->setText(tr("Squashing filesystem..."));
     displayOutput();
-    if (shell->run(cmd, QStringList() << "slowtick") != 0) {
+    if (!shell->run(cmd)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not create linuxfs file, please check whether you have enough space on the destination partition."));
         return false;
     }
@@ -603,7 +606,7 @@ bool MainWindow::createIso(QString filename)
     QDir::setCurrent(work_dir + "/iso-template");
     cmd = "xorriso -as mkisofs -l -V MXLIVE -R -J -pad -iso-level 3 -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin  -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot -c boot/isolinux/isolinux.cat -o \"" + snapshot_dir.absolutePath() + "/" + filename + "\" . \""  + work_dir + "/iso-2\"";
     ui->outputLabel->setText(tr("Creating CD/DVD image file..."));
-    if (shell->run(cmd, QStringList() << "slowtick") != 0) {
+    if (!shell->run(cmd)) {
         QMessageBox::critical(this, tr("Error"), tr("Could not create ISO file, please check whether you have enough space on the destination partition."));
         disableOutput();
         return false;
@@ -622,14 +625,12 @@ bool MainWindow::createIso(QString filename)
         makeSha512sum(snapshot_dir.absolutePath(), filename);
     }
 
-    if (shell->getError() == 0) {
-        QTime time(0, 0);
-        time = time.addMSecs(timer.elapsed());
-        outputAvailable("\n" + tr("MX Snapshot completed sucessfully!") + "\n");
-        outputAvailable(tr("Snapshot took %1 to finish.").arg(time.toString("hh:mm:ss")) + "\n");
-        qDebug() << tr("Snapshot took %1 to finish.").arg(time.toString("hh:mm:ss"));
-        outputAvailable(tr("Thanks for using MX Snapshot, run MX Live USB Maker next!"));
-    }
+    QTime time(0, 0);
+    time = time.addMSecs(e_timer.elapsed());
+    outputAvailable("\n" + tr("MX Snapshot completed sucessfully!") + "\n");
+    outputAvailable(tr("Snapshot took %1 to finish.").arg(time.toString("hh:mm:ss")) + "\n");
+    qDebug() << tr("Snapshot took %1 to finish.").arg(time.toString("hh:mm:ss"));
+    outputAvailable(tr("Thanks for using MX Snapshot, run MX Live USB Maker next!"));
     disableOutput();
     return true;
 }
@@ -644,7 +645,7 @@ void MainWindow::makeMd5sum(QString folder, QString file_name)
     dir.setCurrent(folder);
     ui->outputLabel->setText(tr("Making md5sum"));
     QString cmd = "md5sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".md5\"";
-    shell->run(cmd, QStringList() << "slowtick");
+    shell->run(cmd);
     dir.setCurrent(current);
 }
 
@@ -657,7 +658,7 @@ void MainWindow::makeSha512sum(QString folder, QString file_name)
     QString current = dir.currentPath();
     dir.setCurrent(folder);
     QString cmd = "sha512sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".sha512\"";
-    shell->run(cmd, QStringList() << "slowtick");
+    shell->run(cmd);
     dir.setCurrent(current);
 }
 
@@ -704,31 +705,18 @@ void MainWindow::addRemoveExclusion(bool add, QString exclusion)
     }
 }
 
-void MainWindow::displayDoc(QString url)
-{
-    QProcess proc;
-    proc.start("logname");
-    proc.waitForFinished();
-    QString user = proc.readAllStandardOutput().trimmed();
-    if (system("command -v mx-viewer >/dev/null") == 0) {
-        system("mx-viewer " + url.toUtf8());
-    } else {
-        system("su " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
-    }
-}
-
 // check if compression is available in the kernel (lz4, lzo, xz)
 bool MainWindow::checkCompression()
 {
-    if (shell->run("[ -f /boot/config-$(uname -r) ]") != 0) { // return true if cannot check config file
+    if (!shell->run("[ -f /boot/config-$(uname -r) ]")) { // return true if cannot check config file
         return true;
     }
     if (compression == "lz4") {
-        return (shell->run("grep ^CONFIG_SQUASHFS_LZ4=y /boot/config-$(uname -r)") == 0);
+        return (shell->run("grep ^CONFIG_SQUASHFS_LZ4=y /boot/config-$(uname -r)"));
     } else if (compression == "xz") {
-        return (shell->run("grep ^CONFIG_SQUASHFS_XZ=y /boot/config-$(uname -r)") == 0);
+        return (shell->run("grep ^CONFIG_SQUASHFS_XZ=y /boot/config-$(uname -r)"));
     } else if (compression == "lzo") {
-        return (shell->run("grep ^CONFIG_SQUASHFS_LZO=y /boot/config-$(uname -r)") == 0);
+        return (shell->run("grep ^CONFIG_SQUASHFS_LZO=y /boot/config-$(uname -r)"));
     } else {
         return true;
     }
@@ -737,11 +725,13 @@ bool MainWindow::checkCompression()
 //// sync process events ////
 void MainWindow::procStart()
 {
+    timer.start();
     setCursor(QCursor(Qt::BusyCursor));
 }
 
 void MainWindow::procDone()
 {
+    timer.stop();
     ui->progressBar->setValue(ui->progressBar->maximum());
     setCursor(QCursor(Qt::ArrowCursor));
 }
@@ -762,14 +752,21 @@ void MainWindow::disableOutput()
 // update output box on Stdout
 void MainWindow::outputAvailable(const QString &output)
 {
+    if (output.contains("\r")) {
+        ui->outputBox->moveCursor(QTextCursor::Up, QTextCursor::KeepAnchor);
+        ui->outputBox->moveCursor(QTextCursor::EndOfLine, QTextCursor::KeepAnchor);
+    }
     ui->outputBox->insertPlainText(output);
     ui->outputBox->verticalScrollBar()->setValue(ui->outputBox->verticalScrollBar()->maximum());
 }
 
-void MainWindow::progress(int counter, int duration) // processes tick emited by Cmd to be used by a progress bar
+void MainWindow::progress()
 {
-    ui->progressBar->setMaximum(duration);
-    ui->progressBar->setValue(counter % (duration + 1));
+    if (ui->progressBar->value() == 100) {
+        ui->progressBar->reset();
+    }
+    ui->progressBar->setValue(ui->progressBar->value() + 1);
+
     // in live environment and first page, blink text while calculating used disk space
     if (live && (ui->stackedWidget->currentIndex() == 0)) {
         if (ui->progressBar->value()%4 == 0 ) {
@@ -794,7 +791,7 @@ void MainWindow::on_buttonNext_clicked()
         ui->stackedWidget->setCurrentWidget(ui->settingsPage);
         ui->buttonBack->setHidden(false);
         ui->buttonBack->setEnabled(true);
-        kernel_used = shell->getOutput("uname -r");
+        kernel_used = shell->getCmdOut("uname -r");
         ui->stackedWidget->setCurrentWidget(ui->settingsPage);
         ui->label_1->setText(tr("Snapshot will use the following settings:*"));
 
@@ -817,7 +814,7 @@ void MainWindow::on_buttonNext_clicked()
         if (ans == QMessageBox::Cancel) {
             return;
         }
-        timer.start();
+        e_timer.start();
         checkDirectories();
         ui->buttonNext->setEnabled(false);
         ui->buttonBack->setEnabled(false);
@@ -944,41 +941,14 @@ void MainWindow::on_radioPersonal_clicked(bool checked)
 // About button clicked
 void MainWindow::on_buttonAbout_clicked()
 {
-    QMessageBox msgBox(QMessageBox::NoIcon,
-                       tr("About MX Snapshot"), "<p align=\"center\"><b><h2>" +
-                       tr("MX Snapshot") + "</h2></b></p><p align=\"center\">" + tr("Version: ") +
-                       VERSION + "</p><p align=\"center\"><h3>" +
-                       tr("Program for creating a live-CD from the running system for MX Linux") + "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
-                       tr("Copyright (c) MX Linux") + "<br /><br /></p>", 0, this);
-    QPushButton *btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);
-    QPushButton *btnChangelog = msgBox.addButton(tr("Changelog"), QMessageBox::HelpRole);
-    QPushButton *btnCancel = msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
-    btnCancel->setIcon(QIcon::fromTheme("window-close"));
-
-    msgBox.exec();
-
-    if (msgBox.clickedButton() == btnLicense) {
-        QString url = "file:///usr/share/doc/mx-snapshot/license.html";
-        displayDoc(url);
-    } else if (msgBox.clickedButton() == btnChangelog) {
-        QDialog *changelog = new QDialog(this);
-        changelog->resize(600, 500);
-
-        QTextEdit *text = new QTextEdit;
-        text->setReadOnly(true);
-        Cmd cmd;
-        text->setText(cmd.getOutput("zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"));
-
-        QPushButton *btnClose = new QPushButton(tr("&Close"));
-        btnClose->setIcon(QIcon::fromTheme("window-close"));
-        connect(btnClose, &QPushButton::clicked, changelog, &QDialog::close);
-
-        QVBoxLayout *layout = new QVBoxLayout;
-        layout->addWidget(text);
-        layout->addWidget(btnClose);
-        changelog->setLayout(layout);
-        changelog->exec();
-    }
+    this->hide();
+    displayAboutMsgBox(tr("About %1").arg(this->windowTitle()), "<p align=\"center\"><b><h2>" + this->windowTitle() +"</h2></b></p><p align=\"center\">" +
+                       tr("Version: ") + VERSION + "</p><p align=\"center\"><h3>" +
+                       tr("Program for creating a live-CD from the running system for MX Linux") +
+                       "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
+                       tr("Copyright (c) MX Linux") + "<br /><br /></p>",
+                       "/usr/share/doc/mx-snapshot/license.html", tr("%1 License").arg(this->windowTitle()), true);
+    this->show();
 }
 
 // Help button clicked
@@ -992,7 +962,7 @@ void MainWindow::on_buttonHelp_clicked()
     if (lang.startsWith("fr")) {
         url = "https://mxlinux.org/french-wiki/help-files-fr/help-mx-instantane";
     }
-    displayDoc(url);
+    displayDoc(url, tr("%1 Help").arg(this->windowTitle()), true);
 }
 
 // Select snapshot directory
