@@ -48,9 +48,9 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     font.setStyleHint(QFont::Monospace);
     ui->outputBox->setFont(font);
 
+    connect(&timer, &QTimer::timeout, this, &MainWindow::progress);
     connect(shell, &Cmd::started, this, &MainWindow::procStart);
     connect(shell, &Cmd::finished, this, &MainWindow::procDone);
-    connect(&timer, &QTimer::timeout, this, &MainWindow::progress);
     connect(shell, &Cmd::outputAvailable, [](const QString &out) {qDebug() << out.trimmed();});
     connect(shell, &Cmd::errorAvailable, [](const QString &out) {qWarning() << out.trimmed();});
 
@@ -742,8 +742,8 @@ void MainWindow::displayOutput()
 
 void MainWindow::disableOutput()
 {
-    disconnect(shell, &Cmd::outputAvailable, 0, 0);
-    disconnect(shell, &Cmd::errorAvailable, 0, 0);
+    disconnect(&cmd, &Cmd::outputAvailable, this, &MainWindow::outputAvailable);
+    disconnect(&cmd, &Cmd::errorAvailable, this, &MainWindow::outputAvailable);
 }
 
 // update output box
