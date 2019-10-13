@@ -218,9 +218,7 @@ QString MainWindow::getXdgUserDirs(const QString& folder)
 // return a list of users that have folders in /home
 QStringList MainWindow::listUsers()
 {
-    QStringList users = shell->getCmdOut("lslogins --noheadings -u -o user | grep -vw root").split("\n");
-    qDebug() << "USERS" << users;
-    return users;
+    return shell->getCmdOut("lslogins --noheadings -u -o user | grep -vw root").split("\n");
 }
 
 // List used space
@@ -742,8 +740,8 @@ void MainWindow::displayOutput()
 
 void MainWindow::disableOutput()
 {
-    disconnect(&cmd, &Cmd::outputAvailable, this, &MainWindow::outputAvailable);
-    disconnect(&cmd, &Cmd::errorAvailable, this, &MainWindow::outputAvailable);
+    disconnect(shell, &Cmd::outputAvailable, this, &MainWindow::outputAvailable);
+    disconnect(shell, &Cmd::errorAvailable, this, &MainWindow::outputAvailable);
 }
 
 // update output box

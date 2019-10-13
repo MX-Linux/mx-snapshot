@@ -1,3 +1,9 @@
+mx-snapshot (19.10.01) mx; urgency=medium
+
+  * update location exclude file
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 13 Oct 2019 15:09:28 -0400
+
 mx-snapshot (19.10) mx; urgency=medium
 
   * exclude minstall.conf for generic snapshots
