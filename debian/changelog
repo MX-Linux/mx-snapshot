@@ -1,3 +1,9 @@
+mx-snapshot (19.10.02) mx; urgency=medium
+
+  * fix folder exclusion in /home
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 23 Oct 2019 03:30:48 -0400
+
 mx-snapshot (19.10.01) mx; urgency=medium
 
   * update location exclude file

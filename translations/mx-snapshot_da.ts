@@ -300,7 +300,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="680"/>
-        <location filename="../mainwindow.cpp" line="986"/>
+        <location filename="../mainwindow.cpp" line="996"/>
         <source>Done</source>
         <translation>Færdig</translation>
     </message>
@@ -390,17 +390,17 @@
         <translation>Luk</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="940"/>
+        <location filename="../mainwindow.cpp" line="950"/>
         <source>About %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="945"/>
+        <location filename="../mainwindow.cpp" line="955"/>
         <source>%1 License</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="960"/>
+        <location filename="../mainwindow.cpp" line="970"/>
         <source>%1 Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -409,17 +409,17 @@
         <translation type="vanished">Om MX Øjebliksbillede</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="941"/>
+        <location filename="../mainwindow.cpp" line="951"/>
         <source>Version: </source>
         <translation>Version: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="942"/>
+        <location filename="../mainwindow.cpp" line="952"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Program til at oprette en live-CD fra det kørende system til MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="944"/>
+        <location filename="../mainwindow.cpp" line="954"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Ophavsret (c) MX Linux</translation>
     </message>
@@ -436,17 +436,17 @@
         <translation type="vanished">&amp;Luk</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="968"/>
+        <location filename="../mainwindow.cpp" line="978"/>
         <source>Select Snapshot Directory</source>
         <translation>Vælg mappe til øjebliksbillede</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="987"/>
+        <location filename="../mainwindow.cpp" line="997"/>
         <source>Confirmation</source>
         <translation>Bekræftelse</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="987"/>
+        <location filename="../mainwindow.cpp" line="997"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Er du sikker på, at du vil afslutte programmet?</translation>
     </message>

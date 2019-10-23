@@ -48,7 +48,7 @@ protected:
 
 
 public:
-    explicit MainWindow(QWidget *parent = 0, QStringList args = QStringList());
+    explicit MainWindow(QWidget *parent = nullptr, QStringList args = QStringList());
     ~MainWindow();
 
     void addRemoveExclusion(bool add, QString exclusion);

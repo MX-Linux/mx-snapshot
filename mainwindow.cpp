@@ -202,13 +202,13 @@ QString MainWindow::getXdgUserDirs(const QString& folder)
         bool success = shell->run("su " + user + " -c \"xdg-user-dir " + folder + "\"", out);
         QString dir = QString(out);
         if (success) {
-            if (englishDirs.value(folder) == dir.section("/", -1) || dir.trimmed() == "/home/" + user || dir.isEmpty()) { // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
+            if (englishDirs.value(folder) == dir.section("/", -1) || dir.trimmed() == "home/" + user || dir.isEmpty()) { // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
                 continue;
             }
             if (dir.startsWith("/")) {
                 dir.remove(0, 1); // remove training slash
             }
-            (folder == "DESKTOP") ? dir.append("/!(minstall.desktop)") : dir.append("/");
+            (folder == "DESKTOP") ? dir.append("/!(minstall.desktop)") : dir.append("/*\" \"" + dir + "/.*");
             (result.isEmpty()) ? result.append("\" \"" + dir) : result.append(" \"" + dir);
         }
     }
@@ -861,7 +861,9 @@ void MainWindow::on_buttonEditExclude_clicked()
 
 void MainWindow::on_excludeDocuments_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Documents/" + getXdgUserDirs("DOCUMENTS");
+    QString folder = "home/*/Documents/";
+    QString xdg_name = "DOCUMENTS";
+    QString exclusion = folder + "*\" \"" + folder + ".*" + getXdgUserDirs(xdg_name);
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -870,7 +872,9 @@ void MainWindow::on_excludeDocuments_toggled(bool checked)
 
 void MainWindow::on_excludeDownloads_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Downloads/" + getXdgUserDirs("DOWNLOAD");
+    QString folder = "home/*/Downloads/";
+    QString xdg_name = "DOWNLOAD";
+    QString exclusion = folder + "*\" \"" + folder + ".*" + getXdgUserDirs(xdg_name);
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -879,7 +883,9 @@ void MainWindow::on_excludeDownloads_toggled(bool checked)
 
 void MainWindow::on_excludePictures_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Pictures/" + getXdgUserDirs("PICTURES");
+    QString folder = "home/*/Pictures/";
+    QString xdg_name = "PICTURES";
+    QString exclusion = folder + "*\" \"" + folder + ".*" + getXdgUserDirs(xdg_name);
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -888,7 +894,9 @@ void MainWindow::on_excludePictures_toggled(bool checked)
 
 void MainWindow::on_excludeMusic_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Music/" + getXdgUserDirs("MUSIC");
+    QString folder = "home/*/Music/";
+    QString xdg_name = "MUSIC";
+    QString exclusion = folder + "*\" \"" + folder + ".*" + getXdgUserDirs(xdg_name);
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
@@ -897,7 +905,9 @@ void MainWindow::on_excludeMusic_toggled(bool checked)
 
 void MainWindow::on_excludeVideos_toggled(bool checked)
 {
-    QString exclusion = "/home/*/Videos/" + getXdgUserDirs("VIDEOS");
+    QString folder = "home/*/Videos/";
+    QString xdg_name = "VIDEOS";
+    QString exclusion = folder + "*\" \"" + folder + ".*" + getXdgUserDirs(xdg_name);
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);

@@ -32,7 +32,7 @@
 #include <QDateTime>
 #include <QDebug>
 
-QScopedPointer<QFile> logFile;
+static QScopedPointer<QFile> logFile;
 
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 void printHelp();
@@ -72,18 +72,18 @@ int main(int argc, char *argv[])
 
     // Check if SQUASHFS is available
     if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
-        QMessageBox::critical(0, QApplication::tr("Error"),
+        QMessageBox::critical(nullptr, QApplication::tr("Error"),
                 QApplication::tr("Current kernel doesn't support Squashfs, cannot continue."));
         return EXIT_FAILURE;
     }
 
     if (getuid() == 0) {
-        MainWindow w(0, a.arguments());
+        MainWindow w(nullptr, a.arguments());
         w.show();
         return a.exec();
     } else {
         QApplication::beep();
-        QMessageBox::critical(0, QApplication::tr("Error"),
+        QMessageBox::critical(nullptr, QApplication::tr("Error"),
                               QApplication::tr("You must run this program as root."));
         return EXIT_FAILURE;
     }
@@ -109,7 +109,6 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     case QtWarningMsg:  out << "WRN "; break;
     case QtCriticalMsg: out << "CRT "; break;
     case QtFatalMsg:    out << "FTL "; break;
-    default:            out << "OTH"; break;
     }
     // Write to the output category of the message and the message itself
     out << context.category << ": "
