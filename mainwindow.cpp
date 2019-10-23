@@ -366,8 +366,6 @@ void MainWindow::copyNewIso()
     }
 
     replaceMenuStrings();
-    shell->run("/usr/share/mx-packageinstaller/scripts/make-efi-img " + work_dir + "/iso-template/");
-
     makeMd5sum(work_dir + "/iso-template/antiX", "vmlinuz");
 
     QString initrd_dir = shell->getCmdOut("mktemp -d");
