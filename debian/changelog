@@ -1,3 +1,9 @@
+mx-snapshot (19.10.04) mx; urgency=medium
+
+  * check using trailing slash too
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 30 Oct 2019 10:00:00 -0400
+
 mx-snapshot (19.10.03) mx; urgency=medium
 
   * fix check for misconfigured xdg-user-dir
