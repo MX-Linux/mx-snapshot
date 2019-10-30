@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 30 Oct 2019 08:13:18 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 19.10.03
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (19.10.03) mx; urgency=medium
+ .
+   * fix check for misconfigured xdg-user-dir
+Checksums-Sha1:
+ d5e55d59bd9765d5a91f1e210a14ca1f8cb8d8de 1179 mx-snapshot_19.10.03.dsc
+ 8a39826ab16be380bb3801b90b238b39f0c9013f 165600 mx-snapshot_19.10.03.tar.xz
+ 0fe6342a5ac217ffd070e7c2b159bdc26c51f4d0 783248 mx-snapshot-dbgsym_19.10.03_amd64.deb
+ d22184fc0fb02dbec92644e58ab8f3d898045391 10680 mx-snapshot_19.10.03_amd64.buildinfo
+ 3f3a3711a907b71ed250558708fd3e1d572bd6e5 197198 mx-snapshot_19.10.03_amd64.deb
+Checksums-Sha256:
+ d3976c580ed77a9f422d99cc6b3f51da8f5cc138947280d830236710c86bf4d9 1179 mx-snapshot_19.10.03.dsc
+ 0d075efe8b948005a3b04852a6ef2154781579f846145a965ff9cf19f08e5be0 165600 mx-snapshot_19.10.03.tar.xz
+ bb184110f8605398fa119b0e255ea5c05a5592543e26017ba17c1c5ae0e6c0f2 783248 mx-snapshot-dbgsym_19.10.03_amd64.deb
+ d3d92498bd36d0fad329d4e39622016c0e9270273e57aef5520b564d5bcd862c 10680 mx-snapshot_19.10.03_amd64.buildinfo
+ 91dfab1ad90ce3522189ad5e4d2918671b3272f4021be99a0b26fec06ab69bdd 197198 mx-snapshot_19.10.03_amd64.deb
+Files:
+ 60272ad6448f03400b7eeebbb072cd4e 1179 admin optional mx-snapshot_19.10.03.dsc
+ c4fb38b461213b6b47eee2a4f4b58663 165600 admin optional mx-snapshot_19.10.03.tar.xz
+ a24779e6a0240d36137866f90845b76a 783248 debug extra mx-snapshot-dbgsym_19.10.03_amd64.deb
+ 09054a8685797df9cd0dbc61afb687a4 10680 admin optional mx-snapshot_19.10.03_amd64.buildinfo
+ 3cd2f4edb2d6677921f65b6e27f6e8fc 197198 admin optional mx-snapshot_19.10.03_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl25fp8THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumJGxB/9I9EQhKldd1tWgFaQdw38UrI7fVmJc
+cCPRGz/pQSZhkphCTnjWjz1CSgRlbssLzxTEjN2XEaBUfLty6UJukHAo+sLpGPTD
+zd4SmcMy9Kjb9afdNnM4bHXU5lNPWaQFxHctBPZr1vuIUzCJypg8j82FZ7YKe61m
+Z3QAQdWj1wwbhJAcL8ERUNFWdPxujGR9/OkkOiz0biXMnpp1BZ1RCx0NyvH2MjfH
+QiNY3md8ausgqQZhVwpCvBrvpkkPN/QG/PTVOfhdkqQhp8vk2xnabJ092XIQCajj
+oRca26VOCapCVMWZWHTvf73GlAlX1FiS17R/nizoqhWXR/64blMALlUc
+=Vr1+
+-----END PGP SIGNATURE-----
