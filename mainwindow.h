@@ -86,9 +86,9 @@ public:
     bool checkInstalled(QString package);
     bool createIso(QString package);
     bool installPackage(QString package);
-    bool isi686();
     bool isLive();
     bool isOnSupportedPart(QDir dir);
+    bool isi686();
     bool replaceStringInFile(QString old_text, QString new_text, QString file_path);
 
     void checkDirectories();
@@ -111,12 +111,13 @@ public:
     void setup();
     void setupEnv();
 
-    QString getFilename();
-    QString largerFreeSpace(QString dir1, QString dir2);
-    QString largerFreeSpace(QString dir1, QString dir2, QString dir3);
     QString getEditor();
+    QString getFilename();
+    QString getLiveRootSpace();
     QString getSnapshotSize();
     QString getXdgUserDirs(const QString &folder);
+    QString largerFreeSpace(QString dir1, QString dir2);
+    QString largerFreeSpace(QString dir1, QString dir2, QString dir3);
     QStringList listUsers();
 
 

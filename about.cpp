@@ -13,15 +13,15 @@
 void displayDoc(QString url, QString title, bool runned_as_root)
 {
     if (system("command -v mx-viewer >/dev/null") == 0) {
-        system("mx-viewer " + url.toUtf8() + " \"" + title.toUtf8() + "\"&");
+        system("/usr/bin/mx-viewer " + url.toUtf8() + " \"" + title.toUtf8() + "\"&");
     } else {
         if (!runned_as_root) {
-            system("xdg-open " + url.toUtf8());
+            system("/usr/bin/xdg-open " + url.toUtf8());
         } else {
             Cmd cmd;
-            QString user = cmd.getCmdOut("logname", true);
-            system("su " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
-                   user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
+            QString user = cmd.getCmdOut("/usr/bin/logname", true);
+            system("/usr/bin/su " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
+                   user.toUtf8() + ") /usr/bin/xdg-open " + url.toUtf8() + "\"&");
         }
     }
 }
@@ -46,7 +46,7 @@ void displayAboutMsgBox(QString title, QString message, QString licence_url, QSt
         QTextEdit *text = new QTextEdit;
         text->setReadOnly(true);
         Cmd cmd;
-        text->setText(cmd.getCmdOut("zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"));
+        text->setText(cmd.getCmdOut("/usr/bin/zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"));
 
         QPushButton *btnClose = new QPushButton(QApplication::tr("&Close"));
         btnClose->setIcon(QIcon::fromTheme("window-close"));
