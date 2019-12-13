@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 
     QString log_name= "/var/log/mx-snapshot.log";
     // archive old log
-    system("/usr/bin/[ -f " + log_name.toUtf8() + " ] && /usr/bin/mv " + log_name.toUtf8() + " " + log_name.toUtf8() + ".old");
+    system("[ -f " + log_name.toUtf8() + " ] && mv " + log_name.toUtf8() + " " + log_name.toUtf8() + ".old");
     // Set the logging files
     logFile.reset(new QFile(log_name));
     // Open the file logging
@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
     a.installTranslator(&appTran);
 
     // Check if SQUASHFS is available
-    if (system("/usr/bin/[ -f /boot/config-$(uname -r) ]") == 0 && system("/usr/bin/grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
+    if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
         QMessageBox::critical(nullptr, QApplication::tr("Error"),
                 QApplication::tr("Current kernel doesn't support Squashfs, cannot continue."));
         return EXIT_FAILURE;
