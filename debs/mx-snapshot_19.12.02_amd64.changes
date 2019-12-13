@@ -18,32 +18,32 @@ Changes:
  .
    * fix: mv and grep location in main.cpp
 Checksums-Sha1:
- 66881ffce25634346ccdc8b15d15ecfa43a7d73b 1179 mx-snapshot_19.12.02.dsc
- 9318501120f28a6c1c39d29613c625cd76143d1e 166384 mx-snapshot_19.12.02.tar.xz
- 3a0c18305b68651546401b65c5e00a028d007efe 785522 mx-snapshot-dbgsym_19.12.02_amd64.deb
- 146f33cfecbaae1f34639a038668ce06a29bf514 10680 mx-snapshot_19.12.02_amd64.buildinfo
- 493a63ecc7709ea62372428a4504af6bdc65ed60 198184 mx-snapshot_19.12.02_amd64.deb
+ 653751a020e301520e849e7eab7dd8959afd00fa 1179 mx-snapshot_19.12.02.dsc
+ 52c41b89ba184420cfd12ac34cb5513b1b3a6345 166416 mx-snapshot_19.12.02.tar.xz
+ 8369b53c61e4ba998d398ab26d04b99e55623aa0 785574 mx-snapshot-dbgsym_19.12.02_amd64.deb
+ 7b4e31884087833ccf3b5c046ce0200ea71241e7 10680 mx-snapshot_19.12.02_amd64.buildinfo
+ 59668aa0cab8bab9daa7cd00454751f696f4959c 198126 mx-snapshot_19.12.02_amd64.deb
 Checksums-Sha256:
- 90f8cb9152070c41ecdd8e300dcf3ea022d2d3f084a540b913d3a8da53d40fe9 1179 mx-snapshot_19.12.02.dsc
- 0e9c95264bf265bb7533a678d807c2ece36699af8cdb9ff3e541a68bbb884eb5 166384 mx-snapshot_19.12.02.tar.xz
- d99cfad9937cd09e30d52c181061a0d81931f54e3353929cdebf09059cdb01a4 785522 mx-snapshot-dbgsym_19.12.02_amd64.deb
- aa5fab0f3c1f288f3889ba8ef5542e54861afa0aee1218f7f04f578295437ea5 10680 mx-snapshot_19.12.02_amd64.buildinfo
- d2d20fc48aa4f65b9a72f4df01e9faab1695600524e5ecaf963ae8350b2ac78d 198184 mx-snapshot_19.12.02_amd64.deb
+ e640342fe3adec112b55b4f234e1e4a81c82ef6bcaba5bf5193feb83e4d7a159 1179 mx-snapshot_19.12.02.dsc
+ b7cb0ea915d9ef82ac45cb7a5e356243739e4f8ce6308b19c1c7ff1ce92d3a02 166416 mx-snapshot_19.12.02.tar.xz
+ 0b836443aa3108cf425a89bae8ddcf8fca3fea89b6f9a92dd7e84c957a315d6b 785574 mx-snapshot-dbgsym_19.12.02_amd64.deb
+ 06fa22bbde355256557cc39d99b4fe40834e17525f96e4405052bf372e6f2bd0 10680 mx-snapshot_19.12.02_amd64.buildinfo
+ df15f82005244ab570821daeda05e37e452a927432f55b5313f37d7c9919d903 198126 mx-snapshot_19.12.02_amd64.deb
 Files:
- 936154f950990e1dac7b5fdb6eeff2b1 1179 admin optional mx-snapshot_19.12.02.dsc
- 1937309c1fe180330a790d0e73d63024 166384 admin optional mx-snapshot_19.12.02.tar.xz
- 5ceee226950226d72850f01e32407e34 785522 debug extra mx-snapshot-dbgsym_19.12.02_amd64.deb
- f6078c8455116e7eaf8b7f3be4eb4802 10680 admin optional mx-snapshot_19.12.02_amd64.buildinfo
- 7a663ef105671d2fb7c715f142a02f46 198184 admin optional mx-snapshot_19.12.02_amd64.deb
+ aab3a825873580c3929aca7df619b127 1179 admin optional mx-snapshot_19.12.02.dsc
+ cd182e2fac75cbd7804e6bdd1b866475 166416 admin optional mx-snapshot_19.12.02.tar.xz
+ dfe8abacd431ae6c671627a68846dc48 785574 debug extra mx-snapshot-dbgsym_19.12.02_amd64.deb
+ 6383815c1c635c5e16f69aa64255afce 10680 admin optional mx-snapshot_19.12.02_amd64.buildinfo
+ 38687d80a60e024debaeca596dc93c80 198126 admin optional mx-snapshot_19.12.02_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl3zspUTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumF/IB/0bKosIQHJpr5g3O0/tbTBgz/ro+rVk
-hRrCiXGMR1VdteSv/gCJjKtiWfaqU5BN942dEgomB9daBd4wlCqIJJuchfzARnz8
-AOUVMVBRl7PDta/RRb4TUtgdNZUmnMCwpkX4zI7N1dOKyVEwcoopMm8lNygkZ5mG
-CPCXDsA5SXH++WhRVnCg3YIM3QtRyQvKmglPLPou2N6Xd/uNwn/mmTNB4lzTSfPw
-GVKzc+jfrgwdReFgNMuq31QnULG4ogY1mIzDNv3JoHHNK8ceDvRMbS6lnchqLogZ
-411Y+3TcN5R7kg83GoOpDL9oD4K5GBzc3S75FE3Hg/6C5l6nqbcbsddL
-=57JR
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl3z0PYTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumF8OCACqvI7VNkpvY8ATqOJRrnRSCs/xUTkE
+8TOG9qO+7bdMo1Fv7epYSOBt5EidZXzCmtsPhEBjj5LYgNIZx+67Ks+Ukewxs3UP
+MQqvI79a0SagUJWyWf9P9RKtRLl/m9NxwJ+6Mv8Skyzbsb6QF5dTudKKrYC3OWub
+c2PH1VDaCLXdJJ2DxuqYgaiWSjR/9nww9Y8yjLZ994gRd6JLlzcHKFw+5WmwQCy2
+cArhe/tn/xl6Xvo6d8yPaxFJcxdg+F+qmCSSLuWMM4HsLPfc32y91LgAMvoBZ/Tp
+d0utmDulIPvVLGs1dxHPBwwNjt3yRxJo/CUpXp7wJlBN+P5jx7pCEcI3
+=ew1u
 -----END PGP SIGNATURE-----
