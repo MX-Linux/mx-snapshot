@@ -561,8 +561,12 @@ QString MainWindow::getLiveRootSpace()
     //rootspaceneeded is the size of the linuxfs file * a compression factor + contents of the rootfs.  conservative but fast
     //factors are same as used in live-remaster
 
+    //load some live variables
+    QSettings livesettings("/live/config/initrd.out", QSettings::NativeFormat);
+    QString sqfile_full = livesettings.value("SQFILE_FULL", "/live/boot-dev/antiX/linuxfs").toString();
+
     //get compression factor by reading the linuxfs squasfs file, if available
-    QString linuxfs_compression_type = shell->getCmdOut("dd if=/live/boot-dev/antiX/linuxfs bs=1 skip=20 count=2 status=none 2>/dev/null| /usr/bin/od -An -tdI");
+    QString linuxfs_compression_type = shell->getCmdOut("dd if=" + sqfile_full + " bs=1 skip=20 count=2 status=none 2>/dev/null| /usr/bin/od -An -tdI");
     ushort compression_factor;
     //gzip, xz, or lz4
     if ( linuxfs_compression_type == "1") {
