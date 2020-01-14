@@ -1,3 +1,78 @@
+mx-snapshot (19.12.02) mx; urgency=medium
+
+  * fix: mv and grep location in main.cpp
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 13 Dec 2019 09:56:35 -0500
+
+mx-snapshot (19.12.01) mx; urgency=medium
+
+  * use relative location for grep,cat,sed,su,etc for Stretch
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 12 Dec 2019 21:35:22 -0500
+
+mx-snapshot (19.12) mx; urgency=medium
+
+  * faster used space estimation in live environment
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 10 Dec 2019 13:00:33 -0500
+
+mx-snapshot (19.10.04) mx; urgency=medium
+
+  * check using trailing slash too
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 30 Oct 2019 10:00:00 -0400
+
+mx-snapshot (19.10.03) mx; urgency=medium
+
+  * fix check for misconfigured xdg-user-dir
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 30 Oct 2019 08:13:18 -0400
+
+mx-snapshot (19.10.02) mx; urgency=medium
+
+  * fix folder exclusion in /home
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 23 Oct 2019 03:30:48 -0400
+
+mx-snapshot (19.10.01) mx; urgency=medium
+
+  * update location exclude file
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 13 Oct 2019 15:09:28 -0400
+
+mx-snapshot (19.10) mx; urgency=medium
+
+  * exclude minstall.conf for generic snapshots
+  * remove libcmd dependency
+  * show mkquashfs progress bar in a line
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 06 Oct 2019 09:44:39 -0400
+
+mx-snapshot (19.9) mx; urgency=medium
+
+  * fix: trim characters when testing if xdg-user-dir returns useful info
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 15 Sep 2019 17:40:39 -0400
+
+mx-snapshot (19.8.4) mx; urgency=medium
+
+  * added compression settings dropdown
+  * removed "edit configuration file" button
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 31 Aug 2019 23:12:10 -0400
+
+mx-snapshot (19.8.3) mx; urgency=medium
+
+  * fix: allow about/help to run while calculating space used by system
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 31 Aug 2019 12:26:39 -0400
+
+mx-snapshot (19.8.2) mx; urgency=medium
+
+  * update modules list in copy-initrd-modules
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 24 Aug 2019 03:01:39 -0400
+
 mx-snapshot (19.8.1) mx; urgency=medium
 
   * added offline help file

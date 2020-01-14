@@ -26,10 +26,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QDir>
 #include <QElapsedTimer>
 #include <QMessageBox>
 #include <QSettings>
-#include <QDir>
+#include <QTimer>
 
 #include "cmd.h"
 #include "version.h"
@@ -47,12 +48,10 @@ protected:
 
 
 public:
-    explicit MainWindow(QWidget *parent = 0, QStringList args = QStringList());
+    explicit MainWindow(QWidget *parent = nullptr, QStringList args = QStringList());
     ~MainWindow();
 
     void addRemoveExclusion(bool add, QString exclusion);
-    void displayDoc(QString url);
-    QSettings settings;
     QStringList args;
 
     bool checkCompression();
@@ -72,6 +71,7 @@ public:
     QString kernel_used;
     QString make_isohybrid;
     QString make_md5sum;
+    QString compression;
     QString mksq_opt;
     QString save_message;
     QString session_excludes;
@@ -86,9 +86,9 @@ public:
     bool checkInstalled(QString package);
     bool createIso(QString package);
     bool installPackage(QString package);
-    bool isi686();
     bool isLive();
     bool isOnSupportedPart(QDir dir);
+    bool isi686();
     bool replaceStringInFile(QString old_text, QString new_text, QString file_path);
 
     void checkDirectories();
@@ -111,12 +111,13 @@ public:
     void setup();
     void setupEnv();
 
-    QString getFilename();
-    QString largerFreeSpace(QString dir1, QString dir2);
-    QString largerFreeSpace(QString dir1, QString dir2, QString dir3);
     QString getEditor();
+    QString getFilename();
+    QString getLiveRootSpace();
     QString getSnapshotSize();
     QString getXdgUserDirs(const QString &folder);
+    QString largerFreeSpace(QString dir1, QString dir2);
+    QString largerFreeSpace(QString dir1, QString dir2, QString dir3);
     QStringList listUsers();
 
 
@@ -124,7 +125,7 @@ public slots:
     void outputAvailable(const QString &output);
     void procStart();
     void procDone();
-    void progress(int elapsed, int duration); // updates progressBar when tick signal is emited
+    void progress();
     void displayOutput();
     void disableOutput();
 
@@ -133,7 +134,6 @@ private slots:
     void on_buttonAbout_clicked();
     void on_buttonBack_clicked();
     void on_buttonCancel_clicked();
-    void on_buttonEditConfig_clicked();
     void on_buttonEditExclude_clicked();
     void on_buttonHelp_clicked();
     void on_buttonNext_clicked();
@@ -148,12 +148,16 @@ private slots:
     void on_radioPersonal_clicked(bool checked);
 
 
+    void on_cbCompression_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     Cmd *shell;
-    QElapsedTimer timer;
-    QStringList users; // list of users with /home folders
     QHash<QString, QString> englishDirs; // English names of /home directories
+    QElapsedTimer e_timer;
+    QStringList users; // list of users with /home folders
+    QTimer timer;
+
 
 };
 

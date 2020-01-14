@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ar">
+<TS version="2.1" language="mr">
 <context>
     <name>MainWindow</name>
     <message>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../mainwindow.ui" line="373"/>
         <source>Desktop</source>
-        <translation>سطح مكتب</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="380"/>
@@ -136,32 +136,32 @@
     <message>
         <location filename="../mainwindow.ui" line="571"/>
         <source>Display help </source>
-        <translation type="unfinished"></translation>
+        <translation>मदत दाखवा</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="574"/>
         <source>Help</source>
-        <translation>مساعدة</translation>
+        <translation>मदत</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="581"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="632"/>
         <source>About this application</source>
-        <translation type="unfinished"></translation>
+        <translation>या अनुप्रयोगाबद्दल</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="635"/>
         <source>About...</source>
-        <translation type="unfinished"></translation>
+        <translation>विषयी</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="642"/>
         <source>Alt+B</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="658"/>
@@ -171,22 +171,22 @@
     <message>
         <location filename="../mainwindow.ui" line="661"/>
         <source>Cancel</source>
-        <translation>إلغاء</translation>
+        <translation>रद्द करा</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="668"/>
         <source>Alt+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+N</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="684"/>
         <source>Next</source>
-        <translation>التالي</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="726"/>
         <source>Back</source>
-        <translation>للخلف</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="232"/>
@@ -230,7 +230,7 @@
         <location filename="../mainwindow.cpp" line="643"/>
         <location filename="../mainwindow.cpp" line="837"/>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation>त्रुटी</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -317,7 +317,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="822"/>
         <source>Settings</source>
-        <translation>إعدادات</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="828"/>
@@ -387,7 +387,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="876"/>
         <source>Close</source>
-        <translation>إغلاق</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="987"/>
@@ -407,7 +407,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="988"/>
         <source>Version: </source>
-        <translation type="unfinished"></translation>
+        <translation>आवृत्ती</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="989"/>
@@ -417,7 +417,19 @@
     <message>
         <location filename="../mainwindow.cpp" line="991"/>
         <source>Copyright (c) MX Linux</source>
-        <translation type="unfinished"></translation>
+        <translation>कॉपीराइट (c) एमएक्स लिनक्स</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation type="vanished">परवाना</translation>
+    </message>
+    <message>
+        <source>Changelog</source>
+        <translation type="vanished">बदल सूची</translation>
+    </message>
+    <message>
+        <source>&amp;Close</source>
+        <translation type="vanished">बंद</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1015"/>
@@ -441,7 +453,7 @@
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation>त्रुटी</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="76"/>
@@ -451,28 +463,28 @@
     <message>
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation type="unfinished"></translation>
+        <translation>आपण हा प्रोग्राम रूट म्हणूनच चालवावा.</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="32"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">परवाना</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="33"/>
         <location filename="../about.cpp" line="43"/>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">बदल सूची</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="34"/>
         <source>Cancel</source>
-        <translation type="unfinished">إلغاء</translation>
+        <translation type="unfinished">रद्द करा</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="51"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">बंद</translation>
     </message>
 </context>
 </TS>

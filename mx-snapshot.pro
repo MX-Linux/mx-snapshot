@@ -37,11 +37,15 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    about.cpp \
+    cmd.cpp
 
 HEADERS  += \
     mainwindow.h \
-    version.h
+    version.h \
+    about.h \
+    cmd.h
 
 FORMS    += \
     mainwindow.ui
@@ -73,6 +77,7 @@ TRANSLATIONS += translations/mx-snapshot_am.ts \
                 translations/mx-snapshot_ko.ts \
                 translations/mx-snapshot_lt.ts \
                 translations/mx-snapshot_mk.ts \
+                translations/mx-snapshot_mr.ts \
                 translations/mx-snapshot_nb.ts \
                 translations/mx-snapshot_nl.ts \
                 translations/mx-snapshot_pl.ts \
@@ -92,5 +97,3 @@ TRANSLATIONS += translations/mx-snapshot_am.ts \
 
 RESOURCES += \
     images.qrc
-
-unix:!macx: LIBS += -lcmd
