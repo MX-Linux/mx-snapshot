@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 13 Jan 2020 20:45:34 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 20.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (20.1) mx; urgency=medium
+ .
+   * adjust permission on minstall.desktop to remove lock emblem when on desktop
+Checksums-Sha1:
+ ca734581f479b7498dba2c2729f0c424044be4bc 1163 mx-snapshot_20.1.dsc
+ cc3f3fdce9d4445f76e1ffbce87b60972b9928f6 166432 mx-snapshot_20.1.tar.xz
+ ed3454383b065ef760249ccbb786575144644ae0 785578 mx-snapshot-dbgsym_20.1_amd64.deb
+ 451cc86d3e8881c2a4ef21f36f70ece1da6b2c1a 10636 mx-snapshot_20.1_amd64.buildinfo
+ af1ca33a226c51ea078702f0305e8b5caa1d9d01 198166 mx-snapshot_20.1_amd64.deb
+Checksums-Sha256:
+ 830048a0f366e8f6ec3baa96ee25bf577c6aa0f11b8ac7c81a2c0a4cfe1e3e49 1163 mx-snapshot_20.1.dsc
+ 865e01e4b972aa38a83c95fe38f452f71b6070ba972d7e1f0c33899777442081 166432 mx-snapshot_20.1.tar.xz
+ 829998ec7a76df91b57c258636c1c12af2f956895f9e0de85c0facdfd1f72c06 785578 mx-snapshot-dbgsym_20.1_amd64.deb
+ 1e721c10fb840e6bf4c63c7be20a4c24c0ee87e139006edb9cf90862d4ea4321 10636 mx-snapshot_20.1_amd64.buildinfo
+ 1251e94ba9e9e643c7aa3a4da484428964bdfd613f962fcbaea4edcd114dbf55 198166 mx-snapshot_20.1_amd64.deb
+Files:
+ 1863a1ff9f4dd9c0ee9e9c8d12030132 1163 admin optional mx-snapshot_20.1.dsc
+ ba75b30d4b03a2d54003d0e96e2da53e 166432 admin optional mx-snapshot_20.1.tar.xz
+ 64d0520c139791497b7e80aca91719e8 785578 debug extra mx-snapshot-dbgsym_20.1_amd64.deb
+ 72cca3ca135f93a29666f75630fca624 10636 admin optional mx-snapshot_20.1_amd64.buildinfo
+ 1320a4e88daa1f2d0be7a82e57deb873 198166 admin optional mx-snapshot_20.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl4dHbwTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumD2ZB/49minSD3w3Uyt6inlDF5sazOhMzel1
+621erp8gY+EHFxuENZhFVfJgO9lj6Vgh/UPngxZy3PFNO2ohFHvZsFECYHs2w3vR
+xwpklGvH+vFcujf+GxrFmvMoabdS3TAkhgAF54MfQlWPXKXciOSNZEVL1rhCesIo
+0INllbf1RQ9plqcPS6Ls2bkA+tGYWv9Fd2w89xncGSNlrPqpX8umDKSf+0taaZ6S
+zb8TuoMoLKANcIAHjefGmfN01M9OmTwnvlz5uAwOwdzLiVkL6IWN/0DUbpsFSRaM
+inMV51bY24FzrEK43DOW0PgXfKJ2QvkeqN8LdOQ/tll20dJwvWusSoes
+=kfIf
+-----END PGP SIGNATURE-----

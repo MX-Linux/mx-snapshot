@@ -1,3 +1,9 @@
+mx-snapshot (20.1) mx; urgency=medium
+
+  * adjust permission on minstall.desktop to remove lock emblem when on desktop
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 13 Jan 2020 20:45:34 -0500
+
 mx-snapshot (19.12.02) mx; urgency=medium
 
   * fix: mv and grep location in main.cpp
