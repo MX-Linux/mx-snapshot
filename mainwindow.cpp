@@ -550,7 +550,7 @@ void MainWindow::setupEnv()
     } else {
         if (force_installer == true) {  // copy minstall.desktop to Desktop on all accounts
             shell->run("echo /home/*/Desktop | /usr/bin/xargs -n1 cp /usr/share/applications/minstall.desktop 2>/dev/null");
-            shell->run("chmod +x /home/*/Desktop/minstall.desktop");
+            shell->run("chmod a+rwx /home/*/Desktop/minstall.desktop"); //removes lock symbol on installer on desktop
         }
         shell->run("installed-to-live -b /.bind-root start bind=/home" + bind_boot_too + " live-files version-file adjtime read-only");
     }
