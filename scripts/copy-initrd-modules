@@ -85,9 +85,12 @@ jbd
 jbd2
 jfs
 libcrc32c
+linear
 loop
 mbcache
+md-mod
 msdos
+multipath
 nls-ascii
 nls-cp437
 nls-utf8
@@ -119,6 +122,12 @@ usb-storage
 usbcore
 usbhid
 usbmon
+raid0
+raid1
+raid10
+raid456
+raid6_pq
+raid_class
 virtio-blk
 virtio-pci
 vfat
@@ -134,6 +143,11 @@ xhci-pci
 
 CRYPT_LIST="
 aes
+async_memcpy
+async_pq
+async_raid6_recov
+async_tx
+async_xor
 blowfish
 dm-crypt
 dm-mod
@@ -243,7 +257,7 @@ $(find "$dir" -name "*.ko" -printf "%f\n" | sed 's/\.ko//')"
     fi
 
     list2=$(echo "$list1" | sed 's/_/-/g' | sort -u \
-        | eval "xargs modprobe $MP_ARGS" | sed -n 's/^insmod //p' | sort -u)
+        | eval "xargs modprobe $MP_ARGS" | sed -n 's/^insmod //p' |cut -d' ' -f1| sort -u)
 
     local full cnt=0
     [ -z "${from_dir##/*}" ] || from_dir="$PWD/$from_dir"
