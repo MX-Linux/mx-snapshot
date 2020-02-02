@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sun, 02 Feb 2020 12:13:29 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 20.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (20.2) mx; urgency=medium
+ .
+   * updte copy-initrd-modules
+Checksums-Sha1:
+ 459d433b284933b75e193496276dfc3fcb58ce02 1163 mx-snapshot_20.2.dsc
+ c404729ed8b3cc6ab840566a6afbeb021d663488 166544 mx-snapshot_20.2.tar.xz
+ bf22902a0209a4e7f81cd4693290f3f07c037380 785516 mx-snapshot-dbgsym_20.2_amd64.deb
+ a4f9cc6d5c5873a341c0495aa4a51d6dda41b955 10636 mx-snapshot_20.2_amd64.buildinfo
+ 1f098dc557c0022e10b8007cee4d88bf11e603bc 198316 mx-snapshot_20.2_amd64.deb
+Checksums-Sha256:
+ 92880b0a7b81144df54950ed53120a209faae8b0d0c61a51bcdd018458844615 1163 mx-snapshot_20.2.dsc
+ ba8c2506813ab97010c9530d24463b0a579aad90141a87b6acd8355d7ee3964e 166544 mx-snapshot_20.2.tar.xz
+ 285443d9e2b7f5edfad8d49d3ebb8d8bf13bd010a28594e6d0759ce0a2a7fadb 785516 mx-snapshot-dbgsym_20.2_amd64.deb
+ 0fcb965a8c44115fd93d2cf04c91622cfe3d111cfca68ed5c4168f2b285e12ff 10636 mx-snapshot_20.2_amd64.buildinfo
+ 2daf22b147f504f6f00a7faf9f15d6a1a9aa987b3a75c22c9996d61d9ecbd389 198316 mx-snapshot_20.2_amd64.deb
+Files:
+ af48284455ebd121f5f692f5c51c6e75 1163 admin optional mx-snapshot_20.2.dsc
+ 1f4492a2ef7cd8249be1ca1d14b9667f 166544 admin optional mx-snapshot_20.2.tar.xz
+ 07877830602653be33590f55a6009d3f 785516 debug extra mx-snapshot-dbgsym_20.2_amd64.deb
+ 40f945d8ecb58e8910af88688e325051 10636 admin optional mx-snapshot_20.2_amd64.buildinfo
+ ffe04137bc27f3d7419ea89ac4e32ed4 198316 admin optional mx-snapshot_20.2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl43A68THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumJITB/47BbQ2t7GD72smzJkHajC8UbegV1HP
+BKWRaARgNE7e4HqTPCh8eGU4vcw2j6TqTqFO3+OoufjLNwLSg1LkRrd4b8/LA676
+4ibdFRyGmWNxJ5EgLSgdUHUNHSuGH6Uz3TaOYBZlEJ39rwhgAJ7s1+zcH2ckpiGf
+O+9UufjhpEfoR/nKi8kh7IlkNvTwjIaKC+TT2tQKF1/lPCMNaAFwgN0KfB9ql53+
+2aIxf2WvhEUvHrfezEoQsMECPmza5WxYxFsz7mdl1rDETHdZ4fNAbcpqxFJpY/Pn
+zGRD7BA1diRVy/XceVrX+/4wDiS9NpoY8yOqXgG88KD90TZi+50zcHSt
+=nX/L
+-----END PGP SIGNATURE-----

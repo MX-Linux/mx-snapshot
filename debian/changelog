@@ -1,3 +1,9 @@
+mx-snapshot (20.2) mx; urgency=medium
+
+  * updte copy-initrd-modules
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 02 Feb 2020 12:13:29 -0500
+
 mx-snapshot (20.1) mx; urgency=medium
 
   * adjust permission on minstall.desktop to remove lock emblem when on desktop
