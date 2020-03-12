@@ -544,6 +544,9 @@ void MainWindow::setupEnv()
     if (force_installer && !checkInstalled("mx-installer")) {
         installPackage("mx-installer");
     }
+
+    writeSnapshotInfo();
+
     // setup environment if creating a respin (reset root/demo, remove personal accounts)
     if (reset_accounts) {
         shell->run("installed-to-live -b /.bind-root start " + bind_boot + "empty=/home general version-file read-only");
@@ -554,6 +557,18 @@ void MainWindow::setupEnv()
         }
         shell->run("installed-to-live -b /.bind-root start bind=/home" + bind_boot_too + " live-files version-file adjtime read-only");
     }
+}
+
+// write date of the snapshot in a "snapshot_created" file
+void MainWindow::writeSnapshotInfo()
+{
+    QFile file("/usr/local/share/live-files/files/etc/snapshot_created");
+    if (!file.open(QFile::WriteOnly | QFile::Truncate)) {
+        return;
+    }
+    QTextStream stream(&file);
+    stream << QDateTime::currentDateTime().toString("yyyyMMdd_HHmm");
+    file.close();
 }
 
 QString MainWindow::getLiveRootSpace()

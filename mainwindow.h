@@ -110,6 +110,7 @@ public:
     void savePackageList(QString file_name);
     void setup();
     void setupEnv();
+    void writeSnapshotInfo();
 
     QString getEditor();
     QString getFilename();
