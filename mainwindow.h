@@ -70,7 +70,7 @@ public:
     QString edit_boot_menu;
     QString kernel_used;
     QString make_isohybrid;
-    QString make_md5sum;
+    QString make_chksum;
     QString compression;
     QString mksq_opt;
     QString save_message;

@@ -104,7 +104,7 @@ void MainWindow::loadSettings()
     ui->labelSnapshotDir->setText(snapshot_dir.absolutePath());
     snapshot_excludes.setFileName(settings.value("snapshot_excludes", "/usr/local/share/excludes/mx-snapshot-exclude.list").toString());
     snapshot_basename = settings.value("snapshot_basename", "snapshot").toString();
-    make_md5sum = settings.value("make_md5sum", "no").toString();
+    make_chksum = settings.value("make_md5sum", "no").toString();
     make_isohybrid = settings.value("make_isohybrid", "yes").toString();
     compression = settings.value("compression", "lz4").toString();
     mksq_opt = settings.value("mksq_opt").toString();
@@ -668,7 +668,7 @@ bool MainWindow::createIso(QString filename)
     }
 
     // make md5sum
-    if (make_md5sum == "yes") {
+    if (make_chksum == "yes") {
         makeMd5sum(snapshot_dir.absolutePath(), filename);
         makeSha512sum(snapshot_dir.absolutePath(), filename);
     }
