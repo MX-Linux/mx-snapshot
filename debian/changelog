@@ -1,3 +1,9 @@
+mx-snapshot (20.4) mx; urgency=medium
+
+  * replace su with runuser
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 24 Apr 2020 15:31:00 -0400
+
 mx-snapshot (20.3) mx; urgency=medium
 
   * add /etc/snapshot_created with date of creation

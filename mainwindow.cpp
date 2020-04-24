@@ -199,7 +199,7 @@ QString MainWindow::getXdgUserDirs(const QString& folder)
 
     foreach (const QString &user, users) {
         QByteArray out;
-        bool success = shell->run("su " + user + " -c \"/usr/bin/xdg-user-dir " + folder + "\"", out);
+        bool success = shell->run("runuser -l " + user + " -c \"/usr/bin/xdg-user-dir " + folder + "\"", out);
         QString dir = QString(out);
         if (success) {
             if (englishDirs.value(folder) == dir.section("/", -1) || dir.trimmed() == "/home/" + user || dir.trimmed() == "/home/" + user + "/" || dir.isEmpty()) { // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
