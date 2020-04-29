@@ -210,8 +210,10 @@ QString MainWindow::getXdgUserDirs(const QString& folder)
             }
             (folder == "DESKTOP") ? dir.append("/!(minstall.desktop)") : dir.append("/*\" \"" + dir + "/.*");
             (result.isEmpty()) ? result.append("\" \"" + dir) : result.append(" \"" + dir);
+            result.append("\""); // close the quote for each user, will strip the last one before returning;
         }
     }
+    result.chop(1); // chop the last quote, will be added later on in addRemoveExclusion
     return result;
 }
 

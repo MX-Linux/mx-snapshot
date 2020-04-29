@@ -1,3 +1,9 @@
+mx-snapshot (20.4.1) mx; urgency=medium
+
+  * fix localized folder selection for multiple users >2
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 29 Apr 2020 17:06:03 -0400
+
 mx-snapshot (20.4) mx; urgency=medium
 
   * replace su with runuser
