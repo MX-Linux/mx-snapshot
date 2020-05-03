@@ -20,7 +20,7 @@ void displayDoc(QString url, QString title, bool runned_as_root)
         } else {
             Cmd cmd;
             QString user = cmd.getCmdOut("/usr/bin/logname", true);
-            system("su " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
+            system("runuser -l " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
                    user.toUtf8() + ") /usr/bin/xdg-open " + url.toUtf8() + "\"&");
         }
     }

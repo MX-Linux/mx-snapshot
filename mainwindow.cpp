@@ -104,7 +104,7 @@ void MainWindow::loadSettings()
     ui->labelSnapshotDir->setText(snapshot_dir.absolutePath());
     snapshot_excludes.setFileName(settings.value("snapshot_excludes", "/usr/local/share/excludes/mx-snapshot-exclude.list").toString());
     snapshot_basename = settings.value("snapshot_basename", "snapshot").toString();
-    make_md5sum = settings.value("make_md5sum", "no").toString();
+    make_chksum = settings.value("make_md5sum", "no").toString();
     make_isohybrid = settings.value("make_isohybrid", "yes").toString();
     compression = settings.value("compression", "lz4").toString();
     mksq_opt = settings.value("mksq_opt").toString();
@@ -199,7 +199,7 @@ QString MainWindow::getXdgUserDirs(const QString& folder)
 
     foreach (const QString &user, users) {
         QByteArray out;
-        bool success = shell->run("su " + user + " -c \"/usr/bin/xdg-user-dir " + folder + "\"", out);
+        bool success = shell->run("runuser -l " + user + " -c \"/usr/bin/xdg-user-dir " + folder + "\"", out);
         QString dir = QString(out);
         if (success) {
             if (englishDirs.value(folder) == dir.section("/", -1) || dir.trimmed() == "/home/" + user || dir.trimmed() == "/home/" + user + "/" || dir.isEmpty()) { // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
@@ -210,8 +210,10 @@ QString MainWindow::getXdgUserDirs(const QString& folder)
             }
             (folder == "DESKTOP") ? dir.append("/!(minstall.desktop)") : dir.append("/*\" \"" + dir + "/.*");
             (result.isEmpty()) ? result.append("\" \"" + dir) : result.append(" \"" + dir);
+            result.append("\""); // close the quote for each user, will strip the last one before returning;
         }
     }
+    result.chop(1); // chop the last quote, will be added later on in addRemoveExclusion
     return result;
 }
 
@@ -544,6 +546,9 @@ void MainWindow::setupEnv()
     if (force_installer && !checkInstalled("mx-installer")) {
         installPackage("mx-installer");
     }
+
+    writeSnapshotInfo();
+
     // setup environment if creating a respin (reset root/demo, remove personal accounts)
     if (reset_accounts) {
         shell->run("installed-to-live -b /.bind-root start " + bind_boot + "empty=/home general version-file read-only");
@@ -554,6 +559,18 @@ void MainWindow::setupEnv()
         }
         shell->run("installed-to-live -b /.bind-root start bind=/home" + bind_boot_too + " live-files version-file adjtime read-only");
     }
+}
+
+// write date of the snapshot in a "snapshot_created" file
+void MainWindow::writeSnapshotInfo()
+{
+    QFile file("/usr/local/share/live-files/files/etc/snapshot_created");
+    if (!file.open(QFile::WriteOnly | QFile::Truncate)) {
+        return;
+    }
+    QTextStream stream(&file);
+    stream << QDateTime::currentDateTime().toString("yyyyMMdd_HHmm");
+    file.close();
 }
 
 QString MainWindow::getLiveRootSpace()
@@ -653,7 +670,7 @@ bool MainWindow::createIso(QString filename)
     }
 
     // make md5sum
-    if (make_md5sum == "yes") {
+    if (make_chksum == "yes") {
         makeMd5sum(snapshot_dir.absolutePath(), filename);
         makeSha512sum(snapshot_dir.absolutePath(), filename);
     }

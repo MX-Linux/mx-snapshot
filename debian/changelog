@@ -1,6 +1,24 @@
+mx-snapshot (20.4.1) mx; urgency=medium
+
+  * fix localized folder selection for multiple users >2
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 29 Apr 2020 17:06:03 -0400
+
+mx-snapshot (20.4) mx; urgency=medium
+
+  * replace su with runuser
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 24 Apr 2020 15:31:00 -0400
+
+mx-snapshot (20.3) mx; urgency=medium
+
+  * add /etc/snapshot_created with date of creation
+
+ -- Adrian <adrian@mx>  Thu, 12 Mar 2020 01:09:26 -0400
+
 mx-snapshot (20.2) mx; urgency=medium
 
-  * updte copy-initrd-modules
+  * update copy-initrd-modules
 
  -- Adrian <adrian@mxlinux.org>  Sun, 02 Feb 2020 12:13:29 -0500
 
