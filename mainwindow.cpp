@@ -155,7 +155,7 @@ bool MainWindow::isOnSupportedPart(QDir dir)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QStringList supported_partitions = (QStringList() << "ext2/ext3" << "btrfs" << "jfs" << "reiserfs" << "xfs" << "fuseblk"); // supported partition types (NTFS returns fuseblk)
-    QString part_type = shell->getCmdOut("/usr/bin/stat --file-system --format=%T " + dir.absolutePath()).trimmed();
+    QString part_type = shell->getCmdOut("stat --file-system --format=%T \"" + dir.absolutePath() + "\"").trimmed();
     qDebug() << "detected partition" << part_type << "supported part:" << supported_partitions.contains(part_type);
     return supported_partitions.contains(part_type);
 }
@@ -473,8 +473,8 @@ QString MainWindow::getFilename()
 QString MainWindow::largerFreeSpace(QString dir1, QString dir2)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    int dir1_free = shell->getCmdOut("df -k --output=avail " + dir1 + " 2>/dev/null | tail -n1").toInt();
-    int dir2_free = shell->getCmdOut("df -k --output=avail " + dir2 + " 2>/dev/null | tail -n1").toInt();
+    int dir1_free = shell->getCmdOut("df -k --output=avail \"" + dir1 + "\" 2>/dev/null | tail -n1").toInt();
+    int dir2_free = shell->getCmdOut("df -k --output=avail \"" + dir2 + "\" 2>/dev/null | tail -n1").toInt();
 
     if (dir1_free >= dir2_free) {
         return dir1;
