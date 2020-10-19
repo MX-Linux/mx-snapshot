@@ -1,0 +1,51 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 19 Oct 2020 16:43:50 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 20.10
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (20.10) mx; urgency=medium
+ .
+   * exclude ~/.cache/thumbnails
+   * add exclude Network configurations checkbox in GUI
+   * improve editor selection
+Checksums-Sha1:
+ c906d1542584faec6f1e3cead1e21334a34996c6 1167 mx-snapshot_20.10.dsc
+ 2ebcf829d0b4a009ca9a1f5a212ae106a948f183 166888 mx-snapshot_20.10.tar.xz
+ 6b9d56f2e6cdfc60d45ac9c6ff95ab8c01db902b 787466 mx-snapshot-dbgsym_20.10_amd64.deb
+ 05aaef2bdb991ab29b74231f60c41929cf0ca6b2 10696 mx-snapshot_20.10_amd64.buildinfo
+ 63ebc9d6bee1e8a36dba58f464d1ff20a42b355c 199276 mx-snapshot_20.10_amd64.deb
+Checksums-Sha256:
+ 0795605d2ec6e277a0f10da9d3da5e3cfa6d9571465ceea06b5f8ea62463ee02 1167 mx-snapshot_20.10.dsc
+ b25a0d12e09080380ce2c0e5dd84a625981e64b547a8feb45238442ae9e6773a 166888 mx-snapshot_20.10.tar.xz
+ b5ea843e86758e64d6016b8c8b409d2af9c644ec4eecd0afc55f1a18a9de965f 787466 mx-snapshot-dbgsym_20.10_amd64.deb
+ b32a2f0009dc750260a09766542e0d2d2a422d198fba954eabaad8a951f74438 10696 mx-snapshot_20.10_amd64.buildinfo
+ e63cdbe9e89e7417a023a779d263c0d96648f1f1db00cbea61acbe2bd6588c90 199276 mx-snapshot_20.10_amd64.deb
+Files:
+ b004122197fb31524de1284d293aa9a8 1167 admin optional mx-snapshot_20.10.dsc
+ 7a6953c6c1132a2cc337ab2316ff8896 166888 admin optional mx-snapshot_20.10.tar.xz
+ 0d0e82c4b214688d4bd0bb94a56593cf 787466 debug extra mx-snapshot-dbgsym_20.10_amd64.deb
+ 00f3f6c5e70d6bc140b63c0100cf46e6 10696 admin optional mx-snapshot_20.10_amd64.buildinfo
+ da1c0ee3302acdc075439f64509d0450 199276 admin optional mx-snapshot_20.10_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl+OAbcTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumFyLB/9Q4hiwfAATZdpAghhzLEagorservEc
+v0cETW/QpBLOXtW5OwhUa5jys1pGlVdL0IaWy3LRhZmBNLsKoeMihDCTMzc/AlQN
+PcglicX4xt3T/VbR5ra9tSCAXr/O6LiqCNIK46YQ9RwimrYGy2NUAdNKne3kUhKX
+s61nlstHNiat7xx9hzdsLKgzg+JCK8Bs4zKdIzCjUCVqmhRB0RpAJbniUllC2ive
+ALiBcsG4OiWLZshu3hGZAZBYX2OJo91QUyCN+9aDu/vKJHeunQoww2gpeJuiuays
+IGQvjDRD3VKVim/VNtl/HVLiW+kO7VpsPeT781jZfkt2MmClzcnh5aGX
+=3NRY
+-----END PGP SIGNATURE-----

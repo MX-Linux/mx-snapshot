@@ -28,7 +28,6 @@ etc/live/protect
 etc/machine-id
 etc/mailname
 etc/mtab
-etc/NetworkManager/system-connections/*
 etc/udev/rules.d/70-persistent-cd.rules
 etc/udev/rules.d/70-persistent-net.rules
 etc/resolv.conf
@@ -74,6 +73,7 @@ var/cache/brightness-settings-cache/*
 
 home/*/.cache/mozilla/firefox/*/cache2/*
 home/*/.cache/mozilla/firefox/*/thumbnails/*
+home/*/.cache/thumbnails/*
 home/*/.mozilla/firefox/*/Cache/*
 home/*/.mozilla/firefox/*/cache2/*
 home/*/.mozilla/seamonkey/*/Cache/*

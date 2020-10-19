@@ -493,11 +493,11 @@ QString MainWindow::largerFreeSpace(QString dir1, QString dir2, QString dir3)
 QString MainWindow::getEditor()
 {
     QString editor;
-    if (!QFile(gui_editor.fileName()).exists()) {  // if specified editor doesn't exist get the default one
-//        editor = shell->getCmdOut("grep Exec $(locate $(xdg-mime query default text/plain))|/usr/bin/cut -d= -f2|/usr/bin/cut -d\" \" -f1");
-//        if (editor.isEmpty() || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exist use nano as backup editor
-            editor = "/usr/bin/x-terminal-emulator -e nano";
-//        }
+    if (system("command -v " + gui_editor.fileName().toUtf8()) != 0) {  // if specified editor doesn't exist get the default one
+        QString editor = shell->getCmdOut("grep Exec $(locate $(xdg-mime query default text/plain))|cut -d= -f2|cut -d' ' -f1|head -1");
+        if (editor.isEmpty() || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exit use nano as backup editor
+            editor = "x-terminal-emulator -e nano";
+        }
     } else {
         editor = gui_editor.fileName();
     }
@@ -1068,4 +1068,13 @@ void MainWindow::on_cbCompression_currentIndexChanged(const QString &arg1)
     QSettings settings(config_file.fileName(), QSettings::IniFormat);
     settings.setValue("compression", arg1);
     compression = arg1;
+}
+
+void MainWindow::on_excludeNetworks_toggled(bool checked)
+{
+    QString exclusion = "/etc/NetworkManager/system-connections/*";
+    addRemoveExclusion(checked, exclusion);
+    if (!checked) {
+        ui->excludeAll->setChecked(false);
+    }
 }

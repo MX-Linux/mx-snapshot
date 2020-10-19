@@ -1,3 +1,11 @@
+mx-snapshot (20.10) mx; urgency=medium
+
+  * exclude ~/.cache/thumbnails
+  * add exclude Network configurations checkbox in GUI
+  * improve editor selection
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 19 Oct 2020 16:43:50 -0400
+
 mx-snapshot (20.6) mx; urgency=medium
 
   * fix folder quoting
