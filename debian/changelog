@@ -1,3 +1,9 @@
+mx-snapshot (20.10.1) mx; urgency=medium
+
+  * add more network manager storage locations
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 20 Oct 2020 19:28:28 -0400
+
 mx-snapshot (20.10) mx; urgency=medium
 
   * exclude ~/.cache/thumbnails
