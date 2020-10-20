@@ -139,17 +139,16 @@ private slots:
     void on_buttonHelp_clicked();
     void on_buttonNext_clicked();
     void on_buttonSelectSnapshot_clicked();
+    void on_cbCompression_currentIndexChanged(const QString &arg1);
+    void on_excludeDesktop_toggled(bool checked);
     void on_excludeDocuments_toggled(bool checked);
     void on_excludeDownloads_toggled(bool checked);
-    void on_excludePictures_toggled(bool checked);
     void on_excludeMusic_toggled(bool checked);
+    void on_excludeNetworks_toggled(bool checked);
+    void on_excludePictures_toggled(bool checked);
     void on_excludeVideos_toggled(bool checked);
-    void on_excludeDesktop_toggled(bool checked);
-    void on_radioRespin_clicked(bool checked);
     void on_radioPersonal_clicked(bool checked);
-
-
-    void on_cbCompression_currentIndexChanged(const QString &arg1);
+    void on_radioRespin_clicked(bool checked);
 
 private:
     Ui::MainWindow *ui;

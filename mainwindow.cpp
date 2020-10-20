@@ -155,7 +155,7 @@ bool MainWindow::isOnSupportedPart(QDir dir)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QStringList supported_partitions = (QStringList() << "ext2/ext3" << "btrfs" << "jfs" << "reiserfs" << "xfs" << "fuseblk"); // supported partition types (NTFS returns fuseblk)
-    QString part_type = shell->getCmdOut("/usr/bin/stat --file-system --format=%T " + dir.absolutePath()).trimmed();
+    QString part_type = shell->getCmdOut("stat --file-system --format=%T \"" + dir.absolutePath() + "\"").trimmed();
     qDebug() << "detected partition" << part_type << "supported part:" << supported_partitions.contains(part_type);
     return supported_partitions.contains(part_type);
 }
@@ -473,8 +473,8 @@ QString MainWindow::getFilename()
 QString MainWindow::largerFreeSpace(QString dir1, QString dir2)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    int dir1_free = shell->getCmdOut("df -k --output=avail " + dir1 + " 2>/dev/null | tail -n1").toInt();
-    int dir2_free = shell->getCmdOut("df -k --output=avail " + dir2 + " 2>/dev/null | tail -n1").toInt();
+    int dir1_free = shell->getCmdOut("df -k --output=avail \"" + dir1 + "\" 2>/dev/null | tail -n1").toInt();
+    int dir2_free = shell->getCmdOut("df -k --output=avail \"" + dir2 + "\" 2>/dev/null | tail -n1").toInt();
 
     if (dir1_free >= dir2_free) {
         return dir1;
@@ -493,11 +493,14 @@ QString MainWindow::largerFreeSpace(QString dir1, QString dir2, QString dir3)
 QString MainWindow::getEditor()
 {
     QString editor;
-    if (!QFile(gui_editor.fileName()).exists()) {  // if specified editor doesn't exist get the default one
-//        editor = shell->getCmdOut("grep Exec $(locate $(xdg-mime query default text/plain))|/usr/bin/cut -d= -f2|/usr/bin/cut -d\" \" -f1");
-//        if (editor.isEmpty() || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exist use nano as backup editor
-            editor = "/usr/bin/x-terminal-emulator -e nano";
-//        }
+    if (system("command -v " + gui_editor.fileName().toUtf8()) != 0) {  // if specified editor doesn't exist get the default one
+        editor = shell->getCmdOut("grep Exec $(locate $(xdg-mime query default text/plain))|cut -d= -f2|cut -d' ' -f1|head -1");
+        if (editor == "kate" || editor == "kwrite") { // need to run these as normal user
+            editor = "runuser -u $(logname) " + editor;
+        }
+        if (editor.isEmpty() || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exit use nano as backup editor
+            editor = "x-terminal-emulator -e nano";
+        }
     } else {
         editor = gui_editor.fileName();
     }
@@ -1068,4 +1071,13 @@ void MainWindow::on_cbCompression_currentIndexChanged(const QString &arg1)
     QSettings settings(config_file.fileName(), QSettings::IniFormat);
     settings.setValue("compression", arg1);
     compression = arg1;
+}
+
+void MainWindow::on_excludeNetworks_toggled(bool checked)
+{
+    QString exclusion = "/etc/NetworkManager/system-connections/*";
+    addRemoveExclusion(checked, exclusion);
+    if (!checked) {
+        ui->excludeAll->setChecked(false);
+    }
 }

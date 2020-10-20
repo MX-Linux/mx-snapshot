@@ -346,13 +346,6 @@ color: rgb(0, 0, 0);</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="0">
-           <widget class="QCheckBox" name="excludeAll">
-            <property name="text">
-             <string>All of the above</string>
-            </property>
-           </widget>
-          </item>
           <item row="2" column="1">
            <widget class="QCheckBox" name="excludePictures">
             <property name="text">
@@ -378,6 +371,23 @@ color: rgb(0, 0, 0);</string>
            <widget class="QCheckBox" name="excludeVideos">
             <property name="text">
              <string>Videos</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QCheckBox" name="excludeNetworks">
+            <property name="statusTip">
+             <string>exclude network configurations</string>
+            </property>
+            <property name="text">
+             <string>Networks</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QCheckBox" name="excludeAll">
+            <property name="text">
+             <string>All of the above</string>
             </property>
            </widget>
           </item>
@@ -832,6 +842,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>632</x>
      <y>192</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>excludeAll</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>excludeNetworks</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>226</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>688</x>
+     <y>164</y>
     </hint>
    </hints>
   </connection>
