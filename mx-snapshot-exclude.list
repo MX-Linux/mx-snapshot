@@ -48,7 +48,6 @@ var/cache/debconf/*-old
 var/cache/lightdm
 var/cache/samba/browse.dat
 var/lib/apt/lists/*
-var/lib/connman/*
 var/lib/dbus/machine-id
 var/lib/dhcp/*
 var/lib/dpkg/*-old

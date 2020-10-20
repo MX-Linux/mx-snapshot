@@ -1075,7 +1075,14 @@ void MainWindow::on_cbCompression_currentIndexChanged(const QString &arg1)
 
 void MainWindow::on_excludeNetworks_toggled(bool checked)
 {
+    //Network Manager
     QString exclusion = "/etc/NetworkManager/system-connections/*";
+    addRemoveExclusion(checked, exclusion);
+    //WiCD
+    exclusion = "/etc/wicd/*";
+    addRemoveExclusion(checked, exclusion);
+    //connman
+    exclusion = "/var/lib/connman/*";
     addRemoveExclusion(checked, exclusion);
     if (!checked) {
         ui->excludeAll->setChecked(false);
