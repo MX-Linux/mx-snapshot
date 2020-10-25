@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="bg" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="vi" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
@@ -94,12 +94,12 @@
     <message>
         <location filename="mainwindow.ui" line="366"/>
         <source>Desktop</source>
-        <translation>Работен плот</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="373"/>
         <source>Videos</source>
-        <translation type="unfinished"/>
+        <translation>Videos</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="380"/>
@@ -144,12 +144,12 @@
     <message>
         <location filename="mainwindow.ui" line="581"/>
         <source>Display help </source>
-        <translation>Помощ за дисплея</translation>
+        <translation>Hiển thị bản trợ giúp</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="584"/>
         <source>Help</source>
-        <translation>Помощ</translation>
+        <translation>Trợ giúp</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="591"/>
@@ -159,12 +159,12 @@
     <message>
         <location filename="mainwindow.ui" line="642"/>
         <source>About this application</source>
-        <translation>Относно това приложение</translation>
+        <translation>Về ứng dụng này</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="645"/>
         <source>About...</source>
-        <translation>Относно...</translation>
+        <translation>Về ứng dụng này...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="652"/>
@@ -174,12 +174,12 @@
     <message>
         <location filename="mainwindow.ui" line="668"/>
         <source>Quit application</source>
-        <translation type="unfinished"/>
+        <translation>Thoát ứng dụng</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="671"/>
         <source>Cancel</source>
-        <translation>Отмяна</translation>
+        <translation>Hủy bỏ</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="678"/>
@@ -189,12 +189,12 @@
     <message>
         <location filename="mainwindow.ui" line="694"/>
         <source>Next</source>
-        <translation>Следващ</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="736"/>
         <source>Back</source>
-        <translation>Назад</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="234"/>
@@ -238,7 +238,7 @@
         <location filename="mainwindow.cpp" line="663"/>
         <location filename="mainwindow.cpp" line="857"/>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="292"/>
@@ -278,7 +278,7 @@
     <message>
         <location filename="mainwindow.cpp" line="670"/>
         <source>Making hybrid iso</source>
-        <translation>Създаване на хибридно </translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="683"/>
@@ -304,7 +304,7 @@
     <message>
         <location filename="mainwindow.cpp" line="723"/>
         <source>Cleaning...</source>
-        <translation>Почистване...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="737"/>
@@ -325,7 +325,7 @@
     <message>
         <location filename="mainwindow.cpp" line="842"/>
         <source>Settings</source>
-        <translation>Настройки</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="848"/>
@@ -390,12 +390,12 @@
     <message>
         <location filename="mainwindow.cpp" line="895"/>
         <source>All finished!</source>
-        <translation>Всичко завършено!</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="896"/>
         <source>Close</source>
-        <translation>Затвори</translation>
+        <translation>Đóng</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="1007"/>
@@ -405,7 +405,7 @@
     <message>
         <location filename="mainwindow.cpp" line="1008"/>
         <source>Version: </source>
-        <translation>Версия:</translation>
+        <translation>Phiên bản:</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="1009"/>
@@ -448,29 +448,29 @@
     <message>
         <location filename="about.cpp" line="32"/>
         <source>License</source>
-        <translation>Лиценз</translation>
+        <translation>Giấy phép</translation>
     </message>
     <message>
         <location filename="about.cpp" line="33"/>
         <location filename="about.cpp" line="43"/>
         <source>Changelog</source>
-        <translation>Промени</translation>
+        <translation>Nhật kí thay đổi</translation>
     </message>
     <message>
         <location filename="about.cpp" line="34"/>
         <source>Cancel</source>
-        <translation>Отказ</translation>
+        <translation>Hủy bỏ</translation>
     </message>
     <message>
         <location filename="about.cpp" line="51"/>
         <source>&amp;Close</source>
-        <translation>&amp;Затвори</translation>
+        <translation>&amp;Đóng</translation>
     </message>
     <message>
         <location filename="main.cpp" line="75"/>
         <location filename="main.cpp" line="86"/>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <location filename="main.cpp" line="76"/>
@@ -480,7 +480,7 @@
     <message>
         <location filename="main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Трябва да стартирате тази програма като администратор.</translation>
+        <translation>Bạn phải chạy chương trình này với quyền root.</translation>
     </message>
 </context>
 </TS>
