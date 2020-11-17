@@ -44,7 +44,9 @@ block
 btrfs
 cdrom
 crc16
+crc32
 crc32c-generic
+crc32-pclmul
 crct10dif-common
 crct10dif-generic
 crct10dif-pclmul
@@ -85,6 +87,7 @@ jbd
 jbd2
 jfs
 libcrc32c
+libahci 
 linear
 loop
 mbcache
@@ -107,6 +110,7 @@ reiserfs
 rts5139
 scsi-mod
 scsi-transport-fc
+sdhci
 sd-mod
 sg
 shpchp
@@ -139,6 +143,7 @@ xcbc
 xfs
 xhci-hcd
 xhci-pci
+xor
 "
 
 CRYPT_LIST="
