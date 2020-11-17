@@ -476,7 +476,6 @@ Es wird eine .ISO-Datei erstellt, bootfähig auch von USB-stick. Es ist typische
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
@@ -486,9 +485,8 @@ Es wird eine .ISO-Datei erstellt, bootfähig auch von USB-stick. Es ist typische
         <translation>Der installierte Kernel unterstützt Squashfs nicht; Abbruch.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Dieses Programm muss als Benutzer &quot;root&quot; ausgeführt werden.</translation>
+        <translation type="vanished">Dieses Programm muss als Benutzer &quot;root&quot; ausgeführt werden.</translation>
     </message>
 </context>
 </TS>

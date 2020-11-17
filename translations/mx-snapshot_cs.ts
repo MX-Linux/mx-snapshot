@@ -475,7 +475,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
@@ -485,9 +484,8 @@
         <translation>Současné jádro nepodporuje Squashfs, nelze pokračovat.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Tuto aplikaci musíte spustit jako root.</translation>
+        <translation type="vanished">Tuto aplikaci musíte spustit jako root.</translation>
     </message>
 </context>
 </TS>

@@ -476,7 +476,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>May error</translation>
     </message>
@@ -486,9 +485,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Dapat paandaring ang program na ito bilang root.</translation>
+        <translation type="vanished">Dapat paandaring ang program na ito bilang root.</translation>
     </message>
 </context>
 </TS>

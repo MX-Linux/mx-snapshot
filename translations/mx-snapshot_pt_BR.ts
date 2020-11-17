@@ -476,7 +476,6 @@ removendo imagens anteriores e cópias guardadas/copiadas:
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
@@ -486,9 +485,8 @@ removendo imagens anteriores e cópias guardadas/copiadas:
         <translation>O núcleo (kernel) atual não suporta Squashfs, não pode continuar.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Você tem que executar este programa como root.</translation>
+        <translation type="vanished">Você tem que executar este programa como root.</translation>
     </message>
 </context>
 </TS>

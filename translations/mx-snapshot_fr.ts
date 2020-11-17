@@ -474,7 +474,6 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
@@ -484,9 +483,8 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <translation>Le noyau actuel ne supporte pas Squashfs, impossible de continuer.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Vous devez lancer cette application avec les droits administrateur.</translation>
+        <translation type="vanished">Vous devez lancer cette application avec les droits administrateur.</translation>
     </message>
 </context>
 </TS>

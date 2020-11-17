@@ -475,7 +475,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
@@ -485,9 +484,8 @@
         <translation>Ο τρέχων πυρήνας δεν υποστηρίζει Squashfs, δεν μπορεί να συνεχιστεί.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Πρέπει να τρέξετε αυτή την εφαρμογή ως Root.</translation>
+        <translation type="vanished">Πρέπει να τρέξετε αυτή την εφαρμογή ως Root.</translation>
     </message>
 </context>
 </TS>

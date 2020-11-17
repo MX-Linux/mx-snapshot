@@ -470,7 +470,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -480,9 +479,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>شما باید این برنامه را در حالت root اجرا کنید.</translation>
+        <translation type="vanished">شما باید این برنامه را در حالت root اجرا کنید.</translation>
     </message>
 </context>
 </TS>

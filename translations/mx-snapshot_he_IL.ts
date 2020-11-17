@@ -470,7 +470,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>תקלה</translation>
     </message>
@@ -480,9 +479,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>חובה להריץ את התכנית הזו כמשתמש שורש (root).</translation>
+        <translation type="vanished">חובה להריץ את התכנית הזו כמשתמש שורש (root).</translation>
     </message>
 </context>
 </TS>

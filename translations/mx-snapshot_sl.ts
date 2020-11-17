@@ -475,7 +475,6 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Napaka</translation>
     </message>
@@ -485,9 +484,8 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation>Trenutno jedro ne podpira Squashfs. Ne morem nadaljevati.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Ta program morate zagnati kot root</translation>
+        <translation type="vanished">Ta program morate zagnati kot root</translation>
     </message>
 </context>
 </TS>

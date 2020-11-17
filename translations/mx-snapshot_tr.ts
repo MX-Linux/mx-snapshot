@@ -475,7 +475,6 @@ daha fazla kullanılabilir alan oluşturabilirsiniz:
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
@@ -485,9 +484,8 @@ daha fazla kullanılabilir alan oluşturabilirsiniz:
         <translation>Şu an kullanılan çekirdek squashfs dosya sistemini desteklemediği için devam edilemiyor.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Bu programı root olarak çalıştırmalısınız.</translation>
+        <translation type="vanished">Bu programı root olarak çalıştırmalısınız.</translation>
     </message>
 </context>
 </TS>

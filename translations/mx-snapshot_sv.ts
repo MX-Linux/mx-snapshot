@@ -475,7 +475,6 @@ genom att avlägsna tidigare snapshots och sparade kopior:
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Fel</translation>
     </message>
@@ -485,9 +484,8 @@ genom att avlägsna tidigare snapshots och sparade kopior:
         <translation>Nuvarande kärna stöder inte Squashfs, kan inte fortsätta.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Du måste köra detta program som root</translation>
+        <translation type="vanished">Du måste köra detta program som root</translation>
     </message>
 </context>
 </TS>

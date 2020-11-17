@@ -475,7 +475,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
@@ -485,9 +484,8 @@
         <translation>Текущее ядро не поддерживает Squashfs, невозможно продолжить.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Вы должны запустить программу от имени суперпользователя.</translation>
+        <translation type="vanished">Вы должны запустить программу от имени суперпользователя.</translation>
     </message>
 </context>
 </TS>

@@ -470,7 +470,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -480,9 +479,8 @@
         <translation>現在のカーネルは Squashfs をサポートしてないので続行できません。</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>このプログラムは root で実行する必要があります。</translation>
+        <translation type="vanished">このプログラムは root で実行する必要があります。</translation>
     </message>
 </context>
 </TS>

@@ -470,7 +470,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>त्रुटि</translation>
     </message>
@@ -480,9 +479,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>इस प्रोग्राम को चलाने हेतु आपका रुट होना आवश्यक है।</translation>
+        <translation type="vanished">इस प्रोग्राम को चलाने हेतु आपका रुट होना आवश्यक है।</translation>
     </message>
 </context>
 </TS>

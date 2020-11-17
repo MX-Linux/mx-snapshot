@@ -470,7 +470,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Грешка</translation>
     </message>
@@ -480,9 +479,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Трябва да стартирате тази програма като администратор.</translation>
+        <translation type="vanished">Трябва да стартирате тази програма като администратор.</translation>
     </message>
 </context>
 </TS>

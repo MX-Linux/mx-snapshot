@@ -474,7 +474,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
@@ -484,9 +483,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>本程式必須以 root 身份來執行。</translation>
+        <translation type="vanished">本程式必須以 root 身份來執行。</translation>
     </message>
 </context>
 </TS>

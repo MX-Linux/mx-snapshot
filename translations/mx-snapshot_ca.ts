@@ -475,7 +475,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -485,9 +484,8 @@
         <translation>El kernel actual no dóna suport a Squashfs, no puc continuar.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Cal ser usuari principal per executar aquest programa.</translation>
+        <translation type="vanished">Cal ser usuari principal per executar aquest programa.</translation>
     </message>
 </context>
 </TS>

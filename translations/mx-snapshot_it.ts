@@ -475,7 +475,6 @@ rimuovendo precedenti snapshots e copie salvate:
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
@@ -485,9 +484,8 @@ rimuovendo precedenti snapshots e copie salvate:
         <translation>Il kernel attuale non supporta Squashfs, non si può continuare.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Devi eseguire questo programma come amministratore</translation>
+        <translation type="vanished">Devi eseguire questo programma come amministratore</translation>
     </message>
 </context>
 </TS>

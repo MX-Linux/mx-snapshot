@@ -475,7 +475,6 @@ odstránením predošlých obrazov alebo kópií systému:
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
@@ -485,9 +484,8 @@ odstránením predošlých obrazov alebo kópií systému:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Tento program musíte spustiť ako root užívateľ.</translation>
+        <translation type="vanished">Tento program musíte spustiť ako root užívateľ.</translation>
     </message>
 </context>
 </TS>

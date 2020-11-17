@@ -1,3 +1,9 @@
+mx-snapshot (20.11) mx; urgency=medium
+
+  * new copy-initrd-modules
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 17 Nov 2020 15:36:05 -0500
+
 mx-snapshot (20.10.2) mx; urgency=medium
 
   * updated translations

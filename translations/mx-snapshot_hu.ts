@@ -470,7 +470,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Hiba</translation>
     </message>
@@ -480,9 +479,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Root felhasználóként kell futtatnia ezt a programot!</translation>
+        <translation type="vanished">Root felhasználóként kell futtatnia ezt a programot!</translation>
     </message>
 </context>
 </TS>

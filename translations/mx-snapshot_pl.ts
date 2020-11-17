@@ -474,7 +474,6 @@ poprzez usunięcie poprzednich zrzutów i zapisanych kopii:
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
@@ -484,9 +483,8 @@ poprzez usunięcie poprzednich zrzutów i zapisanych kopii:
         <translation>Bieżące jądro (kernel) nie obsługuje Squashfs, nie można kontynuować.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Musisz uruchomić ten program jako administrator. </translation>
+        <translation type="vanished">Musisz uruchomić ten program jako administrator. </translation>
     </message>
 </context>
 </TS>

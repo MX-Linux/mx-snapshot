@@ -476,7 +476,6 @@ door oudere snapshots en opgeslagen kopieën te verwijderen:
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
@@ -486,9 +485,8 @@ door oudere snapshots en opgeslagen kopieën te verwijderen:
         <translation>Huidige kernel ondersteunt geen Squashfs, kan niet doorgaan.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>U dient deze toepassing als &apos;root&apos; uit te voeren.</translation>
+        <translation type="vanished">U dient deze toepassing als &apos;root&apos; uit te voeren.</translation>
     </message>
 </context>
 </TS>

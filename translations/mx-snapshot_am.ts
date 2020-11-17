@@ -470,7 +470,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>ስህተት</translation>
     </message>
@@ -480,9 +479,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>ይህን ፕሮግራም እንደ root ማስኬድ አለብዎት</translation>
+        <translation type="vanished">ይህን ፕሮግራም እንደ root ማስኬድ አለብዎት</translation>
     </message>
 </context>
 </TS>

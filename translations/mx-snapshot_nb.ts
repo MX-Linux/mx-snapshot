@@ -475,7 +475,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Feil</translation>
     </message>
@@ -485,9 +484,8 @@
         <translation>Gjeldende kjerne støtter ikke Squashfs. Kan ikke fortsette.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Du må kjøre dette programmet som root.</translation>
+        <translation type="vanished">Du må kjøre dette programmet som root.</translation>
     </message>
 </context>
 </TS>

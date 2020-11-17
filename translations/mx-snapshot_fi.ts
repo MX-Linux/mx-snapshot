@@ -475,7 +475,6 @@
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
@@ -485,9 +484,8 @@
         <translation>Tämänhetkinen ydin ei tue Squashfs:ää, jatkaminen ei onnistu.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Sinun täytyy suorittaa tämä ohjelma pääkäyttäjänä.</translation>
+        <translation type="vanished">Sinun täytyy suorittaa tämä ohjelma pääkäyttäjänä.</translation>
     </message>
 </context>
 </TS>
