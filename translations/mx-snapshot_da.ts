@@ -40,22 +40,22 @@
     <message>
         <location filename="../mainwindow.ui" line="215"/>
         <source>lz4</source>
-        <translation type="unfinished"></translation>
+        <translation>lz4</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="220"/>
         <source>lzo</source>
-        <translation type="unfinished"></translation>
+        <translation>lzo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="225"/>
         <source>gzip</source>
-        <translation type="unfinished"></translation>
+        <translation>gzip</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="230"/>
         <source>xz</source>
-        <translation type="unfinished"></translation>
+        <translation>xz</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="238"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../mainwindow.ui" line="281"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /etc/mx-snapshot-exclude.list.</source>
-        <translation>Du kan også ekskludere bestemte mapper ved at tilvælge de fælles valg nedenfor eller ved at klikke på knappen for direkte redigering af /etc/mx-snapshot-exclude.list.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="338"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../mainwindow.ui" line="471"/>
         <source>ISO compression scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO-komprimeringsskema:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="484"/>
@@ -407,21 +407,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About MX Snapshot</source>
-        <translation type="vanished">Om MX Øjebliksbillede</translation>
+        <translation>Om %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
@@ -439,16 +425,14 @@
         <translation>Ophavsret (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Licens</translation>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation>%1-licens</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Ændringslog</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Luk</translation>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
+        <translation>%1-hjælp</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1035"/>
@@ -469,6 +453,27 @@
 <context>
     <name>QApplication</name>
     <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>Licens</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>Ændringslog</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>Annuller</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>&amp;Luk</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
@@ -483,27 +488,6 @@
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>Du skal køre programmet som root.</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished">Licens</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished">Ændringslog</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Annuller</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Luk</translation>
     </message>
 </context>
 </TS>

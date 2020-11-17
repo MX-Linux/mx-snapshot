@@ -40,22 +40,22 @@
     <message>
         <location filename="../mainwindow.ui" line="215"/>
         <source>lz4</source>
-        <translation type="unfinished"></translation>
+        <translation>lz4</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="220"/>
         <source>lzo</source>
-        <translation type="unfinished"></translation>
+        <translation>lzo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="225"/>
         <source>gzip</source>
-        <translation type="unfinished"></translation>
+        <translation>gzip</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="230"/>
         <source>xz</source>
-        <translation type="unfinished"></translation>
+        <translation>xz</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="238"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../mainwindow.ui" line="281"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /etc/mx-snapshot-exclude.list.</source>
-        <translation>Vous pouvez également exclure certains répertoires en sélectionnant les choix les plus courants ci-dessous, ou en cliquant le bouton pour éditer directement  /etc/mx-snapshot-exclude.list.</translation>
+        <translation>Vous pouvez également exclure certains répertoires en sélectionnant les choix les plus courants ci-dessous, ou en cliquant sur le bouton pour éditer directement  /etc/mx-snapshot-exclude.list.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="338"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../mainwindow.ui" line="383"/>
         <source>Networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Réseaux</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="428"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../mainwindow.ui" line="471"/>
         <source>ISO compression scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Méthode de compression de l&apos;ISO :</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="484"/>
@@ -206,7 +206,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="236"/>
         <source>estimated</source>
-        <translation type="unfinished"></translation>
+        <translation>estimé</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="243"/>
@@ -406,21 +406,7 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About MX Snapshot</source>
-        <translation type="vanished">À propos de MX Instantané</translation>
+        <translation>À propos %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
@@ -438,16 +424,14 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Licence</translation>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation>%1 Licence</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Journal des modifications</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Fermer</translation>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
+        <translation>%1 Aide</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1035"/>
@@ -468,6 +452,27 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
 <context>
     <name>QApplication</name>
     <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>Licence</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>Journal des modifications</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>Annuler</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>&amp;Fermer</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
@@ -482,27 +487,6 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>Vous devez lancer cette application avec les droits administrateur.</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished">Licence</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished">Journal des modifications</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Fermer</translation>
     </message>
 </context>
 </TS>

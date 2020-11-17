@@ -40,22 +40,22 @@
     <message>
         <location filename="../mainwindow.ui" line="215"/>
         <source>lz4</source>
-        <translation type="unfinished"></translation>
+        <translation>lz4</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="220"/>
         <source>lzo</source>
-        <translation type="unfinished"></translation>
+        <translation>lzo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="225"/>
         <source>gzip</source>
-        <translation type="unfinished"></translation>
+        <translation>gzip</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="230"/>
         <source>xz</source>
-        <translation type="unfinished"></translation>
+        <translation>xz</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="238"/>
@@ -66,17 +66,17 @@
     <message>
         <location filename="../mainwindow.ui" line="281"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /etc/mx-snapshot-exclude.list.</source>
-        <translation>此外，你還可以排除某些目錄，使其不納入快照中。方法是勾選這些常見的目錄，或是按下面的按鈕，直接編輯 /etc/mx-snapshot-exclude.list 檔案。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="338"/>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>所有下載</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="345"/>
         <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>文件</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="390"/>
@@ -86,12 +86,12 @@
     <message>
         <location filename="../mainwindow.ui" line="352"/>
         <source>Pictures</source>
-        <translation type="unfinished"></translation>
+        <translation>圖片</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="359"/>
         <source>Music</source>
-        <translation type="unfinished"></translation>
+        <translation>音樂</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="366"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../mainwindow.ui" line="471"/>
         <source>ISO compression scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO 壓縮方案:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="484"/>
@@ -254,7 +254,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="322"/>
         <source>Building new initrd...</source>
-        <translation type="unfinished"></translation>
+        <translation>建立新 initrd...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="348"/>
@@ -289,18 +289,18 @@
     <message>
         <location filename="../mainwindow.cpp" line="683"/>
         <source>MX Snapshot completed sucessfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>MX快照成功完成！</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="684"/>
         <location filename="../mainwindow.cpp" line="685"/>
         <source>Snapshot took %1 to finish.</source>
-        <translation type="unfinished"></translation>
+        <translation>快照 %1 完成.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="686"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
-        <translation type="unfinished"></translation>
+        <translation>感謝您使用MX 快照，接下來運行MX Live USB Maker！</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="699"/>
@@ -351,7 +351,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="858"/>
         <source>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</source>
-        <translation type="unfinished"></translation>
+        <translation>當前內核不支持所選的壓縮算法，請編輯配置文件並選擇其他算法。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="862"/>
@@ -406,21 +406,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About MX Snapshot</source>
-        <translation type="vanished">關於 MX 快照</translation>
+        <translation>大約 %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
@@ -438,12 +424,14 @@
         <translation>版權所有 (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">授權條款</translation>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation>%1 許可</translation>
     </message>
     <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">關閉（&amp;C）</translation>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
+        <translation>%1 幫助</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1035"/>
@@ -464,6 +452,27 @@
 <context>
     <name>QApplication</name>
     <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>授權條款</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>變更紀錄</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>關閉（&amp;C）</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
@@ -478,27 +487,6 @@
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>本程式必須以 root 身份來執行。</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished">授權條款</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished">關閉（&amp;C）</translation>
     </message>
 </context>
 </TS>

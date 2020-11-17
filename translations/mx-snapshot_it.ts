@@ -19,7 +19,7 @@
     <message>
         <location filename="../mainwindow.ui" line="43"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot è un utility che crea un immagine (ISO) avviabile del tuo attuale sistema che potrai conservare come copia di sicurezza o distribuire. Puoi continuare a lavorare con applicazioni leggere mentre il programma va avanti.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot è un&apos;utility che crea un&apos;immagine (ISO) avviabile del tuo attuale sistema che puoi conservare o distribuire. Puoi continuare a lavorare con applicazioni leggere mentre è in esecuzione.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="53"/>
@@ -40,22 +40,22 @@
     <message>
         <location filename="../mainwindow.ui" line="215"/>
         <source>lz4</source>
-        <translation type="unfinished"></translation>
+        <translation>lz4</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="220"/>
         <source>lzo</source>
-        <translation type="unfinished"></translation>
+        <translation>lzo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="225"/>
         <source>gzip</source>
-        <translation type="unfinished"></translation>
+        <translation>gzip</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="230"/>
         <source>xz</source>
-        <translation type="unfinished"></translation>
+        <translation>xz</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="238"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../mainwindow.ui" line="281"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /etc/mx-snapshot-exclude.list.</source>
-        <translation>Puoi escludere alcune directory barrando le scelte comuni qui sotto, oppure cliccando sul pulsante per editare direttamente il file /etc/mx-snapshot-exclude.list.</translation>
+        <translation>Puoi anche escludere alcune directory spuntando le scelte comuni di seguito, o facendo clic sul pulsante per modificare direttamente /etc/mx-snapshot-exclude.list.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="338"/>
@@ -106,12 +106,12 @@
     <message>
         <location filename="../mainwindow.ui" line="380"/>
         <source>exclude network configurations</source>
-        <translation type="unfinished"></translation>
+        <translation>escludi configurazioni di rete</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="383"/>
         <source>Networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Reti</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="428"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../mainwindow.ui" line="471"/>
         <source>ISO compression scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Schema di compressione ISO:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="484"/>
@@ -206,7 +206,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="236"/>
         <source>estimated</source>
-        <translation type="unfinished"></translation>
+        <translation>stimato</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="243"/>
@@ -407,21 +407,7 @@ rimuovendo precedenti snapshots e copie salvate:
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About MX Snapshot</source>
-        <translation type="vanished">Informazioni su MX Snapshot</translation>
+        <translation>Circa %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
@@ -439,16 +425,14 @@ rimuovendo precedenti snapshots e copie salvate:
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Licenza</translation>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation>%1 Licenza</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Changelog</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Chiudi</translation>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
+        <translation>%1 Aiuto</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1035"/>
@@ -469,6 +453,27 @@ rimuovendo precedenti snapshots e copie salvate:
 <context>
     <name>QApplication</name>
     <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>Licenza</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>Registro delle modifiche</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>Annulla</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>&amp;Chiudi</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
@@ -483,27 +488,6 @@ rimuovendo precedenti snapshots e copie salvate:
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>Devi eseguire questo programma come amministratore</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished">Licenza</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished">Changelog</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Chiudi</translation>
     </message>
 </context>
 </TS>

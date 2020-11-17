@@ -40,22 +40,22 @@
     <message>
         <location filename="../mainwindow.ui" line="215"/>
         <source>lz4</source>
-        <translation type="unfinished"></translation>
+        <translation>lz4</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="220"/>
         <source>lzo</source>
-        <translation type="unfinished"></translation>
+        <translation>lzo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="225"/>
         <source>gzip</source>
-        <translation type="unfinished"></translation>
+        <translation>gzip</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="230"/>
         <source>xz</source>
-        <translation type="unfinished"></translation>
+        <translation>xz</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="238"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../mainwindow.ui" line="281"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /etc/mx-snapshot-exclude.list.</source>
-        <translation>Sie können bestimmte Verzeichnisse ausschliessen durch anklicken der Auswahlfelder oder mittels des Schaltknopfs direkt die Datei /etc/mx-snapshot-exclude.list bearbeiten.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="338"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../mainwindow.ui" line="471"/>
         <source>ISO compression scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO Kompressionschema :</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="484"/>
@@ -407,21 +407,7 @@ gespeicherte Kopien von früheren Schnappschüssen löschen:
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About MX Snapshot</source>
-        <translation type="vanished">Impressum MX Snapshot</translation>
+        <translation>Über %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
@@ -440,16 +426,14 @@ Es wird eine .ISO-Datei erstellt, bootfähig auch von USB-stick. Es ist typische
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Lizenz</translation>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation>%1 Lizenz</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Changelog</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Close</translation>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
+        <translation>%1 Hilfe</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1035"/>
@@ -470,6 +454,27 @@ Es wird eine .ISO-Datei erstellt, bootfähig auch von USB-stick. Es ist typische
 <context>
     <name>QApplication</name>
     <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>Changelog</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>&amp;Schließen</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
@@ -484,27 +489,6 @@ Es wird eine .ISO-Datei erstellt, bootfähig auch von USB-stick. Es ist typische
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>Dieses Programm muss als Benutzer &quot;root&quot; ausgeführt werden.</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished">Lizenz</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished">Changelog</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Close</translation>
     </message>
 </context>
 </TS>

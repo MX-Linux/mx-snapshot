@@ -9,7 +9,7 @@
         <location filename="../mainwindow.cpp" line="125"/>
         <location filename="../mainwindow.cpp" line="905"/>
         <source>MX Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>MX Snapshot</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="30"/>
@@ -50,7 +50,7 @@
     <message>
         <location filename="../mainwindow.ui" line="225"/>
         <source>gzip</source>
-        <translation type="unfinished"></translation>
+        <translation>gzip</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="230"/>
@@ -71,12 +71,12 @@
     <message>
         <location filename="../mainwindow.ui" line="338"/>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>下载</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="345"/>
         <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>文档</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="390"/>
@@ -86,12 +86,12 @@
     <message>
         <location filename="../mainwindow.ui" line="352"/>
         <source>Pictures</source>
-        <translation type="unfinished"></translation>
+        <translation>图片</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="359"/>
         <source>Music</source>
-        <translation type="unfinished"></translation>
+        <translation>音乐</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="366"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../mainwindow.ui" line="373"/>
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>视频</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="380"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../mainwindow.ui" line="581"/>
         <source>Display help </source>
-        <translation type="unfinished"></translation>
+        <translation>显示帮助</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="584"/>
@@ -156,27 +156,27 @@
     <message>
         <location filename="../mainwindow.ui" line="591"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="642"/>
         <source>About this application</source>
-        <translation type="unfinished"></translation>
+        <translation>关于此软件</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="645"/>
         <source>About...</source>
-        <translation type="unfinished"></translation>
+        <translation>关于…</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="652"/>
         <source>Alt+B</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="668"/>
         <source>Quit application</source>
-        <translation type="unfinished"></translation>
+        <translation>退出应用程序</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="671"/>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../mainwindow.ui" line="678"/>
         <source>Alt+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+N</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="694"/>
@@ -240,7 +240,7 @@
         <location filename="../mainwindow.cpp" line="663"/>
         <location filename="../mainwindow.cpp" line="857"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="292"/>
@@ -270,7 +270,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="661"/>
         <source>Creating CD/DVD image file...</source>
-        <translation type="unfinished"></translation>
+        <translation>创建 CD/DVD 镜像文件...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="663"/>
@@ -312,7 +312,7 @@
         <location filename="../mainwindow.cpp" line="737"/>
         <location filename="../mainwindow.cpp" line="1053"/>
         <source>Done</source>
-        <translation type="unfinished"></translation>
+        <translation>完成</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="825"/>
@@ -387,7 +387,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="895"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>成功</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="895"/>
@@ -402,22 +402,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
+        <translation>关于 %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
         <source>Version: </source>
-        <translation type="unfinished"></translation>
+        <translation>版本:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1009"/>
@@ -427,7 +417,17 @@
     <message>
         <location filename="../mainwindow.cpp" line="1011"/>
         <source>Copyright (c) MX Linux</source>
-        <translation type="unfinished"></translation>
+        <translation>版权所有(c) MX Linux</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation>%1 许可证</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
+        <translation>%1 帮助</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1035"/>
@@ -448,10 +448,31 @@
 <context>
     <name>QApplication</name>
     <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>许可证</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>更新日志</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>关闭(&amp;C)</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="76"/>
@@ -461,28 +482,7 @@
     <message>
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>您必须以root用户身份运行该程序。</translation>
     </message>
 </context>
 </TS>

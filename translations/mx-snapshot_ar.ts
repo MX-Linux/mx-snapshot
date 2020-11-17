@@ -405,16 +405,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="1008"/>
         <source>Version: </source>
         <translation type="unfinished"></translation>
@@ -427,6 +417,16 @@
     <message>
         <location filename="../mainwindow.cpp" line="1011"/>
         <source>Copyright (c) MX Linux</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -448,22 +448,6 @@
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="86"/>
-        <source>Error</source>
-        <translation>خطأ</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="76"/>
-        <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="87"/>
-        <source>You must run this program as root.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="32"/>
         <source>License</source>
         <translation type="unfinished"></translation>
@@ -477,11 +461,27 @@
     <message>
         <location filename="../about.cpp" line="34"/>
         <source>Cancel</source>
-        <translation type="unfinished">إلغاء</translation>
+        <translation>إلغاء</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="51"/>
         <source>&amp;Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="86"/>
+        <source>Error</source>
+        <translation>خطأ</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="76"/>
+        <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="87"/>
+        <source>You must run this program as root.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

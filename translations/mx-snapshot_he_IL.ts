@@ -111,7 +111,7 @@
     <message>
         <location filename="../mainwindow.ui" line="383"/>
         <source>Networks</source>
-        <translation type="unfinished"></translation>
+        <translation>רשתות</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="428"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../mainwindow.ui" line="581"/>
         <source>Display help </source>
-        <translation type="unfinished"></translation>
+        <translation>הצגת עזרה</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="584"/>
@@ -156,22 +156,22 @@
     <message>
         <location filename="../mainwindow.ui" line="591"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="642"/>
         <source>About this application</source>
-        <translation>מידע לגבי התוכנה הזו</translation>
+        <translation>על אודות יישום זה</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="645"/>
         <source>About...</source>
-        <translation>אודות...</translation>
+        <translation>על אודות…</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="652"/>
         <source>Alt+B</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="668"/>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../mainwindow.ui" line="678"/>
         <source>Alt+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+N</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="694"/>
@@ -232,7 +232,7 @@
         <location filename="../mainwindow.cpp" line="283"/>
         <location filename="../mainwindow.cpp" line="284"/>
         <source>Installing </source>
-        <translation type="unfinished"></translation>
+        <translation>בהתקנה</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="292"/>
@@ -387,7 +387,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="895"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>הצלחה</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="895"/>
@@ -397,22 +397,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="896"/>
         <source>Close</source>
-        <translation>סגור</translation>
+        <translation>סגירה</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
+        <translation>על אודות %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
@@ -427,11 +417,17 @@
     <message>
         <location filename="../mainwindow.cpp" line="1011"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>זכויות שמורות MX Linux</translation>
+        <translation>זכויות יוצרים (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">רשיון</translation>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation>רישיון של %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1035"/>
@@ -452,6 +448,27 @@
 <context>
     <name>QApplication</name>
     <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>רישיון</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>יומן שינויים</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>ביטול</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>&amp;סגירה</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
@@ -465,28 +482,7 @@
     <message>
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>אתה חייב להריץ את התוכנה הזו עם הרשאות root.</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished">רשיון</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">ביטול</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>חובה להריץ את התכנית הזו כמשתמש שורש (root).</translation>
     </message>
 </context>
 </TS>

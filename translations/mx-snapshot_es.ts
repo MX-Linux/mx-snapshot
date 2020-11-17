@@ -40,22 +40,22 @@
     <message>
         <location filename="../mainwindow.ui" line="215"/>
         <source>lz4</source>
-        <translation type="unfinished"></translation>
+        <translation>lz4</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="220"/>
         <source>lzo</source>
-        <translation type="unfinished"></translation>
+        <translation>lzo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="225"/>
         <source>gzip</source>
-        <translation type="unfinished"></translation>
+        <translation>gzip</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="230"/>
         <source>xz</source>
-        <translation type="unfinished"></translation>
+        <translation>xz</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="238"/>
@@ -66,12 +66,12 @@
     <message>
         <location filename="../mainwindow.ui" line="281"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /etc/mx-snapshot-exclude.list.</source>
-        <translation>También puede excluir directorios marcando las opciones comunes abajo o haciendo clic en el botón para editar directamente /etc/mx-snapshot-exclude.list.</translation>
+        <translation>También puede excluir ciertos directorios marcando las opciones comunes abajo o haciendo clic en el botón para editar directamente /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="338"/>
         <source>Downloads</source>
-        <translation>Desgargas</translation>
+        <translation>Descargas</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="345"/>
@@ -106,12 +106,12 @@
     <message>
         <location filename="../mainwindow.ui" line="380"/>
         <source>exclude network configurations</source>
-        <translation type="unfinished"></translation>
+        <translation>excluir configuraciones de red</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="383"/>
         <source>Networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Redes</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="428"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../mainwindow.ui" line="471"/>
         <source>ISO compression scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Esquema de compresión ISO:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="484"/>
@@ -206,7 +206,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="236"/>
         <source>estimated</source>
-        <translation type="unfinished"></translation>
+        <translation>estimado</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="243"/>
@@ -407,21 +407,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About MX Snapshot</source>
-        <translation type="vanished">Acerca de MX Snapshot</translation>
+        <translation>Acerca de %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
@@ -439,16 +425,14 @@
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Licencia</translation>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation>%1 Licencia</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Registro de cambios</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Close</translation>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
+        <translation>%1 Ayuda</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1035"/>
@@ -469,6 +453,27 @@
 <context>
     <name>QApplication</name>
     <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>Licencia</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>Registro de cambios</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>&amp;Cerrar</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
@@ -483,27 +488,6 @@
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>Debe ejecutar este programa como root.</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished">Licencia</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished">Registro de cambios</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Close</translation>
     </message>
 </context>
 </TS>

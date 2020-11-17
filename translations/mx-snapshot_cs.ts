@@ -14,7 +14,7 @@
     <message>
         <location filename="../mainwindow.ui" line="30"/>
         <source>Snapshot location:</source>
-        <translation>Unístnění Snapshotu:</translation>
+        <translation>Umístnění snímku:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="43"/>
@@ -30,7 +30,7 @@
         <location filename="../mainwindow.ui" line="158"/>
         <location filename="../mainwindow.cpp" line="851"/>
         <source>Snapshot name:</source>
-        <translation>Název Snapshotu:</translation>
+        <translation>Název snímku:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="165"/>
@@ -40,22 +40,22 @@
     <message>
         <location filename="../mainwindow.ui" line="215"/>
         <source>lz4</source>
-        <translation type="unfinished"></translation>
+        <translation>lz4</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="220"/>
         <source>lzo</source>
-        <translation type="unfinished"></translation>
+        <translation>lzo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="225"/>
         <source>gzip</source>
-        <translation type="unfinished"></translation>
+        <translation>gzip</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="230"/>
         <source>xz</source>
-        <translation type="unfinished"></translation>
+        <translation>xz</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="238"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../mainwindow.ui" line="281"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /etc/mx-snapshot-exclude.list.</source>
-        <translation>Můžete vyřadit některé složky zaškrtnutím voleb zobrazených níže, nebo kliknutím na tlačítko a přímo zeditovat soubor /etc/mx-snapshot-exclude.list.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="338"/>
@@ -121,12 +121,12 @@
     <message>
         <location filename="../mainwindow.ui" line="431"/>
         <source>Resetting accounts (for distribution to others)</source>
-        <translation>Zresetovat uživatelské účty (pro distribuci jiným)</translation>
+        <translation>Resetovat uživatelské účty (pro distribuci jiným)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="438"/>
         <source>Type of snapshot:</source>
-        <translation>Typ snapshotu:</translation>
+        <translation>Typ snímku:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="445"/>
@@ -136,12 +136,12 @@
     <message>
         <location filename="../mainwindow.ui" line="471"/>
         <source>ISO compression scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Schéma komprese ISO:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="484"/>
         <source>Edit Exclusion File</source>
-        <translation>Editovat vyjmutý soubor</translation>
+        <translation>Editovat soubor výjimek</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="581"/>
@@ -255,7 +255,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="322"/>
         <source>Building new initrd...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytváření nového initrd...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="348"/>
@@ -290,13 +290,13 @@
     <message>
         <location filename="../mainwindow.cpp" line="683"/>
         <source>MX Snapshot completed sucessfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>MX Snapshot úspěšně ukončen!</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="684"/>
         <location filename="../mainwindow.cpp" line="685"/>
         <source>Snapshot took %1 to finish.</source>
-        <translation type="unfinished"></translation>
+        <translation>Snímek dokončen za %1.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="686"/>
@@ -352,7 +352,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="858"/>
         <source>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</source>
-        <translation type="unfinished"></translation>
+        <translation>Současné jádro nepodporuje vybraný algoritmus komprese, prosím upravte konfigurační soubor a vyberte jiný algoritmus.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="862"/>
@@ -407,21 +407,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About MX Snapshot</source>
-        <translation type="vanished">O aplikaci MX Snapshot</translation>
+        <translation>O %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
@@ -439,17 +425,19 @@
         <translation>Vlastnická práva (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Licence</translation>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation>Licence %1</translation>
     </message>
     <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Zavřít</translation>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
+        <translation>Nápověda %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1035"/>
         <source>Select Snapshot Directory</source>
-        <translation>Vyberte složku pro Snapshot</translation>
+        <translation>Vyberte složku pro snímek</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1054"/>
@@ -465,6 +453,27 @@
 <context>
     <name>QApplication</name>
     <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>Licence</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>Protokol změn</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>Zrušit</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>&amp;Zavřít</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
@@ -473,33 +482,12 @@
     <message>
         <location filename="../main.cpp" line="76"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
-        <translation type="unfinished"></translation>
+        <translation>Současné jádro nepodporuje Squashfs, nelze pokračovat.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>Tuto aplikaci musíte spustit jako root.</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished">Licence</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Zrušit</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Zavřít</translation>
     </message>
 </context>
 </TS>

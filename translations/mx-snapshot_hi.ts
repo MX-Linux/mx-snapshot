@@ -101,7 +101,7 @@
     <message>
         <location filename="../mainwindow.ui" line="373"/>
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>वीडियो</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="380"/>
@@ -191,12 +191,12 @@
     <message>
         <location filename="../mainwindow.ui" line="694"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>अगला</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="736"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>पीछे</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="234"/>
@@ -402,17 +402,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 के बारे में</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
@@ -427,19 +417,17 @@
     <message>
         <location filename="../mainwindow.cpp" line="1011"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>प्रतिलिप्याधिकार (c) MX Linux</translation>
+        <translation>कॉपीराइट (c) एमएक्स लिनक्स</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">लाइसेंस</translation>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation>%1 लाइसेंस</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">परिवर्तन सूची</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;बंद करें</translation>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
+        <translation>%1 सहायता</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1035"/>
@@ -460,6 +448,27 @@
 <context>
     <name>QApplication</name>
     <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>लाइसेंस</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>बदलाव सूची</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>रद्द करें</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>बंद करें (&amp;C)</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
@@ -474,27 +483,6 @@
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>इस प्रोग्राम को चलाने हेतु आपका रुट होना आवश्यक है।</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished">लाइसेंस</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished">परिवर्तन सूची</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">रद्द करें</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished">&amp;बंद करें</translation>
     </message>
 </context>
 </TS>

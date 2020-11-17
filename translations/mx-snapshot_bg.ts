@@ -146,7 +146,7 @@
     <message>
         <location filename="../mainwindow.ui" line="581"/>
         <source>Display help </source>
-        <translation type="unfinished"></translation>
+        <translation>Помощ за дисплея</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="584"/>
@@ -156,22 +156,22 @@
     <message>
         <location filename="../mainwindow.ui" line="591"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="642"/>
         <source>About this application</source>
-        <translation type="unfinished"></translation>
+        <translation>Относно това приложение</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="645"/>
         <source>About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Относно...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="652"/>
         <source>Alt+B</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="668"/>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../mainwindow.ui" line="678"/>
         <source>Alt+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+N</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="694"/>
@@ -405,19 +405,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="1008"/>
         <source>Version: </source>
-        <translation type="unfinished"></translation>
+        <translation>Версия:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1009"/>
@@ -427,6 +417,16 @@
     <message>
         <location filename="../mainwindow.cpp" line="1011"/>
         <source>Copyright (c) MX Linux</source>
+        <translation>Copyright (c) MX Linux</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -448,6 +448,27 @@
 <context>
     <name>QApplication</name>
     <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>Лиценз</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>Промени</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>Отказ</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>&amp;Затвори</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
@@ -461,28 +482,7 @@
     <message>
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Отмяна</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Трябва да стартирате тази програма като администратор.</translation>
     </message>
 </context>
 </TS>

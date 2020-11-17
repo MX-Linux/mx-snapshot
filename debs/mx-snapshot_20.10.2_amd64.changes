@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sun, 25 Oct 2020 18:41:43 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 20.10.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (20.10.2) mx; urgency=medium
+ .
+   * updated translations
+Checksums-Sha1:
+ 1c9c2c0927134baa5f98ba171fedf1988e32441f 1175 mx-snapshot_20.10.2.dsc
+ b3bc5000dfdb5ac078673569a25883d06beec530 171716 mx-snapshot_20.10.2.tar.xz
+ 0e314d7329afd82c0f90615294d9cb9e8f3a4105 788242 mx-snapshot-dbgsym_20.10.2_amd64.deb
+ aca380987177a5fd6aeffca47c6dd947a7e9c7b9 10718 mx-snapshot_20.10.2_amd64.buildinfo
+ 75bbf50f94b6747a8852f72740b2ccc79393221e 205618 mx-snapshot_20.10.2_amd64.deb
+Checksums-Sha256:
+ e739c3f9615503398f7a265be0ccaad8ac516fddbf0aba15ee2baae48ccf4b93 1175 mx-snapshot_20.10.2.dsc
+ c546e021eb7324b3f1d290090f7e7af09b59490d19e561c60eff371c732abb68 171716 mx-snapshot_20.10.2.tar.xz
+ 9abce70fb5389dbcd9fe19fdc2f95ecbb9453aa26ef85a4b50534c4a563af04c 788242 mx-snapshot-dbgsym_20.10.2_amd64.deb
+ fde7dd28798a9ad9c1f7444b495d50bb4570d662e2e2af388b2950c19cf70019 10718 mx-snapshot_20.10.2_amd64.buildinfo
+ 3c65ff9c4ef40e543f335adcf4c2eb82ed774073da8542f3b79f2008dc663f2e 205618 mx-snapshot_20.10.2_amd64.deb
+Files:
+ 05b24aef1dc873ca8463e940ae1f5bd0 1175 admin optional mx-snapshot_20.10.2.dsc
+ e84c338302e51c769661b3ff727984df 171716 admin optional mx-snapshot_20.10.2.tar.xz
+ cc67144f9e79a3c1d68dce8853400a0b 788242 debug extra mx-snapshot-dbgsym_20.10.2_amd64.deb
+ de074d1a4337e087967f468ae91497a3 10718 admin optional mx-snapshot_20.10.2_amd64.buildinfo
+ 51263bf4680f4da3d6e8dbfe8e3e5268 205618 admin optional mx-snapshot_20.10.2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl+WABMTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumH3cCADJ/AyE0rz7tIfm3jkHgTV1sHiz5pGT
+GCsggOWX8ojiUN9immQA3Y0HP35EGwnGnI9pzKpFwVVvJR4el78oaiF2/K0U/IS+
+OSn0aBQ9mS2zsNZG7fvWuSJy2vmUD/x4Dtf/N9fsaW216LPuaIBMN0mMul9wQeuO
+8xEpbDOvzlR0RR4d763eDgZ75L5HcwiCts/wseoPg4VtZHD/EoxXtQbggfwtYN+I
+jtzoYaL+CrJVmQ4t+jciXkgur0IVq/ScyywI4ldKezE91IAZSiNFYHGZqQql4Orl
+k28Irr0VPjPvE3cldmFJ2oNCvB2ksZQa2j1iOeDDvNn/L83Lrm5/Swg4
+=v/d6
+-----END PGP SIGNATURE-----

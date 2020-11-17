@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ko">
+<TS version="2.1" language="vi">
 <context>
     <name>MainWindow</name>
     <message>
@@ -96,12 +96,12 @@
     <message>
         <location filename="../mainwindow.ui" line="366"/>
         <source>Desktop</source>
-        <translation>바탕화면</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="373"/>
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Videos</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="380"/>
@@ -146,57 +146,57 @@
     <message>
         <location filename="../mainwindow.ui" line="581"/>
         <source>Display help </source>
-        <translation type="unfinished"></translation>
+        <translation>Hiển thị bản trợ giúp</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="584"/>
         <source>Help</source>
-        <translation>도움말</translation>
+        <translation>Trợ giúp</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="591"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="642"/>
         <source>About this application</source>
-        <translation type="unfinished"></translation>
+        <translation>Về ứng dụng này</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="645"/>
         <source>About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Về ứng dụng này...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="652"/>
         <source>Alt+B</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="668"/>
         <source>Quit application</source>
-        <translation type="unfinished"></translation>
+        <translation>Thoát ứng dụng</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="671"/>
         <source>Cancel</source>
-        <translation>취소</translation>
+        <translation>Hủy bỏ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="678"/>
         <source>Alt+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+N</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="694"/>
         <source>Next</source>
-        <translation>다음으로</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="736"/>
         <source>Back</source>
-        <translation>뒤로</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="234"/>
@@ -240,7 +240,7 @@
         <location filename="../mainwindow.cpp" line="663"/>
         <location filename="../mainwindow.cpp" line="857"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="292"/>
@@ -327,7 +327,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="842"/>
         <source>Settings</source>
-        <translation>설정</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="848"/>
@@ -397,7 +397,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="896"/>
         <source>Close</source>
-        <translation>닫기</translation>
+        <translation>Đóng</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
@@ -407,7 +407,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
         <source>Version: </source>
-        <translation type="unfinished"></translation>
+        <translation>Phiên bản:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1009"/>
@@ -417,7 +417,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="1011"/>
         <source>Copyright (c) MX Linux</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1012"/>
@@ -450,29 +450,29 @@
     <message>
         <location filename="../about.cpp" line="32"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Giấy phép</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="33"/>
         <location filename="../about.cpp" line="43"/>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Nhật kí thay đổi</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="34"/>
         <source>Cancel</source>
-        <translation>취소</translation>
+        <translation>Hủy bỏ</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="51"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Đóng</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Lỗi</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="76"/>
@@ -482,7 +482,7 @@
     <message>
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bạn phải chạy chương trình này với quyền root.</translation>
     </message>
 </context>
 </TS>

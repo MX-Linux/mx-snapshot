@@ -9,7 +9,7 @@
         <location filename="../mainwindow.cpp" line="125"/>
         <location filename="../mainwindow.cpp" line="905"/>
         <source>MX Snapshot</source>
-        <translation>MX Snapshot</translation>
+        <translation>MX スナップショット</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="30"/>
@@ -19,12 +19,12 @@
     <message>
         <location filename="../mainwindow.ui" line="43"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot はシステムが動作しているストレージまたはディトリビューションを起動可能なイメージ(ISO)へ生成するユーティリティです。少ない手順で作業を進める事ができます。&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;スナップショットはシステムが動作しているストレージまたはディトリビューションを起動可能なイメージ(ISO)へ生成するユーティリティです。少ない手順で作業を進める事ができます。&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="53"/>
         <source>Used space on / (root) and /home partitions:</source>
-        <translation>/ (ルート) および /home パーティションの空き容量を使用します: </translation>
+        <translation>/ (root) および /home パーティションの空き容量を使用します: </translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
@@ -40,22 +40,22 @@
     <message>
         <location filename="../mainwindow.ui" line="215"/>
         <source>lz4</source>
-        <translation type="unfinished"></translation>
+        <translation>lz4</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="220"/>
         <source>lzo</source>
-        <translation type="unfinished"></translation>
+        <translation>lzo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="225"/>
         <source>gzip</source>
-        <translation type="unfinished"></translation>
+        <translation>gzip</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="230"/>
         <source>xz</source>
-        <translation type="unfinished"></translation>
+        <translation>xz</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="238"/>
@@ -66,24 +66,7 @@
     <message>
         <location filename="../mainwindow.ui" line="281"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /etc/mx-snapshot-exclude.list.</source>
-        <translation>下の選択をチェックする事によって、対象を除外する事ができます。または /etc/mx-snapshot-exclude.list で除外ディレクトリを確認して下さい。
-
-    保存
-    Save all (0)
-
-保存して次の文字列に移動するにはTABを押してください
-説明はありません
-詳細を見る
-
-    提案
-    履歴
-    用語集
-    コメント
-
-提案
-提案はありません
-
-</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="338"/>
@@ -148,12 +131,12 @@
     <message>
         <location filename="../mainwindow.ui" line="445"/>
         <source>Preserving accounts (for personal backup)</source>
-        <translation>アカウントの保存 (個人情報のバックアップ)</translation>
+        <translation>アカウントの保存 (個人的なバックアップ用)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="471"/>
         <source>ISO compression scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>ISO 圧縮方式：</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="484"/>
@@ -183,7 +166,7 @@
     <message>
         <location filename="../mainwindow.ui" line="645"/>
         <source>About...</source>
-        <translation>About...</translation>
+        <translation>情報...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="652"/>
@@ -218,7 +201,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="234"/>
         <source>Used space on / (root): </source>
-        <translation>/ (ルート) の空き容量: </translation>
+        <translation>/ (root) の空き容量: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="236"/>
@@ -233,7 +216,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="261"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
-        <translation>空き容量: %1  スナップショットフォルダの場所:</translation>
+        <translation>スナップショット フォルダがある場所の空き容量 %1：</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="263"/>
@@ -243,12 +226,7 @@
       by removing previous snapshots and saved copies:
       %1 snapshots are taking up %2 of disk space.
 </source>
-        <translation>/ および /home は圧縮データを保管する十分な空き容量がないといけません。
-
-必要に応じて、以前生成したスナップショットを削除する事によって
-空き容量を増やし、コピーを保存する事ができます:
-スナップショット %1 は空き容量 %2 が必要です。
-</translation>
+        <translation>/ および /home の圧縮データを保管するには、十分な空き容量がないといけません。必要に応じて、以前生成したスナップショットや保存したコピーを削除することで空き容量を増やすことができます:&#x3000;スナップショット %1 は空き容量の %2 を消費しています。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="283"/>
@@ -272,7 +250,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="322"/>
         <source>Building new initrd...</source>
-        <translation type="unfinished"></translation>
+        <translation>新しい initrd を構築中...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="348"/>
@@ -287,7 +265,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="647"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
-        <translation>linuxfsファイルを作成できませんでした。パーティションに十分な空き容量があるかご確認ください。</translation>
+        <translation>linuxfsファイルを作成できませんでした。目的のパーティションに十分な空き容量があるか確認してください。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="661"/>
@@ -307,18 +285,18 @@
     <message>
         <location filename="../mainwindow.cpp" line="683"/>
         <source>MX Snapshot completed sucessfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>MX スナップショットが全て完了！</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="684"/>
         <location filename="../mainwindow.cpp" line="685"/>
         <source>Snapshot took %1 to finish.</source>
-        <translation type="unfinished"></translation>
+        <translation>スナップショットが終了するまで %1 かかりました。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="686"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
-        <translation type="unfinished"></translation>
+        <translation>MX Snapshot をご利用いただきありがとうございます。今度は MX ライブUSBメーカー を起動してください！</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="699"/>
@@ -328,7 +306,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="723"/>
         <source>Cleaning...</source>
-        <translation>クリーニング...</translation>
+        <translation>クリーニング中...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="737"/>
@@ -349,17 +327,17 @@
     <message>
         <location filename="../mainwindow.cpp" line="842"/>
         <source>Settings</source>
-        <translation>設定</translation>
+        <translation>設定中</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="848"/>
         <source>Snapshot will use the following settings:*</source>
-        <translation>Snapshot は次の設定を使用します:*</translation>
+        <translation>スナップショットは次の設定を使用します:*</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="850"/>
         <source>- Snapshot directory:</source>
-        <translation>- スナップショットディレクトリ: </translation>
+        <translation>- スナップショット ディレクトリ: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="852"/>
@@ -369,7 +347,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="858"/>
         <source>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のカーネルは選択された圧縮アルゴリズムをサポートしていないので、設定ファイルを編集して別のアルゴリズムを選択してください。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="862"/>
@@ -379,12 +357,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="863"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
-        <translation>Snapshot には現在実行しているシステムから ISO を生成するすべての情報があります。</translation>
+        <translation>Snapshot には,、現在稼働中のシステムから ISO を生成するための全ての情報があります。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="864"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
-        <translation>インストールを行うシステムのサイズとコンピュータの性能によって、完了まではかなりの時間がかかります。</translation>
+        <translation>インストールを行うシステムのサイズとコンピュータの性能によって、完了までにかかる時間が異なります。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="865"/>
@@ -404,12 +382,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="882"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
-        <translation>プログラムは、作業ディレクトリで任意ファイルを編集するために休止しています。 はい を選び、起動メニューを編集するか、いいえ を選んでこのステップを無視し、スナップショット作成を継続するか選んでください。</translation>
+        <translation>プログラムは、作業ディレクトリで任意ファイルを編集できるように、一時休止しています。「はい」を選んで起動メニューを編集するか、「いいえ」を選んでこのステップを飛ばしてスナップショットの作成を継続するかを選んでください。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="895"/>
         <source>Success</source>
-        <translation>完了</translation>
+        <translation>成功</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="895"/>
@@ -424,31 +402,17 @@
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About MX Snapshot</source>
-        <translation type="vanished">MX Snapshot について</translation>
+        <translation> %1 について</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
         <source>Version: </source>
-        <translation>Version: </translation>
+        <translation>バージョン: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1009"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
-        <translation>実行している MX Linux を元に live-CD を生成するプログラム</translation>
+        <translation>実行している MX Linux を元にライブCD を生成するプログラム</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1011"/>
@@ -456,17 +420,19 @@
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">ライセンス</translation>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation>%1 ライセンス</translation>
     </message>
     <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">閉じる(&amp;C)</translation>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
+        <translation>%1 のヘルプ</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1035"/>
         <source>Select Snapshot Directory</source>
-        <translation>スナップショットディレクトリを選択</translation>
+        <translation>スナップショット ディレクトリを選択</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1054"/>
@@ -476,11 +442,32 @@
     <message>
         <location filename="../mainwindow.cpp" line="1054"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation>アプリケーションを終了してよろしいですか？</translation>
+        <translation>本当にアプリケーションを終了しますか？</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
+    <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>ライセンス</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>更新履歴</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>キャンセル</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>&amp;閉じる</translation>
+    </message>
     <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
@@ -490,33 +477,12 @@
     <message>
         <location filename="../main.cpp" line="76"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
-        <translation type="unfinished"></translation>
+        <translation>現在のカーネルは Squashfs をサポートしてないので続行できません。</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
         <translation>このプログラムは root で実行する必要があります。</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished">ライセンス</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">キャンセル</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished">閉じる(&amp;C)</translation>
     </message>
 </context>
 </TS>

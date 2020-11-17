@@ -9,22 +9,23 @@
         <location filename="../mainwindow.cpp" line="125"/>
         <location filename="../mainwindow.cpp" line="905"/>
         <source>MX Snapshot</source>
-        <translation>MX Snapshot</translation>
+        <translation>MX Snapshot - Criador de Imagem ISO do Sistema Operacional</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="30"/>
         <source>Snapshot location:</source>
-        <translation>Localização da imagem do disco:</translation>
+        <translation>Local da imagem do disco:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="43"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot is a utility that creates a bootable image (ISO) of your working system that you can use for storage or distribution. You can continue working with undemanding applications while it is running.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot é um utilitário que cria uma imagem carregável (bootable) do sistema, que pode ser usada para guardar ou para distribuir. Permite que se trabalhe com aplicações pouco pesadas enquanto está em execução.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Snapshot é um utilitário que cria uma imagem (ISO) inicializável (bootable) do seu sistema operacional em execução, que pode ser usada para guardar/copiar ou para distribuir. Você pode continuar trabalhando com aplicativos pouco exigentes enquanto ele está em execução.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="53"/>
         <source>Used space on / (root) and /home partitions:</source>
-        <translation>Espaço usado nas partições / (root) e /home :</translation>
+        <translation>Espaço usado nas partições / (root ou raiz) e /home:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
@@ -40,22 +41,22 @@
     <message>
         <location filename="../mainwindow.ui" line="215"/>
         <source>lz4</source>
-        <translation type="unfinished"></translation>
+        <translation>lz4</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="220"/>
         <source>lzo</source>
-        <translation type="unfinished"></translation>
+        <translation>lzo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="225"/>
         <source>gzip</source>
-        <translation type="unfinished"></translation>
+        <translation>gzip</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="230"/>
         <source>xz</source>
-        <translation type="unfinished"></translation>
+        <translation>xz</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="238"/>
@@ -66,7 +67,7 @@
     <message>
         <location filename="../mainwindow.ui" line="281"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /etc/mx-snapshot-exclude.list.</source>
-        <translation>Também pode excluir alguns diretórios marcando as escolhas comuns, abaixo, ou clicando no botão para editar diretamente /etc/mx-snapshot-exclude.list.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="338"/>
@@ -96,7 +97,7 @@
     <message>
         <location filename="../mainwindow.ui" line="366"/>
         <source>Desktop</source>
-        <translation>Ambiente de Trabalho</translation>
+        <translation>Área de Trabalho</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="373"/>
@@ -116,12 +117,12 @@
     <message>
         <location filename="../mainwindow.ui" line="428"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Esta opção restabelecerá as palavras-passe&amp;quot;demo&amp;quot; e &amp;quot;root&amp;quot; para as senhas pre-definidas do Linux MX e não copiará quaisquer contas pessoais criadas.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Esta opção reiniciará as senhas&amp;quot;demo&amp;quot; e &amp;quot;root&amp;quot; para as senhas padrões do MX Linux e não copiará quaisquer contas pessoais criadas.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="431"/>
         <source>Resetting accounts (for distribution to others)</source>
-        <translation>Restablecer contas (para distribuir a outros)</translation>
+        <translation>Redefinindo contas (para distribuir para outros)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="438"/>
@@ -131,12 +132,12 @@
     <message>
         <location filename="../mainwindow.ui" line="445"/>
         <source>Preserving accounts (for personal backup)</source>
-        <translation>Preservar contas (para segurança pessoal)</translation>
+        <translation>Preservar contas (para cópia de segurança pessoal do Sistema Operacional)</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="471"/>
         <source>ISO compression scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Esquema de compressão ISO:</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="484"/>
@@ -146,7 +147,7 @@
     <message>
         <location filename="../mainwindow.ui" line="581"/>
         <source>Display help </source>
-        <translation>Exibir a ajuda</translation>
+        <translation>Exibir ajuda</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="584"/>
@@ -161,7 +162,7 @@
     <message>
         <location filename="../mainwindow.ui" line="642"/>
         <source>About this application</source>
-        <translation>Sobre esta aplicação</translation>
+        <translation>Sobre este aplicativo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="645"/>
@@ -176,7 +177,7 @@
     <message>
         <location filename="../mainwindow.ui" line="668"/>
         <source>Quit application</source>
-        <translation>Sair da aplicação</translation>
+        <translation>Sair do aplicativo</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="671"/>
@@ -216,7 +217,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="261"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
-        <translation>Espaço livre em %1, onde a pasta de imagens está colocada:</translation>
+        <translation>Espaço livre em %1, onde a pasta de imagem ISO está localizada:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="263"/>
@@ -226,11 +227,11 @@
       by removing previous snapshots and saved copies:
       %1 snapshots are taking up %2 of disk space.
 </source>
-        <translation>O espaço livre deve ser suficiente para conter os dados comprimidos de  /   e de  /home
+        <translation>O espaço livre deve ser suficiente para armazenar os dados compactados de / e de /home
 
-Se necessário, pode criar mais espaço disponível
-removendo imagens anteriores e cópias guardadas:
-%1 imagens acupam %2 do espaço em disco.
+Se necessário, você pode criar mais espaço disponível
+removendo imagens anteriores e cópias guardadas/copiadas:
+%1 imagens ocupam %2 do espaço em disco.
 </translation>
     </message>
     <message>
@@ -250,7 +251,7 @@ removendo imagens anteriores e cópias guardadas:
     <message>
         <location filename="../mainwindow.cpp" line="292"/>
         <source>Could not install </source>
-        <translation>Não foi instalado</translation>
+        <translation>Não foi possível instalar</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="322"/>
@@ -265,7 +266,7 @@ removendo imagens anteriores e cópias guardadas:
     <message>
         <location filename="../mainwindow.cpp" line="644"/>
         <source>Squashing filesystem...</source>
-        <translation>Comprimir o sistema de arquivos...</translation>
+        <translation>Comprimindo o sistema de arquivos...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="647"/>
@@ -290,23 +291,23 @@ removendo imagens anteriores e cópias guardadas:
     <message>
         <location filename="../mainwindow.cpp" line="683"/>
         <source>MX Snapshot completed sucessfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>MX Snapshot ISO completada com sucesso!</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="684"/>
         <location filename="../mainwindow.cpp" line="685"/>
         <source>Snapshot took %1 to finish.</source>
-        <translation type="unfinished"></translation>
+        <translation>O MX Snapshot ISO demorou %1 para terminar.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="686"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrigado por usar o MX Snapshot ISO; execute em seguida o MX Criador de USB Executável!</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="699"/>
         <source>Making md5sum</source>
-        <translation>Criar md5sum</translation>
+        <translation>Criando o md5sum</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="723"/>
@@ -332,12 +333,12 @@ removendo imagens anteriores e cópias guardadas:
     <message>
         <location filename="../mainwindow.cpp" line="842"/>
         <source>Settings</source>
-        <translation>Configuração</translation>
+        <translation>Configurações</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="848"/>
         <source>Snapshot will use the following settings:*</source>
-        <translation>A imagem usará as seguintes definições:*</translation>
+        <translation>A imagem usará as seguintes configurações:*</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="850"/>
@@ -352,17 +353,17 @@ removendo imagens anteriores e cópias guardadas:
     <message>
         <location filename="../mainwindow.cpp" line="858"/>
         <source>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</source>
-        <translation type="unfinished"></translation>
+        <translation>O núcleo (kernel) atual não oferece suporte ao algoritmo de compactação/compressão selecionado, por favor edite o arquivo de configuração e selecione um algoritmo diferente.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="862"/>
         <source>Final chance</source>
-        <translation>Última hipótese</translation>
+        <translation>Última chance</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="863"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
-        <translation>O Snapshot tem agora toda a informação de que precisa para criar uma imagem ISO do sistema em uso.</translation>
+        <translation>O Snapshot possui agora todas as informações necessárias para criar uma imagem ISO a partir do seu sistema operacional em execução.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="864"/>
@@ -382,12 +383,12 @@ removendo imagens anteriores e cópias guardadas:
     <message>
         <location filename="../mainwindow.cpp" line="881"/>
         <source>Edit Boot Menu</source>
-        <translation>Editar o Menu de Iniciação</translation>
+        <translation>Editar o Menu de Inicialização</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="882"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
-        <translation>O programa parará agora para permitir a edição de quaisquer arquivos no diretório de trabalho (work). Clique em Sim para editar o menu de iniciação ou clique en Não para pular este passo e continuar a criação da imagem.</translation>
+        <translation>O programa parará agora para permitir que você edite quaisquer arquivos no diretório de trabalho (work). Clique em Sim para editar o menu de inicialização ou clique em Não para ignorar esta etapa e continuar a criação da imagem ISO.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="895"/>
@@ -407,21 +408,7 @@ removendo imagens anteriores e cópias guardadas:
     <message>
         <location filename="../mainwindow.cpp" line="1007"/>
         <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1012"/>
-        <source>%1 License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1027"/>
-        <source>%1 Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About MX Snapshot</source>
-        <translation type="vanished">Sobre o MX Snapshot</translation>
+        <translation>Sobre o %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1008"/>
@@ -431,7 +418,7 @@ removendo imagens anteriores e cópias guardadas:
     <message>
         <location filename="../mainwindow.cpp" line="1009"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
-        <translation>Programa para criar uma instalação externa CD do sistema MX Linux em execução</translation>
+        <translation>Programa para criar uma instalação externa/live CD do sistema operacional MX Linux em execução</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1011"/>
@@ -439,16 +426,14 @@ removendo imagens anteriores e cópias guardadas:
         <translation>Direitos de Autor (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Licença</translation>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <source>%1 License</source>
+        <translation>Licença do %1</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Relatório de alterações</translation>
-    </message>
-    <message>
-        <source>&amp;Close</source>
-        <translation type="vanished">&amp;Fechar</translation>
+        <location filename="../mainwindow.cpp" line="1027"/>
+        <source>%1 Help</source>
+        <translation>Ajuda do %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1035"/>
@@ -463,11 +448,32 @@ removendo imagens anteriores e cópias guardadas:
     <message>
         <location filename="../mainwindow.cpp" line="1054"/>
         <source>Are you sure you want to quit the application?</source>
-        <translation>Deseja mesmo sair da aplicação?</translation>
+        <translation>Você tem certeza de que deseja encerrar o aplicativo?</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
+    <message>
+        <location filename="../about.cpp" line="32"/>
+        <source>License</source>
+        <translation>Licença</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="33"/>
+        <location filename="../about.cpp" line="43"/>
+        <source>Changelog</source>
+        <translation>Relatório de alterações</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="34"/>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="51"/>
+        <source>&amp;Close</source>
+        <translation>&amp;Fechar</translation>
+    </message>
     <message>
         <location filename="../main.cpp" line="75"/>
         <location filename="../main.cpp" line="86"/>
@@ -477,33 +483,12 @@ removendo imagens anteriores e cópias guardadas:
     <message>
         <location filename="../main.cpp" line="76"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
-        <translation type="unfinished"></translation>
+        <translation>O núcleo (kernel) atual não suporta Squashfs, não pode continuar.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="87"/>
         <source>You must run this program as root.</source>
-        <translation>Você deve executar este programa como root.</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="32"/>
-        <source>License</source>
-        <translation type="unfinished">Licença</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
-        <source>Changelog</source>
-        <translation type="unfinished">Relatório de alterações</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="34"/>
-        <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="51"/>
-        <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Fechar</translation>
+        <translation>Você tem que executar este programa como root.</translation>
     </message>
 </context>
 </TS>
