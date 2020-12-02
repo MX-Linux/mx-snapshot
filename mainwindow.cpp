@@ -85,6 +85,8 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
     } else {
         listUsedSpace();
     }
+
+	preempt = args.contains("--preempt");
 }
 
 MainWindow::~MainWindow()
@@ -605,7 +607,7 @@ QString MainWindow::getLiveRootSpace()
 
     qlonglong rootfs_file_size = 0;
     qlonglong linuxfs_file_size = shell->getCmdOut("df /live/linux --output=used --total | /usr/bin/tail -n1").toLongLong() * 1024 * 100 / compression_factor;
-    if (QFileInfo::exists("/live/perist-root")) {
+    if (QFileInfo::exists("/live/persist-root")) {
         rootfs_file_size = shell->getCmdOut("df /live/persist-root --output=used --total | /usr/bin/tail -n1").toLongLong() * 1024;
     }
 
@@ -647,11 +649,12 @@ bool MainWindow::createIso(QString filename)
         QMessageBox::critical(this, tr("Error"), tr("Could not create linuxfs file, please check whether you have enough space on the destination partition."));
         return false;
     }
-    makeMd5sum(work_dir + "/iso-template/antiX", "linuxfs");
 
     // mv linuxfs to another folder
     system("mkdir -p iso-2/antiX");
     shell->run("mv iso-template/antiX/linuxfs* iso-2/antiX");
+ 
+    makeMd5sum(work_dir + "/iso-2/antiX", "linuxfs");
 
     shell->run("installed-to-live cleanup");
 
@@ -664,7 +667,7 @@ bool MainWindow::createIso(QString filename)
         disableOutput();
         return false;
     }
-
+ 
     // make it isohybrid
     if (make_isohybrid == "yes") {
         ui->outputLabel->setText(tr("Making hybrid iso"));
@@ -674,6 +677,7 @@ bool MainWindow::createIso(QString filename)
 
     // make md5sum
     if (make_chksum == "yes") {
+		
         makeMd5sum(snapshot_dir.absolutePath(), filename);
         makeSha512sum(snapshot_dir.absolutePath(), filename);
     }
@@ -696,8 +700,27 @@ void MainWindow::makeMd5sum(QString folder, QString file_name)
     QDir dir;
     QString current = dir.currentPath();
     dir.setCurrent(folder);
+    QString cmd;
+    QString checksum_cmd =  "CE=md5; /usr/bin/${CE}sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".${CE}\"";
+    QString temp_dir =  "/tmp/snapsphot-checksum-temp"; 
+    QString checksum_tmp =  "CE=md5; CHK=/usr/bin/${CE}sum; TD=" + temp_dir + "; KEEP=$TD/.keep; [ -d $TD ] || mkdir $TD ; FN=\"" + file_name + "\"; CF=\"" + folder + "/${FN}.${CE}\"; cp $FN $TD/$FN; pushd $TD>/dev/null; $CHK $FN > $FN.${CE} ; cp $FN.${CE} $CF; popd >/dev/null ; [ -e $KEEP ] || rm -rf $TD" ;
+        
     ui->outputLabel->setText(tr("Making md5sum"));
-    QString cmd = "/usr/bin/md5sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".md5\"";
+ 
+    if (preempt) {
+        // check free space available on /tmp
+        shell->run("TF=/tmp/snapsphot-checksum-temp/\"" + file_name + "\"; [ -f \"$TF\" ] && rm -f \"$TF\"");
+        if (!shell->run("DUF=$(du -BM " + file_name + "| grep -oE '^[[:digit:]]+'); TDA=$(df -BM --output=avail /tmp | grep -oE '^[[:digit:]]+'); ((TDA/10*8 >= DUF))")) {       
+            preempt = false;
+        }
+    }	
+    if (!preempt) {
+        cmd = checksum_cmd;
+    } else {
+        // free pagecache 
+        shell->run("sync; sleep 1; echo 1 > /proc/sys/vm/drop_caches; sleep 1"); 
+        cmd = checksum_tmp;
+    }	
     shell->run(cmd);
     dir.setCurrent(current);
 }
@@ -710,7 +733,27 @@ void MainWindow::makeSha512sum(QString folder, QString file_name)
     QDir dir;
     QString current = dir.currentPath();
     dir.setCurrent(folder);
-    QString cmd = "/usr/bin/sha512sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".sha512\"";
+    QString cmd;
+    QString checksum_cmd =  "CE=sha512; /usr/bin/${CE}sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".${CE}\"";
+    QString temp_dir =  "/tmp/snapsphot-check-temp"; 
+    QString checksum_tmp =  "CE=sha512; CHK=/usr/bin/${CE}sum; TD=" + temp_dir + "; KEEP=$TD/.keep; [ -d $TD ] || mkdir $TD ; FN=\"" + file_name + "\"; CF=\"" + folder + "/${FN}.${CE}\"; cp $FN $TD/$FN; pushd $TD>/dev/null; $CHK $FN > $FN.${CE} ; cp $FN.${CE} $CF; popd >/dev/null ; [ -e $KEEP ] || rm -rf $TD" ;
+
+    ui->outputLabel->setText(tr("Making sha512sum"));
+
+    if (preempt) {
+        // check free space available on /tmp
+        shell->run("TF=/tmp/snapsphot-check-temp/\"" + file_name + "\"; [ -f \"$TF\" ] && rm -f \"$TF\"");
+        if (!shell->run("DUF=$(du -BM " + file_name + "| grep -oE '^[[:digit:]]+'); TDA=$(df -BM --output=avail /tmp | grep -oE '^[[:digit:]]+'); ((TDA/10*8 >= DUF))")) {       
+            preempt = false;
+        }
+    }	
+    if (!preempt) {
+        cmd = checksum_cmd;
+    } else {
+        // free pagecache 
+        shell->run("sync; sleep 1; echo 1 > /proc/sys/vm/drop_caches; sleep 1"); 
+        cmd = checksum_tmp;
+    }	
     shell->run(cmd);
     dir.setCurrent(current);
 }

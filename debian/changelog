@@ -1,3 +1,9 @@
+mx-snapshot (20.12) mx; urgency=medium
+
+  * adjust checksum generation for preempt_rt kernel 
+
+ -- fehlix <fehlix@mxlinux.org>  Tue, 01 Dec 2020 20:56:40 -0400
+
 mx-snapshot (20.11) mx; urgency=medium
 
   * new copy-initrd-modules

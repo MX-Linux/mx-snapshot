@@ -79,6 +79,8 @@ public:
     QString stamp;
     QString version;
     QString work_dir;
+    // command line options
+    bool preempt;
 
     int getDebianVersion();
     int getSnapshotCount();

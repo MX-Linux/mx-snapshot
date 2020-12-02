@@ -8,6 +8,7 @@
 lost+found
 swapfile
 tmp
+tmpdir
 dev/*
 cdrom/*
 live/*
