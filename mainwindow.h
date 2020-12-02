@@ -39,18 +39,15 @@ namespace Ui {
 class MainWindow;
 }
 
-enum HashType {md5, sha512};
-const QStringList HashString {"md5", "sha512"};
 
 class MainWindow : public QDialog
 {
     Q_OBJECT
 
-protected:
-    void keyPressEvent(QKeyEvent* event);
-
-
 public:
+    enum HashType {md5, sha512};
+    Q_ENUM(HashType)
+
     explicit MainWindow(QWidget *parent = nullptr, QStringList args = QStringList());
     ~MainWindow();
 
@@ -125,6 +122,8 @@ public:
     QString largerFreeSpace(QString dir1, QString dir2, QString dir3);
     QStringList listUsers();
 
+protected:
+    void keyPressEvent(QKeyEvent* event);
 
 public slots:
     void outputAvailable(const QString &output);

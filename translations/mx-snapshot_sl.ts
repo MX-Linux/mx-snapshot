@@ -473,12 +473,12 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation>&amp;Zapri</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Error</source>
         <translation>Napaka</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="66"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Trenutno jedro ne podpira Squashfs. Ne morem nadaljevati.</translation>
     </message>

@@ -473,12 +473,12 @@
         <translation>&amp;Cerrar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="66"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>El kernel actual no soporta Squashfs, no puede continuar.</translation>
     </message>

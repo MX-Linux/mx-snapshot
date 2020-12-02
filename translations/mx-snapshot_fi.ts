@@ -473,12 +473,12 @@
         <translation>&amp;Sulje</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="66"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Tämänhetkinen ydin ei tue Squashfs:ää, jatkaminen ei onnistu.</translation>
     </message>

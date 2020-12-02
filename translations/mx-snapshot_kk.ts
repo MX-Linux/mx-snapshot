@@ -464,12 +464,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Error</source>
         <translation>Қате</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="66"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -472,12 +472,12 @@ poprzez usunięcie poprzednich zrzutów i zapisanych kopii:
         <translation>&amp;Zamknij</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="66"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Bieżące jądro (kernel) nie obsługuje Squashfs, nie można kontynuować.</translation>
     </message>

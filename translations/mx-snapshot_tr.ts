@@ -473,12 +473,12 @@ daha fazla kullanılabilir alan oluşturabilirsiniz:
         <translation>&amp;Kapat</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="66"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Şu an kullanılan çekirdek squashfs dosya sistemini desteklemediği için devam edilemiyor.</translation>
     </message>

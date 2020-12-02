@@ -474,12 +474,12 @@ door oudere snapshots en opgeslagen kopieën te verwijderen:
         <translation>&amp;Sluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="66"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Huidige kernel ondersteunt geen Squashfs, kan niet doorgaan.</translation>
     </message>

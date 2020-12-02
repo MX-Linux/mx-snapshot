@@ -473,12 +473,12 @@ genom att avlägsna tidigare snapshots och sparade kopior:
         <translation>&amp;Stäng</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Error</source>
         <translation>Fel</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="66"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Nuvarande kärna stöder inte Squashfs, kan inte fortsätta.</translation>
     </message>

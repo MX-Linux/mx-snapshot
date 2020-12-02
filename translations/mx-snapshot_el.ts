@@ -473,12 +473,12 @@
         <translation>&amp;Κλείσιμο</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="66"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Ο τρέχων πυρήνας δεν υποστηρίζει Squashfs, δεν μπορεί να συνεχιστεί.</translation>
     </message>

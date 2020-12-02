@@ -699,7 +699,7 @@ void MainWindow::makeChecksum(HashType hash_type, QString folder, QString file_n
     QString saved_path = QDir::currentPath();
     dir.setCurrent(folder);
 
-    QString ce = HashString[hash_type];
+    QString ce = QVariant::fromValue(hash_type).toString();
 
     QString cmd;
     QString checksum_cmd =  QString("/usr/bin/%1sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".%1\"").arg(ce);

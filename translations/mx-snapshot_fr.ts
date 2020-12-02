@@ -472,12 +472,12 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <translation>&amp;Fermer</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="66"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Le noyau actuel ne supporte pas Squashfs, impossible de continuer.</translation>
     </message>

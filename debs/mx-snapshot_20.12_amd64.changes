@@ -15,20 +15,20 @@ Changes:
  .
    * adjust checksum generation for preempt_rt kernel
 Checksums-Sha1:
- dbb90aa8a89a8c7d9601b3c52dcf477b90f65b6f 605 mx-snapshot_20.12.dsc
- 5a20db70546bf3608062f0e08337a9014af7508b 172152 mx-snapshot_20.12.tar.xz
- cc4a96fc158c86b1408bbeec09fce2eabcb0a859 800458 mx-snapshot-dbgsym_20.12_amd64.deb
- 82d851790ed6c6ca2f6fd9d065f93cdccfe65afe 10131 mx-snapshot_20.12_amd64.buildinfo
- 3bf43b29bda6fb4e3d8c18c8e9705d5f58e6fe51 205598 mx-snapshot_20.12_amd64.deb
+ 01ef0084c89229944a4dd20378d67cb20bf65435 605 mx-snapshot_20.12.dsc
+ 765f676133dc144222f6a08d5d31ddcfe0b0b8f7 172172 mx-snapshot_20.12.tar.xz
+ ef7f828bbeb410a1c1b8e58963e5d8e232d844f4 792244 mx-snapshot-dbgsym_20.12_amd64.deb
+ 162a52612a0b8990878e7c93d25f8cc69261d477 10131 mx-snapshot_20.12_amd64.buildinfo
+ 80e6426f27e76279f58229437a3269737008ec2a 205546 mx-snapshot_20.12_amd64.deb
 Checksums-Sha256:
- 9ed2ced7ded2858b598782344495dc8cd2fffb55a3ecb77a52cd7e222240c4e8 605 mx-snapshot_20.12.dsc
- b35558ad35097ac9c5d5e4bd61cfc0fcf2bc126a7e63a9fdafabb5a00fba3feb 172152 mx-snapshot_20.12.tar.xz
- a5dadcb488e3eefdbb300d6dba042526f99c32439b8b6fd458a93276d4002ad9 800458 mx-snapshot-dbgsym_20.12_amd64.deb
- 451c8399aae276843b057791c39dd3b958539db70563a0a2302ba8a1085e8de0 10131 mx-snapshot_20.12_amd64.buildinfo
- 9d2e6a3f02338a9f3ae857798fa2537ff24a23dbb8b18268c157df7c3a094f6e 205598 mx-snapshot_20.12_amd64.deb
+ 89b4dcb0a10dbb1bea2619ae782de8d99f3fe91fe32c1383199971f3c0f7cc22 605 mx-snapshot_20.12.dsc
+ 921231b4bf313721a4d853b403b5f598dbe8ee786efead97dfb2ec5dfc009467 172172 mx-snapshot_20.12.tar.xz
+ a1301d96e2a1972bc30290021256f4851094cc9fd8c1fe1f626d32f31abff8f0 792244 mx-snapshot-dbgsym_20.12_amd64.deb
+ ee4a4574fbf07aae8cf0c26133c5f78e3ba42609ef8078b7bdcc72bd345bd312 10131 mx-snapshot_20.12_amd64.buildinfo
+ de8512da3e563ba79a059de767f18b33372714b73857b7922d8b8c419720943f 205546 mx-snapshot_20.12_amd64.deb
 Files:
- 4be4fe665210a17edfa8c5d0d76e6354 605 admin optional mx-snapshot_20.12.dsc
- 01dbeb55b9bb387215d231430955b16c 172152 admin optional mx-snapshot_20.12.tar.xz
- cb937144a8718af4ecf102331fc2a31a 800458 debug extra mx-snapshot-dbgsym_20.12_amd64.deb
- cb6b75a50df5d7a836f64a5f03e5dc9b 10131 admin optional mx-snapshot_20.12_amd64.buildinfo
- 262b001583819e94d66d5eb3df11cca5 205598 admin optional mx-snapshot_20.12_amd64.deb
+ bc8ce41dccd3460f2c4a7a74e60ab238 605 admin optional mx-snapshot_20.12.dsc
+ a5ebb781cbfe49688020ca2e9c209c59 172172 admin optional mx-snapshot_20.12.tar.xz
+ c6df247dddc53a2a4f508fd487de134a 792244 debug extra mx-snapshot-dbgsym_20.12_amd64.deb
+ 045c13e3665fabf210e8504a655f8674 10131 admin optional mx-snapshot_20.12_amd64.buildinfo
+ 64e9e8b5470a93b38a1cc808ffb39032 205546 admin optional mx-snapshot_20.12_amd64.deb

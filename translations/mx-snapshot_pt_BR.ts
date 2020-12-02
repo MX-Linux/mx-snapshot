@@ -474,12 +474,12 @@ removendo imagens anteriores e cópias guardadas/copiadas:
         <translation>&amp;Fechar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="66"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>O núcleo (kernel) atual não suporta Squashfs, não pode continuar.</translation>
     </message>

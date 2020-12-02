@@ -474,12 +474,12 @@ Es wird eine .ISO-Datei erstellt, bootfähig auch von USB-stick. Es ist typische
         <translation>&amp;Schließen</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="76"/>
+        <location filename="../main.cpp" line="66"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation>Der installierte Kernel unterstützt Squashfs nicht; Abbruch.</translation>
     </message>

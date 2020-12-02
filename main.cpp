@@ -52,16 +52,6 @@ int main(int argc, char *argv[])
 
     a.setWindowIcon(QIcon::fromTheme("mx-snapshot"));
 
-    QString log_name= "/var/log/mx-snapshot.log";
-    // archive old log
-    system("[ -f " + log_name.toUtf8() + " ] && mv " + log_name.toUtf8() + " " + log_name.toUtf8() + ".old");
-    // Set the logging files
-    logFile.reset(new QFile(log_name));
-    // Open the file logging
-    logFile.data()->open(QFile::Append | QFile::Text);
-    // Set handler
-    qInstallMessageHandler(messageHandler);
-
     QTranslator qtTran;
     qtTran.load(QString("qt_") + QLocale::system().name());
     a.installTranslator(&qtTran);
@@ -78,6 +68,16 @@ int main(int argc, char *argv[])
     }
 
     if (getuid() == 0) {
+        QString log_name= "/var/log/mx-snapshot.log";
+        // archive old log
+        system("[ -f " + log_name.toUtf8() + " ] && mv " + log_name.toUtf8() + " " + log_name.toUtf8() + ".old");
+        // Set the logging files
+        logFile.reset(new QFile(log_name));
+        // Open the file logging
+        logFile.data()->open(QFile::Append | QFile::Text);
+        // Set handler
+        qInstallMessageHandler(messageHandler);
+
         MainWindow w(nullptr, a.arguments());
         w.show();
         return a.exec();
