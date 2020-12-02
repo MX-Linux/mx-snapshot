@@ -86,7 +86,7 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
         listUsedSpace();
     }
 
-	preempt = args.contains("--preempt");
+    preempt = args.contains("--preempt");
 }
 
 MainWindow::~MainWindow()
@@ -338,7 +338,7 @@ void MainWindow::closeInitrd(QString initrd_dir, QString file)
     if (initrd_dir.startsWith("/tmp/tmp.")) {
         shell->run("rm -r " + initrd_dir);
     }
-    makeMd5sum(work_dir + "/iso-template/antiX", "initrd.gz");
+    makeChecksum(HashType::md5, work_dir + "/iso-template/antiX", "initrd.gz");
 }
 
 // Copying the iso-template filesystem
@@ -371,7 +371,7 @@ void MainWindow::copyNewIso()
     }
 
     replaceMenuStrings();
-    makeMd5sum(work_dir + "/iso-template/antiX", "vmlinuz");
+    makeChecksum(HashType::md5, work_dir + "/iso-template/antiX", "vmlinuz");
 
     QString initrd_dir = shell->getCmdOut("mktemp -d");
     openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir);
@@ -653,8 +653,7 @@ bool MainWindow::createIso(QString filename)
     // mv linuxfs to another folder
     system("mkdir -p iso-2/antiX");
     shell->run("mv iso-template/antiX/linuxfs* iso-2/antiX");
- 
-    makeMd5sum(work_dir + "/iso-2/antiX", "linuxfs");
+    makeChecksum(HashType::md5, work_dir + "/iso-2/antiX", "linuxfs");
 
     shell->run("installed-to-live cleanup");
 
@@ -667,7 +666,7 @@ bool MainWindow::createIso(QString filename)
         disableOutput();
         return false;
     }
- 
+
     // make it isohybrid
     if (make_isohybrid == "yes") {
         ui->outputLabel->setText(tr("Making hybrid iso"));
@@ -677,9 +676,8 @@ bool MainWindow::createIso(QString filename)
 
     // make md5sum
     if (make_chksum == "yes") {
-		
-        makeMd5sum(snapshot_dir.absolutePath(), filename);
-        makeSha512sum(snapshot_dir.absolutePath(), filename);
+        makeChecksum(HashType::md5, snapshot_dir.absolutePath(), filename);
+        makeChecksum(HashType::sha512, snapshot_dir.absolutePath(), filename);
     }
 
     QTime time(0, 0);
@@ -692,70 +690,39 @@ bool MainWindow::createIso(QString filename)
     return true;
 }
 
-// create md5sum for different files
-void MainWindow::makeMd5sum(QString folder, QString file_name)
+// create checksums for different files
+void MainWindow::makeChecksum(HashType hash_type, QString folder, QString file_name)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     shell->run("sync");
     QDir dir;
-    QString current = dir.currentPath();
+    QString saved_path = QDir::currentPath();
     dir.setCurrent(folder);
+
+    QString ce = HashString[hash_type];
+
     QString cmd;
-    QString checksum_cmd =  "CE=md5; /usr/bin/${CE}sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".${CE}\"";
-    QString temp_dir =  "/tmp/snapsphot-checksum-temp"; 
-    QString checksum_tmp =  "CE=md5; CHK=/usr/bin/${CE}sum; TD=" + temp_dir + "; KEEP=$TD/.keep; [ -d $TD ] || mkdir $TD ; FN=\"" + file_name + "\"; CF=\"" + folder + "/${FN}.${CE}\"; cp $FN $TD/$FN; pushd $TD>/dev/null; $CHK $FN > $FN.${CE} ; cp $FN.${CE} $CF; popd >/dev/null ; [ -e $KEEP ] || rm -rf $TD" ;
-        
-    ui->outputLabel->setText(tr("Making md5sum"));
- 
+    QString checksum_cmd =  QString("/usr/bin/%1sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".%1\"").arg(ce);
+    QString temp_dir =  "/tmp/snapsphot-checksum-temp";
+    QString checksum_tmp =  QString("TD=" + temp_dir + "; KEEP=$TD/.keep; [ -d $TD ] || mkdir $TD ; FN=\"" + file_name + "\"; CF=\""
+            + folder + "/${FN}.%1\"; cp $FN $TD/$FN; pushd $TD>/dev/null; /usr/bin/%1sum $FN > $FN.%1 ; cp $FN.%1 $CF; popd >/dev/null ; [ -e $KEEP ] || rm -rf $TD").arg(ce);
+
     if (preempt) {
         // check free space available on /tmp
         shell->run("TF=/tmp/snapsphot-checksum-temp/\"" + file_name + "\"; [ -f \"$TF\" ] && rm -f \"$TF\"");
-        if (!shell->run("DUF=$(du -BM " + file_name + "| grep -oE '^[[:digit:]]+'); TDA=$(df -BM --output=avail /tmp | grep -oE '^[[:digit:]]+'); ((TDA/10*8 >= DUF))")) {       
+        if (!shell->run("DUF=$(du -BM " + file_name + "| grep -oE '^[[:digit:]]+'); TDA=$(df -BM --output=avail /tmp | grep -oE '^[[:digit:]]+'); ((TDA/10*8 >= DUF))")) {
             preempt = false;
         }
-    }	
+    }
     if (!preempt) {
         cmd = checksum_cmd;
     } else {
-        // free pagecache 
-        shell->run("sync; sleep 1; echo 1 > /proc/sys/vm/drop_caches; sleep 1"); 
+        // free pagecache
+        shell->run("sync; sleep 1; echo 1 > /proc/sys/vm/drop_caches; sleep 1");
         cmd = checksum_tmp;
-    }	
+    }
     shell->run(cmd);
-    dir.setCurrent(current);
-}
-
-// create sha512sum
-void MainWindow::makeSha512sum(QString folder, QString file_name)
-{
-    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    shell->run("sync");
-    QDir dir;
-    QString current = dir.currentPath();
-    dir.setCurrent(folder);
-    QString cmd;
-    QString checksum_cmd =  "CE=sha512; /usr/bin/${CE}sum \"" + file_name + "\">\"" + folder + "/" + file_name + ".${CE}\"";
-    QString temp_dir =  "/tmp/snapsphot-check-temp"; 
-    QString checksum_tmp =  "CE=sha512; CHK=/usr/bin/${CE}sum; TD=" + temp_dir + "; KEEP=$TD/.keep; [ -d $TD ] || mkdir $TD ; FN=\"" + file_name + "\"; CF=\"" + folder + "/${FN}.${CE}\"; cp $FN $TD/$FN; pushd $TD>/dev/null; $CHK $FN > $FN.${CE} ; cp $FN.${CE} $CF; popd >/dev/null ; [ -e $KEEP ] || rm -rf $TD" ;
-
-    ui->outputLabel->setText(tr("Making sha512sum"));
-
-    if (preempt) {
-        // check free space available on /tmp
-        shell->run("TF=/tmp/snapsphot-check-temp/\"" + file_name + "\"; [ -f \"$TF\" ] && rm -f \"$TF\"");
-        if (!shell->run("DUF=$(du -BM " + file_name + "| grep -oE '^[[:digit:]]+'); TDA=$(df -BM --output=avail /tmp | grep -oE '^[[:digit:]]+'); ((TDA/10*8 >= DUF))")) {       
-            preempt = false;
-        }
-    }	
-    if (!preempt) {
-        cmd = checksum_cmd;
-    } else {
-        // free pagecache 
-        shell->run("sync; sleep 1; echo 1 > /proc/sys/vm/drop_caches; sleep 1"); 
-        cmd = checksum_tmp;
-    }	
-    shell->run(cmd);
-    dir.setCurrent(current);
+    dir.setCurrent(saved_path);
 }
 
 // clean up changes before exit

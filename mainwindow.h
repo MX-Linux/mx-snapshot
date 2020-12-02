@@ -39,6 +39,9 @@ namespace Ui {
 class MainWindow;
 }
 
+enum HashType {md5, sha512};
+const QStringList HashString {"md5", "sha512"};
+
 class MainWindow : public QDialog
 {
     Q_OBJECT
@@ -104,8 +107,7 @@ public:
     void listFreeSpace();
     void listUsedSpace();
     void loadSettings();
-    void makeMd5sum(QString folder, QString file_name);
-    void makeSha512sum(QString folder, QString file_name);
+    void makeChecksum(HashType hash_type, QString folder, QString file_name);
     void mkDir(QString file_name);
     void openInitrd(QString file, QString initrd_dir);
     void replaceMenuStrings();
