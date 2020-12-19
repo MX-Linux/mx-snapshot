@@ -39,7 +39,6 @@
 static QScopedPointer<QFile> logFile;
 
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
-void printHelp();
 
 int main(int argc, char *argv[])
 {
