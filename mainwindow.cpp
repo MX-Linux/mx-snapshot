@@ -1013,7 +1013,7 @@ void MainWindow::on_buttonAbout_clicked()
 {
     this->hide();
     displayAboutMsgBox(tr("About %1").arg(this->windowTitle()), "<p align=\"center\"><b><h2>" + this->windowTitle() +"</h2></b></p><p align=\"center\">" +
-                       tr("Version: ") + VERSION + "</p><p align=\"center\"><h3>" +
+                       tr("Version: ") + qApp->applicationVersion() + "</p><p align=\"center\"><h3>" +
                        tr("Program for creating a live-CD from the running system for MX Linux") +
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>",

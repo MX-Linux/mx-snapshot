@@ -34,7 +34,6 @@
 #include <QTimer>
 
 #include "cmd.h"
-#include "version.h"
 
 namespace Ui {
 class MainWindow;
