@@ -22,15 +22,18 @@
  * along with MX Snapshot.  If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-#include "mainwindow.h"
-#include <unistd.h>
 #include <QApplication>
-#include <QTranslator>
-#include <QLocale>
-#include <QIcon>
-#include <QScopedPointer>
+#include <QCommandLineParser>
 #include <QDateTime>
 #include <QDebug>
+#include <QIcon>
+#include <QLocale>
+#include <QScopedPointer>
+#include <QTranslator>
+
+#include <unistd.h>
+#include "mainwindow.h"
+#include "version.h"
 
 static QScopedPointer<QFile> logFile;
 
@@ -39,26 +42,26 @@ void printHelp();
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
+    app.setApplicationVersion(VERSION);
 
-    if (a.arguments().contains("--help") || a.arguments().contains("-h") ) {
-        printHelp();
-        return EXIT_SUCCESS;
-    }
-    if (a.arguments().contains("--version") || a.arguments().contains("-v") ) {
-       system("echo 'Installer version'; dpkg-query -f '${Version}' -W mx-snapshot; echo");
-       return EXIT_SUCCESS;
-    }
+    QCommandLineParser parser;
+    parser.setApplicationDescription(QApplication::tr("Tool used for creating a live-CD from the running system"));
+    parser.addHelpOption();
+    parser.addVersionOption();
+    parser.addOptions({{{"m", "month"}, QApplication::tr("Create a montly snapshot, add 'Month' name in the ISO name, skip used space calculation")},
+                       {{"p", "preempt"}, QApplication::tr("Option to fix issue with calculating checksums on preempt_rt kernels")}});
+    parser.process(app);
 
-    a.setWindowIcon(QIcon::fromTheme("mx-snapshot"));
+    app.setWindowIcon(QIcon::fromTheme("mx-snapshot"));
 
     QTranslator qtTran;
     qtTran.load(QString("qt_") + QLocale::system().name());
-    a.installTranslator(&qtTran);
+    app.installTranslator(&qtTran);
 
     QTranslator appTran;
     appTran.load(QString("mx-snapshot_") + QLocale::system().name(), "/usr/share/mx-snapshot/locale");
-    a.installTranslator(&appTran);
+    app.installTranslator(&appTran);
 
     // Check if SQUASHFS is available
     if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
@@ -78,15 +81,12 @@ int main(int argc, char *argv[])
         // Set handler
         qInstallMessageHandler(messageHandler);
 
-        MainWindow w(nullptr, a.arguments());
+        qDebug().noquote() << app.applicationName() << QApplication::tr("version:") << app.applicationVersion();
+        MainWindow w(nullptr, parser);
         w.show();
-        return a.exec();
+        return app.exec();
     } else {
         system("su-to-root -X -c " + QCoreApplication::applicationFilePath().toUtf8() + "&");
-//        QApplication::beep();
-//        QMessageBox::critical(nullptr, QApplication::tr("Error"),
-//                              QApplication::tr("You must run this program as root."));
-//        return EXIT_FAILURE;
     }
 }
 
@@ -117,12 +117,4 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     out.flush();    // Clear the buffered data
 }
 
-// print CLI help info
-void printHelp()
-{
-    qDebug() << "Usage: mx-snapshot [<options>]\n";
-    qDebug() << "Options:";
-    qDebug() << "  -m --monthly Month   Create a montly snapshot, add 'Month' in the ISO name, skip used space calculation";
-    qDebug() << "  -v --version         Show version information";
-}
 

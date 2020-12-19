@@ -26,6 +26,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QCommandLineParser>
 #include <QDir>
 #include <QElapsedTimer>
 #include <QMessageBox>
@@ -48,7 +49,7 @@ public:
     enum HashType {md5, sha512};
     Q_ENUM(HashType)
 
-    explicit MainWindow(QWidget *parent = nullptr, QStringList args = QStringList());
+    explicit MainWindow(QWidget *parent = nullptr, const QCommandLineParser &arg_parser = QCommandLineParser());
     ~MainWindow();
 
     void addRemoveExclusion(bool add, QString exclusion);

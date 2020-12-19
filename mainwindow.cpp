@@ -34,15 +34,13 @@
 
 #include <QDebug>
 
-MainWindow::MainWindow(QWidget *parent, QStringList args) :
+MainWindow::MainWindow(QWidget *parent, const QCommandLineParser &arg_parser) :
     QDialog(parent),
     ui(new Ui::MainWindow)
 {
-    qDebug().noquote() << QCoreApplication::applicationName() << "version:" << VERSION;
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
     shell = new Cmd(this);
-    this->args = args;
 
     QFont font("monospace");
     font.setStyleHint(QFont::Monospace);
@@ -75,7 +73,7 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
 
     setup();
     reset_accounts = false;
-    if (args.contains("--monthly") || args.contains("-m")) {
+    if (arg_parser.isSet("month")) {
         QString name = shell->getCmdOut("cat /etc/mx-version | /usr/bin/cut -f1 -d' '");
         ui->lineEditName->setText(name.section("_", 0, 0) + "_" + QDate::currentDate().toString("MMMM") + "_" + name.section("_", 1, 1) + ".iso");
         ui->cbCompression->setCurrentIndex(ui->cbCompression->findText("xz")); // use XZ by default on Monthly snapshots
@@ -86,7 +84,7 @@ MainWindow::MainWindow(QWidget *parent, QStringList args) :
         listUsedSpace();
     }
 
-    preempt = args.contains("--preempt");
+    preempt = arg_parser.isSet("preempt");
 }
 
 MainWindow::~MainWindow()
@@ -681,7 +679,7 @@ bool MainWindow::createIso(QString filename)
     }
 
     QTime time(0, 0);
-    time = time.addMSecs(e_timer.elapsed());
+    time = time.addMSecs(static_cast<int>(e_timer.elapsed()));
     outputAvailable("\n" + tr("MX Snapshot completed sucessfully!") + "\n");
     outputAvailable(tr("Snapshot took %1 to finish.").arg(time.toString("hh:mm:ss")) + "\n");
     qDebug() << tr("Snapshot took %1 to finish.").arg(time.toString("hh:mm:ss"));
