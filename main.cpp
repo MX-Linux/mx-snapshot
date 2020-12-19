@@ -27,6 +27,7 @@
 #include <QDateTime>
 #include <QDebug>
 #include <QIcon>
+#include <QLibraryInfo>
 #include <QLocale>
 #include <QScopedPointer>
 #include <QTranslator>
@@ -53,11 +54,19 @@ int main(int argc, char *argv[])
                        {{"p", "preempt"}, QApplication::tr("Option to fix issue with calculating checksums on preempt_rt kernels")}});
     parser.process(app);
 
-    app.setWindowIcon(QIcon::fromTheme("mx-snapshot"));
+    app.setWindowIcon(QIcon::fromTheme(app.applicationName()));
+
+    QTranslator qtTran;
+    if (qtTran.load(QLocale::system(), "qt", "_", QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        app.installTranslator(&qtTran);
+
+    QTranslator qtBaseTran;
+    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        app.installTranslator(&qtBaseTran);
 
     QTranslator appTran;
-    appTran.load(QString("mx-snapshot_") + QLocale::system().name(), "/usr/share/mx-snapshot/locale");
-    app.installTranslator(&appTran);
+    if (appTran.load(app.applicationName() + "_" + QLocale::system().name(), "/usr/share/" + app.applicationName() + "/locale"))
+        app.installTranslator(&appTran);
 
     // Check if SQUASHFS is available
     if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
@@ -67,7 +76,7 @@ int main(int argc, char *argv[])
     }
 
     if (getuid() == 0) {
-        QString log_name= "/var/log/mx-snapshot.log";
+        QString log_name= "/var/log/" + app.applicationName() + ".log";
         // archive old log
         system("[ -f " + log_name.toUtf8() + " ] && mv " + log_name.toUtf8() + " " + log_name.toUtf8() + ".old");
         // Set the logging files
