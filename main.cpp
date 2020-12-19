@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
         w.show();
         return app.exec();
     } else {
-        system("su-to-root -X -c " + app.applicationFilePath().toUtf8() + "&");
+        system("su-to-root -X -c \"" + app.arguments().join(" ").toUtf8() + "\"&");
     }
 }
 
