@@ -55,10 +55,6 @@ int main(int argc, char *argv[])
 
     app.setWindowIcon(QIcon::fromTheme("mx-snapshot"));
 
-    QTranslator qtTran;
-    qtTran.load(QString("qt_") + QLocale::system().name());
-    app.installTranslator(&qtTran);
-
     QTranslator appTran;
     appTran.load(QString("mx-snapshot_") + QLocale::system().name(), "/usr/share/mx-snapshot/locale");
     app.installTranslator(&appTran);
