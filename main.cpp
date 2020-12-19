@@ -116,9 +116,7 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     case QtFatalMsg:    out << "FTL "; break;
     }
     // Write to the output category of the message and the message itself
-    out << context.category << ": "
-        << msg << endl;
-    out.flush();    // Clear the buffered data
+    out << context.category << ": " << msg << endl;
 }
 
 
