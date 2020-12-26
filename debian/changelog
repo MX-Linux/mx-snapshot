@@ -1,3 +1,11 @@
+mx-snapshot (20.12.01) mx; urgency=medium
+
+  * add checksum checkbox option
+  * take ownership for snapshot folder and resulting files
+  * some code fixes
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 26 Dec 2020 10:15:39 -0500
+
 mx-snapshot (20.12) mx; urgency=medium
 
   * adjust checksum generation for preempt_rt kernel 
