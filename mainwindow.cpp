@@ -77,6 +77,7 @@ MainWindow::MainWindow(QWidget *parent, const QCommandLineParser &arg_parser) :
         QString name = shell->getCmdOut("cat /etc/mx-version | /usr/bin/cut -f1 -d' '");
         ui->lineEditName->setText(name.section("_", 0, 0) + "_" + QDate::currentDate().toString("MMMM") + "_" + name.section("_", 1, 1) + ".iso");
         ui->cbCompression->setCurrentIndex(ui->cbCompression->findText("xz")); // use XZ by default on Monthly snapshots
+        ui->checksums->setChecked(true);
         ui->buttonNext->click();
         ui->radioRespin->click();
         ui->buttonNext->click();
@@ -104,7 +105,7 @@ void MainWindow::loadSettings()
     ui->labelSnapshotDir->setText(snapshot_dir.absolutePath());
     snapshot_excludes.setFileName(settings.value("snapshot_excludes", "/usr/local/share/excludes/mx-snapshot-exclude.list").toString());
     snapshot_basename = settings.value("snapshot_basename", "snapshot").toString();
-    make_chksum = settings.value("make_md5sum", "no").toString();
+    make_chksum = settings.value("make_md5sum", "no").toString() == "no" ? false : true;
     make_isohybrid = settings.value("make_isohybrid", "yes").toString();
     compression = settings.value("compression", "lz4").toString();
     mksq_opt = settings.value("mksq_opt").toString();
@@ -133,6 +134,7 @@ void MainWindow::setup()
     listFreeSpace();
 
     ui->cbCompression->setCurrentIndex(ui->cbCompression->findText(compression));
+    ui->checksums->setChecked(make_chksum);
 }
 
 
@@ -297,13 +299,14 @@ bool MainWindow::installPackage(QString package)
     return true;
 }
 
-void MainWindow::checkDirectories()
+bool MainWindow::checkDirectories()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    //  Create snapshot dir if it doesn't exist
-    if (!snapshot_dir.exists()) {
-        snapshot_dir.mkpath(snapshot_dir.absolutePath());
+    if(!snapshot_dir.mkpath(snapshot_dir.absolutePath())) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not create working directory. ") + snapshot_dir.absolutePath());
+        return false;
     }
+    system("chown $(logname):$(logname) \"/" + snapshot_dir.absolutePath().toUtf8() + "\"");
     // Create a work_dir
     QString parent_dir = snapshot_dir.absolutePath();
     if (!isOnSupportedPart(snapshot_dir)) { // if not saving snapshot on a Linux partition put working dir in /home
@@ -312,8 +315,13 @@ void MainWindow::checkDirectories()
         parent_dir = largerFreeSpace("/tmp", "/home", snapshot_dir.absolutePath());
     }
     work_dir = shell->getCmdOut("mktemp -d \"" + parent_dir + "/mx-snapshot-XXXXXXXX\"");
+    if (shell->exitCode() != 0) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not create temp directory. ") + work_dir);
+        return false;
+    }
     system("mkdir -p " + work_dir.toUtf8() + "/iso-template/antiX");
     system("cd ..; cd -");
+    return true;
 }
 
 void MainWindow::openInitrd(QString file, QString initrd_dir)
@@ -508,14 +516,18 @@ QString MainWindow::getEditor()
 }
 
 // make working directory using the base filename
-void MainWindow::mkDir(QString file_name)
+bool MainWindow::mkDir(QString file_name)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QDir dir;
     QFileInfo fi(file_name);
     QString base_name = fi.completeBaseName(); // remove extension
     dir.setPath(work_dir + "/iso-template/" + base_name);
-    dir.mkpath(dir.absolutePath());
+    if (!dir.mkpath(dir.absolutePath())) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not create working directory. ") + dir.absolutePath());
+        return false;
+    }
+    return true;
 }
 
 // save package list in working directory
@@ -664,6 +676,7 @@ bool MainWindow::createIso(QString filename)
         disableOutput();
         return false;
     }
+    system("chown $(logname):$(logname) \"" + snapshot_dir.absolutePath().toUtf8() + "/" + filename.toUtf8( )+ "\"");
 
     // make it isohybrid
     if (make_isohybrid == "yes") {
@@ -673,9 +686,11 @@ bool MainWindow::createIso(QString filename)
     }
 
     // make md5sum
-    if (make_chksum == "yes") {
+    if (make_chksum) {
         makeChecksum(HashType::md5, snapshot_dir.absolutePath(), filename);
         makeChecksum(HashType::sha512, snapshot_dir.absolutePath(), filename);
+        system("chown $(logname):$(logname) \"" + snapshot_dir.absolutePath().toUtf8() + "/" + filename.toUtf8() + ".md5\"");
+        system("chown $(logname):$(logname) \"" + snapshot_dir.absolutePath().toUtf8() + "/" + filename.toUtf8() + ".sha512\"");
     }
 
     QTime time(0, 0);
@@ -694,7 +709,6 @@ void MainWindow::makeChecksum(HashType hash_type, QString folder, QString file_n
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     shell->run("sync");
     QDir dir;
-    QString saved_path = QDir::currentPath();
     dir.setCurrent(folder);
 
     QString ce = QVariant::fromValue(hash_type).toString();
@@ -720,7 +734,7 @@ void MainWindow::makeChecksum(HashType hash_type, QString folder, QString file_n
         cmd = checksum_tmp;
     }
     shell->run(cmd);
-    dir.setCurrent(saved_path);
+    QDir::setCurrent(work_dir);
 }
 
 // clean up changes before exit
@@ -729,13 +743,14 @@ void MainWindow::cleanUp()
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     ui->stackedWidget->setCurrentWidget(ui->outputPage);
     ui->outputLabel->setText(tr("Cleaning..."));
+    shell->halt();
     shell->run("sync");
     system("/usr/bin/pkill mksquashfs; /usr/bin/pkill md5sum");
     QDir::setCurrent("/");
     system("/usr/bin/[ -f /tmp/installed-to-live/cleanup.conf ] && installed-to-live cleanup");
 
     // checks if work_dir looks OK
-    if (work_dir.contains("/mx-snapshot")) {
+    if (work_dir.contains("/mx-snapshot") && QFileInfo::exists(work_dir)) {
         system("rm -r \"" + work_dir.toUtf8() + "\"");
     }
     if (!live && !reset_accounts) {
@@ -842,9 +857,8 @@ void MainWindow::progress()
 void MainWindow::on_buttonNext_clicked()
 {
     QString file_name = ui->lineEditName->text();
-    if (!file_name.endsWith(".iso")) {
-        file_name += ".iso";
-    }
+    if (!file_name.endsWith(".iso")) file_name += ".iso";
+
     // on first page
     if (ui->stackedWidget->currentIndex() == 0) {
         this->setWindowTitle(tr("Settings"));
@@ -867,29 +881,26 @@ void MainWindow::on_buttonNext_clicked()
             return;
         }
 
-        int ans = QMessageBox::question(this, tr("Final chance"),
-                              tr("Snapshot now has all the information it needs to create an ISO from your running system.") + "\n\n" +
-                              tr("It will take some time to finish, depending on the size of the installed system and the capacity of your computer.") + "\n\n" +
-                              tr("OK to start?"), QMessageBox::Ok | QMessageBox::Cancel);
-        if (ans == QMessageBox::Cancel) {
+        if (QMessageBox::Cancel == QMessageBox::question(this, tr("Final chance"),
+                 tr("Snapshot now has all the information it needs to create an ISO from your running system.") + "\n\n" +
+                 tr("It will take some time to finish, depending on the size of the installed system and the capacity of your computer.") + "\n\n" +
+                 tr("OK to start?"), QMessageBox::Ok | QMessageBox::Cancel))
             return;
-        }
         e_timer.start();
-        checkDirectories();
+        if (!checkDirectories()) return;
         ui->buttonNext->setEnabled(false);
         ui->buttonBack->setEnabled(false);
         ui->stackedWidget->setCurrentWidget(ui->outputPage);
         this->setWindowTitle(tr("Output"));
         copyNewIso();
         ui->outputLabel->setText("");
-        mkDir(file_name);
+        if (!mkDir(file_name)) return;
         savePackageList(file_name);
 
         if (edit_boot_menu == "yes") {
-            ans = QMessageBox::question(this, tr("Edit Boot Menu"),
+            if (QMessageBox::Yes == QMessageBox::question(this, tr("Edit Boot Menu"),
                                   tr("The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot."),
-                                     QMessageBox::Yes | QMessageBox::No);
-            if (ans == QMessageBox::Yes) {
+                                     QMessageBox::Yes | QMessageBox::No)) {
                 this->hide();
                 QString cmd = getEditor() + " \"" + work_dir + "/iso-template/boot/isolinux/isolinux.cfg\"";
                 shell->run(cmd);
@@ -904,7 +915,7 @@ void MainWindow::on_buttonNext_clicked()
             ui->buttonCancel->setText(tr("Close"));
         }
     } else {
-        return qApp->quit();
+        qApp->quit();
     }
 }
 
@@ -1059,14 +1070,11 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 void MainWindow::closeApp() {
     // ask for confirmation when on outputPage and not done
     if (ui->stackedWidget->currentWidget() == ui->outputPage && ui->outputLabel->text() != tr("Done")) {
-        int ans = QMessageBox::question(this, tr("Confirmation"), tr("Are you sure you want to quit the application?"),
-                                        QMessageBox::Yes | QMessageBox::No);
-        if (ans == QMessageBox::Yes) {
-            return qApp->quit();
-        }
-    } else {
-        return qApp->quit();
+        if (QMessageBox::Yes != QMessageBox::question(this, tr("Confirmation"), tr("Are you sure you want to quit the application?"),
+                                        QMessageBox::Yes | QMessageBox::No))
+            return;
     }
+    qApp->quit();
 }
 
 void MainWindow::on_buttonCancel_clicked()
@@ -1095,4 +1103,11 @@ void MainWindow::on_excludeNetworks_toggled(bool checked)
     if (!checked) {
         ui->excludeAll->setChecked(false);
     }
+}
+
+void MainWindow::on_checksums_toggled(bool checked)
+{
+    QSettings settings(config_file.fileName(), QSettings::IniFormat);
+    settings.setValue("make_md5sum", checked ? "yes" : "no");
+    make_chksum = checked;
 }

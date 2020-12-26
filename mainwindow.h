@@ -70,7 +70,7 @@ public:
     QString edit_boot_menu;
     QString kernel_used;
     QString make_isohybrid;
-    QString make_chksum;
+    bool make_chksum;
     QString compression;
     QString mksq_opt;
     QString save_message;
@@ -85,15 +85,16 @@ public:
     int getDebianVersion();
     int getSnapshotCount();
 
+    bool checkDirectories();
     bool checkInstalled(QString package);
     bool createIso(QString package);
     bool installPackage(QString package);
     bool isLive();
     bool isOnSupportedPart(QDir dir);
     bool isi686();
+    bool mkDir(QString file_name);
     bool replaceStringInFile(QString old_text, QString new_text, QString file_path);
 
-    void checkDirectories();
     void checkSaveWork();
     void cleanUp();
     void closeApp();
@@ -105,7 +106,6 @@ public:
     void listUsedSpace();
     void loadSettings();
     void makeChecksum(HashType hash_type, QString folder, QString file_name);
-    void mkDir(QString file_name);
     void openInitrd(QString file, QString initrd_dir);
     void replaceMenuStrings();
     void savePackageList(QString file_name);
@@ -152,6 +152,7 @@ private slots:
     void on_excludeVideos_toggled(bool checked);
     void on_radioPersonal_clicked(bool checked);
     void on_radioRespin_clicked(bool checked);
+    void on_checksums_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;
