@@ -46,11 +46,11 @@ int main(int argc, char *argv[])
     app.setApplicationVersion(VERSION);
 
     QCommandLineParser parser;
-    parser.setApplicationDescription(QApplication::tr("Tool used for creating a live-CD from the running system"));
+    parser.setApplicationDescription(QObject::tr("Tool used for creating a live-CD from the running system"));
     parser.addHelpOption();
     parser.addVersionOption();
-    parser.addOptions({{{"m", "month"}, QApplication::tr("Create a montly snapshot, add 'Month' name in the ISO name, skip used space calculation")},
-                       {{"p", "preempt"}, QApplication::tr("Option to fix issue with calculating checksums on preempt_rt kernels")}});
+    parser.addOptions({{{"m", "month"}, QObject::tr("Create a montly snapshot, add 'Month' name in the ISO name, skip used space calculation")},
+                       {{"p", "preempt"}, QObject::tr("Option to fix issue with calculating checksums on preempt_rt kernels")}});
     parser.process(app);
 
     app.setWindowIcon(QIcon::fromTheme(app.applicationName()));
@@ -69,8 +69,8 @@ int main(int argc, char *argv[])
 
     // Check if SQUASHFS is available
     if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
-        QMessageBox::critical(nullptr, QApplication::tr("Error"),
-                QApplication::tr("Current kernel doesn't support Squashfs, cannot continue."));
+        QMessageBox::critical(nullptr, QObject::tr("Error"),
+                QObject::tr("Current kernel doesn't support Squashfs, cannot continue."));
         return EXIT_FAILURE;
     }
 
@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
         // Set handler
         qInstallMessageHandler(messageHandler);
 
-        qDebug().noquote() << app.applicationName() << QApplication::tr("version:") << app.applicationVersion();
+        qDebug().noquote() << app.applicationName() << QObject::tr("version:") << app.applicationVersion();
         MainWindow w(nullptr, parser);
         w.show();
         return app.exec();

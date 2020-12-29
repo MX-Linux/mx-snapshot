@@ -22,17 +22,16 @@
  * along with MX Snapshot.  If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
+#include <QDebug>
+#include <QFileDialog>
+#include <QKeyEvent>
+#include <QScrollBar>
+#include <QTextStream>
+#include <QTime>
+
 #include "about.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
-#include <QFileDialog>
-#include <QScrollBar>
-#include <QTextStream>
-#include <QKeyEvent>
-#include <QTime>
-
-#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent, const QCommandLineParser &arg_parser) :
     QDialog(parent),
@@ -74,7 +73,13 @@ MainWindow::MainWindow(QWidget *parent, const QCommandLineParser &arg_parser) :
     setup();
     reset_accounts = false;
     if (arg_parser.isSet("month")) {
-        QString name = shell->getCmdOut("cat /etc/mx-version | /usr/bin/cut -f1 -d' '");
+        QString name;
+        if (QFileInfo::exists("/etc/mx-version")) {
+            name = shell->getCmdOut("cat /etc/mx-version | /usr/bin/cut -f1 -d' '");
+        } else {
+            qDebug() << "/etc/mx-version not found. Not MX Linux?";
+            name = "MX_" + QString(i686 ? "386" : "x64");
+        }
         ui->lineEditName->setText(name.section("_", 0, 0) + "_" + QDate::currentDate().toString("MMMM") + "_" + name.section("_", 1, 1) + ".iso");
         ui->cbCompression->setCurrentIndex(ui->cbCompression->findText("xz")); // use XZ by default on Monthly snapshots
         ui->checksums->setChecked(true);
@@ -97,7 +102,7 @@ MainWindow::~MainWindow()
 void MainWindow::loadSettings()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    config_file.setFileName("/etc/mx-snapshot.conf");
+    config_file.setFileName("/etc/" + qApp->applicationName() + ".conf");
     QSettings settings(config_file.fileName(), QSettings::IniFormat);
 
     session_excludes = "";
@@ -302,7 +307,7 @@ bool MainWindow::installPackage(QString package)
 bool MainWindow::checkDirectories()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    if(!snapshot_dir.mkpath(snapshot_dir.absolutePath())) {
+    if (!snapshot_dir.mkpath(snapshot_dir.absolutePath())) {
         QMessageBox::critical(this, tr("Error"), tr("Could not create working directory. ") + snapshot_dir.absolutePath());
         return false;
     }
@@ -396,10 +401,17 @@ void MainWindow::copyNewIso()
 // replace text in menu items in grub.cfg, syslinux.cfg, isolinux.cfg
 void MainWindow::replaceMenuStrings() {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
+
+    QString distro, full_distro_name;
+    if (QFileInfo::exists("/etc/antix-version")) {
+        distro = shell->getCmdOut("cat /etc/antix-version | /usr/bin/cut -f1 -d'_'");
+        full_distro_name = shell->getCmdOut("cat /etc/antix-version | /usr/bin/cut -f-2 -d' '");
+    } else {
+        distro = "MX_" + QString(i686 ? "386" : "x64");
+        full_distro_name = distro;
+    }
     QString date = QDate::currentDate().toString("dd MMMM yyyy");
-    QString distro = shell->getCmdOut("cat /etc/antix-version | /usr/bin/cut -f1 -d'_'");
-    QString distro_name = shell->getCmdOut("grep -oP '(?<=DISTRIB_ID=).*' /etc/lsb-release");
-    QString full_distro_name = shell->getCmdOut("cat /etc/antix-version | /usr/bin/cut -f-2 -d' '");
+    QString distro_name = shell->getCmdOut("grep -oP '(?<=DISTRIB_ID=).*' /etc/lsb-release");    
     QString code_name = shell->getCmdOut("grep -oP '(?<=DISTRIB_CODENAME=).*' /etc/lsb-release");
     QString options = "quiet";
 
@@ -472,7 +484,7 @@ QString MainWindow::getFilename()
             name = snapshot_basename + QString::number(n) + ".iso";
             dir.setPath("\"" + snapshot_dir.absolutePath() + "/" + name + "\"");
             n++;
-        } while (dir.exists(dir.absolutePath()));
+        } while (QFileInfo::exists(dir.absolutePath()));
         return name;
     }
 }
@@ -484,11 +496,7 @@ QString MainWindow::largerFreeSpace(QString dir1, QString dir2)
     int dir1_free = shell->getCmdOut("df -k --output=avail \"" + dir1 + "\" 2>/dev/null | tail -n1").toInt();
     int dir2_free = shell->getCmdOut("df -k --output=avail \"" + dir2 + "\" 2>/dev/null | tail -n1").toInt();
 
-    if (dir1_free >= dir2_free) {
-        return dir1;
-    } else {
-        return dir2;
-    }
+    return dir1_free >= dir2_free ? dir1 : dir2;
 }
 
 // return the directory that has more free space available
@@ -568,7 +576,7 @@ void MainWindow::setupEnv()
     if (reset_accounts) {
         shell->run("installed-to-live -b /.bind-root start " + bind_boot + "empty=/home general version-file read-only");
     } else {
-        if (force_installer == true) {  // copy minstall.desktop to Desktop on all accounts
+        if (force_installer) {  // copy minstall.desktop to Desktop on all accounts
             shell->run("echo /home/*/Desktop | /usr/bin/xargs -n1 cp /usr/share/applications/minstall.desktop 2>/dev/null");
             shell->run("chmod a+rwx /home/*/Desktop/minstall.desktop"); //removes lock symbol on installer on desktop
         }
@@ -685,7 +693,7 @@ bool MainWindow::createIso(QString filename)
         shell->run(cmd);
     }
 
-    // make md5sum
+    // make ISO checksums
     if (make_chksum) {
         makeChecksum(HashType::md5, snapshot_dir.absolutePath(), filename);
         makeChecksum(HashType::sha512, snapshot_dir.absolutePath(), filename);
@@ -844,7 +852,7 @@ void MainWindow::progress()
 
     // in live environment and first page, blink text while calculating used disk space
     if (live && (ui->stackedWidget->currentIndex() == 0)) {
-        if (ui->progressBar->value()%4 == 0 ) {
+        if (ui->progressBar->value() % 4 == 0 ) {
             ui->labelUsedSpace->setText("\n " + tr("Please wait."));
         } else {
             ui->labelUsedSpace->setText("\n " + tr("Please wait. Calculating used disk space..."));
@@ -1091,15 +1099,12 @@ void MainWindow::on_cbCompression_currentIndexChanged(const QString &arg1)
 
 void MainWindow::on_excludeNetworks_toggled(bool checked)
 {
-    //Network Manager
-    QString exclusion = "/etc/NetworkManager/system-connections/*";
-    addRemoveExclusion(checked, exclusion);
-    //WiCD
-    exclusion = "/etc/wicd/*";
-    addRemoveExclusion(checked, exclusion);
-    //connman
-    exclusion = "/var/lib/connman/*";
-    addRemoveExclusion(checked, exclusion);
+    // Network Manager
+    addRemoveExclusion(checked, "/etc/NetworkManager/system-connections/*");
+    // WiCD
+    addRemoveExclusion(checked, "/etc/wicd/*");
+    // connman
+    addRemoveExclusion(checked, "/var/lib/connman/*");
     if (!checked) {
         ui->excludeAll->setChecked(false);
     }
