@@ -76,13 +76,9 @@ int main(int argc, char *argv[])
 
     if (getuid() == 0) {
         QString log_name= "/var/log/" + app.applicationName() + ".log";
-        // archive old log
         system("[ -f " + log_name.toUtf8() + " ] && mv " + log_name.toUtf8() + " " + log_name.toUtf8() + ".old");
-        // Set the logging files
         logFile.reset(new QFile(log_name));
-        // Open the file logging
         logFile.data()->open(QFile::Append | QFile::Text);
-        // Set handler
         qInstallMessageHandler(messageHandler);
 
         qDebug().noquote() << app.applicationName() << QObject::tr("version:") << app.applicationVersion();
@@ -97,26 +93,20 @@ int main(int argc, char *argv[])
 // The implementation of the handler
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
-    // Write to terminal
     QTextStream term_out(stdout);
-    term_out << msg << endl;
+    term_out << msg << QStringLiteral("\n");
 
-    // Open stream file writes
     QTextStream out(logFile.data());
-
-    // Write the date of recording
     out << QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss.zzz ");
-    // By type determine to what level belongs message
     switch (type)
     {
-    case QtInfoMsg:     out << "INF "; break;
-    case QtDebugMsg:    out << "DBG "; break;
-    case QtWarningMsg:  out << "WRN "; break;
-    case QtCriticalMsg: out << "CRT "; break;
-    case QtFatalMsg:    out << "FTL "; break;
+    case QtInfoMsg:     out << QStringLiteral("INF "); break;
+    case QtDebugMsg:    out << QStringLiteral("DBG "); break;
+    case QtWarningMsg:  out << QStringLiteral("WRN "); break;
+    case QtCriticalMsg: out << QStringLiteral("CRT "); break;
+    case QtFatalMsg:    out << QStringLiteral("FTL "); break;
     }
-    // Write to the output category of the message and the message itself
-    out << context.category << ": " << msg << endl;
+    out << context.category << QStringLiteral(": ") << msg << endl;
 }
 
 
