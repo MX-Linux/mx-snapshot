@@ -53,36 +53,33 @@ public:
     ~MainWindow();
 
     void addRemoveExclusion(bool add, QString exclusion);
-    QStringList args;
-
-    bool checkCompression();
-    bool i686;
-    bool live;
-    bool force_installer;
-    bool reset_accounts;
-
-    int debian_version;
 
     QDir lib_mod_dir;
     QDir snapshot_dir;
     QFile config_file;
     QFile gui_editor;
     QFile snapshot_excludes;
-    QString edit_boot_menu;
-    QString kernel_used;
-    QString make_isohybrid;
-    bool make_chksum;
     QString compression;
+    QString edit_boot_menu;
+    QString kernel;
+    QString make_isohybrid;
     QString mksq_opt;
     QString save_message;
     QString session_excludes;
     QString snapshot_basename;
     QString stamp;
+    QString test_dir;
     QString version;
     QString work_dir;
-    QString test_dir;
-    // command line options
-    bool preempt;
+    QStringList args;
+    bool checkCompression();
+    bool force_installer;
+    bool i686;
+    bool live;
+    bool make_chksum;
+    bool preempt; // command line option
+    bool reset_accounts;
+    int debian_version;
 
     int getDebianVersion();
     int getSnapshotCount();
@@ -110,6 +107,7 @@ public:
     void makeChecksum(HashType hash_type, QString folder, QString file_name);
     void openInitrd(QString file, QString initrd_dir);
     void replaceMenuStrings();
+    void selectKernel();
     void savePackageList(QString file_name);
     void setup();
     void setupEnv();

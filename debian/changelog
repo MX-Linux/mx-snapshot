@@ -1,3 +1,9 @@
+mx-snapshot (20.12.02) mx; urgency=medium
+
+  * add -k/--kernel option to take a snapshot with a different kernel
+ 
+ -- Adrian <adrian@mxlinux.org>  Thu, 31 Dec 2020 18:19:03 -0500
+
 mx-snapshot (20.12.01) mx; urgency=medium
 
   * add checksum checkbox option

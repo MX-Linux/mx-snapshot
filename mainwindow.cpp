@@ -89,6 +89,7 @@ MainWindow::MainWindow(QWidget *parent, const QCommandLineParser &arg_parser) :
     } else {
         listUsedSpace();
     }
+    kernel = arg_parser.value("kernel");
 
     preempt = arg_parser.isSet("preempt");
 }
@@ -369,7 +370,7 @@ void MainWindow::copyNewIso()
     cmd = "cp /usr/lib/iso-template/template-initrd.gz iso-template/antiX/initrd.gz";
     shell->run(cmd);
 
-    cmd = "cp /boot/vmlinuz-" + kernel_used + " iso-template/antiX/vmlinuz";
+    cmd = "cp /boot/vmlinuz-" + kernel + " iso-template/antiX/vmlinuz";
     shell->run(cmd);
 
     if (debian_version < 9) { // Only for versions older than Stretch
@@ -395,7 +396,7 @@ void MainWindow::copyNewIso()
     shell->run("/usr/bin/test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release \"" + initrd_dir + "/etc\""); // We cannot count on this file in the future versions
     shell->run("/usr/bin/test -r /etc/initrd-release && cp /etc/initrd-release \"" + initrd_dir + "/etc\""); // overwrite with this file, probably a better location _if_ the file exists
     if (!initrd_dir.isEmpty()) {
-        copyModules(initrd_dir, kernel_used);
+        copyModules(initrd_dir, kernel);
         closeInitrd(initrd_dir, work_dir + "/iso-template/antiX/initrd.gz");
     }
 }
@@ -457,7 +458,30 @@ void MainWindow::replaceMenuStrings() {
     }
 }
 
-// copyModules(mod_dir/kernel_used kernel_used)
+// select first the kernel provided by -k/--kernel arg, if that not available select current
+// if current not available select highest found in /boot
+void MainWindow::selectKernel()
+{
+    if (kernel.startsWith("/boot/vmlinuz-")) kernel.remove("/boot/vmlinuz-"); // remove path and part of name if passed as arg
+    if (kernel.isEmpty() || !QFileInfo::exists("/boot/vmlinuz-" + kernel)) {  // if kernel version not passed as arg, or incorrect
+        kernel = shell->getCmdOut("uname -r");
+        if (!QFileInfo::exists("/boot/vmlinuz-" + kernel)) { // if current kernel doesn't exist for some reason (e.g. WSL) in /boot pick first kernel
+             kernel = shell->getCmdOut("ls -1 /boot/vmlinuz* | sort | tail -n1").remove("/boot/vmlinuz-");
+             if (!QFileInfo::exists("/boot/vmlinuz-" + kernel)) {
+                 qDebug("Could not find a usable kernel");
+                 exit(EXIT_FAILURE);
+             }
+        }
+    }
+    // Check if SQUASHFS is available
+    if (system("grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-" + kernel.toUtf8()) != 0) {
+        QMessageBox::critical(this, QObject::tr("Error"),
+                QObject::tr("Current kernel doesn't support Squashfs, cannot continue."));
+        exit(EXIT_FAILURE);
+    }
+}
+
+// copyModules(mod_dir/kernel kernel)
 void MainWindow::copyModules(QString to, QString kernel)
 {
     QString kernel586 = "3.16.0-4-586";
@@ -719,8 +743,7 @@ void MainWindow::makeChecksum(HashType hash_type, QString folder, QString file_n
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     shell->run("sync");
-    QDir dir;
-    dir.setCurrent(folder);
+    QDir::setCurrent(folder);
 
     QString ce = QVariant::fromValue(hash_type).toString();
 
@@ -791,15 +814,15 @@ void MainWindow::addRemoveExclusion(bool add, QString exclusion)
 // check if compression is available in the kernel (lz4, lzo, xz)
 bool MainWindow::checkCompression()
 {
-    if (!shell->run("/usr/bin/[ -f /boot/config-$(uname -r) ]")) { // return true if cannot check config file
+    if (QFileInfo::exists("/boot/config-" + kernel)) { // return true if cannot check config file
         return true;
     }
     if (compression == "lz4") {
-        return (shell->run("grep ^CONFIG_SQUASHFS_LZ4=y /boot/config-$(uname -r)"));
+        return (shell->run("grep ^CONFIG_SQUASHFS_LZ4=y /boot/config-" + kernel.toUtf8()));
     } else if (compression == "xz") {
-        return (shell->run("grep ^CONFIG_SQUASHFS_XZ=y /boot/config-$(uname -r)"));
+        return (shell->run("grep ^CONFIG_SQUASHFS_XZ=y /boot/config-" + kernel.toUtf8()));
     } else if (compression == "lzo") {
-        return (shell->run("grep ^CONFIG_SQUASHFS_LZO=y /boot/config-$(uname -r)"));
+        return (shell->run("grep ^CONFIG_SQUASHFS_LZO=y /boot/config-" + kernel.toUtf8()));
     } else {
         return true;
     }
@@ -872,20 +895,12 @@ void MainWindow::on_buttonNext_clicked()
         ui->stackedWidget->setCurrentWidget(ui->settingsPage);
         ui->buttonBack->setHidden(false);
         ui->buttonBack->setEnabled(true);
-        kernel_used = shell->getCmdOut("uname -r");
-        if (!QFileInfo::exists("/boot/vmlinuz-" + kernel_used)) { // if current kernel doesn't exist for some reason (e.g. WSL) in /boot pick first kernel
-             kernel_used = shell->getCmdOut("ls -1 /boot/vmlinuz* | sort | tail -n1").remove("/boot/vmlinuz-");
-             if (!QFileInfo::exists("/boot/vmlinuz-" + kernel_used)) {
-                 qDebug("Could not find a usable kernel");
-                 exit(EXIT_FAILURE);
-             }
-        }
-        ui->stackedWidget->setCurrentWidget(ui->settingsPage);
+        selectKernel();
         ui->label_1->setText(tr("Snapshot will use the following settings:*"));
 
         ui->label_2->setText("\n" + tr("- Snapshot directory:") + " " + snapshot_dir.absolutePath() + "\n" +
                        "- " + tr("Snapshot name:") + " " + file_name + "\n" +
-                       tr("- Kernel to be used:") + " " + kernel_used + "\n");
+                       tr("- Kernel to be used:") + " " + kernel + "\n");
 
     // on settings page
     } else if (ui->stackedWidget->currentWidget() == ui->settingsPage) {
