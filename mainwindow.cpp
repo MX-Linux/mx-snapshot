@@ -873,6 +873,13 @@ void MainWindow::on_buttonNext_clicked()
         ui->buttonBack->setHidden(false);
         ui->buttonBack->setEnabled(true);
         kernel_used = shell->getCmdOut("uname -r");
+        if (!QFileInfo::exists("/boot/vmlinuz-" + kernel_used)) { // if current kernel doesn't exist for some reason (e.g. WSL) in /boot pick first kernel
+             kernel_used = shell->getCmdOut("ls -1 /boot/vmlinuz* | sort | tail -n1").remove("/boot/vmlinuz-");
+             if (!QFileInfo::exists("/boot/vmlinuz-" + kernel_used)) {
+                 qDebug("Could not find a usable kernel");
+                 exit(EXIT_FAILURE);
+             }
+        }
         ui->stackedWidget->setCurrentWidget(ui->settingsPage);
         ui->label_1->setText(tr("Snapshot will use the following settings:*"));
 
