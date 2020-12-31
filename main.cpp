@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
     QTextStream term_out(stdout);
-    term_out << msg << QStringLiteral("\n");
+    term_out << msg << endl;
 
     QTextStream out(logFile.data());
     out << QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss.zzz ");
