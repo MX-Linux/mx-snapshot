@@ -1,7 +1,7 @@
-#include "cmd.h"
-
 #include <QDebug>
 #include <QEventLoop>
+
+#include "cmd.h"
 
 Cmd::Cmd(QObject *parent)
     : QProcess(parent)

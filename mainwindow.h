@@ -31,6 +31,7 @@
 #include <QElapsedTimer>
 #include <QMessageBox>
 #include <QSettings>
+#include <QTemporaryDir>
 #include <QTimer>
 
 #include "cmd.h"
@@ -79,6 +80,7 @@ public:
     QString stamp;
     QString version;
     QString work_dir;
+    QString test_dir;
     // command line options
     bool preempt;
 
@@ -160,6 +162,7 @@ private:
     QHash<QString, QString> englishDirs; // English names of /home directories
     QElapsedTimer e_timer;
     QStringList users; // list of users with /home folders
+    QScopedPointer<QTemporaryDir> tmpdir;
     QTimer timer;
 
 

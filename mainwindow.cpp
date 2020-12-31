@@ -319,13 +319,15 @@ bool MainWindow::checkDirectories()
     } else {
         parent_dir = largerFreeSpace("/tmp", "/home", snapshot_dir.absolutePath());
     }
-    work_dir = shell->getCmdOut("mktemp -d \"" + parent_dir + "/mx-snapshot-XXXXXXXX\"");
-    if (shell->exitCode() != 0) {
-        QMessageBox::critical(this, tr("Error"), tr("Could not create temp directory. ") + work_dir);
+
+    tmpdir.reset(new QTemporaryDir(parent_dir + "/mx-snapshot-XXXXXXXX"));
+    if(!tmpdir->isValid()) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not create temp directory. ") + tmpdir.data()->path());
         return false;
     }
-    system("mkdir -p " + work_dir.toUtf8() + "/iso-template/antiX");
-    system("cd ..; cd -");
+    work_dir = tmpdir.data()->path();
+    QDir dir;
+    dir.mkpath(work_dir.toUtf8() + "/iso-template/antiX");
     return true;
 }
 
@@ -411,7 +413,7 @@ void MainWindow::replaceMenuStrings() {
         full_distro_name = distro;
     }
     QString date = QDate::currentDate().toString("dd MMMM yyyy");
-    QString distro_name = shell->getCmdOut("grep -oP '(?<=DISTRIB_ID=).*' /etc/lsb-release");    
+    QString distro_name = shell->getCmdOut("grep -oP '(?<=DISTRIB_ID=).*' /etc/lsb-release");
     QString code_name = shell->getCmdOut("grep -oP '(?<=DISTRIB_CODENAME=).*' /etc/lsb-release");
     QString options = "quiet";
 
@@ -669,7 +671,8 @@ bool MainWindow::createIso(QString filename)
     }
 
     // mv linuxfs to another folder
-    system("mkdir -p iso-2/antiX");
+    QDir dir;
+    dir.mkpath("iso-2/antiX");
     shell->run("mv iso-template/antiX/linuxfs* iso-2/antiX");
     makeChecksum(HashType::md5, work_dir + "/iso-2/antiX", "linuxfs");
 
@@ -757,10 +760,6 @@ void MainWindow::cleanUp()
     QDir::setCurrent("/");
     system("/usr/bin/[ -f /tmp/installed-to-live/cleanup.conf ] && installed-to-live cleanup");
 
-    // checks if work_dir looks OK
-    if (work_dir.contains("/mx-snapshot") && QFileInfo::exists(work_dir)) {
-        system("rm -r \"" + work_dir.toUtf8() + "\"");
-    }
     if (!live && !reset_accounts) {
         // remove installer icon
         system("rm /home/*/Desktop/minstall.desktop");
