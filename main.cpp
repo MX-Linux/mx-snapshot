@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     parser.addHelpOption();
     parser.addVersionOption();
     parser.addOptions({{{"k", "kernel"}, QObject::tr("Name a different kernel to use other than the default running kernel, use format returned by 'uname -r'"), "kernel-number>zzzzzzz"},
-                       {{"m", "month"}, QObject::tr("Create a montly snapshot, add 'Month' name in the ISO name, skip used space calculation")},
+                       {{"m", "month"}, QObject::tr("Create a monthly snapshot, add 'Month' name in the ISO name, skip used space calculation")},
                        {{"p", "preempt"}, QObject::tr("Option to fix issue with calculating checksums on preempt_rt kernels")}});
     parser.process(app);
 
