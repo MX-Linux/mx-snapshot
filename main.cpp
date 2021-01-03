@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     parser.setApplicationDescription(QObject::tr("Tool used for creating a live-CD from the running system"));
     parser.addHelpOption();
     parser.addVersionOption();
-    parser.addOptions({{{"k", "kernel"}, QObject::tr("Name a different kernel to use other than the default running kernel, use format returned by 'uname -r'"), "kernel-number>zzzzzzz"},
+    parser.addOptions({{{"k", "kernel"}, QObject::tr("Name a different kernel to use other than the default running kernel, use format returned by 'uname -r'"), "kernel-number"},
                        {{"m", "month"}, QObject::tr("Create a monthly snapshot, add 'Month' name in the ISO name, skip used space calculation")},
                        {{"p", "preempt"}, QObject::tr("Option to fix issue with calculating checksums on preempt_rt kernels")}});
     parser.process(app);

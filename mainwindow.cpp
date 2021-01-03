@@ -387,17 +387,23 @@ void MainWindow::copyNewIso()
     replaceMenuStrings();
     makeChecksum(HashType::md5, work_dir + "/iso-template/antiX", "vmlinuz");
 
-    QString initrd_dir = shell->getCmdOut("mktemp -d");
-    openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir);
-    if (initrd_dir.startsWith("/tmp/tmp.")) {  //just make sure initrd_dir is correct to avoid disaster
-        // strip modules
-        shell->run("/usr/bin/test -d \"" + initrd_dir + "/lib/modules\" && rm -r \"" + initrd_dir  + "/lib/modules\"");
+
+    QTemporaryDir initrd_dir;
+    if(!initrd_dir.isValid()) {
+        QMessageBox::critical(this, tr("Error"), tr("Could not create temp directory. ") + initrd_dir.path());
+        exit(EXIT_FAILURE);
     }
-    shell->run("/usr/bin/test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release \"" + initrd_dir + "/etc\""); // We cannot count on this file in the future versions
-    shell->run("/usr/bin/test -r /etc/initrd-release && cp /etc/initrd-release \"" + initrd_dir + "/etc\""); // overwrite with this file, probably a better location _if_ the file exists
-    if (!initrd_dir.isEmpty()) {
-        copyModules(initrd_dir, kernel);
-        closeInitrd(initrd_dir, work_dir + "/iso-template/antiX/initrd.gz");
+
+    openInitrd(work_dir + "/iso-template/antiX/initrd.gz", initrd_dir.path());
+    if (initrd_dir.path().startsWith("/tmp/")) {  //just make sure initrd_dir is correct to avoid disaster
+        // strip modules
+        shell->run("/usr/bin/test -d \"" + initrd_dir.path() + "/lib/modules\" && rm -r \"" + initrd_dir.path()  + "/lib/modules\"");
+    }
+    shell->run("/usr/bin/test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release \"" + initrd_dir.path() + "/etc\""); // We cannot count on this file in the future versions
+    shell->run("/usr/bin/test -r /etc/initrd-release && cp /etc/initrd-release \"" + initrd_dir.path() + "/etc\""); // overwrite with this file, probably a better location _if_ the file exists
+    if (initrd_dir.isValid()) {
+        copyModules(initrd_dir.path(), kernel);
+        closeInitrd(initrd_dir.path(), work_dir + "/iso-template/antiX/initrd.gz");
     }
 }
 
