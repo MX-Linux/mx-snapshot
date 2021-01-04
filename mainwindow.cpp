@@ -1073,7 +1073,7 @@ void MainWindow::on_buttonHelp_clicked()
     QLocale locale;
     QString lang = locale.bcp47Name();
 
-    QString url = "/usr/share/doc/mx-snapshot/help/mx-snapshot.html";
+    QString url = "/usr/share/doc/mx-snapshot/mx-snapshot.html";
 
     if (lang.startsWith("fr")) {
         url = "https://mxlinux.org/french-wiki/help-files-fr/help-mx-instantane";

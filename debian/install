@@ -1,4 +1,4 @@
-help				usr/share/doc/mx-snapshot
+help/*				usr/share/doc/mx-snapshot
 icons/mx-snapshot.png		usr/share/icons/hicolor/48x48/apps
 icons/mx-snapshot.svg		usr/share/icons/hicolor/scalable/apps
 mx-snapshot			usr/bin
