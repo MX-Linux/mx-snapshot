@@ -327,8 +327,7 @@ bool MainWindow::checkDirectories()
         return false;
     }
     work_dir = tmpdir.data()->path();
-    QDir dir;
-    dir.mkpath(work_dir.toUtf8() + "/iso-template/antiX");
+    QDir().mkpath(work_dir + "/iso-template/antiX");
     return true;
 }
 
@@ -701,8 +700,7 @@ bool MainWindow::createIso(QString filename)
     }
 
     // mv linuxfs to another folder
-    QDir dir;
-    dir.mkpath("iso-2/antiX");
+    QDir().mkpath("iso-2/antiX");
     shell->run("mv iso-template/antiX/linuxfs* iso-2/antiX");
     makeChecksum(HashType::md5, work_dir + "/iso-2/antiX", "linuxfs");
 
