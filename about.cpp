@@ -1,13 +1,14 @@
-#include "about.h"
-#include "cmd.h"
-#include "version.h"
-
 #include <QApplication>
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QTextEdit>
 #include <QVBoxLayout>
+
+#include "about.h"
+#include "cmd.h"
+#include "version.h"
+
 
 // display doc as nomal user when run as root
 void displayDoc(QString url, QString title, bool runned_as_root)

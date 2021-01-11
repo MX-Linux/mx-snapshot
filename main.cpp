@@ -32,62 +32,93 @@
 #include <QScopedPointer>
 #include <QTranslator>
 
+#include <signal.h>
 #include <unistd.h>
 #include "mainwindow.h"
 #include "version.h"
+#include "batchprocessing.h"
 
 static QScopedPointer<QFile> logFile;
 
+void checkSquashfs();
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
+void runApp(QCommandLineParser parser);
+void setLog();
+void setTranslation();
+void signalHandler(int sig);
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
-    app.setApplicationVersion(VERSION);
+    signal(SIGINT, signalHandler);
+    signal(SIGTERM, signalHandler);
+    signal(SIGHUP, signalHandler);
+    //signal(SIGQUIT, signalHandler); // allow SIGQUIT CTRL-\?
 
     QCommandLineParser parser;
     parser.setApplicationDescription(QObject::tr("Tool used for creating a live-CD from the running system"));
     parser.addHelpOption();
     parser.addVersionOption();
-    parser.addOptions({{{"k", "kernel"}, QObject::tr("Name a different kernel to use other than the default running kernel, use format returned by 'uname -r'"), "kernel-number"},
-                       {{"m", "month"}, QObject::tr("Create a monthly snapshot, add 'Month' name in the ISO name, skip used space calculation")},
-                       {{"p", "preempt"}, QObject::tr("Option to fix issue with calculating checksums on preempt_rt kernels")}});
-    parser.process(app);
+    parser.addOption({{"c", "cli"}, QObject::tr("Use CLI only")});
+    parser.addOption({{"d", "directory"}, QObject::tr("Output directory"), QObject::tr("path")});
+    parser.addOption({{"f", "file"}, QObject::tr("Output filename"), QObject::tr("name")});
+    parser.addOption({{"k", "kernel"}, QObject::tr("Name a different kernel to use other than the default running kernel, use format returned by 'uname -r'") + " " +
+                      QObject::tr("Or the full path: %1").arg("/boot/vmlinuz-x.xx.x..."), QObject::tr("ver, or path")});
+    parser.addOption({{"m", "month"}, QObject::tr("Create a monthly snapshot, add 'Month' name in the ISO name, skip used space calculation") + " " +
+                     QObject::tr("This option sets reset-accounts and compression to defaults, arguments changing those items will be ignored")});
+    parser.addOption({{"n", "no-checksums"}, QObject::tr("Don't calculate checksums for resulting ISO file")});
+    parser.addOption({{"p", "preempt"}, QObject::tr("Option to fix issue with calculating checksums on preempt_rt kernels")});
+    parser.addOption({{"r", "reset"}, QObject::tr("Resetting accounts (for distribution to others)")});
+    parser.addOption({{"s", "checksums"}, QObject::tr("Calculate checksums for resulting ISO file")});
+    parser.addOption({{"x", "exclude"}, QObject::tr("Exclude main folders, valid choices: ") + "Desktop, Documents, Downloads, Music, Networks, Pictures, Videos." + " " +
+                      QObject::tr("Use the option one time for each item you want to exclude"), QObject::tr("one item")});
+    parser.addOption({{"z", "compression"}, QObject::tr("Compression format, valid choices: ") + "lz4, lzo, gzip, xz", QObject::tr("format")});
 
-    app.setWindowIcon(QIcon::fromTheme(app.applicationName()));
 
-    QTranslator qtTran;
-    if (qtTran.load(QLocale::system(), "qt", "_", QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
-        app.installTranslator(&qtTran);
+    QStringList opts;
+    for (int i = 0; i < argc; ++i)
+        opts << QString(argv[i]);
+    parser.parse(opts);
 
-    QTranslator qtBaseTran;
-    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
-        app.installTranslator(&qtBaseTran);
+    QStringList allowed_comp {"lz4", "lzo", "gzip", "xz"};
+    if (!parser.value("compression").isEmpty())
+        if (!allowed_comp.contains(parser.value("compression"))) {
+            qDebug() << "Wrong compression format";
+            return EXIT_FAILURE;
+        }
 
-    QTranslator appTran;
-    if (appTran.load(app.applicationName() + "_" + QLocale::system().name(), "/usr/share/" + app.applicationName() + "/locale"))
-        app.installTranslator(&appTran);
+    if (parser.isSet("cli")) {
+        QCoreApplication app(argc, argv);
+        app.setApplicationVersion(VERSION);
+        parser.process(app);
+        setTranslation();
+        checkSquashfs();
 
-    // Check if SQUASHFS is available
-    if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
-        QMessageBox::critical(nullptr, QObject::tr("Error"),
-                QObject::tr("Current kernel doesn't support Squashfs, cannot continue."));
-        return EXIT_FAILURE;
-    }
-
-    if (getuid() == 0) {
-        QString log_name= "/var/log/" + app.applicationName() + ".log";
-        system("[ -f " + log_name.toUtf8() + " ] && mv " + log_name.toUtf8() + " " + log_name.toUtf8() + ".old");
-        logFile.reset(new QFile(log_name));
-        logFile.data()->open(QFile::Append | QFile::Text);
-        qInstallMessageHandler(messageHandler);
-
-        qDebug().noquote() << app.applicationName() << QObject::tr("version:") << app.applicationVersion();
-        MainWindow w(nullptr, parser);
-        w.show();
-        return app.exec();
+        if (getuid() == 0) {
+            setLog();
+            qDebug().noquote() << qApp->applicationName() << QObject::tr("version:") << qApp->applicationVersion();
+            Batchprocessing  batch(parser);
+            QTimer::singleShot(0, &app, &QCoreApplication::quit);
+            return app.exec();
+        } else {
+            qDebug().noquote() << QObject::tr("You must run this program as root.");
+            return EXIT_FAILURE;
+        }
     } else {
-        system("su-to-root -X -c " + app.applicationFilePath().toUtf8() + "&");
+        QApplication app(argc, argv);
+        app.setApplicationVersion(VERSION);
+        parser.process(app);
+        setTranslation();
+        checkSquashfs();
+
+        if (getuid() == 0) {
+            setLog();
+            qDebug().noquote() << qApp->applicationName() << QObject::tr("version:") << qApp->applicationVersion();
+            MainWindow w(nullptr, parser);
+            w.show();
+            exit(app.exec());
+        } else {
+            system("su-to-root -X -c " + app.applicationFilePath().toUtf8() + "&");
+        }
     }
 }
 
@@ -95,8 +126,9 @@ int main(int argc, char *argv[])
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
     QTextStream term_out(stdout);
-    term_out << msg << endl;
+    msg.contains("\r") ? term_out << msg << flush: term_out << msg << "\n" << flush;
 
+    if (msg.startsWith("\033[2KProcessing")) return;
     QTextStream out(logFile.data());
     out << QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss.zzz ");
     switch (type)
@@ -111,3 +143,48 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
 }
 
 
+void setTranslation()
+{
+    QTranslator qtTran;
+    if (qtTran.load(QLocale::system(), "qt", "_", QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        qApp->installTranslator(&qtTran);
+
+    QTranslator qtBaseTran;
+    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        qApp->installTranslator(&qtBaseTran);
+
+    QTranslator appTran;
+    if (appTran.load(qApp->applicationName() + "_" + QLocale::system().name(), "/usr/share/" + qApp->applicationName() + "/locale"))
+        qApp->installTranslator(&appTran);
+}
+
+// Check if SQUASHFS is available
+void checkSquashfs()
+{
+    if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
+        QMessageBox::critical(nullptr, QObject::tr("Error"),
+                              QObject::tr("Current kernel doesn't support Squashfs, cannot continue."));
+        exit(EXIT_FAILURE);
+    }
+}
+
+void setLog()
+{
+    QString log_name= "/var/log/" + qApp->applicationName() + ".log";
+    system("[ -f " + log_name.toUtf8() + " ] && mv " + log_name.toUtf8() + " " + log_name.toUtf8() + ".old");
+    logFile.reset(new QFile(log_name));
+    logFile.data()->open(QFile::Append | QFile::Text);
+    qInstallMessageHandler(messageHandler);
+}
+
+void signalHandler(int sig)
+{
+    switch (sig)
+    {
+    case 1: qDebug() << "\nSIGHUP"; break;
+    case 2: qDebug() << "\nSIGINT"; break;
+    case 3: qDebug() << "\nSIGQUIT"; break;
+    case 15: qDebug() << "\nSIGTERM"; break;
+    }
+    qApp->quit(); // quit app anyway in case a subprocess was killed, but at least this calls aboutToQuit
+}

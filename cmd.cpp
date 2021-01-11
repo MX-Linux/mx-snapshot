@@ -6,14 +6,15 @@
 Cmd::Cmd(QObject *parent)
     : QProcess(parent)
 {
-    connect(this, &Cmd::readyReadStandardOutput, [=]() { emit outputAvailable(readAllStandardOutput()); });
-    connect(this, &Cmd::readyReadStandardError, [=]() { emit errorAvailable(readAllStandardError()); });
-    connect(this, &Cmd::outputAvailable, [=](const QString &out) { out_buffer += out; });
-    connect(this, &Cmd::errorAvailable, [=](const QString &out) { out_buffer += out; });
+    connect(this, &Cmd::readyReadStandardOutput, [this] { emit outputAvailable(readAllStandardOutput()); });
+    connect(this, &Cmd::readyReadStandardError, [this] { emit errorAvailable(readAllStandardError()); });
+    connect(this, &Cmd::outputAvailable, [this](const QString &out) { out_buffer += out; });
+    connect(this, &Cmd::errorAvailable, [this](const QString &out) { out_buffer += out; });
 }
 
 void Cmd::halt()
 {
+    halting = true;
     if (state() != QProcess::NotRunning) {
         terminate();
         waitForFinished(5000);
@@ -25,7 +26,7 @@ void Cmd::halt()
 bool Cmd::run(const QString &cmd, bool quiet)
 {
     out_buffer.clear();
-    QByteArray output;
+    QString output;
     return run(cmd, output, quiet);
 }
 
@@ -33,13 +34,17 @@ bool Cmd::run(const QString &cmd, bool quiet)
 QString Cmd::getCmdOut(const QString &cmd, bool quiet)
 {
     out_buffer.clear();
-    QByteArray output;
+    QString output;
     run(cmd, output, quiet);
     return output;
 }
 
-bool Cmd::run(const QString &cmd, QByteArray &output, bool quiet)
+bool Cmd::run(const QString &cmd, QString &output, bool quiet)
 {
+    if (halting) {
+        qDebug() << "Halting, cmd not executed:" << cmd;
+        return false;
+    }
     out_buffer.clear();
     connect(this, QOverload<int>::of(&QProcess::finished), this, &Cmd::finished, Qt::UniqueConnection);
     if (this->state() != QProcess::NotRunning) {
@@ -51,7 +56,7 @@ bool Cmd::run(const QString &cmd, QByteArray &output, bool quiet)
     connect(this, &Cmd::finished, &loop, &QEventLoop::quit, Qt::UniqueConnection);
     start("/bin/bash", QStringList() << "-c" << cmd);
     loop.exec();
-    output = out_buffer.trimmed().toUtf8();
+    output = out_buffer.trimmed();
     return (exitStatus() == QProcess::NormalExit && exitCode() == 0);
 }
 

@@ -1,3 +1,11 @@
+mx-snapshot (21.1) mx; urgency=medium
+
+  * rewrite to allow CLI/scripted mode, use -h to list options
+  * catch SIGINT, SIGTERM, SIGHUP and cleanup before closing
+  * check if enough space on partition (for /root, for now it ignores /home) 
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 17 Jan 2021 12:01:32 -0500
+
 mx-snapshot (20.12.02) mx; urgency=medium
 
   * add -k/--kernel option to take a snapshot with a different kernel

@@ -22,116 +22,56 @@
  * along with MX Snapshot.  If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QCommandLineParser>
 #include <QDir>
-#include <QElapsedTimer>
 #include <QMessageBox>
 #include <QSettings>
-#include <QTemporaryDir>
 #include <QTimer>
 
 #include "cmd.h"
+#include "settings.h"
+#include "work.h"
 
 namespace Ui {
 class MainWindow;
 }
 
-
-class MainWindow : public QDialog
+class MainWindow : public QDialog, public Settings
 {
     Q_OBJECT
 
 public:
-    enum HashType {md5, sha512};
-    Q_ENUM(HashType)
-
     explicit MainWindow(QWidget *parent = nullptr, const QCommandLineParser &arg_parser = QCommandLineParser());
     ~MainWindow();
 
-    void addRemoveExclusion(bool add, QString exclusion);
-
-    QDir lib_mod_dir;
-    QDir snapshot_dir;
-    QFile config_file;
-    QFile gui_editor;
-    QFile snapshot_excludes;
-    QString compression;
-    QString edit_boot_menu;
-    QString kernel;
-    QString make_isohybrid;
-    QString mksq_opt;
-    QString save_message;
-    QString session_excludes;
-    QString snapshot_basename;
-    QString stamp;
-    QString test_dir;
-    QString version;
-    QString work_dir;
-    QStringList args;
-    bool checkCompression();
-    bool force_installer;
-    bool i686;
-    bool live;
-    bool make_chksum;
-    bool preempt; // command line option
-    bool reset_accounts;
-    int debian_version;
-
-    int getDebianVersion();
-    int getSnapshotCount();
-
-    bool checkDirectories();
-    bool checkInstalled(QString package);
-    bool createIso(QString package);
-    bool installPackage(QString package);
-    bool isLive();
-    bool isOnSupportedPart(QDir dir);
-    bool isi686();
-    bool mkDir(QString file_name);
-    bool replaceStringInFile(QString old_text, QString new_text, QString file_path);
-
+    QString getFilename();
+    [[ noreturn ]] void cleanUp();
+    bool installPackage(const QString &package);
     void checkSaveWork();
-    void cleanUp();
     void closeApp();
-    void closeInitrd(QString initrd_dir, QString file);
-    void copyModules(QString to, QString kernel);
-    void copyNewIso();
-    void fixPermissions();
     void listFreeSpace();
     void listUsedSpace();
     void loadSettings();
-    void makeChecksum(HashType hash_type, QString folder, QString file_name);
-    void openInitrd(QString file, QString initrd_dir);
-    void replaceMenuStrings();
-    void selectKernel();
-    void savePackageList(QString file_name);
+    void setConnections();
+    void setExclusions();
+    void setOtherOptions();
     void setup();
-    void setupEnv();
-    void writeSnapshotInfo();
-
-    QString getEditor();
-    QString getFilename();
-    QString getLiveRootSpace();
-    QString getSnapshotSize();
-    QString getXdgUserDirs(const QString &folder);
-    QString largerFreeSpace(QString dir1, QString dir2);
-    QString largerFreeSpace(QString dir1, QString dir2, QString dir3);
-    QStringList listUsers();
 
 protected:
     void keyPressEvent(QKeyEvent* event);
 
 public slots:
-    void outputAvailable(const QString &output);
-    void procStart();
-    void procDone();
-    void progress();
-    void displayOutput();
     void disableOutput();
+    void displayOutput();
+    void outputAvailable(const QString &output);
+    void procDone();
+    void procStart();
+    void processMsg(const QString &msg);
+    void processMsgBox(BoxType box_type, const QString &title, const QString &msg);
+    void progress();
 
 private slots:
 
@@ -151,17 +91,14 @@ private slots:
     void on_excludePictures_toggled(bool checked);
     void on_excludeVideos_toggled(bool checked);
     void on_radioPersonal_clicked(bool checked);
-    void on_radioRespin_clicked(bool checked);
+    void on_radioRespin_toggled(bool checked);
     void on_checksums_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;
-    Cmd *shell;
-    QHash<QString, QString> englishDirs; // English names of /home directories
-    QElapsedTimer e_timer;
-    QStringList users; // list of users with /home folders
-    QScopedPointer<QTemporaryDir> tmpdir;
     QTimer timer;
+    Work work;
+    bool monthly;
 
 
 };

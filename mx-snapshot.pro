@@ -39,13 +39,19 @@ TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
     about.cpp \
-    cmd.cpp
+    cmd.cpp \
+    settings.cpp \
+    batchprocessing.cpp \
+    work.cpp
 
 HEADERS  += \
     mainwindow.h \
     version.h \
     about.h \
-    cmd.h
+    cmd.h \
+    settings.h \
+    batchprocessing.h \
+    work.h
 
 FORMS    += \
     mainwindow.ui
