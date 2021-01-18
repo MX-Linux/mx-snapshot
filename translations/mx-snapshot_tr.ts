@@ -5,9 +5,8 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
-        <location filename="../mainwindow.cpp" line="54"/>
-        <location filename="../mainwindow.cpp" line="132"/>
-        <location filename="../mainwindow.cpp" line="957"/>
+        <location filename="../mainwindow.cpp" line="116"/>
+        <location filename="../mainwindow.cpp" line="340"/>
         <source>MX Snapshot</source>
         <translation>MX Sistem Anlık Görüntüsü</translation>
     </message>
@@ -28,7 +27,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
-        <location filename="../mainwindow.cpp" line="906"/>
+        <location filename="../mainwindow.cpp" line="285"/>
         <source>Snapshot name:</source>
         <translation>Sistem Anlık Görüntüsü Adı:</translation>
     </message>
@@ -209,27 +208,20 @@
         <translation>Geri</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="242"/>
         <source>Used space on / (root): </source>
-        <translation>/ (root) &apos;daki Kullanılan Alan:</translation>
+        <translation type="vanished">/ (root) &apos;daki Kullanılan Alan:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="244"/>
-        <source>estimated</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="251"/>
         <source>Used space on /home: </source>
-        <translation>/home &apos;daki Kullanılan Alan:</translation>
+        <translation type="vanished">/home &apos;daki Kullanılan Alan:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="269"/>
+        <location filename="../mainwindow.cpp" line="147"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation>Anlık Görüntü&apos;nün bulunduğu %1 &apos;deki boş alan:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="271"/>
+        <location filename="../mainwindow.cpp" line="148"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -244,233 +236,206 @@ daha fazla kullanılabilir alan oluşturabilirsiniz:
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="291"/>
-        <location filename="../mainwindow.cpp" line="292"/>
+        <location filename="../mainwindow.cpp" line="157"/>
+        <location filename="../mainwindow.cpp" line="158"/>
         <source>Installing </source>
         <translation>Kuruluyor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
-        <location filename="../mainwindow.cpp" line="312"/>
-        <location filename="../mainwindow.cpp" line="326"/>
-        <location filename="../mainwindow.cpp" line="392"/>
-        <location filename="../mainwindow.cpp" line="566"/>
-        <location filename="../mainwindow.cpp" line="698"/>
-        <location filename="../mainwindow.cpp" line="714"/>
-        <location filename="../mainwindow.cpp" line="912"/>
+        <location filename="../mainwindow.cpp" line="299"/>
+        <location filename="../mainwindow.cpp" line="303"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
         <source>Could not install </source>
-        <translation>Kurulamadı</translation>
+        <translation type="vanished">Kurulamadı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="312"/>
-        <location filename="../mainwindow.cpp" line="566"/>
+        <location filename="../mainwindow.cpp" line="299"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="326"/>
-        <location filename="../mainwindow.cpp" line="392"/>
-        <source>Could not create temp directory. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="337"/>
         <source>Building new initrd...</source>
-        <translation>Yeni initrd oluşturuluyor...</translation>
+        <translation type="vanished">Yeni initrd oluşturuluyor...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="363"/>
         <source>Copying the new-iso filesystem...</source>
-        <translation>Yeni iso dosya sistemi kopyalanıyor...</translation>
+        <translation type="vanished">Yeni iso dosya sistemi kopyalanıyor...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="695"/>
         <source>Squashing filesystem...</source>
-        <translation>Dosya sistemi sıkıştırılıyor...</translation>
+        <translation type="vanished">Dosya sistemi sıkıştırılıyor...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="698"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
-        <translation>linuxfs dosyası oluşturulamadı, lütfen hedef bölüm üzerinde yeterli alan olup olmadığını kontrol edin.</translation>
+        <translation type="vanished">linuxfs dosyası oluşturulamadı, lütfen hedef bölüm üzerinde yeterli alan olup olmadığını kontrol edin.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="712"/>
         <source>Creating CD/DVD image file...</source>
-        <translation>CD/DVD kalıp dosyası oluşturuluyor...</translation>
+        <translation type="vanished">CD/DVD kalıp dosyası oluşturuluyor...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="714"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
-        <translation>ISO dosyası oluşturulamadı, lütfen hedef bölüm üzerinde yeterli alan olup olmadığını kontrol edin.</translation>
+        <translation type="vanished">ISO dosyası oluşturulamadı, lütfen hedef bölüm üzerinde yeterli alan olup olmadığını kontrol edin.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="722"/>
         <source>Making hybrid iso</source>
-        <translation>Hibrit iso oluşturuluyor</translation>
+        <translation type="vanished">Hibrit iso oluşturuluyor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="737"/>
         <source>MX Snapshot completed sucessfully!</source>
-        <translation>MX Snapshot başarıyla tamamlandı !</translation>
+        <translation type="vanished">MX Snapshot başarıyla tamamlandı !</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="738"/>
-        <location filename="../mainwindow.cpp" line="739"/>
         <source>Snapshot took %1 to finish.</source>
-        <translation>Anlık Görüntüyü Oluşturmak %1 sürdü</translation>
+        <translation type="vanished">Anlık Görüntüyü Oluşturmak %1 sürdü</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="740"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
-        <translation>MX Snapshot &apos;ı kullandığınız için teşekkürler, boot edilebilir usb hazırlamak için MX Live USB Maker &apos;ı kullanabilirsiniz!</translation>
+        <translation type="vanished">MX Snapshot &apos;ı kullandığınız için teşekkürler, boot edilebilir usb hazırlamak için MX Live USB Maker &apos;ı kullanabilirsiniz!</translation>
     </message>
     <message>
         <source>Making md5sum</source>
         <translation type="vanished">md5sum üretiliyor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="783"/>
         <source>Cleaning...</source>
-        <translation>Temizleniyor...</translation>
+        <translation type="vanished">Temizleniyor...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="794"/>
-        <location filename="../mainwindow.cpp" line="1105"/>
         <source>Done</source>
-        <translation>Bitti</translation>
+        <translation type="vanished">Bitti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="882"/>
+        <location filename="../mainwindow.cpp" line="261"/>
         <source>Please wait.</source>
         <translation>Lütfen bekleyin.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="884"/>
+        <location filename="../mainwindow.cpp" line="263"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation>Lütfen bekleyin. Kullanılan disk alanı hesaplanıyor...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="898"/>
+        <location filename="../mainwindow.cpp" line="277"/>
         <source>Settings</source>
         <translation>Ayarlar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="903"/>
+        <location filename="../mainwindow.cpp" line="282"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>Anlık Görüntü şu ayarları kullanacak:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="905"/>
+        <location filename="../mainwindow.cpp" line="284"/>
         <source>- Snapshot directory:</source>
         <translation>- Anlık Görüntü dizini:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="907"/>
+        <location filename="../mainwindow.cpp" line="286"/>
         <source>- Kernel to be used:</source>
         <translation>- Kullanılacak Çekirdek:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="913"/>
         <source>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</source>
-        <translation>Şu an kullanımdaki çekirdek, seçilen sıkıştırma algoritmasını desteklemiyor, lütfen yapılandırma dosyasını düzenleyin ve farklı bir algoritma seçin.</translation>
+        <translation type="vanished">Şu an kullanımdaki çekirdek, seçilen sıkıştırma algoritmasını desteklemiyor, lütfen yapılandırma dosyasını düzenleyin ve farklı bir algoritma seçin.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="917"/>
+        <location filename="../mainwindow.cpp" line="290"/>
         <source>Final chance</source>
         <translation>Son şans</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="918"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation>Anlık Görüntü şimdi çalışan sisteminizden bir ISO oluşturmak için gereken tüm bilgilere sahip.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="919"/>
+        <location filename="../mainwindow.cpp" line="292"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation>Kurulu sistemin boyutuna ve bilgisayarınızın kapasitesine bağlı olarak işlem biraz zaman alacaktır.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="920"/>
+        <location filename="../mainwindow.cpp" line="293"/>
         <source>OK to start?</source>
         <translation>Başlamak için hazır mısınız?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="927"/>
+        <location filename="../mainwindow.cpp" line="303"/>
+        <source>Could not create temporary directory. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="311"/>
         <source>Output</source>
         <translation>Çıktı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="934"/>
+        <location filename="../mainwindow.cpp" line="319"/>
         <source>Edit Boot Menu</source>
         <translation>Boot Menüsünü Düzenle</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="935"/>
+        <location filename="../mainwindow.cpp" line="320"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation>Program şimdi çalışma dizinindeki herhangi bir dosyayı düzenleyebilmenize imkan sağlamak için duraklatılacak. Önyükleme menüsünü düzenlemek için Evet&apos;i ; ya da bu adımı atlamak ve anlık görüntüyü oluşturmaya devam etmek için Hayır&apos;ı seçin.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="947"/>
         <source>Success</source>
-        <translation>Başarılı</translation>
+        <translation type="vanished">Başarılı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="947"/>
         <source>All finished!</source>
-        <translation>Tamamen bitti!</translation>
+        <translation type="vanished">Tamamen bitti!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="948"/>
         <source>Close</source>
-        <translation>Kapat</translation>
+        <translation type="vanished">Kapat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1059"/>
+        <location filename="../mainwindow.cpp" line="411"/>
         <source>About %1</source>
         <translation>Hakkında %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1060"/>
+        <location filename="../mainwindow.cpp" line="412"/>
         <source>Version: </source>
         <translation>Sürüm:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1061"/>
+        <location filename="../mainwindow.cpp" line="413"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>MX Linux için, çalışmakta olan sistemden bir canlı-CD imaj dosyası oluşturan program</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1063"/>
+        <location filename="../mainwindow.cpp" line="415"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Telif Hakkı (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1064"/>
+        <location filename="../mainwindow.cpp" line="416"/>
         <source>%1 License</source>
         <translation>%1 Telif Hakkı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1079"/>
+        <location filename="../mainwindow.cpp" line="431"/>
         <source>%1 Help</source>
         <translation>%1 Yardım</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1087"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Select Snapshot Directory</source>
         <translation>Anlık Görüntü Dizini Seçin</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1106"/>
+        <location filename="../mainwindow.cpp" line="459"/>
         <source>Confirmation</source>
         <translation>Onay</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1106"/>
+        <location filename="../mainwindow.cpp" line="459"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Uygulamadan çıkmak istediğinizden emin misiniz?</translation>
     </message>
@@ -478,23 +443,23 @@ daha fazla kullanılabilir alan oluşturabilirsiniz:
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../about.cpp" line="32"/>
+        <location filename="../about.cpp" line="33"/>
         <source>License</source>
         <translation>Ruhsat</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="33"/>
-        <location filename="../about.cpp" line="43"/>
+        <location filename="../about.cpp" line="34"/>
+        <location filename="../about.cpp" line="44"/>
         <source>Changelog</source>
         <translation>Değişim günlüğü</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="34"/>
+        <location filename="../about.cpp" line="35"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="51"/>
+        <location filename="../about.cpp" line="52"/>
         <source>&amp;Close</source>
         <translation>&amp;Kapat</translation>
     </message>
@@ -514,51 +479,318 @@ daha fazla kullanılabilir alan oluşturabilirsiniz:
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="54"/>
+        <location filename="../main.cpp" line="58"/>
         <source>Tool used for creating a live-CD from the running system</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="57"/>
+        <location filename="../main.cpp" line="61"/>
+        <source>Use CLI only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="62"/>
+        <source>Output directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="62"/>
+        <source>path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="63"/>
+        <source>Output filename</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="63"/>
+        <source>name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="64"/>
         <source>Name a different kernel to use other than the default running kernel, use format returned by &apos;uname -r&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="58"/>
+        <location filename="../main.cpp" line="65"/>
+        <source>Or the full path: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="65"/>
+        <source>ver, or path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="66"/>
         <source>Create a monthly snapshot, add &apos;Month&apos; name in the ISO name, skip used space calculation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="59"/>
+        <location filename="../main.cpp" line="67"/>
+        <source>This option sets reset-accounts and compression to defaults, arguments changing those items will be ignored</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="68"/>
+        <source>Don&apos;t calculate checksums for resulting ISO file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="69"/>
         <source>Option to fix issue with calculating checksums on preempt_rt kernels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="60"/>
-        <source>Use CLI interface</source>
+        <location filename="../main.cpp" line="70"/>
+        <source>Resetting accounts (for distribution to others)</source>
+        <translation type="unfinished">Kullanıcı hesaplarını sıfırlayarak (başkalarına vermek için)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="71"/>
+        <source>Calculate checksums for resulting ISO file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="78"/>
+        <location filename="../main.cpp" line="72"/>
+        <source>Exclude main folders, valid choices: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="73"/>
+        <source>Use the option one time for each item you want to exclude</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="73"/>
+        <source>one item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
+        <source>Compression format, valid choices: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
+        <source>format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="109"/>
         <source>You must run this program as root.</source>
         <translation type="unfinished">Bu programı root olarak çalıştırmalısınız.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="139"/>
-        <location filename="../mainwindow.cpp" line="483"/>
+        <location filename="../main.cpp" line="121"/>
+        <location filename="../main.cpp" line="178"/>
         <source>Error</source>
         <translation type="unfinished">Hata</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="140"/>
-        <location filename="../mainwindow.cpp" line="484"/>
+        <location filename="../main.cpp" line="98"/>
+        <location filename="../main.cpp" line="122"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="179"/>
+        <location filename="../settings.cpp" line="218"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished">Şu an kullanılan çekirdek squashfs dosya sistemini desteklemediği için devam edilemiyor.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="75"/>
-        <location filename="../main.cpp" line="90"/>
+        <location filename="../main.cpp" line="104"/>
+        <location filename="../main.cpp" line="128"/>
         <source>version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../batchprocessing.cpp" line="52"/>
+        <source>The program will pause the build and open the boot menu in your text editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="92"/>
+        <source>Could not create working directory. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="111"/>
+        <source>Could not create temp directory. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="211"/>
+        <source>Could not find a usable kernel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="273"/>
+        <source>Used space on / (root): </source>
+        <translation type="unfinished">/ (root) &apos;daki Kullanılan Alan:</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="276"/>
+        <source>estimated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="285"/>
+        <source>Used space on /home: </source>
+        <translation type="unfinished">/home &apos;daki Kullanılan Alan:</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="337"/>
+        <source>Free space on %1, where snapshot folder is placed: </source>
+        <translation type="unfinished">Anlık Görüntü&apos;nün bulunduğu %1 &apos;deki boş alan:</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="339"/>
+        <source>The free space should be sufficient to hold the compressed data from / and /home
+
+      If necessary, you can create more available space
+      by removing previous snapshots and saved copies:
+      %1 snapshots are taking up %2 of disk space.
+</source>
+        <translation type="unfinished">Boş alan, / ve / home /&apos;dan sıkıştırılmış veriyi kaydetmek için yeterli olmalıdır.
+
+Gerekirse, önceki anlık görüntüleri kaldırarak
+daha fazla kullanılabilir alan oluşturabilirsiniz:
+%1 anlık görüntüler %2 disk alanı kaplıyor.
+</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="113"/>
+        <source>Interrupted or failed to complete</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Work</name>
+    <message>
+        <location filename="../work.cpp" line="35"/>
+        <location filename="../work.cpp" line="55"/>
+        <location filename="../work.cpp" line="62"/>
+        <location filename="../work.cpp" line="68"/>
+        <location filename="../work.cpp" line="206"/>
+        <location filename="../work.cpp" line="223"/>
+        <location filename="../work.cpp" line="259"/>
+        <location filename="../work.cpp" line="304"/>
+        <location filename="../work.cpp" line="335"/>
+        <source>Error</source>
+        <translation type="unfinished">Hata</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="35"/>
+        <source>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</source>
+        <translation type="unfinished">Şu an kullanımdaki çekirdek, seçilen sıkıştırma algoritmasını desteklemiyor, lütfen yapılandırma dosyasını düzenleyin ve farklı bir algoritma seçin.</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="56"/>
+        <location filename="../work.cpp" line="63"/>
+        <location filename="../work.cpp" line="69"/>
+        <source>There&apos;s not enough free space on your targed disk, you need at least %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="57"/>
+        <location filename="../work.cpp" line="64"/>
+        <location filename="../work.cpp" line="70"/>
+        <source>You have %1 free space on %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="95"/>
+        <source>Cleaning...</source>
+        <translation type="unfinished">Temizleniyor...</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="109"/>
+        <location filename="../work.cpp" line="112"/>
+        <source>Done</source>
+        <translation type="unfinished">Bitti</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="147"/>
+        <source>Copying the new-iso filesystem...</source>
+        <translation type="unfinished">Yeni iso dosya sistemi kopyalanıyor...</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="175"/>
+        <source>Could not create temp directory. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="204"/>
+        <source>Squashing filesystem...</source>
+        <translation type="unfinished">Dosya sistemi sıkıştırılıyor...</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="206"/>
+        <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
+        <translation type="unfinished">linuxfs dosyası oluşturulamadı, lütfen hedef bölüm üzerinde yeterli alan olup olmadığını kontrol edin.</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="221"/>
+        <source>Creating CD/DVD image file...</source>
+        <translation type="unfinished">CD/DVD kalıp dosyası oluşturuluyor...</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="223"/>
+        <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
+        <translation type="unfinished">ISO dosyası oluşturulamadı, lütfen hedef bölüm üzerinde yeterli alan olup olmadığını kontrol edin.</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="230"/>
+        <source>Making hybrid iso</source>
+        <translation type="unfinished">Hibrit iso oluşturuluyor</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="245"/>
+        <source>Success</source>
+        <translation type="unfinished">Başarılı</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="245"/>
+        <source>MX Snapshot completed sucessfully!</source>
+        <translation type="unfinished">MX Snapshot başarıyla tamamlandı !</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="246"/>
+        <source>Snapshot took %1 to finish.</source>
+        <translation type="unfinished">Anlık Görüntüyü Oluşturmak %1 sürdü</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="247"/>
+        <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
+        <translation type="unfinished">MX Snapshot &apos;ı kullandığınız için teşekkürler, boot edilebilir usb hazırlamak için MX Live USB Maker &apos;ı kullanabilirsiniz!</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="256"/>
+        <source>Installing </source>
+        <translation type="unfinished">Kuruluyor</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="259"/>
+        <source>Could not install </source>
+        <translation type="unfinished">Kurulamadı</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="304"/>
+        <source>Could not create working directory. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="313"/>
+        <source>Building new initrd...</source>
+        <translation type="unfinished">Yeni initrd oluşturuluyor...</translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="335"/>
+        <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1,0 +1,36 @@
+Format: 1.8
+Date: Sun, 17 Jan 2021 12:01:32 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 21.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (21.1) mx; urgency=medium
+ .
+   * rewrite to allow CLI/scripted mode, use -h to list options
+   * catch SIGINT, SIGTERM, SIGHUP and cleanup before closing
+   * check if enough space on partition (for /root, for now it ignores /home)
+Checksums-Sha1:
+ d577b756c803a4151d4d6121fb21988a14799b01 601 mx-snapshot_21.1.dsc
+ 4b126a613b9a3e224f32a5a7337b3e0b5eac0d14 182544 mx-snapshot_21.1.tar.xz
+ 713b581596d6b72c75bc6da81e5ef585db13f00a 1395496 mx-snapshot-dbgsym_21.1_amd64.deb
+ 5a755c5c5f5efdfadf5ee3b55fdad10244eb0920 10123 mx-snapshot_21.1_amd64.buildinfo
+ e1b70cde501dd5ec3696171fda1170e054b9bf3d 233998 mx-snapshot_21.1_amd64.deb
+Checksums-Sha256:
+ 66071ce0467710f3e9695bab9753a136010895a12832eeab07faebce0b18a584 601 mx-snapshot_21.1.dsc
+ d6f90bd89a861c97b9df12eb2b1fce20c5a826be71c75ace84d1b35c2fa467cf 182544 mx-snapshot_21.1.tar.xz
+ 73dd81a102af7e4b2d6b6602e7202c7fe33d58fafe45c17bbd806f3edc12683c 1395496 mx-snapshot-dbgsym_21.1_amd64.deb
+ 5ee5bb7f8071951f0e74bf473cef60195aa9a57f2d1059413b46968f127bec68 10123 mx-snapshot_21.1_amd64.buildinfo
+ 63bddc9f84ef1aac412e44a33bb322893021fea37f851fe03db6e31232110716 233998 mx-snapshot_21.1_amd64.deb
+Files:
+ 3b37f8643680728c91e70eb981d968da 601 admin optional mx-snapshot_21.1.dsc
+ 6005c797bdafab1646fa754045a69285 182544 admin optional mx-snapshot_21.1.tar.xz
+ 1c77f206fbf0cb2410ad3a20adccc6c4 1395496 debug extra mx-snapshot-dbgsym_21.1_amd64.deb
+ 9762ef3d2071c4ccc93302a758f7adc7 10123 admin optional mx-snapshot_21.1_amd64.buildinfo
+ 23fa3d84f99e97ba2861a4f2ddf74b48 233998 admin optional mx-snapshot_21.1_amd64.deb

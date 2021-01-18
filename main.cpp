@@ -54,13 +54,6 @@ int main(int argc, char *argv[])
     signal(SIGHUP, signalHandler);
     //signal(SIGQUIT, signalHandler); // allow SIGQUIT CTRL-\?
 
-    // root guard
-    if (system("logname |grep -q ^root$") == 0) {
-        QMessageBox::critical(nullptr, QObject::tr("Error"),
-                              QObject::tr("You seem to be logged in as root, please log out and log in as normal user to use this program."));
-        exit(EXIT_FAILURE);
-    }
-
     QCommandLineParser parser;
     parser.setApplicationDescription(QObject::tr("Tool used for creating a live-CD from the running system"));
     parser.addHelpOption();
@@ -100,6 +93,12 @@ int main(int argc, char *argv[])
         setTranslation();
         checkSquashfs();
 
+        // root guard
+        if (system("logname |grep -q ^root$") == 0) {
+            qDebug() << QObject::tr("You seem to be logged in as root, please log out and log in as normal user to use this program.");
+            exit(EXIT_FAILURE);
+        }
+
         if (getuid() == 0) {
             setLog();
             qDebug().noquote() << qApp->applicationName() << QObject::tr("version:") << qApp->applicationVersion();
@@ -116,6 +115,13 @@ int main(int argc, char *argv[])
         parser.process(app);
         setTranslation();
         checkSquashfs();
+
+        // root guard
+        if (system("logname |grep -q ^root$") == 0) {
+            QMessageBox::critical(nullptr, QObject::tr("Error"),
+                                  QObject::tr("You seem to be logged in as root, please log out and log in as normal user to use this program."));
+            exit(EXIT_FAILURE);
+        }
 
         if (getuid() == 0) {
             setLog();
