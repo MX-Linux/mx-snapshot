@@ -680,8 +680,8 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <location filename="../work.cpp" line="206"/>
         <location filename="../work.cpp" line="223"/>
         <location filename="../work.cpp" line="259"/>
-        <location filename="../work.cpp" line="304"/>
-        <location filename="../work.cpp" line="335"/>
+        <location filename="../work.cpp" line="305"/>
+        <location filename="../work.cpp" line="336"/>
         <source>Error</source>
         <translation type="unfinished">Erreur</translation>
     </message>
@@ -781,17 +781,22 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <translation type="unfinished">Installation impossible</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="304"/>
+        <location filename="../work.cpp" line="269"/>
+        <source>Calculating checksum...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="305"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="313"/>
+        <location filename="../work.cpp" line="314"/>
         <source>Building new initrd...</source>
         <translation type="unfinished">Nouvel initrd en cours de création...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="335"/>
+        <location filename="../work.cpp" line="336"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>

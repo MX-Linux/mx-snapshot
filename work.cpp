@@ -253,7 +253,7 @@ bool Work::createIso(const QString &filename)
 // Installs package
 bool Work::installPackage(const QString &package)
 {
-    emit message((tr("Installing ") + package));
+    emit message(tr("Installing ") + package);
     settings->shell->run("apt-get update");
     if (!settings->shell->run("apt-get install -y " + package)) {
         emit messageBox(BoxType::critical, tr("Error"), tr("Could not install ") + package);
@@ -266,6 +266,7 @@ bool Work::installPackage(const QString &package)
 void Work::makeChecksum(const HashType &hash_type, const QString &folder, const QString &file_name)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
+    emit message(tr("Calculating checksum..."));
     settings->shell->run("sync");
     QDir::setCurrent(folder);
     QString ce = QVariant::fromValue(hash_type).toString();

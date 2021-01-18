@@ -668,8 +668,8 @@
         <location filename="../work.cpp" line="206"/>
         <location filename="../work.cpp" line="223"/>
         <location filename="../work.cpp" line="259"/>
-        <location filename="../work.cpp" line="304"/>
-        <location filename="../work.cpp" line="335"/>
+        <location filename="../work.cpp" line="305"/>
+        <location filename="../work.cpp" line="336"/>
         <source>Error</source>
         <translation type="unfinished">エラー</translation>
     </message>
@@ -769,17 +769,22 @@
         <translation type="unfinished">インストールできません</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="304"/>
+        <location filename="../work.cpp" line="269"/>
+        <source>Calculating checksum...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="305"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="313"/>
+        <location filename="../work.cpp" line="314"/>
         <source>Building new initrd...</source>
         <translation type="unfinished">新しい initrd を構築中...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="335"/>
+        <location filename="../work.cpp" line="336"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>

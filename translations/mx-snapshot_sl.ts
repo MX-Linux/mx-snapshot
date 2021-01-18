@@ -678,8 +678,8 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <location filename="../work.cpp" line="206"/>
         <location filename="../work.cpp" line="223"/>
         <location filename="../work.cpp" line="259"/>
-        <location filename="../work.cpp" line="304"/>
-        <location filename="../work.cpp" line="335"/>
+        <location filename="../work.cpp" line="305"/>
+        <location filename="../work.cpp" line="336"/>
         <source>Error</source>
         <translation type="unfinished">Napaka</translation>
     </message>
@@ -779,17 +779,22 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation type="unfinished">Namesitev ni uspela</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="304"/>
+        <location filename="../work.cpp" line="269"/>
+        <source>Calculating checksum...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="305"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="313"/>
+        <location filename="../work.cpp" line="314"/>
         <source>Building new initrd...</source>
         <translation type="unfinished">Ustvarjam nov initrd...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="335"/>
+        <location filename="../work.cpp" line="336"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>
