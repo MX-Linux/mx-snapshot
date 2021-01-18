@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
             return EXIT_FAILURE;
         }
 
-    if (parser.isSet("cli")) {
+    if (parser.isSet("cli") or parser.isSet("help")) {
         QCoreApplication app(argc, argv);
         app.setApplicationVersion(VERSION);
         parser.process(app);

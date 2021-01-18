@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA512
-
 Format: 1.8
 Date: Sun, 17 Jan 2021 12:01:32 -0500
 Source: mx-snapshot
@@ -20,32 +17,20 @@ Changes:
    * catch SIGINT, SIGTERM, SIGHUP and cleanup before closing
    * check if enough space on partition (for /root, for now it ignores /home)
 Checksums-Sha1:
- 747b6feec78645891681b86b8b8748d538058510 1163 mx-snapshot_21.1.dsc
- 9247ba626a35681180825202dbecd26231285a79 182588 mx-snapshot_21.1.tar.xz
- 86ff8caf8bf704aae00a80fd8ed976384fe91fc0 1395150 mx-snapshot-dbgsym_21.1_amd64.deb
- ff51363052883617b5732a6e98b7f41f8b54d9b1 10688 mx-snapshot_21.1_amd64.buildinfo
- 28f7058dc55f4292775fb5e57548404d583245af 233614 mx-snapshot_21.1_amd64.deb
+ b359b9843cc887791f251f785343c94a2e4a4096 601 mx-snapshot_21.1.dsc
+ 88e3384efdbdc898539e6d3bc6af57d99f968ab6 182580 mx-snapshot_21.1.tar.xz
+ 900efd92c91cd6dd63fc22f960ccd91fdc75366b 1395330 mx-snapshot-dbgsym_21.1_amd64.deb
+ f4a28ed09fde6d7ada7c15bde19bddbbd584dbcb 10123 mx-snapshot_21.1_amd64.buildinfo
+ f71dbeebf587ea05acc1274d127a126e7ad643ad 233674 mx-snapshot_21.1_amd64.deb
 Checksums-Sha256:
- 4c0e2057fca42926aa60fe87aed284796580c6fac54a6131a59d32c7d18d026c 1163 mx-snapshot_21.1.dsc
- 1dd06ce1c59fdff7f5bab11ce07a574f393685a5200452acbe5d66134eceffd2 182588 mx-snapshot_21.1.tar.xz
- 3238064337a2a381ce65635ce8a10f0a250539e33d8607dfa826ff3612add5b3 1395150 mx-snapshot-dbgsym_21.1_amd64.deb
- f234a97957b2e84a1ad642468bd7028e459eed315df159f97b24b9c85a7aecff 10688 mx-snapshot_21.1_amd64.buildinfo
- d51525ce7a82dc55f40b2d5efdda00fc4cd3a8978cc090720a375fc8d2fbc0a8 233614 mx-snapshot_21.1_amd64.deb
+ e2799211b37e4ad5fbe7ad3f0ba56985619eb08066a4411cdf22d0dc4440789d 601 mx-snapshot_21.1.dsc
+ b3cf7caf97f7ee77b37281bdb0649bc0b65e6edb1386f86e8a82fb672dc676d4 182580 mx-snapshot_21.1.tar.xz
+ 346f28ae56f7706728cccac11dddc0eaf92dcc9f883fc82fde62d656ca52d947 1395330 mx-snapshot-dbgsym_21.1_amd64.deb
+ 6b05cea1fda595d57c82be799734ee5b324ea5b4ee1ecae90196ac53fb9dd3a4 10123 mx-snapshot_21.1_amd64.buildinfo
+ 892fc048bbe1e535519b9b3da41d628edb1af19c793c6de0fb08f3f5b64402a4 233674 mx-snapshot_21.1_amd64.deb
 Files:
- 4ff5b2a1e0921f093363efb1599aded0 1163 admin optional mx-snapshot_21.1.dsc
- e10f4bd9ef966d1f48eda2dcee7ddc08 182588 admin optional mx-snapshot_21.1.tar.xz
- ffa46a2a813d4e27dceb9296ab139fc4 1395150 debug extra mx-snapshot-dbgsym_21.1_amd64.deb
- b7e533527cd4a772c73c70f25685a9b4 10688 admin optional mx-snapshot_21.1_amd64.buildinfo
- 9fb510fef737c03fbc8781f8f11f6ed0 233614 admin optional mx-snapshot_21.1_amd64.deb
-
------BEGIN PGP SIGNATURE-----
-
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmAFBGATHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumBu/CADLH+X9tdf/Amt2dv6ODwMephhu47J/
-JK9tgTdURYpddHyWYo2ulaEivQazYfTe+RSTG2DpVWfh2w1KrrdlYcgJ+P2bl/VY
-F9Judq1j3rlXbh8Z/SLC1WhA+kpDeImDtgaq9aAorqxGRzTm+uM9VUXTaXZXzlCX
-mSQrmhYC/w2qtGlT7+TE0ItX3rJhNVgnUVIN2LqoG7nufqPGV1lmse3b91fe95+V
-ISHEVCMULv85R+4ZGJQtXERtHlooYt5L/Oczt8cOniZuDh7sfsOm9+NB5uAp3Uia
-gkl7U6nLRO1sG3eoMkrVnPtINgKRwjYv94eS8swW6u+2k7CEJhZ741so
-=SbcS
------END PGP SIGNATURE-----
+ 19f4ae62d2be97425314eb4bebfc49c5 601 admin optional mx-snapshot_21.1.dsc
+ 7f529f9ef6a47bd5e3455a3d0d7ca086 182580 admin optional mx-snapshot_21.1.tar.xz
+ 6fdaa4af1fe6e39ad13b9a7d575139b6 1395330 debug extra mx-snapshot-dbgsym_21.1_amd64.deb
+ 733f35627f79ba3c36fb89afab629341 10123 admin optional mx-snapshot_21.1_amd64.buildinfo
+ e960532164596f816336f1491c9bde4e 233674 admin optional mx-snapshot_21.1_amd64.deb
