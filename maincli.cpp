@@ -22,7 +22,7 @@
  * along with MX Snapshot.  If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-#include <QApplication>
+#include <QCoreApplication>
 #include <QCommandLineParser>
 #include <QDateTime>
 #include <QDebug>
