@@ -6,7 +6,7 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <location filename="../mainwindow.cpp" line="116"/>
-        <location filename="../mainwindow.cpp" line="340"/>
+        <location filename="../mainwindow.cpp" line="320"/>
         <source>MX Snapshot</source>
         <translation>MX posnetek</translation>
     </message>
@@ -27,7 +27,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
-        <location filename="../mainwindow.cpp" line="285"/>
+        <location filename="../mainwindow.cpp" line="265"/>
         <source>Snapshot name:</source>
         <translation>Ime posnetka:</translation>
     </message>
@@ -242,8 +242,8 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation>Nameščanje</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="299"/>
-        <location filename="../mainwindow.cpp" line="303"/>
+        <location filename="../mainwindow.cpp" line="279"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Error</source>
         <translation>Napaka</translation>
     </message>
@@ -252,7 +252,7 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation type="vanished">Namesitev ni uspela</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="299"/>
+        <location filename="../mainwindow.cpp" line="279"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
@@ -309,32 +309,32 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation type="vanished">Zaključeno</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="261"/>
+        <location filename="../mainwindow.cpp" line="241"/>
         <source>Please wait.</source>
         <translation>Prosimo, počakajte.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="263"/>
+        <location filename="../mainwindow.cpp" line="243"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation>Prosimo, počakajte. Izračunavam porabo prostora na disku...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="277"/>
+        <location filename="../mainwindow.cpp" line="257"/>
         <source>Settings</source>
         <translation>Nastavitve</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="282"/>
+        <location filename="../mainwindow.cpp" line="262"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>Posnetek bo uporabljal naslednje nastavitve:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="284"/>
+        <location filename="../mainwindow.cpp" line="264"/>
         <source>- Snapshot directory:</source>
         <translation>- Direktorij posnetka:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="286"/>
+        <location filename="../mainwindow.cpp" line="266"/>
         <source>- Kernel to be used:</source>
         <translation>- Uporabljeno jedro:</translation>
     </message>
@@ -343,42 +343,42 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation type="vanished">Trenutno jedro ne podpira izbranega algoritma za stiskanje podatkov. Prosimo, uredite konfiguracijsko datoteko in izberite drug algoritem.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="290"/>
+        <location filename="../mainwindow.cpp" line="270"/>
         <source>Final chance</source>
         <translation>Poslednja priložnost</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="291"/>
+        <location filename="../mainwindow.cpp" line="271"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation>Posnetek ima sedaj vse potrebne informacije, da ustvari ISO iz vašega sistema.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="292"/>
+        <location filename="../mainwindow.cpp" line="272"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation>Za dokončanje je potrebnega nekaj časa, odvisno od velikosti nameščenega sistema in zmogljivosti vašega računalnika.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="293"/>
+        <location filename="../mainwindow.cpp" line="273"/>
         <source>OK to start?</source>
         <translation>Lahko začnem?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="303"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Could not create temporary directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="311"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>Output</source>
         <translation>Izhod</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="319"/>
+        <location filename="../mainwindow.cpp" line="299"/>
         <source>Edit Boot Menu</source>
         <translation>Uredi zagonski meni</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="320"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation>Program se bo sedaj zaustavil in omogočil urejanje datotek v delovnem direktoriju. Izberite Yes/ da za urejanje zagonskega menija ali No/ ne, če želite zaobiti ta korak in nadaljevati z ustvarjanjem posnetka.</translation>
     </message>
@@ -395,47 +395,47 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation type="vanished">Zapri</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="411"/>
+        <location filename="../mainwindow.cpp" line="391"/>
         <source>About %1</source>
         <translation>O %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="412"/>
+        <location filename="../mainwindow.cpp" line="392"/>
         <source>Version: </source>
         <translation>Različica:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="393"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Program za ustvarjanje živega CDja iz zagnanega sistema za MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="395"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
+        <location filename="../mainwindow.cpp" line="396"/>
         <source>%1 License</source>
         <translation>%1 licenca</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="431"/>
+        <location filename="../mainwindow.cpp" line="411"/>
         <source>%1 Help</source>
         <translation>%1 pomoč</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="439"/>
+        <location filename="../mainwindow.cpp" line="419"/>
         <source>Select Snapshot Directory</source>
         <translation>Izberite direktorij za posnetek</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="459"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Confirmation</source>
         <translation>Potrditev</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="459"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Ali ste prepričani, da želite zapustiti aplikacijo?</translation>
     </message>
@@ -579,31 +579,31 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="109"/>
+        <location filename="../main.cpp" line="110"/>
         <source>You must run this program as root.</source>
         <translation type="unfinished">Ta program morate zagnati kot root</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="121"/>
-        <location filename="../main.cpp" line="178"/>
+        <location filename="../main.cpp" line="122"/>
+        <location filename="../main.cpp" line="180"/>
         <source>Error</source>
         <translation type="unfinished">Napaka</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="98"/>
-        <location filename="../main.cpp" line="122"/>
+        <location filename="../main.cpp" line="123"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="179"/>
+        <location filename="../main.cpp" line="181"/>
         <location filename="../settings.cpp" line="218"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished">Trenutno jedro ne podpira Squashfs. Ne morem nadaljevati.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="104"/>
-        <location filename="../main.cpp" line="128"/>
+        <location filename="../main.cpp" line="129"/>
         <source>version:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -628,27 +628,27 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="273"/>
+        <location filename="../settings.cpp" line="293"/>
         <source>Used space on / (root): </source>
         <translation type="unfinished">Porabljen prostor na / (root):</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="276"/>
+        <location filename="../settings.cpp" line="296"/>
         <source>estimated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="285"/>
+        <location filename="../settings.cpp" line="305"/>
         <source>Used space on /home: </source>
         <translation type="unfinished">Porabljen prostor na /home:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="337"/>
+        <location filename="../settings.cpp" line="357"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation type="unfinished">Sprostite prostor na %1, na katerem se bo nahajala mapa posnetka:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="339"/>
+        <location filename="../settings.cpp" line="359"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -663,7 +663,7 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
 </translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="113"/>
+        <location filename="../work.cpp" line="114"/>
         <source>Interrupted or failed to complete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -675,11 +675,11 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <location filename="../work.cpp" line="55"/>
         <location filename="../work.cpp" line="62"/>
         <location filename="../work.cpp" line="68"/>
-        <location filename="../work.cpp" line="206"/>
-        <location filename="../work.cpp" line="223"/>
-        <location filename="../work.cpp" line="259"/>
-        <location filename="../work.cpp" line="305"/>
-        <location filename="../work.cpp" line="336"/>
+        <location filename="../work.cpp" line="207"/>
+        <location filename="../work.cpp" line="224"/>
+        <location filename="../work.cpp" line="260"/>
+        <location filename="../work.cpp" line="306"/>
+        <location filename="../work.cpp" line="337"/>
         <source>Error</source>
         <translation type="unfinished">Napaka</translation>
     </message>
@@ -703,98 +703,98 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="95"/>
+        <location filename="../work.cpp" line="96"/>
         <source>Cleaning...</source>
         <translation type="unfinished">Čistim...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="109"/>
-        <location filename="../work.cpp" line="112"/>
+        <location filename="../work.cpp" line="110"/>
+        <location filename="../work.cpp" line="113"/>
         <source>Done</source>
         <translation type="unfinished">Zaključeno</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="147"/>
+        <location filename="../work.cpp" line="148"/>
         <source>Copying the new-iso filesystem...</source>
         <translation type="unfinished">Kopiranje novega iso datotečnega sistema</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="175"/>
+        <location filename="../work.cpp" line="176"/>
         <source>Could not create temp directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="204"/>
+        <location filename="../work.cpp" line="205"/>
         <source>Squashing filesystem...</source>
         <translation type="unfinished">Stiskam datotečni sistem...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="206"/>
+        <location filename="../work.cpp" line="207"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">Neuspelo ustvarjanje linuxfs datoteke. Preveite ali je na ciljnem razdelku dovolj prostora.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="221"/>
+        <location filename="../work.cpp" line="222"/>
         <source>Creating CD/DVD image file...</source>
         <translation type="unfinished">Ustvarjam CD/DVD podobo...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="223"/>
+        <location filename="../work.cpp" line="224"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">Neuspelo ustvarjanje ISO datoteke. Preverite ali je na ciljnem razdelku dovolj prostora.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="230"/>
+        <location filename="../work.cpp" line="231"/>
         <source>Making hybrid iso</source>
         <translation type="unfinished">Ustvarjam hibridni iso</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="245"/>
+        <location filename="../work.cpp" line="246"/>
         <source>Success</source>
         <translation type="unfinished">Operacija je uspela</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="245"/>
+        <location filename="../work.cpp" line="246"/>
         <source>MX Snapshot completed sucessfully!</source>
         <translation type="unfinished">MX posnetek je uspešno zaključil delo!</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="246"/>
+        <location filename="../work.cpp" line="247"/>
         <source>Snapshot took %1 to finish.</source>
         <translation type="unfinished">Posnetek je potreboval %1 za dokončanje.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="247"/>
+        <location filename="../work.cpp" line="248"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
         <translation type="unfinished">Hvala, ker uporabljate MX posnetek. Zdaj zaženite MX ustvarjalec živih usb nosilcev</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="256"/>
+        <location filename="../work.cpp" line="257"/>
         <source>Installing </source>
         <translation type="unfinished">Nameščanje</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="259"/>
+        <location filename="../work.cpp" line="260"/>
         <source>Could not install </source>
         <translation type="unfinished">Namesitev ni uspela</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="269"/>
+        <location filename="../work.cpp" line="270"/>
         <source>Calculating checksum...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="305"/>
+        <location filename="../work.cpp" line="306"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="314"/>
+        <location filename="../work.cpp" line="315"/>
         <source>Building new initrd...</source>
         <translation type="unfinished">Ustvarjam nov initrd...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="336"/>
+        <location filename="../work.cpp" line="337"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>

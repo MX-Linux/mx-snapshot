@@ -6,7 +6,7 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <location filename="../mainwindow.cpp" line="116"/>
-        <location filename="../mainwindow.cpp" line="340"/>
+        <location filename="../mainwindow.cpp" line="320"/>
         <source>MX Snapshot</source>
         <translation>MX スナップショット</translation>
     </message>
@@ -27,7 +27,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
-        <location filename="../mainwindow.cpp" line="285"/>
+        <location filename="../mainwindow.cpp" line="265"/>
         <source>Snapshot name:</source>
         <translation>スナップショットの名称:</translation>
     </message>
@@ -237,8 +237,8 @@
         <translation>インストール中</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="299"/>
-        <location filename="../mainwindow.cpp" line="303"/>
+        <location filename="../mainwindow.cpp" line="279"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -247,7 +247,7 @@
         <translation type="vanished">インストールできません</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="299"/>
+        <location filename="../mainwindow.cpp" line="279"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
@@ -304,32 +304,32 @@
         <translation type="vanished">完了</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="261"/>
+        <location filename="../mainwindow.cpp" line="241"/>
         <source>Please wait.</source>
         <translation>お待ち下さい。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="263"/>
+        <location filename="../mainwindow.cpp" line="243"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation>お待ち下さい。使用する空き容量を計算しています...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="277"/>
+        <location filename="../mainwindow.cpp" line="257"/>
         <source>Settings</source>
         <translation>設定中</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="282"/>
+        <location filename="../mainwindow.cpp" line="262"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>スナップショットは次の設定を使用します:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="284"/>
+        <location filename="../mainwindow.cpp" line="264"/>
         <source>- Snapshot directory:</source>
         <translation>- スナップショット ディレクトリ: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="286"/>
+        <location filename="../mainwindow.cpp" line="266"/>
         <source>- Kernel to be used:</source>
         <translation>- 使用するカーネル: </translation>
     </message>
@@ -338,42 +338,42 @@
         <translation type="vanished">現在のカーネルは選択された圧縮アルゴリズムをサポートしていないので、設定ファイルを編集して別のアルゴリズムを選択してください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="290"/>
+        <location filename="../mainwindow.cpp" line="270"/>
         <source>Final chance</source>
         <translation>最終確認</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="291"/>
+        <location filename="../mainwindow.cpp" line="271"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation>Snapshot には,、現在稼働中のシステムから ISO を生成するための全ての情報があります。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="292"/>
+        <location filename="../mainwindow.cpp" line="272"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation>インストールを行うシステムのサイズとコンピュータの性能によって、完了までにかかる時間が異なります。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="293"/>
+        <location filename="../mainwindow.cpp" line="273"/>
         <source>OK to start?</source>
         <translation>OK で開始します</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="303"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Could not create temporary directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="311"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>Output</source>
         <translation>出力</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="319"/>
+        <location filename="../mainwindow.cpp" line="299"/>
         <source>Edit Boot Menu</source>
         <translation>起動メニューの編集</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="320"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation>プログラムは、作業ディレクトリで任意ファイルを編集できるように、一時休止しています。「はい」を選んで起動メニューを編集するか、「いいえ」を選んでこのステップを飛ばしてスナップショットの作成を継続するかを選んでください。</translation>
     </message>
@@ -390,47 +390,47 @@
         <translation type="vanished">閉じる</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="411"/>
+        <location filename="../mainwindow.cpp" line="391"/>
         <source>About %1</source>
         <translation> %1 について</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="412"/>
+        <location filename="../mainwindow.cpp" line="392"/>
         <source>Version: </source>
         <translation>バージョン: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="413"/>
+        <location filename="../mainwindow.cpp" line="393"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>実行している MX Linux を元にライブCD を生成するプログラム</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="395"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
+        <location filename="../mainwindow.cpp" line="396"/>
         <source>%1 License</source>
         <translation>%1 ライセンス</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="431"/>
+        <location filename="../mainwindow.cpp" line="411"/>
         <source>%1 Help</source>
         <translation>%1 のヘルプ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="439"/>
+        <location filename="../mainwindow.cpp" line="419"/>
         <source>Select Snapshot Directory</source>
         <translation>スナップショット ディレクトリを選択</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="459"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Confirmation</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="459"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>本当にアプリケーションを終了しますか？</translation>
     </message>
@@ -574,31 +574,31 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="109"/>
+        <location filename="../main.cpp" line="110"/>
         <source>You must run this program as root.</source>
         <translation type="unfinished">このプログラムは root で実行する必要があります。</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="121"/>
-        <location filename="../main.cpp" line="178"/>
+        <location filename="../main.cpp" line="122"/>
+        <location filename="../main.cpp" line="180"/>
         <source>Error</source>
         <translation type="unfinished">エラー</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="98"/>
-        <location filename="../main.cpp" line="122"/>
+        <location filename="../main.cpp" line="123"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="179"/>
+        <location filename="../main.cpp" line="181"/>
         <location filename="../settings.cpp" line="218"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished">現在のカーネルは Squashfs をサポートしてないので続行できません。</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="104"/>
-        <location filename="../main.cpp" line="128"/>
+        <location filename="../main.cpp" line="129"/>
         <source>version:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -623,27 +623,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="273"/>
+        <location filename="../settings.cpp" line="293"/>
         <source>Used space on / (root): </source>
         <translation type="unfinished">/ (root) の空き容量: </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="276"/>
+        <location filename="../settings.cpp" line="296"/>
         <source>estimated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="285"/>
+        <location filename="../settings.cpp" line="305"/>
         <source>Used space on /home: </source>
         <translation type="unfinished">/home の空き容量: </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="337"/>
+        <location filename="../settings.cpp" line="357"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation type="unfinished">スナップショット フォルダがある場所の空き容量 %1：</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="339"/>
+        <location filename="../settings.cpp" line="359"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -653,7 +653,7 @@
         <translation type="unfinished">/ および /home の圧縮データを保管するには、十分な空き容量がないといけません。必要に応じて、以前生成したスナップショットや保存したコピーを削除することで空き容量を増やすことができます:&#x3000;スナップショット %1 は空き容量の %2 を消費しています。</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="113"/>
+        <location filename="../work.cpp" line="114"/>
         <source>Interrupted or failed to complete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -665,11 +665,11 @@
         <location filename="../work.cpp" line="55"/>
         <location filename="../work.cpp" line="62"/>
         <location filename="../work.cpp" line="68"/>
-        <location filename="../work.cpp" line="206"/>
-        <location filename="../work.cpp" line="223"/>
-        <location filename="../work.cpp" line="259"/>
-        <location filename="../work.cpp" line="305"/>
-        <location filename="../work.cpp" line="336"/>
+        <location filename="../work.cpp" line="207"/>
+        <location filename="../work.cpp" line="224"/>
+        <location filename="../work.cpp" line="260"/>
+        <location filename="../work.cpp" line="306"/>
+        <location filename="../work.cpp" line="337"/>
         <source>Error</source>
         <translation type="unfinished">エラー</translation>
     </message>
@@ -693,98 +693,98 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="95"/>
+        <location filename="../work.cpp" line="96"/>
         <source>Cleaning...</source>
         <translation type="unfinished">クリーニング中...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="109"/>
-        <location filename="../work.cpp" line="112"/>
+        <location filename="../work.cpp" line="110"/>
+        <location filename="../work.cpp" line="113"/>
         <source>Done</source>
         <translation type="unfinished">完了</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="147"/>
+        <location filename="../work.cpp" line="148"/>
         <source>Copying the new-iso filesystem...</source>
         <translation type="unfinished">新たなファイルシステムをコピー中...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="175"/>
+        <location filename="../work.cpp" line="176"/>
         <source>Could not create temp directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="204"/>
+        <location filename="../work.cpp" line="205"/>
         <source>Squashing filesystem...</source>
         <translation type="unfinished">ファイルシステムに Squash を適用中...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="206"/>
+        <location filename="../work.cpp" line="207"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">linuxfsファイルを作成できませんでした。目的のパーティションに十分な空き容量があるか確認してください。</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="221"/>
+        <location filename="../work.cpp" line="222"/>
         <source>Creating CD/DVD image file...</source>
         <translation type="unfinished">CD/DVD イメージファイルを生成中...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="223"/>
+        <location filename="../work.cpp" line="224"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">ISOファイルを作成できませんでした。パーティションに十分な空き容量があるかご確認ください。</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="230"/>
+        <location filename="../work.cpp" line="231"/>
         <source>Making hybrid iso</source>
         <translation type="unfinished">ハイブリット ISO 作成中</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="245"/>
+        <location filename="../work.cpp" line="246"/>
         <source>Success</source>
         <translation type="unfinished">成功</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="245"/>
+        <location filename="../work.cpp" line="246"/>
         <source>MX Snapshot completed sucessfully!</source>
         <translation type="unfinished">MX スナップショットが全て完了！</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="246"/>
+        <location filename="../work.cpp" line="247"/>
         <source>Snapshot took %1 to finish.</source>
         <translation type="unfinished">スナップショットが終了するまで %1 かかりました。</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="247"/>
+        <location filename="../work.cpp" line="248"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
         <translation type="unfinished">MX Snapshot をご利用いただきありがとうございます。今度は MX ライブUSBメーカー を起動してください！</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="256"/>
+        <location filename="../work.cpp" line="257"/>
         <source>Installing </source>
         <translation type="unfinished">インストール中</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="259"/>
+        <location filename="../work.cpp" line="260"/>
         <source>Could not install </source>
         <translation type="unfinished">インストールできません</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="269"/>
+        <location filename="../work.cpp" line="270"/>
         <source>Calculating checksum...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="305"/>
+        <location filename="../work.cpp" line="306"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="314"/>
+        <location filename="../work.cpp" line="315"/>
         <source>Building new initrd...</source>
         <translation type="unfinished">新しい initrd を構築中...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="336"/>
+        <location filename="../work.cpp" line="337"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>

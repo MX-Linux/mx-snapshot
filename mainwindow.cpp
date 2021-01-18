@@ -170,26 +170,6 @@ bool MainWindow::installPackage(const QString &package)
     return true;
 }
 
-
-// Create the output filename
-QString MainWindow::getFilename()
-{
-    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    if (stamp == "datetime") {
-        return snapshot_basename + "-" + QDateTime::currentDateTime().toString("yyyyMMdd_HHmm") + ".iso";
-    } else {
-        QString name;
-        QDir dir;
-        int n = 1;
-        do {
-            name = snapshot_basename + QString::number(n) + ".iso";
-            dir.setPath("\"" + snapshot_dir.absolutePath() + "/" + name + "\"");
-            n++;
-        } while (QFileInfo::exists(dir.absolutePath()));
-        return name;
-    }
-}
-
 // clean up changes before exit
 [[ noreturn ]] void MainWindow::cleanUp()
 {

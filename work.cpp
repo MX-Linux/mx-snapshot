@@ -89,6 +89,7 @@ void Work::cleanUp()
 {
     if (not started ) {
         settings->shell->halt();
+        initrd_dir.remove();
         exit(EXIT_SUCCESS);
     }
     settings->shell->halt();

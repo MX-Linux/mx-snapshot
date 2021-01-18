@@ -32,7 +32,6 @@ Batchprocessing::Batchprocessing(const QCommandLineParser &arg_parser) :
     work(this)
 {
     connect(qApp, &QCoreApplication::aboutToQuit, [this] { work.cleanUp(); });
-    otherExclusions();
     setConnections();
     getFreeSpaceStrings(snapshot_dir.absolutePath().remove("/snapshot"));
     if (not arg_parser.isSet("month")) getUsedSpace();
@@ -43,6 +42,7 @@ Batchprocessing::Batchprocessing(const QCommandLineParser &arg_parser) :
         work.cleanUp();
     }
     if (not arg_parser.isSet("month")) work.checkEnoughSpace();
+    otherExclusions();
 
     work.copyNewIso();
     if (!work.mkDir(snapshot_name)) work.cleanUp();

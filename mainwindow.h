@@ -47,7 +47,6 @@ public:
     explicit MainWindow(QWidget *parent = nullptr, const QCommandLineParser &arg_parser = QCommandLineParser());
     ~MainWindow();
 
-    QString getFilename();
     [[ noreturn ]] void cleanUp();
     bool installPackage(const QString &package);
     void checkSaveWork();

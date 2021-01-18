@@ -237,6 +237,26 @@ void Settings::setVariables()
     debian_version = getDebianVersion();
 }
 
+// Create the output filename
+QString Settings::getFilename()
+{
+    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
+    if (stamp == "datetime") {
+        return snapshot_basename + "-" + QDateTime::currentDateTime().toString("yyyyMMdd_HHmm") + ".iso";
+    } else {
+        QString name;
+        QDir dir;
+        int n = 1;
+        do {
+            name = snapshot_basename + QString::number(n) + ".iso";
+            dir.setPath("\"" + snapshot_dir.absolutePath() + "/" + name + "\"");
+            n++;
+        } while (QFileInfo::exists(dir.absolutePath()));
+        return name;
+    }
+}
+
+
 quint64 Settings::getLiveRootSpace()
 {
     // rootspaceneeded is the size of the linuxfs file * a compression factor + contents of the rootfs.  conservative but fast
@@ -484,10 +504,12 @@ void Settings::processArgs(const QCommandLineParser &arg_parser)
 {
     kernel = arg_parser.value("kernel");
     preempt = arg_parser.isSet("preempt");
-    if (!arg_parser.value("file").isEmpty())
-        snapshot_name = arg_parser.value("file") + (arg_parser.value("file").endsWith(".iso") ? QString() : ".iso");
     if (!arg_parser.value("directory").isEmpty() && QFileInfo::exists(arg_parser.value("directory")))
         snapshot_dir.setPath(arg_parser.value("directory") + "/snapshot");
+    if (!arg_parser.value("file").isEmpty())
+        snapshot_name = arg_parser.value("file") + (arg_parser.value("file").endsWith(".iso") ? QString() : ".iso");
+    else
+        snapshot_name = getFilename();
     reset_accounts = arg_parser.isSet("reset");
     if (reset_accounts) excludeAll();
     if (arg_parser.isSet("month")) reset_accounts = true;
@@ -520,9 +542,10 @@ void Settings::setMonthlySnapshot(const QCommandLineParser &arg_parser)
         qDebug() << "/etc/mx-version not found. Not MX Linux?";
         name = "MX_" + QString(i686 ? "386" : "x64");
     }
-    if (snapshot_name.isEmpty())
+    if (arg_parser.value("file").isEmpty())
         snapshot_name = name.section("_", 0, 0) + "_" + QDate::currentDate().toString("MMMM") + "_" + name.section("_", 1, 1) + ".iso";
-    if (arg_parser.value("compression").isEmpty()) compression = "xz";
+    if (arg_parser.value("compression").isEmpty())
+        compression = "xz";
     reset_accounts = true;
     excludeAll();
 }

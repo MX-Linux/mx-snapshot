@@ -102,6 +102,7 @@ int main(int argc, char *argv[])
         if (getuid() == 0) {
             setLog();
             qDebug().noquote() << qApp->applicationName() << QObject::tr("version:") << qApp->applicationVersion();
+            if (argc > 1) qDebug().noquote() << "Args:" << qApp->arguments();
             Batchprocessing  batch(parser);
             QTimer::singleShot(0, &app, &QCoreApplication::quit);
             return app.exec();
@@ -126,6 +127,7 @@ int main(int argc, char *argv[])
         if (getuid() == 0) {
             setLog();
             qDebug().noquote() << qApp->applicationName() << QObject::tr("version:") << qApp->applicationVersion();
+            if (argc > 1) qDebug().noquote() << "Args:" << qApp->arguments();
             MainWindow w(nullptr, parser);
             w.show();
             exit(app.exec());

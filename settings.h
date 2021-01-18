@@ -94,6 +94,7 @@ public:
 
     //QString getUsedSpace();
     QString getEditor();
+    QString getFilename();
     QString getFreeSpaceStrings(const QString &path);
     QString getSnapshotSize();
     QString getUsedSpace();
