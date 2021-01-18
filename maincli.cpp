@@ -26,16 +26,16 @@
 #include <QCommandLineParser>
 #include <QDateTime>
 #include <QDebug>
+#include <QIcon>
 #include <QLibraryInfo>
 #include <QLocale>
 #include <QScopedPointer>
 #include <QTranslator>
 
-#include "batchprocessing.h"
-#include "mainwindow.h"
-#include "version.h"
 #include <signal.h>
 #include <unistd.h>
+#include "version.h"
+#include "batchprocessing.h"
 
 static QScopedPointer<QFile> logFile;
 
@@ -57,7 +57,6 @@ int main(int argc, char *argv[])
     parser.setApplicationDescription(QObject::tr("Tool used for creating a live-CD from the running system"));
     parser.addHelpOption();
     parser.addVersionOption();
-    parser.addOption({{"c", "cli"}, QObject::tr("Use CLI only")});
     parser.addOption({{"d", "directory"}, QObject::tr("Output directory"), QObject::tr("path")});
     parser.addOption({{"f", "file"}, QObject::tr("Output filename"), QObject::tr("name")});
     parser.addOption({{"k", "kernel"}, QObject::tr("Name a different kernel to use other than the default running kernel, use format returned by 'uname -r'") + " " +
@@ -85,54 +84,28 @@ int main(int argc, char *argv[])
             return EXIT_FAILURE;
         }
 
-    if (parser.isSet("cli") or parser.isSet("help")) {
-        QCoreApplication app(argc, argv);
-        app.setApplicationVersion(VERSION);
-        parser.process(app);
-        setTranslation();
-        checkSquashfs();
+    QCoreApplication app(argc, argv);
+    app.setApplicationVersion(VERSION);
+    parser.process(app);
+    setTranslation();
+    checkSquashfs();
 
-        // root guard
-        if (system("logname |grep -q ^root$") == 0) {
-            qDebug() << QObject::tr("You seem to be logged in as root, please log out and log in as normal user to use this program.");
-            exit(EXIT_FAILURE);
-        }
+    // root guard
+    if (system("logname |grep -q ^root$") == 0) {
+        qDebug() << QObject::tr("You seem to be logged in as root, please log out and log in as normal user to use this program.");
+        exit(EXIT_FAILURE);
+    }
 
-        if (getuid() == 0) {
-            setLog();
-            qDebug().noquote() << qApp->applicationName() << QObject::tr("version:") << qApp->applicationVersion();
-            if (argc > 1) qDebug().noquote() << "Args:" << qApp->arguments();
-            Batchprocessing  batch(parser);
-            QTimer::singleShot(0, &app, &QCoreApplication::quit);
-            return app.exec();
-        } else {
-            qDebug().noquote() << QObject::tr("You must run this program as root.");
-            return EXIT_FAILURE;
-        }
+    if (getuid() == 0) {
+        setLog();
+        qDebug().noquote() << qApp->applicationName() << QObject::tr("version:") << qApp->applicationVersion();
+        if (argc > 1) qDebug().noquote() << "Args:" << qApp->arguments();
+        Batchprocessing  batch(parser);
+        QTimer::singleShot(0, &app, &QCoreApplication::quit);
+        return app.exec();
     } else {
-        QApplication app(argc, argv);
-        app.setApplicationVersion(VERSION);
-        parser.process(app);
-        setTranslation();
-        checkSquashfs();
-
-        // root guard
-        if (system("logname |grep -q ^root$") == 0) {
-            QMessageBox::critical(nullptr, QObject::tr("Error"),
-                                  QObject::tr("You seem to be logged in as root, please log out and log in as normal user to use this program."));
-            exit(EXIT_FAILURE);
-        }
-
-        if (getuid() == 0) {
-            setLog();
-            qDebug().noquote() << qApp->applicationName() << QObject::tr("version:") << qApp->applicationVersion();
-            if (argc > 1) qDebug().noquote() << "Args:" << qApp->arguments();
-            MainWindow w(nullptr, parser);
-            w.show();
-            exit(app.exec());
-        } else {
-            system("su-to-root -X -c " + app.applicationFilePath().toUtf8() + "&");
-        }
+        qDebug().noquote() << QObject::tr("You must run this program as root.");
+        return EXIT_FAILURE;
     }
 }
 
@@ -176,8 +149,7 @@ void setTranslation()
 void checkSquashfs()
 {
     if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
-        QMessageBox::critical(nullptr, QObject::tr("Error"),
-                              QObject::tr("Current kernel doesn't support Squashfs, cannot continue."));
+        qDebug() << QObject::tr("Current kernel doesn't support Squashfs, cannot continue.");
         exit(EXIT_FAILURE);
     }
 }
