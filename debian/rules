@@ -7,7 +7,7 @@ override_dh_auto_clean:
 	rm -f src/translations/*.qm
 
 override_dh_auto_build:
-	lrelease *.pro
+	lrelease mx-snapshot.pro
 	head -n1 debian/changelog | sed -e "s/.*(\([^(]*\)).*/#define VERSION \"\1\"/" > version.h
 	dh_auto_build
 
