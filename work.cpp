@@ -104,6 +104,8 @@ void Work::cleanUp()
     if (!settings->live && !settings->reset_accounts)
         system("rm /home/*/Desktop/minstall.desktop 2>/dev/null");
 
+    if (!settings->live) QFile::remove("/etc/skel/Desktop/Installer.desktop");
+
     initrd_dir.remove();
     settings->tmpdir.reset();
     if (done) {
@@ -427,7 +429,9 @@ void Work::setupEnv()
     } else {
         if (settings->force_installer) {  // copy minstall.desktop to Desktop on all accounts
             settings->shell->run("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/minstall.desktop 2>/dev/null");
-            settings->shell->run("chmod a+rwx /home/*/Desktop/minstall.desktop"); //removes lock symbol on installer on desktop
+            settings->shell->run("chmod 755 /home/*/Desktop/minstall.desktop"); // removes lock symbol on installer on desktop
+            QFile::copy("/usr/share/applications/minstall.desktop", "/etc/skel/Desktop/Installer.desktop");
+            settings->shell->run("chmod 755 /etc/skel/Desktop/Installer.desktop");
         }
         settings->shell->run("installed-to-live -b /.bind-root start bind=/home" + bind_boot_too + " live-files version-file adjtime read-only");
     }
