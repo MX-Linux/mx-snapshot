@@ -63,11 +63,6 @@
         <translation>テキストラベル</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="244"/>
-        <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /etc/mx-snapshot-exclude.list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="301"/>
         <source>Downloads</source>
         <translation>ダウンロード</translation>
@@ -103,16 +98,6 @@
         <translation>ビデオ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="343"/>
-        <source>exclude network configurations</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="346"/>
-        <source>Networks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="391"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This option will reset &amp;quot;demo&amp;quot; and &amp;quot;root&amp;quot; passwords to the MX Linux defaults and will not copy any personal accounts created.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;このオプションは、MX Linux のデフォルト「demo」・「root」パスワードをリセットします。作成された個人アカウントにはコピーされません。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
@@ -141,6 +126,21 @@
         <location filename="../mainwindow.ui" line="440"/>
         <source>Edit Exclusion File</source>
         <translation>除外ファイルの編集</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="244"/>
+        <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /etc/mx-snapshot-exclude.list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="343"/>
+        <source>exclude network configurations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="346"/>
+        <source>Networks</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="500"/>
@@ -247,11 +247,6 @@
         <translation type="vanished">インストールできません</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="279"/>
-        <source>Could not create working directory. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Building new initrd...</source>
         <translation type="vanished">新しい initrd を構築中...</translation>
     </message>
@@ -356,6 +351,11 @@
         <location filename="../mainwindow.cpp" line="273"/>
         <source>OK to start?</source>
         <translation>OK で開始します</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="279"/>
+        <source>Could not create working directory. </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="283"/>
@@ -474,131 +474,131 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="58"/>
+        <location filename="../main.cpp" line="57"/>
         <source>Tool used for creating a live-CD from the running system</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="61"/>
+        <location filename="../main.cpp" line="60"/>
         <source>Use CLI only</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="62"/>
+        <location filename="../main.cpp" line="61"/>
         <source>Output directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="62"/>
+        <location filename="../main.cpp" line="61"/>
         <source>path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="63"/>
+        <location filename="../main.cpp" line="62"/>
         <source>Output filename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="63"/>
+        <location filename="../main.cpp" line="62"/>
         <source>name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="64"/>
+        <location filename="../main.cpp" line="63"/>
         <source>Name a different kernel to use other than the default running kernel, use format returned by &apos;uname -r&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="65"/>
+        <location filename="../main.cpp" line="64"/>
         <source>Or the full path: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="65"/>
+        <location filename="../main.cpp" line="64"/>
         <source>ver, or path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="66"/>
+        <location filename="../main.cpp" line="65"/>
         <source>Create a monthly snapshot, add &apos;Month&apos; name in the ISO name, skip used space calculation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="67"/>
+        <location filename="../main.cpp" line="66"/>
         <source>This option sets reset-accounts and compression to defaults, arguments changing those items will be ignored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="68"/>
+        <location filename="../main.cpp" line="67"/>
         <source>Don&apos;t calculate checksums for resulting ISO file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="69"/>
+        <location filename="../main.cpp" line="68"/>
         <source>Option to fix issue with calculating checksums on preempt_rt kernels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="70"/>
+        <location filename="../main.cpp" line="69"/>
         <source>Resetting accounts (for distribution to others)</source>
         <translation type="unfinished">アカウントをリセット (他のディトリビューションへ)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="71"/>
+        <location filename="../main.cpp" line="70"/>
         <source>Calculate checksums for resulting ISO file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="72"/>
+        <location filename="../main.cpp" line="71"/>
         <source>Exclude main folders, valid choices: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="73"/>
+        <location filename="../main.cpp" line="72"/>
         <source>Use the option one time for each item you want to exclude</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="73"/>
+        <location filename="../main.cpp" line="72"/>
         <source>one item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="74"/>
+        <location filename="../main.cpp" line="73"/>
         <source>Compression format, valid choices: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="74"/>
+        <location filename="../main.cpp" line="73"/>
         <source>format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="110"/>
+        <location filename="../main.cpp" line="109"/>
         <source>You must run this program as root.</source>
         <translation type="unfinished">このプログラムは root で実行する必要があります。</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="122"/>
-        <location filename="../main.cpp" line="180"/>
+        <location filename="../main.cpp" line="121"/>
+        <location filename="../main.cpp" line="179"/>
         <source>Error</source>
         <translation type="unfinished">エラー</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="98"/>
-        <location filename="../main.cpp" line="123"/>
+        <location filename="../main.cpp" line="97"/>
+        <location filename="../main.cpp" line="122"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="181"/>
+        <location filename="../main.cpp" line="180"/>
         <location filename="../settings.cpp" line="218"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished">現在のカーネルは Squashfs をサポートしてないので続行できません。</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="104"/>
-        <location filename="../main.cpp" line="129"/>
+        <location filename="../main.cpp" line="103"/>
+        <location filename="../main.cpp" line="128"/>
         <source>version:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -653,7 +653,7 @@
         <translation type="unfinished">/ および /home の圧縮データを保管するには、十分な空き容量がないといけません。必要に応じて、以前生成したスナップショットや保存したコピーを削除することで空き容量を増やすことができます:&#x3000;スナップショット %1 は空き容量の %2 を消費しています。</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="114"/>
+        <location filename="../work.cpp" line="116"/>
         <source>Interrupted or failed to complete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -665,11 +665,11 @@
         <location filename="../work.cpp" line="55"/>
         <location filename="../work.cpp" line="62"/>
         <location filename="../work.cpp" line="68"/>
-        <location filename="../work.cpp" line="207"/>
-        <location filename="../work.cpp" line="224"/>
-        <location filename="../work.cpp" line="260"/>
-        <location filename="../work.cpp" line="306"/>
-        <location filename="../work.cpp" line="337"/>
+        <location filename="../work.cpp" line="209"/>
+        <location filename="../work.cpp" line="226"/>
+        <location filename="../work.cpp" line="262"/>
+        <location filename="../work.cpp" line="308"/>
+        <location filename="../work.cpp" line="339"/>
         <source>Error</source>
         <translation type="unfinished">エラー</translation>
     </message>
@@ -698,93 +698,93 @@
         <translation type="unfinished">クリーニング中...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="110"/>
-        <location filename="../work.cpp" line="113"/>
+        <location filename="../work.cpp" line="112"/>
+        <location filename="../work.cpp" line="115"/>
         <source>Done</source>
         <translation type="unfinished">完了</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="148"/>
+        <location filename="../work.cpp" line="150"/>
         <source>Copying the new-iso filesystem...</source>
         <translation type="unfinished">新たなファイルシステムをコピー中...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="176"/>
+        <location filename="../work.cpp" line="178"/>
         <source>Could not create temp directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="205"/>
+        <location filename="../work.cpp" line="207"/>
         <source>Squashing filesystem...</source>
         <translation type="unfinished">ファイルシステムに Squash を適用中...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="207"/>
+        <location filename="../work.cpp" line="209"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">linuxfsファイルを作成できませんでした。目的のパーティションに十分な空き容量があるか確認してください。</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="222"/>
+        <location filename="../work.cpp" line="224"/>
         <source>Creating CD/DVD image file...</source>
         <translation type="unfinished">CD/DVD イメージファイルを生成中...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="224"/>
+        <location filename="../work.cpp" line="226"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">ISOファイルを作成できませんでした。パーティションに十分な空き容量があるかご確認ください。</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="231"/>
+        <location filename="../work.cpp" line="233"/>
         <source>Making hybrid iso</source>
         <translation type="unfinished">ハイブリット ISO 作成中</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="246"/>
+        <location filename="../work.cpp" line="248"/>
         <source>Success</source>
         <translation type="unfinished">成功</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="246"/>
+        <location filename="../work.cpp" line="248"/>
         <source>MX Snapshot completed sucessfully!</source>
         <translation type="unfinished">MX スナップショットが全て完了！</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="247"/>
+        <location filename="../work.cpp" line="249"/>
         <source>Snapshot took %1 to finish.</source>
         <translation type="unfinished">スナップショットが終了するまで %1 かかりました。</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="248"/>
+        <location filename="../work.cpp" line="250"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
         <translation type="unfinished">MX Snapshot をご利用いただきありがとうございます。今度は MX ライブUSBメーカー を起動してください！</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="257"/>
+        <location filename="../work.cpp" line="259"/>
         <source>Installing </source>
         <translation type="unfinished">インストール中</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="260"/>
+        <location filename="../work.cpp" line="262"/>
         <source>Could not install </source>
         <translation type="unfinished">インストールできません</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="270"/>
+        <location filename="../work.cpp" line="272"/>
         <source>Calculating checksum...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="306"/>
+        <location filename="../work.cpp" line="308"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="315"/>
+        <location filename="../work.cpp" line="317"/>
         <source>Building new initrd...</source>
         <translation type="unfinished">新しい initrd を構築中...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="337"/>
+        <location filename="../work.cpp" line="339"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>
