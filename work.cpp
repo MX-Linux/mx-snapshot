@@ -430,6 +430,7 @@ void Work::setupEnv()
         if (settings->force_installer) {  // copy minstall.desktop to Desktop on all accounts
             settings->shell->run("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/minstall.desktop 2>/dev/null");
             settings->shell->run("chmod 755 /home/*/Desktop/minstall.desktop"); // removes lock symbol on installer on desktop
+            if (not QFile::exists("/etc/skel/Desktop")) QDir().mkdir("/etc/skel/Desktop");
             QFile::copy("/usr/share/applications/minstall.desktop", "/etc/skel/Desktop/Installer.desktop");
             settings->shell->run("chmod 755 /etc/skel/Desktop/Installer.desktop");
         }
