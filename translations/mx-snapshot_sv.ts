@@ -563,6 +563,11 @@ genom att avlägsna tidigare snapshots och sparade kopior:
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../main.cpp" line="71"/>
+        <source>Desktop, Documents, Downloads, Music, Networks, Pictures, Videos.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="72"/>
         <source>Use the option one time for each item you want to exclude</source>
         <translation type="unfinished"></translation>
@@ -665,6 +670,41 @@ Om nödvändigt kan du skapa mer tillgängligt utrymme
 genom att avlägsna tidigare snapshots och sparade kopior:
 %1 snapshots upptar %2 av diskutrymmet
 </translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="374"/>
+        <source>Desktop</source>
+        <translation type="unfinished">Skrivbord</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="375"/>
+        <source>Documents</source>
+        <translation type="unfinished">Dokument</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="376"/>
+        <source>Downloads</source>
+        <translation type="unfinished">Nerladdningar</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="377"/>
+        <source>Music</source>
+        <translation type="unfinished">Musik</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="378"/>
+        <source>Networks</source>
+        <translation type="unfinished">Nätverk</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="379"/>
+        <source>Pictures</source>
+        <translation type="unfinished">Bilder</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="380"/>
+        <source>Videos</source>
+        <translation type="unfinished">Video</translation>
     </message>
     <message>
         <location filename="../work.cpp" line="116"/>

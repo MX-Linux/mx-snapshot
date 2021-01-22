@@ -562,6 +562,11 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../main.cpp" line="71"/>
+        <source>Desktop, Documents, Downloads, Music, Networks, Pictures, Videos.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="72"/>
         <source>Use the option one time for each item you want to exclude</source>
         <translation type="unfinished"></translation>
@@ -663,6 +668,41 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
 Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprimant les instantanés et les copies créées auparavant:
 %1 images occupent %2 de l&apos;espace disque.
 </translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="374"/>
+        <source>Desktop</source>
+        <translation type="unfinished">Bureau</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="375"/>
+        <source>Documents</source>
+        <translation type="unfinished">Documents</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="376"/>
+        <source>Downloads</source>
+        <translation type="unfinished">Téléchargements</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="377"/>
+        <source>Music</source>
+        <translation type="unfinished">Musique</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="378"/>
+        <source>Networks</source>
+        <translation type="unfinished">Réseaux</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="379"/>
+        <source>Pictures</source>
+        <translation type="unfinished">Photos</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="380"/>
+        <source>Videos</source>
+        <translation type="unfinished">Vidéos</translation>
     </message>
     <message>
         <location filename="../work.cpp" line="116"/>

@@ -563,6 +563,11 @@ rimuovendo precedenti snapshots e copie salvate:
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../main.cpp" line="71"/>
+        <source>Desktop, Documents, Downloads, Music, Networks, Pictures, Videos.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="72"/>
         <source>Use the option one time for each item you want to exclude</source>
         <translation type="unfinished"></translation>
@@ -665,6 +670,41 @@ Se necessario, puoi creare più spazio disponibile
 rimuovendo precedenti snapshots e copie salvate:
 %1 snapshot occupa circa %2 di spazio del disco.
 </translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="374"/>
+        <source>Desktop</source>
+        <translation type="unfinished">Desktop</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="375"/>
+        <source>Documents</source>
+        <translation type="unfinished">Documenti</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="376"/>
+        <source>Downloads</source>
+        <translation type="unfinished">Download</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="377"/>
+        <source>Music</source>
+        <translation type="unfinished">Musica</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="378"/>
+        <source>Networks</source>
+        <translation type="unfinished">Reti</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="379"/>
+        <source>Pictures</source>
+        <translation type="unfinished">Immagini</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="380"/>
+        <source>Videos</source>
+        <translation type="unfinished">Video</translation>
     </message>
     <message>
         <location filename="../work.cpp" line="116"/>

@@ -560,6 +560,11 @@ Es wird eine .ISO-Datei erstellt, bootfähig auch von USB-stick. Es ist typische
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../main.cpp" line="71"/>
+        <source>Desktop, Documents, Downloads, Music, Networks, Pictures, Videos.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="72"/>
         <source>Use the option one time for each item you want to exclude</source>
         <translation type="unfinished"></translation>
@@ -661,6 +666,41 @@ Es wird eine .ISO-Datei erstellt, bootfähig auch von USB-stick. Es ist typische
 Bei Bedarf können Sie mehr freien Platz gewinnen, indem Sie
 gespeicherte Kopien von früheren Schnappschüssen löschen:
 %1 Schnappschuss verbraucht %2 Festplattenplatz.</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="374"/>
+        <source>Desktop</source>
+        <translation type="unfinished">Desktop</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="375"/>
+        <source>Documents</source>
+        <translation type="unfinished">Dokumente</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="376"/>
+        <source>Downloads</source>
+        <translation type="unfinished">Downloads</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="377"/>
+        <source>Music</source>
+        <translation type="unfinished">Musik</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="378"/>
+        <source>Networks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="379"/>
+        <source>Pictures</source>
+        <translation type="unfinished">Bilder</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="380"/>
+        <source>Videos</source>
+        <translation type="unfinished">Videos</translation>
     </message>
     <message>
         <location filename="../work.cpp" line="116"/>

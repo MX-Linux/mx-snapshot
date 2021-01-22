@@ -554,6 +554,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../main.cpp" line="71"/>
+        <source>Desktop, Documents, Downloads, Music, Networks, Pictures, Videos.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="72"/>
         <source>Use the option one time for each item you want to exclude</source>
         <translation type="unfinished"></translation>
@@ -651,6 +656,41 @@
       %1 snapshots are taking up %2 of disk space.
 </source>
         <translation type="unfinished">/ および /home の圧縮データを保管するには、十分な空き容量がないといけません。必要に応じて、以前生成したスナップショットや保存したコピーを削除することで空き容量を増やすことができます:&#x3000;スナップショット %1 は空き容量の %2 を消費しています。</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="374"/>
+        <source>Desktop</source>
+        <translation type="unfinished">デスクトップ</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="375"/>
+        <source>Documents</source>
+        <translation type="unfinished">ドキュメント</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="376"/>
+        <source>Downloads</source>
+        <translation type="unfinished">ダウンロード</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="377"/>
+        <source>Music</source>
+        <translation type="unfinished">ミュージック</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="378"/>
+        <source>Networks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="379"/>
+        <source>Pictures</source>
+        <translation type="unfinished">ピクチャー</translation>
+    </message>
+    <message>
+        <location filename="../settings.cpp" line="380"/>
+        <source>Videos</source>
+        <translation type="unfinished">ビデオ</translation>
     </message>
     <message>
         <location filename="../work.cpp" line="116"/>

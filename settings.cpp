@@ -371,13 +371,13 @@ QStringList Settings::listUsers()
 
 void Settings::excludeItem(const QString &item)
 {
-    if (item == "Desktop") excludeDesktop(true);
-    if (item == "Documents") excludeDocuments(true);
-    if (item == "Downloads") excludeDownloads(true);
-    if (item == "Music") excludeMusic(true);
-    if (item == "Networks") excludeNetworks(true);
-    if (item == "Pictures") excludePictures(true);
-    if (item == "Videos") excludeVideos(true);
+    if (item == QObject::tr("Desktop") or item == "Desktop") excludeDesktop(true);
+    if (item == QObject::tr("Documents") or item == "Documents") excludeDocuments(true);
+    if (item == QObject::tr("Downloads") or item == "Downloads") excludeDownloads(true);
+    if (item == QObject::tr("Music") or item == "Music") excludeMusic(true);
+    if (item == QObject::tr("Networks") or item == "Networks") excludeNetworks(true);
+    if (item == QObject::tr("Pictures") or item == "Pictures") excludePictures(true);
+    if (item == QObject::tr("Videos") or item == "Videos") excludeVideos(true);
 }
 
 void Settings::excludeDesktop(bool exclude)
