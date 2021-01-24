@@ -127,12 +127,11 @@ QString Settings::getEditor()
 {
     QString editor;
     if (system("command -v " + gui_editor.fileName().toUtf8()) != 0) {  // if specified editor doesn't exist get the default one
-        editor = shell->getCmdOut("grep Exec $(locate $(xdg-mime query default text/plain)) |cut -d= -f2 |cut -d' ' -f1 |head -1");
-        if (editor == "kate" || editor == "kwrite") { // need to run these as normal user
-            editor = "runuser -u $(logname) " + editor;
-        }
+        editor = shell->getCmdOut("grep -m1 ^Exec $(locate $(xdg-mime query default text/plain)) |cut -d= -f2 |cut -d' ' -f1");
         if (editor.isEmpty() || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exit use nano as backup editor
             editor = "x-terminal-emulator -e nano";
+        } else if (editor == "kate" || editor == "kwrite") { // need to run these as normal user
+            editor = "runuser -u $(logname) " + editor;
         }
     } else {
         editor = gui_editor.fileName();
