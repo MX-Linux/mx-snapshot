@@ -115,7 +115,6 @@ void MainWindow::setup()
 
     this->setWindowTitle(tr("MX Snapshot"));
     ui->buttonBack->setHidden(true);
-    ui->buttonSelectSnapshot->setHidden(true);
     ui->stackedWidget->setCurrentIndex(0);
     ui->buttonCancel->setEnabled(true);
     ui->buttonNext->setEnabled(true);

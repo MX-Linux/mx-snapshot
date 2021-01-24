@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sat, 23 Jan 2021 22:07:15 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 21.1.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (21.1.01) mx; urgency=medium
+ .
+   * Fix select location button
+Checksums-Sha1:
+ a35a00e8c65c60817d84f256983c220c00c4f4e9 1175 mx-snapshot_21.1.01.dsc
+ 7e28d79aa5e3825df51516ca727492f6c9409aae 184720 mx-snapshot_21.1.01.tar.xz
+ 7715ecb953e2892a00a4993c483648c834cb7fab 1400854 mx-snapshot-dbgsym_21.1.01_amd64.deb
+ 31f5b8de30ade921ee6ca221a1813f0767a51cba 10721 mx-snapshot_21.1.01_amd64.buildinfo
+ 4cbd1213bd3edad215124f6a8695895a16134040 236022 mx-snapshot_21.1.01_amd64.deb
+Checksums-Sha256:
+ 1d27ac5abaa0ee7b80e6740f1c6406854f522bc0afce80e3e9b7ec2c5f9c7635 1175 mx-snapshot_21.1.01.dsc
+ 8a00b58cecf1564d6fc71bb0d16ab89ec878b82dc63b81c03579b6a7585907e7 184720 mx-snapshot_21.1.01.tar.xz
+ 4a744df6e8a949b6a18bbba72d22018730c6ec600cd4a6a45daae3ef12713677 1400854 mx-snapshot-dbgsym_21.1.01_amd64.deb
+ 4726079d6132074119db626ead4f853c50e83b6cde307581496e5be4db09edc6 10721 mx-snapshot_21.1.01_amd64.buildinfo
+ 6456aa1184fe43fbf706357090672d223773dca3cfd393d704b993f97774be1a 236022 mx-snapshot_21.1.01_amd64.deb
+Files:
+ 1d9d318b1bfb9853bdc121eac76248df 1175 admin optional mx-snapshot_21.1.01.dsc
+ d2facc719b21c76d412955a699f19fcc 184720 admin optional mx-snapshot_21.1.01.tar.xz
+ af3788679b812b48e109d4b35f66a48c 1400854 debug extra mx-snapshot-dbgsym_21.1.01_amd64.deb
+ bae006900f5d7b25b6d4c407595a2a41 10721 admin optional mx-snapshot_21.1.01_amd64.buildinfo
+ c40dd9550293e7074cecc3039a65bf1a 236022 admin optional mx-snapshot_21.1.01_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmAM5P4THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumCpLB/4ydIgTqieC5VU8mN65ySnz1fM8Rg07
+3myuGnZGL2ExSDRlmZeHshL574ilXA699xixxyzse9pwzmrjeiOL18FlOmBY9Nok
+m410iY79cYYRWUV7uCjMMlgFGF1Qjpd5e7f+KYuGsnnPKhmQfCHSFWXWIX4BmmeQ
+DzcFqKZc+DXoClqpBG3x/sPmtB2JWsoXxGVy7PqKuglkyWAYWxG76Ca/miSh9xp2
+gEtRk9CHlilVayh4VY4MGgde8WikR+Dq+onQbPbcOa7FNT7WEK4000tzp2Xs1V1S
+BiL/r7B75AoTVYm/P8yVJKa6R1eJz6FLj5JBKy62qTRA9KIHmCsgh8dt
+=G2cD
+-----END PGP SIGNATURE-----
