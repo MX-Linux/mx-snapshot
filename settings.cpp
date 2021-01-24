@@ -127,7 +127,9 @@ QString Settings::getEditor()
 {
     QString editor;
     if (system("command -v " + gui_editor.fileName().toUtf8()) != 0) {  // if specified editor doesn't exist get the default one
-        editor = shell->getCmdOut("grep -m1 ^Exec $(locate $(xdg-mime query default text/plain)) |cut -d= -f2 |cut -d' ' -f1");
+        QString local = QFile::exists(QDir::homePath() + "/.local/share/applications") ? "/.local/share/applications " : " ";
+        QString desktop_file = shell->getCmdOut("find " + local + "/usr/share/applications -name $(xdg-mime query default text/plain) | grep -m1 .");
+        editor = shell->getCmdOut("grep -m1 ^Exec " + desktop_file + " |cut -d= -f2 |cut -d\" \" -f1", true);
         if (editor.isEmpty() || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exit use nano as backup editor
             editor = "x-terminal-emulator -e nano";
         } else if (editor == "kate" || editor == "kwrite") { // need to run these as normal user
