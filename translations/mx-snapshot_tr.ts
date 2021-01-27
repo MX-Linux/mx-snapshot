@@ -602,7 +602,7 @@ daha fazla kullanılabilir alan oluşturabilirsiniz:
     </message>
     <message>
         <location filename="../main.cpp" line="180"/>
-        <location filename="../settings.cpp" line="218"/>
+        <location filename="../settings.cpp" line="219"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished">Şu an kullanılan çekirdek squashfs dosya sistemini desteklemediği için devam edilemiyor.</translation>
     </message>
@@ -628,32 +628,32 @@ daha fazla kullanılabilir alan oluşturabilirsiniz:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="211"/>
+        <location filename="../settings.cpp" line="212"/>
         <source>Could not find a usable kernel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="293"/>
+        <location filename="../settings.cpp" line="294"/>
         <source>Used space on / (root): </source>
         <translation type="unfinished">/ (root) &apos;daki Kullanılan Alan:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="296"/>
+        <location filename="../settings.cpp" line="297"/>
         <source>estimated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="305"/>
+        <location filename="../settings.cpp" line="306"/>
         <source>Used space on /home: </source>
         <translation type="unfinished">/home &apos;daki Kullanılan Alan:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="357"/>
+        <location filename="../settings.cpp" line="358"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation type="unfinished">Anlık Görüntü&apos;nün bulunduğu %1 &apos;deki boş alan:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="359"/>
+        <location filename="../settings.cpp" line="360"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -668,37 +668,37 @@ daha fazla kullanılabilir alan oluşturabilirsiniz:
 </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="374"/>
+        <location filename="../settings.cpp" line="375"/>
         <source>Desktop</source>
         <translation type="unfinished">Masaüstü</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="375"/>
+        <location filename="../settings.cpp" line="376"/>
         <source>Documents</source>
         <translation type="unfinished">Belgeler</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="376"/>
+        <location filename="../settings.cpp" line="377"/>
         <source>Downloads</source>
         <translation type="unfinished">İndirilenler</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="377"/>
+        <location filename="../settings.cpp" line="378"/>
         <source>Music</source>
         <translation type="unfinished">Müzik</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="378"/>
+        <location filename="../settings.cpp" line="379"/>
         <source>Networks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="379"/>
+        <location filename="../settings.cpp" line="380"/>
         <source>Pictures</source>
         <translation type="unfinished">Resimler</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="380"/>
+        <location filename="../settings.cpp" line="381"/>
         <source>Videos</source>
         <translation type="unfinished">Videolar</translation>
     </message>

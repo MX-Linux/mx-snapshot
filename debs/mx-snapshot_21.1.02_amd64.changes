@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Tue, 26 Jan 2021 22:02:39 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 21.1.02
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (21.1.02) mx; urgency=medium
+ .
+   * update copy-initrd-modules
+Checksums-Sha1:
+ 6df1d87dc7670d47e4bdfda1dea806ded7bfc3a7 1175 mx-snapshot_21.1.02.dsc
+ 4a862b7276a15a887d529eba7f87271bd9c2529c 184744 mx-snapshot_21.1.02.tar.xz
+ 5922d37af447848a545288623fa79a2262f10393 1401092 mx-snapshot-dbgsym_21.1.02_amd64.deb
+ 7808ff731ba5d80676f965fd5b629565f175aa3c 10721 mx-snapshot_21.1.02_amd64.buildinfo
+ b1e5a14d4792328358c5d0d901b368ae6581f612 236220 mx-snapshot_21.1.02_amd64.deb
+Checksums-Sha256:
+ 796139d363ba3273dd9256c6cbcfd16803f39562657d81bd398815357e7d609d 1175 mx-snapshot_21.1.02.dsc
+ 48a62ef189c2aa803623a970094abb2af25ce8bdad433980b47a1d756da462b0 184744 mx-snapshot_21.1.02.tar.xz
+ 2187f3f791d69b4f882d90a88d4fb6e801a3eaf60fbfed607d5dae422f7d2c86 1401092 mx-snapshot-dbgsym_21.1.02_amd64.deb
+ a33408ca8ed0fb361f93502517052a58bbbe9169a737be69d207d1ca02f6f6df 10721 mx-snapshot_21.1.02_amd64.buildinfo
+ e834211c192ff49670c6a2027eec60509ea5953c5e38e8a80e0d98b79b357728 236220 mx-snapshot_21.1.02_amd64.deb
+Files:
+ 7c2d06eef16e5a714c24a218448c7634 1175 admin optional mx-snapshot_21.1.02.dsc
+ c53bf945e041b76cc773841b75da519a 184744 admin optional mx-snapshot_21.1.02.tar.xz
+ ae4ed32e3a74e1da386440e5c49b0ef7 1401092 debug extra mx-snapshot-dbgsym_21.1.02_amd64.deb
+ 2fca9540bb4a42552b129c88a2ea8515 10721 admin optional mx-snapshot_21.1.02_amd64.buildinfo
+ 39db9a64de45a8ef62cdd1fbae3cd0b0 236220 admin optional mx-snapshot_21.1.02_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmAQ2FITHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPsiB/0SYmYg55E6338U3sEu5ZWqjvK/NZ+w
+fNUAxqwG4bZKfEdaVIO5xeZsya52YPgNcUHzD/nkmR3kXP/ZG6VTtLCDMil6cBF8
+LZNsayhEFtnysBv/IWNCmZzeq6w2X66636/VjQaJGb9BJY6b5crQV4LBvScXEpEK
+RqhVfQ+V1kDhtcoOYEQVQIIOnpoS9NhChhN2QBIz+b3NnGNRt6hFVgWdeFUL5Oe8
+gkeiQTjzBmBDDBY9XcYGgrktbV6qMNe1RWoWD8BSmhJBVopixoTbLcH8UCcUnx3o
+iz/HEOfayOSTiy/vVHUQsY/RFFKyvTg6XT9Vi+RiY1f86z+9BbN7byxG
+=YReQ
+-----END PGP SIGNATURE-----

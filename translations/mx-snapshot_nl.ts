@@ -607,7 +607,7 @@ door oudere snapshots en opgeslagen kopieën te verwijderen:
     </message>
     <message>
         <location filename="../main.cpp" line="180"/>
-        <location filename="../settings.cpp" line="218"/>
+        <location filename="../settings.cpp" line="219"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished">Huidige kernel ondersteunt geen Squashfs, kan niet doorgaan.</translation>
     </message>
@@ -633,32 +633,32 @@ door oudere snapshots en opgeslagen kopieën te verwijderen:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="211"/>
+        <location filename="../settings.cpp" line="212"/>
         <source>Could not find a usable kernel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="293"/>
+        <location filename="../settings.cpp" line="294"/>
         <source>Used space on / (root): </source>
         <translation type="unfinished">Gebruikte ruimte op / (root):</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="296"/>
+        <location filename="../settings.cpp" line="297"/>
         <source>estimated</source>
         <translation type="unfinished">geschat</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="305"/>
+        <location filename="../settings.cpp" line="306"/>
         <source>Used space on /home: </source>
         <translation type="unfinished">Gebruikte ruimte op /home:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="357"/>
+        <location filename="../settings.cpp" line="358"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation type="unfinished">Vrije ruimte op %1, waar de snapshot folder geplaatst is:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="359"/>
+        <location filename="../settings.cpp" line="360"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -674,37 +674,37 @@ door oudere snapshots en opgeslagen kopieën te verwijderen:
 </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="374"/>
+        <location filename="../settings.cpp" line="375"/>
         <source>Desktop</source>
         <translation type="unfinished">Desktop</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="375"/>
+        <location filename="../settings.cpp" line="376"/>
         <source>Documents</source>
         <translation type="unfinished">Documenten</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="376"/>
+        <location filename="../settings.cpp" line="377"/>
         <source>Downloads</source>
         <translation type="unfinished">Downloads</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="377"/>
+        <location filename="../settings.cpp" line="378"/>
         <source>Music</source>
         <translation type="unfinished">Muziek</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="378"/>
+        <location filename="../settings.cpp" line="379"/>
         <source>Networks</source>
         <translation type="unfinished">Netwerken</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="379"/>
+        <location filename="../settings.cpp" line="380"/>
         <source>Pictures</source>
         <translation type="unfinished">Afbeeldingen</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="380"/>
+        <location filename="../settings.cpp" line="381"/>
         <source>Videos</source>
         <translation type="unfinished">Video&apos;s</translation>
     </message>
