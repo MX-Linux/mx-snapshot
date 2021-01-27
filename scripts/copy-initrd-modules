@@ -50,6 +50,8 @@ crc32-pclmul
 crct10dif-common
 crct10dif-generic
 crct10dif-pclmul
+cryptsetup
+dmsetup
 ecb
 ehci-hcd
 ehci-pci
@@ -58,6 +60,9 @@ ext3
 ext4
 f2fs
 fat
+firewire-core
+firewire-ohci
+firewire-sbp2
 fotg210-hcd
 fusbh200-hcd
 fuse
