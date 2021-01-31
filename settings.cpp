@@ -168,7 +168,7 @@ int Settings::getSnapshotCount()
 quint64 Settings::getFreeSpace(const QString &path)
 {
     bool ok;
-    quint64 result = shell->getCmdOut(QString("df -k --output=avail \"%1\" |tail -n1").arg(path)).toUInt(&ok);
+    quint64 result = shell->getCmdOut(QString("df -k --output=avail \"%1\" |tail -n1").arg(path)).toULongLong(&ok);
     if (not ok) {
         qDebug() << "Can't calculate free space on" << path;
         return 0;
@@ -182,9 +182,8 @@ QString Settings::getXdgUserDirs(const QString& folder)
     QString result = "";
 
     for (const QString &user : users) {
-        QString out;
-        bool success = shell->run("runuser -l " + user + " -c \"xdg-user-dir " + folder + "\"", out);
-        QString dir = QString(out);
+        QString dir;
+        bool success = shell->run("runuser -l " + user + " -c \"xdg-user-dir " + folder + "\"", dir);
         if (success) {
             if (englishDirs.value(folder) == dir.section("/", -1) || dir.trimmed() == "/home/" + user || dir.trimmed() == "/home/" + user + "/" || dir.isEmpty()) { // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
                 continue;
@@ -279,9 +278,9 @@ quint64 Settings::getLiveRootSpace()
     else c_factor = 30; //anything else or linuxfs not reachable (toram), should be pretty conservative
 
     quint64 rootfs_file_size = 0;
-    quint64 linuxfs_file_size = shell->getCmdOut("df -k /live/linux --output=used --total |tail -n1").toUInt() * 100 / c_factor;
+    quint64 linuxfs_file_size = shell->getCmdOut("df -k /live/linux --output=used --total |tail -n1").toULongLong() * 100 / c_factor;
     if (QFileInfo::exists("/live/persist-root")) {
-        rootfs_file_size = shell->getCmdOut("df -k /live/persist-root --output=used --total |tail -n1").toUInt();
+        rootfs_file_size = shell->getCmdOut("df -k /live/persist-root --output=used --total |tail -n1").toULongLong();
     }
 
     // add rootfs file size to the calculated linuxfs file size.  probaby conservative, as rootfs will likely have some overlap with linuxfs
@@ -296,12 +295,12 @@ QString Settings::getUsedSpace()
         root_size = getLiveRootSpace();
         out += QString::number(root_size / 1048576.0, 'f', 2) + "GiB" + " -- " + QObject::tr("estimated");
     } else {
-        root_size = shell->getCmdOut("df -k --output=used / |tail -n1").toUInt(&ok);
+        root_size = shell->getCmdOut("df -k --output=used / |tail -n1").toULongLong(&ok);
         if (not ok) return "Can't calculate free space on root";
         out += QString::number(root_size / 1048576.0, 'f', 2) + "GiB";
     }
     if (shell->run("mountpoint -q /home")) {
-        home_size = shell->getCmdOut("df -k --output=used /home |tail -n1").toUInt(&ok);
+        home_size = shell->getCmdOut("df -k --output=used /home |tail -n1").toULongLong(&ok);
         if (not ok) return "Can't calculate free space on /home";
         out.append("\n- " + QObject::tr("Used space on /home: ") + QString::number(home_size / 1048576.0, 'f', 2) + "GiB");
     } else {
