@@ -459,7 +459,7 @@ void Settings::loadConfig()
 
     session_excludes = "";
     snapshot_dir = settings.value("snapshot_dir", "/home/snapshot").toString();
-    if (not snapshot_dir.endsWith("/snapshot")) snapshot_dir += "/snapshot";
+    if (not snapshot_dir.endsWith("/snapshot")) snapshot_dir += (snapshot_dir.endsWith("/") ? "snapshot" : "/snapshot");
     snapshot_excludes.setFileName(settings.value("snapshot_excludes", "/usr/local/share/excludes/mx-snapshot-exclude.list").toString());
     snapshot_basename = settings.value("snapshot_basename", "snapshot").toString();
     make_chksum = settings.value("make_md5sum", "no").toString() == "no" ? false : true;
@@ -506,7 +506,7 @@ void Settings::processArgs(const QCommandLineParser &arg_parser)
     kernel = arg_parser.value("kernel");
     preempt = arg_parser.isSet("preempt");
     if (!arg_parser.value("directory").isEmpty() && QFileInfo::exists(arg_parser.value("directory")))
-        snapshot_dir = arg_parser.value("directory") + "/snapshot";
+        snapshot_dir = arg_parser.value("directory") + (snapshot_dir.endsWith("/") ? "snapshot" : "/snapshot");
     if (!arg_parser.value("file").isEmpty())
         snapshot_name = arg_parser.value("file") + (arg_parser.value("file").endsWith(".iso") ? QString() : ".iso");
     else
