@@ -6,7 +6,7 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <location filename="../mainwindow.cpp" line="116"/>
-        <location filename="../mainwindow.cpp" line="319"/>
+        <location filename="../mainwindow.cpp" line="320"/>
         <source>MX Snapshot</source>
         <translation>MX-Capturas ISO</translation>
     </message>
@@ -27,7 +27,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
-        <location filename="../mainwindow.cpp" line="264"/>
+        <location filename="../mainwindow.cpp" line="265"/>
         <source>Snapshot name:</source>
         <translation>Nome da captura:</translation>
     </message>
@@ -220,12 +220,12 @@
         <translation type="vanished">Espaço usado em /home:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
+        <location filename="../mainwindow.cpp" line="147"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation>Espaço livre em %1, onde a pasta de capturas está colocada:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="148"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -240,14 +240,14 @@
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="156"/>
         <location filename="../mainwindow.cpp" line="157"/>
+        <location filename="../mainwindow.cpp" line="158"/>
         <source>Installing </source>
         <translation>A instalar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="278"/>
-        <location filename="../mainwindow.cpp" line="282"/>
+        <location filename="../mainwindow.cpp" line="279"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
@@ -308,32 +308,32 @@
         <translation type="vanished">Concluído</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="240"/>
+        <location filename="../mainwindow.cpp" line="241"/>
         <source>Please wait.</source>
         <translation>Aguardar.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="242"/>
+        <location filename="../mainwindow.cpp" line="243"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation>Aguardar. A calcular o espaço usado em disco...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="256"/>
+        <location filename="../mainwindow.cpp" line="257"/>
         <source>Settings</source>
         <translation>Definições</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="261"/>
+        <location filename="../mainwindow.cpp" line="262"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>O MX Capturas ISO usará as seguintes definições:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="263"/>
+        <location filename="../mainwindow.cpp" line="264"/>
         <source>- Snapshot directory:</source>
         <translation>- Directório de capturas:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="265"/>
+        <location filename="../mainwindow.cpp" line="266"/>
         <source>- Kernel to be used:</source>
         <translation>- Núcleo a ser usado:</translation>
     </message>
@@ -342,47 +342,47 @@
         <translation type="vanished">O núcleo actual não suporta o algoritmo de compressão seleccionado; editar o ficheiro de configuração e seleccionar outro algoritmo.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="269"/>
+        <location filename="../mainwindow.cpp" line="270"/>
         <source>Final chance</source>
         <translation>Última hipótese</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="270"/>
+        <location filename="../mainwindow.cpp" line="271"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation>O MX Capturas ISO tem agora toda a informação de que precisa para criar uma imagem ISO do sistema em uso.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="271"/>
+        <location filename="../mainwindow.cpp" line="272"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation>Demorará algum tempo a terminar, dependendo do tamanho do sistema instalado e da capacidade do computador.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="272"/>
+        <location filename="../mainwindow.cpp" line="273"/>
         <source>OK to start?</source>
         <translation>Iniciar?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="278"/>
+        <location filename="../mainwindow.cpp" line="279"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="282"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Could not create temporary directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="290"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>Output</source>
         <translation>Resultado</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
+        <location filename="../mainwindow.cpp" line="299"/>
         <source>Edit Boot Menu</source>
         <translation>Editar o Menu de Arranque</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="299"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation>O programa será suspenso agora para permitir a edição de quaisquer ficheiros no directório de trabalho. Clicar em Sim para editar o menu de arranque ou em Não para ignorar este passo e continuar a criação da imagem.</translation>
     </message>
@@ -399,47 +399,47 @@
         <translation type="vanished">Fechar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="390"/>
+        <location filename="../mainwindow.cpp" line="391"/>
         <source>About %1</source>
         <translation>Sobre o %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="391"/>
+        <location filename="../mainwindow.cpp" line="392"/>
         <source>Version: </source>
         <translation>Versão:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="392"/>
+        <location filename="../mainwindow.cpp" line="393"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Programa para criar uma imagem CD-executável a partir do sistema em execução</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="394"/>
+        <location filename="../mainwindow.cpp" line="395"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Direitos de autor (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="395"/>
+        <location filename="../mainwindow.cpp" line="396"/>
         <source>%1 License</source>
         <translation>Licença do %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="410"/>
+        <location filename="../mainwindow.cpp" line="411"/>
         <source>%1 Help</source>
         <translation>Ajuda do %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="418"/>
+        <location filename="../mainwindow.cpp" line="419"/>
         <source>Select Snapshot Directory</source>
         <translation>Seleccionar o directório de capturas</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Confirmation</source>
         <translation>Confirmação</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Sair efectivamente da aplicação?</translation>
     </message>
@@ -606,7 +606,7 @@
     </message>
     <message>
         <location filename="../main.cpp" line="180"/>
-        <location filename="../settings.cpp" line="219"/>
+        <location filename="../settings.cpp" line="221"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished">O núcleo actual não suporta Squashfs; não é possível continuar.</translation>
     </message>
@@ -617,7 +617,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../batchprocessing.cpp" line="52"/>
+        <location filename="../batchprocessing.cpp" line="53"/>
         <source>The program will pause the build and open the boot menu in your text editor.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -632,32 +632,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="212"/>
+        <location filename="../settings.cpp" line="214"/>
         <source>Could not find a usable kernel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="294"/>
+        <location filename="../settings.cpp" line="296"/>
         <source>Used space on / (root): </source>
         <translation type="unfinished">Espaço usado em / (raiz ou root):</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="297"/>
+        <location filename="../settings.cpp" line="299"/>
         <source>estimated</source>
         <translation type="unfinished">estimado</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="306"/>
+        <location filename="../settings.cpp" line="308"/>
         <source>Used space on /home: </source>
         <translation type="unfinished">Espaço usado em /home:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="358"/>
+        <location filename="../settings.cpp" line="360"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation type="unfinished">Espaço livre em %1, onde a pasta de capturas está colocada:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="360"/>
+        <location filename="../settings.cpp" line="362"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -672,37 +672,37 @@
 </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="375"/>
+        <location filename="../settings.cpp" line="377"/>
         <source>Desktop</source>
         <translation type="unfinished">Área de trabalho</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="376"/>
+        <location filename="../settings.cpp" line="378"/>
         <source>Documents</source>
         <translation type="unfinished">Documentos</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="377"/>
+        <location filename="../settings.cpp" line="379"/>
         <source>Downloads</source>
         <translation type="unfinished">Transferências</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="378"/>
+        <location filename="../settings.cpp" line="380"/>
         <source>Music</source>
         <translation type="unfinished">Música</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="379"/>
+        <location filename="../settings.cpp" line="381"/>
         <source>Networks</source>
         <translation type="unfinished">Redes</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="380"/>
+        <location filename="../settings.cpp" line="382"/>
         <source>Pictures</source>
         <translation type="unfinished">Fotos</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="381"/>
+        <location filename="../settings.cpp" line="383"/>
         <source>Videos</source>
         <translation type="unfinished">Vídeos</translation>
     </message>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <location filename="../mainwindow.cpp" line="116"/>
-        <location filename="../mainwindow.cpp" line="319"/>
+        <location filename="../mainwindow.cpp" line="320"/>
         <source>MX Snapshot</source>
         <translation>MX Snapshot</translation>
     </message>
@@ -27,7 +27,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
-        <location filename="../mainwindow.cpp" line="264"/>
+        <location filename="../mainwindow.cpp" line="265"/>
         <source>Snapshot name:</source>
         <translation>Nome Snapshot:</translation>
     </message>
@@ -220,12 +220,12 @@
         <translation type="vanished">Spazio utilizzato su /home:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
+        <location filename="../mainwindow.cpp" line="147"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation>Spazio libero su %1, dove la cartella della snapshot è localizzata: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="148"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -240,14 +240,14 @@ rimuovendo precedenti snapshots e copie salvate:
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="156"/>
         <location filename="../mainwindow.cpp" line="157"/>
+        <location filename="../mainwindow.cpp" line="158"/>
         <source>Installing </source>
         <translation>Installazione in corso</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="278"/>
-        <location filename="../mainwindow.cpp" line="282"/>
+        <location filename="../mainwindow.cpp" line="279"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
@@ -308,32 +308,32 @@ rimuovendo precedenti snapshots e copie salvate:
         <translation type="vanished">Fatto</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="240"/>
+        <location filename="../mainwindow.cpp" line="241"/>
         <source>Please wait.</source>
         <translation>Attendi, per favore</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="242"/>
+        <location filename="../mainwindow.cpp" line="243"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation>Prego attendi. Calcolo dello spazio usato sul disco...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="256"/>
+        <location filename="../mainwindow.cpp" line="257"/>
         <source>Settings</source>
         <translation>Impostazioni</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="261"/>
+        <location filename="../mainwindow.cpp" line="262"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>Snapshot utilizzerà le seguenti impostazioni:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="263"/>
+        <location filename="../mainwindow.cpp" line="264"/>
         <source>- Snapshot directory:</source>
         <translation>- Snapshot directory:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="265"/>
+        <location filename="../mainwindow.cpp" line="266"/>
         <source>- Kernel to be used:</source>
         <translation>- Kernel da utilizzare:</translation>
     </message>
@@ -342,47 +342,47 @@ rimuovendo precedenti snapshots e copie salvate:
         <translation type="vanished">Il kernel attuale non supporta l&apos;algoritmo di compressione selezionato, prego modifica il file di configurazione e scegli un algoritmo differente.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="269"/>
+        <location filename="../mainwindow.cpp" line="270"/>
         <source>Final chance</source>
         <translation>Ultima occasione</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="270"/>
+        <location filename="../mainwindow.cpp" line="271"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation>Snapshot ha ora tutte le informazioni necessarie per creare una ISO del tuo attuale sistema in uso.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="271"/>
+        <location filename="../mainwindow.cpp" line="272"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation>Ci vorrà parecchio tempo per finire, in funzione della dimensione del sistema installato e della velocità del tuo computer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="272"/>
+        <location filename="../mainwindow.cpp" line="273"/>
         <source>OK to start?</source>
         <translation>Ok ad iniziare?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="278"/>
+        <location filename="../mainwindow.cpp" line="279"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="282"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Could not create temporary directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="290"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>Output</source>
         <translation>Output</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
+        <location filename="../mainwindow.cpp" line="299"/>
         <source>Edit Boot Menu</source>
         <translation>Modifica il menù di avvio</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="299"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation>Il programma ora andrà in pausa per permetterti di editare alcuni files nella directory di lavoro. Seleziona Yes per editare il menù del boot o seleziona No per bypassare questa fase e continuare a creare la snapshot.</translation>
     </message>
@@ -399,47 +399,47 @@ rimuovendo precedenti snapshots e copie salvate:
         <translation type="vanished">Chiudi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="390"/>
+        <location filename="../mainwindow.cpp" line="391"/>
         <source>About %1</source>
         <translation>Circa %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="391"/>
+        <location filename="../mainwindow.cpp" line="392"/>
         <source>Version: </source>
         <translation>Versione: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="392"/>
+        <location filename="../mainwindow.cpp" line="393"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Programma di MX Linux per creare un CD live dal sistema in esecuzione</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="394"/>
+        <location filename="../mainwindow.cpp" line="395"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="395"/>
+        <location filename="../mainwindow.cpp" line="396"/>
         <source>%1 License</source>
         <translation>%1 Licenza</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="410"/>
+        <location filename="../mainwindow.cpp" line="411"/>
         <source>%1 Help</source>
         <translation>%1 Aiuto</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="418"/>
+        <location filename="../mainwindow.cpp" line="419"/>
         <source>Select Snapshot Directory</source>
         <translation>Seleziona la directory di Snapshot</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Confirmation</source>
         <translation>Conferma</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Sei sicuro di voler chiudere l&apos;applicazione?</translation>
     </message>
@@ -606,7 +606,7 @@ rimuovendo precedenti snapshots e copie salvate:
     </message>
     <message>
         <location filename="../main.cpp" line="180"/>
-        <location filename="../settings.cpp" line="219"/>
+        <location filename="../settings.cpp" line="221"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished">Il kernel attuale non supporta Squashfs, non si può continuare.</translation>
     </message>
@@ -617,7 +617,7 @@ rimuovendo precedenti snapshots e copie salvate:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../batchprocessing.cpp" line="52"/>
+        <location filename="../batchprocessing.cpp" line="53"/>
         <source>The program will pause the build and open the boot menu in your text editor.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -632,32 +632,32 @@ rimuovendo precedenti snapshots e copie salvate:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="212"/>
+        <location filename="../settings.cpp" line="214"/>
         <source>Could not find a usable kernel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="294"/>
+        <location filename="../settings.cpp" line="296"/>
         <source>Used space on / (root): </source>
         <translation type="unfinished">Spazio utilizzato su / (root):</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="297"/>
+        <location filename="../settings.cpp" line="299"/>
         <source>estimated</source>
         <translation type="unfinished">stimato</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="306"/>
+        <location filename="../settings.cpp" line="308"/>
         <source>Used space on /home: </source>
         <translation type="unfinished">Spazio utilizzato su /home:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="358"/>
+        <location filename="../settings.cpp" line="360"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation type="unfinished">Spazio libero su %1, dove la cartella della snapshot è localizzata: </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="360"/>
+        <location filename="../settings.cpp" line="362"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -672,37 +672,37 @@ rimuovendo precedenti snapshots e copie salvate:
 </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="375"/>
+        <location filename="../settings.cpp" line="377"/>
         <source>Desktop</source>
         <translation type="unfinished">Desktop</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="376"/>
+        <location filename="../settings.cpp" line="378"/>
         <source>Documents</source>
         <translation type="unfinished">Documenti</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="377"/>
+        <location filename="../settings.cpp" line="379"/>
         <source>Downloads</source>
         <translation type="unfinished">Download</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="378"/>
+        <location filename="../settings.cpp" line="380"/>
         <source>Music</source>
         <translation type="unfinished">Musica</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="379"/>
+        <location filename="../settings.cpp" line="381"/>
         <source>Networks</source>
         <translation type="unfinished">Reti</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="380"/>
+        <location filename="../settings.cpp" line="382"/>
         <source>Pictures</source>
         <translation type="unfinished">Immagini</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="381"/>
+        <location filename="../settings.cpp" line="383"/>
         <source>Videos</source>
         <translation type="unfinished">Video</translation>
     </message>

@@ -33,7 +33,8 @@ Batchprocessing::Batchprocessing(const QCommandLineParser &arg_parser) :
 {
     connect(qApp, &QCoreApplication::aboutToQuit, [this] { work.cleanUp(); });
     setConnections();
-    getFreeSpaceStrings(snapshot_dir.remove("/snapshot"));
+    QString path = snapshot_dir;
+    getFreeSpaceStrings(path.remove("/snapshot"));
     if (not arg_parser.isSet("month")) getUsedSpace();
 
     work.started = true;

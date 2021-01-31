@@ -6,7 +6,7 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <location filename="../mainwindow.cpp" line="116"/>
-        <location filename="../mainwindow.cpp" line="319"/>
+        <location filename="../mainwindow.cpp" line="320"/>
         <source>MX Snapshot</source>
         <translation>MX 快照</translation>
     </message>
@@ -27,7 +27,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
-        <location filename="../mainwindow.cpp" line="264"/>
+        <location filename="../mainwindow.cpp" line="265"/>
         <source>Snapshot name:</source>
         <translation>快照檔名：</translation>
     </message>
@@ -216,12 +216,12 @@
         <translation type="vanished">/home 使用的空間：</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
+        <location filename="../mainwindow.cpp" line="147"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation>快照目錄所在的 %1 尚可利用的空間：</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="147"/>
+        <location filename="../mainwindow.cpp" line="148"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -235,14 +235,14 @@
 </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="156"/>
         <location filename="../mainwindow.cpp" line="157"/>
+        <location filename="../mainwindow.cpp" line="158"/>
         <source>Installing </source>
         <translation>正在安裝……</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="278"/>
-        <location filename="../mainwindow.cpp" line="282"/>
+        <location filename="../mainwindow.cpp" line="279"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
@@ -303,32 +303,32 @@
         <translation type="vanished">完成</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="240"/>
+        <location filename="../mainwindow.cpp" line="241"/>
         <source>Please wait.</source>
         <translation>請稍待。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="242"/>
+        <location filename="../mainwindow.cpp" line="243"/>
         <source>Please wait. Calculating used disk space...</source>
         <translation>請稍待。正在計算佔用多少磁碟空間……</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="256"/>
+        <location filename="../mainwindow.cpp" line="257"/>
         <source>Settings</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="261"/>
+        <location filename="../mainwindow.cpp" line="262"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>快照所採取的設定*：</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="263"/>
+        <location filename="../mainwindow.cpp" line="264"/>
         <source>- Snapshot directory:</source>
         <translation>- 快照存放目錄：</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="265"/>
+        <location filename="../mainwindow.cpp" line="266"/>
         <source>- Kernel to be used:</source>
         <translation>- 使用核心：</translation>
     </message>
@@ -337,47 +337,47 @@
         <translation type="vanished">當前內核不支持所選的壓縮算法，請編輯配置文件並選擇其他算法。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="269"/>
+        <location filename="../mainwindow.cpp" line="270"/>
         <source>Final chance</source>
         <translation>最後確認</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="270"/>
+        <location filename="../mainwindow.cpp" line="271"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation>快照工具已經掌握了所有相關資料，可以從現在運行的系統中創造出 ISO 檔。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="271"/>
+        <location filename="../mainwindow.cpp" line="272"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation>要花上一些時間才能完成，實際狀況取決於現行系統大小以及電腦性能。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="272"/>
+        <location filename="../mainwindow.cpp" line="273"/>
         <source>OK to start?</source>
         <translation>可以開始嗎？</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="278"/>
+        <location filename="../mainwindow.cpp" line="279"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="282"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Could not create temporary directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="290"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>Output</source>
         <translation>輸出</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
+        <location filename="../mainwindow.cpp" line="299"/>
         <source>Edit Boot Menu</source>
         <translation>編輯開機選單</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="299"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation>本程式即將暫停，讓你有機會編修工作目錄之中的每個檔案。選擇「是」便可編輯開機選單，選擇「否」 則會省略此一步驟，直接製作快照。</translation>
     </message>
@@ -394,47 +394,47 @@
         <translation type="vanished">關閉</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="390"/>
+        <location filename="../mainwindow.cpp" line="391"/>
         <source>About %1</source>
         <translation>大約 %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="391"/>
+        <location filename="../mainwindow.cpp" line="392"/>
         <source>Version: </source>
         <translation>版本：</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="392"/>
+        <location filename="../mainwindow.cpp" line="393"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>本程式可將正在運作的 MX Linux 系統做成現場版 CD</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="394"/>
+        <location filename="../mainwindow.cpp" line="395"/>
         <source>Copyright (c) MX Linux</source>
         <translation>版權所有 (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="395"/>
+        <location filename="../mainwindow.cpp" line="396"/>
         <source>%1 License</source>
         <translation>%1 許可</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="410"/>
+        <location filename="../mainwindow.cpp" line="411"/>
         <source>%1 Help</source>
         <translation>%1 幫助</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="418"/>
+        <location filename="../mainwindow.cpp" line="419"/>
         <source>Select Snapshot Directory</source>
         <translation>選擇快照目錄</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Confirmation</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="438"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>真的要退出此程式嗎？</translation>
     </message>
@@ -597,7 +597,7 @@
     </message>
     <message>
         <location filename="../main.cpp" line="180"/>
-        <location filename="../settings.cpp" line="219"/>
+        <location filename="../settings.cpp" line="221"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -608,7 +608,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../batchprocessing.cpp" line="52"/>
+        <location filename="../batchprocessing.cpp" line="53"/>
         <source>The program will pause the build and open the boot menu in your text editor.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -623,32 +623,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="212"/>
+        <location filename="../settings.cpp" line="214"/>
         <source>Could not find a usable kernel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="294"/>
+        <location filename="../settings.cpp" line="296"/>
         <source>Used space on / (root): </source>
         <translation type="unfinished">/（根目錄）使用的空間：</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="297"/>
+        <location filename="../settings.cpp" line="299"/>
         <source>estimated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="306"/>
+        <location filename="../settings.cpp" line="308"/>
         <source>Used space on /home: </source>
         <translation type="unfinished">/home 使用的空間：</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="358"/>
+        <location filename="../settings.cpp" line="360"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation type="unfinished">快照目錄所在的 %1 尚可利用的空間：</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="360"/>
+        <location filename="../settings.cpp" line="362"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -662,37 +662,37 @@
 </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="375"/>
+        <location filename="../settings.cpp" line="377"/>
         <source>Desktop</source>
         <translation type="unfinished">桌面</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="376"/>
+        <location filename="../settings.cpp" line="378"/>
         <source>Documents</source>
         <translation type="unfinished">文件</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="377"/>
+        <location filename="../settings.cpp" line="379"/>
         <source>Downloads</source>
         <translation type="unfinished">所有下載</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="378"/>
+        <location filename="../settings.cpp" line="380"/>
         <source>Music</source>
         <translation type="unfinished">音樂</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="379"/>
+        <location filename="../settings.cpp" line="381"/>
         <source>Networks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="380"/>
+        <location filename="../settings.cpp" line="382"/>
         <source>Pictures</source>
         <translation type="unfinished">圖片</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="381"/>
+        <location filename="../settings.cpp" line="383"/>
         <source>Videos</source>
         <translation type="unfinished">影片</translation>
     </message>
