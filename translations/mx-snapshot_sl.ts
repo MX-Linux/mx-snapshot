@@ -602,7 +602,7 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
     </message>
     <message>
         <location filename="../main.cpp" line="180"/>
-        <location filename="../settings.cpp" line="221"/>
+        <location filename="../settings.cpp" line="219"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished">Trenutno jedro ne podpira Squashfs. Ne morem nadaljevati.</translation>
     </message>
@@ -628,32 +628,32 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="214"/>
+        <location filename="../settings.cpp" line="212"/>
         <source>Could not find a usable kernel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="296"/>
+        <location filename="../settings.cpp" line="294"/>
         <source>Used space on / (root): </source>
         <translation type="unfinished">Porabljen prostor na / (root):</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="299"/>
+        <location filename="../settings.cpp" line="297"/>
         <source>estimated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="308"/>
+        <location filename="../settings.cpp" line="306"/>
         <source>Used space on /home: </source>
         <translation type="unfinished">Porabljen prostor na /home:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="360"/>
+        <location filename="../settings.cpp" line="358"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation type="unfinished">Sprostite prostor na %1, na katerem se bo nahajala mapa posnetka:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="362"/>
+        <location filename="../settings.cpp" line="360"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -668,37 +668,37 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
 </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="377"/>
+        <location filename="../settings.cpp" line="375"/>
         <source>Desktop</source>
         <translation type="unfinished">Namizje</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="378"/>
+        <location filename="../settings.cpp" line="376"/>
         <source>Documents</source>
         <translation type="unfinished">Dokumenti</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="379"/>
+        <location filename="../settings.cpp" line="377"/>
         <source>Downloads</source>
         <translation type="unfinished">Prenosi</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="380"/>
+        <location filename="../settings.cpp" line="378"/>
         <source>Music</source>
         <translation type="unfinished">Glasba</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="381"/>
+        <location filename="../settings.cpp" line="379"/>
         <source>Networks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="382"/>
+        <location filename="../settings.cpp" line="380"/>
         <source>Pictures</source>
         <translation type="unfinished">Slike</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="383"/>
+        <location filename="../settings.cpp" line="381"/>
         <source>Videos</source>
         <translation type="unfinished">Video</translation>
     </message>

@@ -582,7 +582,7 @@ odstránením predošlých obrazov alebo kópií systému:
     </message>
     <message>
         <location filename="../main.cpp" line="180"/>
-        <location filename="../settings.cpp" line="221"/>
+        <location filename="../settings.cpp" line="219"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -608,32 +608,32 @@ odstránením predošlých obrazov alebo kópií systému:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="214"/>
+        <location filename="../settings.cpp" line="212"/>
         <source>Could not find a usable kernel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="296"/>
+        <location filename="../settings.cpp" line="294"/>
         <source>Used space on / (root): </source>
         <translation type="unfinished">Použitý priestor na disku / (root):</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="299"/>
+        <location filename="../settings.cpp" line="297"/>
         <source>estimated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="308"/>
+        <location filename="../settings.cpp" line="306"/>
         <source>Used space on /home: </source>
         <translation type="unfinished">Použitý priestor na disku /home:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="360"/>
+        <location filename="../settings.cpp" line="358"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation type="unfinished">Voľné miesto na disku %1, na ktorom je obraz umiestnený: </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="362"/>
+        <location filename="../settings.cpp" line="360"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -648,37 +648,37 @@ odstránením predošlých obrazov alebo kópií systému:
 </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="377"/>
+        <location filename="../settings.cpp" line="375"/>
         <source>Desktop</source>
         <translation type="unfinished">Pracovná plocha</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="378"/>
+        <location filename="../settings.cpp" line="376"/>
         <source>Documents</source>
         <translation type="unfinished">Dokumenty</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="379"/>
+        <location filename="../settings.cpp" line="377"/>
         <source>Downloads</source>
         <translation type="unfinished">Stiahnuté</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="380"/>
+        <location filename="../settings.cpp" line="378"/>
         <source>Music</source>
         <translation type="unfinished">Hudba</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="381"/>
+        <location filename="../settings.cpp" line="379"/>
         <source>Networks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="382"/>
+        <location filename="../settings.cpp" line="380"/>
         <source>Pictures</source>
         <translation type="unfinished">Obrázky</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="383"/>
+        <location filename="../settings.cpp" line="381"/>
         <source>Videos</source>
         <translation type="unfinished">Videá</translation>
     </message>
