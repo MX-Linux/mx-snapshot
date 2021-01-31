@@ -26,7 +26,6 @@
 #define SETTINGS_H
 
 #include <QCommandLineParser>
-#include <QDir>
 #include <QFile>
 #include <QTemporaryDir>
 
@@ -58,8 +57,6 @@ public:
 
     Cmd *shell;
     Exclusions exclusions;
-    QDir lib_mod_dir;
-    QDir snapshot_dir;
     QFile config_file;
     QFile gui_editor;
     QFile snapshot_excludes;
@@ -71,6 +68,7 @@ public:
     QString save_message;
     QString session_excludes;
     QString snapshot_basename;
+    QString snapshot_dir;
     QString snapshot_name;
     QString stamp;
     QString tempdir_parent;
@@ -106,7 +104,7 @@ public:
     bool checkSnapshotDir();
     bool checkTempDir();
     bool isLive();
-    bool isOnSupportedPart(const QDir &dir);
+    bool isOnSupportedPart(const QString &dir);
     bool isi686();
     short getDebianVersion();
     int getSnapshotCount();

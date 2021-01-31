@@ -26,7 +26,6 @@
 #define MAINWINDOW_H
 
 #include <QCommandLineParser>
-#include <QDir>
 #include <QMessageBox>
 #include <QSettings>
 #include <QTimer>

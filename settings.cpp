@@ -88,17 +88,17 @@ void Settings::addRemoveExclusion(bool add, QString exclusion)
 bool Settings::checkSnapshotDir()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    if (!snapshot_dir.mkpath(snapshot_dir.absolutePath())) {
-        qDebug() << QObject::tr("Could not create working directory. ") + snapshot_dir.absolutePath();
+    if (!QDir().mkpath(snapshot_dir)) {
+        qDebug() << QObject::tr("Could not create working directory. ") + snapshot_dir;
         return false;
     }
-    system("chown $(logname):$(logname) \"/" + snapshot_dir.absolutePath().toUtf8() + "\"");
+    system("chown $(logname):$(logname) \"/" + snapshot_dir.toUtf8() + "\"");
     // Create a work_dir
-    tempdir_parent = snapshot_dir.absolutePath();
+    tempdir_parent = snapshot_dir;
     if (!isOnSupportedPart(snapshot_dir)) { // if not saving snapshot on a Linux partition put working dir in /tmp or /home
         tempdir_parent = largerFreeSpace("/tmp", "/home");
     } else {
-        tempdir_parent = largerFreeSpace("/tmp", "/home", snapshot_dir.absolutePath());
+        tempdir_parent = largerFreeSpace("/tmp", "/home", snapshot_dir);
     }
     return true;
 }
@@ -145,8 +145,8 @@ QString Settings::getEditor()
 QString Settings::getSnapshotSize()
 {
     QString size;
-    if (snapshot_dir.exists()) {
-        QString cmd = QString("find \"%1\" -maxdepth 1 -type f -name '*.iso' -exec du -shc {} + |tail -1 |awk '{print $1}'").arg(snapshot_dir.absolutePath());
+    if (QFileInfo::exists(snapshot_dir)) {
+        QString cmd = QString("find \"%1\" -maxdepth 1 -type f -name '*.iso' -exec du -shc {} + |tail -1 |awk '{print $1}'").arg(snapshot_dir);
         size = shell->getCmdOut(cmd);
         if (!size.isEmpty()) {
             return size;
@@ -158,8 +158,8 @@ QString Settings::getSnapshotSize()
 // return number of snapshots in snapshot_dir
 int Settings::getSnapshotCount()
 {
-    if (snapshot_dir.exists()) {
-        QFileInfoList list = snapshot_dir.entryInfoList(QStringList("*.iso"), QDir::Files);
+    if (QFileInfo::exists(snapshot_dir)) {
+        QFileInfoList list = QDir(snapshot_dir).entryInfoList(QStringList("*.iso"), QDir::Files);
         return list.size();
     }
     return 0;
@@ -250,7 +250,7 @@ QString Settings::getFilename()
         int n = 1;
         do {
             name = snapshot_basename + QString::number(n) + ".iso";
-            dir.setPath("\"" + snapshot_dir.absolutePath() + "/" + name + "\"");
+            dir.setPath("\"" + snapshot_dir + "/" + name + "\"");
             n++;
         } while (QFileInfo::exists(dir.absolutePath()));
         return name;
@@ -324,11 +324,11 @@ bool Settings::isLive()
 }
 
 // checks if the directory is on a Linux partition
-bool Settings::isOnSupportedPart(const QDir &dir)
+bool Settings::isOnSupportedPart(const QString &dir)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QStringList supported_partitions = (QStringList() << "ext2/ext3" << "btrfs" << "jfs" << "reiserfs" << "xfs" << "fuseblk"); // supported partition types (NTFS returns fuseblk)
-    QString part_type = shell->getCmdOut("stat --file-system --format=%T \"" + dir.absolutePath() + "\"").trimmed();
+    QString part_type = shell->getCmdOut("stat --file-system --format=%T \"" + dir + "\"").trimmed();
     qDebug() << "detected partition" << part_type << "supported part:" << supported_partitions.contains(part_type);
     return supported_partitions.contains(part_type);
 }
@@ -459,14 +459,14 @@ void Settings::loadConfig()
 
     session_excludes = "";
     snapshot_dir = settings.value("snapshot_dir", "/home/snapshot").toString();
+    if (not snapshot_dir.endsWith("/snapshot")) snapshot_dir += "/snapshot";
     snapshot_excludes.setFileName(settings.value("snapshot_excludes", "/usr/local/share/excludes/mx-snapshot-exclude.list").toString());
     snapshot_basename = settings.value("snapshot_basename", "snapshot").toString();
     make_chksum = settings.value("make_md5sum", "no").toString() == "no" ? false : true;
     make_isohybrid = settings.value("make_isohybrid", "yes").toString() == "yes" ? true : false;
     compression = settings.value("compression", "lz4").toString();
     mksq_opt = settings.value("mksq_opt").toString();
-    edit_boot_menu = settings.value("edit_boot_menu", "no").toString() == "no" ? false : true;
-    lib_mod_dir = settings.value("lib_mod_dir", "/lib/modules/").toString();
+    edit_boot_menu = settings.value("edit_boot_menu", "no").toString() == "no" ? false : true;    
     gui_editor.setFileName(settings.value("gui_editor", "/usr/bin/featherpad").toString());
     stamp = settings.value("stamp").toString();
     force_installer = settings.value("force_installer", "true").toBool();
@@ -489,7 +489,7 @@ void Settings::otherExclusions()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     // add exclusions snapshot and work dirs
-    addRemoveExclusion(true, snapshot_dir.absolutePath());
+    addRemoveExclusion(true, snapshot_dir);
     addRemoveExclusion(true, work_dir);
 
     if (reset_accounts) {
@@ -506,7 +506,7 @@ void Settings::processArgs(const QCommandLineParser &arg_parser)
     kernel = arg_parser.value("kernel");
     preempt = arg_parser.isSet("preempt");
     if (!arg_parser.value("directory").isEmpty() && QFileInfo::exists(arg_parser.value("directory")))
-        snapshot_dir.setPath(arg_parser.value("directory") + "/snapshot");
+        snapshot_dir = arg_parser.value("directory") + "/snapshot";
     if (!arg_parser.value("file").isEmpty())
         snapshot_name = arg_parser.value("file") + (arg_parser.value("file").endsWith(".iso") ? QString() : ".iso");
     else

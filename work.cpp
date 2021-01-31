@@ -50,11 +50,11 @@ void Work::checkEnoughSpace()
     quint64 adjusted_root = settings->root_size * c_factor / 100;
     // if snapshot and workdir are on the same partition we need about double the size of adjusted_root
     if (settings->shell->getCmdOut("stat -c '%d' " + settings->work_dir) ==
-            settings->shell->getCmdOut("stat -c '%d' " + settings->snapshot_dir.absolutePath())) {
+            settings->shell->getCmdOut("stat -c '%d' " + settings->snapshot_dir)) {
         if (settings->free_space < adjusted_root * 2) {
             emit messageBox(BoxType::critical, tr("Error"),
                             tr("There's not enough free space on your targed disk, you need at least %1").arg(QString::number(adjusted_root * 2 / 1048576.0, 'f', 2) + "GiB" ) + "\n" +
-                            tr("You have %1 free space on %2").arg(QString::number(settings->free_space / 1048576.0, 'f', 2) + "GiB").arg(settings->snapshot_dir.path()));
+                            tr("You have %1 free space on %2").arg(QString::number(settings->free_space / 1048576.0, 'f', 2) + "GiB").arg(settings->snapshot_dir));
             cleanUp();
         }
     } else { // if not on the same partitions, check if each work_dir and snapshot_dir partitions have enough free space for 1 adjusted_root
@@ -67,7 +67,7 @@ void Work::checkEnoughSpace()
         if (settings->free_space < adjusted_root) {
             emit messageBox(BoxType::critical, tr("Error"),
                             tr("There's not enough free space on your targed disk, you need at least %1").arg(QString::number(adjusted_root * 2 / 1048576.0, 'f', 2) + "GiB") + "\n" +
-                            tr("You have %1 free space on %2").arg(QString::number(settings->free_space / 1048576.0, 'f', 2) + "GiB").arg(settings->snapshot_dir.path()));
+                            tr("You have %1 free space on %2").arg(QString::number(settings->free_space / 1048576.0, 'f', 2) + "GiB").arg(settings->snapshot_dir));
             cleanUp();
         }
     }
@@ -220,27 +220,27 @@ bool Work::createIso(const QString &filename)
     // create the iso file
     QDir::setCurrent(settings->work_dir + "/iso-template");
     cmd = "xorriso -as mkisofs -l -V MXLIVE -R -J -pad -iso-level 3 -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin  -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot -c boot/isolinux/isolinux.cat -o \"" +
-            settings->snapshot_dir.absolutePath() + "/" + filename + "\" . \""  + settings->work_dir + "/iso-2\"";
+            settings->snapshot_dir + "/" + filename + "\" . \""  + settings->work_dir + "/iso-2\"";
     emit message(tr("Creating CD/DVD image file..."));
     if (!settings->shell->run(cmd)) {
         emit messageBox(BoxType::critical, tr("Error"), tr("Could not create ISO file, please check whether you have enough space on the destination partition."));
         return false;
     }
-    system("chown $(logname):$(logname) \"" + settings->snapshot_dir.absolutePath().toUtf8() + "/" + filename.toUtf8( )+ "\"");
+    system("chown $(logname):$(logname) \"" + settings->snapshot_dir.toUtf8() + "/" + filename.toUtf8( )+ "\"");
 
     // make it isohybrid
     if (settings->make_isohybrid) {
         emit message(tr("Making hybrid iso"));
-        cmd = "isohybrid --uefi \"" + settings->snapshot_dir.absolutePath() + "/" + filename + "\"";
+        cmd = "isohybrid --uefi \"" + settings->snapshot_dir + "/" + filename + "\"";
         settings->shell->run(cmd);
     }
 
     // make ISO checksums
     if (settings->make_chksum) {
-        makeChecksum(HashType::md5, settings->snapshot_dir.absolutePath(), filename);
-        makeChecksum(HashType::sha512, settings->snapshot_dir.absolutePath(), filename);
-        system("chown $(logname):$(logname) \"" + settings->snapshot_dir.absolutePath().toUtf8() + "/" + filename.toUtf8() + ".md5\"");
-        system("chown $(logname):$(logname) \"" + settings->snapshot_dir.absolutePath().toUtf8() + "/" + filename.toUtf8() + ".sha512\"");
+        makeChecksum(HashType::md5, settings->snapshot_dir, filename);
+        makeChecksum(HashType::sha512, settings->snapshot_dir, filename);
+        system("chown $(logname):$(logname) \"" + settings->snapshot_dir.toUtf8() + "/" + filename.toUtf8() + ".md5\"");
+        system("chown $(logname):$(logname) \"" + settings->snapshot_dir.toUtf8() + "/" + filename.toUtf8() + ".sha512\"");
     }
 
     QTime time(0, 0);

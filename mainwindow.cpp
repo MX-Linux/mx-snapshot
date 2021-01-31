@@ -67,7 +67,7 @@ MainWindow::~MainWindow()
 void MainWindow::loadSettings()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    ui->labelSnapshotDir->setText(snapshot_dir.absolutePath());
+    ui->labelSnapshotDir->setText(snapshot_dir);
     if (snapshot_name.isEmpty())
         ui->lineEditName->setText(getFilename());
     else
@@ -140,7 +140,7 @@ void MainWindow::listUsedSpace()
 void MainWindow::listFreeSpace()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    QString path = snapshot_dir.absolutePath().remove("/snapshot");
+    QString path = snapshot_dir.remove("/snapshot");
     QString free_space = getFreeSpaceStrings(path);
     ui->labelFreeSpace->clear();
     ui->labelFreeSpace->setText("- " + tr("Free space on %1, where snapshot folder is placed: ").arg(path) + free_space + "\n");
@@ -260,7 +260,7 @@ void MainWindow::on_buttonNext_clicked()
         selectKernel();
         ui->label_1->setText(tr("Snapshot will use the following settings:*"));
 
-        ui->label_2->setText("\n" + tr("- Snapshot directory:") + " " + snapshot_dir.absolutePath() + "\n" +
+        ui->label_2->setText("\n" + tr("- Snapshot directory:") + " " + snapshot_dir + "\n" +
                        "- " + tr("Snapshot name:") + " " + file_name + "\n" +
                        tr("- Kernel to be used:") + " " + kernel + "\n");
 
@@ -275,11 +275,11 @@ void MainWindow::on_buttonNext_clicked()
         work.started = true;
         work.e_timer.start();
         if (!checkSnapshotDir()) {
-            QMessageBox::critical(this, tr("Error"), tr("Could not create working directory. ") + snapshot_dir.absolutePath());
+            QMessageBox::critical(this, tr("Error"), tr("Could not create working directory. ") + snapshot_dir);
             cleanUp();
         }
         if (!checkTempDir()) {
-            QMessageBox::critical(this, tr("Error"), tr("Could not create temporary directory. ") + snapshot_dir.absolutePath());
+            QMessageBox::critical(this, tr("Error"), tr("Could not create temporary directory. ") + snapshot_dir);
             cleanUp();
         }
         if (not monthly) work.checkEnoughSpace();
@@ -417,8 +417,8 @@ void MainWindow::on_buttonSelectSnapshot_clicked()
 
     QString selected = dialog.getExistingDirectory(this, tr("Select Snapshot Directory"), QString(), QFileDialog::ShowDirsOnly);
     if (!selected.isEmpty()) {
-        snapshot_dir.setPath(selected + "/snapshot");
-        ui->labelSnapshotDir->setText(snapshot_dir.absolutePath());
+        snapshot_dir = selected + "/snapshot";
+        ui->labelSnapshotDir->setText(snapshot_dir);
         listFreeSpace();
     }
 }
