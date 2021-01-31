@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sun, 31 Jan 2021 15:46:40 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 21.1.04
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (21.1.04) mx; urgency=medium
+ .
+   * fix: size conversion
+Checksums-Sha1:
+ 311002575888c28e3fbe7fca17944e248ca90774 1175 mx-snapshot_21.1.04.dsc
+ aa74b2267c32f63ad71d04fc550404c57a7055a3 184800 mx-snapshot_21.1.04.tar.xz
+ 97b12314e4cf7e2e7f0cf54576772bea8cccd597 1396734 mx-snapshot-dbgsym_21.1.04_amd64.deb
+ 3c4653d6d959fb3f8631f488bed11ce54ca7eea8 10721 mx-snapshot_21.1.04_amd64.buildinfo
+ 776568bd01ca2219a23131a9646f4009e4bbd05b 236660 mx-snapshot_21.1.04_amd64.deb
+Checksums-Sha256:
+ 8036392f1345cc6dcc3cca699b4eac8e84f50d41a5376d31cc5742b78f6da0e5 1175 mx-snapshot_21.1.04.dsc
+ 9431c6263754795d5c1fd8c1f4e13bb8bf7b01e7a948836077cf0b4baad35332 184800 mx-snapshot_21.1.04.tar.xz
+ 746b7728cf78ecaf289a4537fbf533211ea8c5bd777dadf16767f0520df95d72 1396734 mx-snapshot-dbgsym_21.1.04_amd64.deb
+ 89f6cf297ee219565ccccc46ee2ed188c4c8ba84819b79aae95b9b87acee2e81 10721 mx-snapshot_21.1.04_amd64.buildinfo
+ 65494db1519863f2c2ac19975e01064300a60c06883eb9d139794e48fb6b8267 236660 mx-snapshot_21.1.04_amd64.deb
+Files:
+ 6c60ed2c4082450ca5ce93aecb110e34 1175 admin optional mx-snapshot_21.1.04.dsc
+ 32197fa34149c018fb1bbcf74359b149 184800 admin optional mx-snapshot_21.1.04.tar.xz
+ 62b29559caf5d928268762d575f54c74 1396734 debug extra mx-snapshot-dbgsym_21.1.04_amd64.deb
+ 9742455354a3e040ad3a617585147031 10721 admin optional mx-snapshot_21.1.04_amd64.buildinfo
+ 11213ca28ef45556a89bce672baf8a0e 236660 admin optional mx-snapshot_21.1.04_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmAXF64THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumGcvCAChUSv9/je0U4A2ZF0ktPNvSdrSl3Sr
+z/shihfhxT8jMmEbpAbKbveerUZ3g7h0DS/hjjRcUtBXBCFPM3QTtW5TZ/H5D8M7
+e/lXIIH7b2Iqj2Ca/4DXeFEAO3k0HJYI3Ng9XNdK6bWBY4QKwhw/iIBW/dnVt1VM
+BiK47V8jv9AKDJ+rAA6yVz6QGwY2zK+TXdTl8LuTqxRlrbUBMpB7CR+hCZl3Zc9A
+tHy0M/I6mApTRDxFNkKNpyjril4JM6OfoFL5B2mWgxlfWwKpMFhM3IaLF/EIetDR
+7qsjBCcwk6NNy5vaRaIIhtRp16qP3ixYA4t8MjdV3BWYXZYrd6IdAiDj
+=K3eB
+-----END PGP SIGNATURE-----

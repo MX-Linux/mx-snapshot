@@ -1,3 +1,9 @@
+mx-snapshot (21.1.04) mx; urgency=medium
+
+  * fix: size conversion
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 31 Jan 2021 15:46:40 -0500
+
 mx-snapshot (21.1.03) mx; urgency=medium
 
   * make sure to add "/snapshot" to the snapshot dir
