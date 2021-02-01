@@ -613,7 +613,7 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../batchprocessing.cpp" line="53"/>
+        <location filename="../batchprocessing.cpp" line="54"/>
         <source>The program will pause the build and open the boot menu in your text editor.</source>
         <translation type="unfinished"></translation>
     </message>

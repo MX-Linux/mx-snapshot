@@ -1,3 +1,9 @@
+mx-snapshot (21.2) mx; urgency=medium
+
+  * fix: use regular expression to remove /snapshot name
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 01 Feb 2021 11:27:48 -0500
+
 mx-snapshot (21.1.04) mx; urgency=medium
 
   * fix: size conversion
