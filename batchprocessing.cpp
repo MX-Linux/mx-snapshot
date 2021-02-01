@@ -23,6 +23,7 @@
  **********************************************************************/
 
 #include <QDebug>
+#include <QRegularExpression>
 
 #include "batchprocessing.h"
 #include "work.h"
@@ -34,7 +35,7 @@ Batchprocessing::Batchprocessing(const QCommandLineParser &arg_parser) :
     connect(qApp, &QCoreApplication::aboutToQuit, [this] { work.cleanUp(); });
     setConnections();
     QString path = snapshot_dir;
-    getFreeSpaceStrings(path.remove("/snapshot"));
+    getFreeSpaceStrings(path.remove(QRegularExpression("/snapshot$")));
     if (not arg_parser.isSet("month")) getUsedSpace();
 
     work.started = true;
