@@ -78,9 +78,8 @@ bool Work::checkInstalled(const QString &package)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QString cmd = QString("dpkg -s %1 | grep Status").arg(package);
-    if (settings->shell->getCmdOut(cmd) == "Status: install ok installed") {
+    if (settings->shell->getCmdOut(cmd) == "Status: install ok installed")
         return true;
-    }
     return false;
 }
 
@@ -282,9 +281,8 @@ void Work::makeChecksum(const HashType &hash_type, const QString &folder, const 
     if (settings->preempt) {
         // check free space available on /tmp
         settings->shell->run("TF=/tmp/snapsphot-checksum-temp/\"" + file_name + "\"; [ -f \"$TF\" ] && rm -f \"$TF\"");
-        if (!settings->shell->run("DUF=$(du -BM " + file_name + "| grep -oE '^[[:digit:]]+'); TDA=$(df -BM --output=avail /tmp | grep -oE '^[[:digit:]]+'); ((TDA/10*8 >= DUF))")) {
+        if (!settings->shell->run("DUF=$(du -BM " + file_name + "| grep -oE '^[[:digit:]]+'); TDA=$(df -BM --output=avail /tmp | grep -oE '^[[:digit:]]+'); ((TDA/10*8 >= DUF))"))
             settings->preempt = false;
-        }
     }
     if (!settings->preempt) {
         cmd = checksum_cmd;
@@ -405,9 +403,8 @@ void Work::setupEnv()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     // checks if work_dir looks OK
-    if (!settings->work_dir.contains("/mx-snapshot")) {
+    if (!settings->work_dir.contains("/mx-snapshot"))
         cleanUp();
-    }
 
     QString bind_boot = "";
     QString bind_boot_too = "";
@@ -417,9 +414,8 @@ void Work::setupEnv()
     }
 
     // install mx-installer if absent
-    if (settings->force_installer && !checkInstalled("mx-installer")) {
+    if (settings->force_installer && !checkInstalled("mx-installer"))
         installPackage("mx-installer");
-    }
 
     writeSnapshotInfo();
 
@@ -442,9 +438,9 @@ void Work::setupEnv()
 void Work::writeSnapshotInfo()
 {
     QFile file("/usr/local/share/live-files/files/etc/snapshot_created");
-    if (!file.open(QFile::WriteOnly | QFile::Truncate)) {
+    if (!file.open(QFile::WriteOnly | QFile::Truncate))
         return;
-    }
+
     QTextStream stream(&file);
     stream << QDateTime::currentDateTime().toString("yyyyMMdd_HHmm");
     file.close();

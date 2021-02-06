@@ -237,11 +237,10 @@ void MainWindow::progress()
 
     // in live environment and first page, blink text while calculating used disk space
     if (live && (ui->stackedWidget->currentIndex() == 0)) {
-        if (ui->progressBar->value() % 4 == 0 ) {
+        if (ui->progressBar->value() % 4 == 0 )
             ui->labelUsedSpace->setText("\n " + tr("Please wait."));
-        } else {
+        else
             ui->labelUsedSpace->setText("\n " + tr("Please wait. Calculating used disk space..."));
-        }
     }
 }
 
@@ -378,9 +377,9 @@ void MainWindow::on_radioRespin_toggled(bool checked)
 void MainWindow::on_radioPersonal_clicked(bool checked)
 {
     reset_accounts = !checked;
-    if (checked) {
-        if (ui->excludeAll->isChecked()) ui->excludeAll->click();
-    }
+    if (checked)
+        if (ui->excludeAll->isChecked())
+            ui->excludeAll->click();
 }
 
 
@@ -405,9 +404,8 @@ void MainWindow::on_buttonHelp_clicked()
 
     QString url = "/usr/share/doc/mx-snapshot/mx-snapshot.html";
 
-    if (lang.startsWith("fr")) {
+    if (lang.startsWith("fr"))
         url = "https://mxlinux.org/french-wiki/help-files-fr/help-mx-instantane";
-    }
     displayDoc(url, tr("%1 Help").arg(this->windowTitle()), true);
 }
 
@@ -427,9 +425,8 @@ void MainWindow::on_buttonSelectSnapshot_clicked()
 // process keystrokes
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
-    if (event->key() == Qt::Key_Escape) {
+    if (event->key() == Qt::Key_Escape)
         closeApp();
-    }
 }
 
 // close application

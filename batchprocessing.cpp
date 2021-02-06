@@ -36,18 +36,19 @@ Batchprocessing::Batchprocessing(const QCommandLineParser &arg_parser) :
     setConnections();
     QString path = snapshot_dir;
     getFreeSpaceStrings(path.remove(QRegularExpression("/snapshot$")));
-    if (not arg_parser.isSet("month")) getUsedSpace();
+    if (not arg_parser.isSet("month"))
+        getUsedSpace();
 
     work.started = true;
     work.e_timer.start();
-    if (!checkSnapshotDir() || !checkTempDir()) {
+    if (!checkSnapshotDir() || !checkTempDir())
         work.cleanUp();
-    }
     if (not arg_parser.isSet("month")) work.checkEnoughSpace();
     otherExclusions();
 
     work.copyNewIso();
-    if (!work.mkDir(snapshot_name)) work.cleanUp();
+    if (!work.mkDir(snapshot_name))
+        work.cleanUp();
     work.savePackageList(snapshot_name);
 
     if (edit_boot_menu) {

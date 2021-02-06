@@ -51,37 +51,32 @@ Settings::~Settings()
 // check if compression is available in the kernel (lz4, lzo, xz)
 bool Settings::checkCompression()
 {
-    if (QFileInfo::exists("/boot/config-" + kernel)) { // return true if cannot check config file
+    if (QFileInfo::exists("/boot/config-" + kernel)) // return true if cannot check config file
         return true;
-    }
-    if (compression == "lz4") {
+
+    if (compression == "lz4")
         return (shell->run("grep ^CONFIG_SQUASHFS_LZ4=y /boot/config-" + kernel.toUtf8()));
-    } else if (compression == "xz") {
+    else if (compression == "xz")
         return (shell->run("grep ^CONFIG_SQUASHFS_XZ=y /boot/config-" + kernel.toUtf8()));
-    } else if (compression == "lzo") {
+    else if (compression == "lzo")
         return (shell->run("grep ^CONFIG_SQUASHFS_LZO=y /boot/config-" + kernel.toUtf8()));
-    } else {
-        return true;
-    }
+    return true;
 }
 
 // adds or removes exclusion to the exclusion string
 void Settings::addRemoveExclusion(bool add, QString exclusion)
 {
-    if (exclusion.startsWith("/")) {
+    if (exclusion.startsWith("/"))
         exclusion.remove(0, 1); // remove preceding slash
-    }
     if (add) {
-        if (session_excludes.isEmpty()) {
+        if (session_excludes.isEmpty())
             session_excludes.append("-e \"" + exclusion + "\"");
-        } else {
+        else
             session_excludes.append(" \"" + exclusion + "\"");
-        }
     } else {
         session_excludes.remove(" \"" + exclusion + "\"");
-        if (session_excludes == "-e") {
+        if (session_excludes == "-e")
             session_excludes = "";
-        }
     }
 }
 
@@ -95,11 +90,10 @@ bool Settings::checkSnapshotDir()
     system("chown $(logname):$(logname) \"/" + snapshot_dir.toUtf8() + "\"");
     // Create a work_dir
     tempdir_parent = snapshot_dir;
-    if (!isOnSupportedPart(snapshot_dir)) { // if not saving snapshot on a Linux partition put working dir in /tmp or /home
+    if (!isOnSupportedPart(snapshot_dir)) // if not saving snapshot on a Linux partition put working dir in /tmp or /home
         tempdir_parent = largerFreeSpace("/tmp", "/home");
-    } else {
+    else
         tempdir_parent = largerFreeSpace("/tmp", "/home", snapshot_dir);
-    }
     return true;
 }
 
@@ -148,9 +142,8 @@ QString Settings::getSnapshotSize()
     if (QFileInfo::exists(snapshot_dir)) {
         QString cmd = QString("find \"%1\" -maxdepth 1 -type f -name '*.iso' -exec du -shc {} + |tail -1 |awk '{print $1}'").arg(snapshot_dir);
         size = shell->getCmdOut(cmd);
-        if (!size.isEmpty()) {
+        if (!size.isEmpty())
             return size;
-        }
     }
     return "0";
 }
@@ -185,12 +178,10 @@ QString Settings::getXdgUserDirs(const QString& folder)
         QString dir;
         bool success = shell->run("runuser -l " + user + " -c \"xdg-user-dir " + folder + "\"", dir);
         if (success) {
-            if (englishDirs.value(folder) == dir.section("/", -1) || dir.trimmed() == "/home/" + user || dir.trimmed() == "/home/" + user + "/" || dir.isEmpty()) { // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
+            if (englishDirs.value(folder) == dir.section("/", -1) || dir.trimmed() == "/home/" + user || dir.trimmed() == "/home/" + user + "/" || dir.isEmpty()) // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
                 continue;
-            }
-            if (dir.startsWith("/")) {
+            if (dir.startsWith("/"))
                 dir.remove(0, 1); // remove training slash
-            }
             (folder == "DESKTOP") ? dir.append("/!(minstall.desktop)") : dir.append("/*\" \"" + dir + "/.*");
             (result.isEmpty()) ? result.append("\" \"" + dir) : result.append(" \"" + dir);
             result.append("\""); // close the quote for each user, will strip the last one before returning;
@@ -279,9 +270,8 @@ quint64 Settings::getLiveRootSpace()
 
     quint64 rootfs_file_size = 0;
     quint64 linuxfs_file_size = shell->getCmdOut("df -k /live/linux --output=used --total |tail -n1").toULongLong() * 100 / c_factor;
-    if (QFileInfo::exists("/live/persist-root")) {
+    if (QFileInfo::exists("/live/persist-root"))
         rootfs_file_size = shell->getCmdOut("df -k /live/persist-root --output=used --total |tail -n1").toULongLong();
-    }
 
     // add rootfs file size to the calculated linuxfs file size.  probaby conservative, as rootfs will likely have some overlap with linuxfs
     return linuxfs_file_size + rootfs_file_size;
@@ -465,7 +455,7 @@ void Settings::loadConfig()
     make_isohybrid = settings.value("make_isohybrid", "yes").toString() == "yes" ? true : false;
     compression = settings.value("compression", "lz4").toString();
     mksq_opt = settings.value("mksq_opt").toString();
-    edit_boot_menu = settings.value("edit_boot_menu", "no").toString() == "no" ? false : true;    
+    edit_boot_menu = settings.value("edit_boot_menu", "no").toString() == "no" ? false : true;
     gui_editor.setFileName(settings.value("gui_editor", "/usr/bin/featherpad").toString());
     stamp = settings.value("stamp").toString();
     force_installer = settings.value("force_installer", "true").toBool();
@@ -494,9 +484,8 @@ void Settings::otherExclusions()
     if (reset_accounts) {
         addRemoveExclusion(true, "/etc/minstall.conf");
         // exclude /etc/localtime if link and timezone not America/New_York
-        if (shell->run("test -L /etc/localtime") && shell->getCmdOut("cat /etc/timezone") != "America/New_York" ) {
+        if (shell->run("test -L /etc/localtime") && shell->getCmdOut("cat /etc/timezone") != "America/New_York" )
             addRemoveExclusion(true, "/etc/localtime");
-        }
     }
 }
 
@@ -527,9 +516,9 @@ void Settings::processExclArgs(const QCommandLineParser &arg_parser)
     if(!arg_parser.values("exclude").isEmpty()) {
         QStringList options = arg_parser.values("exclude");
         QStringList valid_options {"Desktop", "Documents", "Downloads", "Music", "Networks", "Pictures", "Videos"};
-        for (const QString &option : options ) {
-            if (valid_options.contains(option)) excludeItem(option);
-        }
+        for (const QString &option : options )
+            if (valid_options.contains(option))
+                excludeItem(option);
     }
 }
 
