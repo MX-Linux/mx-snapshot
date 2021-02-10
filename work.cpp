@@ -53,20 +53,20 @@ void Work::checkEnoughSpace()
             settings->shell->getCmdOut("stat -c '%d' " + settings->snapshot_dir)) {
         if (settings->free_space < adjusted_root * 2) {
             emit messageBox(BoxType::critical, tr("Error"),
-                            tr("There's not enough free space on your targed disk, you need at least %1").arg(QString::number(adjusted_root * 2 / 1048576.0, 'f', 2) + "GiB" ) + "\n" +
+                            tr("There's not enough free space on your target disk, you need at least %1").arg(QString::number(adjusted_root * 2 / 1048576.0, 'f', 2) + "GiB" ) + "\n" +
                             tr("You have %1 free space on %2").arg(QString::number(settings->free_space / 1048576.0, 'f', 2) + "GiB").arg(settings->snapshot_dir));
             cleanUp();
         }
     } else { // if not on the same partitions, check if each work_dir and snapshot_dir partitions have enough free space for 1 adjusted_root
         if (settings->free_space_work < adjusted_root) {
             emit messageBox(BoxType::critical, tr("Error"),
-                            tr("There's not enough free space on your targed disk, you need at least %1").arg(QString::number(adjusted_root * 2 / 1048576.0, 'f', 2) + "GiB") + "\n" +
+                            tr("There's not enough free space on your target disk, you need at least %1").arg(QString::number(adjusted_root * 2 / 1048576.0, 'f', 2) + "GiB") + "\n" +
                             tr("You have %1 free space on %2").arg(QString::number(settings->free_space_work / 1048576.0, 'f', 2) + "GiB").arg(settings->work_dir));
             cleanUp();
         }
         if (settings->free_space < adjusted_root) {
             emit messageBox(BoxType::critical, tr("Error"),
-                            tr("There's not enough free space on your targed disk, you need at least %1").arg(QString::number(adjusted_root * 2 / 1048576.0, 'f', 2) + "GiB") + "\n" +
+                            tr("There's not enough free space on your target disk, you need at least %1").arg(QString::number(adjusted_root * 2 / 1048576.0, 'f', 2) + "GiB") + "\n" +
                             tr("You have %1 free space on %2").arg(QString::number(settings->free_space / 1048576.0, 'f', 2) + "GiB").arg(settings->snapshot_dir));
             cleanUp();
         }
