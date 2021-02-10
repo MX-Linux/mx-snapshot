@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
     parser.addOption({{"d", "directory"}, QObject::tr("Output directory"), QObject::tr("path")});
     parser.addOption({{"f", "file"}, QObject::tr("Output filename"), QObject::tr("name")});
     parser.addOption({{"k", "kernel"}, QObject::tr("Name a different kernel to use other than the default running kernel, use format returned by 'uname -r'") + " " +
-                      QObject::tr("Or the full path: %1").arg("/boot/vmlinuz-x.xx.x..."), QObject::tr("ver, or path")});
+                      QObject::tr("Or the full path: %1").arg("/boot/vmlinuz-x.xx.x..."), QObject::tr("version, or path")});
     parser.addOption({{"m", "month"}, QObject::tr("Create a monthly snapshot, add 'Month' name in the ISO name, skip used space calculation") + " " +
                      QObject::tr("This option sets reset-accounts and compression to defaults, arguments changing those items will be ignored")});
     parser.addOption({{"n", "no-checksums"}, QObject::tr("Don't calculate checksums for resulting ISO file")});
