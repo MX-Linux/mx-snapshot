@@ -1,0 +1,77 @@
+.\" Manpage for mx-snapshot.
+.\" Contact adrian@mxlinux.org to correct errors or typos.
+.TH man 8 "Feb 2021" "1.0" "mx-snapshot man page"
+.SH NAME
+mx-snapshot \- create functional live snapshots from a Linux (antix or MX compatible) running system.
+.SH SYNOPSIS
+mx-snapshot [options]
+.SH DESCRIPTION
+Program used for creating functional ISO images from the running system. You can later on install/burn the ISO image on a USB flashdrive or a DVD (depending on the size of the image). Use MX Live USB Maker (GUI) or live-usb-maker (CLI tool) to burn the resulting image.
+
+The tool has basically two different modes:
+  - Preserving accounts -- used for full backups and reinstallations. Takes a full image, includes user accounts and documents in /home folder (By default, to save space, it excludes ~/.VirtualBox folder).
+  - Reset accounts -- for ISOs meant to be distributed to others. It doesn't save user account info, network settings, and doesn't save any files in /home folder. The resulting ISO is as close as possible to the official release with the difference that you can customize it by updating, installing, or removing programs and changing global settings (typically files in /etc/ folder).
+
+By default the program starts with a GUI (program window), it can run in terminal (CLI) if launched with -c or --cli option.
+
+.SH WARNING
+This tool is not actively tested on any other systems, it might or might not work, it might or might not break things. Basically, we don't recommend it for anything other than MX or antiX compatible systems.
+
+.SH OPTIONS
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Displays this help.
+.TP
+\fB\-v\fR, \fB\-\-version\fR
+Displays version information.
+.TP
+\fB\-c\fR, \fB\-\-cli\fR
+Use CLI only
+.TP
+\fB\-d\fR, \fB\-\-directory\fR <path>
+Output directory
+.TP
+\fB\-f\fR, \fB\-\-file\fR <name>
+Output filename
+.TP
+\fB\-k\fR, \fB\-\-kernel\fR <ver, or path>
+Name a different kernel to use other than the
+default running kernel, use format returned by
+\&'uname \fB\-r\fR' Or the full path:
+\fI\,/boot/vmlinuz\-x.xx.x\/\fP...
+.TP
+\fB\-m\fR, \fB\-\-month\fR
+Create a monthly snapshot, add 'Month' name in
+the ISO name, skip used space calculation This
+option sets reset\-accounts and compression to
+defaults, arguments changing those items will be
+ignored
+.TP
+\fB\-n\fR, \fB\-\-no\-checksums\fR
+Don't calculate checksums for resulting ISO file
+.TP
+\fB\-p\fR, \fB\-\-preempt\fR
+Option to fix issue with calculating checksums
+on preempt_rt kernels
+.TP
+\fB\-r\fR, \fB\-\-reset\fR
+Resetting accounts (for distribution to others)
+.TP
+\fB\-s\fR, \fB\-\-checksums\fR
+Calculate checksums for resulting ISO file
+.TP
+\fB\-x\fR, \fB\-\-exclude\fR <one item>
+Exclude main folders, valid choices: Desktop,
+Documents, Downloads, Music, Networks, Pictures,
+Videos. Use the option one time for each item you
+want to exclude
+.TP
+\fB\-z\fR, \fB\-\-compression\fR <format>
+Compression format, valid choices: lz4, lzo,
+gzip, xz
+
+
+.SH SEE ALSO
+mx-live-usb-maker -- writes created ISOs to USB flashdrives 
+.SH AUTHOR
+adrian@mxlinux.org

@@ -1,3 +1,9 @@
+mx-snapshot (21.2.01) mx; urgency=medium
+
+  * add man page
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 24 Feb 2021 19:04:48 -0500
+
 mx-snapshot (21.2) mx; urgency=medium
 
   * fix: use regular expression to remove /snapshot name

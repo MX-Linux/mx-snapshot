@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 24 Feb 2021 19:04:48 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 21.2.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (21.2.01) mx; urgency=medium
+ .
+   * add man page
+Checksums-Sha1:
+ 688f594b247301ca2a59523261f782a6e630a303 1175 mx-snapshot_21.2.01.dsc
+ 91c015934a5a9213c6e8cf9603b3b769a9c9b57c 185888 mx-snapshot_21.2.01.tar.xz
+ 1c6ccdbbd4718ffa5912df80add836002e1921cc 10444 mx-snapshot_21.2.01_amd64.buildinfo
+ 28bb39c52411b810ebbebc0f346b463b81633b30 237994 mx-snapshot_21.2.01_amd64.deb
+Checksums-Sha256:
+ 567ce7e6d636ed541541994f23e73b69122cedf23394634802a29986b4e27f6e 1175 mx-snapshot_21.2.01.dsc
+ 9c79a4e75dba5603dc496004c992dfa6614ecc661b10fda6c8440c26a4e7ea0d 185888 mx-snapshot_21.2.01.tar.xz
+ 2f16cde2b027833c309c9c3e5f9feb3260bc190daeb2a49c325cdd2743d3e24a 10444 mx-snapshot_21.2.01_amd64.buildinfo
+ d5329ec82bf522189d28c7918f1d93211572e076ec5b1d7451935b4183e4dc79 237994 mx-snapshot_21.2.01_amd64.deb
+Files:
+ 9bf38b12beb85406fb031ef1646182bd 1175 admin optional mx-snapshot_21.2.01.dsc
+ 06549356822ba7ec022a968c1620bcb3 185888 admin optional mx-snapshot_21.2.01.tar.xz
+ 6395f7802ebb5564d1a8c03b9ca8e13f 10444 admin optional mx-snapshot_21.2.01_amd64.buildinfo
+ 9d0e9448ff4507743e6bd764ed365162 237994 admin optional mx-snapshot_21.2.01_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmA269ITHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumId7B/9B488JadVPqP7rpLG665v/cDOF0nI2
+mBcXt5c8ocCUOH75N/FjXi5LEfG4Fk1pIUssnUaO1iqTftZC5CNOzP6N6QpZl5VM
+wfgF4d/F12YR8kYDf/yM7L/RTybPgA6gWwTGVfQ2hdONDNLMNMTYk1ZFO+hqfMLc
+RMaIX4EgOafRDSuzMLMNxie9vbebxWc0lTKhFyjG292xxZ4OuHE0y6tVRIlPI24J
+8Jr+XfsXOpPU+VARlfKbRyWAEw7QD/5RifXsYyjdjIx9dGxnBJY5eJN+oVSUC5rc
+6I8Dt52wDK9HC2szesORPEyuSDksiSHjdb6RYzOQgtJNObv2CjLUAQdr
+=58Mv
+-----END PGP SIGNATURE-----
