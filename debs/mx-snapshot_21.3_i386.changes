@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 01 Mar 2021 20:13:28 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 21.3
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (21.3) mx; urgency=medium
+ .
+   * don't copy it /etc/skel if xdg-user-dirs-update.real exists
+Checksums-Sha1:
+ bd3b2af2d8802d0ff0ba5dd59b8b3e3b0c237196 10126 mx-snapshot_21.3_i386.buildinfo
+ bd216eb128cb1e5e9ea2f0474b8c752167226618 243730 mx-snapshot_21.3_i386.deb
+Checksums-Sha256:
+ c9127318f34dbec50c72bcc7e537c0c0c6f6d9985d5150ad0a4b4c9d0b40767e 10126 mx-snapshot_21.3_i386.buildinfo
+ 1c70ca2c282ecc065699d2f2b3fe5634db6293650d56016b02165d9fa75ad61d 243730 mx-snapshot_21.3_i386.deb
+Files:
+ b671e367228d86b36404078eb1e6732c 10126 admin optional mx-snapshot_21.3_i386.buildinfo
+ 787feca9a1d2983d6f7f09cdc1d38615 243730 admin optional mx-snapshot_21.3_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmA9llUTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumOkvCACUbjDrNNDAmObodxdt9TB08jAVwVpy
+ielc5ZwoIasQ/rAWO4aYD7Hf5DvLx8Jhw+9KXNGJ2i2Lx3c0yZhtnG3kqcT2iIf4
+hV5EMBw4UO3KsFvO7OxzdgHmdJAWXySN8gq05Pn+rDguCwJbSdBHWMKTWXEXGHoF
+NTmqCTkSw2n6hBfq9KQhTS+UJ7BKL1iYEQ0sJ02Nm9MtYEuWVmC2mF7eDg8Ey16h
+m/KpVR328+XsVMzA0XPiUogzjGZ607XIYFB/YyjY5kryt1YebGcBy4jMYNj0tXsU
+muDdGIBAj8smuEQZex6tyrlDPslM58Maa82QdLytPIe2HntBdNN3SdmE
+=/uJt
+-----END PGP SIGNATURE-----

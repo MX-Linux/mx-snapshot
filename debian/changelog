@@ -1,3 +1,9 @@
+mx-snapshot (21.3) mx; urgency=medium
+
+  * don't copy it /etc/skel if xdg-user-dirs-update.real exists
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 01 Mar 2021 20:13:28 -0500
+
 mx-snapshot (21.2.01) mx; urgency=medium
 
   * add man page

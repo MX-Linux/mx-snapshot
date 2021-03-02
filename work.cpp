@@ -426,9 +426,11 @@ void Work::setupEnv()
         if (settings->force_installer) {  // copy minstall.desktop to Desktop on all accounts
             settings->shell->run("echo /home/*/Desktop | xargs -n1 cp /usr/share/applications/minstall.desktop 2>/dev/null");
             settings->shell->run("chmod 777 /home/*/Desktop/minstall.desktop"); // needs write access to remove lock symbol on installer on desktop, executable to run it
-            if (not QFile::exists("/etc/skel/Desktop")) QDir().mkdir("/etc/skel/Desktop");
-            QFile::copy("/usr/share/applications/minstall.desktop", "/etc/skel/Desktop/Installer.desktop");
-            settings->shell->run("chmod 755 /etc/skel/Desktop/Installer.desktop");
+            if (not QFile::exists("xdg-user-dirs-update.real")) {
+                if (not QFile::exists("/etc/skel/Desktop")) QDir().mkdir("/etc/skel/Desktop");
+                QFile::copy("/usr/share/applications/minstall.desktop", "/etc/skel/Desktop/Installer.desktop");
+                settings->shell->run("chmod 755 /etc/skel/Desktop/Installer.desktop");
+            }
         }
         settings->shell->run("installed-to-live -b /.bind-root start bind=/home" + bind_boot_too + " live-files version-file adjtime read-only");
     }
