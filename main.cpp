@@ -38,6 +38,7 @@
 #include <unistd.h>
 
 static QScopedPointer<QFile> logFile;
+static QTranslator qtTran, qtBaseTran, appTran;
 
 void checkSquashfs();
 void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
@@ -156,18 +157,15 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     out << context.category << QStringLiteral(": ") << msg << endl;
 }
 
-
 void setTranslation()
 {
-    QTranslator qtTran;
     if (qtTran.load(QLocale::system(), "qt", "_", QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         qApp->installTranslator(&qtTran);
 
-    QTranslator qtBaseTran;
+
     if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         qApp->installTranslator(&qtBaseTran);
 
-    QTranslator appTran;
     if (appTran.load(qApp->applicationName() + "_" + QLocale::system().name(), "/usr/share/" + qApp->applicationName() + "/locale"))
         qApp->installTranslator(&appTran);
 }

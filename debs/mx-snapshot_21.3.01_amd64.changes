@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Tue, 02 Mar 2021 17:36:03 -0500
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 21.3.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (21.3.01) mx; urgency=medium
+ .
+   * fix translation problem
+Checksums-Sha1:
+ c3a88c0a07bf957a0fa82e5b1d58ea108ef091f5 1175 mx-snapshot_21.3.01.dsc
+ 2f6bd0025c54e322a23d1fe2cfa2db0f5a883cdb 186012 mx-snapshot_21.3.01.tar.xz
+ e07edafc71371983a0bf04b2b3b2acb73448d467 10444 mx-snapshot_21.3.01_amd64.buildinfo
+ fc2765c430d51451e5bc4841e67f7ea094bbb39a 237942 mx-snapshot_21.3.01_amd64.deb
+Checksums-Sha256:
+ 24fefe6a26d726e5bf25b0931a784597c67c9df77c50d62627505b12d1717b06 1175 mx-snapshot_21.3.01.dsc
+ 88d01aadae6dbaf6973e161fa893d54ce4fb11c539b3419e8948844ca1936437 186012 mx-snapshot_21.3.01.tar.xz
+ 29ce1c6ae61f1e00ad5390c28098b76aa33a9ba87eb9423108c15cfd3611a0ca 10444 mx-snapshot_21.3.01_amd64.buildinfo
+ 0af62e2f680bdee0b2f5be759ee58780c1ba303f3cde8d5d4b92cfa47b6ee6c0 237942 mx-snapshot_21.3.01_amd64.deb
+Files:
+ 8527712ec9c46b280d990129371a2a93 1175 admin optional mx-snapshot_21.3.01.dsc
+ 0276726bca50ff43ee33bd1bf985d2bb 186012 admin optional mx-snapshot_21.3.01.tar.xz
+ 7a7e92726e755cf061eb3699fc8ce12d 10444 admin optional mx-snapshot_21.3.01_amd64.buildinfo
+ ad860b12ffb2955d44e21c2f12539a24 237942 admin optional mx-snapshot_21.3.01_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmA+viYTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumFJyCADXUIoaPddBICWmsGKepeKMc/M9MMmA
+gg1JPb4ae2qquofHLu0oSM3nhaUuJNRNmpB2e8ilUH5bESmZvikV8n/Uf/LQ1iFt
+Mhm3Qua0qn4/709OgZCJ4qqf4X7utuL+gXGAyUFEFSAxEMS4hJpfKZs7BdRHYhL8
+AEQigjrY9bR/nLGRQDhHt1cewsO59QFg6DcdWR+z97eVCnVcDnDf9d9ucBQRbVB4
+YImFUTNG6uJ+cfjwgyeIAfvaHdOSVZKQIr0Mhbxp65ZbBtU50dH84hVhP/iu/yzB
+LK+vj5Ens1Aroz5yuTtVZfmrRdilIOpY7wcuPXBaYTZztjphY84ISg7m
+=pvVV
+-----END PGP SIGNATURE-----

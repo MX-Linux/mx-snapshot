@@ -1,3 +1,9 @@
+mx-snapshot (21.3.01) mx; urgency=medium
+
+  * fix translation problem
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 02 Mar 2021 17:36:03 -0500
+
 mx-snapshot (21.3) mx; urgency=medium
 
   * don't copy it /etc/skel if xdg-user-dirs-update.real exists
