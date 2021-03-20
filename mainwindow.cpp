@@ -308,7 +308,7 @@ void MainWindow::on_buttonNext_clicked()
         work.setupEnv();
         displayOutput();
         work.createIso(file_name);
-        disableOutput();
+        qApp->quit();
     } else {
         qApp->quit();
     }
@@ -369,9 +369,8 @@ void MainWindow::on_excludeDesktop_toggled(bool checked)
 void MainWindow::on_radioRespin_toggled(bool checked)
 {
     reset_accounts = checked;
-    if (checked) {
-        if (not ui->excludeAll->isChecked()) ui->excludeAll->click();
-    }
+    if (checked and not ui->excludeAll->isChecked())
+        ui->excludeAll->click();
 }
 
 void MainWindow::on_radioPersonal_clicked(bool checked)
