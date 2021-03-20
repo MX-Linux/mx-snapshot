@@ -399,47 +399,47 @@ genom att avlägsna tidigare snapshots och sparade kopior:
         <translation type="vanished">Stäng</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="390"/>
+        <location filename="../mainwindow.cpp" line="388"/>
         <source>About %1</source>
         <translation>Om %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="391"/>
+        <location filename="../mainwindow.cpp" line="389"/>
         <source>Version: </source>
         <translation>Version:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="392"/>
+        <location filename="../mainwindow.cpp" line="390"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Program för att skapa en live-CD från systemet som körs för MX-Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="394"/>
+        <location filename="../mainwindow.cpp" line="392"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="395"/>
+        <location filename="../mainwindow.cpp" line="393"/>
         <source>%1 License</source>
         <translation>%1 Licens</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="409"/>
+        <location filename="../mainwindow.cpp" line="407"/>
         <source>%1 Help</source>
         <translation>%1 Hjälp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="../mainwindow.cpp" line="415"/>
         <source>Select Snapshot Directory</source>
         <translation>Välj Snapshot Katalog</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="436"/>
+        <location filename="../mainwindow.cpp" line="434"/>
         <source>Confirmation</source>
         <translation>Bekräftelse</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="436"/>
+        <location filename="../mainwindow.cpp" line="434"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Är du säker på att du vill avsluta programmet?</translation>
     </message>
@@ -617,7 +617,7 @@ genom att avlägsna tidigare snapshots och sparade kopior:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../batchprocessing.cpp" line="55"/>
+        <location filename="../batchprocessing.cpp" line="56"/>
         <source>The program will pause the build and open the boot menu in your text editor.</source>
         <translation type="unfinished"></translation>
     </message>

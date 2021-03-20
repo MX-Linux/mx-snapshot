@@ -43,7 +43,8 @@ Batchprocessing::Batchprocessing(const QCommandLineParser &arg_parser) :
     work.e_timer.start();
     if (!checkSnapshotDir() || !checkTempDir())
         work.cleanUp();
-    if (not arg_parser.isSet("month")) work.checkEnoughSpace();
+    if (not arg_parser.isSet("month"))
+        work.checkEnoughSpace();
     otherExclusions();
 
     work.copyNewIso();

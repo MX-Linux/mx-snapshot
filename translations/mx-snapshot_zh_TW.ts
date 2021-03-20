@@ -394,47 +394,47 @@
         <translation type="vanished">關閉</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="390"/>
+        <location filename="../mainwindow.cpp" line="388"/>
         <source>About %1</source>
         <translation>大約 %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="391"/>
+        <location filename="../mainwindow.cpp" line="389"/>
         <source>Version: </source>
         <translation>版本：</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="392"/>
+        <location filename="../mainwindow.cpp" line="390"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>本程式可將正在運作的 MX Linux 系統做成現場版 CD</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="394"/>
+        <location filename="../mainwindow.cpp" line="392"/>
         <source>Copyright (c) MX Linux</source>
         <translation>版權所有 (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="395"/>
+        <location filename="../mainwindow.cpp" line="393"/>
         <source>%1 License</source>
         <translation>%1 許可</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="409"/>
+        <location filename="../mainwindow.cpp" line="407"/>
         <source>%1 Help</source>
         <translation>%1 幫助</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="../mainwindow.cpp" line="415"/>
         <source>Select Snapshot Directory</source>
         <translation>選擇快照目錄</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="436"/>
+        <location filename="../mainwindow.cpp" line="434"/>
         <source>Confirmation</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="436"/>
+        <location filename="../mainwindow.cpp" line="434"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>真的要退出此程式嗎？</translation>
     </message>
@@ -608,7 +608,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../batchprocessing.cpp" line="55"/>
+        <location filename="../batchprocessing.cpp" line="56"/>
         <source>The program will pause the build and open the boot menu in your text editor.</source>
         <translation type="unfinished"></translation>
     </message>

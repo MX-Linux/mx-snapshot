@@ -399,47 +399,47 @@
         <translation type="vanished">Tanca</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="390"/>
+        <location filename="../mainwindow.cpp" line="388"/>
         <source>About %1</source>
         <translation>Quant a %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="391"/>
+        <location filename="../mainwindow.cpp" line="389"/>
         <source>Version: </source>
         <translation>Versió: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="392"/>
+        <location filename="../mainwindow.cpp" line="390"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Programa de MX Linux per crear un CD autònom a partir del sistema en execució </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="394"/>
+        <location filename="../mainwindow.cpp" line="392"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="395"/>
+        <location filename="../mainwindow.cpp" line="393"/>
         <source>%1 License</source>
         <translation>Llicència de %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="409"/>
+        <location filename="../mainwindow.cpp" line="407"/>
         <source>%1 Help</source>
         <translation>Ajuda de %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="417"/>
+        <location filename="../mainwindow.cpp" line="415"/>
         <source>Select Snapshot Directory</source>
         <translation>Trieu el directori de la instantània </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="436"/>
+        <location filename="../mainwindow.cpp" line="434"/>
         <source>Confirmation</source>
         <translation>Confirmació</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="436"/>
+        <location filename="../mainwindow.cpp" line="434"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Esteu segurs de voler sortir de l&apos;aplicació?</translation>
     </message>
@@ -617,7 +617,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../batchprocessing.cpp" line="55"/>
+        <location filename="../batchprocessing.cpp" line="56"/>
         <source>The program will pause the build and open the boot menu in your text editor.</source>
         <translation type="unfinished"></translation>
     </message>

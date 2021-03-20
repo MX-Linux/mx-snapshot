@@ -308,7 +308,7 @@ void MainWindow::on_buttonNext_clicked()
         work.setupEnv();
         displayOutput();
         work.createIso(file_name);
-        qApp->quit();
+        ui->buttonCancel->setText(tr("Close"));
     } else {
         qApp->quit();
     }
@@ -376,9 +376,8 @@ void MainWindow::on_radioRespin_toggled(bool checked)
 void MainWindow::on_radioPersonal_clicked(bool checked)
 {
     reset_accounts = !checked;
-    if (checked)
-        if (ui->excludeAll->isChecked())
-            ui->excludeAll->click();
+    if (checked and ui->excludeAll->isChecked())
+        ui->excludeAll->click();
 }
 
 

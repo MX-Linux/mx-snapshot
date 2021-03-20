@@ -244,6 +244,7 @@ bool Work::createIso(const QString &filename)
 
     QTime time(0, 0);
     time = time.addMSecs(static_cast<int>(e_timer.elapsed()));
+    emit message(tr("Done"));
     emit messageBox(BoxType::information, tr("Success"), tr("MX Snapshot completed sucessfully!") + "\n" +
                     tr("Snapshot took %1 to finish.").arg(time.toString("hh:mm:ss")) + "\n\n" +
                     tr("Thanks for using MX Snapshot, run MX Live USB Maker next!"));
