@@ -386,8 +386,9 @@
         <translation type="vanished">すべて完了しました！</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="311"/>
         <source>Close</source>
-        <translation type="vanished">閉じる</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="388"/>
@@ -707,9 +708,9 @@
         <location filename="../work.cpp" line="68"/>
         <location filename="../work.cpp" line="208"/>
         <location filename="../work.cpp" line="225"/>
-        <location filename="../work.cpp" line="261"/>
-        <location filename="../work.cpp" line="306"/>
-        <location filename="../work.cpp" line="337"/>
+        <location filename="../work.cpp" line="262"/>
+        <location filename="../work.cpp" line="307"/>
+        <location filename="../work.cpp" line="338"/>
         <source>Error</source>
         <translation type="unfinished">エラー</translation>
     </message>
@@ -740,6 +741,7 @@
     <message>
         <location filename="../work.cpp" line="111"/>
         <location filename="../work.cpp" line="114"/>
+        <location filename="../work.cpp" line="247"/>
         <source>Done</source>
         <translation type="unfinished">完了</translation>
     </message>
@@ -779,52 +781,52 @@
         <translation type="unfinished">ハイブリット ISO 作成中</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="247"/>
+        <location filename="../work.cpp" line="248"/>
         <source>Success</source>
         <translation type="unfinished">成功</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="247"/>
+        <location filename="../work.cpp" line="248"/>
         <source>MX Snapshot completed sucessfully!</source>
         <translation type="unfinished">MX スナップショットが全て完了！</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="248"/>
+        <location filename="../work.cpp" line="249"/>
         <source>Snapshot took %1 to finish.</source>
         <translation type="unfinished">スナップショットが終了するまで %1 かかりました。</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="249"/>
+        <location filename="../work.cpp" line="250"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
         <translation type="unfinished">MX Snapshot をご利用いただきありがとうございます。今度は MX ライブUSBメーカー を起動してください！</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="258"/>
+        <location filename="../work.cpp" line="259"/>
         <source>Installing </source>
         <translation type="unfinished">インストール中</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="261"/>
+        <location filename="../work.cpp" line="262"/>
         <source>Could not install </source>
         <translation type="unfinished">インストールできません</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="271"/>
+        <location filename="../work.cpp" line="272"/>
         <source>Calculating checksum...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="306"/>
+        <location filename="../work.cpp" line="307"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="315"/>
+        <location filename="../work.cpp" line="316"/>
         <source>Building new initrd...</source>
         <translation type="unfinished">新しい initrd を構築中...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="337"/>
+        <location filename="../work.cpp" line="338"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>

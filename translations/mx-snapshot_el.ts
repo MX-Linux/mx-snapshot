@@ -395,8 +395,9 @@
         <translation type="vanished">Ολοκληρώθηκε!</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="311"/>
         <source>Close</source>
-        <translation type="vanished">Κλείσιμο</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="388"/>
@@ -721,9 +722,9 @@
         <location filename="../work.cpp" line="68"/>
         <location filename="../work.cpp" line="208"/>
         <location filename="../work.cpp" line="225"/>
-        <location filename="../work.cpp" line="261"/>
-        <location filename="../work.cpp" line="306"/>
-        <location filename="../work.cpp" line="337"/>
+        <location filename="../work.cpp" line="262"/>
+        <location filename="../work.cpp" line="307"/>
+        <location filename="../work.cpp" line="338"/>
         <source>Error</source>
         <translation type="unfinished">Σφάλμα</translation>
     </message>
@@ -754,6 +755,7 @@
     <message>
         <location filename="../work.cpp" line="111"/>
         <location filename="../work.cpp" line="114"/>
+        <location filename="../work.cpp" line="247"/>
         <source>Done</source>
         <translation type="unfinished">Ολοκληρώθηκε</translation>
     </message>
@@ -793,52 +795,52 @@
         <translation type="unfinished">Δημιουργία υβριδικού ISO</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="247"/>
+        <location filename="../work.cpp" line="248"/>
         <source>Success</source>
         <translation type="unfinished">Επιτυχία</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="247"/>
+        <location filename="../work.cpp" line="248"/>
         <source>MX Snapshot completed sucessfully!</source>
         <translation type="unfinished">Ολοκληρώθηκε με επιτυχία το MX Snapshot!</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="248"/>
+        <location filename="../work.cpp" line="249"/>
         <source>Snapshot took %1 to finish.</source>
         <translation type="unfinished">Το snapshot πήρε %1 για να ολοκληρωθεί.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="249"/>
+        <location filename="../work.cpp" line="250"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
         <translation type="unfinished">Ευχαριστούμε που χρησιμοποιήσατε το MX Snapshot, στη συνέχεια τρέξτε το MX Live USB Maker!</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="258"/>
+        <location filename="../work.cpp" line="259"/>
         <source>Installing </source>
         <translation type="unfinished">Εγκατάσταση </translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="261"/>
+        <location filename="../work.cpp" line="262"/>
         <source>Could not install </source>
         <translation type="unfinished">Δεν ήταν δυνατή η εγκατάσταση </translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="271"/>
+        <location filename="../work.cpp" line="272"/>
         <source>Calculating checksum...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="306"/>
+        <location filename="../work.cpp" line="307"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="315"/>
+        <location filename="../work.cpp" line="316"/>
         <source>Building new initrd...</source>
         <translation type="unfinished">Δημιουργία νέου initrd ...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="337"/>
+        <location filename="../work.cpp" line="338"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>

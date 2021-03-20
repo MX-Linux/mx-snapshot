@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sat, 20 Mar 2021 12:06:55 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 21.3.02
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (21.3.02) mx; urgency=medium
+ .
+   * fix: make it more clear that the snapshot is done
+Checksums-Sha1:
+ bd7dbadcd4eb9a4de9a22a95c7640e4de37b9fd3 10141 mx-snapshot_21.3.02_i386.buildinfo
+ d520be85652f619708844289f066bb2875f97df8 244166 mx-snapshot_21.3.02_i386.deb
+Checksums-Sha256:
+ 034d02f2d56cd90ef9b4c05953cdb09fda304298e758493d61881b441e189ace 10141 mx-snapshot_21.3.02_i386.buildinfo
+ 557d594bdfd58e51f4f7e408a2cc3acc4788fb790dadda074e97e798e395cba2 244166 mx-snapshot_21.3.02_i386.deb
+Files:
+ 0f14f9c07b241448d95977e52399dbed 10141 admin optional mx-snapshot_21.3.02_i386.buildinfo
+ 499e3966a2d4f20aa5d06d86d260ee61 244166 admin optional mx-snapshot_21.3.02_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmBWHfgTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumJ/VB/0THU/e+ktul21MEkiDo7PFogsa2YLr
+doUYGReFtzYQnWgWQcCAXtBCnhjjepjKbaDHsDh4zGwSHWEczjo2IDqKClqFQ63K
++hoKQqoC6JUXxQULnHVgPu1PiHu+MuoXoY8oDxqgIf+vyxs0fNMJXyOGmT9U5BXo
+ICKFHQtIYqi/G8uaGrBoq3Dj0VkpvQgt9MOmZw8/pWD82ZNGzvmLu/3AOOgV/1k5
+el0a9IevFEWmzHMFSsgYEYlK6gCRrQ6VRNnv6O8gMm/zRgvuzCIMSspz8Sc6wek8
+TaJ3degp35DvKyCaWFpgNfJ/IEL1tgCENLklJip674YfT0bAkpWuZNxR
+=4NmA
+-----END PGP SIGNATURE-----

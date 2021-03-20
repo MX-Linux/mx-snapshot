@@ -395,8 +395,9 @@ rimuovendo precedenti snapshots e copie salvate:
         <translation type="vanished">Tutto finito!</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="311"/>
         <source>Close</source>
-        <translation type="vanished">Chiudi</translation>
+        <translation>Chiudi</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="388"/>
@@ -721,9 +722,9 @@ rimuovendo precedenti snapshots e copie salvate:
         <location filename="../work.cpp" line="68"/>
         <location filename="../work.cpp" line="208"/>
         <location filename="../work.cpp" line="225"/>
-        <location filename="../work.cpp" line="261"/>
-        <location filename="../work.cpp" line="306"/>
-        <location filename="../work.cpp" line="337"/>
+        <location filename="../work.cpp" line="262"/>
+        <location filename="../work.cpp" line="307"/>
+        <location filename="../work.cpp" line="338"/>
         <source>Error</source>
         <translation type="unfinished">Errore</translation>
     </message>
@@ -754,6 +755,7 @@ rimuovendo precedenti snapshots e copie salvate:
     <message>
         <location filename="../work.cpp" line="111"/>
         <location filename="../work.cpp" line="114"/>
+        <location filename="../work.cpp" line="247"/>
         <source>Done</source>
         <translation type="unfinished">Fatto</translation>
     </message>
@@ -793,52 +795,52 @@ rimuovendo precedenti snapshots e copie salvate:
         <translation type="unfinished">Creazione di un&apos;ISO ibrida in corso</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="247"/>
+        <location filename="../work.cpp" line="248"/>
         <source>Success</source>
         <translation type="unfinished">Operazione riuscita</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="247"/>
+        <location filename="../work.cpp" line="248"/>
         <source>MX Snapshot completed sucessfully!</source>
         <translation type="unfinished">Istantanea-MX completata con successo! </translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="248"/>
+        <location filename="../work.cpp" line="249"/>
         <source>Snapshot took %1 to finish.</source>
         <translation type="unfinished">L&apos;istantanea ha richeisto l&apos;1% per terminare</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="249"/>
+        <location filename="../work.cpp" line="250"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
         <translation type="unfinished">Grazie per usare MX Snapshot, prova anche MX Live Maker!</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="258"/>
+        <location filename="../work.cpp" line="259"/>
         <source>Installing </source>
         <translation type="unfinished">Installazione in corso</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="261"/>
+        <location filename="../work.cpp" line="262"/>
         <source>Could not install </source>
         <translation type="unfinished">Non è stato possibile installare</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="271"/>
+        <location filename="../work.cpp" line="272"/>
         <source>Calculating checksum...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="306"/>
+        <location filename="../work.cpp" line="307"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="315"/>
+        <location filename="../work.cpp" line="316"/>
         <source>Building new initrd...</source>
         <translation type="unfinished">Realizzazione del nuovo initrd...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="337"/>
+        <location filename="../work.cpp" line="338"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>
