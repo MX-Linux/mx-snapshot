@@ -173,7 +173,7 @@ void Work::copyNewIso()
     makeChecksum(HashType::md5, settings->work_dir + "/iso-template/antiX", "vmlinuz");
 
     QString path = initrd_dir.path();
-    if(!initrd_dir.isValid()) {
+    if (!initrd_dir.isValid()) {
         qDebug() << tr("Could not create temp directory. ") + path;
         cleanUp();
     }

@@ -101,7 +101,7 @@ bool Settings::checkTempDir()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     tmpdir.reset(new QTemporaryDir(tempdir_parent + "/mx-snapshot-XXXXXXXX"));
-    if(!tmpdir->isValid()) {
+    if (!tmpdir->isValid()) {
         qDebug() << QObject::tr("Could not create temp directory. ") + tmpdir.data()->path();
         return false;
     }
@@ -513,7 +513,7 @@ void Settings::processArgs(const QCommandLineParser &arg_parser)
 
 void Settings::processExclArgs(const QCommandLineParser &arg_parser)
 {
-    if(!arg_parser.values("exclude").isEmpty()) {
+    if (!arg_parser.values("exclude").isEmpty()) {
         QStringList options = arg_parser.values("exclude");
         QStringList valid_options {"Desktop", "Documents", "Downloads", "Music", "Networks", "Pictures", "Videos"};
         for (const QString &option : options )
