@@ -200,7 +200,7 @@ void Settings::selectKernel()
         if (!QFileInfo::exists("/boot/vmlinuz-" + kernel)) { // if current kernel doesn't exist for some reason (e.g. WSL) in /boot pick first kernel
              kernel = shell->getCmdOut("ls -1 /boot/vmlinuz* | sort | tail -n1").remove("/boot/vmlinuz-");
              if (!QFileInfo::exists("/boot/vmlinuz-" + kernel)) {
-                 QMessageBox::critical(nullptr, QObject::tr("error"), QObject::tr("Could not find a usable kernel"));
+                 QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Could not find a usable kernel"));
                  exit(EXIT_FAILURE);
              }
         }
