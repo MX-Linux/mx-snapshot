@@ -282,7 +282,7 @@ void MainWindow::on_buttonNext_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Could not create temporary directory. ") + snapshot_dir);
             cleanUp();
         }
-        if (not monthly and not override_space) work.checkEnoughSpace();
+
         otherExclusions();
         ui->buttonNext->setEnabled(false);
         ui->buttonBack->setEnabled(false);
@@ -307,6 +307,7 @@ void MainWindow::on_buttonNext_clicked()
 
         work.setupEnv();
         displayOutput();
+        if (not monthly and not override_space) work.checkEnoughSpace();
         work.createIso(file_name);
         ui->buttonCancel->setText(tr("Close"));
     } else {

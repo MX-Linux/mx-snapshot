@@ -47,6 +47,54 @@ Work::~Work()
 // We don't yet take /home used space into considerations (need to calculate how much is excluded)
 void Work::checkEnoughSpace()
 {
+    QStringList excludes;
+    QFile *file = &settings->snapshot_excludes;
+    if (!file->open(QIODevice::ReadOnly))
+        qDebug() << "Count not open file: " << file->fileName();
+    while(!file->atEnd()) {
+        QString line = file->readLine().trimmed();
+        if (!line.startsWith("#") && !line.isEmpty() && !line.startsWith(".bind-root"))
+            excludes << line.trimmed();
+    }
+    file->close();
+
+    if (!settings->session_excludes.isEmpty()) {
+        QString set = settings->session_excludes;
+        set.remove(0, 3); // remove "-e "
+        for (QString tmp : set.split("\" \"")) {
+            tmp.remove("\"");
+            tmp.remove(0, 0);
+            excludes << tmp;
+        }
+    }
+    QStringList tmp_list;
+    for (QString tmp : excludes) { // escape special bash characters, might need to expand this
+        tmp.replace("!", "\\!");
+        tmp.replace(" ", "\\ ");
+        tmp.replace("(", "\\(");
+        tmp.replace(")", "\\)");
+        tmp.replace("|", "\\|");
+        tmp_list << tmp.prepend("/.bind-root/"); // check size occupied by excluded files on /.bind-root only
+    }
+
+    bool ok;
+    quint64 excl_size = settings->shell->getCmdOut("time du -sxc {" + tmp_list.join(",").remove("/.bind-root,")
+                                                       + "} 2>/dev/null| tail -1| cut -f1").toULongLong(&ok);
+    if (!ok) {
+        qDebug() << "Can't calculate size of excluded files";
+        cleanUp();
+    }
+
+    quint64 root_size = settings->shell->getCmdOut("time du -sxc /.bind-root 2>/dev/null| tail -1| cut -f1").toULongLong(&ok);
+
+    if (!ok) {
+        qDebug() << "Can't calculate size of /.bind-root";
+        cleanUp();
+    }
+    qDebug() << "SIZE ROOT" << settings->root_size;
+    qDebug() << "SIZE ROOT on .bind-root" << root_size;
+    qDebug() << "SIZE EXCL" << excl_size;
+
     uint c_factor = compression_factor.value(settings->compression);
     quint64 adjusted_root = settings->root_size * c_factor / 100;
     // if snapshot and workdir are on the same partition we need about double the size of adjusted_root
@@ -72,6 +120,9 @@ void Work::checkEnoughSpace()
             cleanUp();
         }
     }
+
+    ////
+    cleanUp();
 }
 
 // Checks if package is installed
