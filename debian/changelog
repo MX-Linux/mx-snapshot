@@ -1,3 +1,9 @@
+mx-snapshot (21.6) mx; urgency=medium
+
+  * Add --override-size/-o option to skip calculating free spece
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 04 Jun 2021 18:59:18 -0400
+
 mx-snapshot (21.3.02) mx; urgency=medium
 
   * fix: make it more clear that the snapshot is done

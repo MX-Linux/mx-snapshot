@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Fri, 04 Jun 2021 18:59:18 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 21.6
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (21.6) mx; urgency=medium
+ .
+   * Add --override-size/-o option to skip calculating free spece
+Checksums-Sha1:
+ 3ac492351098372a0a9cd595fdc563c3560760b3 10126 mx-snapshot_21.6_i386.buildinfo
+ f0313bee4ed22154b89abc9e0d8189982202b37f 244602 mx-snapshot_21.6_i386.deb
+Checksums-Sha256:
+ 9099d989c066667db8be94a3cd56f18c79f20cece83beda557790d51d600c575 10126 mx-snapshot_21.6_i386.buildinfo
+ 65c08e072f9c6efa0e8774384c9a0ae4ce856f377615e10fc9b9698f143711d1 244602 mx-snapshot_21.6_i386.deb
+Files:
+ 7dff9fed4b631a364c43735fe3f00bd1 10126 admin optional mx-snapshot_21.6_i386.buildinfo
+ 095c949bfb7be7aaa81ff3a58c0799fc 244602 admin optional mx-snapshot_21.6_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmC6sTcTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumLZ/B/4u8pgZ+C4j8TOjc5LDaGmCX44+vB2l
+uWLfKVi0TzkCS2vRBVoSy18AbJNdecrTD0+1bUcM5yAJhCY1+LtUddK9896SErp4
+lSz1Z5M1kdiP8Gv8tHeHKYuwZJ/ap7PYhI/O0SGsYf7+JOEA+h3PrvWFcqN+irHO
+pUTDdt2JBHq07RYG4bQI8hG5DJqkqxseSkyErjNdKi/MWIRNF0+CN2ZRPbXjcyZt
+/oFEGNProwAcjlrgxOvxZHWKRelpReQvvt9xHoGqml9nHOnNTtRvoAZhRQHe84zK
+Uslt2z/jhF4dzObplP/ohf8QZigw3H1aZ+oCVSHWtneJLzTK3QLeGzQX
+=2b9L
+-----END PGP SIGNATURE-----

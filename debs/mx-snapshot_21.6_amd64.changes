@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Fri, 04 Jun 2021 18:59:18 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 21.6
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (21.6) mx; urgency=medium
+ .
+   * Add --override-size/-o option to skip calculating free spece
+Checksums-Sha1:
+ 3212d85cd0975e5d1b876742a6e2cab16a09f753 1164 mx-snapshot_21.6.dsc
+ 0d0080824ede4b9d0b66cc56b9b872f0df861f0f 186172 mx-snapshot_21.6.tar.xz
+ 1f55422a06a855d6e6970cf340a4f8552b912f44 10420 mx-snapshot_21.6_amd64.buildinfo
+ f9720a8550b9849b8190b7d893788ee50ea38064 238654 mx-snapshot_21.6_amd64.deb
+Checksums-Sha256:
+ 8a20b7c5a3eecfddc6a02ad978bb32a40eacb28806ee3d94d0cff59cfb354d0e 1164 mx-snapshot_21.6.dsc
+ 82ecf5ae64608bf8f9ee9b4c48d459ca6fe187a32d5e04681b43570a193e2685 186172 mx-snapshot_21.6.tar.xz
+ 4c8528d8452e1c0edd1e469e7737bade0216753318079f5eadab81baac01d25c 10420 mx-snapshot_21.6_amd64.buildinfo
+ 3d3438d47bfcf13b43115710b0e3f16a970f30938529a14a83df7ac2f4fef63e 238654 mx-snapshot_21.6_amd64.deb
+Files:
+ aa533e2219c854b2eae1a00edf07c888 1164 admin optional mx-snapshot_21.6.dsc
+ a90ee0a0c9180373b2086e714b96fd73 186172 admin optional mx-snapshot_21.6.tar.xz
+ 89a4ba1200cc54315127ef26710da2db 10420 admin optional mx-snapshot_21.6_amd64.buildinfo
+ a0e21e25f5ff8f1aa4cc4891b53f3237 238654 admin optional mx-snapshot_21.6_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmC6sTcTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumOMYB/9gI36ReLQBJJBnlbZz8iINBK2VP97O
+lr66WgDuBjofadOnrOEeNBZvbw1CN56+3OxNWB8+XmkcZDAWnDbgAZtlB8ycHWG7
+6IR9K/wmtaBDctM0z4rbbhXeNnebecTkBwhm9xyxdd56Sylx+hvl8AO67Rn/ZVqf
+/QwyrxNgRJU4bxe1a53QjB8qJHiogQV2xsZ5aXeDq2PdwVzQNsrzkRZ9B5/65jLX
+J2sxucQhrinM5bup9Q063zeWUClTGXQDdNRwl7eiNUkiLIy38k0TB3W35BenzBoP
+82PXaduYkFcHe6ostWf9sFCfd1ve1dhLRYFtcC5N6yMLjZpa1b/0OpdJ
+=T1Y2
+-----END PGP SIGNATURE-----

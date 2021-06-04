@@ -551,48 +551,54 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
     </message>
     <message>
         <location filename="../main.cpp" line="72"/>
+        <source>Skip calculating free space to see if the resulting ISO will fit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="73"/>
         <source>Exclude main folders, valid choices: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="72"/>
+        <location filename="../main.cpp" line="73"/>
         <source>Desktop, Documents, Downloads, Music, Networks, Pictures, Videos.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="73"/>
+        <location filename="../main.cpp" line="74"/>
         <source>Use the option one time for each item you want to exclude</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="73"/>
+        <location filename="../main.cpp" line="74"/>
         <source>one item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="74"/>
+        <location filename="../main.cpp" line="75"/>
         <source>Compression format, valid choices: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="74"/>
+        <location filename="../main.cpp" line="75"/>
         <source>format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="110"/>
+        <location filename="../main.cpp" line="111"/>
         <source>You must run this program as root.</source>
         <translation type="unfinished">Ta program morate zagnati kot root</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="122"/>
-        <location filename="../main.cpp" line="177"/>
+        <location filename="../main.cpp" line="123"/>
+        <location filename="../main.cpp" line="178"/>
+        <location filename="../settings.cpp" line="204"/>
         <source>Error</source>
         <translation type="unfinished">Napaka</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="98"/>
-        <location filename="../main.cpp" line="123"/>
+        <location filename="../main.cpp" line="99"/>
+        <location filename="../main.cpp" line="124"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -602,59 +608,59 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="178"/>
-        <location filename="../settings.cpp" line="209"/>
+        <location filename="../main.cpp" line="179"/>
+        <location filename="../settings.cpp" line="211"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished">Trenutno jedro ne podpira Squashfs. Ne morem nadaljevati.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="104"/>
-        <location filename="../main.cpp" line="129"/>
+        <location filename="../main.cpp" line="105"/>
+        <location filename="../main.cpp" line="130"/>
         <source>version:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../batchprocessing.cpp" line="56"/>
+        <location filename="../batchprocessing.cpp" line="57"/>
         <source>The program will pause the build and open the boot menu in your text editor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="87"/>
+        <location filename="../settings.cpp" line="89"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="105"/>
+        <location filename="../settings.cpp" line="107"/>
         <source>Could not create temp directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="202"/>
+        <location filename="../settings.cpp" line="204"/>
         <source>Could not find a usable kernel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="283"/>
+        <location filename="../settings.cpp" line="285"/>
         <source>Used space on / (root): </source>
         <translation type="unfinished">Porabljen prostor na / (root):</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="286"/>
+        <location filename="../settings.cpp" line="288"/>
         <source>estimated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="295"/>
+        <location filename="../settings.cpp" line="297"/>
         <source>Used space on /home: </source>
         <translation type="unfinished">Porabljen prostor na /home:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="347"/>
+        <location filename="../settings.cpp" line="349"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation type="unfinished">Sprostite prostor na %1, na katerem se bo nahajala mapa posnetka:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="349"/>
+        <location filename="../settings.cpp" line="351"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -669,42 +675,42 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
 </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="364"/>
+        <location filename="../settings.cpp" line="366"/>
         <source>Desktop</source>
         <translation type="unfinished">Namizje</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="365"/>
+        <location filename="../settings.cpp" line="367"/>
         <source>Documents</source>
         <translation type="unfinished">Dokumenti</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="366"/>
+        <location filename="../settings.cpp" line="368"/>
         <source>Downloads</source>
         <translation type="unfinished">Prenosi</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="367"/>
+        <location filename="../settings.cpp" line="369"/>
         <source>Music</source>
         <translation type="unfinished">Glasba</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="368"/>
+        <location filename="../settings.cpp" line="370"/>
         <source>Networks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="369"/>
+        <location filename="../settings.cpp" line="371"/>
         <source>Pictures</source>
         <translation type="unfinished">Slike</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="370"/>
+        <location filename="../settings.cpp" line="372"/>
         <source>Videos</source>
         <translation type="unfinished">Video</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="115"/>
+        <location filename="../work.cpp" line="116"/>
         <source>Interrupted or failed to complete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -713,130 +719,130 @@ tako da zbrisšete starejše posnetke in shranjene kopije:
     <name>Work</name>
     <message>
         <location filename="../work.cpp" line="35"/>
-        <location filename="../work.cpp" line="55"/>
-        <location filename="../work.cpp" line="62"/>
-        <location filename="../work.cpp" line="68"/>
-        <location filename="../work.cpp" line="208"/>
-        <location filename="../work.cpp" line="225"/>
-        <location filename="../work.cpp" line="262"/>
-        <location filename="../work.cpp" line="307"/>
-        <location filename="../work.cpp" line="338"/>
+        <location filename="../work.cpp" line="56"/>
+        <location filename="../work.cpp" line="63"/>
+        <location filename="../work.cpp" line="69"/>
+        <location filename="../work.cpp" line="209"/>
+        <location filename="../work.cpp" line="226"/>
+        <location filename="../work.cpp" line="263"/>
+        <location filename="../work.cpp" line="308"/>
+        <location filename="../work.cpp" line="339"/>
         <source>Error</source>
         <translation type="unfinished">Napaka</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="35"/>
+        <location filename="../work.cpp" line="36"/>
         <source>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</source>
         <translation type="unfinished">Trenutno jedro ne podpira izbranega algoritma za stiskanje podatkov. Prosimo, uredite konfiguracijsko datoteko in izberite drug algoritem.</translation>
-    </message>
-    <message>
-        <location filename="../work.cpp" line="56"/>
-        <location filename="../work.cpp" line="63"/>
-        <location filename="../work.cpp" line="69"/>
-        <source>There&apos;s not enough free space on your target disk, you need at least %1</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../work.cpp" line="57"/>
         <location filename="../work.cpp" line="64"/>
         <location filename="../work.cpp" line="70"/>
+        <source>There&apos;s not enough free space on your target disk, you need at least %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="58"/>
+        <location filename="../work.cpp" line="65"/>
+        <location filename="../work.cpp" line="71"/>
         <source>You have %1 free space on %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="95"/>
+        <location filename="../work.cpp" line="96"/>
         <source>Cleaning...</source>
         <translation type="unfinished">Čistim...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="111"/>
-        <location filename="../work.cpp" line="114"/>
-        <location filename="../work.cpp" line="247"/>
+        <location filename="../work.cpp" line="112"/>
+        <location filename="../work.cpp" line="115"/>
+        <location filename="../work.cpp" line="248"/>
         <source>Done</source>
         <translation type="unfinished">Zaključeno</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="149"/>
+        <location filename="../work.cpp" line="150"/>
         <source>Copying the new-iso filesystem...</source>
         <translation type="unfinished">Kopiranje novega iso datotečnega sistema</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="177"/>
+        <location filename="../work.cpp" line="178"/>
         <source>Could not create temp directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="206"/>
+        <location filename="../work.cpp" line="207"/>
         <source>Squashing filesystem...</source>
         <translation type="unfinished">Stiskam datotečni sistem...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="208"/>
+        <location filename="../work.cpp" line="209"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">Neuspelo ustvarjanje linuxfs datoteke. Preveite ali je na ciljnem razdelku dovolj prostora.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="223"/>
+        <location filename="../work.cpp" line="224"/>
         <source>Creating CD/DVD image file...</source>
         <translation type="unfinished">Ustvarjam CD/DVD podobo...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="225"/>
+        <location filename="../work.cpp" line="226"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">Neuspelo ustvarjanje ISO datoteke. Preverite ali je na ciljnem razdelku dovolj prostora.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="232"/>
+        <location filename="../work.cpp" line="233"/>
         <source>Making hybrid iso</source>
         <translation type="unfinished">Ustvarjam hibridni iso</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="248"/>
+        <location filename="../work.cpp" line="249"/>
         <source>Success</source>
         <translation type="unfinished">Operacija je uspela</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="248"/>
+        <location filename="../work.cpp" line="249"/>
         <source>MX Snapshot completed sucessfully!</source>
         <translation type="unfinished">MX posnetek je uspešno zaključil delo!</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="249"/>
+        <location filename="../work.cpp" line="250"/>
         <source>Snapshot took %1 to finish.</source>
         <translation type="unfinished">Posnetek je potreboval %1 za dokončanje.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="250"/>
+        <location filename="../work.cpp" line="251"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
         <translation type="unfinished">Hvala, ker uporabljate MX posnetek. Zdaj zaženite MX ustvarjalec živih usb nosilcev</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="259"/>
+        <location filename="../work.cpp" line="260"/>
         <source>Installing </source>
         <translation type="unfinished">Nameščanje</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="262"/>
+        <location filename="../work.cpp" line="263"/>
         <source>Could not install </source>
         <translation type="unfinished">Namesitev ni uspela</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="272"/>
+        <location filename="../work.cpp" line="273"/>
         <source>Calculating checksum...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="307"/>
+        <location filename="../work.cpp" line="308"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="316"/>
+        <location filename="../work.cpp" line="317"/>
         <source>Building new initrd...</source>
         <translation type="unfinished">Ustvarjam nov initrd...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="338"/>
+        <location filename="../work.cpp" line="339"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>
