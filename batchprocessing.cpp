@@ -81,7 +81,8 @@ void Batchprocessing::progress()
     static int i = 0;
 
     // skip message when running mksquashfs
-    if (shell->arguments().size() >= 2 && shell->arguments().at(1).startsWith("mksquashfs")) return;
+    if (shell->arguments().size() >= 2 && shell->arguments().at(1).startsWith("mksquashfs"))
+        return;
 
     (i % 2 == 1) ? qDebug() << "\033[2KProcessing command...\r" : qDebug() << "\033[2KProcessing command\r";
     ++i;
