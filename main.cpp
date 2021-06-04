@@ -69,6 +69,7 @@ int main(int argc, char *argv[])
     parser.addOption({{"p", "preempt"}, QObject::tr("Option to fix issue with calculating checksums on preempt_rt kernels")});
     parser.addOption({{"r", "reset"}, QObject::tr("Resetting accounts (for distribution to others)")});
     parser.addOption({{"s", "checksums"}, QObject::tr("Calculate checksums for resulting ISO file")});
+    parser.addOption({{"o", "override-size"}, QObject::tr("Skip calculating free space to see if the resulting ISO will fit")});
     parser.addOption({{"x", "exclude"}, QObject::tr("Exclude main folders, valid choices: ") + QObject::tr("Desktop, Documents, Downloads, Music, Networks, Pictures, Videos.") + " " +
                       QObject::tr("Use the option one time for each item you want to exclude"), QObject::tr("one item")});
     parser.addOption({{"z", "compression"}, QObject::tr("Compression format, valid choices: ") + "lz4, lzo, gzip, xz", QObject::tr("format")});

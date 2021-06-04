@@ -42,6 +42,7 @@ Settings::Settings(const QCommandLineParser &arg_parser)
     processArgs(arg_parser);
     if (arg_parser.isSet("month"))
         setMonthlySnapshot(arg_parser);
+    override_space = arg_parser.isSet("override-space");
     processExclArgs(arg_parser);
 }
 
@@ -84,14 +85,14 @@ void Settings::addRemoveExclusion(bool add, QString exclusion)
 bool Settings::checkSnapshotDir()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    if (!QDir().mkpath(snapshot_dir)) {
+    if (not QDir().mkpath(snapshot_dir)) {
         qDebug() << QObject::tr("Could not create working directory. ") + snapshot_dir;
         return false;
     }
     system("chown $(logname):$(logname) \"/" + snapshot_dir.toUtf8() + "\"");
     // Create a work_dir
     tempdir_parent = snapshot_dir;
-    if (!isOnSupportedPart(snapshot_dir)) // if not saving snapshot on a Linux partition put working dir in /tmp or /home
+    if (not isOnSupportedPart(snapshot_dir)) // if not saving snapshot on a Linux partition put working dir in /tmp or /home
         tempdir_parent = largerFreeSpace("/tmp", "/home");
     else
         tempdir_parent = largerFreeSpace("/tmp", "/home", snapshot_dir);
@@ -102,7 +103,7 @@ bool Settings::checkTempDir()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     tmpdir.reset(new QTemporaryDir(tempdir_parent + "/mx-snapshot-XXXXXXXX"));
-    if (!tmpdir->isValid()) {
+    if (not tmpdir->isValid()) {
         qDebug() << QObject::tr("Could not create temp directory. ") + tmpdir.data()->path();
         return false;
     }

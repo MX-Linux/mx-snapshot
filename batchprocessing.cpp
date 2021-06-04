@@ -36,19 +36,20 @@ Batchprocessing::Batchprocessing(const QCommandLineParser &arg_parser) :
     setConnections();
     QString path = snapshot_dir;
     getFreeSpaceStrings(path.remove(QRegularExpression("/snapshot$")));
-    if (not arg_parser.isSet("month"))
+    if (not arg_parser.isSet("month") and not arg_parser.isSet("override-size"))
         getUsedSpace();
 
     work.started = true;
     work.e_timer.start();
-    if (!checkSnapshotDir() || !checkTempDir())
+    if (not checkSnapshotDir() or not checkTempDir())
         work.cleanUp();
-    if (not arg_parser.isSet("month"))
+    if (not arg_parser.isSet("month") and not arg_parser.isSet("override-size"))
         work.checkEnoughSpace();
+
     otherExclusions();
 
     work.copyNewIso();
-    if (!work.mkDir(snapshot_name))
+    if (not work.mkDir(snapshot_name))
         work.cleanUp();
     work.savePackageList(snapshot_name);
 
@@ -81,7 +82,7 @@ void Batchprocessing::progress()
     static int i = 0;
 
     // skip message when running mksquashfs
-    if (shell->arguments().size() >= 2 && shell->arguments().at(1).startsWith("mksquashfs"))
+    if (shell->arguments().size() >= 2 and shell->arguments().at(1).startsWith("mksquashfs"))
         return;
 
     (i % 2 == 1) ? qDebug() << "\033[2KProcessing command...\r" : qDebug() << "\033[2KProcessing command\r";

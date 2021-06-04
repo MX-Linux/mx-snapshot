@@ -236,7 +236,7 @@ void MainWindow::progress()
     ui->progressBar->setValue((ui->progressBar->value() + 1) % 100);
 
     // in live environment and first page, blink text while calculating used disk space
-    if (live && (ui->stackedWidget->currentIndex() == 0)) {
+    if (live and (ui->stackedWidget->currentIndex() == 0)) {
         if (ui->progressBar->value() % 4 == 0 )
             ui->labelUsedSpace->setText("\n " + tr("Please wait."));
         else
@@ -249,7 +249,7 @@ void MainWindow::progress()
 void MainWindow::on_buttonNext_clicked()
 {
     QString file_name = ui->lineEditName->text();
-    if (!file_name.endsWith(".iso")) file_name += ".iso";
+    if (not file_name.endsWith(".iso")) file_name += ".iso";
 
     // on first page
     if (ui->stackedWidget->currentIndex() == 0) {
@@ -274,15 +274,15 @@ void MainWindow::on_buttonNext_clicked()
         }
         work.started = true;
         work.e_timer.start();
-        if (!checkSnapshotDir()) {
+        if (not checkSnapshotDir()) {
             QMessageBox::critical(this, tr("Error"), tr("Could not create working directory. ") + snapshot_dir);
             cleanUp();
         }
-        if (!checkTempDir()) {
+        if (not checkTempDir()) {
             QMessageBox::critical(this, tr("Error"), tr("Could not create temporary directory. ") + snapshot_dir);
             cleanUp();
         }
-        if (not monthly) work.checkEnoughSpace();
+        if (not monthly and not override_space) work.checkEnoughSpace();
         otherExclusions();
         ui->buttonNext->setEnabled(false);
         ui->buttonBack->setEnabled(false);
