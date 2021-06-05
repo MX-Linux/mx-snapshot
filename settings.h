@@ -82,7 +82,7 @@ public:
     bool make_chksum;
     bool make_isohybrid;
     bool preempt; // command line option
-    bool override_space;
+    bool override_size;
     bool reset_accounts;
     short debian_version;
     quint64 free_space = 0;

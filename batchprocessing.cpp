@@ -43,14 +43,16 @@ Batchprocessing::Batchprocessing(const QCommandLineParser &arg_parser) :
     work.e_timer.start();
     if (not checkSnapshotDir() or not checkTempDir())
         work.cleanUp();
+    otherExclusions();
+
+    if (not work.mkDir(snapshot_name))
+        work.cleanUp();
+    work.setupEnv();
+
     if (not arg_parser.isSet("month") and not arg_parser.isSet("override-size"))
         work.checkEnoughSpace();
 
-    otherExclusions();
-
     work.copyNewIso();
-    if (not work.mkDir(snapshot_name))
-        work.cleanUp();
     work.savePackageList(snapshot_name);
 
     if (edit_boot_menu) {
@@ -58,7 +60,6 @@ Batchprocessing::Batchprocessing(const QCommandLineParser &arg_parser) :
         QString cmd = getEditor() + " \"" + work_dir + "/iso-template/boot/isolinux/isolinux.cfg\"";
         shell->run(cmd);
     }
-    work.setupEnv();
     work.createIso(snapshot_name);
 }
 

@@ -289,6 +289,8 @@ void MainWindow::on_buttonNext_clicked()
         ui->stackedWidget->setCurrentWidget(ui->outputPage);
         this->setWindowTitle(tr("Output"));
         ui->outputBox->clear();
+        work.setupEnv();
+        if (not monthly and not override_size) work.checkEnoughSpace();
         work.copyNewIso();
         ui->outputLabel->setText("");
         if (!work.mkDir(file_name)) return;
@@ -305,9 +307,7 @@ void MainWindow::on_buttonNext_clicked()
             }
         }
 
-        work.setupEnv();
         displayOutput();
-        if (not monthly and not override_space) work.checkEnoughSpace();
         work.createIso(file_name);
         ui->buttonCancel->setText(tr("Close"));
     } else {

@@ -42,7 +42,7 @@ Settings::Settings(const QCommandLineParser &arg_parser)
     processArgs(arg_parser);
     if (arg_parser.isSet("month"))
         setMonthlySnapshot(arg_parser);
-    override_space = arg_parser.isSet("override-space");
+    override_size = arg_parser.isSet("override-size");
     processExclArgs(arg_parser);
 }
 

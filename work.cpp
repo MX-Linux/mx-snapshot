@@ -77,26 +77,26 @@ void Work::checkEnoughSpace()
         tmp_list << tmp.prepend("/.bind-root/"); // check size occupied by excluded files on /.bind-root only
     }
 
+    emit message(tr("Calculating total size of excluded files..."));
     bool ok;
-    quint64 excl_size = settings->shell->getCmdOut("time du -sxc {" + tmp_list.join(",").remove("/.bind-root,")
+    quint64 excl_size = settings->shell->getCmdOut("du -sxc {" + tmp_list.join(",").remove("/.bind-root,")
                                                        + "} 2>/dev/null| tail -1| cut -f1").toULongLong(&ok);
     if (!ok) {
-        qDebug() << "Can't calculate size of excluded files";
+        qDebug() << "Error: calculating size of excluded files";
         cleanUp();
     }
-
-    quint64 root_size = settings->shell->getCmdOut("time du -sxc /.bind-root 2>/dev/null| tail -1| cut -f1").toULongLong(&ok);
-
+    emit message(tr("Calculating size of root..."));
+    quint64 root_size = settings->shell->getCmdOut("du -sx /.bind-root 2>/dev/null| tail -1| cut -f1").toULongLong(&ok);
     if (!ok) {
-        qDebug() << "Can't calculate size of /.bind-root";
+        qDebug() << "Error: calculating root size (/.bind-root)";
         cleanUp();
     }
-    qDebug() << "SIZE ROOT" << settings->root_size;
-    qDebug() << "SIZE ROOT on .bind-root" << root_size;
+    qDebug() << "SIZE ROOT" << root_size;
     qDebug() << "SIZE EXCL" << excl_size;
+    qDebug() << "SIZE FREE" << settings->free_space;
 
     uint c_factor = compression_factor.value(settings->compression);
-    quint64 adjusted_root = settings->root_size * c_factor / 100;
+    quint64 adjusted_root = (root_size - excl_size) * c_factor / 100;
     // if snapshot and workdir are on the same partition we need about double the size of adjusted_root
     if (settings->shell->getCmdOut("stat -c '%d' " + settings->work_dir) ==
             settings->shell->getCmdOut("stat -c '%d' " + settings->snapshot_dir)) {
@@ -120,9 +120,6 @@ void Work::checkEnoughSpace()
             cleanUp();
         }
     }
-
-    ////
-    cleanUp();
 }
 
 // Checks if package is installed
