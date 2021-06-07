@@ -18,23 +18,23 @@ Changes:
  .
    * Add --override-size/-o option to skip calculating free spece
 Checksums-Sha1:
- cb0f8716f72fc1d7aecc6e7f67572868ddcbffba 10126 mx-snapshot_21.6_i386.buildinfo
- 89fcd3b7d1f9deb62e831f06de86a5c6f1552ef7 246880 mx-snapshot_21.6_i386.deb
+ efedec19734eeb2fbf51375a81a27dd89bb2a18c 10126 mx-snapshot_21.6_i386.buildinfo
+ b2e0b86f8674aca0de7313140193214934f3fa1f 246936 mx-snapshot_21.6_i386.deb
 Checksums-Sha256:
- 2c069b64e2d73335e6448e1eab08b383886f64ed707c4f096270aecf9c2c8fcc 10126 mx-snapshot_21.6_i386.buildinfo
- bc2feda82d3909ffbd29993dc9a32160734d10bcdfc03a9876da9037c7a572ae 246880 mx-snapshot_21.6_i386.deb
+ b82270a487ba31f4bfadf563d487976781c696d82314d6a112b1a7813d2f609a 10126 mx-snapshot_21.6_i386.buildinfo
+ da734a34c1247f56d20c4a792a8415c14a8cb546ce3a83d31714213aa47ecdb5 246936 mx-snapshot_21.6_i386.deb
 Files:
- 3b3e9ace925e156eb49017070adff4a3 10126 admin optional mx-snapshot_21.6_i386.buildinfo
- 3689108c59a44293753a56bac847fa40 246880 admin optional mx-snapshot_21.6_i386.deb
+ ed59c3d848aee6374c62d22f4b1227cf 10126 admin optional mx-snapshot_21.6_i386.buildinfo
+ 377cd02a0acb0308362e81c958938320 246936 admin optional mx-snapshot_21.6_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmC+ozoTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumDCAB/kBUTUwS7EKsMuaSjY5Z/DrYrbxR+Pz
-E3N2SEOSqO/YCrLdREqIk/TXicA3C083rbvfLRYxBHy1WUZNGCSAaZMWF6NRB6Sg
-aH7qHlXdmPGcLDHjC05gOF+0KfPTmjvWI4Q3hsmd3f5cEacePcD7fLb8qUiCWC2B
-V0BdpsvwgWQdFqnIcT0W7ZzUF9dbW1QO480ytfLO93x/MpzdILn0eezwg4/XLebf
-3h0cd4WaC6KKs5Ju3ok+a9wLci6NM4xelV5R3kRM6hPExpIWoQKOBYQXl5e22Ac7
-Y/oLW1jj2LlaZ4F6QZhSPJk8HQNFT5eQIbrGMTH/Q22ykpnEnM+CM79g
-=Q21L
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmC+pCMTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMBJCACqfZ/MkwcUmUn7Bjy2k8d4fFIng8Yv
++kQq/CJfSbKUZBgEfqAXjI6jVDhED9A0w98TNroNV9PeaKCPq/MpxQgLx9tu8ZiV
+ULIlhfddpYxRAsnt3L7Zzai4SayrVI0mNBV91PmB2NcAN7Uvg/kB711swKGaENyu
+mPi0gaDx5iRkIEBOhM+yCPm3xb9ZycCZxPMlWy3IEn/jxb6hWdFNXz8jVRqTywvk
+IEXNZyWAbdhaL6mOS3P1V76hOxFKB2jW52abs2NGnsF5tXDzGFdXTixlWl9RotUX
+4x+ezh/5SZXhUL5nYp7fcR+P5gWCewacSqq0gA8GLtxwWxK/bbXt4yku
+=TUC4
 -----END PGP SIGNATURE-----

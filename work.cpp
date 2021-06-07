@@ -72,7 +72,7 @@ void Work::checkEnoughSpace()
         }
     }
 
-    QString root_dev = settings->shell->getCmdOut("df /.bind-root --output=target| tail -1");
+    QString root_dev = settings->shell->getCmdOut("df /.bind-root --output=target| tail -1", true);
     QMutableStringListIterator it(excludes);
     while (it.hasNext()) {
         it.next();
@@ -85,7 +85,7 @@ void Work::checkEnoughSpace()
         it.value().prepend("/.bind-root/"); // check size occupied by excluded files on /.bind-root only
         it.value().remove(QRegularExpression("\\*$")); // chop last *
         // remove from list if files not on the same volume
-        if (root_dev != settings->shell->getCmdOut("df " + it.value() + " --output=target| tail -1"))
+        if (root_dev != settings->shell->getCmdOut("df " + it.value() + " --output=target| tail -1", true))
             it.remove();
     }
     emit message(tr("Calculating total size of excluded files..."));
