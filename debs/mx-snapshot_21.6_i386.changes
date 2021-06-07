@@ -18,23 +18,23 @@ Changes:
  .
    * Add --override-size/-o option to skip calculating free spece
 Checksums-Sha1:
- efedec19734eeb2fbf51375a81a27dd89bb2a18c 10126 mx-snapshot_21.6_i386.buildinfo
- b2e0b86f8674aca0de7313140193214934f3fa1f 246936 mx-snapshot_21.6_i386.deb
+ a6ecb1538bb93b4b92205432e0b4b80b150b2945 10126 mx-snapshot_21.6_i386.buildinfo
+ 5be77a79bab2ab5e28dc8da5216aa93d77b5db1c 246896 mx-snapshot_21.6_i386.deb
 Checksums-Sha256:
- b82270a487ba31f4bfadf563d487976781c696d82314d6a112b1a7813d2f609a 10126 mx-snapshot_21.6_i386.buildinfo
- da734a34c1247f56d20c4a792a8415c14a8cb546ce3a83d31714213aa47ecdb5 246936 mx-snapshot_21.6_i386.deb
+ cc524ee4160df1acf2a2e6a128a09eb2689a96499f392ebac641864a6cb17dea 10126 mx-snapshot_21.6_i386.buildinfo
+ 9b22588807efdffefcdbfec3308e797a818acf42df83aa08b232efc43c947a0b 246896 mx-snapshot_21.6_i386.deb
 Files:
- ed59c3d848aee6374c62d22f4b1227cf 10126 admin optional mx-snapshot_21.6_i386.buildinfo
- 377cd02a0acb0308362e81c958938320 246936 admin optional mx-snapshot_21.6_i386.deb
+ 3fb113a098681dc05eab096e070e0c12 10126 admin optional mx-snapshot_21.6_i386.buildinfo
+ 1d2d441c480ca13c5c6cd8b4d69dd79e 246896 admin optional mx-snapshot_21.6_i386.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmC+pCMTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMBJCACqfZ/MkwcUmUn7Bjy2k8d4fFIng8Yv
-+kQq/CJfSbKUZBgEfqAXjI6jVDhED9A0w98TNroNV9PeaKCPq/MpxQgLx9tu8ZiV
-ULIlhfddpYxRAsnt3L7Zzai4SayrVI0mNBV91PmB2NcAN7Uvg/kB711swKGaENyu
-mPi0gaDx5iRkIEBOhM+yCPm3xb9ZycCZxPMlWy3IEn/jxb6hWdFNXz8jVRqTywvk
-IEXNZyWAbdhaL6mOS3P1V76hOxFKB2jW52abs2NGnsF5tXDzGFdXTixlWl9RotUX
-4x+ezh/5SZXhUL5nYp7fcR+P5gWCewacSqq0gA8GLtxwWxK/bbXt4yku
-=TUC4
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmC+qfoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumNpqB/951mGkJjgJHnAr7+WJS6XONjsLme09
+ewl/ce7NMX+LydnSjv+Ra6bYh1aCtbVS4mE2pxaMzWnwJ7AilHYhgZzcwX9b/CXw
+ZI9sNfYcfbAYeKgsK144XDISK7Nkd8ErY4OE1A4rkHrLd6td/+BeVijMPSLucoJj
+EsqBGEv+iiNFtGktiWP6ByR/mxyRa2+5QLrlnLR8XjZpij6vxHyKS6TxKwZyqNv9
+hvIxrAnriQnhpw3HVi32yt5M8i53C/AVdNaMy1BStB2ThCYGZ63P9OspqmsEOBSv
+Kt7H2hotNbmVwMoyRnmyvO05TtIjNFe3LyST3ZGjepCTfNsNVLoGxxRz
+=dzGc
 -----END PGP SIGNATURE-----
