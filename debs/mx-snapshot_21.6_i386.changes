@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Format: 1.8
 Date: Fri, 04 Jun 2021 18:59:18 -0400
 Source: mx-snapshot
@@ -15,11 +18,23 @@ Changes:
  .
    * Add --override-size/-o option to skip calculating free spece
 Checksums-Sha1:
- 6da2bb4f25ffd706e2613ceba0853014fc75031a 9564 mx-snapshot_21.6_i386.buildinfo
- fcbf518097c1a332be2aaf1f6ad03e85e95d24e2 246492 mx-snapshot_21.6_i386.deb
+ cb0f8716f72fc1d7aecc6e7f67572868ddcbffba 10126 mx-snapshot_21.6_i386.buildinfo
+ 89fcd3b7d1f9deb62e831f06de86a5c6f1552ef7 246880 mx-snapshot_21.6_i386.deb
 Checksums-Sha256:
- e3264517b457333b84331cf1ab9b7b5bc6f2f1f8a21f2cb59a300895181fa1a3 9564 mx-snapshot_21.6_i386.buildinfo
- d6b68b6da2e0bea39245a0fedd980b208358b4c1fcb97a2c5521336814754c49 246492 mx-snapshot_21.6_i386.deb
+ 2c069b64e2d73335e6448e1eab08b383886f64ed707c4f096270aecf9c2c8fcc 10126 mx-snapshot_21.6_i386.buildinfo
+ bc2feda82d3909ffbd29993dc9a32160734d10bcdfc03a9876da9037c7a572ae 246880 mx-snapshot_21.6_i386.deb
 Files:
- 656d1656a6648da82571b3e7564bfd27 9564 admin optional mx-snapshot_21.6_i386.buildinfo
- ca23e03106280213ed2a226a0fb51a92 246492 admin optional mx-snapshot_21.6_i386.deb
+ 3b3e9ace925e156eb49017070adff4a3 10126 admin optional mx-snapshot_21.6_i386.buildinfo
+ 3689108c59a44293753a56bac847fa40 246880 admin optional mx-snapshot_21.6_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmC+ozoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumDCAB/kBUTUwS7EKsMuaSjY5Z/DrYrbxR+Pz
+E3N2SEOSqO/YCrLdREqIk/TXicA3C083rbvfLRYxBHy1WUZNGCSAaZMWF6NRB6Sg
+aH7qHlXdmPGcLDHjC05gOF+0KfPTmjvWI4Q3hsmd3f5cEacePcD7fLb8qUiCWC2B
+V0BdpsvwgWQdFqnIcT0W7ZzUF9dbW1QO480ytfLO93x/MpzdILn0eezwg4/XLebf
+3h0cd4WaC6KKs5Ju3ok+a9wLci6NM4xelV5R3kRM6hPExpIWoQKOBYQXl5e22Ac7
+Y/oLW1jj2LlaZ4F6QZhSPJk8HQNFT5eQIbrGMTH/Q22ykpnEnM+CM79g
+=Q21L
+-----END PGP SIGNATURE-----

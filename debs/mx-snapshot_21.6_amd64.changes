@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Format: 1.8
 Date: Fri, 04 Jun 2021 18:59:18 -0400
 Source: mx-snapshot
@@ -15,17 +18,29 @@ Changes:
  .
    * Add --override-size/-o option to skip calculating free spece
 Checksums-Sha1:
- 8d811e4b76db8e1f49137d0946a9b1e1e2b013e4 602 mx-snapshot_21.6.dsc
- 14a24a9572bfcab880aa41c14d87ee6da8683f10 186588 mx-snapshot_21.6.tar.xz
- eb3760d6bc60a6ff68248f5d9c2d40c627ea9713 9855 mx-snapshot_21.6_amd64.buildinfo
- a1c3dd83a8e6366cd1c34e0be7d1b966cbecaf9c 240286 mx-snapshot_21.6_amd64.deb
+ 5ff461a783cdc862b8a3bfc9070d0cc29993a5ac 1164 mx-snapshot_21.6.dsc
+ d5bef7b4d8cb35b850bd84d04540b8933d893db6 186796 mx-snapshot_21.6.tar.xz
+ b737e2309d691847465e03ff10992a8c958658bb 10420 mx-snapshot_21.6_amd64.buildinfo
+ 855a838ea2828c9a0fb5f7a5abc40f0e30add7a3 240204 mx-snapshot_21.6_amd64.deb
 Checksums-Sha256:
- ee5adca7044862bc3916e5ff354074ed3730f9fb07834492e09240fdb91f8978 602 mx-snapshot_21.6.dsc
- 1bac3d6f93db79ad775e22bee806d49c6af8c84ebe616006007ac24e4a9e0cd6 186588 mx-snapshot_21.6.tar.xz
- 7427c7c2c74af311f4f220996126a109aeb83cbb594b39b7225ec3e39a4f7b4a 9855 mx-snapshot_21.6_amd64.buildinfo
- a8390e4712eec11654b8426168cefff2819def3b0ad6e7a27a297f6d2d477a07 240286 mx-snapshot_21.6_amd64.deb
+ 66b4c6b8e1b540755365c1d5f0512060b541d771a69c7d391014faadd429fc4b 1164 mx-snapshot_21.6.dsc
+ b0209f069ccea459804a1c496e03480457b7e24b1500ed2403aba2a19b180f86 186796 mx-snapshot_21.6.tar.xz
+ 211b210c4c750132df321c018254c5a71af65f857e0c1dc3b6c8b571c14531b5 10420 mx-snapshot_21.6_amd64.buildinfo
+ d0d7a94c213ba7602079aa60c586b798fa9167fdbcaa874a7bac7db248ee6713 240204 mx-snapshot_21.6_amd64.deb
 Files:
- 0138ba5a9664649756046909e5ff9773 602 admin optional mx-snapshot_21.6.dsc
- ada9e55122b7755bbf266e4327dcaf7b 186588 admin optional mx-snapshot_21.6.tar.xz
- 56f5f17864225b3ac57775aff4acb653 9855 admin optional mx-snapshot_21.6_amd64.buildinfo
- ba3363b53de46da0485ce5f4d5e68786 240286 admin optional mx-snapshot_21.6_amd64.deb
+ 9d18d8aa0c3f6ba564c7c41225a5fc98 1164 admin optional mx-snapshot_21.6.dsc
+ ec691830f28b32fdee77bfff812ddfa4 186796 admin optional mx-snapshot_21.6.tar.xz
+ efff6ce16fc2d09d41b4fce6fe866976 10420 admin optional mx-snapshot_21.6_amd64.buildinfo
+ 14810796ac065fe35537cc3a3b1facf4 240204 admin optional mx-snapshot_21.6_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmC+ozoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHkvB/9IiRHkpjWoLJK5p8r1doePB5Lsba+j
+i7Na+LPF63RUDpdhzhbBiWW980dWPk9y8nkKhReYLbMJdnZ4rL1I8y6ORYOLd9bP
+ZMJqxZAgKrK1DceqjB6TcUSsAj/4WkQiXdLRP8zvi9F4DR3CXLBz4PUrxdw89sBz
+WBIFr8GOphjCEsvAVcRrp2tnSxR06OyR1nNOZ4TUoT6JpUwnqjefqPmZJPz7BFXu
+fWkCH4YJ6tvIudPlD9VHxc3b9O+wiLhnt2Jszzu7OtkCKmbAXud9nQgyGE90uz3r
+CFVhusymAnG17CpqYwYEUi0+ljGXaTCUOMMPQJ9D+VXDvmBldvQpT8fR
+=W+M1
+-----END PGP SIGNATURE-----

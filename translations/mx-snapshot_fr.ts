@@ -6,7 +6,7 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <location filename="../mainwindow.cpp" line="116"/>
-        <location filename="../mainwindow.cpp" line="319"/>
+        <location filename="../mainwindow.cpp" line="320"/>
         <source>MX Snapshot</source>
         <translation>MX Instantané</translation>
     </message>
@@ -376,12 +376,12 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <translation>Résultats</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
+        <location filename="../mainwindow.cpp" line="300"/>
         <source>Edit Boot Menu</source>
         <translation>Éditer le menu de démarrage</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="299"/>
+        <location filename="../mainwindow.cpp" line="301"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation>Le programme va se mettre en pause afin de vous permettre d&apos;éditer les fichiers du répertoire de travail. Veuillez choisir Yes pour éditer le menu de démarrage, ou No pour passer cette étape et continuer la création de l&apos;instantané.</translation>
     </message>
@@ -394,52 +394,52 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <translation type="vanished">Terminé!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="311"/>
+        <location filename="../mainwindow.cpp" line="312"/>
         <source>Close</source>
         <translation>Fermer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="388"/>
+        <location filename="../mainwindow.cpp" line="389"/>
         <source>About %1</source>
         <translation>À propos %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="389"/>
+        <location filename="../mainwindow.cpp" line="390"/>
         <source>Version: </source>
         <translation>Version: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="390"/>
+        <location filename="../mainwindow.cpp" line="391"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Programme créant un instantané du système MX Linux en fonctionnement sous forme d&apos;un live CD.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="392"/>
+        <location filename="../mainwindow.cpp" line="393"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="393"/>
+        <location filename="../mainwindow.cpp" line="394"/>
         <source>%1 License</source>
         <translation>%1 Licence</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="407"/>
+        <location filename="../mainwindow.cpp" line="408"/>
         <source>%1 Help</source>
         <translation>%1 Aide</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="416"/>
         <source>Select Snapshot Directory</source>
         <translation>Choisissez un répertoire pour l&apos;instantané</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="434"/>
+        <location filename="../mainwindow.cpp" line="435"/>
         <source>Confirmation</source>
         <translation>Confirmation</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="434"/>
+        <location filename="../mainwindow.cpp" line="435"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Êtes-vous sûr de vouloir quitter l&apos;application?</translation>
     </message>
@@ -623,7 +623,7 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../batchprocessing.cpp" line="57"/>
+        <location filename="../batchprocessing.cpp" line="59"/>
         <source>The program will pause the build and open the boot menu in your text editor.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -712,7 +712,7 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <translation type="unfinished">Vidéos</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="116"/>
+        <location filename="../work.cpp" line="182"/>
         <source>Interrupted or failed to complete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -720,131 +720,141 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
 <context>
     <name>Work</name>
     <message>
-        <location filename="../work.cpp" line="35"/>
-        <location filename="../work.cpp" line="56"/>
-        <location filename="../work.cpp" line="63"/>
-        <location filename="../work.cpp" line="69"/>
-        <location filename="../work.cpp" line="209"/>
-        <location filename="../work.cpp" line="226"/>
-        <location filename="../work.cpp" line="263"/>
-        <location filename="../work.cpp" line="308"/>
-        <location filename="../work.cpp" line="339"/>
+        <location filename="../work.cpp" line="36"/>
+        <location filename="../work.cpp" line="122"/>
+        <location filename="../work.cpp" line="129"/>
+        <location filename="../work.cpp" line="135"/>
+        <location filename="../work.cpp" line="275"/>
+        <location filename="../work.cpp" line="292"/>
+        <location filename="../work.cpp" line="329"/>
+        <location filename="../work.cpp" line="374"/>
+        <location filename="../work.cpp" line="405"/>
         <source>Error</source>
         <translation type="unfinished">Erreur</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="36"/>
+        <location filename="../work.cpp" line="37"/>
         <source>Current kernel doesn&apos;t support selected compression algorithm, please edit the configuration file and select a different algorithm.</source>
         <translation type="unfinished">Le noyau actuel ne supporte pas l&apos;algorithme de compression choisi, veuillez éditer le fichier de configuration et sélectionner un algorithme différent.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="57"/>
-        <location filename="../work.cpp" line="64"/>
-        <location filename="../work.cpp" line="70"/>
+        <location filename="../work.cpp" line="91"/>
+        <source>Calculating total size of excluded files...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="100"/>
+        <source>Calculating size of root...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../work.cpp" line="123"/>
+        <location filename="../work.cpp" line="130"/>
+        <location filename="../work.cpp" line="136"/>
         <source>There&apos;s not enough free space on your target disk, you need at least %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="58"/>
-        <location filename="../work.cpp" line="65"/>
-        <location filename="../work.cpp" line="71"/>
+        <location filename="../work.cpp" line="124"/>
+        <location filename="../work.cpp" line="131"/>
+        <location filename="../work.cpp" line="137"/>
         <source>You have %1 free space on %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="96"/>
+        <location filename="../work.cpp" line="162"/>
         <source>Cleaning...</source>
         <translation type="unfinished">Nettoyage...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="112"/>
-        <location filename="../work.cpp" line="115"/>
-        <location filename="../work.cpp" line="248"/>
+        <location filename="../work.cpp" line="178"/>
+        <location filename="../work.cpp" line="181"/>
+        <location filename="../work.cpp" line="314"/>
         <source>Done</source>
         <translation type="unfinished">Terminé</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="150"/>
+        <location filename="../work.cpp" line="216"/>
         <source>Copying the new-iso filesystem...</source>
         <translation type="unfinished">Copie du nouveau système de fichiers iso en cours... </translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="178"/>
+        <location filename="../work.cpp" line="244"/>
         <source>Could not create temp directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="207"/>
+        <location filename="../work.cpp" line="273"/>
         <source>Squashing filesystem...</source>
         <translation type="unfinished">Écrasement du système de fichiers...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="209"/>
+        <location filename="../work.cpp" line="275"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">Impossible de créer le fichier linuxfs. Veuillez vérifier que l&apos;espace sur la partition de destination est suffisant.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="224"/>
+        <location filename="../work.cpp" line="290"/>
         <source>Creating CD/DVD image file...</source>
         <translation type="unfinished">Création du fichier image pour CD/DVD</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="226"/>
+        <location filename="../work.cpp" line="292"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">Impossible de créer le fichier ISO. Veuillez vérifier que l&apos;espace sur la partition de destination est suffisant.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="233"/>
+        <location filename="../work.cpp" line="299"/>
         <source>Making hybrid iso</source>
         <translation type="unfinished"> Création d&apos;une image ISO hybride</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="249"/>
+        <location filename="../work.cpp" line="315"/>
         <source>Success</source>
         <translation type="unfinished">Réussite de l&apos;installation</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="249"/>
+        <location filename="../work.cpp" line="315"/>
         <source>MX Snapshot completed sucessfully!</source>
         <translation type="unfinished">Instantané MX crée avec succès!</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="250"/>
+        <location filename="../work.cpp" line="316"/>
         <source>Snapshot took %1 to finish.</source>
         <translation type="unfinished">Instantané a pris %1 pour terminer.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="251"/>
+        <location filename="../work.cpp" line="317"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
         <translation type="unfinished">Merci d&apos;utiliser MX Snapshot, lancez ensuite Créateur de Live USB MX!</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="260"/>
+        <location filename="../work.cpp" line="326"/>
         <source>Installing </source>
         <translation type="unfinished">Installation...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="263"/>
+        <location filename="../work.cpp" line="329"/>
         <source>Could not install </source>
         <translation type="unfinished">Installation impossible</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="273"/>
+        <location filename="../work.cpp" line="339"/>
         <source>Calculating checksum...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="308"/>
+        <location filename="../work.cpp" line="374"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="317"/>
+        <location filename="../work.cpp" line="383"/>
         <source>Building new initrd...</source>
         <translation type="unfinished">Nouvel initrd en cours de création...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="339"/>
+        <location filename="../work.cpp" line="405"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>

@@ -93,18 +93,25 @@ void Work::checkEnoughSpace()
     quint64 excl_size = settings->shell->getCmdOut("du -sxc {" + excludes.join(",").remove("/.bind-root,")
                                                        + "} 2>/dev/null| tail -1| cut -f1").toULongLong(&ok);
     if (!ok) {
-        qDebug() << "Error: calculating size of excluded files";
+        qDebug() << "Error: calculating size of excluded files\n"\
+                    "If you are sure you have enough free space rerun the program with -o/--overrde-size option";
         cleanUp();
     }
     emit message(tr("Calculating size of root..."));
     quint64 root_size = settings->shell->getCmdOut("du -sx /.bind-root 2>/dev/null| tail -1| cut -f1").toULongLong(&ok);
     if (!ok) {
-        qDebug() << "Error: calculating root size (/.bind-root)";
+        qDebug() << "Error: calculating root size (/.bind-root)\n"\
+                    "If you are sure you have enough free space rerun the program with -o/--overrde-size option";
         cleanUp();
     }
     qDebug() << "SIZE ROOT" << root_size;
     qDebug() << "SIZE EXCL" << excl_size;
     qDebug() << "SIZE FREE" << settings->free_space;
+    if (excl_size > root_size) {
+        qDebug() << "Error: calculating excluded file size.\n"\
+                    "If you are sure you have enough free space rerun the program with -o/--overrde-size option";
+        cleanUp();
+    }
 
     uint c_factor = compression_factor.value(settings->compression);
     quint64 adjusted_root = (root_size - excl_size) * c_factor / 100;
