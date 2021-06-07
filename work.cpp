@@ -24,6 +24,7 @@
 
 #include <QDebug>
 #include <QDate>
+#include <QRegularExpression>
 #include <QSettings>
 
 #include "work.h"
@@ -49,6 +50,8 @@ void Work::checkEnoughSpace()
 {
     QStringList excludes;
     QFile *file = &settings->snapshot_excludes;
+
+    // open and read the excludes file
     if (!file->open(QIODevice::ReadOnly))
         qDebug() << "Count not open file: " << file->fileName();
     while(!file->atEnd()) {
@@ -58,6 +61,7 @@ void Work::checkEnoughSpace()
     }
     file->close();
 
+    // add session excludes
     if (!settings->session_excludes.isEmpty()) {
         QString set = settings->session_excludes;
         set.remove(0, 3); // remove "-e "
@@ -67,19 +71,26 @@ void Work::checkEnoughSpace()
             excludes << tmp;
         }
     }
-    QStringList tmp_list;
-    for (QString tmp : excludes) { // escape special bash characters, might need to expand this
-        tmp.replace("!", "\\!");
-        tmp.replace(" ", "\\ ");
-        tmp.replace("(", "\\(");
-        tmp.replace(")", "\\)");
-        tmp.replace("|", "\\|");
-        tmp_list << tmp.prepend("/.bind-root/"); // check size occupied by excluded files on /.bind-root only
-    }
 
+    QString root_dev = settings->shell->getCmdOut("df /.bind-root --output=target| tail -1");
+    QMutableStringListIterator it(excludes);
+    while (it.hasNext()) {
+        it.next();
+        if (it.value().indexOf("!") != -1) // remove things like "!(minstall.desktop)"
+            it.value().truncate(it.value().indexOf("!"));
+        it.value().replace(" ", "\\ "); // escape special bash characters, might need to expand this
+        it.value().replace("(", "\\(");
+        it.value().replace(")", "\\)");
+        it.value().replace("|", "\\|");
+        it.value().prepend("/.bind-root/"); // check size occupied by excluded files on /.bind-root only
+        it.value().remove(QRegularExpression("\\*$")); // chop last *
+        // remove from list if files not on the same volume
+        if (root_dev != settings->shell->getCmdOut("df " + it.value() + " --output=target| tail -1"))
+            it.remove();
+    }
     emit message(tr("Calculating total size of excluded files..."));
     bool ok;
-    quint64 excl_size = settings->shell->getCmdOut("du -sxc {" + tmp_list.join(",").remove("/.bind-root,")
+    quint64 excl_size = settings->shell->getCmdOut("du -sxc {" + excludes.join(",").remove("/.bind-root,")
                                                        + "} 2>/dev/null| tail -1| cut -f1").toULongLong(&ok);
     if (!ok) {
         qDebug() << "Error: calculating size of excluded files";
