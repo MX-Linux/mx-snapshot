@@ -161,7 +161,7 @@ bool MainWindow::installPackage(const QString &package)
     ui->buttonBack->setDisabled(true);
     ui->stackedWidget->setCurrentWidget(ui->outputPage);
     displayOutput();
-    if (!work.installPackage(package)) {
+    if (not work.installPackage(package)) {
         disableOutput();
         return false;
     }
@@ -249,7 +249,8 @@ void MainWindow::progress()
 void MainWindow::on_buttonNext_clicked()
 {
     QString file_name = ui->lineEditName->text();
-    if (not file_name.endsWith(".iso")) file_name += ".iso";
+    if (not file_name.endsWith(".iso"))
+        file_name += ".iso";
 
     // on first page
     if (ui->stackedWidget->currentIndex() == 0) {
@@ -290,10 +291,12 @@ void MainWindow::on_buttonNext_clicked()
         this->setWindowTitle(tr("Output"));
         ui->outputBox->clear();
         work.setupEnv();
-        if (not monthly and not override_size) work.checkEnoughSpace();
+        if (not monthly and not override_size)
+            work.checkEnoughSpace();
         work.copyNewIso();
         ui->outputLabel->setText("");
-        if (!work.mkDir(file_name)) return;
+        if (not work.mkDir(file_name))
+            return;
         work.savePackageList(file_name);
 
         if (edit_boot_menu) {
@@ -334,37 +337,37 @@ void MainWindow::on_buttonEditExclude_clicked()
 void MainWindow::on_excludeDocuments_toggled(bool checked)
 {
     excludeDocuments(checked);
-    if (!checked) ui->excludeAll->setChecked(false);
+    if (not checked) ui->excludeAll->setChecked(false);
 }
 
 void MainWindow::on_excludeDownloads_toggled(bool checked)
 {
     excludeDownloads(checked);
-    if (!checked) ui->excludeAll->setChecked(false);
+    if (not checked) ui->excludeAll->setChecked(false);
 }
 
 void MainWindow::on_excludePictures_toggled(bool checked)
 {
     excludePictures(checked);
-    if (!checked) ui->excludeAll->setChecked(false);
+    if (not checked) ui->excludeAll->setChecked(false);
 }
 
 void MainWindow::on_excludeMusic_toggled(bool checked)
 {
     excludeMusic(checked);
-    if (!checked) ui->excludeAll->setChecked(false);
+    if (not checked) ui->excludeAll->setChecked(false);
 }
 
 void MainWindow::on_excludeVideos_toggled(bool checked)
 {
     excludeVideos(checked);
-    if (!checked) ui->excludeAll->setChecked(false);
+    if (not checked) ui->excludeAll->setChecked(false);
 }
 
 void MainWindow::on_excludeDesktop_toggled(bool checked)
 {
     excludeDesktop(checked);
-    if (!checked) ui->excludeAll->setChecked(false);
+    if (not checked) ui->excludeAll->setChecked(false);
 }
 
 void MainWindow::on_radioRespin_toggled(bool checked)
@@ -414,7 +417,7 @@ void MainWindow::on_buttonSelectSnapshot_clicked()
     QFileDialog dialog;
 
     QString selected = dialog.getExistingDirectory(this, tr("Select Snapshot Directory"), QString(), QFileDialog::ShowDirsOnly);
-    if (!selected.isEmpty()) {
+    if (not selected.isEmpty()) {
         snapshot_dir = selected + "/snapshot";
         ui->labelSnapshotDir->setText(snapshot_dir);
         listFreeSpace();
@@ -454,7 +457,7 @@ void MainWindow::on_cbCompression_currentIndexChanged(const QString &arg1)
 void MainWindow::on_excludeNetworks_toggled(bool checked)
 {
     excludeNetworks(checked);
-    if (!checked) ui->excludeAll->setChecked(false);
+    if (not checked) ui->excludeAll->setChecked(false);
 }
 
 void MainWindow::on_checksums_toggled(bool checked)

@@ -124,11 +124,11 @@ QString Settings::getEditor()
     QString editor;
     if (system("command -v " + gui_editor.fileName().toUtf8()) != 0) {  // if specified editor doesn't exist get the default one
         QString local = QFile::exists(QDir::homePath() + "/.local/share/applications") ? "/.local/share/applications " : " ";
-        QString desktop_file = shell->getCmdOut("find " + local + "/usr/share/applications -name $(xdg-mime query default text/plain) | grep -m1 .");
+        QString desktop_file = shell->getCmdOut("find " + local + "/usr/share/applications -name $(xdg-mime query default text/plain) |grep -m1 .");
         editor = shell->getCmdOut("grep -m1 ^Exec " + desktop_file + " |cut -d= -f2 |cut -d\" \" -f1", true);
-        if (editor.isEmpty() || system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exit use nano as backup editor
+        if (editor.isEmpty() or system("command -v " + editor.toUtf8()) != 0) { // if default one doesn't exit use nano as backup editor
             editor = "x-terminal-emulator -e nano";
-        } else if (editor == "kate" || editor == "kwrite") { // need to run these as normal user
+        } else if (editor == "kate" or editor == "kwrite") { // need to run these as normal user
             editor = "runuser -u $(logname) " + editor;
         }
     } else {
@@ -144,7 +144,7 @@ QString Settings::getSnapshotSize()
     if (QFileInfo::exists(snapshot_dir)) {
         QString cmd = QString("find \"%1\" -maxdepth 1 -type f -name '*.iso' -exec du -shc {} + |tail -1 |awk '{print $1}'").arg(snapshot_dir);
         size = shell->getCmdOut(cmd);
-        if (!size.isEmpty())
+        if (not size.isEmpty())
             return size;
     }
     return "0";
@@ -180,12 +180,17 @@ QString Settings::getXdgUserDirs(const QString& folder)
         QString dir;
         bool success = shell->run("runuser -l " + user + " -c \"xdg-user-dir " + folder + "\"", dir);
         if (success) {
-            if (englishDirs.value(folder) == dir.section("/", -1) || dir.trimmed() == "/home/" + user || dir.trimmed() == "/home/" + user + "/" || dir.isEmpty()) // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
+            if (englishDirs.value(folder) == dir.section("/", -1)
+                    or dir.trimmed() == "/home/" + user
+                    or dir.trimmed() == "/home/" + user + "/"
+                    or dir.isEmpty()) // skip if English name or of return folder is the home folder (if XDG-USER-DIR not defined)
                 continue;
             if (dir.startsWith("/"))
                 dir.remove(0, 1); // remove training slash
-            (folder == "DESKTOP") ? dir.append("/!(minstall.desktop)") : dir.append("/*\" \"" + dir + "/.*");
-            (result.isEmpty()) ? result.append("\" \"" + dir) : result.append(" \"" + dir);
+            (folder == "DESKTOP") ? dir.append("/!(minstall.desktop)")
+                                  : dir.append("/*\" \"" + dir + "/.*");
+            (result.isEmpty()) ? result.append("\" \"" + dir)
+                               : result.append(" \"" + dir);
             result.append("\""); // close the quote for each user, will strip the last one before returning;
         }
     }
@@ -196,11 +201,11 @@ QString Settings::getXdgUserDirs(const QString& folder)
 void Settings::selectKernel()
 {
     if (kernel.startsWith("/boot/vmlinuz-")) kernel.remove("/boot/vmlinuz-"); // remove path and part of name if passed as arg
-    if (kernel.isEmpty() || !QFileInfo::exists("/boot/vmlinuz-" + kernel)) {  // if kernel version not passed as arg, or incorrect
+    if (kernel.isEmpty() or not QFileInfo::exists("/boot/vmlinuz-" + kernel)) {  // if kernel version not passed as arg, or incorrect
         kernel = shell->getCmdOut("uname -r");
-        if (!QFileInfo::exists("/boot/vmlinuz-" + kernel)) { // if current kernel doesn't exist for some reason (e.g. WSL) in /boot pick first kernel
-             kernel = shell->getCmdOut("ls -1 /boot/vmlinuz* | sort | tail -n1").remove("/boot/vmlinuz-");
-             if (!QFileInfo::exists("/boot/vmlinuz-" + kernel)) {
+        if (not QFileInfo::exists("/boot/vmlinuz-" + kernel)) { // if current kernel doesn't exist for some reason (e.g. WSL) in /boot pick first kernel
+             kernel = shell->getCmdOut("ls -1 /boot/vmlinuz* |sort |tail -n1").remove("/boot/vmlinuz-");
+             if (not QFileInfo::exists("/boot/vmlinuz-" + kernel)) {
                  QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("Could not find a usable kernel"));
                  exit(EXIT_FAILURE);
              }
@@ -486,7 +491,7 @@ void Settings::otherExclusions()
     if (reset_accounts) {
         addRemoveExclusion(true, "/etc/minstall.conf");
         // exclude /etc/localtime if link and timezone not America/New_York
-        if (shell->run("test -L /etc/localtime") && shell->getCmdOut("cat /etc/timezone") != "America/New_York" )
+        if (shell->run("test -L /etc/localtime") and shell->getCmdOut("cat /etc/timezone") != "America/New_York" )
             addRemoveExclusion(true, "/etc/localtime");
     }
 }
@@ -495,27 +500,27 @@ void Settings::processArgs(const QCommandLineParser &arg_parser)
 {
     kernel = arg_parser.value("kernel");
     preempt = arg_parser.isSet("preempt");
-    if (!arg_parser.value("directory").isEmpty() && QFileInfo::exists(arg_parser.value("directory")))
+    if (not arg_parser.value("directory").isEmpty() and QFileInfo::exists(arg_parser.value("directory")))
         snapshot_dir = arg_parser.value("directory") + (snapshot_dir.endsWith("/") ? "snapshot" : "/snapshot");
-    if (!arg_parser.value("file").isEmpty())
+    if (not arg_parser.value("file").isEmpty())
         snapshot_name = arg_parser.value("file") + (arg_parser.value("file").endsWith(".iso") ? QString() : ".iso");
     else
         snapshot_name = getFilename();
     reset_accounts = arg_parser.isSet("reset");
     if (reset_accounts) excludeAll();
     if (arg_parser.isSet("month")) reset_accounts = true;
-    if (arg_parser.isSet("checksums") || arg_parser.isSet("month"))
+    if (arg_parser.isSet("checksums") or arg_parser.isSet("month"))
         make_chksum = true;
     if (arg_parser.isSet("no-checksums"))
         make_chksum = false;
-    if (!arg_parser.value("compression").isEmpty())
+    if (not arg_parser.value("compression").isEmpty())
         compression = arg_parser.value("compression");
     selectKernel();
 }
 
 void Settings::processExclArgs(const QCommandLineParser &arg_parser)
 {
-    if (!arg_parser.values("exclude").isEmpty()) {
+    if (not arg_parser.values("exclude").isEmpty()) {
         QStringList options = arg_parser.values("exclude");
         QStringList valid_options {"Desktop", "Documents", "Downloads", "Music", "Networks", "Pictures", "Videos"};
         for (const QString &option : options )
@@ -528,7 +533,7 @@ void Settings::setMonthlySnapshot(const QCommandLineParser &arg_parser)
 {
     QString name;
     if (QFileInfo::exists("/etc/mx-version")) {
-        name = shell->getCmdOut("cat /etc/mx-version | cut -f1 -d' '");
+        name = shell->getCmdOut("cat /etc/mx-version |cut -f1 -d' '");
     } else {
         qDebug() << "/etc/mx-version not found. Not MX Linux?";
         name = "MX_" + QString(i686 ? "386" : "x64");
