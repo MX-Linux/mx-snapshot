@@ -6,7 +6,7 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <location filename="../mainwindow.cpp" line="116"/>
-        <location filename="../mainwindow.cpp" line="320"/>
+        <location filename="../mainwindow.cpp" line="323"/>
         <source>MX Snapshot</source>
         <translation>MX Tilannevedos</translation>
     </message>
@@ -27,7 +27,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="158"/>
-        <location filename="../mainwindow.cpp" line="264"/>
+        <location filename="../mainwindow.cpp" line="265"/>
         <source>Snapshot name:</source>
         <translation>Tilannevedoksen nimi:</translation>
     </message>
@@ -242,8 +242,8 @@
         <translation>Asennetaan</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="278"/>
-        <location filename="../mainwindow.cpp" line="282"/>
+        <location filename="../mainwindow.cpp" line="279"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
@@ -314,22 +314,22 @@
         <translation>Odota, ole hyvä. Lasketaan käytettyä levytilaa...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="256"/>
+        <location filename="../mainwindow.cpp" line="257"/>
         <source>Settings</source>
         <translation>Asetukset</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="261"/>
+        <location filename="../mainwindow.cpp" line="262"/>
         <source>Snapshot will use the following settings:*</source>
         <translation>Tilannevedos tulee käyttämään seuraavia asetuksia:*</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="263"/>
+        <location filename="../mainwindow.cpp" line="264"/>
         <source>- Snapshot directory:</source>
         <translation>- Tilannevedosten hakemisto:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="265"/>
+        <location filename="../mainwindow.cpp" line="266"/>
         <source>- Kernel to be used:</source>
         <translation>- Käytettävä ydin:</translation>
     </message>
@@ -338,47 +338,47 @@
         <translation type="vanished">Nykyinen ydin ei tue valittua pakkausalgoritmia, muokkaa asetustiedostoa ja valitse eri algoritmi.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="269"/>
+        <location filename="../mainwindow.cpp" line="270"/>
         <source>Final chance</source>
         <translation>Viimeinen mahdollisuus</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="270"/>
+        <location filename="../mainwindow.cpp" line="271"/>
         <source>Snapshot now has all the information it needs to create an ISO from your running system.</source>
         <translation>Tilannevedoksen luontityökalulla on nyt kaikki tarvittava tieto, jotta se voi luoda ISO-kuvakkeen käynnissä olevasta järjestelmästäsi.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="271"/>
+        <location filename="../mainwindow.cpp" line="272"/>
         <source>It will take some time to finish, depending on the size of the installed system and the capacity of your computer.</source>
         <translation>Viimeistely tulee kestämään kotvasen aikaa, riippuen asennetun järjestelmän koosta sekä tietokoneesi kapasiteetista.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="272"/>
+        <location filename="../mainwindow.cpp" line="273"/>
         <source>OK to start?</source>
         <translation>Voidaanko aloittaa?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="278"/>
+        <location filename="../mainwindow.cpp" line="279"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="282"/>
+        <location filename="../mainwindow.cpp" line="283"/>
         <source>Could not create temporary directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="290"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>Output</source>
         <translation>Tuloste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
+        <location filename="../mainwindow.cpp" line="303"/>
         <source>Edit Boot Menu</source>
         <translation>Muokkaa käynnistysvalikkoa</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="301"/>
+        <location filename="../mainwindow.cpp" line="304"/>
         <source>The program will now pause to allow you to edit any files in the work directory. Select Yes to edit the boot menu or select No to bypass this step and continue creating the snapshot.</source>
         <translation>Tämä ohjelma tauotetaan nyt jotta voit muokata työkansion mitä tahansa tiedostoja. Valitse Kyllä muokataksesi käynnistysvalikkoa, tai valitse vaihtoehtoisesti Ei ohittaaksesi tämän vaiheen sekä jatkaaksesi snapshot-järjestelmävedoksen luomista.</translation>
     </message>
@@ -391,52 +391,52 @@
         <translation type="vanished">Kaikki valmista!</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="312"/>
+        <location filename="../mainwindow.cpp" line="315"/>
         <source>Close</source>
         <translation>Sulje</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="389"/>
+        <location filename="../mainwindow.cpp" line="392"/>
         <source>About %1</source>
         <translation>%1 lisätietoja</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="390"/>
+        <location filename="../mainwindow.cpp" line="393"/>
         <source>Version: </source>
         <translation>Versio: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="391"/>
+        <location filename="../mainwindow.cpp" line="394"/>
         <source>Program for creating a live-CD from the running system for MX Linux</source>
         <translation>Ohjelma jonka avulla voit luoda live-CD:n tällä hetkellä ajetusta järjestelmästä MX Linux:ille</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="393"/>
+        <location filename="../mainwindow.cpp" line="396"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="394"/>
+        <location filename="../mainwindow.cpp" line="397"/>
         <source>%1 License</source>
         <translation>%1 lupa</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="408"/>
+        <location filename="../mainwindow.cpp" line="411"/>
         <source>%1 Help</source>
         <translation>%1 Apuopas</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="416"/>
+        <location filename="../mainwindow.cpp" line="419"/>
         <source>Select Snapshot Directory</source>
         <translation>Valitse tilannevedosten hakemisto</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="435"/>
+        <location filename="../mainwindow.cpp" line="438"/>
         <source>Confirmation</source>
         <translation>Vahvistus</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="435"/>
+        <location filename="../mainwindow.cpp" line="438"/>
         <source>Are you sure you want to quit the application?</source>
         <translation>Oletko varma että haluat lopettaa sovelluksen?</translation>
     </message>
@@ -592,7 +592,7 @@
     <message>
         <location filename="../main.cpp" line="123"/>
         <location filename="../main.cpp" line="178"/>
-        <location filename="../settings.cpp" line="204"/>
+        <location filename="../settings.cpp" line="209"/>
         <source>Error</source>
         <translation type="unfinished">Virhe</translation>
     </message>
@@ -609,7 +609,7 @@
     </message>
     <message>
         <location filename="../main.cpp" line="179"/>
-        <location filename="../settings.cpp" line="211"/>
+        <location filename="../settings.cpp" line="216"/>
         <source>Current kernel doesn&apos;t support Squashfs, cannot continue.</source>
         <translation type="unfinished">Tämänhetkinen ydin ei tue Squashfs:ää, jatkaminen ei onnistu.</translation>
     </message>
@@ -635,32 +635,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="204"/>
+        <location filename="../settings.cpp" line="209"/>
         <source>Could not find a usable kernel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="285"/>
+        <location filename="../settings.cpp" line="290"/>
         <source>Used space on / (root): </source>
         <translation type="unfinished">Käytetty tila kohteessa / (root-juurihakemisto):</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="288"/>
+        <location filename="../settings.cpp" line="293"/>
         <source>estimated</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="297"/>
+        <location filename="../settings.cpp" line="302"/>
         <source>Used space on /home: </source>
         <translation type="unfinished">Käytetty tila /home -hakemistossa: </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="349"/>
+        <location filename="../settings.cpp" line="354"/>
         <source>Free space on %1, where snapshot folder is placed: </source>
         <translation type="unfinished">Vapaata tilaa kohteessa %1, johon snapshot-järjestelmävedoksen kansio sijoitetaan:</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="351"/>
+        <location filename="../settings.cpp" line="356"/>
         <source>The free space should be sufficient to hold the compressed data from / and /home
 
       If necessary, you can create more available space
@@ -675,42 +675,42 @@
 </translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="366"/>
+        <location filename="../settings.cpp" line="371"/>
         <source>Desktop</source>
         <translation type="unfinished">Työpöytä</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="367"/>
+        <location filename="../settings.cpp" line="372"/>
         <source>Documents</source>
         <translation type="unfinished">Tiedostot</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="368"/>
+        <location filename="../settings.cpp" line="373"/>
         <source>Downloads</source>
         <translation type="unfinished">Lataukset</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="369"/>
+        <location filename="../settings.cpp" line="374"/>
         <source>Music</source>
         <translation type="unfinished">Musiikki</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="370"/>
+        <location filename="../settings.cpp" line="375"/>
         <source>Networks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="371"/>
+        <location filename="../settings.cpp" line="376"/>
         <source>Pictures</source>
         <translation type="unfinished">Kuvat</translation>
     </message>
     <message>
-        <location filename="../settings.cpp" line="372"/>
+        <location filename="../settings.cpp" line="377"/>
         <source>Videos</source>
         <translation type="unfinished">Videot</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="182"/>
+        <location filename="../work.cpp" line="184"/>
         <source>Interrupted or failed to complete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -719,14 +719,14 @@
     <name>Work</name>
     <message>
         <location filename="../work.cpp" line="36"/>
-        <location filename="../work.cpp" line="122"/>
-        <location filename="../work.cpp" line="129"/>
-        <location filename="../work.cpp" line="135"/>
-        <location filename="../work.cpp" line="275"/>
-        <location filename="../work.cpp" line="292"/>
-        <location filename="../work.cpp" line="329"/>
-        <location filename="../work.cpp" line="374"/>
-        <location filename="../work.cpp" line="405"/>
+        <location filename="../work.cpp" line="124"/>
+        <location filename="../work.cpp" line="131"/>
+        <location filename="../work.cpp" line="137"/>
+        <location filename="../work.cpp" line="277"/>
+        <location filename="../work.cpp" line="294"/>
+        <location filename="../work.cpp" line="331"/>
+        <location filename="../work.cpp" line="376"/>
+        <location filename="../work.cpp" line="407"/>
         <source>Error</source>
         <translation type="unfinished">Virhe</translation>
     </message>
@@ -741,118 +741,118 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="100"/>
+        <location filename="../work.cpp" line="101"/>
         <source>Calculating size of root...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="123"/>
-        <location filename="../work.cpp" line="130"/>
-        <location filename="../work.cpp" line="136"/>
+        <location filename="../work.cpp" line="125"/>
+        <location filename="../work.cpp" line="132"/>
+        <location filename="../work.cpp" line="138"/>
         <source>There&apos;s not enough free space on your target disk, you need at least %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="124"/>
-        <location filename="../work.cpp" line="131"/>
-        <location filename="../work.cpp" line="137"/>
+        <location filename="../work.cpp" line="126"/>
+        <location filename="../work.cpp" line="133"/>
+        <location filename="../work.cpp" line="139"/>
         <source>You have %1 free space on %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="162"/>
+        <location filename="../work.cpp" line="164"/>
         <source>Cleaning...</source>
         <translation type="unfinished">Puhdistetaan...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="178"/>
-        <location filename="../work.cpp" line="181"/>
-        <location filename="../work.cpp" line="314"/>
+        <location filename="../work.cpp" line="180"/>
+        <location filename="../work.cpp" line="183"/>
+        <location filename="../work.cpp" line="316"/>
         <source>Done</source>
         <translation type="unfinished">Valmis</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="216"/>
+        <location filename="../work.cpp" line="218"/>
         <source>Copying the new-iso filesystem...</source>
         <translation type="unfinished">Jäljennetään new-iso tiedostojärjestelmää...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="244"/>
+        <location filename="../work.cpp" line="246"/>
         <source>Could not create temp directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="273"/>
+        <location filename="../work.cpp" line="275"/>
         <source>Squashing filesystem...</source>
         <translation type="unfinished">Puristetaan tiedostojärjestelmää...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="275"/>
+        <location filename="../work.cpp" line="277"/>
         <source>Could not create linuxfs file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">linuxfs-tiedostoa ei voitu luoda, varmista että sinulla on kohdeosiossa riittävä määrä tilaa.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="290"/>
+        <location filename="../work.cpp" line="292"/>
         <source>Creating CD/DVD image file...</source>
         <translation type="unfinished">CD/DVD-levykuvatiedostoa luodaan...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="292"/>
+        <location filename="../work.cpp" line="294"/>
         <source>Could not create ISO file, please check whether you have enough space on the destination partition.</source>
         <translation type="unfinished">ISO-tiedostoa ei voitu luoda, tarkista onko kohdeosiolla tarpeeksi levytilaa.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="299"/>
+        <location filename="../work.cpp" line="301"/>
         <source>Making hybrid iso</source>
         <translation type="unfinished">Tuotetaan risteytetty ISO</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="315"/>
+        <location filename="../work.cpp" line="317"/>
         <source>Success</source>
         <translation type="unfinished">Onnistui</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="315"/>
+        <location filename="../work.cpp" line="317"/>
         <source>MX Snapshot completed sucessfully!</source>
         <translation type="unfinished">MX Snapshot-levykuvavedos valmistui onnistuneesti!</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="316"/>
+        <location filename="../work.cpp" line="318"/>
         <source>Snapshot took %1 to finish.</source>
         <translation type="unfinished">Snapshot-levykuvavedos vei %1 valmistuakseen.</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="317"/>
+        <location filename="../work.cpp" line="319"/>
         <source>Thanks for using MX Snapshot, run MX Live USB Maker next!</source>
         <translation type="unfinished">Kiitos kun käytit MX Snapshot-järjestelmävedostyökalua, aja MX Live USB-tehtailija seuraavaksi!</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="326"/>
+        <location filename="../work.cpp" line="328"/>
         <source>Installing </source>
         <translation type="unfinished">Asennetaan</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="329"/>
+        <location filename="../work.cpp" line="331"/>
         <source>Could not install </source>
         <translation type="unfinished">Ei voitu asentaa</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="339"/>
+        <location filename="../work.cpp" line="341"/>
         <source>Calculating checksum...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="374"/>
+        <location filename="../work.cpp" line="376"/>
         <source>Could not create working directory. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="383"/>
+        <location filename="../work.cpp" line="385"/>
         <source>Building new initrd...</source>
         <translation type="unfinished">Rakennetaan uutta initrd:tä...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="405"/>
+        <location filename="../work.cpp" line="407"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>

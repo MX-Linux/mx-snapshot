@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Tue, 15 Jun 2021 02:23:07 -0400
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: i386
+Version: 21.6.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (21.6.01) mx; urgency=medium
+ .
+   * Fix: calculating occupied size when running live
+Checksums-Sha1:
+ 37d9ee46477b9520ce65be6f8770662c455c9a9f 10141 mx-snapshot_21.6.01_i386.buildinfo
+ 1121ce523e707f3dfbbb71de6f008d11c19778c6 246866 mx-snapshot_21.6.01_i386.deb
+Checksums-Sha256:
+ a83e5674993119da4add6cda355bb12273bccfe8e76b6a93796fdd4c7f9aaa54 10141 mx-snapshot_21.6.01_i386.buildinfo
+ 8f7c4e3f49facaf35ab592b9e78f5d55e5f5aa0ef29f4f5ae8215674dadc8673 246866 mx-snapshot_21.6.01_i386.deb
+Files:
+ 85fa6495c0ebc1050367c5154775a904 10141 admin optional mx-snapshot_21.6.01_i386.buildinfo
+ c09a9ddb63ad2cbc5aeac491fcbc8f1e 246866 admin optional mx-snapshot_21.6.01_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmDIR8sTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumBrVB/sGX3/b5yqTmoEnfhZzOHTr0Ald4Lno
+6ylYbyO9qacKiRgQZjrPrHHik1ARbxn3HqYiqyh8eRd+ptOKVpOzqe7bfGzOU/gq
+ZlPZ682nsC38cpzp7T1lqsDc6hQCXyt2rNwrYfclQw5BlNIDlP1yO20FWOO58Nrr
+FKRXoJaWmL8KXCJQbHzJ3E8eTAAaB+KO2eowyCCbdyq9m0Uer4/WK0oPvXAYyi2d
+LVQq4sKvPypJKyEcMu+G3X4LWvKX6xDeb5mz5W826RmK4x2731qcJj9jyWhqhfVH
+uqk41/WqJkqxxblDeu3Yxy7Jk2R+ylChHLv33OVZgaiRqR/cty68P1Hg
+=G82F
+-----END PGP SIGNATURE-----

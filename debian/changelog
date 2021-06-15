@@ -1,3 +1,9 @@
+mx-snapshot (21.6.01) mx; urgency=medium
+
+  * Fix: calculating occupied size when running live
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 15 Jun 2021 02:23:07 -0400
+
 mx-snapshot (21.6) mx; urgency=medium
 
   * Add --override-size/-o option to skip calculating free spece
