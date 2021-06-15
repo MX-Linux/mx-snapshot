@@ -94,14 +94,14 @@ void Work::checkEnoughSpace()
                                                        + "} 2>/dev/null| tail -1| cut -f1").toULongLong(&ok);
     if (!ok) {
         qDebug() << "Error: calculating size of excluded files\n"\
-                    "If you are sure you have enough free space rerun the program with -o/--overrde-size option";
+                    "If you are sure you have enough free space rerun the program with -o/--override-size option";
         cleanUp();
     }
     emit message(tr("Calculating size of root..."));
     quint64 root_size = settings->shell->getCmdOut("du -sx /.bind-root 2>/dev/null| tail -1| cut -f1").toULongLong(&ok);
     if (!ok) {
         qDebug() << "Error: calculating root size (/.bind-root)\n"\
-                    "If you are sure you have enough free space rerun the program with -o/--overrde-size option";
+                    "If you are sure you have enough free space rerun the program with -o/--override-size option";
         cleanUp();
     }
     qDebug() << "SIZE ROOT" << root_size;
