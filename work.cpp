@@ -85,21 +85,23 @@ void Work::checkEnoughSpace()
         it.value().prepend("/.bind-root/"); // check size occupied by excluded files on /.bind-root only
         it.value().remove(QRegularExpression("\\*$")); // chop last *
         // remove from list if files not on the same volume
-        if (root_dev != settings->shell->getCmdOut("df " + it.value() + " --output=target 2>/dev/null| tail -1", true))
+        if (root_dev != settings->shell->getCmdOut("df " + it.value() + " --output=target 2>/dev/null |tail -1", true))
             it.remove();
     }
     emit message(tr("Calculating total size of excluded files..."));
     bool ok;
-    quint64 excl_size = settings->shell->getCmdOut("du -sxc {" + excludes.join(",").remove("/.bind-root,")
-                                                       + "} 2>/dev/null| tail -1| cut -f1").toULongLong(&ok);
-    if (!ok) {
+    QString cmd = settings->live ? "du -sc" : "du -sxc";
+    quint64 excl_size = settings->shell->getCmdOut(cmd + " {" + excludes.join(",").remove("/.bind-root,")
+                                                       + "} 2>/dev/null |tail -1 |cut -f1").toULongLong(&ok);
+    if (not ok) {
         qDebug() << "Error: calculating size of excluded files\n"\
                     "If you are sure you have enough free space rerun the program with -o/--override-size option";
         cleanUp();
     }
     emit message(tr("Calculating size of root..."));
-    quint64 root_size = settings->shell->getCmdOut("du -sx /.bind-root 2>/dev/null| tail -1| cut -f1").toULongLong(&ok);
-    if (!ok) {
+    cmd = settings->live ? "du -s" : "du -sx";
+    quint64 root_size = settings->shell->getCmdOut(cmd + " /.bind-root 2>/dev/null |tail -1 |cut -f1").toULongLong(&ok);
+    if (not ok) {
         qDebug() << "Error: calculating root size (/.bind-root)\n"\
                     "If you are sure you have enough free space rerun the program with -o/--override-size option";
         cleanUp();
