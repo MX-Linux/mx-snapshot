@@ -57,6 +57,6 @@ bool Cmd::run(const QString &cmd, QString &output, bool quiet)
     start("/bin/bash", QStringList() << "-c" << cmd);
     loop.exec();
     output = out_buffer.trimmed();
-    return (exitStatus() == QProcess::NormalExit && exitCode() == 0);
+    return (exitStatus() == QProcess::NormalExit and exitCode() == 0);
 }
 

@@ -249,12 +249,15 @@ void Work::copyNewIso()
 
     openInitrd(settings->work_dir + "/iso-template/antiX/initrd.gz", path);
 
-    // strip modules; make sure initrd_dir is correct to avoid disaster
+    // Strip modules; make sure initrd_dir is correct to avoid disaster
     if (path.startsWith("/tmp/") and QFileInfo::exists(path + "/lib/modules"))
          settings->shell->run("rm -r \"" + path  + "/lib/modules\"");
 
-    settings->shell->run("test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release \"" + path + "/etc\""); // We cannot count on this file in the future versions
-    settings->shell->run("test -r /etc/initrd-release && cp /etc/initrd-release \"" + path + "/etc\""); // overwrite with this file, probably a better location _if_ the file exists
+    // We cannot count on this file in the future versions
+    settings->shell->run("test -r /usr/local/share/live-files/files/etc/initrd-release && cp /usr/local/share/live-files/files/etc/initrd-release \"" + path + "/etc\"");
+
+    // Overwrite with this file, probably a better location _if_ the file exists
+    settings->shell->run("test -r /etc/initrd-release && cp /etc/initrd-release \"" + path + "/etc\"");
     if (initrd_dir.isValid()) {
         copyModules(path, settings->kernel);
         closeInitrd(path, settings->work_dir + "/iso-template/antiX/initrd.gz");
@@ -269,12 +272,14 @@ bool Work::createIso(const QString &filename)
     // squash the filesystem copy
     QDir::setCurrent(settings->work_dir);
     QString cmd;
-    cmd = "mksquashfs /.bind-root iso-template/antiX/linuxfs -comp " + settings->compression + ((settings->mksq_opt.isEmpty()) ? "" : " " + settings->mksq_opt)
+    cmd = "mksquashfs /.bind-root iso-template/antiX/linuxfs -comp " + settings->compression
+            + ((settings->mksq_opt.isEmpty()) ? "" : " " + settings->mksq_opt)
             + " -wildcards -ef " + settings->snapshot_excludes.fileName() + " " + settings->session_excludes;
 
     emit message(tr("Squashing filesystem..."));
     if (not settings->shell->run(cmd)) {
-        emit messageBox(BoxType::critical, tr("Error"), tr("Could not create linuxfs file, please check whether you have enough space on the destination partition."));
+        emit messageBox(BoxType::critical, tr("Error"),
+                        tr("Could not create linuxfs file, please check whether you have enough space on the destination partition."));
         return false;
     }
 
@@ -351,7 +356,8 @@ void Work::makeChecksum(const HashType &hash_type, const QString &folder, const 
     if (settings->preempt) {
         // check free space available on /tmp
         settings->shell->run("TF=/tmp/snapsphot-checksum-temp/\"" + file_name + "\"; [ -f \"$TF\" ] && rm -f \"$TF\"");
-        if (not settings->shell->run("DUF=$(du -BM " + file_name + "|grep -oE '^[[:digit:]]+'); TDA=$(df -BM --output=avail /tmp |grep -oE '^[[:digit:]]+'); ((TDA/10*8 >= DUF))"))
+        if (not settings->shell->run("DUF=$(du -BM " + file_name
+                                     + "|grep -oE '^[[:digit:]]+'); TDA=$(df -BM --output=avail /tmp |grep -oE '^[[:digit:]]+'); ((TDA/10*8 >= DUF))"))
             settings->preempt = false;
     }
     if (not settings->preempt) {
@@ -464,7 +470,8 @@ void Work::savePackageList(const QString &file_name)
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QFileInfo fi(file_name);
     QString full_name = settings->work_dir + "/iso-template/" + fi.completeBaseName() + "/package_list";
-    QString cmd = "dpkg -l |grep ^ii\\ \\ |awk '{print $2,$3}' |sed 's/:'$(dpkg --print-architecture)'//' |column -t >\"" + full_name + "\"";
+    QString cmd = "dpkg -l |grep ^ii\\ \\ |awk '{print $2,$3}' |sed 's/:'$(dpkg --print-architecture)'//' |column -t >\""
+            + full_name + "\"";
     settings->shell->run(cmd);
 }
 
@@ -491,18 +498,21 @@ void Work::setupEnv()
 
     // setup environment if creating a respin (reset root/demo, remove personal accounts)
     if (settings->reset_accounts) {
-        settings->shell->run("installed-to-live -b /.bind-root start " + bind_boot + "empty=/home general version-file read-only");
+        settings->shell->run("installed-to-live -b /.bind-root start " + bind_boot
+                             + "empty=/home general version-file read-only");
     } else {
         if (settings->force_installer) {  // copy minstall.desktop to Desktop on all accounts
             settings->shell->run("echo /home/*/Desktop |xargs -n1 cp /usr/share/applications/minstall.desktop 2>/dev/null");
-            settings->shell->run("chmod 777 /home/*/Desktop/minstall.desktop"); // needs write access to remove lock symbol on installer on desktop, executable to run it
+            // Needs write access to remove lock symbol on installer on desktop, executable to run it
+            settings->shell->run("chmod 777 /home/*/Desktop/minstall.desktop");
             if (not QFile::exists("xdg-user-dirs-update.real")) {
                 if (not QFile::exists("/etc/skel/Desktop")) QDir().mkdir("/etc/skel/Desktop");
                 QFile::copy("/usr/share/applications/minstall.desktop", "/etc/skel/Desktop/Installer.desktop");
                 settings->shell->run("chmod 755 /etc/skel/Desktop/Installer.desktop");
             }
         }
-        settings->shell->run("installed-to-live -b /.bind-root start bind=/home" + bind_boot_too + " live-files version-file adjtime read-only");
+        settings->shell->run("installed-to-live -b /.bind-root start bind=/home" + bind_boot_too
+                             + " live-files version-file adjtime read-only");
     }
 }
 

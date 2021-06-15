@@ -51,8 +51,8 @@ MainWindow::MainWindow(QWidget *parent, const QCommandLineParser &arg_parser) :
     setOtherOptions();
 
     if (monthly) {
-        ui->buttonNext->click();
-        ui->buttonNext->click();
+        ui->btnNext->click();
+        ui->btnNext->click();
     } else {
         listUsedSpace();
     }
@@ -114,10 +114,10 @@ void MainWindow::setup()
     ui->outputBox->setFont(font);
 
     this->setWindowTitle(tr("MX Snapshot"));
-    ui->buttonBack->setHidden(true);
+    ui->btnBack->setHidden(true);
     ui->stackedWidget->setCurrentIndex(0);
-    ui->buttonCancel->setEnabled(true);
-    ui->buttonNext->setEnabled(true);
+    ui->btnCancel->setEnabled(true);
+    ui->btnNext->setEnabled(true);
     this->show();
 }
 
@@ -125,13 +125,13 @@ void MainWindow::setup()
 void MainWindow::listUsedSpace()
 {
     this->show();
-    ui->buttonNext->setDisabled(true);
-    ui->buttonCancel->setDisabled(true);
-    ui->buttonSelectSnapshot->setDisabled(true);
+    ui->btnNext->setDisabled(true);
+    ui->btnCancel->setDisabled(true);
+    ui->btnSelectSnapshot->setDisabled(true);
     QString out = getUsedSpace();
-    ui->buttonNext->setEnabled(true);
-    ui->buttonCancel->setEnabled(true);
-    ui->buttonSelectSnapshot->setEnabled(true);
+    ui->btnNext->setEnabled(true);
+    ui->btnCancel->setEnabled(true);
+    ui->btnSelectSnapshot->setEnabled(true);
     ui->labelUsedSpace->setText(out);
 }
 
@@ -157,8 +157,8 @@ bool MainWindow::installPackage(const QString &package)
     this->setWindowTitle(tr("Installing ") + package);
     ui->outputLabel->setText(tr("Installing ") + package);
     ui->outputBox->clear();
-    ui->buttonNext->setDisabled(true);
-    ui->buttonBack->setDisabled(true);
+    ui->btnNext->setDisabled(true);
+    ui->btnBack->setDisabled(true);
     ui->stackedWidget->setCurrentWidget(ui->outputPage);
     displayOutput();
     if (not work.installPackage(package)) {
@@ -246,7 +246,7 @@ void MainWindow::progress()
 
 
 // Next button clicked
-void MainWindow::on_buttonNext_clicked()
+void MainWindow::on_btnNext_clicked()
 {
     QString file_name = ui->lineEditName->text();
     if (not file_name.endsWith(".iso"))
@@ -256,8 +256,8 @@ void MainWindow::on_buttonNext_clicked()
     if (ui->stackedWidget->currentIndex() == 0) {
         this->setWindowTitle(tr("Settings"));
         ui->stackedWidget->setCurrentWidget(ui->settingsPage);
-        ui->buttonBack->setHidden(false);
-        ui->buttonBack->setEnabled(true);
+        ui->btnBack->setHidden(false);
+        ui->btnBack->setEnabled(true);
         selectKernel();
         ui->label_1->setText(tr("Snapshot will use the following settings:*"));
 
@@ -285,8 +285,8 @@ void MainWindow::on_buttonNext_clicked()
         }
 
         otherExclusions();
-        ui->buttonNext->setEnabled(false);
-        ui->buttonBack->setEnabled(false);
+        ui->btnNext->setEnabled(false);
+        ui->btnBack->setEnabled(false);
         ui->stackedWidget->setCurrentWidget(ui->outputPage);
         this->setWindowTitle(tr("Output"));
         ui->outputBox->clear();
@@ -312,22 +312,22 @@ void MainWindow::on_buttonNext_clicked()
 
         displayOutput();
         work.createIso(file_name);
-        ui->buttonCancel->setText(tr("Close"));
+        ui->btnCancel->setText(tr("Close"));
     } else {
         qApp->quit();
     }
 }
 
-void MainWindow::on_buttonBack_clicked()
+void MainWindow::on_btnBack_clicked()
 {
     this->setWindowTitle(tr("MX Snapshot"));
     ui->stackedWidget->setCurrentIndex(0);
-    ui->buttonNext->setEnabled(true);
-    ui->buttonBack->setHidden(true);
+    ui->btnNext->setEnabled(true);
+    ui->btnBack->setHidden(true);
     ui->outputBox->clear();
 }
 
-void MainWindow::on_buttonEditExclude_clicked()
+void MainWindow::on_btnEditExclude_clicked()
 {
     this->hide();
     shell->run(getEditor() + " " + snapshot_excludes.fileName());
@@ -386,7 +386,7 @@ void MainWindow::on_radioPersonal_clicked(bool checked)
 
 
 // About button clicked
-void MainWindow::on_buttonAbout_clicked()
+void MainWindow::on_btnAbout_clicked()
 {
     this->hide();
     displayAboutMsgBox(tr("About %1").arg(this->windowTitle()), "<p align=\"center\"><b><h2>" + this->windowTitle() +"</h2></b></p><p align=\"center\">" +
@@ -399,7 +399,7 @@ void MainWindow::on_buttonAbout_clicked()
 }
 
 // Help button clicked
-void MainWindow::on_buttonHelp_clicked()
+void MainWindow::on_btnHelp_clicked()
 {
     QLocale locale;
     QString lang = locale.bcp47Name();
@@ -412,7 +412,7 @@ void MainWindow::on_buttonHelp_clicked()
 }
 
 // Select snapshot directory
-void MainWindow::on_buttonSelectSnapshot_clicked()
+void MainWindow::on_btnSelectSnapshot_clicked()
 {
     QFileDialog dialog;
 
@@ -435,14 +435,15 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 void MainWindow::closeApp() {
     // ask for confirmation when on outputPage and not done
     if (ui->stackedWidget->currentWidget() == ui->outputPage and not work.done) {
-        if (QMessageBox::Yes != QMessageBox::question(this, tr("Confirmation"), tr("Are you sure you want to quit the application?"),
-                                        QMessageBox::Yes | QMessageBox::No))
+        if (QMessageBox::Yes != QMessageBox::question(this, tr("Confirmation"),
+                                                      tr("Are you sure you want to quit the application?"),
+                                                      QMessageBox::Yes | QMessageBox::No))
             return;
     }
     cleanUp();
 }
 
-void MainWindow::on_buttonCancel_clicked()
+void MainWindow::on_btnCancel_clicked()
 {
     closeApp();
 }

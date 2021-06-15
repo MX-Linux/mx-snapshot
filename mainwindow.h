@@ -73,13 +73,13 @@ public slots:
 
 private slots:
 
-    void on_buttonAbout_clicked();
-    void on_buttonBack_clicked();
-    void on_buttonCancel_clicked();
-    void on_buttonEditExclude_clicked();
-    void on_buttonHelp_clicked();
-    void on_buttonNext_clicked();
-    void on_buttonSelectSnapshot_clicked();
+    void on_btnAbout_clicked();
+    void on_btnBack_clicked();
+    void on_btnCancel_clicked();
+    void on_btnEditExclude_clicked();
+    void on_btnHelp_clicked();
+    void on_btnNext_clicked();
+    void on_btnSelectSnapshot_clicked();
     void on_cbCompression_currentIndexChanged(const QString &arg1);
     void on_excludeDesktop_toggled(bool checked);
     void on_excludeDocuments_toggled(bool checked);

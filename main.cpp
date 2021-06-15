@@ -174,7 +174,8 @@ void setTranslation()
 // Check if SQUASHFS is available
 void checkSquashfs()
 {
-    if (system("[ -f /boot/config-$(uname -r) ]") == 0 && system("grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
+    if (system("[ -f /boot/config-$(uname -r) ]") == 0
+            and system("grep -q ^CONFIG_SQUASHFS=[ym] /boot/config-$(uname -r)") != 0) {
         QMessageBox::critical(nullptr, QObject::tr("Error"),
                               QObject::tr("Current kernel doesn't support Squashfs, cannot continue."));
         exit(EXIT_FAILURE);

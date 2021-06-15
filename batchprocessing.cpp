@@ -75,7 +75,8 @@ void Batchprocessing::setConnections()
     connect(shell, &Cmd::outputAvailable, [](const QString &out) { qDebug().noquote() << out; });
     connect(shell, &Cmd::errorAvailable, [](const QString &out) { qWarning().noquote() << out; });
     connect(&work, &Work::message, [](const QString &out) { qDebug().noquote() << out; });
-    connect(&work, &Work::messageBox, [](BoxType, const QString &title, const QString &msg) { qDebug().noquote() << title << msg; });
+    connect(&work, &Work::messageBox,
+            [](BoxType, const QString &title, const QString &msg) { qDebug().noquote() << title << msg; });
 }
 
 void Batchprocessing::progress()

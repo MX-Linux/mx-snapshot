@@ -323,7 +323,8 @@ bool Settings::isLive()
 bool Settings::isOnSupportedPart(const QString &dir)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    QStringList supported_partitions = (QStringList() << "ext2/ext3" << "btrfs" << "jfs" << "reiserfs" << "xfs" << "fuseblk"); // supported partition types (NTFS returns fuseblk)
+    // Supported partition types (NTFS returns fuseblk)
+    QStringList supported_partitions = (QStringList() << "ext2/ext3" << "btrfs" << "jfs" << "reiserfs" << "xfs" << "fuseblk");
     QString part_type = shell->getCmdOut("stat --file-system --format=%T \"" + dir + "\"").trimmed();
     qDebug() << "detected partition" << part_type << "supported part:" << supported_partitions.contains(part_type);
     return supported_partitions.contains(part_type);
@@ -507,7 +508,8 @@ void Settings::processArgs(const QCommandLineParser &arg_parser)
     else
         snapshot_name = getFilename();
     reset_accounts = arg_parser.isSet("reset");
-    if (reset_accounts) excludeAll();
+    if (reset_accounts)
+        excludeAll();
     if (arg_parser.isSet("month")) reset_accounts = true;
     if (arg_parser.isSet("checksums") or arg_parser.isSet("month"))
         make_chksum = true;
@@ -539,7 +541,8 @@ void Settings::setMonthlySnapshot(const QCommandLineParser &arg_parser)
         name = "MX_" + QString(i686 ? "386" : "x64");
     }
     if (arg_parser.value("file").isEmpty())
-        snapshot_name = name.section("_", 0, 0) + "_" + QDate::currentDate().toString("MMMM") + "_" + name.section("_", 1, 1) + ".iso";
+        snapshot_name = name.section("_", 0, 0) + "_" + QDate::currentDate().toString("MMMM") + "_"
+                + name.section("_", 1, 1) + ".iso";
     if (arg_parser.value("compression").isEmpty())
         compression = "xz";
     reset_accounts = true;
