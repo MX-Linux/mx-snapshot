@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Tue, 29 Jun 2021 17:41:06 +0000
+Source: mx-snapshot
+Binary: mx-snapshot
+Architecture: source amd64
+Version: 21.6.02
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ mx-snapshot - MX Snapshot
+Changes:
+ mx-snapshot (21.6.02) mx; urgency=medium
+ .
+   * adjust config file token replacement
+Checksums-Sha1:
+ 5e5bef2c31c0d6d1cac0d3fd28ac0315acdf93fa 1176 mx-snapshot_21.6.02.dsc
+ 66335add4bb826aeabdb61554566424ed4c4ab40 187112 mx-snapshot_21.6.02.tar.xz
+ 1f9ba667268076d41249b11ba79feed5acaec561 10444 mx-snapshot_21.6.02_amd64.buildinfo
+ 991ae4278bebd58cef32f0201376bed2a88e0ef3 240896 mx-snapshot_21.6.02_amd64.deb
+Checksums-Sha256:
+ 554a7e883ed4e76ff9b0ab95eab7d353ed61dc012dc167695d551d080faa2adc 1176 mx-snapshot_21.6.02.dsc
+ 4602a1ce10c9d46fe32210fb2ae2ff59a25aa92cd800a7d38294b9e14fb4c59c 187112 mx-snapshot_21.6.02.tar.xz
+ d802c8c4f0e2bd9e00e6db63338d479e642722b1efe4fee3a2acec6c7a6bfc69 10444 mx-snapshot_21.6.02_amd64.buildinfo
+ cbdb57fc52d75575acca87bd0449c1401d82744abc4d5c8de62f58f415f4c8bb 240896 mx-snapshot_21.6.02_amd64.deb
+Files:
+ a9ead2d23cfc951ad18ddf8c5c4175bd 1176 admin optional mx-snapshot_21.6.02.dsc
+ 10519df052e0c8fff011ef77000ba988 187112 admin optional mx-snapshot_21.6.02.tar.xz
+ ab826b44f413b3156b66aeab531ac181 10444 admin optional mx-snapshot_21.6.02_amd64.buildinfo
+ 78105bc8a13d4927c203dfea7e090109 240896 admin optional mx-snapshot_21.6.02_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmDctCETHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAGoB/94VGGGVdaSckG6SbLDFzDIgpac2r2J
+WYVk6W8Ez8tgiaKKR4sNfZDWt/xHF8fb9gPz3lABcCiUQeemLZG4LBF3rRuEn6lG
+fo/vP6MVs1CVzmHX/eTH5GT25b1RI98fku5vaVOhIrMAGFdbjQX1O/pKldySmD3S
+DsCYa7U92axPsp8DVEofhUanXAAGS4EKYO+eIjSi5o57iAPh6C4fhDSG4LcLOX5W
+ZFRrQTPqK54vW6+7gTsNmUOGx1yELVHosazhy3OfVFzj2cvVxdCuE3I6b5OR1d3K
+M93wDmyrOB+rtnglUFNYU6g4IVrKBJ06BdUrO0Y6mmXsl3OgTmCoIjlh
+=iKS/
+-----END PGP SIGNATURE-----
