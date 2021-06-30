@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA512
-
 Format: 1.8
 Date: Tue, 29 Jun 2021 17:41:06 +0000
 Source: mx-snapshot
@@ -18,23 +15,11 @@ Changes:
  .
    * adjust config file token replacement
 Checksums-Sha1:
- 1e5444a3a0aaf1a943b70c177a03d4bfbf3eed17 10141 mx-snapshot_21.6.02_i386.buildinfo
- 7e4323a294cad0056dee61a49253351c940ab0e9 247704 mx-snapshot_21.6.02_i386.deb
+ 543cd0a8ba6b84fb8f18cad8f2aa9716c2bbee06 9579 mx-snapshot_21.6.02_i386.buildinfo
+ 06f0efcc5896379961cd1fc3c45b99cfb4f41152 247556 mx-snapshot_21.6.02_i386.deb
 Checksums-Sha256:
- f2cc96f83c84e98ac92714de82b605c1edeafc9404bb8e99b488d7842c252131 10141 mx-snapshot_21.6.02_i386.buildinfo
- b04b875d4933902851baa8cf34437c299347ed291c989672705c9dff19c342cd 247704 mx-snapshot_21.6.02_i386.deb
+ a9ae9f180e24cd9dc7e98ac193d6d1d6c21e3b0777bea8d4218cbb0bf7a9ed6b 9579 mx-snapshot_21.6.02_i386.buildinfo
+ 72d89dc61d48ce084b164c80c798f5db3de8737e18351fdd20f9630157c53827 247556 mx-snapshot_21.6.02_i386.deb
 Files:
- e413cbee8369f760accc9c2a69ac8229 10141 admin optional mx-snapshot_21.6.02_i386.buildinfo
- 18ea42238cbf452fc38762ef0a451236 247704 admin optional mx-snapshot_21.6.02_i386.deb
-
------BEGIN PGP SIGNATURE-----
-
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmDctCATHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAlXB/46fpf16iAdAT4lKSIPiJfTXUpt2McO
-CP5om00ly1tF0mmhy/otqUskTKcw3tEnil8o7rHwOVtrnfhuZNJqU3NksLxYasPc
-p5qU2UQyA0Tm+9vYSG8/RhYd7Okv7zdprDs2U/xyPi4TJG2sXAnLF6EU6nu2WTuY
-cNiJIAZ/sasTJA6lF7T6XI/d/vqxY2THVnjF8dyEAPxRNYTMYbsvVyJhFC/oEJRV
-kbg4MG8zpdFku0mzp7APv84h9J7rs8zT3KV+cZ/piwrjdXMIF6Yp7gQvyMQXsdcM
-HdfBuFKxYqkW4nGtzKXHcEFa1Isjgno7kdxEBxPiqJ/DeJVW5kv4bOhu
-=SWGG
------END PGP SIGNATURE-----
+ 378ecc34d768dd34c1af50ecd9228161 9579 admin optional mx-snapshot_21.6.02_i386.buildinfo
+ 6269b525e0d32c4659cba1287b87092a 247556 admin optional mx-snapshot_21.6.02_i386.deb

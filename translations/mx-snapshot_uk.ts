@@ -636,7 +636,7 @@
         <location filename="../work.cpp" line="300"/>
         <location filename="../work.cpp" line="337"/>
         <location filename="../work.cpp" line="383"/>
-        <location filename="../work.cpp" line="425"/>
+        <location filename="../work.cpp" line="424"/>
         <source>Error</source>
         <translation type="unfinished">Помилка</translation>
     </message>
@@ -762,7 +762,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="425"/>
+        <location filename="../work.cpp" line="424"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>

@@ -18,29 +18,29 @@ Changes:
  .
    * adjust config file token replacement
 Checksums-Sha1:
- 5e5bef2c31c0d6d1cac0d3fd28ac0315acdf93fa 1176 mx-snapshot_21.6.02.dsc
- 66335add4bb826aeabdb61554566424ed4c4ab40 187112 mx-snapshot_21.6.02.tar.xz
- 1f9ba667268076d41249b11ba79feed5acaec561 10444 mx-snapshot_21.6.02_amd64.buildinfo
- 991ae4278bebd58cef32f0201376bed2a88e0ef3 240896 mx-snapshot_21.6.02_amd64.deb
+ 01b1f0b620e81ed33a399918f5d385dd45f5b31a 1176 mx-snapshot_21.6.02.dsc
+ a7ba3de426b402e4c7128dc9960692c11b11bcad 187108 mx-snapshot_21.6.02.tar.xz
+ c3954558d6f72b9e8eabb301d5023d0f550ae79a 10444 mx-snapshot_21.6.02_amd64.buildinfo
+ 5c6ffafbe910f39a5f39d935ab758812851b9758 240994 mx-snapshot_21.6.02_amd64.deb
 Checksums-Sha256:
- 554a7e883ed4e76ff9b0ab95eab7d353ed61dc012dc167695d551d080faa2adc 1176 mx-snapshot_21.6.02.dsc
- 4602a1ce10c9d46fe32210fb2ae2ff59a25aa92cd800a7d38294b9e14fb4c59c 187112 mx-snapshot_21.6.02.tar.xz
- d802c8c4f0e2bd9e00e6db63338d479e642722b1efe4fee3a2acec6c7a6bfc69 10444 mx-snapshot_21.6.02_amd64.buildinfo
- cbdb57fc52d75575acca87bd0449c1401d82744abc4d5c8de62f58f415f4c8bb 240896 mx-snapshot_21.6.02_amd64.deb
+ 1264255e34bd6a0c9e8a9a8b5e1e33ae6733fb8fbb1ddaada4de7b459d706a93 1176 mx-snapshot_21.6.02.dsc
+ ba41705119c9d3237c84983a9b501b17bb78462e1f4203891d6c12614f5a5674 187108 mx-snapshot_21.6.02.tar.xz
+ 4c8d7f22e675be3163b319e4feaae0d70028cf20fc57dc1a60e60087fc2906e3 10444 mx-snapshot_21.6.02_amd64.buildinfo
+ df1d1c4d8326661553dae36a0a33022bc6491ce58a32b423f1efe31abb59357b 240994 mx-snapshot_21.6.02_amd64.deb
 Files:
- a9ead2d23cfc951ad18ddf8c5c4175bd 1176 admin optional mx-snapshot_21.6.02.dsc
- 10519df052e0c8fff011ef77000ba988 187112 admin optional mx-snapshot_21.6.02.tar.xz
- ab826b44f413b3156b66aeab531ac181 10444 admin optional mx-snapshot_21.6.02_amd64.buildinfo
- 78105bc8a13d4927c203dfea7e090109 240896 admin optional mx-snapshot_21.6.02_amd64.deb
+ a9f19151a310f968139e502914d0c032 1176 admin optional mx-snapshot_21.6.02.dsc
+ ed3ee97f4adb4304bc0cd88b47c27daf 187108 admin optional mx-snapshot_21.6.02.tar.xz
+ 1fb81c0c5320d2938364296f5362ec6b 10444 admin optional mx-snapshot_21.6.02_amd64.buildinfo
+ 1b25229aabf68051c670ae0df6afdd96 240994 admin optional mx-snapshot_21.6.02_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmDctCETHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAGoB/94VGGGVdaSckG6SbLDFzDIgpac2r2J
-WYVk6W8Ez8tgiaKKR4sNfZDWt/xHF8fb9gPz3lABcCiUQeemLZG4LBF3rRuEn6lG
-fo/vP6MVs1CVzmHX/eTH5GT25b1RI98fku5vaVOhIrMAGFdbjQX1O/pKldySmD3S
-DsCYa7U92axPsp8DVEofhUanXAAGS4EKYO+eIjSi5o57iAPh6C4fhDSG4LcLOX5W
-ZFRrQTPqK54vW6+7gTsNmUOGx1yELVHosazhy3OfVFzj2cvVxdCuE3I6b5OR1d3K
-M93wDmyrOB+rtnglUFNYU6g4IVrKBJ06BdUrO0Y6mmXsl3OgTmCoIjlh
-=iKS/
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmDc4rcTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumIV2B/4qU4hhgD+gofxb02qiOuoC9iRKvul9
+zGv0MuXmB3bBNnjtCdk+3RoFiGvgpiuEx+cgH5MHMDNzsdl1dRSnc4qec16atb38
+NIW0idcU07ubq0ZT0Rx5meMHemN/OZP01cmOdQyKaaL6ToGrsxo2yY0IxcSrEVtd
+Q7SExSr8XeNBqzvn9xambDjoaAUvwmgHJS4dUySyLLfomh00VI0luft6Q3FHHljU
+s/Bd1viL1UW5uBZdO8CbZiGSPC5TRAW/xHHLpkQyRnEQYp8aMnY+Af2LHTZrqE2V
+xZbc4rJKtoHyBdCDRQeJWF/bEYfkiwsruYQTrJ3V1oLAfdfgOD0IlMP4
+=4aZf
 -----END PGP SIGNATURE-----

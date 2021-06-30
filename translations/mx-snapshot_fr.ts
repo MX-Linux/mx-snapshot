@@ -728,7 +728,7 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <location filename="../work.cpp" line="300"/>
         <location filename="../work.cpp" line="337"/>
         <location filename="../work.cpp" line="383"/>
-        <location filename="../work.cpp" line="425"/>
+        <location filename="../work.cpp" line="424"/>
         <source>Error</source>
         <translation type="unfinished">Erreur</translation>
     </message>
@@ -854,7 +854,7 @@ Si nécessaire, vous pouvez obtenir de l&apos;espace supplémentaire en supprima
         <translation type="unfinished">Nouvel initrd en cours de création...</translation>
     </message>
     <message>
-        <location filename="../work.cpp" line="425"/>
+        <location filename="../work.cpp" line="424"/>
         <source>Could not find %1 file, cannot continue</source>
         <translation type="unfinished"></translation>
     </message>
