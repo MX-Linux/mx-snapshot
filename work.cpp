@@ -24,6 +24,7 @@
 
 #include <QDebug>
 #include <QDate>
+#include <QDirIterator>
 #include <QRegularExpression>
 #include <QSettings>
 
@@ -400,21 +401,36 @@ void Work::openInitrd(const QString &file, const QString &initrd_dir)
 void Work::replaceMenuStrings() {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
 
-    QString distro, full_distro_name;
+    QString distro, full_distro_name, full_distro_name_space;
+    QString distro_version_file = "";
     if (QFileInfo::exists("/etc/antix-version")) {
-        distro = settings->shell->getCmdOut("cat /etc/antix-version |cut -f1 -d'_'");
-        full_distro_name = settings->shell->getCmdOut("cat /etc/antix-version |cut -f-2 -d' '");
+        distro_version_file = "/etc/antix-version";
+    } else if (QFileInfo::exists("/etc/mx-version")) {
+        distro_version_file = "/etc/mx-version";
+    }
+
+    if (distro_version_file.length() > 0) {
+        distro = settings->shell->getCmdOut("cut -f1 -d'_' " + distro_version_file);
+        full_distro_name = settings->shell->getCmdOut("cut -f1 -d' ' " + distro_version_file);
     } else {
         distro = "MX_" + QString(settings->i686 ? "386" : "x64");
         full_distro_name = distro;
     }
+
+    full_distro_name_space = full_distro_name;
+    full_distro_name_space.replace("_", " ");
+
     QString date = QDate::currentDate().toString("dd MMMM yyyy");
     if (not QFileInfo::exists("/etc/lsb-release")) {
         emit messageBox(BoxType::critical, tr("Error"), tr("Could not find %1 file, cannot continue").arg("/etc/lsb-release"));
         cleanUp();
     }
+
     QString distro_name = settings->shell->getCmdOut("grep -oP '(?<=DISTRIB_ID=).*' /etc/lsb-release");
+    distro_name.replace("\"", "");
     QString code_name = settings->shell->getCmdOut("grep -oP '(?<=DISTRIB_CODENAME=).*' /etc/lsb-release");
+    code_name.replace("\"", "");
+
     QString options = "quiet";
 
     if (settings->debian_version < 9) { // Only for versions older than Stretch which uses old mx-iso-template
@@ -431,21 +447,21 @@ void Work::replaceMenuStrings() {
         }
 
     } else { // with new mx-iso-template for MX-17 and greater
+        replaceStringInFile("%DISTRO%", distro, settings->work_dir + "/iso-template/boot/grub/grub.cfg");
         replaceStringInFile("%DISTRO_NAME%", distro_name, settings->work_dir + "/iso-template/boot/grub/grub.cfg");
+        replaceStringInFile("%FULL_DISTRO_NAME%", full_distro_name, settings->work_dir + "/iso-template/boot/grub/grub.cfg");
+        replaceStringInFile("%FULL_DISTRO_NAME_SPACE%", full_distro_name_space, settings->work_dir + "/iso-template/boot/grub/grub.cfg");
+        replaceStringInFile("%OPTIONS%", options, settings->work_dir + "/iso-template/boot/grub/grub.cfg");
+        replaceStringInFile("%RELEASE_DATE%", date, settings->work_dir + "/iso-template/boot/grub/grub.cfg");
 
         replaceStringInFile("%OPTIONS%", options, settings->work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
         replaceStringInFile("%OPTIONS%", options, settings->work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
 
-        replaceStringInFile("%FULL_DISTRO_NAME%", full_distro_name, settings->work_dir + "/iso-template/boot/grub/grub.cfg");
         replaceStringInFile("%FULL_DISTRO_NAME%", full_distro_name, settings->work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
         replaceStringInFile("%FULL_DISTRO_NAME%", full_distro_name, settings->work_dir + "/iso-template/boot/syslinux/readme.msg");
         replaceStringInFile("%FULL_DISTRO_NAME%", full_distro_name, settings->work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
         replaceStringInFile("%FULL_DISTRO_NAME%", full_distro_name, settings->work_dir + "/iso-template/boot/isolinux/readme.msg");
 
-        replaceStringInFile("%DISTRO%", distro, settings->work_dir + "/iso-template/boot/grub/theme/theme.txt");
-        replaceStringInFile("%DISTRO%", distro, settings->work_dir + "/iso-template/boot/grub/grub.cfg");
-
-        replaceStringInFile("%RELEASE_DATE%", date, settings->work_dir + "/iso-template/boot/grub/grub.cfg");
         replaceStringInFile("%RELEASE_DATE%", date, settings->work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
         replaceStringInFile("%RELEASE_DATE%", date, settings->work_dir + "/iso-template/boot/syslinux/readme.msg");
         replaceStringInFile("%RELEASE_DATE%", date, settings->work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
@@ -453,7 +469,15 @@ void Work::replaceMenuStrings() {
 
         replaceStringInFile("%CODE_NAME%", code_name, settings->work_dir + "/iso-template/boot/syslinux/syslinux.cfg");
         replaceStringInFile("%CODE_NAME%", code_name, settings->work_dir + "/iso-template/boot/isolinux/isolinux.cfg");
-        replaceStringInFile("%ASCII_CODE_NAME%", code_name, settings->work_dir + "/iso-template/boot/grub/theme/theme.txt");
+
+        QString themeDir = settings->work_dir + "/iso-template/boot/grub/theme";
+        QDirIterator themeFileIt(themeDir, {"*.txt"}, QDir::Files);
+        QString themeFile;
+        while (themeFileIt.hasNext()) {
+            themeFile = themeFileIt.next();
+            replaceStringInFile("%ASCII_CODE_NAME%", code_name, themeFile);
+            replaceStringInFile("%DISTRO%", distro, themeFile);
+        }
     }
 }
 

@@ -1,3 +1,9 @@
+mx-snapshot (21.6.02) mx; urgency=medium
+
+  * adjust config file token replacement
+
+ -- fehlix <fehlix@mxlinux.org>  Tue, 29 Jun 2021 17:41:06 +0000
+
 mx-snapshot (21.6.01) mx; urgency=medium
 
   * Fix: calculating occupied size when running live
