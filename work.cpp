@@ -403,11 +403,10 @@ void Work::replaceMenuStrings() {
 
     QString distro, full_distro_name, full_distro_name_space;
     QString distro_version_file = "";
-    if (QFileInfo::exists("/etc/antix-version")) {
+    if (QFileInfo::exists("/etc/antix-version"))
         distro_version_file = "/etc/antix-version";
-    } else if (QFileInfo::exists("/etc/mx-version")) {
+    else if (QFileInfo::exists("/etc/mx-version"))
         distro_version_file = "/etc/mx-version";
-    }
 
     if (distro_version_file.length() > 0) {
         distro = settings->shell->getCmdOut("cut -f1 -d'_' " + distro_version_file);
