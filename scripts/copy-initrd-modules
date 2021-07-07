@@ -58,6 +58,7 @@ ehci-pci
 ext2
 ext3
 ext4
+exfat
 f2fs
 fat
 firewire-core
