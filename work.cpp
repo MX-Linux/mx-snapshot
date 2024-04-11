@@ -234,9 +234,9 @@ bool Work::createIso(const QString &filename)
     }
     emit message(tr("Squashing filesystem..."));
     if (!shell.runAsRoot(cmd)) {
-        emit messageBox(BoxType::critical, tr("Error"),
-                        tr("Could not create linuxfs file, please check whether you have enough space on the "
-                           "destination partition."));
+        emit messageBox(
+            BoxType::critical, tr("Error"),
+            tr("Could not create linuxfs file, please check /var/log/%1.log").arg(QCoreApplication::applicationName()));
         return false;
     }
     writeUnsquashfsSize(shell.readAllOutput());
