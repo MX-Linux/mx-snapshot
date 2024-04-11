@@ -366,12 +366,11 @@ void Work::replaceMenuStrings()
     replaceStringInFile("%RELEASE_DATE%", settings->release_date, settings->work_dir + grub_cfg);
 
     const QString grubenv_cfg {"/iso-template/boot/grub/grubenv.cfg"};
-    const QString boot_pararameter_regexp {"^(lang=|kbd=|kbvar=|kbopt=|tz=)"};
-    shell.run(QString("printf '%s\\n' %1 | grep -E '%2' >> '%3'")
+    const QString boot_pararameter_regexp {"(lang|kbd|kbvar|kbopt|tz)=[^[:space:]]*"};
+    shell.run(QString("printf '%s\\n' %1 | grep -E '^%2' >> '%3'")
                   .arg(settings->boot_options, boot_pararameter_regexp, settings->work_dir + grubenv_cfg));
-    shell.run(QString(R"(sed -i "s|%OPTIONS%|$(printf '%s\n' %1 | grep -v -E '%2' | tr '\n' ' ')|" '%3')")
+    shell.run(QString(R"(sed -i "s|%OPTIONS%|$(sed -r 's/[[:space:]]%2/ /g; s/^[[:space:]]+//; s/[[:space:]]+/ /g'<<<' %1')|" '%3')")
                   .arg(settings->boot_options, boot_pararameter_regexp, settings->work_dir + grub_cfg));
-
     const QString syslinux_cfg {"/iso-template/boot/syslinux/syslinux.cfg"};
     const QString isolinux_cfg {"/iso-template/boot/isolinux/isolinux.cfg"};
     for (const QString &file : {syslinux_cfg, isolinux_cfg}) {
