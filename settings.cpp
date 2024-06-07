@@ -320,7 +320,7 @@ void Settings::setVariables()
         codename = Cmd().getOut("lsb_release -c | cut -f2");
     }
     codename.replace('"', "");
-    boot_options = monthly ? "quiet splasht nosplash" : readKernelOpts();
+    boot_options = monthly ? "quiet splash nosplash" : readKernelOpts();
 }
 
 QString Settings::getFilename() const
