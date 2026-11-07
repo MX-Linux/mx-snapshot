@@ -141,6 +141,7 @@ set(COMMON_SOURCES
     src/batchprocessing.cpp
     src/work.cpp
     src/filesystemutils.cpp
+    src/instancelock.cpp
     src/systeminfo.cpp
     src/messagehandler.cpp
     src/excludesutils.cpp
@@ -159,6 +160,7 @@ set(COMMON_HEADERS
     src/batchprocessing.h
     src/work.h
     src/filesystemutils.h
+    src/instancelock.h
     src/systeminfo.h
     src/messagehandler.h
     src/excludesutils.h
@@ -344,6 +346,16 @@ if(BUILD_TESTS)
     target_include_directories(test-filesystemutils PRIVATE src)
     set_common_properties(test-filesystemutils)
     add_test(NAME filesystemutils COMMAND test-filesystemutils)
+
+    add_executable(test-instancelock
+        tests/test_instancelock.cpp
+        src/instancelock.cpp
+        src/instancelock.h
+    )
+    target_link_libraries(test-instancelock Qt6::Core Qt6::Test)
+    target_include_directories(test-instancelock PRIVATE src)
+    set_common_properties(test-instancelock)
+    add_test(NAME instancelock COMMAND test-instancelock)
 
     add_executable(test-checksumutils
         tests/test_checksumutils.cpp

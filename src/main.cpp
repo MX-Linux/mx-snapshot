@@ -51,6 +51,7 @@
 #include "batchprocessing.h"
 #include "common.h"
 #include "log.h"
+#include "instancelock.h"
 #include "messagehandler.h"
 #include "cmd.h"
 
@@ -76,6 +77,7 @@ QString currentKernel {};
 
 void checkSquashfs();
 void setTranslation();
+bool takeInstanceLock();
 void signalHandler(int signal);
 
 int main(int argc, char *argv[])
@@ -280,6 +282,8 @@ int main(int argc, char *argv[])
             const bool hasAuthTools = !Cmd::elevationTool().isEmpty();
             if (getuid() != 0 && (!isGuiApp || !hasAuthTools)) {
                 qDebug().noquote() << QObject::tr("You must run this program with sudo or pkexec.");
+            } else if (!takeInstanceLock()) {
+                exitCode = EXIT_FAILURE;
             } else {
                 const Log setLog(Log::defaultLogPath(app->applicationName()));
                 qInstallMessageHandler(Log::messageHandler);
@@ -331,6 +335,35 @@ int main(int argc, char *argv[])
     delete app;
     app = nullptr;
     return exitCode;
+}
+
+// Taken before the log is opened (a second instance would truncate the first
+// one's log) and before Settings, whose constructor tears down whatever a
+// previous run left behind and must never mistake a live run for leftovers.
+// Fails closed: running unlocked would let this instance tear down another
+// one's live snapshot, which is exactly what the lock prevents. Any local user
+// can hold the lock anyway, so failing open would not protect availability.
+bool takeInstanceLock()
+{
+    QString error;
+    switch (InstanceLock::acquire(InstanceLock::defaultPath, &error)) {
+    case InstanceLock::Result::Acquired:
+        return true;
+    case InstanceLock::Result::Busy:
+        MessageHandler::showMessage(
+            MessageHandler::Critical, QObject::tr("Error"),
+            QObject::tr("Another snapshot is already running (MX Snapshot or iso-snapshot-cli). "
+                        "Wait for it to finish, then try again."));
+        return false;
+    case InstanceLock::Result::Unavailable:
+        MessageHandler::showMessage(
+            MessageHandler::Critical, QObject::tr("Error"),
+            QObject::tr("Cannot use the lock file %1 (%2). It keeps two snapshots from running at once. "
+                        "Restarting the computer clears it, or an administrator can delete the file.")
+                .arg(QString::fromLatin1(InstanceLock::defaultPath), error));
+        return false;
+    }
+    return false;
 }
 
 void setTranslation()

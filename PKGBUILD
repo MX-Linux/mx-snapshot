@@ -99,6 +99,10 @@ package() {
     ln -s /usr/lib/libostree/grub2-15_ostree \
         "${pkgdir}/usr/share/live-files/files/etc/grub.d/15_ostree"
 
+    # Lets the unprivileged GUI take the single-instance lock: /run/lock is
+    # root-only on Arch.
+    install -Dm644 tmpfiles.d/mx-snapshot.conf "${pkgdir}/usr/lib/tmpfiles.d/mx-snapshot.conf"
+
     # Install changelog
     if [ -f debian/changelog ]; then
         gzip -c debian/changelog > "${pkgdir}/usr/share/doc/mx-snapshot/changelog.gz"
