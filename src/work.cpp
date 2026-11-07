@@ -629,14 +629,17 @@ bool Work::closeInitrd(const QString &initrd_dir, const QString &file)
         return false;
     }
     // pipefail: a failing find or cpio must fail the repack too, not only gzip.
-    return shell.run("set -o pipefail; (find . |cpio -o -H newc --owner root:root |gzip -9) >\"" + file + "\"");
+    // The output path is passed as $1 so the shell never parses it.
+    return shell.proc("/bin/bash",
+                      {"-c", R"(set -o pipefail; (find . |cpio -o -H newc --owner root:root |gzip -9) >"$1")", "_",
+                       file});
 }
 
 // copyModules(mod_dir/kernel kernel)
 bool Work::copyModules(const QString &to, const QString &kernel)
 {
-    if (!shell.run(QString(R"(/usr/share/%1/scripts/copy-initrd-modules -e -t="%2" -k="%3")")
-                       .arg(qApp->applicationName(), to, kernel))) {
+    if (!shell.proc("/usr/share/" + qApp->applicationName() + "/scripts/copy-initrd-modules",
+                    {"-e", "--to=" + to, "--kernel=" + kernel})) {
         return false;
     }
     // -F/--force: missing optional initrd programs (ntfs-3g, eject, cryptsetup, ...)
@@ -683,7 +686,7 @@ void Work::copyNewIso()
 
     if (settings->isArch) {
         QDir().mkpath("iso-template");
-        if (!shell.run("tar xf \"" + templateTar + "\" -C iso-template")) {
+        if (!shell.proc("tar", {"xf", templateTar, "-C", "iso-template"})) {
             emit messageBox(BoxType::critical, tr("Error"), tr("Could not extract the ISO template: ") + templateTar);
             cleanUp();
             return;
@@ -736,7 +739,7 @@ void Work::copyNewIso()
             shell.procAsRoot("chown", {cpUser + ":", archBootPath + "/vmlinuz-linux"}, nullptr, nullptr,
                              Cmd::QuietMode::Yes);
         }
-        shell.run("chmod a+r \"" + archBootPath + "/vmlinuz-linux\"");
+        shell.proc("chmod", {"a+r", archBootPath + "/vmlinuz-linux"});
 
         QString initramfsSource;
         const QString archisoPath = "/boot/archiso.img";
@@ -807,9 +810,9 @@ void Work::copyNewIso()
             shell.procAsRoot("chown", {cpUser + ":", archBootPath + "/archiso.img"}, nullptr, nullptr,
                              Cmd::QuietMode::Yes);
         }
-        shell.run("chmod a+r \"" + archBootPath + "/archiso.img\"");
+        shell.proc("chmod", {"a+r", archBootPath + "/archiso.img"});
     } else {
-        if (!shell.run("tar xf \"" + templateTar + "\"")) {
+        if (!shell.proc("tar", {"xf", templateTar})) {
             emit messageBox(BoxType::critical, tr("Error"), tr("Could not extract the ISO template: ") + templateTar);
             cleanUp();
             return;
@@ -860,7 +863,13 @@ void Work::copyNewIso()
             return;
         }
 
-        openInitrd(settings->workDir + "/iso-template/antiX/initrd.gz", path);
+        if (!openInitrd(settings->workDir + "/iso-template/antiX/initrd.gz", path)) {
+            if (!cleanupStarted) {
+                emit messageBox(BoxType::critical, tr("Error"), tr("Could not extract the template initrd."));
+                cleanUp();
+            }
+            return;
+        }
 
         // Strip modules, but only inside our own temp dir so a wrong path can never
         // remove a real /lib/modules. Key the guard on the actual temp base
@@ -1295,13 +1304,31 @@ bool Work::makeChecksum(Work::HashType hash_type, const QString &folder, const Q
     return commandOk && ChecksumUtils::verifyChecksumFile(folder, file_name, ce);
 }
 
-void Work::openInitrd(const QString &file, const QString &initrd_dir)
+// Unpack the template initrd into initrd_dir. False when it could not be
+// fully extracted, so a broken template never gets repacked into the ISO.
+bool Work::openInitrd(const QString &file, const QString &initrd_dir)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     emit message(tr("Building new initrd..."));
-    shell.run("chmod a+rx \"" + initrd_dir + "\"");
-    QDir::setCurrent(initrd_dir);
-    shell.run(QString("gunzip -c \"%1\" |cpio -idum").arg(file));
+    shell.proc("chmod", {"a+rx", initrd_dir});
+    // Without this check a failed chdir would unpack into the work directory.
+    if (!QDir::setCurrent(initrd_dir)) {
+        qWarning() << "Cannot enter the initrd directory" << initrd_dir;
+        return false;
+    }
+    // pipefail: a corrupt archive must fail even if cpio exits cleanly.
+    // The archive path is passed as $1 so the shell never parses it.
+    if (!shell.proc("/bin/bash", {"-c", R"(set -o pipefail; gunzip -c -- "$1" |cpio -idum)", "_", file})) {
+        qWarning() << "Could not extract the initrd" << file;
+        return false;
+    }
+    // A truncated archive can still extract "successfully"; the boot script is
+    // the part the initrd cannot do without.
+    if (!QFileInfo(initrd_dir + "/init").isFile()) {
+        qWarning() << "Extracted initrd has no init script:" << file;
+        return false;
+    }
+    return true;
 }
 
 QString Work::initramfsKernelVersion(const QString &initramfsPath) const
@@ -1329,7 +1356,8 @@ QString Work::kernelImageVersion(const QString &kernelPath) const
     if (QStandardPaths::findExecutable("file").isEmpty()) {
         return {};
     }
-    const QString output = Cmd().getOut("file -b \"" + kernelPath + "\"", Cmd::QuietMode::Yes);
+    QString output;
+    Cmd().proc("file", {"-b", kernelPath}, &output, nullptr, Cmd::QuietMode::Yes);
     const QRegularExpression versionRegex(R"(version\s+([^\s,]+))");
     const auto match = versionRegex.match(output);
     return match.hasMatch() ? match.captured(1) : QString();

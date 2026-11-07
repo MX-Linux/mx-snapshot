@@ -102,7 +102,7 @@ private:
 
     // Initrd operations
     [[nodiscard]] bool closeInitrd(const QString &initrd_dir, const QString &file);
-    void openInitrd(const QString &file, const QString &initrd_dir);
+    [[nodiscard]] bool openInitrd(const QString &file, const QString &initrd_dir);
     [[nodiscard]] bool copyModules(const QString &to, const QString &kernel);
 
     // Arch initramfs helpers
