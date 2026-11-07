@@ -1,3 +1,24 @@
+mx-snapshot (26.11) mx; urgency=medium
+
+  * ISOs made for distribution no longer carry this computer's Tailscale
+    connection, snap store registration and logins, root's private files
+    such as shell history, keys and saved logins, or (on Arch) its SSH
+    host keys.
+  * Before making an ISO for distribution, warn when system services hold
+    passwords or keys that would be copied into it; MX Snapshot asks
+    whether to continue.
+  * Only one snapshot can run at a time: starting MX Snapshot or
+    iso-snapshot-cli while another snapshot is running now shows a message
+    instead of breaking the running one.
+  * Stop with an error instead of making an ISO that may not boot when the
+    startup files cannot be unpacked or a kernel driver cannot be copied.
+  * Work folders whose names contain quotes or dollar signs no longer break
+    the snapshot.
+  * On Arch, personal backup ISOs show a normal login prompt on the text
+    console instead of repeatedly failing to log in a "demo" user.
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 07 Nov 2026 11:55:39 -0500
+
 mx-snapshot (26.10.2) mx; urgency=medium
 
   * Create a SHA-256 checksum file (.sha256) for the ISO instead of SHA-512,
