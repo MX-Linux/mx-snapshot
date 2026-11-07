@@ -234,11 +234,6 @@
         <translation>También puede excluir ciertos directorios marcando las opciones comunes abajo o haciendo clic en el botón para editar directamente /usr/lib/mx-snapshot/snapshot-exclude.list.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="496"/>
-        <source>sha512</source>
-        <translation>sha512</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Throttle the I/O input rate by the given percentage.</source>
         <translation>Regula la tasa de entrada de E/S en el porcentaje dado.</translation>
@@ -854,8 +849,8 @@
         <location filename="../src/main.cpp" line="367"/>
         <location filename="../src/settings.cpp" line="796"/>
         <location filename="../src/settings.cpp" line="805"/>
-        <location filename="../src/settings.cpp" line="1417"/>
-        <location filename="../src/settings.cpp" line="1527"/>
+        <location filename="../src/settings.cpp" line="1419"/>
+        <location filename="../src/settings.cpp" line="1529"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -1105,23 +1100,23 @@
         <translation>No se pudo copiar el archivo de exclusión de %1 a %2.</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1298"/>
+        <location filename="../src/settings.cpp" line="1300"/>
         <source>Unsupported compression &apos;%1&apos; in configuration, using zstd.</source>
         <translation>La compresión &quot;%1&quot; no es compatible con la configuración; se utilizará zstd.</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1308"/>
+        <location filename="../src/settings.cpp" line="1310"/>
         <source>Invalid stored cores setting (%1). Using detected CPU count: %2</source>
         <translation>Ajuste de núcleos no válido (%1). Usando el recuento de CPU detectadas: %2</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1318"/>
+        <location filename="../src/settings.cpp" line="1320"/>
         <source>Invalid stored throttle setting (%1). Using 0.</source>
         <translation>Ajuste de aceleración almacenado no válido (%1). Se utilizará 0.</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1415"/>
-        <location filename="../src/settings.cpp" line="1525"/>
+        <location filename="../src/settings.cpp" line="1417"/>
+        <location filename="../src/settings.cpp" line="1527"/>
         <source>Output file %1 already exists. Please use another file name, or delete the existent file.</source>
         <translation>El archivo de salida %1 ya existe. Utilice otro nombre de archivo o elimine el archivo existente.</translation>
     </message>

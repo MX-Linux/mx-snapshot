@@ -234,11 +234,6 @@
         <translation>É possível excluir alguns directórios; podem ser marcadas escolhas comuns, abaixo, ou clicado o botão para editar directamente o ficheiro /etc/mx-snapshot-exclude.list.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="496"/>
-        <source>sha512</source>
-        <translation>sha512</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Throttle the I/O input rate by the given percentage.</source>
         <translation>Acelera a taxa de entrada de E/S (I/O ) numa determinada percentagem.</translation>
@@ -854,8 +849,8 @@
         <location filename="../src/main.cpp" line="367"/>
         <location filename="../src/settings.cpp" line="796"/>
         <location filename="../src/settings.cpp" line="805"/>
-        <location filename="../src/settings.cpp" line="1417"/>
-        <location filename="../src/settings.cpp" line="1527"/>
+        <location filename="../src/settings.cpp" line="1419"/>
+        <location filename="../src/settings.cpp" line="1529"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
@@ -1105,23 +1100,23 @@
         <translation>Não foi possível copiar o ficheiro de exclusões de %1 para %2</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1298"/>
+        <location filename="../src/settings.cpp" line="1300"/>
         <source>Unsupported compression &apos;%1&apos; in configuration, using zstd.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1308"/>
+        <location filename="../src/settings.cpp" line="1310"/>
         <source>Invalid stored cores setting (%1). Using detected CPU count: %2</source>
         <translation>Configuração de núcleos inválida (%1). A usar número de CPUs detetados: %2</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1318"/>
+        <location filename="../src/settings.cpp" line="1320"/>
         <source>Invalid stored throttle setting (%1). Using 0.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1415"/>
-        <location filename="../src/settings.cpp" line="1525"/>
+        <location filename="../src/settings.cpp" line="1417"/>
+        <location filename="../src/settings.cpp" line="1527"/>
         <source>Output file %1 already exists. Please use another file name, or delete the existent file.</source>
         <translation>O ficheiro de resultados %1 já existe. Usar outro nome de ficheiro ou eliminar o ficheiro existente.</translation>
     </message>

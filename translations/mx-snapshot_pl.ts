@@ -234,11 +234,6 @@
         <translation>Możesz również wykluczyć niektóre katalogi, zaznaczając typowe opcje poniżej lub klikając przycisk, aby bezpośrednio edytować /etc/mx-snapshot-exclude.list</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="496"/>
-        <source>sha512</source>
-        <translation>sha512</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Throttle the I/O input rate by the given percentage.</source>
         <translation>Ogranicz szybkość wejścia I/O o podany procent.</translation>
@@ -854,8 +849,8 @@
         <location filename="../src/main.cpp" line="367"/>
         <location filename="../src/settings.cpp" line="796"/>
         <location filename="../src/settings.cpp" line="805"/>
-        <location filename="../src/settings.cpp" line="1417"/>
-        <location filename="../src/settings.cpp" line="1527"/>
+        <location filename="../src/settings.cpp" line="1419"/>
+        <location filename="../src/settings.cpp" line="1529"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
@@ -1104,23 +1099,23 @@ poprzez usunięcie poprzednich zrzutów i zapisanych kopii:
         <translation>Nie można skopiować pliku wykluczeń z %1 do %2</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1298"/>
+        <location filename="../src/settings.cpp" line="1300"/>
         <source>Unsupported compression &apos;%1&apos; in configuration, using zstd.</source>
         <translation>Nieobsługiwana kompresja &apos;%1&apos; w konfiguracji, przy użyciu zstd.</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1308"/>
+        <location filename="../src/settings.cpp" line="1310"/>
         <source>Invalid stored cores setting (%1). Using detected CPU count: %2</source>
         <translation>Nieprawidłowe ustawienie liczby przechowywanych rdzeni (%1). Wykryto użycie liczby procesorów: %2</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1318"/>
+        <location filename="../src/settings.cpp" line="1320"/>
         <source>Invalid stored throttle setting (%1). Using 0.</source>
         <translation>Nieprawidłowe zapisane ustawienie ogranicznika (%1). Używana wartość 0.</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1415"/>
-        <location filename="../src/settings.cpp" line="1525"/>
+        <location filename="../src/settings.cpp" line="1417"/>
+        <location filename="../src/settings.cpp" line="1527"/>
         <source>Output file %1 already exists. Please use another file name, or delete the existent file.</source>
         <translation>Plik wyjściowy %1 już istnieje. Użyj innej nazwy pliku lub usuń istniejący plik.</translation>
     </message>

@@ -234,11 +234,6 @@
         <translation>U kunt ook zekere directories uitsluiten door de algemene keuzes hieronder aan te vinken, of door op de knop te klikken om rechtstreeks /etc/mx-snapshot-exclude.list te bewerken.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="496"/>
-        <source>sha512</source>
-        <translation>sha512</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Throttle the I/O input rate by the given percentage.</source>
         <translation>Smoor de I/O-invoersnelheid met het opgegeven percentage.</translation>
@@ -854,8 +849,8 @@
         <location filename="../src/main.cpp" line="367"/>
         <location filename="../src/settings.cpp" line="796"/>
         <location filename="../src/settings.cpp" line="805"/>
-        <location filename="../src/settings.cpp" line="1417"/>
-        <location filename="../src/settings.cpp" line="1527"/>
+        <location filename="../src/settings.cpp" line="1419"/>
+        <location filename="../src/settings.cpp" line="1529"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
@@ -1106,23 +1101,23 @@ door oudere snapshots en opgeslagen kopieën te verwijderen:
         <translation>Kan uitsluitingsbestand niet kopiëren van %1 naar %2</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1298"/>
+        <location filename="../src/settings.cpp" line="1300"/>
         <source>Unsupported compression &apos;%1&apos; in configuration, using zstd.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1308"/>
+        <location filename="../src/settings.cpp" line="1310"/>
         <source>Invalid stored cores setting (%1). Using detected CPU count: %2</source>
         <translation>Ongeldige instelling voor opgeslagen cores (%1). Gebruik van gedetecteerd aantal CPU&apos;s: %2</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1318"/>
+        <location filename="../src/settings.cpp" line="1320"/>
         <source>Invalid stored throttle setting (%1). Using 0.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1415"/>
-        <location filename="../src/settings.cpp" line="1525"/>
+        <location filename="../src/settings.cpp" line="1417"/>
+        <location filename="../src/settings.cpp" line="1527"/>
         <source>Output file %1 already exists. Please use another file name, or delete the existent file.</source>
         <translation>Uitvoerbestand %1 bestaat al. Gebruik een andere bestandsnaam of verwijder het bestaande bestand.</translation>
     </message>

@@ -234,11 +234,6 @@
         <translation>Vous pouvez aussi exclure certains répertoires en cochant les options courantes ci-dessous, ou en cliquant sur le bouton pour modifier directement  /etc/mx-snapshot-exclude.list.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="496"/>
-        <source>sha512</source>
-        <translation>sha512</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Throttle the I/O input rate by the given percentage.</source>
         <translation>Réduire le taux d’entrée des I/O - Entrées/Sorties - selon le pourcentage donné.</translation>
@@ -854,8 +849,8 @@
         <location filename="../src/main.cpp" line="367"/>
         <location filename="../src/settings.cpp" line="796"/>
         <location filename="../src/settings.cpp" line="805"/>
-        <location filename="../src/settings.cpp" line="1417"/>
-        <location filename="../src/settings.cpp" line="1527"/>
+        <location filename="../src/settings.cpp" line="1419"/>
+        <location filename="../src/settings.cpp" line="1529"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
@@ -1104,23 +1099,23 @@ Les instantanés « snapshots » %1 occupent %2 de l’espace disque.
         <translation>Impossible de copier le fichier d’exclusion de %1 vers %2</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1298"/>
+        <location filename="../src/settings.cpp" line="1300"/>
         <source>Unsupported compression &apos;%1&apos; in configuration, using zstd.</source>
         <translation>Compression « %1 » non prise en charge dans la configuration ; zstd sera utilisé.</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1308"/>
+        <location filename="../src/settings.cpp" line="1310"/>
         <source>Invalid stored cores setting (%1). Using detected CPU count: %2</source>
         <translation>Paramètre de cœurs mémorisés non valide (%1). Nombre de processeurs détectés utilisé : %2</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1318"/>
+        <location filename="../src/settings.cpp" line="1320"/>
         <source>Invalid stored throttle setting (%1). Using 0.</source>
         <translation>Paramètre de limitation enregistré non valide (%1). La valeur numérique 0 sera utilisée.</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1415"/>
-        <location filename="../src/settings.cpp" line="1525"/>
+        <location filename="../src/settings.cpp" line="1417"/>
+        <location filename="../src/settings.cpp" line="1527"/>
         <source>Output file %1 already exists. Please use another file name, or delete the existent file.</source>
         <translation>Le nom de fichier %1 existe déjà. Veuillez utiliser un autre nom de fichier ou supprimer le fichier existant.</translation>
     </message>

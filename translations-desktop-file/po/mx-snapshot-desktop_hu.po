@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Dolphin Oracle <dolphinoracle@gmail.com>, 2022
+# Gaben, 2026
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-04 14:53-0500\n"
 "PO-Revision-Date: 2022-12-04 20:22+0000\n"
-"Last-Translator: Dolphin Oracle <dolphinoracle@gmail.com>, 2022\n"
+"Last-Translator: Gaben, 2026\n"
 "Language-Team: Hungarian (https://app.transifex.com/anticapitalista/teams/10162/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +25,7 @@ msgstr ""
 #. The desktop entry name will be displayed within the menu.
 #: desktop-in/mx-snapshot.desktop.in:5
 msgid "MX Snapshot"
-msgstr "MX pillanatkép"
+msgstr "MX Pillanatkép"
 
 #. # The desktop entry comment will be shown within the menu.
 #: desktop-in/mx-snapshot.desktop.in:7

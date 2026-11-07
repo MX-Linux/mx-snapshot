@@ -234,11 +234,6 @@
         <translation>以下の一般的な選択肢にチェックを入れるか、またはボタンをクリックして /etc/mx-snapshot-exclude.list を直接編集することによっても、特定のディレクトリを除外することができます。</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="496"/>
-        <source>sha512</source>
-        <translation>sha512</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Throttle the I/O input rate by the given percentage.</source>
         <translation>I/O 入力レートを指定したパーセンテージに制御します。</translation>
@@ -854,8 +849,8 @@
         <location filename="../src/main.cpp" line="367"/>
         <location filename="../src/settings.cpp" line="796"/>
         <location filename="../src/settings.cpp" line="805"/>
-        <location filename="../src/settings.cpp" line="1417"/>
-        <location filename="../src/settings.cpp" line="1527"/>
+        <location filename="../src/settings.cpp" line="1419"/>
+        <location filename="../src/settings.cpp" line="1529"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -1100,23 +1095,23 @@
         <translation>除外ファイルを %1 から %2 へコピーできませんでした</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1298"/>
+        <location filename="../src/settings.cpp" line="1300"/>
         <source>Unsupported compression &apos;%1&apos; in configuration, using zstd.</source>
         <translation>非サポートの圧縮形式「%1」が指定されているので、代わりに zstd を使用します。</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1308"/>
+        <location filename="../src/settings.cpp" line="1310"/>
         <source>Invalid stored cores setting (%1). Using detected CPU count: %2</source>
         <translation>保存したコア設定は (%1) は無効です。検出した CPU 数 %2 を使用します。</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1318"/>
+        <location filename="../src/settings.cpp" line="1320"/>
         <source>Invalid stored throttle setting (%1). Using 0.</source>
         <translation>指定したスロットル設定 (%1) が無効です。代わりに 0 を使用します。</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1415"/>
-        <location filename="../src/settings.cpp" line="1525"/>
+        <location filename="../src/settings.cpp" line="1417"/>
+        <location filename="../src/settings.cpp" line="1527"/>
         <source>Output file %1 already exists. Please use another file name, or delete the existent file.</source>
         <translation>出力ファイル名 %1 はすでに存在します。別の名前を使用するか、すでにあるそのファイルを削除してください。</translation>
     </message>

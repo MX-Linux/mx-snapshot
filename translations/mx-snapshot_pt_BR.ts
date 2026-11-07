@@ -237,11 +237,6 @@ com programas que sejam pouco exigentes enquanto o ‘Snapshot’ estiver em exe
 para editar manualmente o arquivo de configurações ‘/etc/mx-snapshot-exclude.list’.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="496"/>
-        <source>sha512</source>
-        <translation>sha512</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.ui" line="519"/>
         <source>Throttle the I/O input rate by the given percentage.</source>
         <translation>Acelerar a taxa de entrada da E/S ou I/O pelo valor da porcentagem fornecida.</translation>
@@ -857,8 +852,8 @@ As %1 imagens ISOs estão ocupando %2 de espaço em disco.</translation>
         <location filename="../src/main.cpp" line="367"/>
         <location filename="../src/settings.cpp" line="796"/>
         <location filename="../src/settings.cpp" line="805"/>
-        <location filename="../src/settings.cpp" line="1417"/>
-        <location filename="../src/settings.cpp" line="1527"/>
+        <location filename="../src/settings.cpp" line="1419"/>
+        <location filename="../src/settings.cpp" line="1529"/>
         <source>Error</source>
         <translation>Ocorreu um Erro</translation>
     </message>
@@ -1105,23 +1100,23 @@ As %1 imagens ISOs estão ocupando %2 de espaço em disco.</translation>
         <translation>Não foi possível copiar o arquivo de exclusão de %1 para %2.</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1298"/>
+        <location filename="../src/settings.cpp" line="1300"/>
         <source>Unsupported compression &apos;%1&apos; in configuration, using zstd.</source>
         <translation>A compressão ‘%1’ na configuração possui um formato não suportado. Usando o zstd.</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1308"/>
+        <location filename="../src/settings.cpp" line="1310"/>
         <source>Invalid stored cores setting (%1). Using detected CPU count: %2</source>
         <translation>Configuração de núcleos armazenados inválida (%1). Usando a contagem de CPUs detectada: %2</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1318"/>
+        <location filename="../src/settings.cpp" line="1320"/>
         <source>Invalid stored throttle setting (%1). Using 0.</source>
         <translation>Foi armazenada uma configuração inválida de aceleração (%1). Usando o valor de 0.</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1415"/>
-        <location filename="../src/settings.cpp" line="1525"/>
+        <location filename="../src/settings.cpp" line="1417"/>
+        <location filename="../src/settings.cpp" line="1527"/>
         <source>Output file %1 already exists. Please use another file name, or delete the existent file.</source>
         <translation>O arquivo da saída %1 já existe. Por favor, utilize um outro nome para o arquivo ou exclua o arquivo existente.</translation>
     </message>

@@ -135,7 +135,7 @@
         <location filename="../src/mainwindow.cpp" line="400"/>
         <location filename="../src/mainwindow.cpp" line="986"/>
         <source>MX Snapshot</source>
-        <translation>MX pillanatkép</translation>
+        <translation>MX Pillanatkép</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="33"/>
@@ -232,11 +232,6 @@
         <location filename="../src/mainwindow.ui" line="451"/>
         <source>You can also exclude certain directories by ticking the common choices below, or by clicking on the button to directly edit /etc/mx-snapshot-exclude.list.</source>
         <translation>Bizonyos könyvtárak kihagyása is lehetséges az alábbi általános lehetőségek bejelölésével, vagy a /etc/mx-snapshot-exclude.list közvetlen szerkesztésére szolgáló gombra kattintva.</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="496"/>
-        <source>sha512</source>
-        <translation>sha512</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="519"/>
@@ -847,15 +842,15 @@
     <message>
         <location filename="../src/main.cpp" line="246"/>
         <source>MX Snapshot</source>
-        <translation>MX pillanatkép</translation>
+        <translation>MX Pillanatkép</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="273"/>
         <location filename="../src/main.cpp" line="367"/>
         <location filename="../src/settings.cpp" line="796"/>
         <location filename="../src/settings.cpp" line="805"/>
-        <location filename="../src/settings.cpp" line="1417"/>
-        <location filename="../src/settings.cpp" line="1527"/>
+        <location filename="../src/settings.cpp" line="1419"/>
+        <location filename="../src/settings.cpp" line="1529"/>
         <source>Error</source>
         <translation>Hiba</translation>
     </message>
@@ -1105,23 +1100,23 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1298"/>
+        <location filename="../src/settings.cpp" line="1300"/>
         <source>Unsupported compression &apos;%1&apos; in configuration, using zstd.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1308"/>
+        <location filename="../src/settings.cpp" line="1310"/>
         <source>Invalid stored cores setting (%1). Using detected CPU count: %2</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1318"/>
+        <location filename="../src/settings.cpp" line="1320"/>
         <source>Invalid stored throttle setting (%1). Using 0.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1415"/>
-        <location filename="../src/settings.cpp" line="1525"/>
+        <location filename="../src/settings.cpp" line="1417"/>
+        <location filename="../src/settings.cpp" line="1527"/>
         <source>Output file %1 already exists. Please use another file name, or delete the existent file.</source>
         <translation>A %1 kimeneti fájl már létezik. Adjon meg egy másik fájlnevet, vagy törölje a meglévő fájlt.</translation>
     </message>
