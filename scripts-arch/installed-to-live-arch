@@ -966,11 +966,16 @@ action_adjtime() {
 #                                      machine-id on every run.
 #   * systemd-firstboot.service.d    — neutralise the firstboot prompts by
 #                                      overriding ExecStart to /bin/true.
-#   * getty@tty1.service.d           — autologin demo on tty1 so the user
-#                                      can use the live system even when
-#                                      the graphical session manager fails
-#                                      to start.
+#   * getty@tty1.service.d           — only with live-setup=autologin
+#                                      (reset snapshots, where action_passwd
+#                                      creates demo): autologin demo on tty1
+#                                      so the user can use the live system
+#                                      even when the graphical session
+#                                      manager fails to start. A personal
+#                                      backup has no demo account, so it
+#                                      keeps the normal login prompt.
 action_live_setup() {
+    local autologin=$1
     local template_dir=$WORK_DIR/live-setup
     local etc=$template_dir/etc
 
@@ -982,16 +987,17 @@ action_live_setup() {
     cat > "$firstboot_dropin_dir/00-disable.conf" <<'CONF'
 # Installed by mx-snapshot's installed-to-live-arch.
 # Neutralise systemd-firstboot's interactive prompts on the live ISO; the
-# live user (demo) is preconfigured by action_passwd, and locale/keymap/
-# timezone come from the snapshotted host.
+# accounts and locale/keymap/timezone come from the snapshotted host (or,
+# for a reset snapshot, from action_passwd's demo user).
 [Service]
 ExecStart=
 ExecStart=/bin/true
 CONF
 
-    local autologin_dir=$etc/systemd/system/getty@tty1.service.d
-    mkdir -p "$autologin_dir"
-    cat > "$autologin_dir/autologin.conf" <<'CONF'
+    if [[ $autologin == autologin ]]; then
+        local autologin_dir=$etc/systemd/system/getty@tty1.service.d
+        mkdir -p "$autologin_dir"
+        cat > "$autologin_dir/autologin.conf" <<'CONF'
 # Installed by mx-snapshot's installed-to-live-arch.
 # Autologin the live user on tty1 so the system is usable even when the
 # display manager can't start (e.g. inside a VM without GPU acceleration).
@@ -999,6 +1005,7 @@ CONF
 ExecStart=
 ExecStart=-/usr/bin/agetty --autologin demo --noclear %I $TERM
 CONF
+    fi
 
     bind_mount_template "$template_dir"
 }
@@ -1060,7 +1067,9 @@ Actions for 'start':
                       + fresh pacman keyring on first boot
   version-file[=t]    write /etc/live/version/linuxfs.ver template
   adjtime             zero out /etc/adjtime in template
-  live-setup          empty machine-id + systemd-firstboot/getty drop-ins
+  live-setup          empty machine-id + systemd-firstboot drop-in
+  live-setup=autologin
+                      live-setup + autologin demo on tty1 (reset only)
 EOF
 }
 
@@ -1096,7 +1105,8 @@ main() {
                     version-file) action_version_file "" || { warn "version-file action failed"; rc=1; } ;;
                     version-file=*) action_version_file "${action#version-file=}" || { warn "version-file action failed"; rc=1; } ;;
                     adjtime) action_adjtime || { warn "adjtime action failed"; rc=1; } ;;
-                    live-setup) action_live_setup || { warn "live-setup action failed"; rc=1; } ;;
+                    live-setup) action_live_setup "" || { warn "live-setup action failed"; rc=1; } ;;
+                    live-setup=autologin) action_live_setup autologin || { warn "live-setup action failed"; rc=1; } ;;
                     *) warn "unknown action: $action"; rc=1 ;;
                 esac
             done

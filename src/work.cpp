@@ -1668,7 +1668,8 @@ void Work::setupEnv()
         }
         args << "empty=/home" << "general" << "version-file";
         if (settings->isArch) {
-            args << "live-setup";
+            // Only a reset snapshot has the demo account to autologin on tty1.
+            args << "live-setup=autologin";
         }
         if (!shell.procAsRoot(installedToLive, args, nullptr, nullptr, Cmd::QuietMode::No)) {
             emit messageBox(BoxType::critical, tr("Error"),
