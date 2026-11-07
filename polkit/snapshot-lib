@@ -104,21 +104,38 @@ datetime_log() {
     date +"%Y%m%d_%H%M" > /etc/snapshot_created
 }
 
-# Kill mksquashfs and wait for it to actually exit. Cleanup unmounts the
+# PIDs of the mksquashfs processes squashing one of our bind-roots: argv[1] is
+# always the source tree (SquashfsUtils::buildCommand), either the plain
+# /.bind-root or an app's overlay root. Any other mksquashfs on the system, the
+# user's own or another tool's, is not ours to kill.
+our_mksquashfs_pids() {
+    local pid args
+    for pid in $(pgrep -x mksquashfs); do
+        mapfile -d '' -t args 2>/dev/null < "/proc/$pid/cmdline" || continue
+        case ${args[1]-} in
+            /.bind-root | /run/mx-snapshot/bind-root-overlay/root | /run/iso-snapshot-cli/bind-root-overlay/root)
+                echo "$pid" ;;
+        esac
+    done
+}
+
+# Kill our mksquashfs and wait for it to actually exit. Cleanup unmounts the
 # overlay right after this; a still-dying mksquashfs keeps the merged root
 # busy, the busy overlay pins the lower bind of /, and teardown then has to
 # leave mounts behind. Escalate to SIGKILL if TERM isn't enough.
 kill_mksquashfs() {
-    local i
-    pgrep -x mksquashfs >/dev/null || return 0
-    pkill -x mksquashfs
+    local i pids
+    mapfile -t pids < <(our_mksquashfs_pids)
+    [[ ${#pids[@]} -gt 0 ]] || return 0
+    kill "${pids[@]}" 2>/dev/null
     for ((i = 0; i < 50; i++)); do
-        pgrep -x mksquashfs >/dev/null || return 0
+        [[ -z $(our_mksquashfs_pids) ]] && return 0
         sleep 0.1
     done
-    pkill -9 -x mksquashfs
+    mapfile -t pids < <(our_mksquashfs_pids)
+    [[ ${#pids[@]} -gt 0 ]] && kill -9 "${pids[@]}" 2>/dev/null
     for ((i = 0; i < 20; i++)); do
-        pgrep -x mksquashfs >/dev/null || return 0
+        [[ -z $(our_mksquashfs_pids) ]] && return 0
         sleep 0.1
     done
     return 1
