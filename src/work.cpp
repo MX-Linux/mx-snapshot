@@ -305,8 +305,9 @@ void Work::cleanUp()
     // Stop a running mksquashfs before queueing any other privileged request:
     // the broker executes FIFO, so anything queued below would otherwise wait
     // for the squash to finish on its own. The out-of-band KILL terminates the
-    // currently running child; snapshot-lib's pkill remains the catch-all (and
-    // covers root/CLI runs, which bypass the broker).
+    // currently running child; snapshot-lib's kill_mksquashfs remains the
+    // catch-all for mksquashfs on our bind-root (and covers root/CLI runs,
+    // which bypass the broker).
     if (started) {
         ElevationBroker::instance().killActiveChild();
         Cmd().procAsRoot("snapshot-lib", {"kill_mksquashfs"}, nullptr, nullptr, Cmd::QuietMode::Yes);
