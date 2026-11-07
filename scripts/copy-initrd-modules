@@ -281,12 +281,16 @@ $(find "$dir" -type f -name '*\.ko*' -printf "%f\n" | sed -nr 's/\.ko(|\.[[:alph
     local full cnt=0
     [[ -z "${from_dir##/*}" ]] || from_dir="$PWD/$from_dir"
     while read -r full; do
+        # An empty module list still yields one empty line from the here-doc.
+        [[ "$full" ]] || continue
         [[ "$VERBOSE" ]] && printf "  %s\n" "$(basename "$full")"
         local dir
         dir=$(dirname "$full")
         dir="$to_dir/${dir##"$from_dir"/}"
-        test -d "$dir" || pretend mkdir -p "$dir"
-        pretend cp "$full" "$dir/"
+        # A module that modprobe resolved but could not be copied would leave
+        # the initrd without a driver it needs to boot, so stop here.
+        test -d "$dir" || pretend mkdir -p "$dir" || fatal "Could not create directory %s" "$dir"
+        pretend cp "$full" "$dir/" || fatal "Could not copy %s to %s" "$full" "$dir/"
         cnt=$((++cnt))
     done<<List_2
 $list2
