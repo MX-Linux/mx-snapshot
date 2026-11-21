@@ -96,9 +96,6 @@ int main(int argc, char *argv[])
     for (int i = 0; i < argc; ++i) {
         arguments << QString::fromLocal8Bit(argv[i]);
     }
-    const bool wantsHelp = arguments.contains(QLatin1String("--help")) || arguments.contains(QLatin1String("-h"));
-    const bool wantsVersion = arguments.contains(QLatin1String("--version"));
-
     // Non-blocking on both ends: the handler must never block, and the reader
     // just drains whatever is queued.
     if (::socketpair(AF_UNIX, SOCK_STREAM | SOCK_NONBLOCK, 0, signalFd) != 0) {
@@ -177,31 +174,21 @@ int main(int argc, char *argv[])
             QStringLiteral("[suffix]"));
     };
 
-    if (wantsHelp || wantsVersion) {
-        QCoreApplication tempApp(argc, argv);
-        setTranslation();
-
-        QCommandLineParser parser;
-        setupParser(parser);
-        parser.process(tempApp);
-
-        if (wantsHelp) {
-            fputs(qPrintable(parser.helpText()), stdout);
-            return EXIT_SUCCESS;
-        }
-        if (wantsVersion) {
-            printf("%s %s\n", qPrintable(QCoreApplication::applicationName()),
-                   qPrintable(QCoreApplication::applicationVersion()));
-            return EXIT_SUCCESS;
-        }
-    }
-
     QCommandLineParser parser;
     setupParser(parser);
 
     if (!parser.parse(arguments)) {
         fprintf(stderr, "%s\n", qPrintable(parser.errorText()));
         return EXIT_FAILURE;
+    }
+    if (parser.isSet("help") || parser.isSet("help-all") || parser.isSet("version")) {
+        QCoreApplication tempApp(argc, argv);
+        setTranslation();
+
+        QCommandLineParser translatedParser;
+        setupParser(translatedParser);
+        translatedParser.process(tempApp);
+        return EXIT_SUCCESS;
     }
     const QStringList positionalArgs = parser.positionalArguments();
     if (!positionalArgs.isEmpty() && (!parser.isSet("month") || positionalArgs.size() != 1)) {

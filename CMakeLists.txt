@@ -312,6 +312,22 @@ set_common_properties(helper)
 
 if(BUILD_TESTS)
     enable_testing()
+    foreach(program IN ITEMS mx-snapshot iso-snapshot-cli)
+        if(TARGET ${program})
+            foreach(option IN ITEMS -v --help-all)
+                add_test(NAME ${program}${option} COMMAND ${CMAKE_COMMAND} -E env
+                    --unset=DISPLAY --unset=WAYLAND_DISPLAY --unset=QT_QPA_PLATFORM
+                    $<TARGET_FILE:${program}> ${option})
+                if(option STREQUAL "-v")
+                    set(expected_output "${program} [0-9]")
+                else()
+                    set(expected_output "--help-all")
+                endif()
+                set_tests_properties(${program}${option} PROPERTIES
+                    PASS_REGULAR_EXPRESSION "${expected_output}" TIMEOUT 10)
+            endforeach()
+        endif()
+    endforeach()
 
     add_executable(test-squashfsutils
         tests/test_squashfsutils.cpp

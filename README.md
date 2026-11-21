@@ -41,10 +41,10 @@ recommend it for anything other than MX or antiX compatible systems.
 # OPTIONS
 
   - **-h**, **--help**  
-    Displays this help.
+    Displays this help. Use **--help-all** to include Qt options.
 
   - **-v**, **--version**  
-    Displays version information.
+    Displays version information. Help and version options work without a graphical session.
 
   - **-c**, **--cli**  
     Use CLI only
