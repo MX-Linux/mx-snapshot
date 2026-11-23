@@ -1153,20 +1153,27 @@ bool Work::createIso(const QString &filename)
             "-blank", "as_needed",                       // replace an existing file
             "-volid", volumeLabel,                       // volume label (max 32 chars)
             "-joliet", "on",                             // + Joliet names (Windows)
-            "-compliance", "iso_9660_level=3",           // files > 4 GiB allowed (linuxfs)
+            "-compliance", "iso_9660_level=3:no_emul_toc", // files > 4 GiB allowed; no emulated TOC (as -as mkisofs)
+            "-padding", "included",                      // padding inside the image: backup GPT in the last sector
             "-map", templateDir, "/",                    // iso-template -> ISO root
             "-map", settings->workDir + "/iso-2", "/",   // + iso-2 (antiX/linuxfs)
             "-chown_r", "0", "/", "--",                  // owner root ...
             "-chgrp_r", "0", "/", "--",                  // ... and group root
         };
-        // Intel Macs (grub-mkrescue style), only when the template has the Mac files
-        if (QFileInfo::exists(templateDir + "/System/Library/CoreServices/boot.efi")) {
+        // Intel Macs (grub-mkrescue style), only when the template has the Mac files.
+        // HFS+ comes with an Apple Partition Map, so only for a hybrid ISO: with
+        // "make isohybrid" off the ISO stays plain (no system area), as before.
+        const QString macDir = templateDir + "/System/Library/CoreServices";
+        if (settings->makeIsohybrid && QFileInfo::exists(macDir + "/boot.efi")) {
             xargs << "-hfsplus" << "on"                  // + HFS+ filesystem (Macs read it)
                   << "-boot_image" << "any" << "apm_block_size=2048" // + Apple Partition Map
                   << "-find" << "/System/Library/CoreServices/boot.efi"
-                  << "-exec" << "set_hfs_bless" << "intel_bootfile" << "--" // the file the Mac boots
-                  << "-find" << "/System/Library/CoreServices/.disk_label"
-                  << "-exec" << "set_hfs_crtp" << "chrp" << "tbxj" << "--"; // name in the boot picker
+                  << "-exec" << "set_hfs_bless" << "intel_bootfile" << "--"; // the file the Mac boots
+            // name in the boot picker - only if present (xorriso aborts on a missing path)
+            if (QFileInfo::exists(macDir + "/.disk_label")) {
+                xargs << "-find" << "/System/Library/CoreServices/.disk_label"
+                      << "-exec" << "set_hfs_crtp" << "chrp" << "tbxj" << "--";
+            }
         }
         // Hybrid MBR boot code for BIOS from USB: must match the BIOS boot image
         QString mbrPath;
@@ -1175,7 +1182,9 @@ bool Work::createIso(const QString &filename)
                 // GRUB's own MBR, from the template: same GRUB build as its eltorito.img
                 mbrPath = firstExistingFile({templateDir + "/boot/grub/i386-pc/boot_hybrid.img"});
                 if (mbrPath.isEmpty()) {
-                    qWarning() << "boot_hybrid.img not in the template; no BIOS boot from USB.";
+                    // isohybrid cannot handle a GRUB boot image either: skip it below
+                    qWarning() << "boot_hybrid.img not in the template: the ISO boots from DVD only"
+                                  " (no USB boot; isohybrid is skipped in GRUB mode).";
                 }
             } else {
                 mbrPath = firstExistingFile({"/usr/lib/ISOLINUX/isohdpfx.bin", "/usr/lib/syslinux/bios/isohdpfx.bin",
@@ -1248,7 +1257,8 @@ bool Work::createIso(const QString &filename)
 
     // Make it isohybrid - only when xorriso could not do it (no isohdpfx.bin);
     // Arch folds the hybrid MBR into its xorriso call above
-    if (settings->makeIsohybrid && !settings->isArch && !hybridDone) {
+    // (not in GRUB mode: isohybrid only knows isolinux.bin and would stop the build)
+    if (settings->makeIsohybrid && !settings->isArch && !hybridDone && !settings->grubmbr) {
         emit message(tr("Making hybrid iso"));
         if (!shell.proc("isohybrid", {"--uefi", settings->snapshotDir + "/" + filename}, nullptr, nullptr,
                         Cmd::QuietMode::No)) {
