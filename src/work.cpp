@@ -88,6 +88,17 @@ quint64 parseDuKilobytes(const QString &output, bool *ok)
     return firstField.toULongLong(ok);
 }
 
+// First path in candidates that exists, or an empty string.
+QString firstExistingFile(const QStringList &candidates)
+{
+    for (const QString &candidate : candidates) {
+        if (QFileInfo::exists(candidate)) {
+            return candidate;
+        }
+    }
+    return {};
+}
+
 QString mksquashfsHelp()
 {
     QProcess process;
@@ -1126,24 +1137,111 @@ bool Work::createIso(const QString &filename)
         // The volume label is user-influenced (fullDistroName), so it rides in $3.
         cmd = R"(xorriso -as mkisofs -l -V "$3" -R -J -pad -iso-level 3)" + isohybridArgs + bootArgs
               + R"( -o "$1" . "$2")";
-    } else if (settings->grubmbr) {
-        // grub for mbr boot instead of isolinux
-        cmd = R"(xorriso -as mkisofs -l -V MXLIVE -R -J -pad -iso-level 3 -no-emul-boot -boot-load-size 4 -boot-info-table --grub2-boot-info )"
-              R"(-b boot/grub/i386-pc/eltorito.img -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot -isohybrid-apm-hfsplus -isohybrid-gpt-basdat -o "$1" . "$2")";
-    } else {
-        cmd = R"(xorriso -as mkisofs -l -V MXLIVE -R -J -pad -iso-level 3 -no-emul-boot -boot-load-size 4 -boot-info-table )"
-              R"(-b boot/isolinux/isolinux.bin -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot -c )"
-              R"(boot/isolinux/isolinux.cat -o "$1" . "$2")";
     }
 
-    if (Cmd().getOut("umask", Cmd::QuietMode::Yes) != "0022") {
-        cmd.prepend("umask 022; ");
+    // MX/Debian: one native xorriso run makes the hybrid ISO (DVD + USB stick,
+    // BIOS + UEFI); no separate isohybrid step. Same commands as build-iso's
+    // make_xorriso_iso. The argument list goes to xorriso unchanged via
+    // bash "$@" (no shell parsing of paths; bash only for umask 022).
+    QStringList bashArgs;
+    bool hybridDone = false;
+    if (!settings->isArch) {
+        const QString templateDir = settings->workDir + "/iso-template";
+        QStringList xargs {
+            "-report_about", "UPDATE",                   // progress, no chatter
+            "-outdev", settings->snapshotDir + "/" + filename, // the new ISO file
+            "-blank", "as_needed",                       // replace an existing file
+            "-volid", volumeLabel,                       // volume label (max 32 chars)
+            "-joliet", "on",                             // + Joliet names (Windows)
+            "-compliance", "iso_9660_level=3:no_emul_toc", // files > 4 GiB allowed; no emulated TOC (as -as mkisofs)
+            "-padding", "included",                      // padding inside the image: backup GPT in the last sector
+            "-map", templateDir, "/",                    // iso-template -> ISO root
+            "-map", settings->workDir + "/iso-2", "/",   // + iso-2 (antiX/linuxfs)
+            "-chown_r", "0", "/", "--",                  // owner root ...
+            "-chgrp_r", "0", "/", "--",                  // ... and group root
+        };
+        // Intel Macs (grub-mkrescue style), only when the template has the Mac files.
+        // HFS+ comes with an Apple Partition Map, so only for a hybrid ISO: with
+        // "make isohybrid" off the ISO stays plain (no system area), as before.
+        const QString macDir = templateDir + "/System/Library/CoreServices";
+        if (settings->makeIsohybrid && QFileInfo::exists(macDir + "/boot.efi")) {
+            xargs << "-hfsplus" << "on"                  // + HFS+ filesystem (Macs read it)
+                  << "-boot_image" << "any" << "apm_block_size=2048" // + Apple Partition Map
+                  << "-find" << "/System/Library/CoreServices/boot.efi"
+                  << "-exec" << "set_hfs_bless" << "intel_bootfile" << "--"; // the file the Mac boots
+            // name in the boot picker - only if present (xorriso aborts on a missing path)
+            if (QFileInfo::exists(macDir + "/.disk_label")) {
+                xargs << "-find" << "/System/Library/CoreServices/.disk_label"
+                      << "-exec" << "set_hfs_crtp" << "chrp" << "tbxj" << "--";
+            }
+        }
+        // Hybrid MBR boot code for BIOS from USB: must match the BIOS boot image
+        QString mbrPath;
+        if (settings->makeIsohybrid) {
+            if (settings->grubmbr) {
+                // GRUB's own MBR, from the template: same GRUB build as its eltorito.img
+                mbrPath = firstExistingFile({templateDir + "/boot/grub/i386-pc/boot_hybrid.img"});
+                if (mbrPath.isEmpty()) {
+                    // isohybrid cannot handle a GRUB boot image either: skip it below
+                    qWarning() << "boot_hybrid.img not in the template: the ISO boots from DVD only"
+                                  " (no USB boot; isohybrid is skipped in GRUB mode).";
+                }
+            } else {
+                mbrPath = firstExistingFile({"/usr/lib/ISOLINUX/isohdpfx.bin", "/usr/lib/syslinux/bios/isohdpfx.bin",
+                                             "/usr/lib/syslinux/isohdpfx.bin", "/usr/share/syslinux/isohdpfx.bin"});
+                if (mbrPath.isEmpty()) {
+                    qWarning() << "isohdpfx.bin not found (package isolinux); falling back to isohybrid.";
+                }
+            }
+        }
+        // BIOS: first El Torito entry
+        if (settings->grubmbr) {
+            if (!mbrPath.isEmpty()) {
+                xargs << "-boot_image" << "grub" << ("grub2_mbr=" + mbrPath) // GRUB MBR code
+                      << "-boot_image" << "any" << "partition_table=on";     // MBR partition table
+            }
+            xargs << "-boot_image" << "any" << "cat_path=/boot/grub/boot.cat"   // boot catalog
+                  << "-boot_image" << "grub" << "bin_path=/boot/grub/i386-pc/eltorito.img" // BIOS: GRUB
+                  << "-boot_image" << "grub" << "grub2_boot_info=on"; // patch image location in
+        } else {
+            if (!mbrPath.isEmpty()) {
+                xargs << "-boot_image" << "isolinux" << ("system_area=" + mbrPath) // isolinux MBR code
+                      << "-boot_image" << "isolinux" << "partition_table=on";      // MBR partition table
+            }
+            xargs << "-boot_image" << "any" << "cat_path=/boot/isolinux/isolinux.cat" // boot catalog
+                  << "-boot_image" << "isolinux" << "bin_path=/boot/isolinux/isolinux.bin"; // BIOS: isolinux
+        }
+        xargs << "-boot_image" << "any" << "emul_type=no_emulation" // no floppy emulation
+              << "-boot_image" << "any" << "load_size=2048"         // BIOS loads 2 KiB
+              << "-boot_image" << "any" << "boot_info_table=on";    // boot info table
+        // UEFI: second El Torito entry + EFI partition for USB sticks
+        xargs << "-boot_image" << "any" << "next"
+              << "-boot_image" << "any" << "efi_path=/boot/grub/efi.img"; // UEFI from DVD
+        if (!mbrPath.isEmpty()) {
+            if (settings->grubmbr) {
+                // with GRUB's MBR: a copy of efi.img as MBR partition 2, type EFI
+                xargs << "-append_partition" << "2" << "0xef" << templateDir + "/boot/grub/efi.img";
+            } else {
+                // with the isolinux MBR: efi.img as GPT + MBR partition (inside the ISO)
+                xargs << "-boot_image" << "isolinux" << "partition_entry=gpt_basdat";
+            }
+            xargs << "-boot_image" << "any" << "partition_offset=16"     // partition 1 at 32 KiB
+                  << "-boot_image" << "any" << "partition_cyl_align=off" // no cylinder padding
+                  << "-boot_image" << "any" << "iso_mbr_part_type=0x00"; // MBR type as Debian
+            hybridDone = true;
+        }
+        qDebug() << "xorriso" << xargs;
+        bashArgs = QStringList {"-c", "umask 022; exec xorriso \"$@\"", "_"} + xargs;
+    } else {
+        if (Cmd().getOut("umask", Cmd::QuietMode::Yes) != "0022") {
+            cmd.prepend("umask 022; ");
+        }
+        bashArgs = QStringList {"-c", cmd, "_", settings->snapshotDir + "/" + filename,
+                                settings->workDir + "/iso-2", volumeLabel};
     }
+
     emit message(tr("Creating CD/DVD image file..."));
-    if (!shell.proc("/bin/bash",
-                    {"-c", cmd, "_", settings->snapshotDir + "/" + filename, settings->workDir + "/iso-2",
-                     volumeLabel},
-                    nullptr, nullptr, Cmd::QuietMode::No)) {
+    if (!shell.proc("/bin/bash", bashArgs, nullptr, nullptr, Cmd::QuietMode::No)) {
         if (cleanupStarted) {
             return false;
         }
@@ -1157,8 +1255,10 @@ bool Work::createIso(const QString &filename)
         return false;
     }
 
-    // Make it isohybrid (Arch already folded the hybrid MBR into xorriso above)
-    if (settings->makeIsohybrid && !settings->isArch) {
+    // Make it isohybrid - only when xorriso could not do it (no isohdpfx.bin);
+    // Arch folds the hybrid MBR into its xorriso call above
+    // (not in GRUB mode: isohybrid only knows isolinux.bin and would stop the build)
+    if (settings->makeIsohybrid && !settings->isArch && !hybridDone && !settings->grubmbr) {
         emit message(tr("Making hybrid iso"));
         if (!shell.proc("isohybrid", {"--uefi", settings->snapshotDir + "/" + filename}, nullptr, nullptr,
                         Cmd::QuietMode::No)) {
