@@ -163,6 +163,14 @@ add_rm_dir() {
 # ------------------------------------------------------------------- mount helpers
 is_mounted() { mountpoint -q "$1" 2>/dev/null; }
 
+bind_root_is_isolated() {
+    local root_device bind_device
+    [[ $(findmnt -n -o FSTYPE --target "$BIND_ROOT") == overlay ]] || return 1
+    root_device=$(stat -c %d "$REAL_ROOT") || return 1
+    bind_device=$(stat -c %d "$BIND_ROOT") || return 1
+    [[ $bind_device != "$root_device" ]]
+}
+
 bind_mount() {
     # bind_mount <src> <dst>  — best-effort, warns on failure.
     local src=$1 dst=$2
@@ -212,8 +220,7 @@ copy_template_dir() {
 # Mirrors BindRootManager::bindMountTemplate: walk every regular file in
 # <templateDir>, ensure a same-named placeholder exists at the matching
 # bindRoot path (creating dirs/files as needed), and bind-mount the
-# template file over it. Symlinks and .part marker files are skipped on
-# the Arch port.
+# template file over it. Symlinks are copied and .part markers are skipped.
 bind_mount_template() {
     local template_dir=$1
     [[ -d $template_dir ]] || { warn "template dir missing: $template_dir"; return 0; }
@@ -221,6 +228,8 @@ bind_mount_template() {
     # find prints absolute paths under template_dir; strip prefix to get the
     # path relative to template root, which is the same path under realRoot
     # and bindRoot.
+    local isolated=0
+    bind_root_is_isolated && isolated=1
     local file relative orig target
     while IFS= read -r -d '' file; do
         # Skip .part marker files (Arch-specific live-files convention).
@@ -232,18 +241,15 @@ bind_mount_template() {
         orig=${REAL_ROOT%/}$relative
         target=${BIND_ROOT%/}$relative
 
-        # Symlinks: copy into the real root if absent, mirroring the C++
-        # logic. Don't bind-mount symlinks.
         if [[ -L $file ]]; then
-            if [[ ! -e $orig ]]; then
-                cp -a "$file" "$orig" || { warn "failed to copy symlink: $file"; continue; }
-                # Resolve relative to $orig's own directory (readlink -f), not the
-                # script's CWD — a relative target like "../foo" tested with plain
-                # readlink + [[ -e ]] almost always looks broken and gets deleted
-                # below even when it's perfectly valid.
-                local link_target
-                link_target=$(readlink -f "$orig" 2>/dev/null || true)
-                if [[ -n $link_target && -e $link_target ]]; then
+            if ((isolated)); then
+                if [[ ! -e $target && ! -L $target ]]; then
+                    mkdir -p "${target%/*}" && cp -aT -- "$file" "$target" || return 1
+                    [[ -e $target ]] || rm -f -- "$target"
+                fi
+            elif [[ ! -e $orig && ! -L $orig ]]; then
+                cp -aT -- "$file" "$orig" || { warn "failed to copy symlink: $file"; continue; }
+                if [[ -e $orig ]]; then
                     add_rm_file "$orig"
                 else
                     rm -f "$orig"
@@ -389,9 +395,7 @@ action_timezone() {
     # Only replace localtime in an isolated overlay. A plain bind shares the
     # host symlink; bind_mount_template intentionally leaves it untouched.
     local bind_localtime=${BIND_ROOT%/}/etc/localtime
-    if [[ $(findmnt -n -o FSTYPE --target "$BIND_ROOT") == overlay \
-        && $(stat -c %d "$BIND_ROOT") != "$(stat -c %d "$REAL_ROOT")" ]] \
-        && [[ ! -e $bind_localtime || -L $bind_localtime ]]; then
+    if bind_root_is_isolated && [[ ! -e $bind_localtime || -L $bind_localtime ]]; then
         rm -f "$bind_localtime"
         cp -a "$zone_file" "$bind_localtime"
     fi

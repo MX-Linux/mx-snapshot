@@ -59,6 +59,20 @@ load_state || exit
 ''')
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_service_mask_stays_in_overlay(self):
+        result = self.run_shell('''
+REAL_ROOT=$1/host
+BIND_ROOT=$1/bind
+mkdir -p "$REAL_ROOT/etc" "$BIND_ROOT/etc" "$1/template/etc"
+ln -s /dev/null "$1/template/etc/test.service"
+findmnt() { echo overlay; }
+stat() { if [[ $3 == "$BIND_ROOT" ]]; then echo 2; else echo 1; fi; }
+bind_mount_template "$1/template" || exit
+[[ ! -L $REAL_ROOT/etc/test.service && $(readlink "$BIND_ROOT/etc/test.service") == /dev/null
+   && ${#RM_FILES[@]} == 0 ]]
+''')
+        self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_timezone_preserves_plain_bind_even_on_overlay_host(self):
         for filesystem, distinct_device, replaced in (
             ('ext4', False, False), ('overlay', False, False), ('overlay', True, True),
