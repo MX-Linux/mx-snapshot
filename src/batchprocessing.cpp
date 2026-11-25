@@ -371,8 +371,10 @@ void Batchprocessing::checkUpdatedDefaultExcludesCli()
             || response.compare(useOptionText, Qt::CaseInsensitive) == 0) {
             if (resetCustomExcludesCli(configuredPath, sourcePath)) {
                 qDebug().noquote() << tr("Reverted to updated default exclusion file.");
+                return;
             }
-            return;
+            out << tr("Could not replace the exclusion file with the updated default.") << '\n';
+            continue;
         }
 
         if (response.compare(keepOptionKey, Qt::CaseInsensitive) == 0
