@@ -59,6 +59,24 @@ load_state || exit
 ''')
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_account_removed_after_copy_failure(self):
+        result = self.run_shell('''
+WORK_DIR=$1/work
+BIND_ROOT=$1/root
+LIVE_FILES_DIR=$1/template
+mkdir -p "$BIND_ROOT/etc"
+touch "$BIND_ROOT/etc/passwd"
+adduser() { [[ $1 == --help ]] || printf '%s' "${!#}" > "$WORK_DIR/added"; }
+useradd() { adduser "$@"; }
+deluser() { printf '%s' "$1" > "$WORK_DIR/removed"; }
+userdel() { deluser "$@"; }
+findmnt() { echo ext4; }
+cp() { return 1; }
+action_passwd && exit 1
+[[ -s $WORK_DIR/added ]] && cmp "$WORK_DIR/added" "$WORK_DIR/removed"
+''')
+        self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_service_mask_stays_in_overlay(self):
         result = self.run_shell('''
 REAL_ROOT=$1/host

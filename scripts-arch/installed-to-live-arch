@@ -495,20 +495,22 @@ action_passwd() {
 
     # Stage the system files we'll edit. Skip ones already shipped by the
     # live-files template (the template wins).
-    local f
+    local f copy_failed=0
     for f in "${bind_files[@]}"; do
         [[ -e ${BIND_ROOT%/}$f ]] || continue
         [[ -e $template_dir$f ]] && continue
-        mkdir -p "$bind_from$(dirname "$f")"
-        cp -a "${src_root%/}$f" "$bind_from$f" || { warn "copy failed: $f"; return 1; }
+        if ! mkdir -p "$bind_from$(dirname "$f")" || ! cp -a "${src_root%/}$f" "$bind_from$f"; then
+            warn "copy failed: $f"
+            copy_failed=1
+            break
+        fi
     done
 
     # Remove the temp user from the live system.
-    if [[ -x /usr/sbin/deluser || -x /usr/bin/deluser ]]; then
-        deluser "$added_user" >/dev/null 2>&1 || true
-    else
-        userdel "$added_user" >/dev/null 2>&1 || true
-    fi
+    local remove_user=userdel
+    [[ -x /usr/sbin/deluser || -x /usr/bin/deluser ]] && remove_user=deluser
+    "$remove_user" "$added_user" || { warn "could not remove temporary account $added_user"; return 1; }
+    (( copy_failed == 0 )) || return 1
 
     # Identify other regular users (home in /home, login shell ending in
     # 'sh') so we can scrub them out.
