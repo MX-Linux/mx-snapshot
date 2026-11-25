@@ -24,8 +24,8 @@ class ReleaseWorkflows(unittest.TestCase):
         self.git('add', '.')
         self.git('commit', '-qm', 'Initial')
 
-    def run_command(self, command, cwd=None, check=True):
-        return subprocess.run(command, cwd=cwd, env=self.env, text=True, capture_output=True, check=check)
+    def run_command(self, command, cwd=None, check=True, input_text=None):
+        return subprocess.run(command, cwd=cwd, env=self.env, input=input_text, text=True, capture_output=True, check=check)
 
     def git(self, *args):
         return self.run_command(['git', '-C', str(self.repo), *args]).stdout.strip()
@@ -35,6 +35,17 @@ class ReleaseWorkflows(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn('Invalid version format', result.stderr)
         self.assertIn('Expected formats', result.stderr)
+
+    def test_latest_tag_compares_versions_and_keeps_the_original_spelling(self):
+        self.git('remote', 'add', 'origin', str(self.repo))
+        self.git('switch', '-qc', 'test-release')
+        self.env['MAIN_BRANCH'] = 'main'
+        self.git('tag', 'v26.9')
+        for latest in ('26.11', 'v26.12'):
+            self.git('tag', latest)
+            # Decline the release when prompted about the current branch.
+            result = self.run_command(['bash', str(ROOT / 'release.sh')], self.repo, input_text='n\n')
+            self.assertIn(f"using latest tag '{latest}'", result.stdout)
 
     @unittest.skipUnless(shutil.which('makepkg'), 'makepkg needed for metadata checks')
     @unittest.skipIf(os.geteuid() == 0, 'makepkg refuses to run as root')

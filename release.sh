@@ -95,9 +95,10 @@ get_latest_tag() {
         git ls-remote --tags origin 2>/dev/null | awk '{sub("refs/tags/", "", $2); sub(/\^\{\}$/, "", $2); print $2}'
     } | sort -u | while read -r tag; do
         local clean_tag=${tag#v}
-        if [[ $clean_tag =~ ^[0-9]+\.[0-9]+(\.[0-9]+)?[a-zA-Z0-9]*$ ]]; then printf '%s
-' "$tag"; fi
-    done | sort -V | tail -n1
+        if [[ $clean_tag =~ ^[0-9]+\.[0-9]+(\.[0-9]+)?[a-zA-Z0-9]*$ ]]; then
+            printf '%s\t%s\n' "$clean_tag" "$tag"
+        fi
+    done | LC_ALL=C sort -k1,1V -k2,2 | tail -n1 | cut -f2
 }
 
 get_tag_annotation() {
