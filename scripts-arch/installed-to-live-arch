@@ -281,7 +281,7 @@ do_start() {
     [[ -n $BIND_ROOT ]] || fatal "start: missing -b <bindRoot>"
 
     if [[ -z $WORK_DIR ]]; then
-        WORK_DIR=$(mktemp -d -t "$APP_NAME-bind-root-work-XXXXXX")
+        WORK_DIR=$(mktemp -d -t "$APP_NAME-bind-root-work-XXXXXX") || fatal "could not create working directory"
     elif [[ $FORCE -eq 1 || ! -d $WORK_DIR ]]; then
         rm -rf "$WORK_DIR"
         mkdir -p "$WORK_DIR"
