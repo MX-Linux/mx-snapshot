@@ -301,9 +301,11 @@ void Settings::addRemoveExclusion(bool add, QString exclusion)
 {
     exclusion.remove(QRegularExpression("^/"));
     if (add) {
-        sessionExcludes.append('"' + exclusion + "\" ");
+        if (!sessionExcludes.contains(exclusion)) {
+            sessionExcludes.append(exclusion);
+        }
     } else {
-        sessionExcludes.remove('"' + exclusion + "\" ");
+        sessionExcludes.removeAll(exclusion);
     }
 }
 
@@ -521,16 +523,6 @@ bool Settings::validateExclusions() const
         return false;
     }
 
-    // Validate session exclusions format
-    if (!sessionExcludes.isEmpty()) {
-        // Check for balanced quotes
-        const int quoteCount = sessionExcludes.count('"');
-        if (quoteCount % 2 != 0) {
-            qCritical() << QObject::tr("Unbalanced quotes in exclusion list");
-            return false;
-        }
-    }
-
     qDebug() << "Exclusion validation passed";
     return true;
 }
@@ -739,7 +731,7 @@ int Settings::getSnapshotCount() const
 
 
 // Include localized and relocated XDG directories alongside the default exclusions.
-QString Settings::getXdgUserDirs(const QString &folder)
+QStringList Settings::getXdgUserDirs(const QString &folder)
 {
     QStringList resultParts;
     resultParts.reserve(18); // For 3 users x 6 folders, not worth getting the number of users on the system
@@ -763,14 +755,10 @@ QString Settings::getXdgUserDirs(const QString &folder)
             }
         }
         if (SquashfsUtils::needsXdgExclusion(dir, home, englishDirs.value(folder))) {
-            dir.remove(QRegularExpression("^/"));
-            QString exclusion = folder == "DESKTOP" ? "/!(minstall.desktop)" : "/*\" \"" + dir + "/.*";
-            dir.append(exclusion);
-            resultParts << dir;
+            resultParts << SquashfsUtils::escapeExcludePath(dir);
         }
     }
-    QString result = resultParts.join("\" \"");
-    return result.isEmpty() ? QString() : "\" \"" + result;
+    return resultParts;
 }
 
 void Settings::selectKernel()
@@ -1096,19 +1084,21 @@ void Settings::excludeUserFolder(bool exclude, Exclude flag, const QString &fold
     if (exclude) {
         exclusions.setFlag(flag);
     }
-    const QString folder = "home/*/" + folderName + "/";
-    const QString exclusion = folder + "*\" \"" + folder + ".*" + getXdgUserDirs(xdgKey);
-    addRemoveExclusion(exclude, exclusion);
+    QStringList folders = getXdgUserDirs(xdgKey);
+    folders.prepend("home/*/" + folderName);
+    for (const QString &folder : folders) {
+        if (flag == Exclude::Desktop) {
+            addRemoveExclusion(exclude, folder + "/!(minstall.desktop)");
+        } else {
+            addRemoveExclusion(exclude, folder + "/*");
+            addRemoveExclusion(exclude, folder + "/.*");
+        }
+    }
 }
 
 void Settings::excludeDesktop(bool exclude)
 {
-    qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    if (exclude) {
-        exclusions.setFlag(Exclude::Desktop);
-    }
-    QString exclusion = "/home/*/Desktop/!(minstall.desktop)" + getXdgUserDirs("DESKTOP");
-    addRemoveExclusion(exclude, exclusion);
+    excludeUserFolder(exclude, Exclude::Desktop, "Desktop", "DESKTOP");
 }
 
 void Settings::excludeDocuments(bool exclude)
@@ -1127,10 +1117,11 @@ void Settings::excludeFlatpaks(bool exclude)
     if (exclude) {
         exclusions.setFlag(Exclude::Flatpaks);
     }
-    QString exclusion = "home/*/.local/share/flatpak/*\" \"home/*/.local/share/flatpak/.*\" "
-                        "\"var/lib/flatpak/*\" \"var/lib/flatpak/.*\" "
-                        "\"home/*/.var/app/*\" \"home/*/.var/app/.*";
-    addRemoveExclusion(exclude, exclusion);
+    for (const QString &dir : {QStringLiteral("home/*/.local/share/flatpak"), QStringLiteral("var/lib/flatpak"),
+                               QStringLiteral("home/*/.var/app")}) {
+        addRemoveExclusion(exclude, dir + "/*");
+        addRemoveExclusion(exclude, dir + "/.*");
+    }
 }
 
 void Settings::excludeMusic(bool exclude)
@@ -1182,7 +1173,7 @@ void Settings::excludeSwapFile()
         if (trimmedLine.startsWith('/') && !trimmedLine.startsWith("/dev/")) {
             QStringList parts = trimmedLine.split(QRegularExpression("\\s+"));
             if (parts.size() > 3 && parts.at(2) == "swap") {
-                addRemoveExclusion(true, parts[0].remove(0, 1));
+                addRemoveExclusion(true, SquashfsUtils::escapeExcludePath(parts[0].remove(0, 1)));
             }
         }
     }
@@ -1367,8 +1358,8 @@ void Settings::otherExclusions()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     // Add exclusions snapshot and work dirs
-    addRemoveExclusion(true, snapshotDir);
-    addRemoveExclusion(true, workDir);
+    addRemoveExclusion(true, SquashfsUtils::escapeExcludePath(snapshotDir));
+    addRemoveExclusion(true, SquashfsUtils::escapeExcludePath(workDir));
 
     if (resetAccounts) {
         addRemoveExclusion(true, QStringLiteral("/etc/minstall.conf"));

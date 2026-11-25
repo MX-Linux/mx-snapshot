@@ -870,16 +870,26 @@ bool MainWindow::confirmStart()
 
 void MainWindow::applyExclusions()
 {
-    settings->excludeDesktop(ui->excludeDesktop->isChecked());
-    settings->excludeDocuments(ui->excludeDocuments->isChecked());
-    settings->excludeDownloads(ui->excludeDownloads->isChecked());
-    settings->excludeFlatpaks(ui->excludeFlatpaks->isChecked());
-    settings->excludeMusic(ui->excludeMusic->isChecked());
-    settings->excludeNetworks(ui->excludeNetworks->isChecked());
-    settings->excludePictures(ui->excludePictures->isChecked());
-    settings->excludeSteam(ui->excludeSteam->isChecked());
-    settings->excludeVideos(ui->excludeVideos->isChecked());
-    settings->excludeVirtualBox(ui->excludeVirtualBox->isChecked());
+    // Rebuild from the current checkboxes. Two XDG categories can point to
+    // the same directory, so an unchecked category must not remove a match
+    // added by a checked one.
+    settings->sessionExcludes.clear();
+    settings->exclusions = {};
+    const auto apply = [this](QCheckBox *box, const QString &item) {
+        if (box->isChecked()) {
+            settings->excludeItem(item);
+        }
+    };
+    apply(ui->excludeDesktop, QStringLiteral("Desktop"));
+    apply(ui->excludeDocuments, QStringLiteral("Documents"));
+    apply(ui->excludeDownloads, QStringLiteral("Downloads"));
+    apply(ui->excludeFlatpaks, QStringLiteral("Flatpaks"));
+    apply(ui->excludeMusic, QStringLiteral("Music"));
+    apply(ui->excludeNetworks, QStringLiteral("Networks"));
+    apply(ui->excludePictures, QStringLiteral("Pictures"));
+    apply(ui->excludeSteam, QStringLiteral("Steam"));
+    apply(ui->excludeVideos, QStringLiteral("Videos"));
+    apply(ui->excludeVirtualBox, QStringLiteral("VirtualBox"));
     settings->otherExclusions();
 }
 

@@ -7,6 +7,7 @@ class TestSquashfsUtils : public QObject
     Q_OBJECT
 
 private slots:
+    void escapeExcludePath();
     void nestedHomes();
     void configTrust();
     void selectExtraOptions();
@@ -16,6 +17,12 @@ private slots:
     void helpListsOption();
     void parsePercentageLine();
 };
+
+void TestSquashfsUtils::escapeExcludePath()
+{
+    QCOMPARE(SquashfsUtils::escapeExcludePath(R"(/test/[year] "x"*?\@(old))"),
+             QStringLiteral(R"(/test/\[year] "x"\*\?\\@\(old))"));
+}
 
 void TestSquashfsUtils::nestedHomes()
 {
@@ -76,7 +83,7 @@ void TestSquashfsUtils::buildCommandDirect()
         .percentageSupported = true,
         .mksqOpt = {"-Xcompression-level", "15"},
         .excludesFileName = "/tmp/excludes.list",
-        .sessionExcludes = "home/user/Downloads \"home/user/My Files\"",
+        .sessionExcludes = {"home/user/Downloads", "home/user/My Files", R"(home/user/Docs "1" \[2026])"},
         .useUnbuffer = false,
     });
 
@@ -85,6 +92,7 @@ void TestSquashfsUtils::buildCommandDirect()
         "/bind-root", "/tmp/linuxfs", "-comp", "zstd", "-processors", "4",
         "-throttle", "75", "-percentage", "-Xcompression-level", "15",
         "-wildcards", "-ef", "/tmp/excludes.list", "-e", "home/user/Downloads", "home/user/My Files",
+        R"(home/user/Docs "1" \[2026])",
     };
     QCOMPARE(command.args, expected);
 }

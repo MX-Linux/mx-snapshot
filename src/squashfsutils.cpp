@@ -17,6 +17,21 @@ QStringList splitShellWords(const QString &text)
 namespace SquashfsUtils
 {
 
+QString escapeExcludePath(const QString &path)
+{
+    // mksquashfs uses fnmatch with extended globs. Escape the opening
+    // parenthesis too so literal names such as @(work) cannot start a group.
+    const QString special = QStringLiteral(R"(\*?[()");
+    QString pattern;
+    for (const QChar ch : path) {
+        if (special.contains(ch)) {
+            pattern += QLatin1Char('\\');
+        }
+        pattern += ch;
+    }
+    return pattern;
+}
+
 bool needsXdgExclusion(const QString &dir, const QString &home, const QString &englishName)
 {
     if (dir.isEmpty() || dir == home) {
@@ -83,10 +98,9 @@ Command buildCommand(const Options &options)
     squashfsArgs += options.mksqOpt;
     squashfsArgs << "-wildcards" << "-ef" << options.excludesFileName;
 
-    const QStringList sessionExcludes = splitShellWords(options.sessionExcludes);
-    if (!sessionExcludes.isEmpty()) {
+    if (!options.sessionExcludes.isEmpty()) {
         squashfsArgs << "-e";
-        squashfsArgs += sessionExcludes;
+        squashfsArgs += options.sessionExcludes;
     }
 
     Command command;

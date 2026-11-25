@@ -53,7 +53,7 @@ public:
     [[nodiscard]] QString getFreeSpaceStrings(const QString &path);
     [[nodiscard]] QString getSnapshotSize() const;
     [[nodiscard]] QString getUsedSpace();
-    [[nodiscard]] QString getXdgUserDirs(const QString &folder);
+    [[nodiscard]] QStringList getXdgUserDirs(const QString &folder);
     [[nodiscard]] static QString resolveWorkDirParent(const QString &dir);
     [[nodiscard]] bool checkCompression() const;
     [[nodiscard]] bool checkConfiguration() const;
@@ -148,7 +148,7 @@ public:
     QFile snapshotExcludes;
     std::unique_ptr<QTemporaryDir> tmpdir;
     QStringList mksqOpt;
-    QString sessionExcludes;
+    QStringList sessionExcludes;
     QString snapshotDir;
     QString snapshotName;
     QString tempDirParent;

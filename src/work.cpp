@@ -46,6 +46,7 @@
 #include <optional>
 #include <stdexcept>
 
+#include <fnmatch.h>
 #include <sys/stat.h>
 #include <unistd.h>
 
@@ -428,8 +429,8 @@ bool Work::checkAndMoveWorkDir(const QString &dir, quint64 req_size)
             cleanUp();
             return false;
         }
-        settings->addRemoveExclusion(false, previousWorkDir);
-        settings->addRemoveExclusion(true, settings->workDir);
+        settings->addRemoveExclusion(false, SquashfsUtils::escapeExcludePath(previousWorkDir));
+        settings->addRemoveExclusion(true, SquashfsUtils::escapeExcludePath(settings->workDir));
         setupEnv();
         return true;
     }
@@ -1947,16 +1948,7 @@ quint64 Work::getRequiredSpace()
         qWarning() << "Could not open excludes file, space estimate will be conservative:" << file->fileName();
     }
 
-    // Add session excludes
-    if (!settings->sessionExcludes.isEmpty()) {
-        QString sessionExcludes = settings->sessionExcludes;
-        QStringList excludeList = sessionExcludes.split("\" \"");
-        excludes.reserve(excludeList.size());
-        for (QString exclude : excludeList) {
-            exclude = exclude.replace('"', "").trimmed();
-            excludes << exclude;
-        }
-    }
+    excludes += settings->sessionExcludes;
     QString sizeRoot = bindRootPath;
     if (bindRootOverlayActive) {
         const QString overlayLower = bindRootOverlayBase + "/lower";
@@ -2016,7 +2008,7 @@ quint64 Work::getRequiredSpace()
         }
     }
     const auto containsWildcard = [](const QString &path) -> bool {
-        const QString wildcards = "*?[{";
+        const QString wildcards = R"(\*?[()";
         for (const QChar &wildcard : wildcards) {
             if (path.contains(wildcard)) {
                 return true;
@@ -2092,17 +2084,14 @@ quint64 Work::getRequiredSpace()
             const bool isLast = (i == components.size() - 1);
             QStringList next;
             if (containsWildcard(component)) {
-                const QRegularExpression regex(QRegularExpression::wildcardToRegularExpression(component));
-                if (!regex.isValid()) {
-                    continue;
-                }
+                const QByteArray pattern = QFile::encodeName(component);
                 for (const QString &base : current) {
                     QFileInfo baseInfo(base);
                     if (!baseInfo.exists() || !baseInfo.isDir() || baseInfo.isSymLink()) {
                         continue;
                     }
                     QDir dir(base);
-                    QDir::Filters filters = QDir::NoDotAndDotDot;
+                    QDir::Filters filters = QDir::NoDotAndDotDot | QDir::Hidden;
                     if (isLast) {
                         filters |= QDir::AllEntries;
                     } else {
@@ -2110,7 +2099,8 @@ quint64 Work::getRequiredSpace()
                     }
                     const QFileInfoList entries = dir.entryInfoList(filters);
                     for (const QFileInfo &entry : entries) {
-                        if (!regex.match(entry.fileName()).hasMatch()) {
+                        if (::fnmatch(pattern.constData(), QFile::encodeName(entry.fileName()).constData(),
+                                      FNM_PERIOD | FNM_EXTMATCH) != 0) {
                             continue;
                         }
                         if (!isLast && entry.isSymLink()) {
@@ -2143,12 +2133,7 @@ quint64 Work::getRequiredSpace()
     };
     QStringList expandedExcludes;
     expandedExcludes.reserve(excludes.size());
-    for (const QString &rawValue : excludes) {
-        QString cleaned = rawValue;
-        const int bangIndex = cleaned.indexOf('!');
-        if (bangIndex != -1) { // Truncate things like "!(minstall.desktop)"
-            cleaned.truncate(bangIndex);
-        }
+    for (const QString &cleaned : excludes) {
         if (cleaned.isEmpty()) {
             continue;
         }

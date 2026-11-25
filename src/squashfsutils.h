@@ -24,10 +24,11 @@ struct Options {
     bool percentageSupported = false;
     QStringList mksqOpt;
     QString excludesFileName;
-    QString sessionExcludes;
+    QStringList sessionExcludes;
     bool useUnbuffer = false;
 };
 
+[[nodiscard]] QString escapeExcludePath(const QString &path);
 [[nodiscard]] bool needsXdgExclusion(const QString &dir, const QString &home, const QString &englishName);
 // Supply lstat metadata so the final path component cannot be a symlink.
 [[nodiscard]] bool isTrustedSystemConfig(const QString &path, const struct stat &metadata);
