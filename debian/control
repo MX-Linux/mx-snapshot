@@ -2,7 +2,8 @@ Source: mx-snapshot
 Section: admin
 Priority: optional
 Maintainer: Adrian <adrian@mxlinux.org>
-Build-Depends: debhelper-compat (=12), cmake (>= 3.16), ninja-build, qt6-base-dev, qt6-base-dev-tools, qt6-tools-dev, qt6-tools-dev-tools
+Build-Depends: debhelper-compat (=12), cmake (>= 3.16), ninja-build, qt6-base-dev, qt6-base-dev-tools, qt6-tools-dev, qt6-tools-dev-tools,
+               python3 <!nocheck>, git <!nocheck>
 Standards-Version: 4.5.1
 Vcs-Git: git://github.com/MX-Linux/mx-snapshot
 Homepage: https://github.com/MX-Linux/mx-snapshot

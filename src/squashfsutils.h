@@ -4,6 +4,7 @@
 #include <QStringList>
 
 #include <optional>
+#include <sys/stat.h>
 
 namespace SquashfsUtils
 {
@@ -27,6 +28,9 @@ struct Options {
     bool useUnbuffer = false;
 };
 
+[[nodiscard]] bool needsXdgExclusion(const QString &dir, const QString &home, const QString &englishName);
+// Supply lstat metadata so the final path component cannot be a symlink.
+[[nodiscard]] bool isTrustedSystemConfig(const QString &path, const struct stat &metadata);
 [[nodiscard]] std::optional<QStringList> selectExtraOptions(const QString &systemDefault, const QString &preference,
                                                              const QString &argument);
 [[nodiscard]] Command buildCommand(const Options &options);

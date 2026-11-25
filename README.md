@@ -77,8 +77,12 @@ recommend it for anything other than MX or antiX compatible systems.
     `-b 256K`, `-Xhc`, and `-Xcompression-level 15`, plus selected filesystem
     flags such as `-no-xattrs`. For unrestricted mksquashfs options, set
     `mksq_opt` in the application's root-owned, administrator-writable-only
-    configuration file in `/etc`. Empty or unsupported preferences fall back
-    to that value. Quote INI values containing commas, e.g.
+    configuration file in `/etc`. An empty preference uses the system setting.
+    If the system file is untrusted, its options must pass the same checks as
+    a user preference. An unsupported preference triggers a warning and uses
+    the trusted system setting, or no extra options if there is none.
+    An unsupported `--compression-level` argument stops the run.
+    Quote INI values containing commas, e.g.
     `mksq_opt="-Xstrategy default,fixed"`.
 
   - **-m**, **--month** [suffix]

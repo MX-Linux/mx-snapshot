@@ -1,6 +1,7 @@
 #include "systeminfo.h"
 
 #include <QtCore/QCoreApplication>
+#include <QtCore/QDir>
 #include <QtCore/QFile>
 #include <QtCore/QProcess>
 #include <QtCore/QSysInfo>
@@ -44,19 +45,20 @@ QString SystemInfo::systemMountWarning()
                                            "The resulting ISO may be unusable.").arg(omitted.join(", "));
 }
 
-QStringList SystemInfo::listUsers()
+QMap<QString, QString> SystemInfo::listUserHomes()
 {
     const QStringList lines = Cmd().getOut("lslogins --noheadings -u -o user,HOMEDIR", Cmd::QuietMode::Yes)
                                   .split('\n', Qt::SkipEmptyParts);
-    QStringList users;
+    QMap<QString, QString> homes;
     for (const QString &line : lines) {
         const QString trimmed = line.trimmed();
         const int sep = trimmed.indexOf(' ');
-        if (sep > 0 && trimmed.mid(sep + 1).trimmed().startsWith("/home/")) {
-            users << trimmed.left(sep);
+        const QString home = QDir::cleanPath(trimmed.mid(sep + 1).trimmed());
+        if (sep > 0 && home.startsWith("/home/")) {
+            homes.insert(trimmed.left(sep), home);
         }
     }
-    return users;
+    return homes;
 }
 
 QString SystemInfo::readKernelOpts()

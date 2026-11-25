@@ -203,7 +203,7 @@ Settings::Settings(const QCommandLineParser &argParser, bool isGuiApp)
       guiEditor(getInitialSettings().guiEditor),
       snapshotBasename(getInitialSettings().snapshotBasename),
       stamp(getInitialSettings().stamp),
-      users(getInitialSettings().users)
+      userHomes(getInitialSettings().userHomes)
 {
     try {
         if (!initializeConfiguration()) {
@@ -748,7 +748,9 @@ QString Settings::getXdgUserDirs(const QString &folder)
         {"DOCUMENTS", "Documents"}, {"DOWNLOAD", "Downloads"}, {"DESKTOP", "Desktop"},
         {"MUSIC", "Music"},         {"PICTURES", "Pictures"},  {"VIDEOS", "Videos"},
     };
-    for (const QString &user : std::as_const(users)) {
+    for (auto it = userHomes.cbegin(); it != userHomes.cend(); ++it) {
+        const QString &user = it.key();
+        const QString &home = it.value();
         QString dir
             = Cmd().getOutAsRoot("runuser", {"-u", user, "--", "/usr/bin/xdg-user-dir", folder}, Cmd::QuietMode::Yes);
         const QStringList lines = dir.split('\n', Qt::SkipEmptyParts);
@@ -760,8 +762,7 @@ QString Settings::getXdgUserDirs(const QString &folder)
                 break;
             }
         }
-        const QString home = "/home/" + user;
-        if (!dir.isEmpty() && dir != home && dir != home + '/' + englishDirs.value(folder)) {
+        if (SquashfsUtils::needsXdgExclusion(dir, home, englishDirs.value(folder))) {
             dir.remove(QRegularExpression("^/"));
             QString exclusion = folder == "DESKTOP" ? "/!(minstall.desktop)" : "/*\" \"" + dir + "/.*";
             dir.append(exclusion);
@@ -806,8 +807,7 @@ void Settings::setVariables()
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
 
     try {
-        // live and users are now const members initialized in constructor
-        if (users.isEmpty()) {
+        if (userHomes.isEmpty()) {
             qWarning() << QObject::tr("No users found in the system");
         }
     } catch (...) {
@@ -1148,6 +1148,7 @@ void Settings::excludeNetworks(bool exclude)
     addRemoveExclusion(exclude, QStringLiteral("/etc/wicd/*"));
     addRemoveExclusion(exclude, QStringLiteral("/var/lib/connman/*"));
     addRemoveExclusion(exclude, QStringLiteral("/var/lib/iwd/*"));
+    addRemoveExclusion(exclude, QStringLiteral("/var/lib/iwd/.*"));
     addRemoveExclusion(exclude, QStringLiteral("/etc/wpa_supplicant/wpa_supplicant*.conf"));
 }
 
@@ -1300,9 +1301,8 @@ void Settings::loadConfig(const QString &compressionOptions)
     const QString preference = trimQuotes(settingsUser.value("mksq_opt").toString());
     struct stat st {};
     const QString path = configFile.fileName();
-    const bool trusted = (path == "/etc/mx-snapshot.conf" || path == "/etc/iso-snapshot-cli.conf")
-                         && lstat(QFile::encodeName(path).constData(), &st) == 0 && S_ISREG(st.st_mode)
-                         && st.st_uid == 0 && (st.st_mode & (S_IWGRP | S_IWOTH)) == 0;
+    const bool trusted = lstat(QFile::encodeName(path).constData(), &st) == 0
+                         && SquashfsUtils::isTrustedSystemConfig(path, st);
     const QString trustedOptions = trusted ? systemOptions : QString();
     const bool useUntrustedConfig = !trusted && preference.isEmpty();
     const QString userOptions = useUntrustedConfig ? systemOptions : preference;
@@ -1312,8 +1312,9 @@ void Settings::loadConfig(const QString &compressionOptions)
             throw std::runtime_error(QObject::tr("Unsupported --compression-level value: %1")
                                          .arg(compressionOptions).toStdString());
         }
-        qWarning() << QObject::tr("Ignoring unsupported mksq_opt in %1: %2")
-                          .arg(useUntrustedConfig ? path : userConfigPath, userOptions);
+        qWarning().noquote() << QObject::tr("Ignoring unsupported mksq_opt in %1: %2")
+                                    .arg(QDebug::toString(useUntrustedConfig ? path : userConfigPath),
+                                         QDebug::toString(userOptions));
         options = SquashfsUtils::selectExtraOptions(trustedOptions, {}, {});
     }
     mksqOpt = *options;
@@ -1661,6 +1662,6 @@ Settings::InitialSettings Settings::getInitialSettings() const
         .guiEditor = trimQuotes(settingsUser.value("gui_editor").toString()),
         .snapshotBasename = trimQuotes(settingsUser.value("snapshot_basename", "snapshot").toString()),
         .stamp = trimQuotes(settingsUser.value("stamp").toString()),
-        .users = SystemInfo::listUsers()
+        .userHomes = SystemInfo::listUserHomes()
     };
 }

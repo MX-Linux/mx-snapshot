@@ -7,7 +7,7 @@ override_dh_auto_configure:
 		-G Ninja \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-		-DBUILD_TESTS=ON
+		-DBUILD_TESTS=$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),OFF,ON)
 
 override_dh_auto_clean:
 	dh_auto_clean

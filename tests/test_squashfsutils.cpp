@@ -7,6 +7,8 @@ class TestSquashfsUtils : public QObject
     Q_OBJECT
 
 private slots:
+    void nestedHomes();
+    void configTrust();
     void selectExtraOptions();
     void buildCommandDirect();
     void buildCommandWithUnbuffer();
@@ -14,6 +16,35 @@ private slots:
     void helpListsOption();
     void parsePercentageLine();
 };
+
+void TestSquashfsUtils::nestedHomes()
+{
+    using SquashfsUtils::needsXdgExclusion;
+    const QString flat = "/home/alice";
+    const QString nested = "/home/staff/alice";
+    QVERIFY(!needsXdgExclusion({}, nested, "Documents"));
+    QVERIFY(!needsXdgExclusion(nested, nested, "Documents"));
+    QVERIFY(!needsXdgExclusion(flat + "/Documents", flat, "Documents"));
+    QVERIFY(needsXdgExclusion(nested + "/Documents", nested, "Documents"));
+    QVERIFY(needsXdgExclusion(flat + "/Work/Documents", flat, "Documents"));
+}
+
+void TestSquashfsUtils::configTrust()
+{
+    struct stat st {};
+    st.st_mode = S_IFREG | 0644;
+    const QString gui = "/etc/mx-snapshot.conf";
+    QVERIFY(SquashfsUtils::isTrustedSystemConfig(gui, st));
+    QVERIFY(SquashfsUtils::isTrustedSystemConfig("/etc/iso-snapshot-cli.conf", st));
+    QVERIFY(!SquashfsUtils::isTrustedSystemConfig("/tmp/mx-snapshot.conf", st));
+    st.st_uid = 1000;
+    QVERIFY(!SquashfsUtils::isTrustedSystemConfig(gui, st));
+    st.st_uid = 0;
+    for (const auto mode : {S_IFREG | 0664, S_IFREG | 0646, S_IFLNK | 0644, S_IFDIR | 0755}) {
+        st.st_mode = mode;
+        QVERIFY(!SquashfsUtils::isTrustedSystemConfig(gui, st));
+    }
+}
 
 void TestSquashfsUtils::selectExtraOptions()
 {

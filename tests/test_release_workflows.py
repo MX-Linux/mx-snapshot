@@ -3,6 +3,7 @@
 import os
 from pathlib import Path
 import shutil
+import secrets
 import subprocess
 import tempfile
 import unittest
@@ -36,11 +37,14 @@ class ReleaseWorkflows(unittest.TestCase):
         self.assertIn('Expected formats', result.stderr)
 
     @unittest.skipUnless(shutil.which('makepkg'), 'makepkg needed for metadata checks')
+    @unittest.skipIf(os.geteuid() == 0, 'makepkg refuses to run as root')
     def test_local_tag_push_recovery_and_archive_directory(self):
         remote = self.directory / 'remote.git'
         self.run_command(['git', 'init', '-q', '--bare', str(remote)])
         self.git('remote', 'add', 'mxlinux', str(remote))
-        version = 'v99.98g'
+        # release.sh names its download in /tmp after the tag.
+        pkgver = f'99.98.{secrets.randbits(64)}g'
+        version = 'v' + pkgver
         self.git('tag', '-a', version, '-m', 'Regression release')
         aur = self.repo / 'aur'
         self.run_command(['git', 'init', '-q', '-b', 'main', str(aur)])
@@ -76,9 +80,9 @@ _srcdir="mx-snapshot-26.10"
             remote_tag = self.run_command(['git', '--git-dir', str(remote), 'rev-parse', 'refs/tags/' + version]).stdout.strip()
             self.assertEqual(remote_tag, self.git('rev-parse', 'refs/tags/' + version))
             metadata = self.run_command(['makepkg', '--printsrcinfo'], aur).stdout
-            self.assertIn('pkgver = 99.98g', metadata)
+            self.assertIn('pkgver = ' + pkgver, metadata)
             resolved = self.run_command(['bash', '-c', 'source PKGBUILD; printf "%s" "$_srcdir"'], aur).stdout
-            self.assertEqual(resolved, 'mx-snapshot-99.98g')
+            self.assertEqual(resolved, 'mx-snapshot-' + pkgver)
 
     def test_remote_failure_aborts_before_aur_edits(self):
         self.git('tag', '99.97g')

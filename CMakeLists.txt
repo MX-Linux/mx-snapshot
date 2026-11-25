@@ -314,6 +314,11 @@ set_common_properties(helper)
 
 if(BUILD_TESTS)
     enable_testing()
+    find_package(Python3 REQUIRED COMPONENTS Interpreter)
+    foreach(suite IN ITEMS arch_host_safety release_workflows)
+        add_test(NAME ${suite} COMMAND ${Python3_EXECUTABLE} -B
+            "${CMAKE_CURRENT_SOURCE_DIR}/tests/test_${suite}.py")
+    endforeach()
     foreach(program IN ITEMS mx-snapshot iso-snapshot-cli)
         if(TARGET ${program})
             foreach(option IN ITEMS -v --help-all)

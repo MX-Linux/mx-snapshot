@@ -170,7 +170,7 @@ private:
     const QString snapshotBasename;
     const QString stamp;
     const QStringList path {qEnvironmentVariable("PATH").split(":") << "/usr/sbin"};
-    const QStringList users; // list of users with /home folders
+    const QMap<QString, QString> userHomes;
     quint64 homeSize {};
     quint64 rootSize {};
 
@@ -189,7 +189,7 @@ private:
         QString guiEditor;
         QString snapshotBasename;
         QString stamp;
-        QStringList users;
+        QMap<QString, QString> userHomes;
     };
 
     InitialSettings getInitialSettings() const;

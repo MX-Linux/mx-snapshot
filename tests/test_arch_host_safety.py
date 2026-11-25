@@ -59,6 +59,28 @@ load_state || exit
 ''')
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_start_rolls_back_only_its_own_mount_on_state_failure(self):
+        for already_mounted in (False, True):
+            with self.subTest(already_mounted=already_mounted):
+                result = self.run_shell('''
+require_root() { :; }
+is_mounted() { ''' + ('true' if already_mounted else 'false') + '''; }
+mount() { echo mount; }
+umount() { echo umount; }
+action_live_files() { echo stage; }
+PRIMARY_STATE_DIR=$1/state
+mkdir "$PRIMARY_STATE_DIR"
+stat() { printf '0 755\\n'; }
+export TMPDIR=$1
+mv() { return 1; }
+(main -b "$1/bind" start live-files)
+rc=$?
+[[ $rc != 0 && ! -e $PRIMARY_STATE_DIR/$STATE_FILE_NAME ]] || exit 1
+! compgen -G "$1/$APP_NAME-bind-root-work-*" >/dev/null
+''')
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual(result.stdout.splitlines(), [] if already_mounted else ['mount', 'umount'])
+
     def test_account_removed_after_copy_failure(self):
         result = self.run_shell('''
 WORK_DIR=$1/work
@@ -68,7 +90,7 @@ mkdir -p "$BIND_ROOT/etc"
 touch "$BIND_ROOT/etc/passwd"
 adduser() { [[ $1 == --help ]] || printf '%s' "${!#}" > "$WORK_DIR/added"; }
 useradd() { adduser "$@"; }
-deluser() { printf '%s' "$1" > "$WORK_DIR/removed"; }
+deluser() { printf '%s' "$1" > "$WORK_DIR/removed"; echo removed; echo diagnostic >&2; }
 userdel() { deluser "$@"; }
 findmnt() { echo ext4; }
 cp() { return 1; }
@@ -76,6 +98,8 @@ action_passwd && exit 1
 [[ -s $WORK_DIR/added ]] && cmp "$WORK_DIR/added" "$WORK_DIR/removed"
 ''')
         self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stdout, '')
+        self.assertIn('diagnostic', result.stderr)
 
     def test_reset_selects_home_accounts_in_configured_uid_range(self):
         result = self.run_shell('''
@@ -92,6 +116,9 @@ upper:x:3000:1::/home/upper:/bin/bash
 high:x:3001:1::/home/high:/bin/sh
 service:x:2200:1::/var/lib/service:/bin/sh
 USERS
+printf '%s' 'last:x:2400:1::/home/last:/bin/nu' >> "$REAL_ROOT/etc/passwd"
+printf '%s' 'staff:x:2001:service,last' > "$REAL_ROOT/etc/group"
+printf '%s' 'service:100000:65536' > "$REAL_ROOT/etc/subuid"
 adduser() { :; }
 useradd() { :; }
 deluser() { :; }
@@ -100,6 +127,8 @@ bind_mount() { :; }
 findmnt() { echo ext4; }
 action_passwd || exit 1
 cut -d: -f1 "$WORK_DIR/bind/etc/passwd"
+grep -qx 'staff:x:2001:service' "$WORK_DIR/bind/etc/group" &&
+    grep -qx 'service:100000:65536' "$WORK_DIR/bind/etc/subuid"
 ''')
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(result.stdout.splitlines(), ['low', 'high', 'service'])

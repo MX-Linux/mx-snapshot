@@ -103,22 +103,17 @@ state_file() {
 #   FILE\t<path>
 #   DIR\t<path>
 persist_state() {
-    local f
+    local f tmp p
     f=$(state_file) || return 1
-    {
-        printf 'BIND_ROOT=%s\n' "$BIND_ROOT"
-        printf 'WORK_DIR=%s\n' "$WORK_DIR"
-        printf 'REAL_ROOT=%s\n' "$REAL_ROOT"
-        local p
-        for p in "${RM_FILES[@]}"; do
-            printf 'FILE\t%s\n' "$p"
-        done
-        for p in "${RM_DIRS[@]}"; do
-            printf 'DIR\t%s\n' "$p"
-        done
-    } > "$f.tmp" || return 1
-    mv "$f.tmp" "$f"
-    chmod 0644 "$f"
+    tmp=$(mktemp -- "$f.XXXXXX") || return 1
+    local lines=("BIND_ROOT=$BIND_ROOT" "WORK_DIR=$WORK_DIR" "REAL_ROOT=$REAL_ROOT")
+    for p in "${RM_FILES[@]}"; do lines+=($'FILE\t'"$p"); done
+    for p in "${RM_DIRS[@]}"; do lines+=($'DIR\t'"$p"); done
+    if printf '%s\n' "${lines[@]}" > "$tmp" && chmod 0644 "$tmp" && mv -fT -- "$tmp" "$f"; then
+        return 0
+    fi
+    rm -f -- "$tmp"
+    return 1
 }
 
 load_state() {
@@ -280,8 +275,10 @@ do_start() {
     require_root
     [[ -n $BIND_ROOT ]] || fatal "start: missing -b <bindRoot>"
 
+    local created_work=0 mounted_here=0
     if [[ -z $WORK_DIR ]]; then
         WORK_DIR=$(mktemp -d -t "$APP_NAME-bind-root-work-XXXXXX") || fatal "could not create working directory"
+        created_work=1
     elif [[ $FORCE -eq 1 || ! -d $WORK_DIR ]]; then
         rm -rf "$WORK_DIR"
         mkdir -p "$WORK_DIR"
@@ -293,11 +290,20 @@ do_start() {
         # --make-slave isolates the bind-root from later mount events on /.
         mount --bind --make-slave "$REAL_ROOT" "$BIND_ROOT" \
             || fatal "could not bind-mount $REAL_ROOT -> $BIND_ROOT"
+        mounted_here=1
     fi
 
     RM_FILES=()
     RM_DIRS=()
-    persist_state
+    if ! persist_state; then
+        if (( mounted_here )); then
+            umount -- "$BIND_ROOT" || warn "could not unmount $BIND_ROOT"
+        fi
+        if (( created_work )); then
+            rmdir -- "$WORK_DIR" || warn "could not remove $WORK_DIR"
+        fi
+        fatal "could not save cleanup state"
+    fi
 }
 
 # ------------------------------------------------------------------- bind=
@@ -509,7 +515,7 @@ action_passwd() {
     # Remove the temp user from the live system.
     local remove_user=userdel
     [[ -x /usr/sbin/deluser || -x /usr/bin/deluser ]] && remove_user=deluser
-    "$remove_user" "$added_user" || { warn "could not remove temporary account $added_user"; return 1; }
+    "$remove_user" "$added_user" >/dev/null || { warn "could not remove temporary account $added_user"; return 1; }
     (( copy_failed == 0 )) || return 1
 
     # Use shadow's regular-account range (including its defaults) regardless
@@ -517,7 +523,7 @@ action_passwd() {
     local uid_min=1000 uid_max=60000 key value rest
     local login_defs=${REAL_ROOT%/}/etc/login.defs
     if [[ -f $login_defs ]]; then
-        while read -r key value rest; do
+        while read -r key value rest || [[ -n $key ]]; do
             [[ $key == UID_MIN || $key == UID_MAX ]] || continue
             [[ $value =~ ^(0[xX][[:xdigit:]]+|0[0-7]*|[1-9][0-9]*)$ ]] || { warn "invalid $key"; return 1; }
             if [[ $key == UID_MIN ]]; then uid_min=$((value)); else uid_max=$((value)); fi
@@ -526,7 +532,7 @@ action_passwd() {
     (( uid_min <= uid_max )) || { warn "invalid UID range in $login_defs"; return 1; }
     local other_users=()
     local u uid home
-    while IFS=: read -r u _ uid _ _ home _; do
+    while IFS=: read -r u _ uid _ _ home _ || [[ -n $u ]]; do
         [[ -z $u ]] && continue
         [[ $u == "$added_user" ]] && continue
         if [[ $home == /home/* && $uid =~ ^[0-9]+$ ]] && (( 10#$uid >= uid_min && 10#$uid <= uid_max )); then
@@ -549,7 +555,7 @@ action_passwd() {
         local tmp="$target.new"
         : > "$tmp"
         local line user
-        while IFS= read -r line; do
+        while IFS= read -r line || [[ -n $line ]]; do
             [[ -z $line ]] && continue
             IFS=: read -r -a fields <<< "$line"
             [[ ${#fields[@]} -gt 0 ]] || continue
@@ -635,7 +641,7 @@ action_passwd() {
         local tmp="$target.new"
         : > "$tmp"
         local line
-        while IFS= read -r line; do
+        while IFS= read -r line || [[ -n $line ]]; do
             [[ -z $line ]] && continue
             IFS=: read -r -a fields <<< "$line"
             # A trailing empty members field (e.g. "video:x:986:") is dropped by
@@ -725,7 +731,7 @@ action_passwd() {
         local tmp="$shadow_target.new"
         : > "$tmp"
         local line
-        while IFS= read -r line; do
+        while IFS= read -r line || [[ -n $line ]]; do
             if [[ -z ${line// } ]]; then
                 printf '\n' >> "$tmp"
                 continue

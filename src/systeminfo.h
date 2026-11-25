@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QtCore/QMap>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
@@ -15,8 +16,7 @@ public:
     // Warn when the non-recursive root bind omits a mounted system directory.
     [[nodiscard]] static QString systemMountWarning();
 
-    // Get list of users with home directories
-    [[nodiscard]] static QStringList listUsers();
+    [[nodiscard]] static QMap<QString, QString> listUserHomes();
 
     // Read kernel boot options from script
     [[nodiscard]] static QString readKernelOpts();

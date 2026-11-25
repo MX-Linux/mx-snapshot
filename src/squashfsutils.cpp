@@ -1,5 +1,6 @@
 #include "squashfsutils.h"
 
+#include <QFileInfo>
 #include <QHash>
 #include <QProcess>
 #include <QSet>
@@ -15,6 +16,22 @@ QStringList splitShellWords(const QString &text)
 
 namespace SquashfsUtils
 {
+
+bool needsXdgExclusion(const QString &dir, const QString &home, const QString &englishName)
+{
+    if (dir.isEmpty() || dir == home) {
+        return false; // xdg-user-dir returns the user's home for a disabled folder.
+    }
+    // The default pattern home/*/<EnglishName> covers only one level under /home.
+    return QFileInfo(home).path() != "/home" || dir != home + '/' + englishName;
+}
+
+bool isTrustedSystemConfig(const QString &path, const struct stat &metadata)
+{
+    return (path == "/etc/mx-snapshot.conf" || path == "/etc/iso-snapshot-cli.conf")
+           && S_ISREG(metadata.st_mode) && metadata.st_uid == 0
+           && (metadata.st_mode & (S_IWGRP | S_IWOTH)) == 0;
+}
 
 std::optional<QStringList> selectExtraOptions(const QString &systemDefault, const QString &preference,
                                                const QString &argument)
