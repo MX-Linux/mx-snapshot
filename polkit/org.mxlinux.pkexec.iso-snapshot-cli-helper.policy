@@ -7,7 +7,7 @@
   <vendor>MX Linux</vendor>
   <vendor_url>https://mxlinux.org</vendor_url>
   <action id="org.mxlinux.pkexec.iso-snapshot-cli-helper">
-  <message gettext-domain="mx-launcher-l10n">ISO Snapshot CLI</message>
+    <message gettext-domain="mx-launcher-l10n">Allow ISO Snapshot CLI to run commands with full administrator privileges?</message>
     <description>Run ISO Snapshot CLI</description>
     <defaults>
       <allow_any>no</allow_any>

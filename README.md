@@ -32,6 +32,12 @@ changing global settings (typically files in /etc/ folder).
 By default the program starts with a GUI (program window), it can run in
 terminal (CLI) if launched with -c or --cli option.
 
+Approving the polkit prompt lets the requesting application run commands as
+root through the snapshot helper for that run. If you approve a request for
+another user, you are trusting both that user and their application with root access.
+The prompt appears in English until the `mx-launcher-l10n` package provides
+a translation for your language.
+
 # WARNING
 
 This tool is not actively tested on any other systems, it might or might
