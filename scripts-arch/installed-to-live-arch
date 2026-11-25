@@ -358,7 +358,7 @@ action_general_files() {
 action_empty_dirs_general() {
     local d
     for d in /etc/modprobe.d /etc/grub.d /etc/network/interfaces.d; do
-        action_empty "$d" || warn "empty $d failed"
+        action_empty "$d" || return 1
     done
 }
 
@@ -926,7 +926,7 @@ UNIT
 
 # ------------------------------------------------------------------- general
 action_general() {
-    action_empty_dirs_general
+    action_empty_dirs_general || return 1
     action_live_files || return 1
     action_general_files || return 1
     action_passwd || return 1
@@ -1114,25 +1114,22 @@ main() {
     case $cmd in
         start)
             do_start
-            # Accumulate action failures and exit non-zero so the Qt caller
-            # (Work::setupEnv) actually notices a broken bind-root setup
-            # instead of going on to build an ISO from a half-prepared tree.
-            local action rc=0
+            # Later actions depend on the mounts prepared by earlier ones.
+            local action
             for action in "$@"; do
                 case $action in
-                    bind=*) action_bind "${action#bind=}" || { warn "bind action failed: $action"; rc=1; } ;;
-                    empty=*) action_empty "${action#empty=}" || { warn "empty action failed: $action"; rc=1; } ;;
-                    live-files) action_live_files || { warn "live-files action failed"; rc=1; } ;;
-                    general) action_general || { warn "general action failed"; rc=1; } ;;
-                    version-file) action_version_file "" || { warn "version-file action failed"; rc=1; } ;;
-                    version-file=*) action_version_file "${action#version-file=}" || { warn "version-file action failed"; rc=1; } ;;
-                    adjtime) action_adjtime || { warn "adjtime action failed"; rc=1; } ;;
-                    live-setup) action_live_setup "" || { warn "live-setup action failed"; rc=1; } ;;
-                    live-setup=autologin) action_live_setup autologin || { warn "live-setup action failed"; rc=1; } ;;
-                    *) warn "unknown action: $action"; rc=1 ;;
-                esac
+                    bind=*) action_bind "${action#bind=}" ;;
+                    empty=*) action_empty "${action#empty=}" ;;
+                    live-files) action_live_files ;;
+                    general) action_general ;;
+                    version-file) action_version_file "" ;;
+                    version-file=*) action_version_file "${action#version-file=}" ;;
+                    adjtime) action_adjtime ;;
+                    live-setup) action_live_setup "" ;;
+                    live-setup=autologin) action_live_setup autologin ;;
+                    *) warn "unknown action: $action"; return 1 ;;
+                esac || { warn "staging action failed: $action"; return 1; }
             done
-            return $rc
             ;;
         read-only) do_read_only ;;
         cleanup) do_cleanup ;;

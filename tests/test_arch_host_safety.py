@@ -81,6 +81,16 @@ rc=$?
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertEqual(result.stdout.splitlines(), [] if already_mounted else ['mount', 'umount'])
 
+    def test_failed_empty_home_stops_dependent_actions(self):
+        result = self.run_shell('''
+do_start() { :; }
+action_empty() { echo "$1"; return 1; }
+action_general() { echo general; }
+main -b "$1/root" start empty=/home general
+''')
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(result.stdout.splitlines(), ['/home'])
+
     def test_account_removed_after_copy_failure(self):
         result = self.run_shell('''
 WORK_DIR=$1/work
