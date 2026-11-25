@@ -762,7 +762,9 @@ action_passwd() {
         local backup=$to-
         [[ -f $from && -e $to ]] || continue
         bind_mount "$from" "$to" || return 1
-        [[ -e $backup ]] && bind_mount "$from" "$backup" || true
+        if [[ -e $backup ]]; then
+            bind_mount "$from" "$backup" || return 1
+        fi
     done
 
     # ---- materialise demo's home from /etc/skel.
