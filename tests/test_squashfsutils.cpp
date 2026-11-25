@@ -101,7 +101,8 @@ void TestSquashfsUtils::buildCommandWithUnbuffer()
     });
 
     QCOMPARE(command.program, QStringLiteral("unbuffer"));
-    QCOMPARE(command.args.mid(0, 3), (QStringList {"mksquashfs", "/bind-root", "/tmp/linuxfs"}));
+    QCOMPARE(command.args.mid(0, 7), (QStringList {"/bin/sh", "-c", R"("$@"; exit $?)", "sh",
+                                                   "/usr/bin/mksquashfs", "/bind-root", "/tmp/linuxfs"}));
     QVERIFY(!command.args.contains("-percentage"));
 }
 

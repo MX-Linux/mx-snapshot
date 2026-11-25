@@ -92,7 +92,9 @@ Command buildCommand(const Options &options)
     Command command;
     command.program = options.useUnbuffer ? QStringLiteral("unbuffer") : QStringLiteral("mksquashfs");
     if (options.useUnbuffer) {
-        command.args << "mksquashfs";
+        // Expect's unbuffer loses the exit status of a signalled child.
+        // Keep the shell alive to translate that signal into a normal exit.
+        command.args << "/bin/sh" << "-c" << R"("$@"; exit $?)" << "sh" << "/usr/bin/mksquashfs";
     }
     command.args += squashfsArgs;
     return command;
