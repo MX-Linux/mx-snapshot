@@ -162,6 +162,37 @@ grep -qx 'staff:x:2001:service' "$WORK_DIR/bind/etc/group" &&
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(result.stdout.splitlines(), ['low', 'high', 'service'])
 
+    def test_reset_demo_has_one_matching_group_and_gshadow_entry(self):
+        for temp_gid in (1000, 1001):
+            with self.subTest(temp_gid=temp_gid):
+                result = self.run_shell('''
+WORK_DIR=$1/work
+BIND_ROOT=$1/root
+REAL_ROOT=$BIND_ROOT
+LIVE_FILES_DIR=$1/template
+mkdir -p "$BIND_ROOT/etc" "$BIND_ROOT/home/demo"
+echo 'alice:x:1000:100::/home/alice:/bin/sh' > "$BIND_ROOT/etc/passwd"
+echo 'users:x:100:' > "$BIND_ROOT/etc/group"
+echo 'users:!::' > "$BIND_ROOT/etc/gshadow"
+temp_gid=''' + str(temp_gid) + '''
+useradd() {
+    local name=${!#}
+    echo "$name:x:1001:$temp_gid::/home/$name:/bin/sh" >> "$BIND_ROOT/etc/passwd"
+    echo "$name:x:$temp_gid:" >> "$BIND_ROOT/etc/group"
+    echo "$name:!::" >> "$BIND_ROOT/etc/gshadow"
+}
+adduser() { [[ $1 == --help ]] || useradd "$@"; }
+deluser() { :; }; userdel() { :; }; bind_mount() { :; }; findmnt() { echo ext4; }
+action_passwd || exit
+cd "$WORK_DIR/bind/etc" || exit
+cat passwd group gshadow
+''')
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertCountEqual(result.stdout.splitlines(), [
+                    'demo:x:1000:1000::/home/demo:/bin/sh',
+                    'users:x:100:', 'demo:x:1000:', 'users:!::', 'demo:!::',
+                ])
+
     def test_failed_cleanup_record_prevents_host_changes(self):
         for kind in ('directory', 'file', 'symlink'):
             with self.subTest(kind=kind):

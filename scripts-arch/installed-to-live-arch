@@ -544,7 +544,8 @@ action_passwd() {
         primary_group=$(awk -F: '$3=="1000"{print $1; exit}' "$bind_from/etc/group")
     fi
 
-    # ---- /etc/passwd, /etc/shadow, /etc/gshadow, /etc/subuid, /etc/subgid
+    # Remove private gshadow records for the stripped accounts along with
+    # their other account records. The group pass supplies demo's entry.
     local pw_files=(/etc/passwd /etc/shadow /etc/gshadow /etc/subuid /etc/subgid)
     for f in "${pw_files[@]}"; do
         local target=$bind_from$f
@@ -637,7 +638,7 @@ action_passwd() {
         [[ -f $target ]] || continue
         local tmp="$target.new"
         : > "$tmp" || return 1
-        local line
+        local line wrote_demo=0
         while IFS= read -r line || [[ -n $line ]]; do
             [[ -z $line ]] && continue
             IFS=: read -r -a fields <<< "$line"
@@ -651,12 +652,15 @@ action_passwd() {
                 printf '%s\n' "$line" >> "$tmp" || return 1
                 continue
             fi
-            [[ ${fields[0]} == live_temp_user* ]] && continue
+            if [[ ${fields[0]} == "${primary_group:-$def_user}" ]]; then
+                (( wrote_demo )) && continue
+                fields[0]=$def_user
+                wrote_demo=1
+            elif [[ ${fields[0]} == "$def_user" || ${fields[0]} == live_temp_user* ]]; then
+                continue
+            fi
 
             if [[ $f == /etc/gshadow ]]; then
-                if [[ -n $primary_group && ${fields[0]} == "$primary_group" ]]; then
-                    fields[0]=$def_user
-                fi
                 fields[2]=$(sanitize_member_list "${fields[2]:-}")
                 fields[3]=$(sanitize_member_list "${fields[3]:-}")
                 local sg
@@ -668,9 +672,6 @@ action_passwd() {
                 done
             else
                 fields[3]=$(sanitize_member_list "${fields[3]:-}")
-                if [[ -n $primary_group && ${fields[0]} == "$primary_group" ]]; then
-                    fields[0]=$def_user
-                fi
                 if [[ ${fields[0]} == "$def_user" ]]; then
                     fields[2]=1000
                 fi
@@ -686,6 +687,13 @@ action_passwd() {
             printf -v joined '%s:' "${fields[@]}"
             printf '%s\n' "${joined%:}" >> "$tmp" || return 1
         done < "$target" || return 1
+        if (( ! wrote_demo )); then
+            if [[ $f == /etc/group ]]; then
+                printf '%s:x:1000:\n' "$def_user" >> "$tmp" || return 1
+            else
+                printf '%s:!::\n' "$def_user" >> "$tmp" || return 1
+            fi
+        fi
         replace_preserving_metadata "$tmp" "$target" || return 1
     done
 
