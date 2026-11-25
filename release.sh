@@ -292,16 +292,14 @@ update_aur_package() {
     # Check if there are any changes to commit
     print_step "Checking for AUR package changes..."
 
-    if git -C "$AUR_DIR" diff --quiet && git -C "$AUR_DIR" diff --staged --quiet; then
+    local recipe_files=(PKGBUILD .SRCINFO)
+    git -C "$AUR_DIR" add -- "${recipe_files[@]}"
+    if git -C "$AUR_DIR" diff --cached --quiet -- "${recipe_files[@]}"; then
         print_warning "No changes in AUR package - skipping commit"
     else
         print_step "Committing AUR package changes..."
 
-        # Add all changes
-        git -C "$AUR_DIR" add -A
-
-        # Commit changes
-        git -C "$AUR_DIR" commit -m "$annotation"
+        git -C "$AUR_DIR" commit --only -m "$annotation" -- "${recipe_files[@]}"
 
         print_success "AUR package updated and committed"
         echo

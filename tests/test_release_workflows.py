@@ -57,6 +57,9 @@ _srcdir="mx-snapshot-26.10"
 ''')
         self.run_command(['git', '-C', str(aur), 'add', '.'])
         self.run_command(['git', '-C', str(aur), 'commit', '-qm', 'Initial recipe'])
+        (aur / 'staged-note').write_text('keep staged')
+        self.run_command(['git', 'add', 'staged-note'], aur)
+        (aur / 'untracked-note').write_text('keep untracked')
         tools = self.directory / 'bin'
         tools.mkdir()
         curl = tools / 'curl'
@@ -65,6 +68,11 @@ _srcdir="mx-snapshot-26.10"
         self.env['PATH'] = str(tools) + os.pathsep + self.env['PATH']
         for _ in range(2):
             self.run_command(['bash', str(ROOT / 'release.sh'), '--no-push', version], self.repo)
+            self.assertEqual(self.run_command(['git', 'rev-list', '--count', 'HEAD'], aur).stdout.strip(), '2')
+            self.assertEqual(self.run_command(['git', 'diff', '--name-only', 'HEAD^', 'HEAD'], aur).stdout.splitlines(),
+                             ['.SRCINFO', 'PKGBUILD'])
+            self.assertEqual(self.run_command(['git', 'status', '--porcelain'], aur).stdout.splitlines(),
+                             ['A  staged-note', '?? untracked-note'])
             remote_tag = self.run_command(['git', '--git-dir', str(remote), 'rev-parse', 'refs/tags/' + version]).stdout.strip()
             self.assertEqual(remote_tag, self.git('rev-parse', 'refs/tags/' + version))
             metadata = self.run_command(['makepkg', '--printsrcinfo'], aur).stdout
