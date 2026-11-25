@@ -1,3 +1,43 @@
+mx-snapshot (26.11.1) mx; urgency=medium
+
+  * MX and Debian hybrid ISOs can boot from USB on legacy BIOS computers
+    with --grub-mbr, and on Intel Macs when the template includes the
+    needed boot files.
+  * Warn before leaving out a separately mounted /usr or /var. The command
+    line needs --allow-omitted-mounts to continue.
+  * Check free space on the drive that will hold the ISO.
+  * Remove an incomplete ISO after an error or cancellation.
+  * Stop with an error if the compressor is killed, instead of reporting
+    an incomplete ISO as successful.
+  * Folder exclusions follow moved folders such as Documents, even when
+    their names contain quotes or brackets.
+  * Excluding Downloads no longer leaves out a whole home folder such as
+    /home/staff/alice.
+  * Excluding Networks also removes saved iwd and wpa_supplicant Wi-Fi
+    settings.
+  * Personal compression settings accept supported options only;
+    administrators can still set other options system-wide.
+  * Special characters in custom boot options are kept in the GRUB menu.
+  * On Debian, ISOs made for distribution no longer include old backup
+    copies of the account and password files.
+  * On Arch:
+    - Resetting accounts removes every regular user, including Nushell
+      users, and gives the live demo user a valid group.
+    - The snapshot stops if the account files cannot be reset safely, a
+      boot file cannot be copied, or the initramfs does not match the
+      selected kernel or lacks live boot support.
+    - An interrupted snapshot no longer leaves Wi-Fi disabled on this
+      computer.
+  * Command line:
+    - Edit the boot menu in the same terminal, including over SSH.
+    - Running with sudo uses your saved settings and exclusions even when
+      your home folder is not /home/username.
+    - Help and version options work without a graphical session.
+    - The cursor is hidden during progress and restored when the run
+      ends, including after Ctrl+C.
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 25 Nov 2026 14:13:50 -0500
+
 mx-snapshot (26.11) mx; urgency=medium
 
   * ISOs made for distribution no longer carry this computer's Tailscale
