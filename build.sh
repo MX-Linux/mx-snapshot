@@ -106,19 +106,16 @@ if [ "$DEBIAN_BUILD" = true ]; then
 
     echo "Creating debs directory and moving debian artifacts..."
     mkdir -p debs
-    mv ../*.deb debs/ 2>/dev/null || true
-    mv ../*.changes debs/ 2>/dev/null || true  
-    mv ../*.dsc debs/ 2>/dev/null || true
-    mv ../*.tar.* debs/ 2>/dev/null || true
-    mv ../*.buildinfo debs/ 2>/dev/null || true
-    mv ../*build* debs/ 2>/dev/null || true
+    for artifact in ../{mx-snapshot,iso-snapshot-cli}_*.{deb,changes,dsc,tar.gz,tar.xz,tar.bz2,tar.lzma,tar.zst,buildinfo,build}; do
+        [[ -f $artifact ]] || continue
+        mv -- "$artifact" debs/
+    done
 
     echo "Cleaning build directory and debian artifacts..."
     rm -rf "$BUILD_DIR"
     rm -f debian/*.debhelper.log debian/*.substvars debian/files
     rm -rf debian/.debhelper/ debian/mx-snapshot/ debian/iso-snapshot-cli/ obj-*/
     rm -f translations/*.qm src/version.h
-    rm -f ../*build* ../*.buildinfo 2>/dev/null || true
     rm -rf pkg *.pkg.tar.zst
 
     echo "Debian package build completed!"
@@ -193,7 +190,10 @@ if [ "$CLEAN" = true ]; then
     rm -f debian/*.debhelper.log debian/*.substvars debian/files
     rm -rf debian/.debhelper/ debian/mx-snapshot/ debian/iso-snapshot-cli/ obj-*/
     rm -f translations/*.qm src/version.h
-    rm -f ../*build* ../*.buildinfo 2>/dev/null || true
+    for artifact in ../{mx-snapshot,iso-snapshot-cli}_*.{build,buildinfo}; do
+        [[ -f $artifact ]] || continue
+        rm -f -- "$artifact"
+    done
     rm -rf pkg *.pkg.tar.zst
 fi
 
