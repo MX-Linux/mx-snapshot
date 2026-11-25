@@ -238,6 +238,8 @@ main() {
 
     local mod_dir="$from_dir/lib/modules/$kernel"
     test -d "$mod_dir" || fatal "Directory $mod_dir does not exist"
+    local index="$mod_dir/modules.dep.bin"
+    [[ -f $index && -r $index && -s $index ]] || fatal "Missing, unreadable or empty module index: %s" "$index"
 
     local list1 list2 default_mode
     # grab list from files or stdin and strip comments
