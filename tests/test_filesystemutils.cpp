@@ -11,6 +11,7 @@
 #include <QtTest/QtTest>
 
 #include <QtCore/QDir>
+#include <QtCore/QTemporaryDir>
 
 #include "filesystemutils.h"
 
@@ -22,6 +23,17 @@ class TestFileSystemUtils : public QObject
     Q_OBJECT
 
 private slots:
+    void usesDestinationOrNearestExistingAncestor()
+    {
+        QTemporaryDir temp;
+        QVERIFY(temp.isValid());
+        const QString snapshot = temp.filePath("snapshot");
+        QCOMPARE(FileSystemUtils::nearestExistingPath(snapshot + "/nested"), temp.path());
+        QVERIFY(QDir().mkdir(snapshot));
+        QCOMPARE(FileSystemUtils::nearestExistingPath(snapshot), snapshot);
+        QCOMPARE(FileSystemUtils::nearestExistingPath(snapshot + "/nested"), snapshot);
+    }
+
     void rejectsKnownIncompatibleFilesystems_data()
     {
         QTest::addColumn<QString>("type");

@@ -25,7 +25,6 @@
 #include "batchprocessing.h"
 
 #include <QDebug>
-#include <QRegularExpression>
 #include <QTextStream>
 #include <array>
 #include <chrono>
@@ -107,8 +106,8 @@ void Batchprocessing::run()
         return;
     }
 
-    QString path = settings->snapshotDir;
-    qDebug() << "Free space:" << settings->getFreeSpaceStrings(path.remove(QRegularExpression("/snapshot$")));
+    const QString path = FileSystemUtils::nearestExistingPath(settings->snapshotDir);
+    qDebug() << "Free space:" << settings->getFreeSpaceStrings(path);
     if (!settings->monthly && !settings->overrideSize) {
         qDebug() << "Unused space:" << settings->getUsedSpace();
     }

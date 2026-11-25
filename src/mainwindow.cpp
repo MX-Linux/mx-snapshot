@@ -431,8 +431,7 @@ void MainWindow::listUsedSpace()
 void MainWindow::listFreeSpace()
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    QString path = settings->snapshotDir;
-    path.remove(QRegularExpression("/snapshot$"));
+    const QString path = FileSystemUtils::nearestExistingPath(settings->snapshotDir);
     const QString freeSpace = settings->getFreeSpaceStrings(path);
     ui->labelFreeSpace->clear();
     ui->labelFreeSpace->setText("- " + tr("Free space on %1, where snapshot folder is placed: ").arg(path) + freeSpace

@@ -544,15 +544,7 @@ bool Settings::validateSpaceRequirements() const
 
     // Get free space for the snapshot directory, or for its nearest existing
     // ancestor: checkSnapshotDir() creates the missing levels later (mkdir -p).
-    QString pathToCheck = QDir::cleanPath(QFileInfo(snapshotDir).absoluteFilePath());
-    while (!QFileInfo::exists(pathToCheck)) {
-        const QString parent = QFileInfo(pathToCheck).absolutePath();
-        if (parent == pathToCheck) {
-            break;
-        }
-        pathToCheck = parent;
-    }
-
+    const QString pathToCheck = FileSystemUtils::nearestExistingPath(snapshotDir);
     const quint64 availableSpace = FileSystemUtils::getFreeSpace(pathToCheck);
     if (availableSpace < MIN_FREE_SPACE) {
         qCritical() << QObject::tr("Insufficient free space: %1 KiB available, minimum %2 KiB required")

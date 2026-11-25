@@ -3,6 +3,7 @@
 #include <QtCore/QDebug>
 #include <QtCore/QDir>
 #include <QtCore/QFile>
+#include <QtCore/QFileInfo>
 #include <QtCore/QStorageInfo>
 #include <QtCore/QTemporaryDir>
 
@@ -15,6 +16,19 @@ const QSet<QString> FileSystemUtils::incompatiblePartitions = {
     // These FAT variants cannot hold an ISO or squashfs file larger than 4 GiB.
     "fat", "vfat", "msdos",
 };
+
+QString FileSystemUtils::nearestExistingPath(const QString &path)
+{
+    QString candidate = QDir::cleanPath(QFileInfo(path).absoluteFilePath());
+    while (!QFileInfo::exists(candidate)) {
+        const QString parent = QFileInfo(candidate).absolutePath();
+        if (parent == candidate) {
+            break;
+        }
+        candidate = parent;
+    }
+    return candidate;
+}
 
 quint64 FileSystemUtils::getFreeSpace(const QString &path)
 {

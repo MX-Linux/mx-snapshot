@@ -233,6 +233,9 @@ bool Work::isEnvironmentReady() const
 void Work::checkEnoughSpace()
 {
     quint64 required_space = getRequiredSpace();
+    // checkSnapshotDir() has now created the destination. Refresh the earlier
+    // preflight estimate on the filesystem where xorriso will actually write.
+    settings->freeSpace = FileSystemUtils::getFreeSpace(settings->snapshotDir);
     // Check foremost if enough space for ISO on snapshot_dir; checkNoSpaceAndExit
     // kicks off cleanUp() on its own when there's not enough room, so we just
     // bail out of this pipeline stage in that case.

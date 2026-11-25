@@ -6,6 +6,8 @@
 class FileSystemUtils
 {
 public:
+    [[nodiscard]] static QString nearestExistingPath(const QString &path);
+
     // Get free space in KiB for a given path
     [[nodiscard]] static quint64 getFreeSpace(const QString &path);
 
