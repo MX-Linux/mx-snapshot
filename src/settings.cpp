@@ -746,7 +746,7 @@ int Settings::getSnapshotCount() const
 
 
 
-// Return the XDG User Directory for each user with different localizations than English
+// Include localized and relocated XDG directories alongside the default exclusions.
 QString Settings::getXdgUserDirs(const QString &folder)
 {
     QStringList resultParts;
@@ -764,12 +764,12 @@ QString Settings::getXdgUserDirs(const QString &folder)
         for (const QString &line : lines) {
             const QString candidate = line.trimmed();
             if (candidate.startsWith('/')) {
-                dir = candidate;
+                dir = QDir::cleanPath(candidate);
                 break;
             }
         }
-        if (!dir.isEmpty() && englishDirs.value(folder) != dir.section('/', -1) && dir != "/home/" + user
-            && dir != "/home/" + user + '/') {
+        const QString home = "/home/" + user;
+        if (!dir.isEmpty() && dir != home && dir != home + '/' + englishDirs.value(folder)) {
             dir.remove(QRegularExpression("^/"));
             QString exclusion = folder == "DESKTOP" ? "/!(minstall.desktop)" : "/*\" \"" + dir + "/.*";
             dir.append(exclusion);
