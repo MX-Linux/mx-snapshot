@@ -447,8 +447,8 @@ action_passwd() {
 
     replace_preserving_metadata() {
         local tmp=$1 target=$2
-        chown --reference="$target" "$tmp" 2>/dev/null || true
-        chmod --reference="$target" "$tmp" 2>/dev/null || true
+        chown --reference="$target" "$tmp" || return 1
+        chmod --reference="$target" "$tmp" || return 1
         mv "$tmp" "$target"
     }
 
@@ -550,7 +550,7 @@ action_passwd() {
         local target=$bind_from$f
         [[ -f $target ]] || continue
         local tmp="$target.new"
-        : > "$tmp"
+        : > "$tmp" || return 1
         local line user
         while IFS= read -r line || [[ -n $line ]]; do
             [[ -z $line ]] && continue
@@ -581,9 +581,9 @@ action_passwd() {
             fi
             local joined
             printf -v joined '%s:' "${fields[@]}"
-            printf '%s\n' "${joined%:}" >> "$tmp"
-        done < "$target"
-        replace_preserving_metadata "$tmp" "$target"
+            printf '%s\n' "${joined%:}" >> "$tmp" || return 1
+        done < "$target" || return 1
+        replace_preserving_metadata "$tmp" "$target" || return 1
     done
 
     # ---- /etc/group, /etc/gshadow group-membership rewrites
@@ -636,7 +636,7 @@ action_passwd() {
         local target=$bind_from$f
         [[ -f $target ]] || continue
         local tmp="$target.new"
-        : > "$tmp"
+        : > "$tmp" || return 1
         local line
         while IFS= read -r line || [[ -n $line ]]; do
             [[ -z $line ]] && continue
@@ -648,7 +648,7 @@ action_passwd() {
             # is still passed through unchanged.
             [[ ${#fields[@]} -ge 3 ]] && pad_colon_fields 4
             if [[ ${#fields[@]} -lt 4 ]]; then
-                printf '%s\n' "$line" >> "$tmp"
+                printf '%s\n' "$line" >> "$tmp" || return 1
                 continue
             fi
             [[ ${fields[0]} == live_temp_user* ]] && continue
@@ -684,9 +684,9 @@ action_passwd() {
             fi
             local joined
             printf -v joined '%s:' "${fields[@]}"
-            printf '%s\n' "${joined%:}" >> "$tmp"
-        done < "$target"
-        replace_preserving_metadata "$tmp" "$target"
+            printf '%s\n' "${joined%:}" >> "$tmp" || return 1
+        done < "$target" || return 1
+        replace_preserving_metadata "$tmp" "$target" || return 1
     done
 
     # ---- /etc/subuid, /etc/subgid: rewrite single-line "demo:N:M" to use
@@ -696,7 +696,7 @@ action_passwd() {
         local target=$bind_from$file
         [[ -f $target ]] || return 0
         local lines
-        mapfile -t lines < "$target"
+        mapfile -t lines < "$target" || return 1
         [[ ${#lines[@]} -eq 1 ]] || return 0
         local default_value=""
         if [[ -f /etc/login.defs ]]; then
@@ -709,12 +709,12 @@ action_passwd() {
         if [[ $first == "$def_user":* ]]; then
             IFS=: read -r -a sf <<< "$first"
             if [[ ${#sf[@]} -ge 3 ]]; then
-                printf '%s:%s:%s\n' "$def_user" "$default_value" "${sf[2]}" > "$target"
+                printf '%s:%s:%s\n' "$def_user" "$default_value" "${sf[2]}" > "$target" || return 1
             fi
         fi
     }
-    update_subid_defaults /etc/subuid SUB_UID_MIN
-    update_subid_defaults /etc/subgid SUB_GID_MIN
+    update_subid_defaults /etc/subuid SUB_UID_MIN || return 1
+    update_subid_defaults /etc/subgid SUB_GID_MIN || return 1
 
     # ---- /etc/shadow: hash demo and root passwords with sha512.
     local shadow_target=$bind_from/etc/shadow
@@ -726,11 +726,11 @@ action_passwd() {
             || { warn "no sha512 password tool (need openssl or mkpasswd)"; return 1; }
 
         local tmp="$shadow_target.new"
-        : > "$tmp"
+        : > "$tmp" || return 1
         local line
         while IFS= read -r line || [[ -n $line ]]; do
             if [[ -z ${line// } ]]; then
-                printf '\n' >> "$tmp"
+                printf '\n' >> "$tmp" || return 1
                 continue
             fi
             IFS=: read -r -a fields <<< "$line"
@@ -743,12 +743,12 @@ action_passwd() {
                 pad_colon_fields 9
                 local joined
                 printf -v joined '%s:' "${fields[@]}"
-                printf '%s\n' "${joined%:}" >> "$tmp"
+                printf '%s\n' "${joined%:}" >> "$tmp" || return 1
             else
-                printf '%s\n' "$line" >> "$tmp"
+                printf '%s\n' "$line" >> "$tmp" || return 1
             fi
-        done < "$shadow_target"
-        replace_preserving_metadata "$tmp" "$shadow_target"
+        done < "$shadow_target" || return 1
+        replace_preserving_metadata "$tmp" "$shadow_target" || return 1
     fi
 
     # ---- bind-mount the rewritten files over their bindRoot counterparts

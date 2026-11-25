@@ -111,6 +111,25 @@ action_passwd && exit 1
         self.assertEqual(result.stdout, '')
         self.assertIn('diagnostic', result.stderr)
 
+    def test_failed_account_rewrite_never_reaches_bind_mount(self):
+        for failure in ('ln -s /dev/full "$WORK_DIR/bind/etc/passwd.new"',
+                        'chmod() { return 1; }', 'chown() { return 1; }',
+                        'mv() { return 1; }'):
+            with self.subTest(failure=failure):
+                result = self.run_shell('''
+WORK_DIR=$1/work
+BIND_ROOT=$1/root
+REAL_ROOT=$BIND_ROOT
+LIVE_FILES_DIR=$1/template
+mkdir -p "$REAL_ROOT/etc" "$WORK_DIR/bind/etc"
+echo 'root:x:0:0::/root:/bin/sh' > "$REAL_ROOT/etc/passwd"
+adduser() { :; }; useradd() { :; }; deluser() { :; }; userdel() { :; }
+findmnt() { echo ext4; }
+bind_mount() { echo mount; }
+''' + failure + '\naction_passwd\n')
+                self.assertNotEqual(result.returncode, 0)
+                self.assertEqual(result.stdout, '')
+
     def test_reset_selects_home_accounts_in_configured_uid_range(self):
         result = self.run_shell('''
 WORK_DIR=$1/work
