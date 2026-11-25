@@ -668,6 +668,9 @@ QStringList Settings::getEditorCommand() const
         = QRegularExpression(R"((kate|kwrite|featherpad|code|codium)$)").match(editorName).hasMatch();
     const bool isCliEditor = QRegularExpression(R"(nano|vi|vim|nvim|micro|emacs)").match(editorName).hasMatch();
 
+    if (isCliEditor && !isGuiApp) {
+        return editor;
+    }
     if (isEditorThatElevates && !isRoot) {
         return editor;
     }

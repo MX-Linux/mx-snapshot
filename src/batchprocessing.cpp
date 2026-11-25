@@ -182,8 +182,11 @@ void Batchprocessing::run()
         const QString bootDir = settings->workDir + "/iso-template/boot";
         QStringList editorCmd = settings->getEditorCommand();
         const QString editorProgram = editorCmd.takeFirst();
+        Cmd editor;
+        editor.setInputChannelMode(QProcess::ForwardedInputChannel);
+        editor.setProcessChannelMode(QProcess::ForwardedChannels);
         const bool editorSucceeded
-            = Cmd().proc(editorProgram, editorCmd << bootDir + "/grub/grub.cfg"
+            = editor.proc(editorProgram, editorCmd << bootDir + "/grub/grub.cfg"
                                                   << bootDir + "/syslinux/syslinux.cfg"
                                                   << bootDir + "/isolinux/isolinux.cfg");
         if (!editorSucceeded) {
