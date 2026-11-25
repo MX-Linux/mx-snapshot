@@ -745,13 +745,24 @@ void Work::copyNewIso()
         const QString kernelPath = "/boot/vmlinuz-" + settings->kernel;
         QDir().mkpath(archBootDir);
 
-        shell.procAsRoot("cp", {kernelPath, archBootPath + "/vmlinuz-linux"}, nullptr, nullptr, Cmd::QuietMode::No);
         const QString cpUser = loggedInUserName();
-        if (!cpUser.isEmpty()) {
-            shell.procAsRoot("chown", {cpUser + ":", archBootPath + "/vmlinuz-linux"}, nullptr, nullptr,
-                             Cmd::QuietMode::Yes);
+        const auto copyBootFile = [&](const QString &source, const QString &destination) {
+            if (!shell.procAsRoot("cp", {source, destination}, nullptr, nullptr, Cmd::QuietMode::No)) {
+                if (!cleanupStarted) {
+                    emit messageBox(BoxType::critical, tr("Error"), tr("Could not copy %1 to %2.").arg(source, destination));
+                    cleanUp();
+                }
+                return false;
+            }
+            if (!cpUser.isEmpty()) {
+                shell.procAsRoot("chown", {cpUser + ":", destination}, nullptr, nullptr, Cmd::QuietMode::Yes);
+            }
+            shell.proc("chmod", {"a+r", destination});
+            return !cleanupStarted;
+        };
+        if (!copyBootFile(kernelPath, archBootPath + "/vmlinuz-linux")) {
+            return;
         }
-        shell.proc("chmod", {"a+r", archBootPath + "/vmlinuz-linux"});
 
         QString initramfsSource;
         const QString archisoPath = "/boot/archiso.img";
@@ -816,13 +827,9 @@ void Work::copyNewIso()
             return;
         }
 
-        shell.procAsRoot("cp", {initramfsSource, archBootPath + "/archiso.img"}, nullptr, nullptr,
-                         Cmd::QuietMode::No);
-        if (!cpUser.isEmpty()) {
-            shell.procAsRoot("chown", {cpUser + ":", archBootPath + "/archiso.img"}, nullptr, nullptr,
-                             Cmd::QuietMode::Yes);
+        if (!copyBootFile(initramfsSource, archBootPath + "/archiso.img")) {
+            return;
         }
-        shell.proc("chmod", {"a+r", archBootPath + "/archiso.img"});
     } else {
         if (!shell.proc("tar", {"xf", templateTar})) {
             emit messageBox(BoxType::critical, tr("Error"), tr("Could not extract the ISO template: ") + templateTar);
