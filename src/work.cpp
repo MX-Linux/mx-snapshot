@@ -804,20 +804,32 @@ void Work::copyNewIso()
             initramfsSource = archisoPath;
         } else {
             // /boot/archiso.img doesn't exist — try to create one so the ISO can boot as live media.
-            // A regular initramfs lacks the archiso hook and will fail at switch_root.
             emit message(tr("No /boot/archiso.img found, attempting to create one..."));
             if (rebuildArchisoInitramfs(archisoPath, kernelPath)) {
                 initramfsSource = archisoPath;
             } else {
-                emit messageBox(
-                    BoxType::warning, tr("Warning"),
-                    tr("Could not create /boot/archiso.img (is the 'archiso' package installed?). "
-                       "Falling back to the regular initramfs — the resulting ISO will likely fail to "
-                       "boot (\"Failed to start Switch Root\")."));
-                if (QFileInfo::exists("/boot/initramfs-" + settings->kernel + ".img")) {
-                    initramfsSource = "/boot/initramfs-" + settings->kernel + ".img";
-                } else if (QFileInfo::exists("/boot/initramfs-linux.img")) {
-                    initramfsSource = "/boot/initramfs-linux.img";
+                if (cleanupStarted) {
+                    return;
+                }
+                initramfsSource = firstExistingFile({"/boot/initramfs-" + settings->kernel + ".img",
+                                                     "/boot/initramfs-linux.img"});
+                if (!initramfsSource.isEmpty()) {
+                    QString listing;
+                    const bool listed = shell.procAsRoot("lsinitcpio", {"-l", "-n", initramfsSource}, &listing,
+                                                         nullptr, Cmd::QuietMode::Yes);
+                    if (cleanupStarted) {
+                        return;
+                    }
+                    static const QRegularExpression archisoHook(R"(^(?:\./|/)?hooks/archiso$)",
+                                                               QRegularExpression::MultilineOption);
+                    if (!listed || !listing.contains(archisoHook)) {
+                        emit messageBox(BoxType::critical, tr("Error"),
+                                        tr("Could not verify the archiso live boot hook in %1. "
+                                           "Rebuild the initramfs with the archiso hook.").arg(initramfsSource));
+                        cleanUp();
+                        return;
+                    }
+                    emit message(tr("Using %1 with the archiso live boot hook.").arg(initramfsSource));
                 }
             }
         }
