@@ -512,16 +512,27 @@ action_passwd() {
     "$remove_user" "$added_user" || { warn "could not remove temporary account $added_user"; return 1; }
     (( copy_failed == 0 )) || return 1
 
-    # Identify other regular users (home in /home, login shell ending in
-    # 'sh') so we can scrub them out.
+    # Use shadow's regular-account range (including its defaults) regardless
+    # of the user's choice of login shell.
+    local uid_min=1000 uid_max=60000 key value rest
+    local login_defs=${REAL_ROOT%/}/etc/login.defs
+    if [[ -f $login_defs ]]; then
+        while read -r key value rest; do
+            [[ $key == UID_MIN || $key == UID_MAX ]] || continue
+            [[ $value =~ ^(0[xX][[:xdigit:]]+|0[0-7]*|[1-9][0-9]*)$ ]] || { warn "invalid $key"; return 1; }
+            if [[ $key == UID_MIN ]]; then uid_min=$((value)); else uid_max=$((value)); fi
+        done < "$login_defs" || return 1
+    fi
+    (( uid_min <= uid_max )) || { warn "invalid UID range in $login_defs"; return 1; }
     local other_users=()
-    while IFS=: read -r u _ _ _ _ home shellfield; do
+    local u uid home
+    while IFS=: read -r u _ uid _ _ home _; do
         [[ -z $u ]] && continue
         [[ $u == "$added_user" ]] && continue
-        if [[ $home == /home/* && $shellfield == *sh ]]; then
+        if [[ $home == /home/* && $uid =~ ^[0-9]+$ ]] && (( 10#$uid >= uid_min && 10#$uid <= uid_max )); then
             other_users+=("$u")
         fi
-    done < /etc/passwd
+    done < "${REAL_ROOT%/}/etc/passwd" || return 1
 
     # Find the staged group line whose gid is 1000 — that's the primary
     # group whose name we'll rewrite to "demo".

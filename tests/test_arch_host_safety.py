@@ -77,6 +77,33 @@ action_passwd && exit 1
 ''')
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_reset_selects_home_accounts_in_configured_uid_range(self):
+        result = self.run_shell('''
+WORK_DIR=$1/work
+BIND_ROOT=$1/root
+REAL_ROOT=$BIND_ROOT
+LIVE_FILES_DIR=$1/template
+mkdir -p "$REAL_ROOT/etc" "$BIND_ROOT/home/demo"
+printf 'UID_MIN 2000\nUID_MAX 3000\n' > "$REAL_ROOT/etc/login.defs"
+cat > "$REAL_ROOT/etc/passwd" <<'USERS'
+low:x:1999:1::/home/low:/bin/sh
+nu:x:2000:1::/home/nu:/usr/bin/nu
+upper:x:3000:1::/home/upper:/bin/bash
+high:x:3001:1::/home/high:/bin/sh
+service:x:2200:1::/var/lib/service:/bin/sh
+USERS
+adduser() { :; }
+useradd() { :; }
+deluser() { :; }
+userdel() { :; }
+bind_mount() { :; }
+findmnt() { echo ext4; }
+action_passwd || exit 1
+cut -d: -f1 "$WORK_DIR/bind/etc/passwd"
+''')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stdout.splitlines(), ['low', 'high', 'service'])
+
     def test_service_mask_stays_in_overlay(self):
         result = self.run_shell('''
 REAL_ROOT=$1/host
