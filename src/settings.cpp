@@ -122,9 +122,12 @@ QString userConfigBaseDir()
     const QString username = loggedInUserName();
 
     if (!username.isEmpty()) {
-        const QString candidateHome = QDir::cleanPath("/home/" + username);
-        if (QDir(candidateHome).exists()) {
-            return QDir::cleanPath(candidateHome + "/.config");
+        const struct passwd *account = getpwnam(username.toLocal8Bit().constData());
+        if (account && account->pw_dir) {
+            const QDir home(QString::fromLocal8Bit(account->pw_dir));
+            if (home.isAbsolute() && home.exists()) {
+                return QDir::cleanPath(home.filePath(".config"));
+            }
         }
     }
 
