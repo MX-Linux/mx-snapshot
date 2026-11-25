@@ -198,6 +198,7 @@ main() {
         if [[ "$basename_prog" = "xz" ]] && [[ -x "$bin_dir/xz" ]]; then
             local link
             for link in $DEFAULT_XZ_LIST; do
+                [[ $link == "$basename_prog" ]] && continue
                 pretend ln -nsf xz "$bin_dir/$link"
             done
         fi
@@ -205,6 +206,7 @@ main() {
         if [[ "$basename_prog" = "zstd" ]] && [[ -x "$bin_dir/zstd" ]]; then
             local link
             for link in $DEFAULT_ZSTD_LIST; do
+                [[ $link == "$basename_prog" ]] && continue
                 pretend ln -nsf zstd "$bin_dir/$link"
             done
         fi
