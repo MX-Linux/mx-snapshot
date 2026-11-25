@@ -815,6 +815,19 @@ void Work::copyNewIso()
                 initramfsSource = firstExistingFile({"/boot/initramfs-" + settings->kernel + ".img",
                                                      "/boot/initramfs-linux.img"});
                 if (!initramfsSource.isEmpty()) {
+                    const QString kernelRelease = kernelImageVersion(archBootPath + "/vmlinuz-linux");
+                    const QString imageRelease = initramfsKernelVersion(initramfsSource);
+                    if (cleanupStarted) {
+                        return;
+                    }
+                    if (kernelRelease.isEmpty() || imageRelease != kernelRelease) {
+                        emit messageBox(BoxType::critical, tr("Error"),
+                                        tr("Could not verify that %1 matches the selected kernel %2. "
+                                           "Rebuild the archiso initramfs for this kernel.")
+                                            .arg(initramfsSource, kernelPath));
+                        cleanUp();
+                        return;
+                    }
                     QString listing;
                     const bool listed = shell.procAsRoot("lsinitcpio", {"-l", "-n", initramfsSource}, &listing,
                                                          nullptr, Cmd::QuietMode::Yes);
@@ -1481,8 +1494,10 @@ QString Work::initramfsKernelVersion(const QString &initramfsPath) const
     }
     // Images in /boot are root-only (0600), so the probe must run elevated.
     // The analysis header reports the kernel as "==> Kernel: <version>".
-    const QString output
-        = Cmd().getOutAsRoot("lsinitcpio", {"-a", "-n", initramfsPath}, Cmd::QuietMode::Yes);
+    QString output;
+    if (!Cmd().procAsRoot("lsinitcpio", {"-a", "-n", initramfsPath}, &output, nullptr, Cmd::QuietMode::Yes)) {
+        return {};
+    }
     static const QRegularExpression kernelRegex(R"(^==> Kernel: (\S+))", QRegularExpression::MultilineOption);
     const auto match = kernelRegex.match(output);
     if (!match.hasMatch() || match.captured(1) == "unknown") {
