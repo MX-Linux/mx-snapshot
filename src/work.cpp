@@ -1615,20 +1615,20 @@ void Work::replaceMenuStrings()
     }
 
     const QString grubenv_cfg {"/iso-template/boot/grub/grubenv.cfg"};
-    const QString boot_pararameter_regexp {"(lang|kbd|kbvar|kbopt|tz)=[^[:space:]]*"};
+    const QString grubEnvParameter {"(lang|kbd|kbvar|kbopt|tz)=[^[:space:]]*"};
     // bootOptions ($1) and the target file ($2) are passed as bash positional
     // parameters so the shell never parses them as code (no injection through a
     // crafted work dir or kernel option). $1 is intentionally left unquoted in
     // printf: word splitting emits one option per line, while positional expansion
     // still prevents command-substitution/quote injection in the value.
     if (QFileInfo::exists(settings->workDir + grubenv_cfg)) {
-        const QString grubenv_script = "printf '%s\\n' $1 | grep -E '^" + boot_pararameter_regexp + "' >> \"$2\"";
+        const QString grubenv_script = "printf '%s\\n' $1 | grep -E '^" + grubEnvParameter + "' >> \"$2\"";
         shell.proc("/bin/bash", {"-c", grubenv_script, "_", settings->bootOptions, settings->workDir + grubenv_cfg});
     }
     if (haveGrubCfg) {
-        const QString options_script = "sed -i \"s|%OPTIONS%|$(sed -r 's/[[:space:]]" + boot_pararameter_regexp
-            + "/ /g; s/^[[:space:]]+//; s/[[:space:]]+/ /g' <<<\" $1\")|\" \"$2\"";
-        shell.proc("/bin/bash", {"-c", options_script, "_", settings->bootOptions, settings->workDir + grub_cfg});
+        QString options = settings->bootOptions;
+        options.remove(QRegularExpression("(?:^|\\s)" + grubEnvParameter));
+        replaceStringInFile("%OPTIONS%", options.simplified(), settings->workDir + grub_cfg);
     }
     // The Arch ISO template is GRUB-only — no syslinux / isolinux. Skip
     // files that aren't present so we don't spam "Failed to open file:"
