@@ -844,6 +844,12 @@ bool MainWindow::confirmStart()
         + "\n\n" + tr("OK to start?"));
     auto *pushOk = messageBox.addButton(QMessageBox::Ok);
     messageBox.addButton(QMessageBox::Cancel);
+    const QString mountWarning = SystemInfo::systemMountWarning();
+    if (!mountWarning.isEmpty()) {
+        messageBox.setText(mountWarning + "\n\n" + messageBox.text());
+        messageBox.setIcon(QMessageBox::Warning);
+        messageBox.setDefaultButton(QMessageBox::Cancel);
+    }
     auto *checkShutdown = new QCheckBox(this);
     checkShutdown->setText(tr("Shutdown computer when done."));
     if (settings->shutdown) {

@@ -98,6 +98,11 @@ recommend it for anything other than MX or antiX compatible systems.
   - **-o**, **--override-size**  
     Skip calculating free space to see if the resulting ISO will fit
 
+  - **--allow-omitted-mounts**
+    Allow a CLI snapshot to proceed when `/usr` or `/var` is separately mounted.
+    The snapshot omits the mounted contents and may be unusable. The GUI asks
+    for confirmation when it detects this layout.
+
   - **-w**, **--workdir** \<path\>  
     Specify the path for the work directory
 

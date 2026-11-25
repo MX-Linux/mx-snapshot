@@ -191,6 +191,7 @@ Settings::Settings(const QCommandLineParser &argParser, bool isGuiApp)
       maxCores(Cmd().getOut("nproc", Cmd::QuietMode::Yes).trimmed().toUInt()),
       monthly(argParser.isSet("month")),
       overrideSize(argParser.isSet("override-size")),
+      allowOmittedMounts(argParser.isSet("allow-omitted-mounts")),
       userConfigPathReady(redirectUserConfigPath()),
       editBootMenu(getEditBootMenuSetting()),
       isGuiApp(isGuiApp),

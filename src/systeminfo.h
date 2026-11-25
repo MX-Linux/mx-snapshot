@@ -12,6 +12,9 @@ public:
     // Check if running from a live environment
     [[nodiscard]] static bool isLive();
 
+    // Warn when the non-recursive root bind omits a mounted system directory.
+    [[nodiscard]] static QString systemMountWarning();
+
     // Get list of users with home directories
     [[nodiscard]] static QStringList listUsers();
 

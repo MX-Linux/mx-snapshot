@@ -1,6 +1,7 @@
 #include "systeminfo.h"
 
 #include <QtCore/QCoreApplication>
+#include <QtCore/QFile>
 #include <QtCore/QProcess>
 #include <QtCore/QSysInfo>
 
@@ -17,6 +18,30 @@ bool SystemInfo::isLive()
         return true;
     }
     return QProcess::execute("mountpoint", {"-q", "/live/aufs"}) == 0;
+}
+
+QString SystemInfo::systemMountWarning()
+{
+    QFile mounts("/proc/self/mountinfo");
+    if (!mounts.open(QIODevice::ReadOnly)) {
+        return QObject::tr("Could not determine whether /usr and /var are separate mounts.");
+    }
+    QStringList omitted;
+    // Field 5 is the mount point. mountinfo includes same-device bind mounts.
+    const QByteArray contents = mounts.readAll();
+    if (contents.isEmpty() || mounts.error() != QFileDevice::NoError) {
+        return QObject::tr("Could not determine whether /usr and /var are separate mounts.");
+    }
+    for (const QByteArray &line : contents.split('\n')) {
+        const QByteArray mount = line.split(' ').value(4);
+        if (mount == "/usr" || mount == "/var") {
+            omitted << QString::fromLatin1(mount);
+        }
+    }
+    omitted.removeDuplicates();
+    return omitted.isEmpty() ? QString()
+                             : QObject::tr("The snapshot will omit the mounted contents of %1. "
+                                           "The resulting ISO may be unusable.").arg(omitted.join(", "));
 }
 
 QStringList SystemInfo::listUsers()

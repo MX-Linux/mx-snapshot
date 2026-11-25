@@ -85,6 +85,15 @@ Batchprocessing::Batchprocessing(Settings *settings, QObject *parent)
 // isCleaningUp() check, so nothing runs against a torn-down environment.
 void Batchprocessing::run()
 {
+    const QString mountWarning = SystemInfo::systemMountWarning();
+    if (!mountWarning.isEmpty()) {
+        if (!settings->allowOmittedMounts) {
+            qCritical().noquote() << mountWarning << tr("Use --allow-omitted-mounts to continue.");
+            return;
+        }
+        qWarning().noquote() << mountWarning;
+    }
+
     // Check updated excludes before any work
     checkUpdatedDefaultExcludesCli();
     if (work.isCleaningUp()) {

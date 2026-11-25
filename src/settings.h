@@ -115,6 +115,7 @@ public:
     const uint maxCores;
     const bool monthly;
     const bool overrideSize;
+    const bool allowOmittedMounts;
     // Must be declared (and therefore initialized) before editBootMenu and every
     // other member below that reads QSettings — it redirects QSettings' user-scope
     // path to the invoking user's ~/.config before any of those reads happen.
