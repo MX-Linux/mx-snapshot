@@ -67,6 +67,14 @@ recommend it for anything other than MX or antiX compatible systems.
     \<level\>", or "-Xalgorithm \<algorithm\>", or "-Xhc", see
     mksquashfs man page
 
+    User preferences and this argument accept compression settings such as
+    `-b 256K`, `-Xhc`, and `-Xcompression-level 15`, plus selected filesystem
+    flags such as `-no-xattrs`. For unrestricted mksquashfs options, set
+    `mksq_opt` in the application's root-owned, administrator-writable-only
+    configuration file in `/etc`. Empty or unsupported preferences fall back
+    to that value. Quote INI values containing commas, e.g.
+    `mksq_opt="-Xstrategy default,fixed"`.
+
   - **-m**, **--month** [suffix]
     Create a monthly snapshot, add 'Month' name in the ISO name, skip
     used space calculation This option sets reset-accounts and

@@ -45,6 +45,7 @@
 #include <unistd.h>
 
 #include "messagehandler.h"
+#include "squashfsutils.h"
 
 namespace
 {
@@ -246,7 +247,7 @@ Settings::Settings(const QCommandLineParser &argParser, bool isGuiApp)
             }
         }
 
-        loadConfig(); // Load settings from .conf file
+        loadConfig(argParser.value("compression-level"));
         setVariables();
         kernel = getInitialKernel(argParser); // Initialize kernel after config is loaded
         preempt = argParser.isSet("preempt"); // Initialize preempt from command line
@@ -1206,7 +1207,7 @@ void Settings::excludeVirtualBox(bool exclude)
 }
 
 // Load settings from config file
-void Settings::loadConfig()
+void Settings::loadConfig(const QString &compressionOptions)
 {
     qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
 
@@ -1234,7 +1235,7 @@ void Settings::loadConfig()
 
     // Merge system settings into user settings
     for (const QString &key : std::as_const(systemKeys)) {
-        if (!settingsUser.contains(key)) {
+        if (key != "mksq_opt" && !settingsUser.contains(key)) {
             QVariant value = settingsSystem.value(key);
             settingsUser.setValue(key, value);
         }
@@ -1300,7 +1301,27 @@ void Settings::loadConfig()
         qWarning().noquote() << QObject::tr("Unsupported compression '%1' in configuration, using zstd.").arg(compression);
         compression = "zstd";
     }
-    mksqOpt = trimQuotes(settingsUser.value("mksq_opt").toString());
+    const QString systemOptions = trimQuotes(settingsSystem.value("mksq_opt").toString());
+    const QString preference = trimQuotes(settingsUser.value("mksq_opt").toString());
+    struct stat st {};
+    const QString path = configFile.fileName();
+    const bool trusted = (path == "/etc/mx-snapshot.conf" || path == "/etc/iso-snapshot-cli.conf")
+                         && lstat(QFile::encodeName(path).constData(), &st) == 0 && S_ISREG(st.st_mode)
+                         && st.st_uid == 0 && (st.st_mode & (S_IWGRP | S_IWOTH)) == 0;
+    const QString trustedOptions = trusted ? systemOptions : QString();
+    const bool useUntrustedConfig = !trusted && preference.isEmpty();
+    const QString userOptions = useUntrustedConfig ? systemOptions : preference;
+    auto options = SquashfsUtils::selectExtraOptions(trustedOptions, userOptions, compressionOptions);
+    if (!options) {
+        if (!compressionOptions.isEmpty()) {
+            throw std::runtime_error(QObject::tr("Unsupported --compression-level value: %1")
+                                         .arg(compressionOptions).toStdString());
+        }
+        qWarning() << QObject::tr("Ignoring unsupported mksq_opt in %1: %2")
+                          .arg(useUntrustedConfig ? path : userConfigPath, userOptions);
+        options = SquashfsUtils::selectExtraOptions(trustedOptions, {}, {});
+    }
+    mksqOpt = *options;
     // edit_boot_menu is now const, initialized in constructor
     tempDirParent = trimQuotes(settingsUser.value("workdir").toString());
 
@@ -1465,9 +1486,6 @@ void Settings::processArgs(const QCommandLineParser &argParser)
     if (!argParser.value("compression").isEmpty()) {
         compression = argParser.value("compression");
     }
-    if (!argParser.value("compression-level").isEmpty()) {
-        mksqOpt = argParser.value("compression-level");
-    }
     if (!argParser.value("cores").isEmpty()) {
         bool ok {false};
         const uint val = argParser.value("cores").toUInt(&ok);
@@ -1630,7 +1648,7 @@ Settings::InitialSettings Settings::getInitialSettings() const
     settingsSystem.endGroup();
 
     for (const QString &key : std::as_const(systemKeys)) {
-        if (!settingsUser.contains(key)) {
+        if (key != "mksq_opt" && !settingsUser.contains(key)) {
             QVariant value = settingsSystem.value(key);
             settingsUser.setValue(key, value);
         }

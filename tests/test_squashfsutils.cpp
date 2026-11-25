@@ -7,12 +7,31 @@ class TestSquashfsUtils : public QObject
     Q_OBJECT
 
 private slots:
+    void selectExtraOptions();
     void buildCommandDirect();
     void buildCommandWithUnbuffer();
     void buildCommandOmitsPercentageWhenDisabled();
     void helpListsOption();
     void parsePercentageLine();
 };
+
+void TestSquashfsUtils::selectExtraOptions()
+{
+    using SquashfsUtils::selectExtraOptions;
+    const QString system = "-sort /etc/snapshot-priorities";
+    const QStringList expected {"-sort", "/etc/snapshot-priorities"};
+    QCOMPARE(selectExtraOptions(system, {}, {}).value(), expected);
+    QCOMPARE(selectExtraOptions(system, system, {}).value(), expected);
+    QVERIFY(!selectExtraOptions({}, system, {}));
+    QVERIFY(!selectExtraOptions(system, "-Xhc", system));
+    QVERIFY(!selectExtraOptions({}, "-b", {}));
+    QVERIFY(!selectExtraOptions(system, "-p", {}));
+    QVERIFY(!selectExtraOptions(system, {}, "-pf"));
+    QVERIFY(!selectExtraOptions({}, {}, "-Xstrategy invalid"));
+    const QStringList safe {"-b", "256K", "-Xstrategy", "default,fixed", "-no-xattrs"};
+    QCOMPARE(selectExtraOptions(system, {}, safe.join(' ')).value(), safe);
+    QCOMPARE(selectExtraOptions(system, safe.join(' '), {}).value(), safe);
+}
 
 void TestSquashfsUtils::buildCommandDirect()
 {
@@ -24,7 +43,7 @@ void TestSquashfsUtils::buildCommandDirect()
         .throttle = 75,
         .throttleSupported = true,
         .percentageSupported = true,
-        .mksqOpt = "-Xcompression-level 15",
+        .mksqOpt = {"-Xcompression-level", "15"},
         .excludesFileName = "/tmp/excludes.list",
         .sessionExcludes = "home/user/Downloads \"home/user/My Files\"",
         .useUnbuffer = false,

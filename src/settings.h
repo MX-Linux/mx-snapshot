@@ -87,7 +87,7 @@ public:
     void excludeVideos(bool exclude);
     void excludeVirtualBox(bool exclude);
     void handleInitializationError(const QString &error) const;
-    void loadConfig();
+    void loadConfig(const QString &compressionOptions);
     void otherExclusions();
     void processArgs(const QCommandLineParser &argParser);
     void processExclArgs(const QCommandLineParser &argParser);
@@ -146,7 +146,7 @@ public:
     // Phase 3: Runtime state
     QFile snapshotExcludes;
     std::unique_ptr<QTemporaryDir> tmpdir;
-    QString mksqOpt;
+    QStringList mksqOpt;
     QString sessionExcludes;
     QString snapshotDir;
     QString snapshotName;
