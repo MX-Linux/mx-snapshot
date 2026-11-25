@@ -1155,6 +1155,8 @@ void Settings::excludeNetworks(bool exclude)
     addRemoveExclusion(exclude, QStringLiteral("/etc/NetworkManager/system-connections/*"));
     addRemoveExclusion(exclude, QStringLiteral("/etc/wicd/*"));
     addRemoveExclusion(exclude, QStringLiteral("/var/lib/connman/*"));
+    addRemoveExclusion(exclude, QStringLiteral("/var/lib/iwd/*"));
+    addRemoveExclusion(exclude, QStringLiteral("/etc/wpa_supplicant/wpa_supplicant*.conf"));
 }
 
 void Settings::excludePictures(bool exclude)
