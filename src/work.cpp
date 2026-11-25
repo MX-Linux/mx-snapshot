@@ -46,6 +46,7 @@
 #include <optional>
 #include <stdexcept>
 
+#include <sys/stat.h>
 #include <unistd.h>
 
 #include "checksumutils.h"
@@ -1142,7 +1143,7 @@ bool Work::createIso(const QString &filename)
         }
 
         // The volume label is user-influenced (fullDistroName), so it rides in $3.
-        cmd = R"(xorriso -as mkisofs -l -V "$3" -R -J -pad -iso-level 3)" + isohybridArgs + bootArgs
+        cmd = R"(exec xorriso -as mkisofs -l -V "$3" -R -J -pad -iso-level 3)" + isohybridArgs + bootArgs
               + R"( -o "$1" . "$2")";
     }
 
@@ -1248,7 +1249,30 @@ bool Work::createIso(const QString &filename)
     }
 
     emit message(tr("Creating CD/DVD image file..."));
-    if (!shell.proc("/bin/bash", bashArgs, nullptr, nullptr, Cmd::QuietMode::No)) {
+    if (cleanupStarted) {
+        return false;
+    }
+    // Reserve the final name exclusively and keep the inode alive until the
+    // writer returns. Never remove an existing file or a replacement name.
+    QFile iso(QFileInfo(settings->snapshotDir + "/" + filename).absoluteFilePath());
+    if (!iso.open(QIODevice::WriteOnly | QIODevice::NewOnly,
+                  QFile::ReadOwner | QFile::WriteOwner | QFile::ReadGroup | QFile::ReadOther)) {
+        emit messageBox(BoxType::critical, tr("Error"), tr("Could not create %1: %2").arg(iso.fileName(), iso.errorString()));
+        cleanUp();
+        return false;
+    }
+    // The writer historically created images under umask 022 even when the
+    // invoking process used a stricter mask.
+    if (::fchmod(iso.handle(), 0644) != 0) {
+        qWarning() << "Could not set ISO permissions to 0644 on" << iso.fileName();
+    }
+    if (!shell.proc("/bin/bash", bashArgs, nullptr, nullptr, Cmd::QuietMode::No) || cleanupStarted) {
+        struct stat created {}, current {};
+        if (::fstat(iso.handle(), &created) == 0
+            && ::lstat(QFile::encodeName(iso.fileName()).constData(), &current) == 0
+            && created.st_dev == current.st_dev && created.st_ino == current.st_ino && !iso.remove()) {
+            qWarning() << "Could not remove partial ISO" << iso.fileName() << iso.errorString();
+        }
         if (cleanupStarted) {
             return false;
         }
@@ -1258,9 +1282,7 @@ bool Work::createIso(const QString &filename)
         cleanUp();
         return false;
     }
-    if (cleanupStarted) {
-        return false;
-    }
+    iso.close();
 
     // Make it isohybrid - only when xorriso could not do it (no isohdpfx.bin);
     // Arch folds the hybrid MBR into its xorriso call above
