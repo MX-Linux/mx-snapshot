@@ -1398,6 +1398,11 @@ void Settings::otherExclusions()
             addRemoveExclusion(true, QStringLiteral("etc/ssh/ssh_host_*"));
         }
         if (!isArch) {
+            // Older Debian installations may retain account databases from the passwd cron job.
+            addRemoveExclusion(true, QStringLiteral("var/backups/passwd.bak"));
+            addRemoveExclusion(true, QStringLiteral("var/backups/shadow.bak"));
+            addRemoveExclusion(true, QStringLiteral("var/backups/group.bak"));
+            addRemoveExclusion(true, QStringLiteral("var/backups/gshadow.bak"));
             // Exclude /etc/localtime if link and timezone not America/New_York.
             // Skipped on Arch — /etc/timezone is absent and the heuristic doesn't apply.
             QFileInfo localtimeInfo("/etc/localtime");
