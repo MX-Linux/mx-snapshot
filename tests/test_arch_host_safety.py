@@ -133,6 +133,26 @@ grep -qx 'staff:x:2001:service' "$WORK_DIR/bind/etc/group" &&
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(result.stdout.splitlines(), ['low', 'high', 'service'])
 
+    def test_failed_cleanup_record_prevents_host_changes(self):
+        for kind in ('directory', 'file', 'symlink'):
+            with self.subTest(kind=kind):
+                result = self.run_shell('''
+REAL_ROOT=$1/host
+BIND_ROOT=$REAL_ROOT
+mkdir -p "$REAL_ROOT/etc" "$1/template/etc"
+ln -s /dev/null "$1/template/etc/test"
+persist_state() { return 1; }
+bind_root_is_isolated() { return 1; }
+target=$REAL_ROOT/etc/test
+(case ''' + kind + ''' in
+    directory) make_dir "$target" "$target" ;;
+    file) touch_file "$target" "$target" ;;
+    symlink) bind_mount_template "$1/template" ;;
+esac) && exit 1
+[[ ! -e $target && ! -L $target ]]
+''')
+                self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_service_mask_stays_in_overlay(self):
         result = self.run_shell('''
 REAL_ROOT=$1/host

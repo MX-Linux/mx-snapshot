@@ -142,7 +142,7 @@ add_rm_file() {
         [[ $existing == "$p" ]] && return 0
     done
     RM_FILES+=("$p")
-    persist_state
+    persist_state || fatal "cannot record cleanup for file $p"
 }
 
 add_rm_dir() {
@@ -152,7 +152,7 @@ add_rm_dir() {
         [[ $existing == "$p" ]] && return 0
     done
     RM_DIRS+=("$p")
-    persist_state
+    persist_state || fatal "cannot record cleanup for directory $p"
 }
 
 # ------------------------------------------------------------------- mount helpers
@@ -243,12 +243,9 @@ bind_mount_template() {
                     [[ -e $target ]] || rm -f -- "$target"
                 fi
             elif [[ ! -e $orig && ! -L $orig ]]; then
-                cp -aT -- "$file" "$orig" || { warn "failed to copy symlink: $file"; continue; }
-                if [[ -e $orig ]]; then
-                    add_rm_file "$orig"
-                else
-                    rm -f "$orig"
-                fi
+                add_rm_file "$orig"
+                cp -aT -- "$file" "$orig" || { warn "failed to copy symlink: $file"; return 1; }
+                [[ -e $orig ]] || rm -f -- "$orig"
             fi
             continue
         fi
