@@ -336,9 +336,6 @@ void Work::cleanUp()
         return;
     }
     emit message(tr("Cleaning..."));
-    QTextStream out(stdout);
-    out << "\033[?25h";
-    out.flush();
     shell.close();
     QProcess::execute("sync", {});
     QDir::setCurrent("/");

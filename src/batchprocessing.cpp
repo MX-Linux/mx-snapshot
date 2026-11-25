@@ -31,10 +31,12 @@
 #include <csignal>
 #include <cstdio>
 #include <cstdlib>
+#include <unistd.h>
 
 #include "excludesutils.h"
 #include "log.h"
 #include "squashfsutils.h"
+#include "terminalcursor.h"
 #include "unitsecrets.h"
 #include "work.h"
 
@@ -132,6 +134,7 @@ void Batchprocessing::run()
         }
     }
 
+    TerminalCursor cursor(STDERR_FILENO);
     work.startTimer();
     Cmd::clearElevationDenied();
     if (!settings->checkSnapshotDir() || !settings->checkTempDir()) {
@@ -171,6 +174,7 @@ void Batchprocessing::run()
     }
 
     if (settings->editBootMenu) {
+        cursor.show();
         qDebug() << tr("The program will pause the build and open the boot menu in your text editor.");
         // getEditorCommand() is a resolved argument list executed directly (no
         // shell), so neither the configured editor nor the workDir-derived file
@@ -191,6 +195,7 @@ void Batchprocessing::run()
         if (work.isCleaningUp()) {
             return;
         }
+        cursor.hide();
     }
     disconnect(&timer, &QTimer::timeout, nullptr, nullptr);
     work.createIso(settings->snapshotName);

@@ -133,6 +133,7 @@ set(CMAKE_AUTORCC ON)
 
 # Common source files
 set(COMMON_SOURCES
+    src/terminalcursor.cpp
     src/log.cpp
     src/main.cpp
     src/cmd.cpp
@@ -152,6 +153,7 @@ set(COMMON_SOURCES
 )
 
 set(COMMON_HEADERS
+    src/terminalcursor.h
     src/common.h
     src/log.h
     src/cmd.h
@@ -338,6 +340,12 @@ if(BUILD_TESTS)
     target_include_directories(test-squashfsutils PRIVATE src)
     set_common_properties(test-squashfsutils)
     add_test(NAME squashfsutils COMMAND test-squashfsutils)
+
+    add_executable(test-terminalcursor tests/test_terminalcursor.cpp src/terminalcursor.cpp)
+    target_link_libraries(test-terminalcursor Qt6::Core Qt6::Test util)
+    target_include_directories(test-terminalcursor PRIVATE src)
+    set_common_properties(test-terminalcursor)
+    add_test(NAME terminalcursor COMMAND test-terminalcursor)
 
     add_executable(test-cmd
         tests/test_cmd.cpp

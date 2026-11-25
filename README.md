@@ -122,6 +122,9 @@ recommend it for anything other than MX or antiX compatible systems.
 
 # CANCELLING A RUN
 
+Snapshot hides the terminal cursor while displaying progress and restores it
+when the run ends, including after Ctrl-C or a forced exit.
+
 SIGINT, SIGTERM and SIGHUP cancel a running snapshot in both the CLI and the
 GUI: a running mksquashfs is stopped, the bind-root environment is torn down,
 the log is archived, and the program exits with a failure status. A signal

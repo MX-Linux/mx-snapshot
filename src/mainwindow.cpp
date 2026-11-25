@@ -49,11 +49,13 @@
 #include <QVBoxLayout>
 #include <QTextStream>
 #include <QTime>
+#include <unistd.h>
 
 #include "about.h"
 #include "excludesutils.h"
 #include "settings.h"
 #include "squashfsutils.h"
+#include "terminalcursor.h"
 #include "unitsecrets.h"
 #include "work.h"
 #include <chrono>
@@ -929,6 +931,7 @@ void MainWindow::prepareForOutput(const QString &file_name)
     }
 
     displayOutput();
+    TerminalCursor cursor(STDOUT_FILENO);
     work.createIso(file_name);
     ui->btnCancel->setText(tr("Close"));
 }

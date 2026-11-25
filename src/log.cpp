@@ -97,7 +97,7 @@ void Log::messageHandler(QtMsgType type, [[maybe_unused]] const QMessageLogConte
 
     // Check if the message contains carriage return or starts with the escape sequence for clearing the line
     if (msg.contains('\r') || msg.startsWith("\033[2K")) {
-        termOut << "\033[?25l" << msg;
+        termOut << msg;
         inHandler = false;
         return; // Skip writing to the log file
     }
