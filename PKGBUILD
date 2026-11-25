@@ -41,6 +41,7 @@ build() {
     # cmake.
     cmake -G Ninja \
         -B "$_builddir" \
+        "-DGIT_TAG_VERSION=${pkgver}" \
         -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \

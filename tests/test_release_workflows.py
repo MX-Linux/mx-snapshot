@@ -98,12 +98,14 @@ _srcdir="mx-snapshot-26.10"
         package_build.mkdir(parents=True)
         (build / 'CMakeCache.txt').write_text('developer ASAN cache')
         (package_build / 'CMakeCache.txt').write_text('stale package cache')
-        command = '''source "$1"
+        self.env['PKGVER'] = '99.12.3'
+        command = r'''source "$1"
 startdir=$2
 cmake() {
     [[ -f build/CMakeCache.txt ]] || return 1
     [[ ! -f build/arch-package/CMakeCache.txt ]] || return 2
     if [[ $1 != --build ]]; then
+        printf '%s\n' "$@" > configure-args
         while [[ $# -gt 0 ]]; do
             if [[ $1 == -B ]]; then [[ $2 == build/arch-package ]] || return 3; break; fi
             shift
@@ -115,6 +117,7 @@ cmake() {
 build
 '''
         self.run_command(['bash', '-e', '-c', command, 'test', str(ROOT / 'PKGBUILD'), str(self.repo)])
+        self.assertIn('-DGIT_TAG_VERSION=99.12.3', (self.repo / 'configure-args').read_text().splitlines())
         self.assertEqual((build / 'CMakeCache.txt').read_text(), 'developer ASAN cache')
         self.assertFalse((package_build / 'CMakeCache.txt').exists())
 

@@ -1,10 +1,13 @@
 #!/usr/bin/make -f
+include /usr/share/dpkg/pkg-info.mk
+
 export QT_SELECT=6
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		-G Ninja \
+		-DGIT_TAG_VERSION=$(DEB_VERSION) \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
 		-DBUILD_TESTS=$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),OFF,ON)
