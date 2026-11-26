@@ -1,4 +1,4 @@
-mx-snapshot (26.11.1) mx; urgency=medium
+mx-snapshot (26.11.2) mx; urgency=medium
 
   * MX and Debian hybrid ISOs can boot from USB on legacy BIOS computers
     with --grub-mbr, and on Intel Macs when the template includes the

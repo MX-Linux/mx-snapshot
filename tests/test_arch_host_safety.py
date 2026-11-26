@@ -236,13 +236,15 @@ bind_mount_template "$1/template" || exit
 BIND_ROOT=$1/bind
 REAL_ROOT=$1/host
 WORK_DIR=$1/work
-mkdir -p "$BIND_ROOT/etc" "$REAL_ROOT" "$WORK_DIR"
-ln -s /usr/share/zoneinfo/UTC "$BIND_ROOT/etc/localtime"
+zone_file=$REAL_ROOT/usr/share/zoneinfo/Etc/UTC
+mkdir -p "$BIND_ROOT/etc" "${zone_file%/*}" "$WORK_DIR"
+printf 'test zone data' > "$zone_file"
+ln -s "$zone_file" "$BIND_ROOT/etc/localtime"
 # All writes are confined to the test tree; mount operations are mocked.
 bind_mount_template() { [[ -f $1/etc/localtime && -f $1/etc/timezone ]]; }
 findmnt() { printf '%s\\n' "''' + filesystem + '''"; }
 stat() { if [[ $3 == "$BIND_ROOT" ]]; then echo ''' + ('2' if distinct_device else '1') + '''; else echo 1; fi; }
-action_timezone || exit
+stage_timezone Etc/UTC "$zone_file" || exit
 ''' + ('[[ -f $BIND_ROOT/etc/localtime && ! -L $BIND_ROOT/etc/localtime ]]' if replaced
        else '[[ -L $BIND_ROOT/etc/localtime ]]') + '\n')
                 self.assertEqual(result.returncode, 0, result.stderr)

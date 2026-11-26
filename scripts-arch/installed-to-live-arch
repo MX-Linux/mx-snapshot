@@ -381,7 +381,11 @@ action_timezone() {
         return 0
     fi
 
-    local zone_file=/usr/share/zoneinfo/$tz
+    stage_timezone "$tz" "/usr/share/zoneinfo/$tz"
+}
+
+stage_timezone() {
+    local tz=$1 zone_file=$2
     if [[ ! -f $zone_file ]]; then
         warn "timezone file missing: $zone_file"
         return 1
