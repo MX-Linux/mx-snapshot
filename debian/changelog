@@ -1,3 +1,10 @@
+mx-snapshot (26.11.3) mx; urgency=medium
+
+  * ISOs made for distribution now exclude the private key that DKMS
+    uses by default to sign kernel modules on this computer.
+
+ -- Adrian <adrian@mxlinux.org>  Fri, 27 Nov 2026 14:07:16 -0500
+
 mx-snapshot (26.11.2) mx; urgency=medium
 
   * MX and Debian hybrid ISOs can boot from USB on legacy BIOS computers

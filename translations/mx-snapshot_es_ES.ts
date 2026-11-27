@@ -4,7 +4,7 @@
     <message>
         <location filename="../src/batchprocessing.cpp" line="92"/>
         <source>Use --allow-omitted-mounts to continue.</source>
-        <translation type="unfinished"/>
+        <translation>Utilice --allow-omitted-mounts para continuar.</translation>
     </message>
     <message>
         <location filename="../src/batchprocessing.cpp" line="105"/>
@@ -807,7 +807,7 @@
     <message>
         <location filename="../src/main.cpp" line="147"/>
         <source>Allow CLI snapshots that omit separately mounted /usr or /var</source>
-        <translation type="unfinished"/>
+        <translation>Permitir instantáneas CLI que omitan los directorios /usr o /var montados por separado</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="148"/>
@@ -1164,12 +1164,12 @@
     <message>
         <location filename="../src/settings.cpp" line="1309"/>
         <source>Unsupported --compression-level value: %1</source>
-        <translation type="unfinished"/>
+        <translation>Valor --compression-level no soportado: %1</translation>
     </message>
     <message>
         <location filename="../src/settings.cpp" line="1312"/>
         <source>Ignoring unsupported mksq_opt in %1: %2</source>
-        <translation type="unfinished"/>
+        <translation>Ignorando mksq_opt no soportado en %1: %2</translation>
     </message>
     <message>
         <location filename="../src/settings.cpp" line="1324"/>
@@ -1263,12 +1263,12 @@
         <location filename="../src/systeminfo.cpp" line="28"/>
         <location filename="../src/systeminfo.cpp" line="34"/>
         <source>Could not determine whether /usr and /var are separate mounts.</source>
-        <translation type="unfinished"/>
+        <translation>No se pudo determinar si /usr y /var son montajes independientes.</translation>
     </message>
     <message>
         <location filename="../src/systeminfo.cpp" line="44"/>
         <source>The snapshot will omit the mounted contents of %1. The resulting ISO may be unusable.</source>
-        <translation type="unfinished"/>
+        <translation>La instantánea omitirá el contenido montado en %1. Es posible que el archivo ISO resultante no sea utilizable.</translation>
     </message>
 </context>
 <context>
@@ -1384,7 +1384,7 @@
     <message>
         <location filename="../src/work.cpp" line="754"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"/>
+        <translation>No se pudo copiar %1 en %2.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="785"/>
@@ -1414,17 +1414,17 @@
     <message>
         <location filename="../src/work.cpp" line="825"/>
         <source>Could not verify that %1 matches the selected kernel %2. Rebuild the archiso initramfs for this kernel.</source>
-        <translation type="unfinished"/>
+        <translation>No se pudo verificar que %1 coincida con el kernel %2 seleccionado. Recompile el initramfs de archiso para este kernel.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="841"/>
         <source>Could not verify the archiso live boot hook in %1. Rebuild the initramfs with the archiso hook.</source>
-        <translation type="unfinished"/>
+        <translation>No se pudo verificar el hook de arranque en vivo de archiso en %1. Recompile el initramfs con el hook de archiso.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="846"/>
         <source>Using %1 with the archiso live boot hook.</source>
-        <translation type="unfinished"/>
+        <translation>Usando %1 con el hook de arranque en vivo de archiso.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="1395"/>
@@ -1503,7 +1503,7 @@
     <message>
         <location filename="../src/work.cpp" line="1286"/>
         <source>Could not create %1: %2</source>
-        <translation type="unfinished"/>
+        <translation>No se pudo crear %1: %2</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="1307"/>

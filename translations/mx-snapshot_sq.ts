@@ -4,7 +4,7 @@
     <message>
         <location filename="../src/batchprocessing.cpp" line="92"/>
         <source>Use --allow-omitted-mounts to continue.</source>
-        <translation type="unfinished"/>
+        <translation>Përdorni --allow-omitted-mounts që të vazhdohet.</translation>
     </message>
     <message>
         <location filename="../src/batchprocessing.cpp" line="105"/>
@@ -19,12 +19,12 @@
     <message>
         <location filename="../src/batchprocessing.cpp" line="126"/>
         <source>Warning: these services in /etc/systemd/system contain what look like passwords, tokens or keys, and will be included in the snapshot as they are:</source>
-        <translation type="unfinished"/>
+        <translation>Kujdes: këto shërbime te /etc/systemd/system përmbajnë çka duket si fjalëkalime, token-e apo kyçe dhe do të përfshihen te fotografimi siç janë:</translation>
     </message>
     <message>
         <location filename="../src/batchprocessing.cpp" line="131"/>
         <source>Warning: these service files or folders could not be checked for passwords, tokens or keys, and will be included in the snapshot as they are:</source>
-        <translation type="unfinished"/>
+        <translation>Kujdes: kartela apo dosje shërbimi s’u kontrolluan dot për fjalëkalime, token-ë apo kyçe dhe do të përfshihen te fotografimi siç janë:</translation>
     </message>
     <message>
         <location filename="../src/batchprocessing.cpp" line="178"/>
@@ -34,12 +34,12 @@
     <message>
         <location filename="../src/batchprocessing.cpp" line="194"/>
         <source>The boot-menu editor failed; the snapshot cannot continue with potentially unedited files.</source>
-        <translation type="unfinished"/>
+        <translation>Përpunuesi për boot-menu dështoi; fotografimi s’mund të vazhdojë me kartela potencialisht të papërpunuara.</translation>
     </message>
     <message>
         <location filename="../src/batchprocessing.cpp" line="223"/>
         <source>Administrator access was not granted; the snapshot cannot continue.</source>
-        <translation type="unfinished"/>
+        <translation>S’u akordua hyrje si përgjegjës; fotografimi s’mund të vazhdojë.</translation>
     </message>
     <message>
         <location filename="../src/batchprocessing.cpp" line="350"/>
@@ -511,7 +511,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="505"/>
         <source>Administrator access was not granted; the snapshot cannot continue.</source>
-        <translation type="unfinished"/>
+        <translation>S’u akordua hyrje si përgjegjës; fotografimi s’mund të vazhdojë.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="537"/>
@@ -593,32 +593,32 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="787"/>
         <source>Administrator access is required to create a snapshot.</source>
-        <translation type="unfinished"/>
+        <translation>Që të krijohet një fotografim, lypset hyrje si përgjegjës.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="788"/>
         <source>The operation was cancelled. Select Next when you are ready to try again.</source>
-        <translation type="unfinished"/>
+        <translation>Veprimi u anulua. Përzgjidhni “Pasuesi”, kur të jeni gati për të riprovuar.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="791"/>
         <source>Could not create the snapshot or work directory.</source>
-        <translation type="unfinished"/>
+        <translation>S’u krijua dot drejtoria e fotografimit apo punë.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="817"/>
         <source>These services in /etc/systemd/system contain what look like passwords, tokens or keys, and will be included in the snapshot as they are:</source>
-        <translation type="unfinished"/>
+        <translation>Këto shërbime te /etc/systemd/system përmbajnë çka duket si fjalëkalime, token-e apo kyçe dhe do të përfshihen te fotografimi siç janë:</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="823"/>
         <source>These service files or folders could not be checked for passwords, tokens or keys, and will be included in the snapshot as they are:</source>
-        <translation type="unfinished"/>
+        <translation>Kartela apo dosje shërbimi s’u kontrolluan dot për fjalëkalime, token-ë apo kyçe dhe do të përfshihen te fotografimi siç janë:</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="827"/>
         <source>Every system started or installed from this ISO will have them. If the ISO will be shared, remove the credentials from these files or add the files to the exclusion list. Disabling a service is not enough: its files are still copied.</source>
-        <translation type="unfinished"/>
+        <translation>Çdo sistem i nisur apo instaluar prej kësaj ISO-je do t’i ketë. Nëse ISO-ja do të ndahet me të tjerë, hiqni kredencialet prej këtyre kartelave, ose shtoni kartelat te lista e përjashtimeve. Çaktivizimi i një shërbimi s’mjafton: kartelat e tij kopjohen prapëseprapë.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="830"/>
@@ -628,7 +628,7 @@
     <message>
         <location filename="../src/mainwindow.cpp" line="832"/>
         <source>Credentials in services</source>
-        <translation type="unfinished"/>
+        <translation>Kredenciale te shërbime</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="840"/>
@@ -862,12 +862,12 @@
     <message>
         <location filename="../src/main.cpp" line="166"/>
         <source>Add the &apos;xorg=nvidia&apos; boot option to the ISO (for booting on a system with an NVIDIA card).</source>
-        <translation type="unfinished"/>
+        <translation>Shtoni te ISO-ja mundësinë &apos;xorg=nvidia&apos; e nisjes (për nisje në një sistem me një kartë NVIDIA).</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="174"/>
         <source>Optional suffix for a monthly snapshot; only valid together with --month.</source>
-        <translation type="unfinished"/>
+        <translation>Prapashtesë opsionale për një fotografim mujor; e vlefshme vetëm tok me mundësinë --month.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="197"/>
@@ -909,17 +909,17 @@
     <message>
         <location filename="../src/main.cpp" line="287"/>
         <source>Cancelled before the snapshot started.</source>
-        <translation type="unfinished"/>
+        <translation>Anuluar para se të niste fotografimi.</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="316"/>
         <source>Fatal error:</source>
-        <translation type="unfinished"/>
+        <translation>Gabim fatal:</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="318"/>
         <source>Fatal error: unknown exception</source>
-        <translation type="unfinished"/>
+        <translation>Gabim fatal: përjashtim i panjohur</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="343"/>
@@ -1149,7 +1149,7 @@
     <message>
         <location filename="../src/settings.cpp" line="1250"/>
         <source>Could not create user configuration directory: %1</source>
-        <translation type="unfinished"/>
+        <translation>S’u krijua dot drejtori formësimi përdoruesish: %1</translation>
     </message>
     <message>
         <location filename="../src/settings.cpp" line="1271"/>
@@ -1159,17 +1159,17 @@
     <message>
         <location filename="../src/settings.cpp" line="1294"/>
         <source>Unsupported compression &apos;%1&apos; in configuration, using zstd.</source>
-        <translation type="unfinished"/>
+        <translation>Ngjeshje e pambuluar &apos;%1&apos; te formësimi, po përdoret zstd.</translation>
     </message>
     <message>
         <location filename="../src/settings.cpp" line="1309"/>
         <source>Unsupported --compression-level value: %1</source>
-        <translation type="unfinished"/>
+        <translation>Vlerë e pambuluar për --compression-level: %1</translation>
     </message>
     <message>
         <location filename="../src/settings.cpp" line="1312"/>
         <source>Ignoring unsupported mksq_opt in %1: %2</source>
-        <translation type="unfinished"/>
+        <translation>Po shpërfillet mksq_opt i pambuluar te %1: %2</translation>
     </message>
     <message>
         <location filename="../src/settings.cpp" line="1324"/>
@@ -1227,27 +1227,27 @@
     <message>
         <location filename="../src/excludesutils.cpp" line="91"/>
         <source>Could not open default exclusion file at %1.</source>
-        <translation type="unfinished"/>
+        <translation>S’u hap dot kartela parazgjedhje e përjashtimeve te %1.</translation>
     </message>
     <message>
         <location filename="../src/excludesutils.cpp" line="97"/>
         <source>Could not create exclusion file directory at %1.</source>
-        <translation type="unfinished"/>
+        <translation>S’u krijua dot drejtori kartelash përjashtimesh te %1.</translation>
     </message>
     <message>
         <location filename="../src/excludesutils.cpp" line="106"/>
         <source>Could not prepare exclusion file at %1.</source>
-        <translation type="unfinished"/>
+        <translation>S’u përgatit dot kartelë përjashtimesh te %1.</translation>
     </message>
     <message>
         <location filename="../src/excludesutils.cpp" line="123"/>
         <source>Could not read default exclusion file at %1.</source>
-        <translation type="unfinished"/>
+        <translation>S’u lexuar dot kartelë parazgjedhje përjashtimesh te %1.</translation>
     </message>
     <message>
         <location filename="../src/excludesutils.cpp" line="131"/>
         <source>Could not write exclusion file at %1.</source>
-        <translation type="unfinished"/>
+        <translation>S’u shkrua dot kartelë përjashtimesh te %1.</translation>
     </message>
     <message>
         <location filename="../src/excludesutils.cpp" line="113"/>
@@ -1263,12 +1263,12 @@
         <location filename="../src/systeminfo.cpp" line="28"/>
         <location filename="../src/systeminfo.cpp" line="34"/>
         <source>Could not determine whether /usr and /var are separate mounts.</source>
-        <translation type="unfinished"/>
+        <translation>S’u përcaktua dot nëse /usr dhe /var janë montime ndaras apo jo.</translation>
     </message>
     <message>
         <location filename="../src/systeminfo.cpp" line="44"/>
         <source>The snapshot will omit the mounted contents of %1. The resulting ISO may be unusable.</source>
-        <translation type="unfinished"/>
+        <translation>Fotografimi do të lërë jashtë lëndën e montuar të %1. ISO-ja e dalë nga kjo mund të jetë e papërdorshme.</translation>
     </message>
 </context>
 <context>
@@ -1333,7 +1333,7 @@
     <message>
         <location filename="../src/work.cpp" line="394"/>
         <source>Administrator access was not granted; the snapshot cannot continue.</source>
-        <translation type="unfinished"/>
+        <translation>S’u akordua hyrje si përgjegjës; fotografimi s’mund të vazhdojë.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="450"/>
@@ -1358,13 +1358,13 @@
     <message>
         <location filename="../src/work.cpp" line="696"/>
         <source>ISO template not found: </source>
-        <translation type="unfinished"/>
+        <translation>S’u gjet gjedhe ISO-sh:</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="704"/>
         <location filename="../src/work.cpp" line="862"/>
         <source>Could not extract the ISO template: </source>
-        <translation type="unfinished"/>
+        <translation>S’u përftua dot gjedhja e ISO-ve: </translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="732"/>
@@ -1374,17 +1374,17 @@
     <message>
         <location filename="../src/work.cpp" line="735"/>
         <source>Detected boot/ or efi/ under the work directory root; the template may have been extracted to the wrong location.</source>
-        <translation type="unfinished"/>
+        <translation>U pikas boot/ ose efi/ nën drejtorinë e punës për rrënjën; gjedhja mund të jetë përftuar te vendndodhja e gabuar.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="738"/>
         <source>Template: %1</source>
-        <translation type="unfinished"/>
+        <translation>Gjedhe: %1</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="754"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"/>
+        <translation>S’u kopjua dot %1 te %2.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="785"/>
@@ -1409,7 +1409,7 @@
     <message>
         <location filename="../src/work.cpp" line="808"/>
         <source>No /boot/archiso.img found, attempting to create one...</source>
-        <translation type="unfinished"/>
+        <translation>S’u gjet /boot/archiso.img, po provohet të krijohet një e tillë…</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="825"/>
@@ -1434,7 +1434,7 @@
     <message>
         <location filename="../src/work.cpp" line="852"/>
         <source>Could not find an initramfs image to use.</source>
-        <translation type="unfinished"/>
+        <translation>S’u gjet dot një pamje initramfs për t’u përdorur.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="877"/>
@@ -1444,7 +1444,7 @@
     <message>
         <location filename="../src/work.cpp" line="885"/>
         <source>Could not copy the template initrd: </source>
-        <translation type="unfinished"/>
+        <translation>S&quot;u kopjua dot gjedhja initrd: </translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="891"/>
@@ -1477,7 +1477,7 @@
     <message>
         <location filename="../src/work.cpp" line="963"/>
         <source>Could not create the new initrd: %1</source>
-        <translation type="unfinished"/>
+        <translation>S’u krijua dot initrd e re: %1</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="1028"/>
@@ -1493,7 +1493,7 @@
         <location filename="../src/work.cpp" line="1054"/>
         <location filename="../src/work.cpp" line="1073"/>
         <source>Could not move %1 to the ISO directory.</source>
-        <translation type="unfinished"/>
+        <translation>S’u kalua dot %1 te drejtoria ISO.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="1277"/>
@@ -1503,7 +1503,7 @@
     <message>
         <location filename="../src/work.cpp" line="1286"/>
         <source>Could not create %1: %2</source>
-        <translation type="unfinished"/>
+        <translation>S’u krijua dot %1: %2</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="1307"/>
@@ -1555,12 +1555,12 @@
     <message>
         <location filename="../src/work.cpp" line="1391"/>
         <source>paru not found; cannot install %1 from the AUR.</source>
-        <translation type="unfinished"/>
+        <translation>S’u gjet paru; s’mund të instalohet %1 nga AUR.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="1396"/>
         <source>Could not install %1; continuing without the installer.</source>
-        <translation type="unfinished"/>
+        <translation>S’u instaluar dot %1; po vazhdohet pa instaluesin.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="1405"/>
@@ -1580,13 +1580,13 @@
     <message>
         <location filename="../src/work.cpp" line="1540"/>
         <source>Rebuilding initramfs with: mkinitcpio %1</source>
-        <translation type="unfinished"/>
+        <translation>Po rimontohet initramfs me: mkinitcpio %1</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="1729"/>
         <location filename="../src/work.cpp" line="1751"/>
         <source>Could not create the package list: </source>
-        <translation type="unfinished"/>
+        <translation>S’u krijua dot lista e paketave: </translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="1738"/>
@@ -1607,7 +1607,7 @@
     <message>
         <location filename="../src/work.cpp" line="1849"/>
         <source>Could not remove this computer&apos;s snap store registration from the snapshot.</source>
-        <translation type="unfinished"/>
+        <translation>S’u hoq dot nga fotografimi regjistrimi për këtë kompjuter tek shitore snap.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="2199"/>

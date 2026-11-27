@@ -901,8 +901,8 @@
         <location filename="../src/main.cpp" line="388"/>
         <location filename="../src/settings.cpp" line="785"/>
         <location filename="../src/settings.cpp" line="794"/>
-        <location filename="../src/settings.cpp" line="1464"/>
-        <location filename="../src/settings.cpp" line="1571"/>
+        <location filename="../src/settings.cpp" line="1467"/>
+        <location filename="../src/settings.cpp" line="1574"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1175,8 +1175,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="1462"/>
-        <location filename="../src/settings.cpp" line="1569"/>
+        <location filename="../src/settings.cpp" line="1465"/>
+        <location filename="../src/settings.cpp" line="1572"/>
         <source>Output file %1 already exists. Please use another file name, or delete the existent file.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -4,7 +4,7 @@
     <message>
         <location filename="../src/batchprocessing.cpp" line="92"/>
         <source>Use --allow-omitted-mounts to continue.</source>
-        <translation type="unfinished"/>
+        <translation>Veuillez utiliser --allow-omitted-mounts pour continuer.</translation>
     </message>
     <message>
         <location filename="../src/batchprocessing.cpp" line="105"/>
@@ -807,7 +807,7 @@
     <message>
         <location filename="../src/main.cpp" line="147"/>
         <source>Allow CLI snapshots that omit separately mounted /usr or /var</source>
-        <translation type="unfinished"/>
+        <translation>Autoriser les instantanés (snapshots) CLI qui omettent /usr ou /var montés séparément</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="148"/>
@@ -1163,12 +1163,12 @@ Les instantanés « snapshots » %1 occupent %2 de l’espace disque.
     <message>
         <location filename="../src/settings.cpp" line="1309"/>
         <source>Unsupported --compression-level value: %1</source>
-        <translation type="unfinished"/>
+        <translation>Valeur non prise en charge pour --compression-level : %1</translation>
     </message>
     <message>
         <location filename="../src/settings.cpp" line="1312"/>
         <source>Ignoring unsupported mksq_opt in %1: %2</source>
-        <translation type="unfinished"/>
+        <translation>mksq_opt non prise en charge: option ignorée dans %1 : %2</translation>
     </message>
     <message>
         <location filename="../src/settings.cpp" line="1324"/>
@@ -1262,12 +1262,12 @@ Les instantanés « snapshots » %1 occupent %2 de l’espace disque.
         <location filename="../src/systeminfo.cpp" line="28"/>
         <location filename="../src/systeminfo.cpp" line="34"/>
         <source>Could not determine whether /usr and /var are separate mounts.</source>
-        <translation type="unfinished"/>
+        <translation>Impossible de déterminer si /usr et /var sont des points de montage distincts.</translation>
     </message>
     <message>
         <location filename="../src/systeminfo.cpp" line="44"/>
         <source>The snapshot will omit the mounted contents of %1. The resulting ISO may be unusable.</source>
-        <translation type="unfinished"/>
+        <translation>L’instantané (snapshot) omettra le contenu monté de %1. L’ISO résultante peut être inutilisable.</translation>
     </message>
 </context>
 <context>
@@ -1383,7 +1383,7 @@ Les instantanés « snapshots » %1 occupent %2 de l’espace disque.
     <message>
         <location filename="../src/work.cpp" line="754"/>
         <source>Could not copy %1 to %2.</source>
-        <translation type="unfinished"/>
+        <translation>Impossible de copier %1 vers %2.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="785"/>
@@ -1413,17 +1413,17 @@ Les instantanés « snapshots » %1 occupent %2 de l’espace disque.
     <message>
         <location filename="../src/work.cpp" line="825"/>
         <source>Could not verify that %1 matches the selected kernel %2. Rebuild the archiso initramfs for this kernel.</source>
-        <translation type="unfinished"/>
+        <translation>Impossible de vérifier que %1 correspond au noyau sélectionné %2. Reconstruisez l’initramfs archiso pour ce noyau.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="841"/>
         <source>Could not verify the archiso live boot hook in %1. Rebuild the initramfs with the archiso hook.</source>
-        <translation type="unfinished"/>
+        <translation>Impossible de vérifier le hook archiso de démarrage live dans %1. Reconstruisez l’initramfs avec le hook archiso.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="846"/>
         <source>Using %1 with the archiso live boot hook.</source>
-        <translation type="unfinished"/>
+        <translation>Utilisation de %1 avec le hook archiso de démarrage live.</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="1395"/>
@@ -1502,7 +1502,7 @@ Les instantanés « snapshots » %1 occupent %2 de l’espace disque.
     <message>
         <location filename="../src/work.cpp" line="1286"/>
         <source>Could not create %1: %2</source>
-        <translation type="unfinished"/>
+        <translation>Impossible de créer %1 : %2</translation>
     </message>
     <message>
         <location filename="../src/work.cpp" line="1307"/>
