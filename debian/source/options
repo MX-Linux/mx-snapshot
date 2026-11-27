@@ -1,0 +1,4 @@
+tar-ignore
+# CMake build trees and locally built Arch packages.
+tar-ignore = build
+tar-ignore = build-*

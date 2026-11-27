@@ -53,7 +53,6 @@ class ReleaseWorkflows(unittest.TestCase):
         remote = self.directory / 'remote.git'
         self.run_command(['git', 'init', '-q', '--bare', str(remote)])
         self.git('remote', 'add', 'mxlinux', str(remote))
-        # release.sh names its download in /tmp after the tag.
         pkgver = f'99.98.{secrets.randbits(64)}g'
         version = 'v' + pkgver
         self.git('tag', '-a', version, '-m', 'Regression release')
@@ -81,6 +80,13 @@ _srcdir="mx-snapshot-26.10"
         curl.write_text('#!/bin/bash\nwhile [[ $# -gt 0 ]]; do if [[ $1 == -o ]]; then printf test > "$2"; exit; fi; shift; done\nexit 1\n')
         curl.chmod(0o755)
         self.env['PATH'] = str(tools) + os.pathsep + self.env['PATH']
+        for flag in ('--update', '--force'):
+            result = self.run_command(['bash', str(ROOT / 'release.sh'), flag, '--no-push', version],
+                                      self.repo, check=False)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertEqual(self.git('ls-remote', '--tags', 'mxlinux'), '')
+            self.assertEqual(self.run_command(['git', 'rev-list', '--count', 'HEAD'], aur).stdout.strip(), '1')
+
         for _ in range(2):
             self.run_command(['bash', str(ROOT / 'release.sh'), '--no-push', version], self.repo)
             self.assertEqual(self.run_command(['git', 'rev-list', '--count', 'HEAD'], aur).stdout.strip(), '2')
@@ -95,6 +101,14 @@ _srcdir="mx-snapshot-26.10"
             resolved = self.run_command(['bash', '-c', 'source PKGBUILD; printf "%s" "$_srcdir"'], aur).stdout
             self.assertEqual(resolved, 'mx-snapshot-' + pkgver)
 
+        # A recipe-only retry selects the published tag even with a newer local tag.
+        self.git('tag', '-d', version)
+        self.git('tag', '999.1')
+        self.run_command(['bash', str(ROOT / 'release.sh'), '--update', '--no-push'], self.repo)
+        self.assertEqual(self.git('tag', '-l'), '999.1')
+        self.assertEqual(self.git('ls-remote', '--tags', '--refs', 'mxlinux').split()[1], 'refs/tags/' + version)
+        self.assertEqual(self.run_command(['git', 'rev-list', '--count', 'HEAD'], aur).stdout.strip(), '2')
+
     def test_remote_failure_aborts_before_aur_edits(self):
         self.git('tag', '99.97g')
         self.git('remote', 'add', 'mxlinux', str(self.directory / 'missing.git'))
@@ -102,6 +116,29 @@ _srcdir="mx-snapshot-26.10"
         self.assertNotEqual(result.returncode, 0)
         self.assertIn('Could not check tag', result.stderr)
         self.assertFalse((self.repo / 'aur').exists())
+
+    def test_clean_preserves_legacy_and_current_arch_packages(self):
+        script = self.repo / 'build.sh'
+        shutil.copy2(ROOT / 'build.sh', script)
+        (self.repo / 'CMakeLists.txt').touch()
+        build = self.repo / 'build'
+        build.mkdir()
+        legacy = build / 'example-1.0-1-x86_64.pkg.tar.zst'
+        signature = build / (legacy.name + '.sig')
+        legacy.write_bytes(b'old package')
+        signature.write_bytes(b'signature')
+        for with_arch_dir in (False, True):
+            with self.subTest(with_arch_dir=with_arch_dir):
+                if with_arch_dir:
+                    (build / 'arch').mkdir()
+                    (build / 'arch' / legacy.name).write_bytes(b'new package')
+                (build / '.ninja_log').touch()
+                self.run_command([str(script), 'clean'], self.repo)
+                self.assertEqual(legacy.read_bytes(), b'old package')
+                self.assertEqual(signature.read_bytes(), b'signature')
+                self.assertFalse((build / '.ninja_log').exists())
+                if with_arch_dir:
+                    self.assertEqual((build / 'arch' / legacy.name).read_bytes(), b'new package')
 
     def test_package_build_keeps_developer_cache_and_discards_package_cache(self):
         build = self.repo / 'build'

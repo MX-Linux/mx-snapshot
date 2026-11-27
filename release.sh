@@ -11,9 +11,10 @@ usage() {
 Usage: release [OPTIONS] [VERSION]
 Create or reuse an annotated release tag and publish the corresponding AUR recipe.
 Omit VERSION to reuse the latest version tag. Run inside the project checkout.
-  -n, --no-push       Commit the AUR update locally. The project tag is still pushed.
+  -n, --no-push       Commit the AUR update locally. Normal releases still push the project tag.
   -r, --remote NAME   Git remote for the project tag (detected from the recipe)
   -a, --aur-dir DIR   Separate AUR checkout (default: aur)
+      --update        Update the AUR recipe for a published tag (alias: --force)
       --tag-only      Publish just the project tag, including for projects without AUR
   -h, --help          Show this help
 AUR_PUSH=0 also skips the AUR push. AUR_REMOTE, AUR_LOCAL_BRANCH and
@@ -29,6 +30,7 @@ aur_remote=${AUR_REMOTE:-aur}
 aur_branch=${AUR_LOCAL_BRANCH:-main}
 publish_branch=${AUR_REMOTE_BRANCH:-master}
 tag_only=false
+update_only=false
 while (($#)); do
     case $1 in
         -h|--help) usage; exit ;;
@@ -40,12 +42,13 @@ while (($#)); do
             shift ;;
         --remote=*) remote=${1#*=} ;;
         --aur-dir=*) aur=${1#*=} ;;
-        --force|--update) echo "$1 is redundant. Existing tags are reused." >&2 ;;
+        --force|--update) update_only=true ;;
         -*) die "unknown argument: $1" ;;
         *) [[ -z $tag ]] || die "only one version may be given"; tag=$1 ;;
     esac
     shift
 done
+[[ $update_only == false || $tag_only == false ]] || die "--update and --tag-only cannot be combined"
 version_re='^v?[0-9]+\.[0-9]+(\.[0-9]+)?[a-zA-Z0-9]*$'
 [[ -z $tag || $tag =~ $version_re ]] || die "Invalid version format: $tag. Expected formats include 26.01, v1.0.0 and 26.01arch."
 root=$(git rev-parse --show-toplevel) || die "run inside a project checkout"
@@ -88,8 +91,8 @@ git remote get-url "$remote" >/dev/null || die "unknown remote: $remote"
 # Query the push destination in case the remote has a distinct fetch URL.
 destination=$(git remote get-url --push "$remote")
 git ls-remote --tags --refs "$destination" > "$work/tags" || die "Could not check tag on $remote"
-git tag -l > "$work/names"
-sed 's|^.*refs/tags/||' "$work/tags" >> "$work/names"
+sed 's|^.*refs/tags/||' "$work/tags" > "$work/names"
+if [[ $update_only == false ]]; then git tag -l >> "$work/names"; fi
 latest=$(awk '/^v?[0-9]+\.[0-9]+(\.[0-9]+)?[a-zA-Z0-9]*$/ {v=$0; sub(/^v/,"",v); print v, $0}' "$work/names" | LC_ALL=C sort -k1,1V -k2,2 | tail -1 | awk '{print $2}')
 if [[ -z $tag ]]; then
     [[ -n $latest ]] || die "no version tags found. Specify a version"
@@ -97,7 +100,7 @@ if [[ -z $tag ]]; then
     echo "No version specified; using latest tag '$tag'"
 fi
 branch=$(git branch --show-current)
-if [[ $branch != "${MAIN_BRANCH:-main}" && ( -n ${MAIN_BRANCH:-} || $branch != master ) ]]; then
+if [[ $update_only == false && $branch != "${MAIN_BRANCH:-main}" && ( -n ${MAIN_BRANCH:-} || $branch != master ) ]]; then
     confirm "Currently on '$branch'. Continue?" || exit 0
 fi
 
@@ -106,12 +109,25 @@ pkgver=${tag#v}
 remote_oid=$(awk -v ref="$ref" '$2==ref {print $1}' "$work/tags")
 local_oid=$(git rev-parse -q --verify "$ref" || true)
 if [[ -n $remote_oid && -n $local_oid && $remote_oid != "$local_oid" ]]; then die "local and remote tag '$tag' differ"; fi
+if [[ $update_only == true && -z $remote_oid ]]; then
+    die "--update requires tag '$tag' to already be published on $remote"
+fi
 new=false
 if [[ -z $remote_oid && -z $local_oid ]]; then
     new=true
     if [[ -n $latest ]]; then
         last=${latest#v}
         [[ $pkgver != "$last" && $(printf '%s\n' "$pkgver" "$last" | sort -V | tail -1) == "$pkgver" ]] || die "$tag must be newer than $latest"
+    fi
+fi
+
+# Read a remote-only release object without creating a local tag in update mode.
+release_ref=$ref
+if [[ $update_only == true ]]; then
+    release_ref=$remote_oid
+    if ! git cat-file -e "$release_ref" 2>/dev/null; then
+        git fetch --no-tags --no-write-fetch-head "$destination" "$ref"
+        git cat-file -e "$release_ref"
     fi
 fi
 
@@ -146,8 +162,8 @@ if [[ $tag_only == false ]]; then
         fi
         # For a retry, use the recipe that belongs to the release, even after the branch advances.
         archive_ref=HEAD
-        if [[ -n $remote_oid && -z $local_oid ]]; then git fetch --no-tags "$destination" "$ref:$ref"; local_oid=$remote_oid; fi
-        [[ -z $local_oid ]] || archive_ref=$ref
+        if [[ $update_only == false && -n $remote_oid && -z $local_oid ]]; then git fetch --no-tags "$destination" "$ref:$ref"; local_oid=$remote_oid; fi
+        if [[ -n $local_oid || $update_only == true ]]; then archive_ref=$release_ref; fi
         if git cat-file -e "$archive_ref:arch/PKGBUILD" 2>/dev/null; then
             git archive "$archive_ref" arch | tar -x -C "$work"
             for file in "$work"/arch/*; do
@@ -182,17 +198,21 @@ if [[ $new == true ]]; then
     cat "$work/notes"
     confirm "Create tag $tag and push it to $remote?" || exit 0
     git tag -a "$tag" -F "$work/notes"
-elif [[ -z $local_oid ]]; then
+elif [[ $update_only == false && -z $local_oid ]]; then
     git fetch --no-tags "$destination" "$ref:$ref"
 fi
-if [[ -z $remote_oid ]]; then git push "$remote" "$ref:$ref"; fi
+if [[ $update_only == false && -z $remote_oid ]]; then git push "$remote" "$ref:$ref"; fi
 [[ $tag_only == false ]] || exit 0
-annotation=$(git for-each-ref --format='%(contents)' "$ref")
-annotation=${annotation:-Update to $tag}
+if [[ $update_only == true ]]; then
+    annotation="Update AUR package to $tag"
+else
+    annotation=$(git for-each-ref --format='%(contents)' "$ref")
+    annotation=${annotation:-Update to $tag}
+fi
 url=https://github.com/$repo/archive/refs/tags/$tag.tar.gz
 curl -fLsS --retry 4 --retry-all-errors --retry-delay 5 -o "$work/archive" "$url"
 [[ -s $work/archive ]] || die "empty tag archive"
-if git cat-file -e "$ref:CMakeLists.txt" 2>/dev/null; then
+if git cat-file -e "$release_ref:CMakeLists.txt" 2>/dev/null; then
     tar -tzf "$work/archive" -- "${repo##*/}-$pkgver/CMakeLists.txt" >/dev/null || die "tag archive has an unexpected source directory"
 fi
 checksum=$(sha256sum "$work/archive"); checksum=${checksum%% *}

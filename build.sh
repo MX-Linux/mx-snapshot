@@ -81,7 +81,13 @@ dir=build
 [[ -z $component ]] || dir+=-"$component"
 
 cleanup() {
-    rm -rf -- "$dir"
+    # Older builds wrote Arch packages directly to build/. Current builds use build/arch/.
+    if [[ $dir == build && ! -L build && -d build ]]; then
+        find build -mindepth 1 -maxdepth 1 ! -name arch ! -name '*.pkg.tar' ! -name '*.pkg.tar.*' -exec rm -rf -- {} +
+        rmdir --ignore-fail-on-non-empty -- build
+    else
+        rm -rf -- "$dir"
+    fi
     rm -f -- debian/*.debhelper.log debian/*.substvars debian/files translations/*.qm
     rm -rf -- debian/.debhelper obj-*/
     if [[ -f debian/control ]]; then

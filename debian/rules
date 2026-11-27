@@ -14,7 +14,10 @@ override_dh_auto_configure:
 
 override_dh_auto_clean:
 	dh_auto_clean
-	rm -rf build/
+	if [ ! -L build ] && [ -d build ]; then \
+		find build -mindepth 1 -maxdepth 1 ! -name arch ! -name '*.pkg.tar' ! -name '*.pkg.tar.*' -exec rm -rf -- {} + && \
+		rmdir --ignore-fail-on-non-empty -- build; \
+	else rm -rf build; fi
 	rm -f translations/*.qm
 	-find manual -name '*.gz' -delete || true
 
