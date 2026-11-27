@@ -143,8 +143,8 @@ when cleanup finishes. `--month` runs start once the window is shown.
 
 # ARCH PACKAGING AND RELEASES
 
-`./build.sh --arch` builds in `build/arch-package` and clears that directory
-before configuration. Developer builds in `build/` are preserved, and their
+`./build.sh --arch` builds in a temporary directory and writes the package to
+`build/arch/`. Developer builds in `build/` are preserved, and their
 cached compiler flags and test options do not affect the package.
 
 `./release.sh` publishes the requested tag before updating the AUR recipe,

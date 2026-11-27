@@ -1,67 +1,116 @@
 #!/usr/bin/env bash
+set -euo pipefail
+unset CDPATH
+shopt -s nullglob
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.."
+root=$PWD
 
-# Get script directory and determine app name
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
-APPNAME="$(basename "$PROJECT_DIR")"
+fail() { echo "$*" >&2; exit 1; }
 
-echodo() {
-  echo "${@}"
-  ${@}
-}
+(( $# <= 1 )) || fail "Usage: get_translations [--desktop]"
+case "${1:-}" in
+    '')
+        directory=$root/translations
+        english=("$directory/"*_en.ts)
+        (( ${#english[@]} == 1 )) || fail "Expected one English source catalog in $directory"
+        resource=${english[0]##*/}
+        resource=${resource%_en.ts}
+        source_file=${resource}_en.ts
+        output=.
+        extension=ts
+        minimum=25
+        lupdate=
+        for tool in lupdate-qt6 /usr/lib/qt6/bin/lupdate lupdate6 lupdate; do
+            if command -v "$tool" >/dev/null; then lupdate=$tool; break; fi
+        done
+        [[ -n $lupdate ]] || fail "Qt lupdate is required"
+        sources=()
+        for file in "$root/"*.{cpp,cc,cxx,h,hpp,ui,qml}; do
+            case ${file##*/} in moc_*|qrc_*|ui_*.h) continue ;; esac
+            sources+=("$file")
+        done
+        for dir in src qml; do
+            [[ ! -d $root/$dir ]] || sources+=("$root/$dir")
+        done
+        (( ${#sources[@]} )) || fail "No application sources found in $root"
+        ;;
+    --desktop)
+        directory=$root/translations-desktop-file
+        templates=("$directory/pot/"*.pot)
+        (( ${#templates[@]} == 1 )) || fail "Expected one desktop translation template in $directory/pot"
+        resource=${templates[0]##*/}
+        resource=${resource%.pot}
+        source_file=pot/$resource.pot
+        output=po
+        extension=po
+        minimum=''
+        ;;
+    *) fail "Usage: get_translations [--desktop]" ;;
+esac
 
-# Prepare transifex
-if [ ! -s  .tx/config ]; then
-   mkdir -p .tx
-   cat <<EOF > .tx/config
+command -v tx >/dev/null || fail "The Transifex client (tx) is required"
+exec 9<"$directory"
+flock -x 9
+# A sibling of translations/ preserves the source paths written by lupdate.
+stage=$(mktemp -d "$root/.translation-refresh.XXXXXXXX")
+trap 'rm -rf -- "$stage"' EXIT
+cd -- "$stage"
+mkdir -p .tx "$output" "$(dirname -- "$source_file")"
+config=$directory/.tx/config
+if [[ -s $config ]]; then
+    # Older desktop configs point at a template in the working directory.
+    sed -E "s|^([[:space:]]*source_file[[:space:]]*=).*|\\1 $source_file|; s|^([[:space:]]*file_filter[[:space:]]*=).*|\\1 $output/${resource}_<lang>.$extension|" "$config" > .tx/config
+else
+    cat > .tx/config <<CONFIG
 [main]
 host = https://www.transifex.com
 
-[o:anticapitalista:p:antix-development:r:$APPNAME]
-file_filter = ./${APPNAME}_<lang>.ts
-source_file = ${APPNAME}_en.ts
+[o:anticapitalista:p:antix-development:r:$resource]
+file_filter = $output/${resource}_<lang>.$extension
+source_file = $source_file
 source_lang = en
-type        = ts
-minimum_perc = 25
-EOF
+type = $extension
+CONFIG
 fi
-
-# Migrate percent checking
-if [ -z "$(grep minimum_perc .tx/config)" ]; then
-        echo "minimum_perc = 25" >> .tx/config
+if [[ -n $minimum ]] && ! grep -Eq '^[[:space:]]*minimum_perc[[:space:]]*=' .tx/config; then
+    echo "minimum_perc = $minimum" >> .tx/config
 fi
+cp -- "$directory/$source_file" "$source_file"
+tx pull -r "antix-development.$resource" --all
 
-# Remove existing translations
-find . -type f -name '*.ts' -not -name '*en.ts' -delete
-
-# Get all translations
-if command -v tx >/dev/null; then
-   echodo tx pull -r antix-development.$APPNAME --all
+if [[ $extension == ts ]]; then
+    rm -f -- "$source_file" "${resource}_en_US.ts"
 fi
-
-# en_US is redundant with the English source strings and the copy on
-# Transifex contains bad data (e.g. "Error" mistranslated as a full
-# compression-algorithm message); never keep it.
-rm -f "${APPNAME}_en_US.ts"
-
-# Find lupdate command in common locations
-LUPDATE=""
-for cmd in lupdate lupdate-qt6 /usr/lib/qt6/bin/lupdate /usr/bin/lupdate /usr/local/bin/lupdate; do
-    if command -v "$cmd" >/dev/null 2>&1; then
-        LUPDATE="$cmd"
-        break
-    fi
+downloads=("$output/${resource}_"*."$extension")
+(( ${#downloads[@]} )) || fail "No translations downloaded for $resource"
+for catalog in "${downloads[@]}"; do
+    [[ -f $catalog && -s $catalog ]] || fail "Empty or invalid catalog: $catalog"
 done
+if [[ $extension == ts ]]; then
+    python3 - "${downloads[@]}" <<'PYTHON'
+import sys
+import xml.etree.ElementTree as ET
 
-if [ -z "$LUPDATE" ]; then
-    echo "Error: lupdate command not found. Please install Qt development tools."
-    exit 1
+for catalog in sys.argv[1:]:
+    if ET.parse(catalog).getroot().tag != "TS":
+        sys.exit(f"Invalid Qt translation catalog: {catalog}")
+PYTHON
+    cp -- "$directory/$source_file" "$source_file"
+    "$lupdate" "${sources[@]}" -ts "$source_file"
+else
+    for catalog in "${downloads[@]}"; do msgfmt -o /dev/null "$catalog"; done
 fi
 
-echo "Using lupdate: $LUPDATE"
-
-# Update all .ts files from source files
-SOURCE_FILES=$(find ../src -name "*.cpp" -o -name "*.h" -o -name "*.ui" 2>/dev/null)
-if [ -n "$SOURCE_FILES" ]; then
-    "$LUPDATE" $SOURCE_FILES -ts *en.ts
+# Install the complete download before pruning locales that disappeared upstream.
+mkdir -p "$directory/$output"
+obsolete=()
+for file in "$directory/$output/${resource}_"*."$extension"; do
+    [[ -f "$output/${file##*/}" ]] || obsolete+=("$file")
+done
+mv -f -- "$output/${resource}_"*."$extension" "$directory/$output/"
+if (( ${#obsolete[@]} )); then rm -f -- "${obsolete[@]}"; fi
+# Leave a usable config for tx commands run directly in the catalog directory.
+if ! cmp -s .tx/config "$config"; then
+    mkdir -p "$directory/.tx"
+    mv -f -- .tx/config "$config"
 fi
