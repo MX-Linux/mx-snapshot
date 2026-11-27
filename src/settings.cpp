@@ -1386,6 +1386,9 @@ void Settings::otherExclusions()
             // matching entries from its state, so snapd registers anew.
             QStringLiteral("var/lib/snapd/device/private-keys-v1/*"),
             QStringLiteral("var/lib/snapd/assertions/asserts-v0/serial/*"),
+            // dkms private signing key: machine specific, not for distribution
+            // (mok.pub stays, as on the ISO, for the prebuilt dkms modules).
+            QStringLiteral("var/lib/dkms/mok.key"),
         };
         for (const QString &exclusion : resetExcludes) {
             addRemoveExclusion(true, exclusion);
